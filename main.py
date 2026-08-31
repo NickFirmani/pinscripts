@@ -17,7 +17,10 @@ CONTENT = ROOT / "content"
 OUTPUT = ROOT / "output"
 MANIFEST = ROOT / "pins.yaml"
 SCHEMA = ROOT / "schema" / "game.schema.json"
-PROMPT_TEMPLATE = ROOT / "prompts" / "generate-game.md"
+RESEARCH_PROMPT_TEMPLATE = ROOT / "prompts" / "research-game.md"
+FORMAT_PROMPT_TEMPLATE = ROOT / "prompts" / "format-game-yaml.md"
+# Backward-compatible name for callers that only generated the original prompt.
+PROMPT_TEMPLATE = RESEARCH_PROMPT_TEMPLATE
 
 
 def load_yaml(path: Path):
@@ -46,13 +49,29 @@ def schema_validator():
     return Draft202012Validator(schema)
 
 
+def research_prompt(game):
+    template = RESEARCH_PROMPT_TEMPLATE.read_text(encoding="utf-8")
+    return template.replace("{{GAME}}", game)
+
+
 def generation_prompt(game):
-    template = PROMPT_TEMPLATE.read_text(encoding="utf-8")
+    return research_prompt(game)
+
+
+def formatting_prompt(research):
+    template = FORMAT_PROMPT_TEMPLATE.read_text(encoding="utf-8")
     return (
         template
         .replace("{{SCHEMA}}", json.dumps(load_schema(), indent=2))
-        .replace("{{GAME}}", game)
+        .replace("{{RESEARCH}}", research)
     )
+
+
+def read_prompt_input(source):
+    if source == "-":
+        return sys.stdin.read()
+
+    return Path(source).read_text(encoding="utf-8")
 
 
 def error_path(error):
@@ -149,9 +168,16 @@ def build_parser():
         help="Validate and render enabled pins, then create binder.pdf",
     )
     actions.add_argument(
+        "--research-prompt",
         "--prompt",
+        dest="research_prompt",
         metavar="GAME",
-        help="Print a generation prompt with the current schema embedded",
+        help="Print the phase-one web research prompt",
+    )
+    actions.add_argument(
+        "--format-prompt",
+        metavar="RESEARCH",
+        help="Print the phase-two YAML prompt using a research file, or - for stdin",
     )
     actions.add_argument(
         "--process-images",
@@ -187,8 +213,17 @@ def main():
     parser = build_parser()
     args = parser.parse_args()
 
-    if args.prompt:
-        print(generation_prompt(args.prompt))
+    if args.research_prompt:
+        print(research_prompt(args.research_prompt))
+        return 0
+
+    if args.format_prompt:
+        try:
+            research = read_prompt_input(args.format_prompt)
+        except OSError as error:
+            parser.error(f"could not read research brief: {error}")
+
+        print(formatting_prompt(research))
         return 0
 
     if args.process_images:

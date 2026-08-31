@@ -114,12 +114,29 @@ pins:
 
 ### Generating a content draft
 
-`prompts/generate-game.md` is a prompt template for drafting a commentator-focused game sheet with an LLM. Generate a ready-to-use prompt with:
+Content generation is split between two prompts so each model can focus on
+what it does best. The templates are `prompts/research-game.md` and
+`prompts/format-game-yaml.md`. First, generate a research prompt for a
+high-power, general-purpose model with internet access:
 
 ```sh
-make prompt GAME="Jaws (Stern, 2024)"
+make research-prompt GAME="Jaws (Stern, 2024)" > /tmp/jaws-research-prompt.md
 ```
-Save the LLM's YAML under `content/` and fact-check it before rendering. Pinball rules can vary by software revision, tournament settings, and machine setup.
+
+Run that prompt with the research model and save its semi-structured Markdown
+brief. Then embed the brief and current schema in a second prompt for a
+specialized YAML-formatting model:
+
+```sh
+make format-prompt RESEARCH="/tmp/jaws-research.md" > /tmp/jaws-format-prompt.md
+```
+
+The equivalent CLI options are `--research-prompt` (also `--prompt`) and
+`--format-prompt`; pass `-` to `--format-prompt` to read the brief from stdin.
+
+Save the formatter model's YAML under `content/` and fact-check it before
+rendering. Pinball rules can vary by software revision, tournament settings,
+and machine setup.
 
 ## Validation errors
 

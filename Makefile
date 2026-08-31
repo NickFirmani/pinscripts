@@ -1,6 +1,6 @@
 PYTHON := .venv/bin/python
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean install process-images prompt test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-prompt install process-images research-prompt test
 
 install:
 	python3 -m venv .venv
@@ -31,9 +31,13 @@ clean:
 test:
 	$(PYTHON) -m unittest discover -s tests
 
-prompt:
-	@test -n "$(GAME)" || (echo 'Usage: make prompt GAME="Game Name (Manufacturer, Year)"' >&2; exit 2)
-	@$(PYTHON) main.py --prompt "$(GAME)"
+research-prompt:
+	@test -n "$(GAME)" || (echo 'Usage: make research-prompt GAME="Game Name (Manufacturer, Year)"' >&2; exit 2)
+	@$(PYTHON) main.py --research-prompt "$(GAME)"
+
+format-prompt:
+	@test -n "$(RESEARCH)" || (echo 'Usage: make format-prompt RESEARCH="path/to/research.md"' >&2; exit 2)
+	@$(PYTHON) main.py --format-prompt "$(RESEARCH)"
 
 process-images:
 	@test -n "$(IMAGE)" || (echo 'Usage: make process-images IMAGE="images/game.jpg" [OUTPUT_DIR="path"]' >&2; exit 2)
