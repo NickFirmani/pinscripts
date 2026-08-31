@@ -93,6 +93,11 @@ make clean
 ## Adding a game
 
 1. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file. Its `id` must match the filename stem.
+   Every game must include `skill_shots` and `features`, using an empty array
+   when the research audit confirms that the game has none. Skill shots use
+   the dedicated `skill_shots` field; ball saves, video modes, extra balls,
+   player controls, mystery awards, and other unusual utilities belong in
+   `features`.
 2. Optionally add a playfield or machine image at `images/<id>.jpg` and set
    the YAML `image` field to that path. The image is assumed to be in color.
    To support black-and-white output, add `images/<id>-bw.jpg` beside it; the
@@ -150,8 +155,10 @@ only `::end` (or press Ctrl-D). The response is saved as
 `content/research/<id>.md`. Existing files require overwrite confirmation.
 
 Before formatting, the command displays the research brief's `Questions for
-the humans` section and requires human answers or an explicit `none`. It saves
-those answers in a `Human resolutions` section in the research file.
+the humans` section and asks each numbered question individually. Enter a
+multiple-choice letter or a free-text answer. For older briefs without numbered
+questions, paste the answers together or enter an explicit `none`. The command
+saves the answers in a `Human resolutions` section in the research file.
 
 The command then prints a schema-constrained JSON formatting prompt and offers
 to copy it. Paste that prompt into ChatGPT, return to the terminal, and paste

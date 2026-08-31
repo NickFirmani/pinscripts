@@ -189,11 +189,64 @@ def human_resolutions(research):
     return match.group("body").strip() if match else ""
 
 
+def numbered_human_questions(research):
+    questions = []
+    current = []
+
+    for line in human_questions(research).splitlines():
+        if re.match(r"^\d+[.)]\s+\S", line):
+            if current:
+                questions.append("\n".join(current).strip())
+            current = [line]
+        elif current and re.match(r"^#{2,}\s+", line):
+            questions.append("\n".join(current).strip())
+            current = []
+        elif current:
+            current.append(line)
+
+    if current:
+        questions.append("\n".join(current).strip())
+    return questions
+
+
+def expand_multiple_choice_answer(question, answer):
+    if not re.fullmatch(r"[A-Za-z]", answer):
+        return answer
+
+    choice = re.search(
+        rf"^\s*{re.escape(answer)}[.)]\s+(?P<text>.+)$",
+        question,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+    if not choice:
+        return answer
+    return f"{answer.upper()}. {choice.group('text').strip()}"
+
+
 def request_human_resolutions(research):
     questions = human_questions(research)
+    numbered_questions = numbered_human_questions(research)
     print("\nHuman review is required before formatting.")
+    if numbered_questions:
+        print("\nAnswer each question with a choice letter or free text.")
+        resolutions = []
+        for index, question in enumerate(numbered_questions, start=1):
+            print(f"\nQuestion {index} of {len(numbered_questions)}:\n")
+            print(question)
+            while True:
+                try:
+                    answer = input("Answer: ").strip()
+                except EOFError:
+                    return ""
+                if answer:
+                    break
+                print("An answer is required; enter `unknown` if needed.", file=sys.stderr)
+            answer = expand_multiple_choice_answer(question, answer)
+            resolutions.append(f"{question}\n   **Human answer:** {answer}")
+        return "\n\n".join(resolutions)
+
     if questions:
-        print("\nQuestions from the research brief:\n")
+        print("\nThe research brief has no numbered questions:\n")
         print(questions)
     else:
         print("\nThe research response did not include a human-questions section.")

@@ -280,6 +280,8 @@ Do not include folklore unless clearly identified as such.
 Only include questions whose answers could materially change the final commentator page.
 
 Prefer multiple-choice questions so venue staff can answer quickly.
+Number every question with a top-level Markdown ordered list (`1.`, `2.`, etc.).
+Use indented lettered choices (`A.`, `B.`, etc.) for multiple-choice answers.
 
 ### Tournament and venue checks
 

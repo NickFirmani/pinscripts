@@ -189,6 +189,50 @@ class PromptTests(unittest.TestCase):
         self.assertIn("Premium model.", resolved)
         self.assertEqual(app.human_resolutions(resolved), "Premium model.")
 
+    def test_numbered_human_questions_include_their_choices(self):
+        research = (
+            "## Questions for the humans\n\n"
+            "### Tournament and venue checks\n\n"
+            "1. **Installed code?**\n"
+            "   A. v1.02.0\n"
+            "   B. Unknown\n\n"
+            "2. **Extra balls?**\n"
+            "   A. Disabled\n"
+            "   B. Enabled\n\n"
+            "### Uncertainties and conflicts\n\n"
+            "* This should not become part of question two.\n\n"
+            "## Sources\nS1\n"
+        )
+
+        questions = app.numbered_human_questions(research)
+
+        self.assertEqual(len(questions), 2)
+        self.assertIn("A. v1.02.0", questions[0])
+        self.assertIn("B. Enabled", questions[1])
+        self.assertNotIn("Uncertainties", questions[1])
+
+    def test_human_resolutions_prompt_for_each_numbered_question(self):
+        research = (
+            "## Questions for the humans\n\n"
+            "1. **Installed code?**\n"
+            "   A. v1.02.0\n"
+            "   B. Unknown\n\n"
+            "2. **Extra balls?**\n"
+            "   A. Disabled\n"
+            "   B. Enabled\n\n"
+            "## Sources\nS1\n"
+        )
+        with (
+            patch("builtins.input", side_effect=["a", "Enabled at venue"]),
+            redirect_stdout(io.StringIO()) as stdout,
+        ):
+            resolutions = app.request_human_resolutions(research)
+
+        self.assertIn("Question 1 of 2", stdout.getvalue())
+        self.assertIn("Question 2 of 2", stdout.getvalue())
+        self.assertIn("**Human answer:** A. v1.02.0", resolutions)
+        self.assertIn("**Human answer:** Enabled at venue", resolutions)
+
     def test_game_format_uses_existing_research_and_human_resolutions(self):
         formatted = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
         formatted.update(
