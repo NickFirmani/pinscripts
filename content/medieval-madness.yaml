@@ -1,0 +1,84 @@
+id: "medieval-madness"
+name: "Medieval Madness"
+manufacturer: "Williams"
+year: 1997
+metadata:
+designer: "Brian Eddy"
+artist: "John Youssi and Greg Freres"
+production: "4,016 original Williams units"
+era: "WPC-95 dot-matrix-display era"
+multiball: "Castle Multiball, Multiball Madness, and Battle for the Kingdom"
+hook: "Tournament play often starts with the castle: progressively lower the drawbridge, batter down the gate, and destroy increasingly valuable castles. Strong players layer in Castle Multiball or build several Madness qualifications before visiting Merlin for a larger Multiball Madness."
+rules:
+primary: "The simple scoring line is castle, castle, castle: hit the center drawbridge, then the gate, then enter the castle to destroy it. Each successive castle needs more hits and is worth more. Meanwhile, ramps, orbits, Catapult, and Trolls qualify five Madnesses; shoot Merlin's Saucer to start Multiball Madness. Waiting to qualify several Madnesses produces more balls and stronger scoring."
+bullets:
+  - "Castle difficulty escalates: castle N needs N drawbridge hits, N+1 gate hits, then an entrance shot. Destroying all six is worth at least 78M on the original v1.0 rules."
+  - "Castle Multiball starts from the narrow Lock lane: 3 virtual locks for the first start, 6 thereafter. Five ramp jackpots light a Super Jackpot at the Lock."
+  - "Multiball Madness uses 2 balls with 1 Madness qualified, 3 balls with 2-4, and 4 balls with all 5. Qualified Madness shots become higher-value Super Jackpots."
+  - "After a Madness is already qualified, repeating its objective can start or extend a Castle Hurry-Up. Stacks grow rapidly: 1M, 3M, 5.5M, 8.5M, 12M and upward, collected at the castle."
+  - "All five Madnesses plus a played Multiball Madness qualify Royal Madness. It is a timed single-ball round, not a multiball; completing its ten required shots normally awards an extra ball or a configured points award."
+watch:
+
+  * title: "Castle state"
+      text: "Count the drawbridge and gate hits, not just completed castles. Later castles require many more center shots, but their destruction bonuses rise from 2M through 20M."
+  * title: "Madness stack"
+      text: "Before the player shoots Merlin, count the flashing Madness inserts. Waiting for another qualification can mean another ball, larger jackpots, and another Super Jackpot shot during Multiball Madness."
+  * title: "Running hurry-up"
+      text: "A flashing castle can be carrying much more than the visible castle progress. Repeating completed objectives while a Castle Hurry-Up runs stacks its value dramatically before the player finally cashes it at the center."
+  * title: "Player-specific progress"
+      text: "Castle progression, Madness qualifications, title progress, virtual locks, and lit awards belong to the current player and can carry across balls. Check the inserts when players change."
+      shots:
+  * name: "Joust Orbits"
+      value: "Either orbit advances the shared three-shot Joust sequence. Completing it qualifies Joust Madness; repeated completions can feed Castle Hurry-Ups."
+      risk: "Medium-High"
+      diagram: 1
+  * name: "Peasant Ramp"
+      value: "Four shots complete a Peasant Revolt and qualify Peasant Madness. A controllable repeatable ramp can also be used to build stacked Castle Hurry-Ups."
+      risk: "Low"
+      diagram: 2
+  * name: "Castle Lock"
+      value: "Narrow lane just left of the main entrance. Three virtual locks start the first Castle Multiball; it also collects valuable Super and Double Super Jackpots."
+      risk: "Medium-High"
+      diagram: 3
+  * name: "Castle Main Entrance"
+      value: "The central tournament workhorse: lower the drawbridge, open the gate, destroy castles, and collect Castle Hurry-Ups. Later castles become major point packages."
+      risk: "Medium"
+      diagram: 4
+  * name: "Merlin's Saucer"
+      value: "Starts Trolls, Multiball Madness, and Royal Madness when lit, gives Merlin's Magic when available, and normally collects lit extra balls."
+      risk: "Medium"
+      diagram: 5
+  * name: "Damsel Ramp"
+      value: "Four shots save a damsel and qualify Damsel Madness. Repeating the sequence after qualification can contribute to a Castle Hurry-Up stack."
+      risk: "Medium"
+      diagram: 6
+      strategy:
+      ahead: "Lean on the castle if the center return is behaving. Early castles establish reliable points without forcing the dangerous Catapult or Troll targets. Use a multiball as protection while continuing castle progress, and avoid sacrificing control merely to chase Battle for the Kingdom."
+      behind: "Increase variance: build multiple Madness lights before starting Multiball Madness, attack Castle Multiball, or deliberately stack Castle Hurry-Ups before cashing them. If several blue title inserts are already complete, Battle for the Kingdom can completely change the match."
+      key_decision: "The recurring choice is whether to take value now or keep building it: start Multiball Madness with the currently qualified Madnesses versus risking more shots for a larger multiball, and cash a Castle Hurry-Up versus extending its rapidly growing value."
+      danger:
+  * "The Catapult is a narrow far-left shot with potentially violent misses; it is strategically important for Catapult Madness and Battle for the Kingdom but often avoided when protecting a lead."
+  * "Uncontrolled Joust orbit shots can return extremely fast unless they are being diverted into the pop bumpers."
+  * "Castle gate rebounds can still head toward the flippers or center despite the castle being safer than the analogous center target on Attack from Mars."
+  * "Raised Trolls physically obstruct important central shots, especially the Lock and Merlin areas."
+  * "Royal Madness tempts rapid shooting under its timer; the player may abandon normal control to keep the timer alive."
+commentary:
+  * "He's staying on the castle line. Every castle gets harder, but the destruction bonuses get much larger too."
+  * "That narrow lane beside the castle is the Lock. Three virtual locks gets him to the first Castle Multiball."
+  * "Merlin is ready, but watch whether he waits. Another Madness qualification can turn this into a bigger multiball with stronger jackpots."
+  * "That castle arrow is also a hurry-up collect. If he's been repeating completed objectives, there may be several million stacked behind this center shot."
+  * "The Catapult is not just decoration. It is one of the nastier shots on the game, but Catapult progress matters if he's pushing toward the wizard mode."
+  * "Royal Madness sounds like multiball, but it isn't. He's on one ball and racing ten required shots against a timer that resets when he makes progress."
+trivia:
+  * "Brian Eddy designed Medieval Madness; Lyman Sheats programmed the original game."
+  * "Williams produced 4,016 original machines in 1997. Chicago Gaming later produced licensed remakes."
+  * "The game's artwork is credited to John Youssi and Greg Freres, with music and sound by Dan Forden."
+  * "Cows are a recurring running joke throughout the game, including the secret Barnyard Madness multiball."
+  * "Tina Fey was among the performers who supplied character voices for the original game."
+summary: "Hammer castles → build Madness lights → choose when to start Merlin's multiball → exploit Castle Multiball and stacked hurry-ups → chase Battle for the Kingdom"
+venue_notes:
+  * "Confirm the installed software and whether this is an original Williams game or a Chicago Gaming remake before relying on fine rules details."
+  * "Tournament extra balls are commonly disabled or converted to points. Royal Madness and several other features can award or light extra balls, so verify the event setting."
+  * "Difficulty adjustments can change Troll hit requirements and the conditions for earning an extra ball from Castle Multiball."
+  * "Check how safely this particular castle gate and moat return the ball; that strongly affects whether repeated castle shooting is the dominant strategy."
+image: "images/medieval-madness.jpg"
