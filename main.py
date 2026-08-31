@@ -154,9 +154,9 @@ def request_research_path(game):
         return None
 
 
-def read_research_response():
+def read_chatgpt_response(kind):
     print(
-        "\nPaste the ChatGPT research response below. "
+        f"\nPaste the ChatGPT {kind} response below. "
         "Finish with a line containing only ::end (or press Ctrl-D):"
     )
     lines = []
@@ -169,6 +169,165 @@ def read_research_response():
             break
         lines.append(line)
     return "\n".join(lines).strip()
+
+
+def human_questions(research):
+    match = re.search(
+        r"^## Questions for the humans\s*$\n(?P<body>.*?)(?=^## Sources\s*$|\Z)",
+        research,
+        flags=re.DOTALL | re.MULTILINE,
+    )
+    return match.group("body").strip() if match else ""
+
+
+def human_resolutions(research):
+    match = re.search(
+        r"^## Human resolutions\s*$\n(?P<body>.*?)(?=^## Sources\s*$|\Z)",
+        research,
+        flags=re.DOTALL | re.MULTILINE,
+    )
+    return match.group("body").strip() if match else ""
+
+
+def request_human_resolutions(research):
+    questions = human_questions(research)
+    print("\nHuman review is required before formatting.")
+    if questions:
+        print("\nQuestions from the research brief:\n")
+        print(questions)
+    else:
+        print("\nThe research response did not include a human-questions section.")
+    print(
+        "\nPaste the human answers or resolutions below. "
+        "Enter `none` if no action is needed. "
+        "Finish with a line containing only ::end (or press Ctrl-D):"
+    )
+
+    lines = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        if line == "::end":
+            break
+        lines.append(line)
+    return "\n".join(lines).strip()
+
+
+def add_human_resolutions(research, resolutions):
+    section = f"## Human resolutions\n\n{resolutions.strip()}\n\n"
+    sources = re.search(r"^## Sources\s*$", research, flags=re.MULTILINE)
+    if sources:
+        return research[:sources.start()] + section + research[sources.start():]
+    return research.rstrip() + "\n\n" + section.rstrip() + "\n"
+
+
+def ensure_human_resolutions(research, path):
+    if human_resolutions(research):
+        print("Using the human resolutions already saved in the research brief.")
+        return research
+
+    resolutions = request_human_resolutions(research)
+    if not resolutions:
+        print("ERROR: human resolutions are required before formatting.", file=sys.stderr)
+        return None
+
+    research = add_human_resolutions(research, resolutions)
+    path.write_text(research.rstrip() + "\n", encoding="utf-8")
+    try:
+        display_path = path.relative_to(ROOT)
+    except ValueError:
+        display_path = path
+    print(f"Human resolutions saved to {display_path}")
+    return research
+
+
+def confirm_overwrite(path):
+    if not path.exists():
+        return True
+
+    try:
+        answer = input(f"{path} already exists. Overwrite? [y/N] ")
+    except EOFError:
+        answer = ""
+    return answer.strip().lower() in {"y", "yes"}
+
+
+def parse_json_response(response):
+    fenced = re.fullmatch(
+        r"\s*```(?:json)?\s*\n(?P<body>.*?)\n```\s*",
+        response,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    if fenced:
+        response = fenced.group("body")
+    return json.loads(response)
+
+
+def format_research_interactively(research, research_id):
+    output_path = CONTENT / f"{research_id}.yaml"
+    if not confirm_overwrite(output_path):
+        print("Formatted YAML not saved.", file=sys.stderr)
+        return 1
+
+    prompt = structured_formatting_prompt(research, expected_id=research_id)
+    print("\n" + prompt)
+    try:
+        answer = input("\nCopy formatting prompt to clipboard? [y/N] ")
+    except EOFError:
+        answer = ""
+    if answer.strip().lower() not in {"y", "yes"}:
+        print("Formatting prompt not copied.", file=sys.stderr)
+        return 0
+
+    try:
+        copy_to_clipboard(prompt)
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"ERROR: could not copy formatting prompt: {error}", file=sys.stderr)
+        return 1
+    print("Formatting prompt copied to clipboard.", file=sys.stderr)
+
+    response = read_chatgpt_response("formatting")
+    if not response:
+        print("ERROR: no formatting response was provided.", file=sys.stderr)
+        return 1
+
+    try:
+        data = parse_json_response(response)
+    except json.JSONDecodeError as error:
+        print(f"ERROR: formatting response is not valid JSON: {error}", file=sys.stderr)
+        return 1
+    if not isinstance(data, dict):
+        print("ERROR: formatting response must be a JSON object.", file=sys.stderr)
+        return 1
+
+    errors = validation_errors(data, schema_validator())
+    if data.get("id") != research_id:
+        errors.append(
+            f"$.id: expected {research_id!r}, got {data.get('id')!r}"
+        )
+    expected_image = f"images/{research_id}.jpg"
+    if data.get("image") != expected_image:
+        errors.append(
+            f"$.image: expected {expected_image!r}, got {data.get('image')!r}"
+        )
+    if errors:
+        print("ERROR: formatting response failed validation:", file=sys.stderr)
+        for error in errors:
+            print(f"  - {error}", file=sys.stderr)
+        return 1
+
+    output_path.write_text(
+        yaml.safe_dump(data, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    try:
+        display_path = output_path.relative_to(ROOT)
+    except ValueError:
+        display_path = output_path
+    print(f"Formatted YAML saved to {display_path}")
+    return 0
 
 
 def interactive_research_prompt(game):
@@ -206,7 +365,7 @@ def interactive_research_prompt(game):
     if path is None:
         return 1
 
-    response = read_research_response()
+    response = read_chatgpt_response("research")
     if not response:
         print("ERROR: no research response was provided.", file=sys.stderr)
         return 1
@@ -218,7 +377,42 @@ def interactive_research_prompt(game):
     except ValueError:
         display_path = path
     print(f"Research response saved to {display_path}")
-    return 0
+
+    response = ensure_human_resolutions(response, path)
+    if response is None:
+        return 1
+    return format_research_interactively(response, path.stem)
+
+
+def interactive_game_format(research_id):
+    research_id = research_id.strip()
+    if not research_id:
+        try:
+            research_id = input("Research ID: ").strip()
+        except EOFError:
+            research_id = ""
+
+    if not research_id:
+        print("ERROR: a research ID is required.", file=sys.stderr)
+        return 2
+    if PIN_ID_PATTERN.fullmatch(research_id) is None:
+        print(
+            "ERROR: research ID must contain lowercase letters, numbers, and single hyphens.",
+            file=sys.stderr,
+        )
+        return 2
+
+    path = RESEARCH / f"{research_id}.md"
+    try:
+        research = path.read_text(encoding="utf-8")
+    except OSError as error:
+        print(f"ERROR: could not read research brief {path}: {error}", file=sys.stderr)
+        return 1
+
+    research = ensure_human_resolutions(research, path)
+    if research is None:
+        return 1
+    return format_research_interactively(research, research_id)
 
 
 def formatting_prompt(research):
@@ -228,6 +422,54 @@ def formatting_prompt(research):
         .replace("{{SCHEMA}}", json.dumps(load_schema(), indent=2))
         .replace("{{RESEARCH}}", research)
     )
+
+
+def structured_formatting_prompt(research, expected_id=None):
+    prompt = formatting_prompt(research)
+    replacements = (
+        (
+            "# Pinball Streaming Quick Reference YAML Formatter",
+            "# Pinball Streaming Quick Reference Structured Formatter",
+        ),
+        (
+            "Convert the research brief below into YAML for a one-page, live-commentary\n"
+            "quick reference.",
+            "Convert the research brief below into structured data for a one-page,\n"
+            "live-commentary quick reference.",
+        ),
+        (
+            "Return ONLY YAML that validates against the following JSON Schema.",
+            "Return ONLY a JSON object that validates against the following JSON Schema.",
+        ),
+        (
+            "source commentary in the YAML.",
+            "source commentary in the output.",
+        ),
+        (
+            "Do not wrap the YAML in a Markdown code fence or add text before or after it.",
+            "Do not wrap the JSON object in a Markdown code fence or add text before or after it.",
+        ),
+    )
+    for original, replacement in replacements:
+        if original not in prompt:
+            raise ValueError(
+                "format prompt changed; could not adapt this instruction: "
+                f"{original!r}"
+            )
+        prompt = prompt.replace(original, replacement, 1)
+
+    if expected_id:
+        identity_rules = (
+            f"- Set `id` exactly to `{expected_id}`.\n"
+            f"- Set `image` exactly to `images/{expected_id}.jpg`.\n"
+        )
+        prompt = prompt.replace(
+            "- Before answering, silently check the result against every schema constraint.\n",
+            identity_rules
+            + "- Before answering, silently check the result against every schema constraint.\n",
+            1,
+        )
+    return prompt
 
 
 def read_prompt_input(source):
@@ -249,21 +491,24 @@ def error_path(error):
     return path
 
 
+def validation_errors(data, validator):
+    errors = sorted(
+        validator.iter_errors(data),
+        key=lambda error: [str(part) for part in error.absolute_path],
+    )
+    return [
+        f"{error_path(error)}: {error.message}"
+        for error in errors
+    ]
+
+
 def validate_content(path: Path, validator):
     try:
         data = load_yaml(path)
     except yaml.YAMLError as error:
         return [f"invalid YAML: {error}"]
 
-    errors = sorted(
-        validator.iter_errors(data),
-        key=lambda error: [str(part) for part in error.absolute_path],
-    )
-
-    return [
-        f"{error_path(error)}: {error.message}"
-        for error in errors
-    ]
+    return validation_errors(data, validator)
 
 
 def content_for_selected_pins():
@@ -349,6 +594,13 @@ def build_parser():
         help="Print a research prompt, prompting for the description if omitted",
     )
     actions.add_argument(
+        "--game-format",
+        nargs="?",
+        const="",
+        metavar="RESEARCH_ID",
+        help="Format an existing content/research/<id>.md brief",
+    )
+    actions.add_argument(
         "--format-prompt",
         metavar="RESEARCH",
         help="Print the phase-two YAML prompt using a research file, or - for stdin",
@@ -389,6 +641,9 @@ def main():
 
     if args.game_research is not None:
         return interactive_research_prompt(args.game_research)
+
+    if args.game_format is not None:
+        return interactive_game_format(args.game_format)
 
     if args.format_prompt:
         try:

@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+from copy import deepcopy
 from pathlib import Path
 from unittest.mock import patch
 
@@ -8,6 +9,45 @@ from scripts import render as renderer
 
 
 class RenderTests(unittest.TestCase):
+    def story_text(self, data):
+        return [
+            item.getPlainText()
+            for item in renderer.build_story(data)
+            if hasattr(item, "getPlainText")
+        ]
+
+    def test_empty_skill_shots_and_features_do_not_render_sections(self):
+        data = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+
+        text = self.story_text(data)
+
+        self.assertNotIn("SKILL SHOTS", text)
+        self.assertNotIn("SPECIAL FEATURES", text)
+
+    def test_skill_shots_and_features_render_conditionally(self):
+        data = deepcopy(app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml"))
+        data["skill_shots"] = [
+            {
+                "name": "Super Skill Shot",
+                "how": "Hold the left flipper and plunge the flashing lane.",
+                "value": "Awards immediate progression.",
+            }
+        ]
+        data["features"] = [
+            {
+                "type": "video-mode",
+                "name": "Video Mode",
+                "text": "Use the flipper buttons to complete the display objective.",
+            }
+        ]
+
+        text = self.story_text(data)
+
+        self.assertIn("SKILL SHOTS", text)
+        self.assertTrue(any("Super Skill Shot" in item for item in text))
+        self.assertIn("SPECIAL FEATURES", text)
+        self.assertTrue(any("Video Mode" in item for item in text))
+
     def test_color_uses_configured_image_path(self):
         with patch.object(renderer, "ROOT", Path("/project")):
             result = renderer.resolve_image_path(

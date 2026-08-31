@@ -141,6 +141,43 @@ Prioritize:
 
 Explicitly identify anything that is easy for a commentator to misunderstand.
 
+## Skill shots
+
+Audit skill shots as a first-class part of the game. Include every verified
+normal, super, alternate, or secret skill shot that can materially affect a
+tournament ball.
+
+For each skill shot, give:
+
+* its common name
+* the plunge, button hold, lane choice, or shot needed to make it
+* its award and why a player would choose it
+* whether it changes after the first ball, across plunges, or by adjustment
+* a visible or audible cue when one is useful to commentary
+
+Write `None found` when the game has no skill shot. Do not infer a skill shot
+merely because the game has a shooter lane or plunge.
+
+## Secondary features
+
+Audit the following optional feature categories. Report only verified features
+that affect ball survival, player choice, or tournament scoring:
+
+* ball saves, including standard timers, switch-specific saves, kickbacks,
+  outlane rescues, and player-activated saves
+* video or display-controlled modes
+* extra-ball qualification and tournament point conversion
+* player controls such as action buttons, flipper-button choices, bombs,
+  Magna-Save, Flip-Lock, or lane selection
+* mystery or random awards, especially competition-mode normalization
+* other unusual player-facing utilities not adequately covered by core rules
+
+For each present feature, explain how it is activated, what it does, why it
+matters, and any strategically significant edition, revision, or adjustment
+sensitivity. Do not repeat skill shots here.
+
+Write `None found` when none of these categories is present or relevant.
+
 ## What to watch
 
 Give **up to four** visible or audible tells that reveal game state or likely player intent.

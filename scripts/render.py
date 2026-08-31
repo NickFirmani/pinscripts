@@ -246,6 +246,39 @@ def build_story(data, black_and_white=False):
         )
 
     # -------------------------------------------------------------
+    # Skill shots
+    # -------------------------------------------------------------
+    skill_shots = data.get("skill_shots", [])
+
+    if skill_shots:
+        story.append(section("Skill shots"))
+        for item in skill_shots:
+            story.append(
+                Paragraph(
+                    f"<b>{safe(item.get('name'))}:</b> "
+                    f"{safe(item.get('how'))} "
+                    f"<i>{safe(item.get('value'))}</i>",
+                    BODY,
+                )
+            )
+
+    # -------------------------------------------------------------
+    # Secondary features
+    # -------------------------------------------------------------
+    features = data.get("features", [])
+
+    if features:
+        story.append(section("Special features"))
+        for item in features:
+            story.append(
+                Paragraph(
+                    f"<b>{safe(item.get('name'))}:</b> "
+                    f"{safe(item.get('text'))}",
+                    BODY,
+                )
+            )
+
+    # -------------------------------------------------------------
     # Shots table
     # -------------------------------------------------------------
     story.append(section("Important shots"))

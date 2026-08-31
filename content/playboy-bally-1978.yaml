@@ -44,6 +44,10 @@ watch:
       Upper-playfield action can quickly turn a controlled ball into
       an unpredictable return.
 
+skill_shots: []
+
+features: []
+
 shots:
   - name: Playboy Keys
     value: Core progression and bonus multiplier

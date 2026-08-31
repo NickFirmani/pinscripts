@@ -149,19 +149,29 @@ research ID and paste the multiline response. Finish with a line containing
 only `::end` (or press Ctrl-D). The response is saved as
 `content/research/<id>.md`. Existing files require overwrite confirmation.
 
-Run that prompt with the research model and save its semi-structured Markdown
-brief. Then embed the brief and current schema in a second prompt for a
-specialized YAML-formatting model:
+Before formatting, the command displays the research brief's `Questions for
+the humans` section and requires human answers or an explicit `none`. It saves
+those answers in a `Human resolutions` section in the research file.
+
+The command then prints a schema-constrained JSON formatting prompt and offers
+to copy it. Paste that prompt into ChatGPT, return to the terminal, and paste
+the JSON response using the same `::end` terminator. The command parses and
+validates the JSON, verifies its ID and image path, and writes the final artifact
+to `content/<id>.yaml`. Existing YAML files also require overwrite confirmation.
+
+To skip research and format an existing brief, pass its ID (the filename without
+`content/research/` or `.md`):
 
 ```sh
-make format-prompt RESEARCH="/tmp/jaws-research.md" > /tmp/jaws-format-prompt.md
+make game-format jaws-pro-2024
 ```
 
-The formatting CLI accepts `-` to read the brief from stdin.
+Run `make game-format` with no ID to enter it interactively. If the brief already
+has a non-empty `Human resolutions` section, it is reused. Otherwise, the command
+prompts for the human answers before continuing to the formatting prompt.
 
-Save the formatter model's YAML under `content/` and fact-check it before
-rendering. Pinball rules can vary by software revision, tournament settings,
-and machine setup.
+Fact-check the generated YAML before rendering. Pinball rules can vary by
+software revision, tournament settings, and machine setup.
 
 ### Benchmarking the formatting phase
 

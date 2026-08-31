@@ -2,6 +2,7 @@ import io
 import sys
 import tempfile
 import unittest
+from copy import deepcopy
 from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
@@ -22,6 +23,61 @@ class ValidationTests(unittest.TestCase):
         )
 
         self.assertEqual(errors, [])
+
+    def test_featureless_game_uses_explicit_empty_arrays(self):
+        data = app.load_yaml(CONTENT / "playboy-bally-1978.yaml")
+
+        self.assertEqual(data["skill_shots"], [])
+        self.assertEqual(data["features"], [])
+        self.assertEqual(app.validation_errors(data, self.validator), [])
+
+    def test_skill_shots_and_secondary_features_are_valid(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["skill_shots"] = [
+            {
+                "name": "Super Skill Shot",
+                "how": "Hold the left flipper and plunge the flashing lane.",
+                "value": "Awards immediate progression and a scoring boost.",
+            }
+        ]
+        data["features"] = [
+            {
+                "type": "ball-save",
+                "name": "Life Ring",
+                "text": "Press the action button to rescue a qualified outlane drain.",
+            },
+            {
+                "type": "video-mode",
+                "name": "Video Mode",
+                "text": "Use the flipper buttons to complete the display objective.",
+            },
+        ]
+
+        self.assertEqual(app.validation_errors(data, self.validator), [])
+
+    def test_skill_shots_and_features_are_required(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        del data["skill_shots"]
+        del data["features"]
+
+        errors = app.validation_errors(data, self.validator)
+
+        self.assertTrue(any("'skill_shots' is a required property" in e for e in errors))
+        self.assertTrue(any("'features' is a required property" in e for e in errors))
+
+    def test_skill_shot_cannot_be_encoded_as_a_secondary_feature(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["features"] = [
+            {
+                "type": "skill-shot",
+                "name": "Skill Shot",
+                "text": "This belongs in the first-class skill_shots field.",
+            }
+        ]
+
+        errors = app.validation_errors(data, self.validator)
+
+        self.assertTrue(any("$.features[0].type" in error for error in errors), errors)
 
     def test_schema_errors_include_field_path(self):
         errors = self.validate_text(

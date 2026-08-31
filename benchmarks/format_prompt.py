@@ -23,7 +23,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from main import error_path, formatting_prompt, load_schema  # noqa: E402
+from main import (  # noqa: E402
+    error_path,
+    formatting_prompt,
+    load_schema,
+    structured_formatting_prompt,
+)
 
 
 DEFAULT_RESULTS = ROOT / "benchmarks" / "results" / "format-prompt"
@@ -57,45 +62,6 @@ def elapsed_heartbeat(interval, label="Waiting for Ollama"):
     finally:
         stopped.set()
         thread.join(timeout=interval)
-
-
-def structured_formatting_prompt(research):
-    """Adapt the production YAML prompt for schema-constrained JSON output."""
-    prompt = formatting_prompt(research)
-    replacements = (
-        (
-            "# Pinball Streaming Quick Reference YAML Formatter",
-            "# Pinball Streaming Quick Reference Structured Formatter",
-        ),
-        (
-            "Convert the research brief below into YAML for a one-page, live-commentary\n"
-            "quick reference.",
-            "Convert the research brief below into structured data for a one-page,\n"
-            "live-commentary quick reference.",
-        ),
-        (
-            "Return ONLY YAML that validates against the following JSON Schema.",
-            "Return ONLY a JSON object that validates against the following JSON Schema.",
-        ),
-        (
-            "source commentary in the YAML.",
-            "source commentary in the output.",
-        ),
-        (
-            "Do not wrap the YAML in a Markdown code fence or add text before or after it.",
-            "Do not wrap the JSON object in a Markdown code fence or add text before or after it.",
-        ),
-    )
-
-    for original, replacement in replacements:
-        if original not in prompt:
-            raise ValueError(
-                "format prompt changed; could not adapt this instruction: "
-                f"{original!r}"
-            )
-        prompt = prompt.replace(original, replacement, 1)
-
-    return prompt
 
 
 def prompt_for_mode(research, mode):

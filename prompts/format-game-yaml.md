@@ -20,8 +20,9 @@ respect all array, string, pattern, numeric, and enum constraints.
 Formatting rules:
 
 - Map identity facts to the top-level identity fields and `metadata`; the
-  thirty-second overview to `hook` and `summary`; core rules to `rules`; and
-  the remaining named brief sections to their corresponding schema properties.
+  thirty-second overview to `hook` and `summary`; core rules to `rules`; skill
+  shots to `skill_shots`; secondary features to `features`; and the remaining
+  named brief sections to their corresponding schema properties.
 - Do not include citations, URLs, Markdown, footnotes, uncertainty labels, or
   source commentary in the YAML.
 - Do not wrap the YAML in a Markdown code fence or add text before or after it.
@@ -29,12 +30,23 @@ Formatting rules:
   verified edition or revision distinctions as concise caveats.
 - Omit unsupported optional content. Use an empty string or array only where
   the schema permits it; never fabricate content just to fill a field.
+- Always emit both `skill_shots` and `features`. Use an empty array when the
+  corresponding research section says `None found` or contains no verified
+  entries.
+- Never put a skill shot in `features`. Use `features` for verified ball saves,
+  video modes, extra balls, player controls, mystery awards, and other unusual
+  utilities.
+- Condense each skill shot's execution into `how` and its award plus strategic
+  purpose into `value`. Put configuration-sensitive caveats in `venue_notes`
+  when they affect what a commentator should say.
 - Turn the canonical game name and year into a lowercase, hyphenated `id`, and
   set `image` to `images/<id>.jpg`.
 - Keep the most useful, best-supported facts when the schema's item or length
   limits require selection.
 - Preserve edition, revision, and tournament caveats in `venue_notes` when
   they materially affect interpretation.
+- Treat answers in `Human resolutions` as authoritative human-provided context
+  for the corresponding questions. Do not treat unresolved questions as facts.
 - `summary` should be approximately 3-7 concepts joined by arrows.
 - Number selected shots from left to right with `diagram` values starting at
   1. Include `x` and `y` only when the brief provides reliable coordinates.

@@ -13,6 +13,8 @@
     "hook",
     "rules",
     "watch",
+    "skill_shots",
+    "features",
     "shots",
     "strategy",
     "danger",
@@ -122,6 +124,72 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 500
+          }
+        }
+      }
+    },
+    "skill_shots": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "how",
+          "value"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "how": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 250
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 250
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "name",
+          "text"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "ball-save",
+              "video-mode",
+              "extra-ball",
+              "player-control",
+              "mystery-award",
+              "other"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
           }
         }
       }

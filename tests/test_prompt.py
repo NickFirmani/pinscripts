@@ -11,6 +11,7 @@ from main import (
     FORMAT_PROMPT_TEMPLATE,
     RESEARCH_PROMPT_TEMPLATE,
     formatting_prompt,
+    interactive_game_format,
     interactive_research_prompt,
     load_schema,
     read_prompt_input,
@@ -52,6 +53,25 @@ class PromptTests(unittest.TestCase):
         self.assertIn("{{GAME}}", template)
         self.assertNotIn("{{SCHEMA}}", template)
 
+    def test_research_template_requires_skill_shot_and_feature_audits(self):
+        template = RESEARCH_PROMPT_TEMPLATE.read_text(encoding="utf-8")
+
+        self.assertIn("## Skill shots", template)
+        self.assertIn("normal, super, alternate, or secret skill shot", template)
+        self.assertIn("## Secondary features", template)
+        self.assertIn("ball saves", template)
+        self.assertIn("video or display-controlled modes", template)
+        self.assertIn("Write `None found`", template)
+
+    def test_format_template_separates_skill_shots_from_features(self):
+        template = FORMAT_PROMPT_TEMPLATE.read_text(encoding="utf-8")
+        compact = " ".join(template.split())
+
+        self.assertIn("skill shots to `skill_shots`", compact)
+        self.assertIn("secondary features to `features`", compact)
+        self.assertIn("Never put a skill shot in `features`", template)
+        self.assertIn("Always emit both `skill_shots` and `features`", template)
+
     def test_read_prompt_input_reads_a_file(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "research.md"
@@ -74,9 +94,13 @@ class PromptTests(unittest.TestCase):
                         "",
                         "Detailed findings.",
                         "::end",
+                        "none",
+                        "::end",
+                        "n",
                     ],
                 ),
                 patch.object(app, "RESEARCH", research_directory),
+                patch.object(app, "CONTENT", Path(directory)),
                 patch.object(app, "copy_to_clipboard") as copy,
                 redirect_stdout(stdout),
                 redirect_stderr(stderr),
@@ -86,7 +110,8 @@ class PromptTests(unittest.TestCase):
             saved = research_directory / "jaws-premium-2024.md"
             self.assertEqual(
                 saved.read_text(encoding="utf-8"),
-                "# Jaws research\n\nDetailed findings.\n",
+                "# Jaws research\n\nDetailed findings.\n\n"
+                "## Human resolutions\n\nnone\n",
             )
 
         self.assertEqual(result, 0)
@@ -95,6 +120,155 @@ class PromptTests(unittest.TestCase):
         copy.assert_called_once_with(prompt)
         self.assertIn("Prompt copied to clipboard", stderr.getvalue())
         self.assertIn("Research response saved", stdout.getvalue())
+
+    def test_interactive_research_prompt_formats_json_and_writes_yaml(self):
+        formatted = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+        formatted.update(
+            {
+                "id": "jaws-2024",
+                "name": "JAWS",
+                "manufacturer": "Stern",
+                "year": 2024,
+                "image": "images/jaws-2024.jpg",
+            }
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            content = Path(directory) / "content"
+            research_directory = content / "research"
+            with (
+                patch(
+                    "builtins.input",
+                    side_effect=[
+                        "y",
+                        "jaws-2024",
+                        "# Researched JAWS facts",
+                        "::end",
+                        "The tournament is using the Premium model.",
+                        "::end",
+                        "y",
+                        "```json",
+                        json.dumps(formatted),
+                        "```",
+                        "::end",
+                    ],
+                ),
+                patch.object(app, "CONTENT", content),
+                patch.object(app, "RESEARCH", research_directory),
+                patch.object(app, "copy_to_clipboard") as copy,
+                redirect_stdout(io.StringIO()) as stdout,
+                redirect_stderr(io.StringIO()),
+            ):
+                result = interactive_research_prompt("JAWS (Stern, 2024)")
+
+            output = content / "jaws-2024.yaml"
+            self.assertEqual(app.load_yaml(output), formatted)
+
+        self.assertEqual(result, 0)
+        self.assertEqual(copy.call_count, 2)
+        formatting_copy = copy.call_args_list[1].args[0]
+        self.assertIn("Return ONLY a JSON object", formatting_copy)
+        self.assertIn("Set `id` exactly to `jaws-2024`", formatting_copy)
+        self.assertIn("## Human resolutions", formatting_copy)
+        self.assertIn("Premium model", formatting_copy)
+        self.assertIn("Formatted YAML saved", stdout.getvalue())
+
+    def test_human_questions_are_extracted_and_resolutions_precede_sources(self):
+        research = (
+            "## Identity and versions\nFacts\n\n"
+            "## Questions for the humans\n\n"
+            "### Tournament and venue checks\n\nWhich model is present?\n\n"
+            "## Sources\n\nS1: source"
+        )
+
+        self.assertIn("Which model is present?", app.human_questions(research))
+        resolved = app.add_human_resolutions(research, "Premium model.")
+        self.assertLess(
+            resolved.index("## Human resolutions"),
+            resolved.index("## Sources"),
+        )
+        self.assertIn("Premium model.", resolved)
+        self.assertEqual(app.human_resolutions(resolved), "Premium model.")
+
+    def test_game_format_uses_existing_research_and_human_resolutions(self):
+        formatted = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+        formatted.update(
+            {
+                "id": "jaws-2024",
+                "name": "JAWS",
+                "manufacturer": "Stern",
+                "year": 2024,
+                "image": "images/jaws-2024.jpg",
+            }
+        )
+        research = (
+            "## Identity and versions\nFacts\n\n"
+            "## Human resolutions\n\nPremium model.\n\n"
+            "## Sources\nSources\n"
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            content = Path(directory) / "content"
+            research_directory = content / "research"
+            research_directory.mkdir(parents=True)
+            research_path = research_directory / "jaws-2024.md"
+            research_path.write_text(research, encoding="utf-8")
+            with (
+                patch(
+                    "builtins.input",
+                    side_effect=["y", json.dumps(formatted), "::end"],
+                ),
+                patch.object(app, "CONTENT", content),
+                patch.object(app, "RESEARCH", research_directory),
+                patch.object(app, "copy_to_clipboard") as copy,
+                redirect_stdout(io.StringIO()) as stdout,
+                redirect_stderr(io.StringIO()),
+            ):
+                result = interactive_game_format("jaws-2024")
+
+            self.assertEqual(app.load_yaml(content / "jaws-2024.yaml"), formatted)
+            self.assertEqual(research_path.read_text(encoding="utf-8"), research)
+
+        self.assertEqual(result, 0)
+        copy.assert_called_once()
+        self.assertIn("Using the human resolutions already saved", stdout.getvalue())
+
+    def test_game_format_collects_missing_human_resolutions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            content = Path(directory) / "content"
+            research_directory = content / "research"
+            research_directory.mkdir(parents=True)
+            research_path = research_directory / "jaws-2024.md"
+            research_path.write_text(
+                "## Questions for the humans\n\nWhich trim?\n\n## Sources\nS1\n",
+                encoding="utf-8",
+            )
+            with (
+                patch(
+                    "builtins.input",
+                    side_effect=["Premium", "::end", "n"],
+                ),
+                patch.object(app, "CONTENT", content),
+                patch.object(app, "RESEARCH", research_directory),
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+            ):
+                result = interactive_game_format("jaws-2024")
+
+            saved = research_path.read_text(encoding="utf-8")
+
+        self.assertEqual(result, 0)
+        self.assertIn("## Human resolutions\n\nPremium", saved)
+        self.assertLess(saved.index("## Human resolutions"), saved.index("## Sources"))
+
+    def test_game_format_rejects_missing_research_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with (
+                patch.object(app, "RESEARCH", Path(directory)),
+                redirect_stderr(io.StringIO()) as stderr,
+            ):
+                result = interactive_game_format("missing-game")
+
+        self.assertEqual(result, 1)
+        self.assertIn("could not read research brief", stderr.getvalue())
 
     def test_interactive_research_prompt_does_not_overwrite_without_confirmation(self):
         with tempfile.TemporaryDirectory() as directory:
