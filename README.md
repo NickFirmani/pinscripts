@@ -138,6 +138,33 @@ Save the formatter model's YAML under `content/` and fact-check it before
 rendering. Pinball rules can vary by software revision, tournament settings,
 and machine setup.
 
+### Benchmarking the formatting phase
+
+The Ollama format-prompt harness defaults to the research brief at
+`content/research/jaws.md` and schema-constrained JSON output. It validates the
+model response and serializes it to YAML for inspection:
+
+```sh
+make format-benchmark MODEL="qwen3.5:27b-q4_K_M"
+```
+
+The command prints an elapsed-time heartbeat every 10 seconds. Override it
+when desired with `PROGRESS_INTERVAL=5`, or use `PROGRESS_INTERVAL=0` to turn
+off heartbeat messages.
+
+Select another research brief or compare the original direct-YAML prompt:
+
+```sh
+make format-benchmark \
+  MODEL="qwen3.5:9b-q8_0" \
+  RESEARCH="content/research/jaws.md" \
+  MODE="direct-yaml"
+```
+
+Run artifacts are stored under `benchmarks/results/format-prompt/` and include
+the exact prompt, raw Ollama response, normalized YAML, validation errors,
+token counts, and timing. See `benchmarks/README.md` for details.
+
 ## Validation errors
 
 Invalid YAML syntax and schema violations stop the build with a non-zero exit status. Errors identify the content file and field path, for example:

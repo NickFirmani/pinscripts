@@ -1,6 +1,6 @@
 PYTHON := .venv/bin/python
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-prompt install process-images research-prompt test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt install process-images research-prompt test
 
 install:
 	python3 -m venv .venv
@@ -38,6 +38,10 @@ research-prompt:
 format-prompt:
 	@test -n "$(RESEARCH)" || (echo 'Usage: make format-prompt RESEARCH="path/to/research.md"' >&2; exit 2)
 	@$(PYTHON) main.py --format-prompt "$(RESEARCH)"
+
+format-benchmark:
+	@test -n "$(MODEL)" || (echo 'Usage: make format-benchmark MODEL="ollama-model" [RESEARCH="path"] [MODE="structured-json|direct-yaml"] [THINK="false|true|low|medium|high"] [PROGRESS_INTERVAL="seconds"]' >&2; exit 2)
+	$(PYTHON) benchmarks/format_prompt.py --model "$(MODEL)" $(if $(RESEARCH),--research "$(RESEARCH)") $(if $(MODE),--mode "$(MODE)") $(if $(THINK),--think "$(THINK)") $(if $(PROGRESS_INTERVAL),--progress-interval "$(PROGRESS_INTERVAL)")
 
 process-images:
 	@test -n "$(IMAGE)" || (echo 'Usage: make process-images IMAGE="images/game.jpg" [OUTPUT_DIR="path"]' >&2; exit 2)
