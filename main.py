@@ -117,9 +117,15 @@ def validate_all(paths):
     return valid
 
 
-def render(paths):
+def render(paths, black_and_white=False):
+    output_suffix = "-bw" if black_and_white else ""
+
     for path in paths:
-        render_game(path, OUTPUT / f"{path.stem}.pdf")
+        render_game(
+            path,
+            OUTPUT / f"{path.stem}{output_suffix}.pdf",
+            black_and_white,
+        )
 
 
 def build_parser():
@@ -159,6 +165,21 @@ def build_parser():
         type=Path,
         help="Output directory for --process-images",
     )
+    image_modes = parser.add_mutually_exclusive_group()
+    image_modes.add_argument(
+        "--color",
+        dest="black_and_white",
+        action="store_false",
+        help="Use the image named in the game YAML (default)",
+    )
+    image_modes.add_argument(
+        "--black-and-white",
+        "--bw",
+        dest="black_and_white",
+        action="store_true",
+        help="Use the image with -bw appended before its extension",
+    )
+    parser.set_defaults(black_and_white=False)
     return parser
 
 
@@ -190,11 +211,15 @@ def main():
     if not validate_all(paths):
         return 1
 
-    render(paths)
+    render(paths, args.black_and_white)
 
     if args.binder:
-        pdfs = [OUTPUT / f"{path.stem}.pdf" for path in paths]
-        merge_pdfs(pdfs, OUTPUT / "binder.pdf")
+        output_suffix = "-bw" if args.black_and_white else ""
+        pdfs = [
+            OUTPUT / f"{path.stem}{output_suffix}.pdf"
+            for path in paths
+        ]
+        merge_pdfs(pdfs, OUTPUT / f"binder{output_suffix}.pdf")
 
     return 0
 

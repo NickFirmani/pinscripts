@@ -55,6 +55,19 @@ Render every enabled game that has a content file:
 make all
 ```
 
+Color images are used by default. To render with black-and-white images, use
+the `-bw` targets:
+
+```sh
+make game-bw-playboy-bally-1978
+make all-bw
+make binder-bw
+```
+
+The equivalent command-line options are `--color` and
+`--black-and-white` (or `--bw`). Black-and-white PDFs are written with a
+`-bw` suffix, so they can coexist with the color output.
+
 Build the individual PDFs and merge them, in `pins.yaml` order, into a printable binder:
 
 ```sh
@@ -66,7 +79,9 @@ Generated files are written to `output/`:
 ```text
 output/
 ├── playboy-bally-1978.pdf
-└── binder.pdf
+├── playboy-bally-1978-bw.pdf
+├── binder.pdf
+└── binder-bw.pdf
 ```
 
 Clean generated output:
@@ -79,7 +94,10 @@ make clean
 
 1. Add the game to `pins.yaml`. Its `id` is the filename stem used throughout the project.
 2. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file.
-3. Optionally add a playfield or machine image at `images/<id>.jpg` and set the YAML `image` field to that path.
+3. Optionally add a playfield or machine image at `images/<id>.jpg` and set
+   the YAML `image` field to that path. The image is assumed to be in color.
+   To support black-and-white output, add `images/<id>-bw.jpg` beside it; the
+   YAML should continue to reference the color filename.
 4. Render the game. `main.py` validates the YAML first; inspect the resulting PDF after validation succeeds.
 
 For example:

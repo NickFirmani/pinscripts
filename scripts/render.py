@@ -127,7 +127,16 @@ def safe(text):
     return str(text)
 
 
-def build_story(data):
+def resolve_image_path(image_path, black_and_white=False):
+    path = Path(image_path)
+
+    if black_and_white and not path.stem.endswith("-bw"):
+        path = path.with_name(f"{path.stem}-bw{path.suffix}")
+
+    return ROOT / path
+
+
+def build_story(data, black_and_white=False):
     story = []
 
     # -------------------------------------------------------------
@@ -189,7 +198,7 @@ def build_story(data):
     image_path = data.get("image")
 
     if image_path:
-        full_image_path = ROOT / image_path
+        full_image_path = resolve_image_path(image_path, black_and_white)
 
         if full_image_path.exists():
             img = Image(str(full_image_path))
@@ -368,7 +377,7 @@ def build_story(data):
     return story
 
 
-def render_game(content_path: Path, output_path: Path):
+def render_game(content_path: Path, output_path: Path, black_and_white=False):
     data = load_yaml(content_path)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -417,7 +426,7 @@ def render_game(content_path: Path, output_path: Path):
         ]
     )
 
-    doc.build(build_story(data))
+    doc.build(build_story(data, black_and_white))
 
     print(f"Wrote {output_path}")
 
