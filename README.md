@@ -32,6 +32,11 @@ Render one game by ID:
 make game-playboy-bally-1978
 ```
 
+Every render command validates the selected YAML against
+`schema/game.schema.json` before writing any PDFs. Bulk and binder builds
+validate all available content first, so validation errors do not produce a
+partially rebuilt set of files.
+
 Render every enabled game that has a content file:
 
 ```sh
@@ -63,7 +68,7 @@ make clean
 1. Add the game to `pins.yaml`. Its `id` is the filename stem used throughout the project.
 2. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file.
 3. Optionally add a playfield or machine image at `images/<id>.jpg` and set the YAML `image` field to that path.
-4. Validate the YAML, then render the game and inspect the resulting PDF.
+4. Render the game. `main.py` validates the YAML first; inspect the resulting PDF after validation succeeds.
 
 For example:
 
@@ -80,3 +85,12 @@ pins:
 ### Generating a content draft
 
 `prompts/generate-game.md` contains a prompt and exact YAML shape for drafting a commentator-focused game sheet with an LLM. Replace `{{GAME}}` with the machine name and identifying details, save the returned YAML under `content/`, and fact-check it before rendering. Pinball rules can vary by software revision, tournament settings, and machine setup.
+
+## Validation errors
+
+Invalid YAML syntax and schema violations stop the build with a non-zero exit status. Errors identify the content file and field path, for example:
+
+```text
+ERROR: validation failed: content/example-game-1999.yaml
+  - $.shots[0].risk: 'Very High' is not one of ['Low', 'Medium', 'Medium-High', 'High']
+```

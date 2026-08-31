@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import argparse
-import sys
 from pathlib import Path
 
 import yaml
@@ -25,8 +23,6 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
-OUTPUT = ROOT / "output"
 
 
 PAGE_W, PAGE_H = letter
@@ -375,7 +371,7 @@ def build_story(data):
 def render_game(content_path: Path, output_path: Path):
     data = load_yaml(content_path)
 
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
     frame_left = Frame(
         MARGIN,
@@ -426,112 +422,16 @@ def render_game(content_path: Path, output_path: Path):
     print(f"Wrote {output_path}")
 
 
-def enabled_pins():
-    manifest = load_yaml(ROOT / "pins.yaml")
+def merge_pdfs(paths, output_path: Path):
+    from pypdf import PdfWriter
 
-    return [
-        pin for pin in manifest.get("pins", [])
-        if pin.get("enabled", True)
-    ]
-
-
-def render_all():
-    for pin in enabled_pins():
-        pin_id = pin["id"]
-
-        src = CONTENT / f"{pin_id}.yaml"
-
-        if not src.exists():
-            print(f"WARNING: missing content: {src}", file=sys.stderr)
-            continue
-
-        render_game(
-            src,
-            OUTPUT / f"{pin_id}.pdf",
-        )
-
-
-def merge_binder():
-    # ReportLab does not merge existing PDFs itself particularly elegantly.
-    # Use pypdf if binder generation is requested.
-    try:
-        from pypdf import PdfWriter
-    except ImportError:
-        print(
-            "Binder creation requires pypdf. "
-            "Run: pip install pypdf",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     writer = PdfWriter()
 
-    count = 0
-
-    for pin in enabled_pins():
-        path = OUTPUT / f"{pin['id']}.pdf"
-
-        if not path.exists():
-            continue
-
+    for path in paths:
         writer.append(str(path))
-        count += 1
 
-    binder = OUTPUT / "binder.pdf"
-
-    with binder.open("wb") as f:
+    with output_path.open("wb") as f:
         writer.write(f)
 
-    print(f"Wrote {binder} ({count} games)")
-
-
-def main():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "game",
-        nargs="?",
-        help="Game ID, e.g. playboy-bally-1978",
-    )
-
-    parser.add_argument(
-        "--all",
-        action="store_true",
-        help="Render every enabled pin",
-    )
-
-    parser.add_argument(
-        "--binder",
-        action="store_true",
-        help="Render all games and combine into binder.pdf",
-    )
-
-    args = parser.parse_args()
-
-    if args.binder:
-        render_all()
-        merge_binder()
-        return
-
-    if args.all:
-        render_all()
-        return
-
-    if args.game:
-        src = CONTENT / f"{args.game}.yaml"
-
-        if not src.exists():
-            print(f"No content file: {src}", file=sys.stderr)
-            sys.exit(1)
-
-        render_game(
-            src,
-            OUTPUT / f"{args.game}.pdf",
-        )
-        return
-
-    parser.print_help()
-
-
-if __name__ == "__main__":
-    main()
+    print(f"Wrote {output_path} ({len(paths)} games)")
