@@ -1,4 +1,4 @@
-# Pinball Commentary Binder
+# Pinball Commentary Binder Generator
 
 Generate compact, two-column PDF quick references for live pinball commentary. Each game is described in YAML and rendered as a letter-sized sheet covering core rules, important shots, match strategy, danger zones, commentary cues, trivia, and venue notes.
 
@@ -8,6 +8,18 @@ Games are registered in `pins.yaml`
 
 - Python 3
 - `make` (optional, but recommended)
+- ImageMagick (`magick`, required only for processing image variants)
+
+On macOS, install ImageMagick with Homebrew:
+
+```sh
+brew install imagemagick
+```
+
+For other platforms, use the
+[official ImageMagick installation instructions](https://imagemagick.org/script/download.php).
+If `magick` is unavailable, the image helper exits with an installation message;
+the rendering and content-generation commands remain usable.
 
 ## Setup
 
@@ -84,7 +96,12 @@ pins:
 
 ### Generating a content draft
 
-`prompts/generate-game.md` contains a prompt and exact YAML shape for drafting a commentator-focused game sheet with an LLM. Replace `{{GAME}}` with the machine name and identifying details, save the returned YAML under `content/`, and fact-check it before rendering. Pinball rules can vary by software revision, tournament settings, and machine setup.
+`prompts/generate-game.md` is a prompt template for drafting a commentator-focused game sheet with an LLM. Generate a ready-to-use prompt with:
+
+```sh
+make prompt GAME="Jaws (Stern, 2024)"
+```
+Save the LLM's YAML under `content/` and fact-check it before rendering. Pinball rules can vary by software revision, tournament settings, and machine setup.
 
 ## Validation errors
 
@@ -93,4 +110,19 @@ Invalid YAML syntax and schema violations stop the build with a non-zero exit st
 ```text
 ERROR: validation failed: content/example-game-1999.yaml
   - $.shots[0].risk: 'Very High' is not one of ['Low', 'Medium', 'Medium-High', 'High']
+```
+
+### Processing images
+
+Generate grayscale, posterized, and black-and-white print variants of a playfield image:
+
+```sh
+make process-images IMAGE="images/example-game-1999.jpg"
+```
+
+By default, the variants are written beside the source image in
+`<source-name>-variants/`. To choose another directory, set `OUTPUT_DIR`:
+
+```sh
+make process-images IMAGE="images/example-game-1999.jpg" OUTPUT_DIR="output/image-variants"
 ```

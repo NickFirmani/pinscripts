@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 
+from scripts.process_images import process_images
 from scripts.render import merge_pdfs, render_game
 
 
@@ -16,6 +17,7 @@ CONTENT = ROOT / "content"
 OUTPUT = ROOT / "output"
 MANIFEST = ROOT / "pins.yaml"
 SCHEMA = ROOT / "schema" / "game.schema.json"
+PROMPT_TEMPLATE = ROOT / "prompts" / "generate-game.md"
 
 
 def load_yaml(path: Path):
@@ -32,12 +34,25 @@ def enabled_pins():
     ]
 
 
-def schema_validator():
+def load_schema():
     with SCHEMA.open("r", encoding="utf-8") as file:
-        schema = json.load(file)
+        return json.load(file)
+
+
+def schema_validator():
+    schema = load_schema()
 
     Draft202012Validator.check_schema(schema)
     return Draft202012Validator(schema)
+
+
+def generation_prompt(game):
+    template = PROMPT_TEMPLATE.read_text(encoding="utf-8")
+    return (
+        template
+        .replace("{{SCHEMA}}", json.dumps(load_schema(), indent=2))
+        .replace("{{GAME}}", game)
+    )
 
 
 def error_path(error):
@@ -127,12 +142,40 @@ def build_parser():
         action="store_true",
         help="Validate and render enabled pins, then create binder.pdf",
     )
+    actions.add_argument(
+        "--prompt",
+        metavar="GAME",
+        help="Print a generation prompt with the current schema embedded",
+    )
+    actions.add_argument(
+        "--process-images",
+        metavar="SOURCE",
+        type=Path,
+        help="Generate print variants of a playfield image",
+    )
+    parser.add_argument(
+        "--image-output-dir",
+        metavar="DIRECTORY",
+        type=Path,
+        help="Output directory for --process-images",
+    )
     return parser
 
 
 def main():
     parser = build_parser()
     args = parser.parse_args()
+
+    if args.prompt:
+        print(generation_prompt(args.prompt))
+        return 0
+
+    if args.process_images:
+        process_images(args.process_images, args.image_output_dir)
+        return 0
+
+    if args.image_output_dir:
+        parser.error("--image-output-dir requires --process-images")
 
     if args.game:
         paths = [CONTENT / f"{args.game}.yaml"]

@@ -38,72 +38,16 @@ Be particularly careful about:
 
 When uncertain about a fact, omit it rather than invent it.
 
-Return ONLY YAML.
+Return ONLY YAML that validates against the following JSON Schema. Include
+every required property, use no properties the schema does not define, and
+respect all array, string, pattern, numeric, and enum constraints.
 
-Use exactly this schema:
-
-```yaml
-id: lowercase-kebab-case
-
-name:
-manufacturer:
-year:
-
-metadata:
-  designer:
-  artist:
-  production:
-  era:
-  multiball:
-
-hook:
-
-rules:
-  primary:
-  bullets:
-    - ""
-
-watch:
-  - title:
-    text:
-
-shots:
-  - name:
-    value:
-    risk: Low|Medium|Medium-High|High
-    diagram: 1
-
-strategy:
-  ahead:
-  behind:
-  key_decision:
-
-danger:
-  - ""
-
-commentary:
-  - ""
-
-trivia:
-  - ""
-
-summary:
-
-venue_notes:
-  - ""
-  - ""
-
-image: images/LOWERCASE-ID.jpg
+```json
+{{SCHEMA}}
 ```
 
-Constraints:
+Content guidance:
 
-- Maximum 5 `rules.bullets`.
-- Maximum 4 `watch` entries.
-- Maximum 6 important shots.
-- Maximum 5 danger items.
-- Maximum 6 commentary cues.
-- Maximum 5 trivia items.
 - Commentary cues should sound natural when spoken aloud.
 - Avoid generic statements that could describe any pinball machine.
 - Explain abbreviations when first used.
