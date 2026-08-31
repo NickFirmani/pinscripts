@@ -1,0 +1,159 @@
+id: medieval-madness-williams-1997
+name: Medieval Madness
+manufacturer: Williams Electronic Games
+year: 1997
+metadata:
+  designer: Brian Eddy
+  artist: John Youssi / Greg Freres
+  production: 4,016 games
+  era: Williams WPC-95
+  multiball: Castle Multiball; Multiball Madness; Battle for the Kingdom wizard mode
+hook: 'The dependable tournament route is the center castle: advance the drawbridge
+  and gate, destroy castles for escalating points, and use Castle Multiball as scoring
+  or safety. For more variance, qualify several Madnesses before visiting Merlin,
+  ideally stacking Trolls! into Multiball Madness.'
+rules:
+  primary: For castle number N, hit the drawbridge N times, the gate N+1 times, then
+    enter the castle. Castle destruction scores 2M times the castle number for castles
+    1-5; castle six is 20M. Castle progress continues during multiball, making Castle
+    Multiball useful as protection while attacking later castles.
+  bullets:
+  - Castle Multiball needs 3 virtual locks the first time and 6 thereafter; either
+    ramp scores a 750K jackpot, and 5 ramp jackpots light a 1.5M Super Jackpot at
+    the lock.
+  - 'Multiball Madness grows with setup: 1 qualified Madness starts 2 balls, 2-4 start
+    3 balls, and all 5 start 4 balls.'
+  - Qualified Madness shots become Super Jackpots; the castle lock becomes a Double
+    Super Jackpot worth up to 2M with all five Madnesses.
+  - Royal Madness has a 20-second shot timer that resets whenever a required shot
+    is made.
+  - 'A lit Multiball Madness is not automatically a cash-out: delaying Merlin''s Saucer
+    to qualify more Madnesses can create a much stronger multiball.'
+watch:
+- title: Castle hardware
+  text: Drawbridge up, gate exposed, then gate raised tells you exactly which center
+    hit is needed next.
+- title: Madness inserts
+  text: The number of flashing Madness inserts around Merlin indicates how many features
+    are qualified and how strong the upcoming Multiball Madness can be.
+- title: Raised trolls
+  text: Raised trolls mean Trolls! or Troll Madness is active; they alter shot geometry
+    and can signal a valuable multiball stack.
+- title: Achievement inserts
+  text: The six blue achievement inserts and Battle for the Kingdom insert show progress
+    toward the wizard mode.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge through the flashing top rollover; the flipper buttons can change the
+    selected lane.
+  value: Scores 50K plus 10K for each successive skill shot and adds 5 Bonus X. It
+    is the safer, bonus-building choice.
+- name: Super Skill Shot
+  how: Hold the left flipper while launching, then make a flashing major shot after
+    the ball comes to the flipper.
+  value: Scores 100K and starts a Castle Hurry-Up. It trades the safer rollover for
+    immediate controlled offense.
+features:
+- type: ball-save
+  name: Ball Save
+  text: About five seconds after the opening plunge clears the bumpers; also active
+    at multiball starts and Royal Madness. Completing Trolls! during Multiball Madness
+    can restore balls and restart protection.
+- type: player-control
+  name: Troll Bombs
+  text: Pressing the launcher button destroys an active troll. They are especially
+    valuable in Battle for the Kingdom, where trolls can obstruct the castle.
+- type: mystery-award
+  name: Merlin's Magic
+  text: The right saucer can award locks, Trolls!, Madnesses, castle progress, points,
+    bonus effects, or an extra ball. Tournament Play is enabled at this venue.
+- type: video-mode
+  name: Save the Children
+  text: Repeated FIRE completions qualify the video mode, which starts at Merlin's
+    Saucer. It is secondary tournament scoring.
+- type: extra-ball
+  name: Extra Balls
+  text: Several systems can qualify extra balls, including castles, Castle Multiball,
+    and Royal Madness. At this venue they are not played normally.
+shots:
+- name: Catapult
+  value: Advances Catapult Madness and is required for Royal Madness and Battle for
+    the Kingdom progression. Usually pursued when the player wants the higher-variance
+    full progression route.
+  risk: Medium-High
+  diagram: 1
+- name: Peasant Ramp
+  value: Qualifies its Madness feature and scores Castle Multiball jackpots. Useful
+    for building a stronger Madness stack or collecting jackpots.
+  risk: High
+  diagram: 2
+- name: Castle Lock
+  value: Advances Castle Multiball and collects the Double Super Jackpot during Multiball
+    Madness. It can provide either safety or a major cash-out.
+  risk: Medium-High
+  diagram: 3
+- name: Castle Entrance
+  value: Advances and destroys castles, cashes Castle Hurry-Ups, and contributes to
+    Battle for the Kingdom. It is the game's primary repeatable fixed-value scoring
+    route.
+  risk: High
+  diagram: 4
+- name: Damsel Ramp
+  value: Qualifies its Madness feature and scores Castle Multiball jackpots. Useful
+    for building a stronger Madness stack or collecting jackpots.
+  risk: Medium-High
+  diagram: 5
+- name: Merlin's Saucer
+  value: Starts qualified Trolls!, Multiball Madness, Royal Madness, and Merlin's
+    Magic. Players may deliberately avoid it until more Madnesses are qualified.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor castle progress and controlled Castle Multiball. Bank predictable value
+    instead of forcing the Catapult, trolls, or a complicated five-Madness setup.
+  behind: Build several Madnesses, ideally stack Trolls! into Multiball Madness, attack
+    Double Super Jackpots, or push toward Royal Madness and Battle for the Kingdom.
+  key_decision: Cash the castle now or invest in a stronger Madness stack. Castle
+    scoring is immediate and predictable; Madness requires setup and avoiding Merlin's
+    Saucer until the desired features are qualified.
+danger:
+- Castle gate rebounds can fire directly toward the center drain after a hard rejection.
+- Direct troll hits are dangerous; strong players may prefer grazing the troll area
+  through nearby lanes.
+- A partial Peasant Ramp climb can reject and return toward the center.
+- Missing the narrow Castle Lock can create abrupt rebounds from nearby rubber and
+  standups.
+- Fast orbit returns can become dangerous if flipped immediately instead of controlled
+  with a loop pass or dead bounce.
+commentary:
+- 'They''re staying on the castle: predictable points instead of investing in Madness.'
+- The gate is open now; the next clean center shot destroys the castle.
+- Several Madnesses are flashing, but they're avoiding Merlin because they want a
+  stronger multiball first.
+- Trolls! is coming into Multiball Madness; completing it can bring balls back and
+  refresh the save.
+- Castle Multiball may be more about safely hammering the castle than collecting jackpots
+  here.
+- Battle for the Kingdom is getting close; those blue inserts are the checklist.
+trivia:
+- Brian Eddy designed Medieval Madness after previously designing Attack from Mars;
+  the games share structural similarities but differ substantially in scoring priorities.
+- The original Williams game uses the WPC-95 platform and had a documented production
+  run of 4,016 units.
+- The castle uses a motorized drawbridge and moving portcullis that physically change
+  the center shot as the player advances.
+- Credited voices include Tina Fey and Scott Adsit.
+- Chicago Gaming later recreated the game as Medieval Madness Remake.
+summary: Castle setup → destroy castles → Castle Multiball safety → build Madnesses
+  → Trolls! stack → major multiball cash-out
+venue_notes:
+- Tournament bank machine is the original Williams 1997 edition, not the Chicago Gaming
+  remake.
+- Installed CPU ROM is unknown.
+- Official production ROM v1.0 resets Merlin-target progress between balls; unofficial
+  1.09-family ROMs carry scored Merlin targets between balls.
+- Tournament Play is enabled.
+- Extra balls are not played normally; venue configuration may disable them outright
+  or convert them to points.
+- No venue-specific castle, ramp, troll, sling, or outlane tendency has been confirmed.
+image: images/medieval-madness-williams-1997.jpg

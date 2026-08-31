@@ -1,0 +1,163 @@
+id: jaws-pro-stern-2024
+name: JAWS (Pro)
+manufacturer: Stern Pinball
+year: 2024
+metadata:
+  designer: Keith Elwin
+  artist: Michael Barnard
+  production: Pro; also produced as Premium, LE, and later 50th Anniversary trim
+  era: SPIKE 2
+  multiball: Jaws Multiball 1–3, Bounty Hunt multiballs, Search/Rescue, Night Search,
+    plus late-game Great White and Super Celebration
+hook: Start and finish Shark Encounters to permanently increase Machete, then light
+  Machete and spend its multiplier on a valuable Encounter Jackpot, Beach Closed cash-out,
+  or Quickshot. Jaws Multiball 1 can also provide a safer window to work objectives
+  instead of being the primary score.
+rules:
+  primary: Machete is the main scoring leverage. It starts at 2× and can permanently
+    increase through Encounter completions, first-attempt non-Mako Bounty captures,
+    and Night Search. Once lit from the left target bank and collected through its
+    return, it multiplies the next qualifying shot.
+  bullets:
+  - Finishing a Shark Encounter and collecting its fin jackpot permanently adds +1×
+    to base Machete; missing the jackpot gives no Machete increase.
+  - Beach Closed starts after rescuing three beachgoers at one major shot; its hurry-up
+    cash-out can be multiplied by Machete.
+  - Quickshot runs harpoon lane to timed fin. Consecutive successes can build its
+    multiplier to 7×; a miss resets that multiplier, and Machete can also apply.
+  - Feeding Frenzy score persists across the game and is repaid in end-of-ball bonus
+    each ball, then multiplied by bonus X.
+  - Normal multiplayer progress is player-specific; shared progress applies to Co-op
+    or Team play.
+watch:
+- title: Machete lit
+  text: A Machete popup and lit inlane mean the player is preparing one multiplied
+    qualifying shot, so the next major-shot choice is highly intentional.
+- title: Encounter Jackpot
+  text: A raised fin with Encounter Jackpot lit means the player can both score the
+    jackpot and permanently increase base Machete.
+- title: Quickshot setup
+  text: Repeated harpoon-to-fin attempts can indicate the player is protecting and
+    building the Quickshot multiplier.
+- title: Life Ring armed
+  text: An orange Life Ring and attention to the Action button indicate the player
+    has a timed rescue available for a left-outlane drain.
+skill_shots:
+- name: Normal skill shots
+  how: Level 1 plunges to the pop bumper; Level 2 passes the lane above the mini-flipper
+    without touching the bumper; Level 3 reaches the flippers cleanly and then hits
+    the flashing left-bank target before another switch.
+  value: Levels 1–3 award 5M, 10M plus Light Gear, and 15M plus Light Gear respectively.
+    Each normal skill shot adds 5 seconds of ball save, and successful levels advance.
+- name: Secret skill shot
+  how: With no prior switch, plunge into the Chum bucket or either side of the captive-ball
+    area.
+  value: Awards the current skill-shot value.
+- name: Super Secret skill shot
+  how: With no prior switch, hit dead-center in the captive-ball area.
+  value: Awards and advances the current normal skill shot.
+features:
+- type: ball-save
+  name: Life Ring
+  text: Hit the Life Ring target to qualify it, then hit it again while flashing.
+    A correctly timed Action-button press can save a left-outlane drain; its timing
+    becomes less forgiving after successful uses.
+- type: ball-save
+  name: Cheap-drain saves
+  text: Configurable saves protect against a bad Quickshot-lane-to-outlane exit and
+    a right-inlane-gate-to-outlane failure.
+- type: extra-ball
+  name: Extra-ball conversion
+  text: Pro extra balls can be qualified from 8 beachgoers, the third Quickshot, or
+    the Shark Hunter video-mode icon. At this venue they are disabled and convert
+    to 15M, which Machete can multiply.
+- type: player-control
+  name: Flip-Lock
+  text: During multiball, trap a ball on the mini-flipper and press Action to hold
+    that flipper up temporarily, reducing multiball chaos.
+- type: player-control
+  name: Gear
+  text: The right flipper selects the offered Gear before collection at the right
+    ramp. Gear can provide scoring or survival utility, and selling all six unlocks
+    Great White.
+- type: mystery-award
+  name: Competition Mystery
+  text: Competition Mode provides equivalent Mystery sequencing for players.
+shots:
+- name: Left target bank
+  value: Advances Machete and Pipit. Shoot it when preparing the game's primary shot
+    multiplier.
+  risk: Medium-High
+  diagram: 1
+- name: Harpoon lane
+  value: Advances Quickshot and barrel progress. Use it to build Quickshot multiplier
+    or work toward Jaws Multiball.
+  risk: High
+  diagram: 2
+- name: Chum bucket
+  value: Advances the Chum line and Jaws Multiball. Useful when building toward multiball.
+  risk: Medium-High
+  diagram: 3
+- name: Shark Cage / captive ball
+  value: Lights Shark Encounters and Encounter boosts, including the path toward doubled
+    Encounter scoring.
+  risk: High
+  diagram: 4
+- name: Fin target
+  value: Collects Encounter Jackpots, Quickshots, and barrel-related value. This is
+    often the major cash-out shot.
+  risk: High
+  diagram: 5
+- name: Right ramp
+  value: Collects Gear and advances Bounty Hunt progression, making it a utility and
+    alternate-strategy shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take prepared value instead of overbuilding it. Cash a ready Machete on an
+    Encounter Jackpot or Beach Closed hurry-up, prioritize survival tools such as
+    Gear and Life Ring, and use early Jaws Multiball as a control window.
+  behind: 'Accept more variance: fully boost an Encounter to 2×, stack objectives
+    with multiball, build a high Quickshot multiplier and combine it with Machete,
+    or push Bounty and Gear progression for a larger swing.'
+  key_decision: Build versus spend Machete. A player can safely cash the multiplier
+    on strong value already available or continue setup for a much larger but less
+    certain shot.
+danger:
+- Fin and center captive-ball shots can rebound violently back toward the flippers.
+- The Quickshot lane can feed toward the outlane; this venue has the dedicated protection
+  enabled.
+- A right-inlane gate failure can head toward the outlane; this venue has the dedicated
+  protection enabled.
+- The mini-flipper feed can be dangerous on some physical copies, although no abnormal
+  feed is known on this machine.
+- Life Ring only rescues the left outlane, and pressing the Action button too early
+  can waste the save.
+commentary:
+- That Encounter Jackpot also permanently adds another level to Machete.
+- Machete is active; this next qualifying shot is the cash-out.
+- He is using Jaws One as a utility multiball and working the Encounter instead.
+- That Quickshot miss resets the Quickshot multiplier.
+- Life Ring is armed; the Action button can still save the left outlane.
+- Extra balls are disabled here, so that qualification is 15 million, and Machete
+  can multiply it.
+trivia:
+- Stern launched JAWS at CES in January 2024, using footage and audio from all four
+  original films.
+- The game includes custom speech recorded by Richard Dreyfuss and uses John Williams'
+  film theme.
+- The Pro replaces the Premium and LE motorized shark and Orca upper playfield with
+  a static Shark Cage captive-ball assembly and Wave-ramp mini-flipper return.
+- JAWS was Keith Elwin's sixth Stern design.
+- The final wizard mode and Super Celebration were substantial post-launch additions.
+summary: Start Encounter → finish fin jackpot → raise Machete → light Machete → cash
+  on major value → use Jaws Multiball for safer setup
+venue_notes:
+- Installed software is Pro v1.02.0.
+- Tournament configuration method is unknown.
+- Extra balls are disabled and convert to 15M.
+- Both configurable cheap-drain protections are enabled.
+- Life Ring uses normal/default difficulty.
+- No abnormal machine-specific feed is currently known.
+- 'This is the Pro layout: no Orca upper playfield or motorized shark bash toy.'
+image: images/jaws-pro-stern-2024.jpg

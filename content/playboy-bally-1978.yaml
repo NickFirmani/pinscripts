@@ -1,113 +1,133 @@
 id: playboy-bally-1978
-
 name: Playboy
-manufacturer: Bally
+manufacturer: Bally Manufacturing Co.
 year: 1978
-
 metadata:
   designer: Jim Patla
   artist: Paul Faris
-  production: "~18,250"
-  era: Early solid-state
-  multiball: "No"
-
-hook: >
-  Classic early Bally where the game revolves around building bonus,
-  increasing its multiplier, and surviving long enough to cash it in.
-
+  production: 18,250 units
+  era: Bally AS-2518-35 solid-state, late-1970s
+  multiball: None
+hook: 'Work the four top Key lanes plus the center #5 Key to advance the held bonus
+  multiplier from 2X to 3X to 5X. Build 20K Super Bonus early, then cycle the right
+  orbit and Grotto for repeatable scoring. Target banks offer bigger-risk alternate
+  swings.'
 rules:
-  primary: >
-    Collect the five Playboy keys, build bonus and increase the bonus
-    multiplier. Much of the value of a ball is realized when bonus is
-    collected at the end of the ball.
-
+  primary: 'Complete all five Playboy Keys to advance the held bonus multiplier: 2X,
+    then 3X, then 5X; later completions score a Special. Reaching 20K bonus lights
+    Super Bonus, so later balls begin with 20K already established. A full Key set
+    also maximizes the Grotto at 25K plus five bonus advances.'
   bullets:
-    - Collect the five Playboy keys.
-    - Build and multiply end-of-ball bonus.
-    - Complete the drop-target bank for additional awards.
-    - Complete the Playmate targets.
-    - Use the Grotto/right-side shot as its value increases.
-
+  - Keys 1-4 are the top rollover lanes; Key 5 is the center standup below the pop
+    bumpers.
+  - Base bonus can reach 39K, making a developed 5X end-of-ball bonus a major scoring
+    opportunity.
+  - The Grotto becomes more valuable as Keys are collected and ejects the ball back
+    toward the upper playfield.
+  - Completing the five-bank drops lights 25K outlane scoring and advances Special
+    progression.
+  - Completing all five Playmate targets once lights Extra Ball at the star rollover;
+    a second completion lights Special.
 watch:
-  - title: Bonus
-    text: >
-      The accumulated bonus and multiplier are often the main scoring
-      story. Call out a large bonus before the ball drains.
-
-  - title: Keys
-    text: >
-      Key completion drives the player's main progression and changes
-      the value of later play.
-
-  - title: Ball control
-    text: >
-      Upper-playfield action can quickly turn a controlled ball into
-      an unpredictable return.
-
+- title: 2X / 3X / 5X lit
+  text: The player has advanced the Key-set bonus multiplier, making every additional
+    point of end-of-ball bonus more valuable.
+- title: Super Bonus lit
+  text: The player has reached 20K bonus and secured a 20K starting-bonus floor for
+    later balls.
+- title: 25K Grotto lit
+  text: The Key set is fully developed; expect repeated Grotto and upper-playfield
+    attempts.
+- title: 25K outlane lit
+  text: The drop bank is complete, so an outlane drain can still add a material 25K
+    award.
 skill_shots: []
-
-features: []
-
+features:
+- type: extra-ball
+  name: Playmate Extra Ball
+  text: Complete all five Playmate standups once to light the star rollover for Extra
+    Ball. The game permits at most one extra ball per ball in play.
+- type: other
+  name: Special progression
+  text: Later Key, drop-bank, and Playmate completions can produce Specials. Their
+    tournament treatment depends on venue configuration.
+- type: other
+  name: 25K outlanes
+  text: Completing the drop bank lights 25K outlane scoring. Whether one or both outlanes
+    light is operator-adjustable.
 shots:
-  - name: Playboy Keys
-    value: Core progression and bonus multiplier
-    risk: Medium
-    diagram: 1
-
-  - name: Drop Targets
-    value: Completion scoring / feature
-    risk: Medium-High
-    diagram: 2
-
-  - name: Playmate Targets
-    value: Completion feature
-    risk: High
-    diagram: 3
-
-  - name: Grotto / Right Orbit
-    value: Bonus progression and qualified awards
-    risk: Medium
-    diagram: 4
-
+- name: Grotto
+  value: Primary cash-out and recirculation shot. Its value rises with collected Keys;
+    a full set lights 25K and gives five bonus advances.
+  risk: Medium
+  diagram: 1
+- name: Five Playmate standups
+  value: Build bonus and qualify Extra Ball, then Special. Attractive when the bank
+    is nearly complete or the award matters.
+  risk: Medium-High
+  diagram: 2
+- name: Top Key lanes
+  value: Collect Keys 1-4 for multiplier progression and stronger Grotto value.
+  risk: Medium
+  diagram: 3
+- name: '#5 Key standup'
+  value: Completes the five-Key set after the top lanes are collected, advancing the
+    multiplier and Grotto state.
+  risk: Medium-High
+  diagram: 4
+- name: Five-bank drops
+  value: Lights 25K outlane scoring and advances Special progression; a high-value
+    alternate when the bank is nearly complete.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit / top feed
+  value: Repeatable route back to the top Key lanes and the preferred way to keep
+    working the main Keys/Grotto strategy.
+  risk: Medium
+  diagram: 6
 strategy:
-  ahead: >
-    Favor controlled play and preserve a strong accumulated bonus.
-
-  behind: >
-    Expect more aggressive attempts at incomplete features or
-    higher-variance scoring opportunities.
-
-  key_decision: >
-    Finishing a nearly complete feature may not be worth risking a
-    valuable multiplied bonus.
-
+  ahead: Favor the orbit, top lanes, Keys, and Grotto cycle. Once Super Bonus is established,
+    protect the developed bonus engine rather than repeatedly attacking riskier standup
+    or drop-target banks.
+  behind: Accept more variance by finishing drop targets or Playmates for 25K outlane
+    scoring and major awards. Building toward a deep 5X end-of-ball bonus is another
+    large comeback opportunity.
+  key_decision: Stay on the comparatively controlled Keys/Grotto route, or leave it
+    to finish a nearly completed target bank. The alternate route becomes more attractive
+    when only one or two useful targets remain.
 danger:
-  - Drop-target rebounds can produce fast center returns.
-  - The upper pop area removes much of the player's control.
-  - Outlane danger is highly dependent on machine setup.
-  - Chasing one remaining target can be a classic tournament trap.
-
+- Playmate standups can rebound the ball back into the bumper area instead of returning
+  it cleanly.
+- Repeated drop-target attacks trade progress for uncontrolled rebounds.
+- Pop-bumper exits can send the ball laterally toward the outlanes with little warning.
+- 'The #5 Key standup is strategically necessary but less controlled than simply feeding
+  the upper lanes.'
+- A successful Grotto or upper-playfield return still leaves the ball descending through
+  the pop bumpers before control is regained.
 commentary:
-  - >
-    The multiplier is really the key to understanding the value of this ball.
-  - >
-    At this point survival may be worth more than completing another feature.
-  - >
-    That's the risk-reward question: is finishing the bank worth putting
-    the ball in danger?
-  - >
-    Once the ball gets into the pops, the machine gets a vote.
-
+- That is the fifth Key, so the bonus multiplier steps up.
+- Super Bonus is lit; later balls now start with twenty thousand bonus.
+- The Grotto is at full value now, so this is the shot they want to repeat.
+- They are leaving the safer upstairs strategy to finish that drop bank.
+- Drops are complete, so the outlane is worth twenty-five thousand now.
+- That target rebound is the danger here; the ball is back in the pops instead of
+  under control.
 trivia:
-  - Approximately 18,250 machines were produced.
-  - Artwork is by Paul Faris.
-  - It is a good example of Bally's early solid-state design period.
-  - Do not confuse it with Stern's 2002 Playboy.
-
-summary: "KEYS -> MULTIPLIER -> BONUS -> SURVIVE"
-
+- Bally produced 18,250 Playboy machines.
+- Jim Patla designed the game and Paul Faris created the artwork.
+- The backglass depicts Hugh Hefner, Patti McGuire, and Sondra Theodore.
+- Contemporary trade press described a wolf whistle at game start and music based
+  on the Playboy After Dark theme.
+summary: Keys 1-5 → 2X/3X/5X bonus → reach 20K Super Bonus → maximize Grotto → repeat
+  upper-playfield cycle
 venue_notes:
-  - ""
-  - ""
-
-image: images/playboy-bally-1978.png
+- This machine is configured for 3-ball play.
+- Collected Key lamps are held between balls on this machine.
+- The top Key lanes are not paired; lanes 1-4 must be collected individually.
+- Extra Ball and Special tournament behavior is not confirmed; venue staff believe
+  they are probably disabled.
+- The behavior of the 25K outlane lamps after drop-bank completion is currently unknown.
+- No tournament-important physical quirk is currently known for this machine.
+- Factory rules are DIP-adjustment sensitive, so award persistence and outlane behavior
+  should not be assumed from another Playboy machine.
+image: images/playboy-bally-1978.jpg

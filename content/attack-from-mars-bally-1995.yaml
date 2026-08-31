@@ -1,0 +1,161 @@
+id: attack-from-mars-bally-1995
+name: Attack From Mars
+manufacturer: Bally/Midway
+year: 1995
+metadata:
+  designer: Brian Eddy
+  artist: Doug Watson
+  production: Approximately 3,450 original machines
+  era: Williams WPC-95
+  multiball: Regular Multiball (3-ball), Martian Multiball (2-ball), Total Annihilation
+    (4-ball), Strobe Multiball (3-ball); Rule the Universe is the deep wizard multiball.
+hook: Open the saucer safely, build regular Multiball, and use multiball protection
+  to attack the dangerous center. Progress the four outer shots for stacked hurry-ups
+  and Total Annihilation; five regular Multiball jackpots light the roaming Super
+  Jackpot.
+rules:
+  primary: Clear the three forcefield targets, then hit the exposed saucer until it
+    can be destroyed. Build three virtual locks for regular Multiball, use the four
+    outer shots to start and stack saucer hurry-ups, and cash major value through
+    Super Jackpot, Total Annihilation, or deeper saucer progress.
+  bullets:
+  - Three completions of any ramp or orbit start a saucer hurry-up; stacking additional
+    completed shots raises it to 300M, then 500M, and completing all four awards 1B
+    plus Total Annihilation.
+  - Regular Multiball has five one-shot jackpots starting at 60M and increasing by
+    10M; completing all five lights a roaming Super Jackpot starting at 250M.
+  - Total Annihilation progress carries until the mode starts, then all 12 lamps reset.
+    A live hurry-up survives into multiball until collected or timed out.
+  - Martian Attack starts after spelling M-A-R-T-I-A-N and shooting Stroke of Luck;
+    hit all four Martians within 30 seconds for Martian Multiball. Martian Bombs carry
+    across attacks.
+  - Bonus X can reach 250X and normally resets at end of ball unless Hold Bonus has
+    been awarded, so end-of-ball bonus can become match-significant.
+watch:
+- title: Forcefield and saucer
+  text: Shield down means an Attack Wave is active; expect center shots or a Multiball
+    setup before attacking the saucer.
+- title: Outer-shot lamps
+  text: Three lamps under each ramp or orbit show Total Annihilation progress. Several
+    nearly complete shots signal a possible 300M, 500M, or 1B hurry-up stack.
+- title: Roaming Super Jackpot
+  text: After all five regular Multiball jackpots are collected, the Super Jackpot
+    moves from shot to shot with a distinctive audio blip.
+- title: Martian Attack
+  text: Jumping Martians show the mode is live. A flashing Launch button means Martian
+    Bombs are available and can finish the fourth Martian to start Multiball.
+skill_shots:
+- name: Normal Skill Shot
+  how: Launch normally into the top Bonus X lanes and use the flippers to steer the
+    flashing lane.
+  value: Awards 10M plus 5X Bonus; point value increases by 10M for each successful
+    skill shot. Useful when Bonus X matters or the forcefield is already down.
+- name: Super Skill Shot
+  how: Hold the left flipper while pressing Launch, then make the first qualifying
+    shot.
+  value: A ramp or orbit gives 50M plus all three Total Annihilation lamps for that
+    shot; a forcefield hit gives 50M and instantly lowers the forcefield. It consumes
+    the opening ball saver.
+features:
+- type: ball-save
+  name: Ball saves
+  text: There is a brief opening saver; the Super Skill Shot generally extinguishes
+    it immediately. Multiballs have separate saves, Strobe has a long opening save
+    plus a short post-mode save, and Rule the Universe has about a 30-second save.
+- type: video-mode
+  name: Video Mode
+  text: Normally a once-per-player Stroke of Luck feature. Flippers aim, firing is
+    automatic, and Launch uses one Smart Bomb to clear the screen. Completion can
+    score 635M.
+- type: extra-ball
+  name: Extra Balls
+  text: Native rules award Extra Balls from several features, but this venue uses
+    tournament mode and Extra Balls are disabled or converted to points.
+- type: player-control
+  name: Martian Bombs
+  text: During Martian Attack, a flashing Launch button spends a bomb to kill one
+    Martian. Killing the fourth Martian this way can still start Multiball after the
+    ball enters an outlane, as long as it has not reached the trough.
+- type: mystery-award
+  name: Stroke of Luck
+  text: 'Tournament mode is enabled. Award behavior depends materially on ROM: V1.1
+    generally gives 50M, while 1.13/1.13B uses deterministic state-based awards.'
+shots:
+- name: Lock ramp / hole
+  value: Builds virtual locks for regular Multiball and later serves as a jackpot
+    and Total Annihilation cash-out shot.
+  risk: Medium
+  diagram: 1
+- name: Forcefield / Saucer
+  value: Advances Attack Waves and Conquer Mars and cashes saucer hurry-ups. Huge
+    direct value, but safest when attacked during multiball.
+  risk: High
+  diagram: 2
+- name: M-A-R-T-I-A-N targets
+  value: Spell M-A-R-T-I-A-N to qualify Martian Attack and build access to stackable
+    Martian Multiball.
+  risk: Medium-High
+  diagram: 3
+- name: Capture / Big-O-Beam / Tractor Beam / Atomic Blaster
+  value: The two loops and two ramps build hurry-ups, Total Annihilation, and combos;
+    completing several before cashing creates major scoring leverage.
+  risk: Medium
+  diagram: 4
+- name: Stroke of Luck
+  value: Starts Martian Attack and can award other valuable features; tournament behavior
+    is strongly ROM-dependent.
+  risk: Medium
+  diagram: 5
+strategy:
+  ahead: Favor controlled ramp and lock play, cash an available hurry-up rather than
+    greedily extending it, and use Multiball to protect saucer progress. If center
+    rebounds are poor, avoid unnecessary direct forcefield shots.
+  behind: 'Push variance with stacked hurry-ups: hold the 100M value while completing
+    more outer shots to reach 300M or 500M, with the fourth completion paying 1B plus
+    Total Annihilation. A Martian Attack plus main Multiball stack or deep saucer
+    push adds more upside.'
+  key_decision: Cash the saucer now, or keep setting up safety and leverage? Strong
+    players may take the dangerous center value immediately or build Multiball and
+    Total Annihilation first so center hits happen with extra balls and a saver.
+danger:
+- 'Forcefield head-on: fast center-target rebounds can go straight down the middle.'
+- 'Exposed saucer drop target: still dangerous; glancing side targets can be safer
+  than drilling the center.'
+- 'Left inlane: balls can roll unusually far up the lane and find the left outlane.'
+- 'Lock ramp: weak shots can fail to climb and return abruptly.'
+- 'Orbit to pop-bumper area: loops often feed the top lanes and pops, producing uncontrolled
+  exits.'
+commentary:
+- The shield is down—now the question is whether they attack the saucer or bring Multiball
+  first.
+- 'That’s the third completion: hurry-up is running at the saucer.'
+- They’re not cashing the 100 million—they’re trying to stack it to 300 or 500.
+- 'All four completed: that’s the billion, and Total Annihilation starts automatically.'
+- All five jackpots are collected; now watch the roaming Super Jackpot.
+- One Martian left and a bomb available—that Launch button is effectively a Multiball
+  bailout.
+trivia:
+- Attack From Mars was designed by Brian Eddy and programmed by tournament champion
+  Lyman Sheats; the pair later collaborated on Medieval Madness.
+- Brian Eddy originally prototyped a more elaborate mothership intended to move over
+  the playfield on a telescoping or pivoting mechanism, but it proved impractical.
+- The original production run was approximately 3,450 machines.
+- The Dirty Pool behavior—getting a ball behind the rising forcefield and using it
+  to spot another saucer—became an intentionally recognized rule in V1.1.
+- The game was not a license for the film Mars Attacks!; the concept predated it.
+summary: Lower forcefield → build Multiball → stack hurry-ups → Total Annihilation
+  → Super Jackpot → attack saucer safely
+venue_notes:
+- Venue machine is the original Bally/Midway 1995 WPC-95 version, not the Chicago
+  Gaming remake.
+- Tournament/competition mode is enabled.
+- Game is configured for 3 balls.
+- Extra Balls are disabled or converted to points; exact treatment is unresolved.
+- CPU ROM is unknown. Stroke of Luck tournament behavior differs materially between
+  official V1.1 and later 1.13/1.13B code.
+- Super Jackpot progression is ROM-sensitive; do not assume a fixed progression beyond
+  the verified starting value.
+- Video Mode Extra Ball behavior also changes in 1.13.
+- Ball-save durations can be operator-adjusted; only the relative behavior in the
+  brief is safe to describe.
+image: images/attack-from-mars-bally-1995.jpg
