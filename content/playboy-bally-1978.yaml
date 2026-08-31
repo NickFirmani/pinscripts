@@ -1,0 +1,109 @@
+id: playboy-bally-1978
+
+name: Playboy
+manufacturer: Bally
+year: 1978
+
+metadata:
+  designer: Jim Patla
+  artist: Paul Faris
+  production: "~18,250"
+  era: Early solid-state
+  multiball: "No"
+
+hook: >
+  Classic early Bally where the game revolves around building bonus,
+  increasing its multiplier, and surviving long enough to cash it in.
+
+rules:
+  primary: >
+    Collect the five Playboy keys, build bonus and increase the bonus
+    multiplier. Much of the value of a ball is realized when bonus is
+    collected at the end of the ball.
+
+  bullets:
+    - Collect the five Playboy keys.
+    - Build and multiply end-of-ball bonus.
+    - Complete the drop-target bank for additional awards.
+    - Complete the Playmate targets.
+    - Use the Grotto/right-side shot as its value increases.
+
+watch:
+  - title: Bonus
+    text: >
+      The accumulated bonus and multiplier are often the main scoring
+      story. Call out a large bonus before the ball drains.
+
+  - title: Keys
+    text: >
+      Key completion drives the player's main progression and changes
+      the value of later play.
+
+  - title: Ball control
+    text: >
+      Upper-playfield action can quickly turn a controlled ball into
+      an unpredictable return.
+
+shots:
+  - name: Playboy Keys
+    value: Core progression and bonus multiplier
+    risk: Medium
+    diagram: 1
+
+  - name: Drop Targets
+    value: Completion scoring / feature
+    risk: Medium-High
+    diagram: 2
+
+  - name: Playmate Targets
+    value: Completion feature
+    risk: High
+    diagram: 3
+
+  - name: Grotto / Right Orbit
+    value: Bonus progression and qualified awards
+    risk: Medium
+    diagram: 4
+
+strategy:
+  ahead: >
+    Favor controlled play and preserve a strong accumulated bonus.
+
+  behind: >
+    Expect more aggressive attempts at incomplete features or
+    higher-variance scoring opportunities.
+
+  key_decision: >
+    Finishing a nearly complete feature may not be worth risking a
+    valuable multiplied bonus.
+
+danger:
+  - Drop-target rebounds can produce fast center returns.
+  - The upper pop area removes much of the player's control.
+  - Outlane danger is highly dependent on machine setup.
+  - Chasing one remaining target can be a classic tournament trap.
+
+commentary:
+  - >
+    The multiplier is really the key to understanding the value of this ball.
+  - >
+    At this point survival may be worth more than completing another feature.
+  - >
+    That's the risk-reward question: is finishing the bank worth putting
+    the ball in danger?
+  - >
+    Once the ball gets into the pops, the machine gets a vote.
+
+trivia:
+  - Approximately 18,250 machines were produced.
+  - Artwork is by Paul Faris.
+  - It is a good example of Bally's early solid-state design period.
+  - Do not confuse it with Stern's 2002 Playboy.
+
+summary: "KEYS -> MULTIPLIER -> BONUS -> SURVIVE"
+
+venue_notes:
+  - ""
+  - ""
+
+image: images/playboy-bally-1978.jpg
