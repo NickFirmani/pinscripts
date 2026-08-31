@@ -71,7 +71,7 @@ class RenderTests(unittest.TestCase):
             patch.object(app, "OUTPUT", output),
             patch.object(
                 app,
-                "content_for_enabled_pins",
+                "content_for_selected_pins",
                 return_value=[content_path],
             ),
             patch.object(app, "validate_all", return_value=True),

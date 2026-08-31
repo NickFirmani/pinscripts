@@ -2,7 +2,7 @@
 
 Generate compact, two-column PDF quick references for live pinball commentary. Each game is described in YAML and rendered as a letter-sized sheet covering core rules, important shots, match strategy, danger zones, commentary cues, trivia, and venue notes.
 
-Games are registered in `pins.yaml`
+`pins.yaml` controls which game files are included in bulk builds.
 
 ## Requirements
 
@@ -49,7 +49,7 @@ Every render command validates the selected YAML against
 validate all available content first, so validation errors do not produce a
 partially rebuilt set of files.
 
-Render every enabled game that has a content file:
+Render the games selected by `pins.yaml`:
 
 ```sh
 make all
@@ -68,7 +68,7 @@ The equivalent command-line options are `--color` and
 `--black-and-white` (or `--bw`). Black-and-white PDFs are written with a
 `-bw` suffix, so they can coexist with the color output.
 
-Build the individual PDFs and merge them, in `pins.yaml` order, into a printable binder:
+Build the individual PDFs and merge them into a printable binder:
 
 ```sh
 make binder
@@ -92,25 +92,32 @@ make clean
 
 ## Adding a game
 
-1. Add the game to `pins.yaml`. Its `id` is the filename stem used throughout the project.
-2. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file.
-3. Optionally add a playfield or machine image at `images/<id>.jpg` and set
+1. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file. Its `id` must match the filename stem.
+2. Optionally add a playfield or machine image at `images/<id>.jpg` and set
    the YAML `image` field to that path. The image is assumed to be in color.
    To support black-and-white output, add `images/<id>-bw.jpg` beside it; the
    YAML should continue to reference the color filename.
-4. Render the game. `main.py` validates the YAML first; inspect the resulting PDF after validation succeeds.
+3. Render the game. `main.py` validates the YAML first; inspect the resulting PDF after validation succeeds.
 
-For example:
+## Selecting games
+
+`pins.yaml` contains only ordered lists of pin IDs:
 
 ```yaml
-# pins.yaml
-pins:
-  - id: example-game-1999
-    name: Example Game
-    manufacturer: Example
-    year: 1999
-    enabled: true
+enabled: []
+
+disabled:
+  - example-game-1999
 ```
+
+When `enabled` is empty, bulk and binder builds include every YAML file directly
+under `content/`, sorted by ID, except IDs in `disabled`. This default makes a
+new content file eligible automatically.
+
+When `enabled` is non-empty, it is an explicit allowlist and its order becomes
+the binder order. Every explicitly enabled ID must have a matching
+`content/<id>.yaml` file. Disabled IDs do not require content files. IDs must be
+unique kebab-case strings, and the same ID cannot appear in both lists.
 
 ### Generating a content draft
 

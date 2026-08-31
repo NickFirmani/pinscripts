@@ -22,6 +22,11 @@ MANIFEST = ROOT / "pins.yaml"
 SCHEMA = ROOT / "schema" / "game.schema.json"
 RESEARCH_PROMPT_TEMPLATE = ROOT / "prompts" / "research-game.md"
 FORMAT_PROMPT_TEMPLATE = ROOT / "prompts" / "format-game-yaml.md"
+PIN_ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+
+
+class PinRegistryError(ValueError):
+    pass
 
 
 def load_yaml(path: Path):
@@ -29,13 +34,63 @@ def load_yaml(path: Path):
         return yaml.safe_load(file)
 
 
-def enabled_pins():
-    manifest = load_yaml(MANIFEST)
-    return [
-        pin
-        for pin in manifest.get("pins", [])
-        if pin.get("enabled", True)
-    ]
+def load_pin_registry():
+    try:
+        registry = load_yaml(MANIFEST)
+    except yaml.YAMLError as error:
+        raise PinRegistryError(f"invalid YAML: {error}") from error
+
+    if not isinstance(registry, dict):
+        raise PinRegistryError("the document must be a mapping")
+
+    expected_keys = {"enabled", "disabled"}
+    actual_keys = set(registry)
+    if actual_keys != expected_keys:
+        missing = sorted(expected_keys - actual_keys)
+        extra = sorted(actual_keys - expected_keys)
+        details = []
+        if missing:
+            details.append(f"missing keys: {', '.join(missing)}")
+        if extra:
+            details.append(f"unknown keys: {', '.join(extra)}")
+        raise PinRegistryError("; ".join(details))
+
+    for list_name in ("enabled", "disabled"):
+        pin_ids = registry[list_name]
+        if not isinstance(pin_ids, list):
+            raise PinRegistryError(f"{list_name} must be a list")
+
+        invalid_ids = [
+            pin_id
+            for pin_id in pin_ids
+            if not isinstance(pin_id, str)
+            or PIN_ID_PATTERN.fullmatch(pin_id) is None
+        ]
+        if invalid_ids:
+            raise PinRegistryError(
+                f"{list_name} contains invalid pin IDs: "
+                + ", ".join(repr(pin_id) for pin_id in invalid_ids)
+            )
+
+        duplicates = sorted({
+            pin_id
+            for pin_id in pin_ids
+            if pin_ids.count(pin_id) > 1
+        })
+        if duplicates:
+            raise PinRegistryError(
+                f"{list_name} contains duplicate pin IDs: "
+                + ", ".join(duplicates)
+            )
+
+    overlap = sorted(set(registry["enabled"]) & set(registry["disabled"]))
+    if overlap:
+        raise PinRegistryError(
+            "pin IDs cannot be both enabled and disabled: "
+            + ", ".join(overlap)
+        )
+
+    return registry
 
 
 def load_schema():
@@ -211,19 +266,30 @@ def validate_content(path: Path, validator):
     ]
 
 
-def content_for_enabled_pins():
-    paths = []
+def content_for_selected_pins():
+    registry = load_pin_registry()
+    enabled = registry["enabled"]
+    disabled = set(registry["disabled"])
 
-    for pin in enabled_pins():
-        path = CONTENT / f"{pin['id']}.yaml"
+    if enabled:
+        missing = [
+            pin_id
+            for pin_id in enabled
+            if not (CONTENT / f"{pin_id}.yaml").is_file()
+        ]
+        if missing:
+            raise PinRegistryError(
+                "enabled pin IDs have no content file: " + ", ".join(missing)
+            )
+        selected = enabled
+    else:
+        selected = sorted(
+            path.stem
+            for path in CONTENT.glob("*.yaml")
+            if path.stem not in disabled
+        )
 
-        if not path.exists():
-            print(f"WARNING: missing content: {path}", file=sys.stderr)
-            continue
-
-        paths.append(path)
-
-    return paths
+    return [CONTENT / f"{pin_id}.yaml" for pin_id in selected]
 
 
 def validate_all(paths):
@@ -268,12 +334,12 @@ def build_parser():
     actions.add_argument(
         "--all",
         action="store_true",
-        help="Validate and render every enabled pin",
+        help="Validate and render the pins selected by pins.yaml",
     )
     actions.add_argument(
         "--binder",
         action="store_true",
-        help="Validate and render enabled pins, then create binder.pdf",
+        help="Render the pins selected by pins.yaml, then create binder.pdf",
     )
     actions.add_argument(
         "--game-research",
@@ -345,7 +411,11 @@ def main():
         if not paths[0].exists():
             parser.error(f"no content file: {paths[0]}")
     elif args.all or args.binder:
-        paths = content_for_enabled_pins()
+        try:
+            paths = content_for_selected_pins()
+        except PinRegistryError as error:
+            print(f"ERROR: invalid {MANIFEST}: {error}", file=sys.stderr)
+            return 1
     else:
         parser.print_help()
         return 0
