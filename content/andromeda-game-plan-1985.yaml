@@ -1,0 +1,119 @@
+id: andromeda-game-plan-1985
+name: Andromeda
+manufacturer: Game Plan
+year: 1985
+metadata:
+  designer: Ed Cebula and Mike Kubin
+  artist: Paul Faris
+  production: 500 units reported
+  era: Game Plan MPU-2 solid-state
+  multiball: 2-ball multiball; all playfield scoring is doubled
+hook: Build the spinner with the six drop targets, build Bonus X through the top lanes,
+  then harvest the far-left spinner. For higher variance, drop the black lock target,
+  lock a ball, and hit Launch Ball to start 2-ball multiball with 2X playfield scoring.
+rules:
+  primary: Complete both 3-bank drop-target banks to score 50K and advance the spinner.
+    Top-lane completions advance Bonus X through 2X, 3X, 4X, 5X, then 10X. Multiball
+    requires the black drop, an upper-left lock, and the Launch Ball target; during
+    multiball all playfield scoring is doubled.
+  bullets:
+  - Top lanes score 3K, advance bonus, and completed lit lanes advance Bonus X.
+  - A full six-target drop-bank cycle scores 50K and advances spinner value.
+  - The second full drop-bank cycle normally lights the right return lane for Extra
+    Ball.
+  - A physically locked ball is shared state and can be released by another player
+    using Launch Ball.
+  - A fast lock attempt can pass through the lock area to the top without actually
+    locking.
+watch:
+- title: Black drop is down
+  text: The upper-left lock route is open, so a lock attempt is likely next.
+- title: Ball in the lock saucer
+  text: Launch Ball can now start multiball, including with a ball left there by another
+    player.
+- title: Bonus X at 5X
+  text: One more completed top-lane set advances the multiplier to 10X, making end-of-ball
+    bonus much more important.
+- title: Multiball starts
+  text: All playfield scoring is doubled, making an already-built spinner especially
+    valuable.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Right return-lane Extra Ball
+  text: A second complete cycle of all six drop targets normally lights the right
+    return lane for Extra Ball. This tournament setup has Extra Balls disabled.
+- type: player-control
+  name: Top-lane lane change
+  text: The right flipper shifts the lit top-lane insert, helping complete lane sets
+    and advance Bonus X.
+shots:
+- name: Spinner / orbit
+  value: Primary repeatable scoring shot; becomes more valuable after drop-bank progress
+    and especially during 2X multiball.
+  risk: Medium
+  diagram: 1
+- name: Black lock drop
+  value: Opens the upper-left lock route and begins the multiball sequence.
+  risk: Medium-High
+  diagram: 2
+- name: Lock saucer
+  value: Locks one ball for multiball after the black drop is down.
+  risk: Medium
+  diagram: 3
+- name: Launch Ball target
+  value: Releases the locked ball and starts 2-ball multiball with doubled playfield
+    scoring.
+  risk: High
+  diagram: 4
+- name: Six drop targets
+  value: Each full cycle scores 50K and advances spinner value; completing nearly
+    finished banks can be worth the rebound risk.
+  risk: Medium-High
+  diagram: 5
+- name: Top lanes
+  value: Build bonus and Bonus X, with the multiplier progressing as high as 10X.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor controlled spinner and top-lane scoring, let incidental hits work on
+    the drops, and avoid forcing dangerous drop-target or multiball setup shots unless
+    the payoff is close.
+  behind: Finish the drops, build the spinner, start multiball, and attack the spinner
+    while all playfield scoring is doubled for a higher-variance comeback.
+  key_decision: Choose between relatively controlled spinner-plus-bonus scoring and
+    the riskier lock and Launch Ball sequence that creates 2X multiball. Both routes
+    are documented competitive approaches.
+danger:
+- An off-center Launch Ball hit can rocket across the playfield toward the right drain.
+- Balls exiting above or between the drop banks can come straight down the middle.
+- The right-side return can become dangerous if the machine feeds it toward center
+  instead of the right flipper.
+- Around the lower-left pop, holding the left flipper up can help guard against a
+  center drain.
+- A lock shot with too much speed can pass through the lock area to the top without
+  locking.
+commentary:
+- Black drop is down — now they're looking for the upper-left lock.
+- There's already a ball in the physical lock, so that multiball is stealable.
+- Launch Ball starts two-ball multiball, and the whole playfield is now doubled.
+- They've built the spinner; that's the money shot now.
+- They're at 5X bonus — completing those top lanes jumps it to 10X.
+- Watch this right-side feed; if it falls toward center, it can get dangerous quickly.
+trivia:
+- Only 500 Andromeda machines are reported produced.
+- Paul Faris created the artwork; Ed Cebula and Mike Kubin designed the game.
+- Andromeda has no custom speech.
+- Game Plan used an otherwise spare driver-board relay for additional playfield general
+  illumination on Andromeda.
+summary: Drops → build spinner → build Bonus X → lock ball → Launch Ball → 2X multiball
+  → rip spinner
+venue_notes:
+- Tournament setup is 3 balls.
+- Bonus multiplier recall is not held between balls.
+- Spinner value recall is not held between balls.
+- Extra Balls are disabled; any point conversion is not known.
+- Spinner starting value has not been confirmed.
+- Right-side return behavior and Launch Ball or lock-saucer rejects have not been
+  characterized for this physical machine.
+image: images/andromeda-game-plan-1985.jpg
