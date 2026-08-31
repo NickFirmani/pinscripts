@@ -116,12 +116,31 @@ pins:
 
 Content generation is split between two prompts so each model can focus on
 what it does best. The templates are `prompts/research-game.md` and
-`prompts/format-game-yaml.md`. First, generate a research prompt for a
-high-power, general-purpose model with internet access:
+`prompts/format-game-yaml.md`. Generate a research prompt for a high-power,
+general-purpose model with internet access. The command prints the prompt,
+offers to copy it to the macOS clipboard, and then waits for the response:
 
 ```sh
-make research-prompt GAME="Jaws (Stern, 2024)" > /tmp/jaws-research-prompt.md
+make game-research GAME="Jaws Premium 2024"
 ```
+
+The description can instead be supplied positionally. Quote it so the shell
+passes spaces and parentheses through to `make`:
+
+```sh
+make game-research 'JAWS (Pro) (Stern, 2024)'
+```
+
+Omit `GAME` to enter the description interactively:
+
+```sh
+make game-research
+```
+
+After copying the prompt into ChatGPT, return to the waiting command. Enter a
+research ID and paste the multiline response. Finish with a line containing
+only `::end` (or press Ctrl-D). The response is saved as
+`content/research/<id>.md`. Existing files require overwrite confirmation.
 
 Run that prompt with the research model and save its semi-structured Markdown
 brief. Then embed the brief and current schema in a second prompt for a
@@ -131,8 +150,7 @@ specialized YAML-formatting model:
 make format-prompt RESEARCH="/tmp/jaws-research.md" > /tmp/jaws-format-prompt.md
 ```
 
-The equivalent CLI options are `--research-prompt` (also `--prompt`) and
-`--format-prompt`; pass `-` to `--format-prompt` to read the brief from stdin.
+The formatting CLI accepts `-` to read the brief from stdin.
 
 Save the formatter model's YAML under `content/` and fact-check it before
 rendering. Pinball rules can vary by software revision, tournament settings,

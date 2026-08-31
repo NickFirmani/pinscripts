@@ -7,11 +7,9 @@ GAME:
 
 {{GAME}}
 
-You are the research and editorial-reasoning phase of a two-model workflow.
+You are the research manager of a workflow.
 Use your internet access and strongest general-purpose reasoning to produce a
-fact-checked, semi-structured research brief. A separate model will turn the
-brief into schema-valid YAML, so do not write YAML and do not spend effort on
-YAML syntax.
+fact-checked, semi-structured research brief. 
 
 The audience is a pinball commentator who may know pinball well but may not
 know this particular machine. The finished document will be referenced during
@@ -93,6 +91,9 @@ abbreviation before using it.
 ## Trivia
 
 Up to five verified facts useful during dead air.
+
+# Questions for the humans
+Format these as multiple choice questions if there are uncertainties.
 
 ## Tournament and venue checks
 

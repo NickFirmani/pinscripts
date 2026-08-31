@@ -2,6 +2,8 @@
 
 import argparse
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -14,13 +16,12 @@ from scripts.render import merge_pdfs, render_game
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
+RESEARCH = CONTENT / "research"
 OUTPUT = ROOT / "output"
 MANIFEST = ROOT / "pins.yaml"
 SCHEMA = ROOT / "schema" / "game.schema.json"
 RESEARCH_PROMPT_TEMPLATE = ROOT / "prompts" / "research-game.md"
 FORMAT_PROMPT_TEMPLATE = ROOT / "prompts" / "format-game-yaml.md"
-# Backward-compatible name for callers that only generated the original prompt.
-PROMPT_TEMPLATE = RESEARCH_PROMPT_TEMPLATE
 
 
 def load_yaml(path: Path):
@@ -54,8 +55,115 @@ def research_prompt(game):
     return template.replace("{{GAME}}", game)
 
 
-def generation_prompt(game):
-    return research_prompt(game)
+def copy_to_clipboard(text):
+    subprocess.run(
+        ["pbcopy"],
+        input=text,
+        text=True,
+        check=True,
+    )
+
+
+def suggested_research_id(game):
+    return re.sub(r"[^a-z0-9]+", "-", game.lower()).strip("-")
+
+
+def request_research_path(game):
+    suggestion = suggested_research_id(game)
+    while True:
+        try:
+            research_id = input(f"Research ID [{suggestion}]: ").strip() or suggestion
+        except EOFError:
+            print("ERROR: a research ID is required.", file=sys.stderr)
+            return None
+
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", research_id):
+            print(
+                "Research ID must contain lowercase letters, numbers, and single hyphens.",
+                file=sys.stderr,
+            )
+            continue
+
+        path = RESEARCH / f"{research_id}.md"
+        if not path.exists():
+            return path
+
+        try:
+            overwrite = input(f"{path} already exists. Overwrite? [y/N] ")
+        except EOFError:
+            overwrite = ""
+        if overwrite.strip().lower() in {"y", "yes"}:
+            return path
+
+        print("Research response not saved.", file=sys.stderr)
+        return None
+
+
+def read_research_response():
+    print(
+        "\nPaste the ChatGPT research response below. "
+        "Finish with a line containing only ::end (or press Ctrl-D):"
+    )
+    lines = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        if line == "::end":
+            break
+        lines.append(line)
+    return "\n".join(lines).strip()
+
+
+def interactive_research_prompt(game):
+    game = game.strip()
+    if not game:
+        try:
+            game = input("Game description: ").strip()
+        except EOFError:
+            game = ""
+
+    if not game:
+        print("ERROR: a game description is required.", file=sys.stderr)
+        return 2
+
+    prompt = research_prompt(game)
+    print(prompt)
+
+    try:
+        answer = input("\nCopy prompt to clipboard? [y/N] ")
+    except EOFError:
+        answer = ""
+
+    if answer.strip().lower() not in {"y", "yes"}:
+        print("Prompt not copied.", file=sys.stderr)
+        return 0
+
+    try:
+        copy_to_clipboard(prompt)
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"ERROR: could not copy prompt to clipboard: {error}", file=sys.stderr)
+        return 1
+
+    print("Prompt copied to clipboard.", file=sys.stderr)
+    path = request_research_path(game)
+    if path is None:
+        return 1
+
+    response = read_research_response()
+    if not response:
+        print("ERROR: no research response was provided.", file=sys.stderr)
+        return 1
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(response + "\n", encoding="utf-8")
+    try:
+        display_path = path.relative_to(ROOT)
+    except ValueError:
+        display_path = path
+    print(f"Research response saved to {display_path}")
+    return 0
 
 
 def formatting_prompt(research):
@@ -168,11 +276,11 @@ def build_parser():
         help="Validate and render enabled pins, then create binder.pdf",
     )
     actions.add_argument(
-        "--research-prompt",
-        "--prompt",
-        dest="research_prompt",
-        metavar="GAME",
-        help="Print the phase-one web research prompt",
+        "--game-research",
+        nargs="?",
+        const="",
+        metavar="DESCRIPTION",
+        help="Print a research prompt, prompting for the description if omitted",
     )
     actions.add_argument(
         "--format-prompt",
@@ -213,9 +321,8 @@ def main():
     parser = build_parser()
     args = parser.parse_args()
 
-    if args.research_prompt:
-        print(research_prompt(args.research_prompt))
-        return 0
+    if args.game_research is not None:
+        return interactive_research_prompt(args.game_research)
 
     if args.format_prompt:
         try:

@@ -1,6 +1,14 @@
 PYTHON := .venv/bin/python
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt install process-images research-prompt test
+ifneq ($(filter game-research,$(MAKECMDGOALS)),)
+GAME_RESEARCH_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-research,$(MAKECMDGOALS))))
+
+# Treat additional command-line goals as the positional game description.
+%:
+	@:
+endif
+
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt game-research install process-images test
 
 install:
 	python3 -m venv .venv
@@ -31,9 +39,8 @@ clean:
 test:
 	$(PYTHON) -m unittest discover -s tests
 
-research-prompt:
-	@test -n "$(GAME)" || (echo 'Usage: make research-prompt GAME="Game Name (Manufacturer, Year)"' >&2; exit 2)
-	@$(PYTHON) main.py --research-prompt "$(GAME)"
+game-research:
+	@$(PYTHON) main.py --game-research "$(GAME_RESEARCH_INPUT)"
 
 format-prompt:
 	@test -n "$(RESEARCH)" || (echo 'Usage: make format-prompt RESEARCH="path/to/research.md"' >&2; exit 2)
