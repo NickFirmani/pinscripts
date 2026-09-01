@@ -184,6 +184,30 @@ prompts for the human answers before continuing to the formatting prompt.
 Fact-check the generated YAML before rendering. Pinball rules can vary by
 software revision, tournament settings, and machine setup.
 
+### Fetching a game image
+
+Open a Google Image search for a game from `content/list_of_games.txt`:
+
+```sh
+make game-image GAME="Jaws (Pro) Stern 2024"
+```
+
+The description can also be supplied positionally. If it is omitted, the
+command scans `content/list_of_games.txt` in order and selects the first game
+that does not already have an image:
+
+```sh
+make game-image 'Jaws (Pro) Stern 2024'
+make game-image
+```
+
+The command opens the search in Google Chrome. Download the desired image,
+return to the terminal, and press Enter. The newest completed file added to
+`~/Downloads` after the search opened is copied into `images/`. A matching
+`content/research/<id>.md` supplies the destination basename when available;
+otherwise, the basename is derived from the entered game name. The downloaded
+file's extension is preserved.
+
 ### Benchmarking the formatting phase
 
 The Ollama format-prompt harness defaults to the research brief at

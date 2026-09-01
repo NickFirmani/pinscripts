@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
+import difflib
 import json
 import re
+import shutil
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
+from urllib.parse import urlencode
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -18,6 +22,9 @@ ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
 RESEARCH = CONTENT / "research"
 OUTPUT = ROOT / "output"
+IMAGES = ROOT / "images"
+DOWNLOADS = Path.home() / "Downloads"
+GAME_LIST = CONTENT / "list_of_games.txt"
 MANIFEST = ROOT / "pins.yaml"
 SCHEMA = ROOT / "schema" / "game.schema.json"
 RESEARCH_PROMPT_TEMPLATE = ROOT / "prompts" / "research-game.md"
@@ -135,6 +142,214 @@ def copy_to_clipboard(text):
 
 def suggested_research_id(game):
     return re.sub(r"[^a-z0-9]+", "-", game.lower()).strip("-")
+
+
+def normalized_game_id(game):
+    """Normalize common display-name variants for research ID matching."""
+    normalized = unicodedata.normalize("NFKD", game)
+    normalized = normalized.encode("ascii", "ignore").decode("ascii").lower()
+    normalized = normalized.replace("&", " and ")
+    normalized = re.sub(r"['\u2019]", "", normalized)
+    normalized = re.sub(r"\blimited edition\b", "le", normalized)
+    normalized = re.sub(r"\bspecial edition\b", "se", normalized)
+    normalized = re.sub(r"\bgold edition\b", "gold", normalized)
+    normalized = re.sub(r"\bthe\b", " ", normalized)
+    return re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
+
+
+def matching_research_id(game, research_directory=None):
+    research_directory = research_directory or RESEARCH
+    research_ids = sorted(path.stem for path in research_directory.glob("*.md"))
+    derived_id = suggested_research_id(game)
+    if derived_id in research_ids:
+        return derived_id
+
+    normalized_id = normalized_game_id(game)
+    if normalized_id in research_ids:
+        return normalized_id
+
+    game_tokens = set(normalized_id.split("-"))
+    game_years = {token for token in game_tokens if re.fullmatch(r"\d{4}", token)}
+    candidates = []
+    for research_id in research_ids:
+        comparable_id = normalized_game_id(research_id)
+        research_tokens = set(comparable_id.split("-"))
+        research_years = {
+            token for token in research_tokens if re.fullmatch(r"\d{4}", token)
+        }
+        if game_years and research_years and game_years != research_years:
+            continue
+
+        overlap = len(game_tokens & research_tokens)
+        if not overlap:
+            continue
+        precision = overlap / len(research_tokens)
+        coverage = overlap / len(game_tokens)
+        sequence = difflib.SequenceMatcher(
+            None, normalized_id, comparable_id
+        ).ratio()
+        score = 0.65 * precision + 0.20 * sequence + 0.15 * coverage
+        if precision >= 0.75 and score >= 0.72:
+            candidates.append((score, research_id))
+
+    candidates.sort(reverse=True)
+    if not candidates:
+        return None
+    if len(candidates) > 1 and candidates[0][0] - candidates[1][0] < 0.05:
+        return None
+    return candidates[0][1]
+
+
+def image_id_for_game(game, research_directory=None):
+    return (
+        matching_research_id(game, research_directory)
+        or suggested_research_id(game)
+    )
+
+
+def first_game_without_image(
+    game_list=None,
+    images_directory=None,
+    research_directory=None,
+):
+    game_list = game_list or GAME_LIST
+    images_directory = images_directory or IMAGES
+    games = [
+        line.strip()
+        for line in game_list.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+    for game in games:
+        image_id = image_id_for_game(game, research_directory)
+        has_image = any(
+            path.is_file() and path.stem == image_id
+            for path in images_directory.glob(f"{image_id}.*")
+        )
+        if not has_image:
+            return game
+    return None
+
+
+def download_snapshot(downloads_directory=None):
+    downloads_directory = downloads_directory or DOWNLOADS
+    snapshot = {}
+    try:
+        paths = downloads_directory.iterdir()
+    except OSError:
+        return snapshot
+
+    for path in paths:
+        if path.name.startswith(".") or path.suffix.lower() == ".crdownload":
+            continue
+        try:
+            stat = path.stat()
+        except OSError:
+            continue
+        if path.is_file():
+            snapshot[path] = (stat.st_size, stat.st_mtime_ns)
+    return snapshot
+
+
+def newest_download_since(snapshot, downloads_directory=None):
+    downloads_directory = downloads_directory or DOWNLOADS
+    candidates = []
+    for path, signature in download_snapshot(downloads_directory).items():
+        if snapshot.get(path) == signature:
+            continue
+        try:
+            stat = path.stat()
+        except OSError:
+            continue
+        birth_time = getattr(
+            stat,
+            "st_birthtime_ns",
+            int(getattr(stat, "st_birthtime", 0) * 1_000_000_000),
+        )
+        candidates.append((max(stat.st_mtime_ns, birth_time), path))
+
+    return max(candidates, default=(None, None))[1]
+
+
+def google_image_search_url(game):
+    return "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": game})
+
+
+def open_google_image_search(game):
+    subprocess.run(
+        ["open", "-a", "Google Chrome", google_image_search_url(game)],
+        check=True,
+    )
+
+
+def interactive_game_image(game):
+    game = game.strip()
+    if not game:
+        try:
+            game = first_game_without_image()
+        except OSError as error:
+            print(f"ERROR: could not read game list {GAME_LIST}: {error}", file=sys.stderr)
+            return 1
+
+        if game is None:
+            print(f"Every game in {GAME_LIST} already has an image.")
+            return 0
+        print(f"Selected first game without an image: {game}")
+
+    if not game:
+        print("ERROR: a game name is required.", file=sys.stderr)
+        return 2
+    if not DOWNLOADS.is_dir():
+        print(f"ERROR: downloads directory does not exist: {DOWNLOADS}", file=sys.stderr)
+        return 1
+
+    before = download_snapshot()
+    try:
+        open_google_image_search(game)
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"ERROR: could not open Google Chrome: {error}", file=sys.stderr)
+        return 1
+
+    try:
+        answer = input(
+            "Download the desired image in Chrome, then press Enter to copy it "
+            "(or enter q to cancel): "
+        )
+    except EOFError:
+        answer = "q"
+    if answer.strip().lower() in {"q", "quit"}:
+        print("Image copy cancelled.", file=sys.stderr)
+        return 0
+
+    source = newest_download_since(before)
+    if source is None:
+        print(
+            f"ERROR: no new completed file was found in {DOWNLOADS}.",
+            file=sys.stderr,
+        )
+        return 1
+
+    research_id = matching_research_id(game)
+    image_id = image_id_for_game(game)
+    if not image_id:
+        print("ERROR: could not derive an image filename.", file=sys.stderr)
+        return 1
+    suffix = source.suffix.lower()
+    destination = IMAGES / f"{image_id}{suffix}"
+    if not confirm_overwrite(destination):
+        print("Image not copied.", file=sys.stderr)
+        return 0
+
+    try:
+        IMAGES.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+    except OSError as error:
+        print(f"ERROR: could not copy {source} to {destination}: {error}", file=sys.stderr)
+        return 1
+
+    id_source = "research" if research_id else "game name"
+    print(f"Copied {source} to {destination.relative_to(ROOT)} ({id_source} ID).")
+    return 0
 
 
 def request_research_path(game):
@@ -669,6 +884,13 @@ def build_parser():
         help="Format an existing content/research/<id>.md brief",
     )
     actions.add_argument(
+        "--game-image",
+        nargs="?",
+        const="",
+        metavar="NAME",
+        help="Open a Google Image search and copy the newest download",
+    )
+    actions.add_argument(
         "--format-prompt",
         metavar="RESEARCH",
         help="Print the phase-two YAML prompt using a research file, or - for stdin",
@@ -712,6 +934,9 @@ def main():
 
     if args.game_format is not None:
         return interactive_game_format(args.game_format)
+
+    if args.game_image is not None:
+        return interactive_game_image(args.game_image)
 
     if args.format_prompt:
         try:
