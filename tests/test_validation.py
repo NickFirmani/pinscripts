@@ -24,11 +24,10 @@ class ValidationTests(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
-    def test_featureless_game_uses_explicit_empty_arrays(self):
+    def test_game_without_skill_shots_uses_explicit_empty_array(self):
         data = app.load_yaml(CONTENT / "playboy-bally-1978.yaml")
 
         self.assertEqual(data["skill_shots"], [])
-        self.assertEqual(data["features"], [])
         self.assertEqual(app.validation_errors(data, self.validator), [])
 
     def test_skill_shots_and_secondary_features_are_valid(self):

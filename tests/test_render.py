@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import main as app
+from pypdf import PdfReader
 from scripts import render as renderer
 
 
@@ -17,7 +18,9 @@ class RenderTests(unittest.TestCase):
         ]
 
     def test_empty_skill_shots_and_features_do_not_render_sections(self):
-        data = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+        data = deepcopy(app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml"))
+        data["skill_shots"] = []
+        data["features"] = []
 
         text = self.story_text(data)
 
@@ -74,6 +77,69 @@ class RenderTests(unittest.TestCase):
             )
 
         self.assertEqual(result, Path("/project/images/example-game-bw.png"))
+
+    def test_image_resolution_falls_back_to_an_existing_extension(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            image_dir = root / "images"
+            image_dir.mkdir()
+            expected = image_dir / "example-game-bw.png"
+            expected.touch()
+
+            with patch.object(renderer, "ROOT", root):
+                result = renderer.resolve_image_path(
+                    "images/example-game.jpg",
+                    black_and_white=True,
+                )
+
+        self.assertEqual(result, expected)
+
+    def test_render_game_always_writes_two_letter_pages(self):
+        content_path = app.CONTENT / "playboy-bally-1978.yaml"
+
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "playboy.pdf"
+            renderer.render_game(content_path, output_path)
+            reader = PdfReader(output_path)
+
+        self.assertEqual(len(reader.pages), 2)
+        for page in reader.pages:
+            self.assertEqual(float(page.mediabox.width), 612)
+            self.assertEqual(float(page.mediabox.height), 792)
+
+    def test_shot_table_cells_are_wrapping_paragraphs(self):
+        data = app.load_yaml(app.CONTENT / "attack-from-mars-bally-1995.yaml")
+        tables = [
+            flowable
+            for flowable in renderer.build_story(data)
+            if flowable.__class__.__name__ == "Table"
+        ]
+
+        shot_table = tables[-1]
+        self.assertTrue(
+            all(
+                cell.__class__.__name__ == "Paragraph"
+                for row in shot_table._cellvalues
+                for cell in row
+            )
+        )
+
+    def test_all_body_level_styles_share_one_readable_size(self):
+        body_styles = (
+            renderer.BODY,
+            renderer.SMALL,
+            renderer.FACT_LABEL,
+            renderer.FACT_VALUE,
+            renderer.TABLE_HEADER,
+            renderer.TABLE_BODY,
+            renderer.HOOK,
+        )
+
+        self.assertGreaterEqual(renderer.BODY_FONT_SIZE, 8.5)
+        self.assertEqual(
+            {style.fontSize for style in body_styles},
+            {renderer.BODY_FONT_SIZE},
+        )
 
     def test_render_names_bw_output_and_passes_mode_to_renderer(self):
         with tempfile.TemporaryDirectory() as directory:
