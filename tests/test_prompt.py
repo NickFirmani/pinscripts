@@ -16,10 +16,27 @@ from main import (
     load_schema,
     read_prompt_input,
     research_prompt,
+    set_terminal_title,
 )
 
 
 class PromptTests(unittest.TestCase):
+    def test_terminal_title_uses_game_name_on_a_tty(self):
+        class TtyBuffer(io.StringIO):
+            def isatty(self):
+                return True
+
+        stream = TtyBuffer()
+
+        self.assertTrue(set_terminal_title("JAWS (Stern, 2024)", stream))
+        self.assertEqual(stream.getvalue(), "\033]0;JAWS (Stern, 2024)\007")
+
+    def test_terminal_title_is_not_written_when_redirected(self):
+        stream = io.StringIO()
+
+        self.assertFalse(set_terminal_title("Jaws", stream))
+        self.assertEqual(stream.getvalue(), "")
+
     def test_research_prompt_embeds_game_without_schema(self):
         prompt = research_prompt("Jaws (Stern, 2024)")
 
@@ -336,6 +353,7 @@ class PromptTests(unittest.TestCase):
         with (
             patch("builtins.input", return_value=""),
             patch.object(app, "copy_to_clipboard") as copy,
+            patch.object(app, "set_terminal_title") as set_title,
             redirect_stdout(io.StringIO()),
             redirect_stderr(io.StringIO()),
         ):
@@ -343,6 +361,7 @@ class PromptTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         copy.assert_not_called()
+        set_title.assert_called_once_with("Jaws")
 
     def test_interactive_research_prompt_treats_eof_as_no(self):
         with (
@@ -361,6 +380,7 @@ class PromptTests(unittest.TestCase):
         with (
             patch("builtins.input", side_effect=["Jaws Premium 2024", "n"]),
             patch.object(app, "copy_to_clipboard") as copy,
+            patch.object(app, "set_terminal_title") as set_title,
             redirect_stdout(stdout),
             redirect_stderr(io.StringIO()),
         ):
@@ -369,6 +389,7 @@ class PromptTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertIn("Jaws Premium 2024", stdout.getvalue())
         copy.assert_not_called()
+        set_title.assert_called_once_with("Jaws Premium 2024")
 
     def test_interactive_research_prompt_rejects_empty_game(self):
         with (

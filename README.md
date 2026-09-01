@@ -136,6 +136,9 @@ offers to copy it to the macOS clipboard, and then waits for the response:
 make game-research GAME="Jaws Premium 2024"
 ```
 
+Once the game description is known, the command sets the terminal title to
+that description when the terminal supports title escape sequences.
+
 The description can instead be supplied positionally. Quote it so the shell
 passes spaces and parentheses through to `make`:
 

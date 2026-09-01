@@ -110,6 +110,20 @@ def research_prompt(game):
     return template.replace("{{GAME}}", game)
 
 
+def set_terminal_title(title, stream=None):
+    stream = stream or sys.stderr
+    if not stream.isatty():
+        return False
+
+    safe_title = re.sub(r"[\x00-\x1f\x7f]", "", title).strip()
+    if not safe_title:
+        return False
+
+    stream.write(f"\033]0;{safe_title}\007")
+    stream.flush()
+    return True
+
+
 def copy_to_clipboard(text):
     subprocess.run(
         ["pbcopy"],
@@ -395,6 +409,7 @@ def interactive_research_prompt(game):
         print("ERROR: a game description is required.", file=sys.stderr)
         return 2
 
+    set_terminal_title(game)
     prompt = research_prompt(game)
     print(prompt)
 
