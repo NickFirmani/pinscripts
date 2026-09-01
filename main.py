@@ -7,6 +7,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unicodedata
 from pathlib import Path
 from urllib.parse import urlencode
@@ -14,7 +15,7 @@ from urllib.parse import urlencode
 import yaml
 from jsonschema import Draft202012Validator
 
-from scripts.process_images import process_images
+from scripts.process_images import VARIANTS, process_images
 from scripts.render import merge_pdfs, render_game
 
 
@@ -30,6 +31,17 @@ SCHEMA = ROOT / "schema" / "game.schema.json"
 RESEARCH_PROMPT_TEMPLATE = ROOT / "prompts" / "research-game.md"
 FORMAT_PROMPT_TEMPLATE = ROOT / "prompts" / "format-game-yaml.md"
 PIN_ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+IMAGE_SUFFIXES = {
+    ".avif",
+    ".bmp",
+    ".gif",
+    ".jpeg",
+    ".jpg",
+    ".png",
+    ".tif",
+    ".tiff",
+    ".webp",
+}
 
 
 class PinRegistryError(ValueError):
@@ -229,6 +241,174 @@ def first_game_without_image(
         if not has_image:
             return game
     return None
+
+
+def black_and_white_pair(source, images_directory=None):
+    images_directory = images_directory or IMAGES
+    matches = sorted(
+        path
+        for path in images_directory.glob(f"{source.stem}-bw.*")
+        if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
+    )
+    return matches[0] if matches else None
+
+
+def color_images_without_black_and_white(images_directory=None):
+    images_directory = images_directory or IMAGES
+    try:
+        paths = images_directory.iterdir()
+    except OSError:
+        return []
+
+    color_images = sorted(
+        path
+        for path in paths
+        if path.is_file()
+        and not path.name.startswith(".")
+        and not path.stem.endswith("-bw")
+        and path.suffix.lower() in IMAGE_SUFFIXES
+    )
+    return [
+        source
+        for source in color_images
+        if black_and_white_pair(source, images_directory) is None
+    ]
+
+
+def find_color_image(game, images_directory=None, research_directory=None):
+    images_directory = images_directory or IMAGES
+    supplied_path = Path(game).expanduser()
+    if supplied_path.is_file():
+        return supplied_path
+
+    image_id = image_id_for_game(game, research_directory)
+    matches = sorted(
+        path
+        for path in images_directory.glob(f"{image_id}.*")
+        if path.is_file()
+        and path.stem == image_id
+        and path.suffix.lower() in IMAGE_SUFFIXES
+    )
+    return matches[0] if matches else None
+
+
+def open_images_in_preview(paths):
+    subprocess.run(
+        ["open", "-a", "Preview", *(str(path) for path in paths)],
+        check=True,
+    )
+
+
+def request_black_and_white_variant(variant_paths):
+    print("\nBlack-and-white candidates:")
+    names = list(VARIANTS)
+    for index, name in enumerate(names, start=1):
+        print(f"  {index}. {name}: {variant_paths[index - 1].name}")
+
+    while True:
+        try:
+            answer = input(
+                f"Choose the best variant [1-{len(names)}], "
+                "enter its name, s to skip, or q to quit: "
+            ).strip().lower()
+        except EOFError:
+            return "quit", None
+
+        if answer in {"q", "quit"}:
+            return "quit", None
+        if answer in {"s", "skip"}:
+            return "skip", None
+        if answer in names:
+            return "selected", variant_paths[names.index(answer)]
+        if answer.isdigit() and 1 <= int(answer) <= len(names):
+            return "selected", variant_paths[int(answer) - 1]
+        print("Enter a listed number or name, s, or q.", file=sys.stderr)
+
+
+def process_black_and_white_image(source):
+    print(f"\nGenerating candidates for {source.name}...")
+    with tempfile.TemporaryDirectory(prefix=f"{source.stem}-variants-") as directory:
+        try:
+            output_dir = process_images(source, Path(directory))
+        except SystemExit as error:
+            print(f"ERROR: {error}", file=sys.stderr)
+            return "error"
+        except (OSError, subprocess.CalledProcessError) as error:
+            print(f"ERROR: could not generate image variants: {error}", file=sys.stderr)
+            return "error"
+
+        variant_paths = [
+            output_dir / f"{source.stem}-{name}.png"
+            for name in VARIANTS
+        ]
+        missing = [path for path in variant_paths if not path.is_file()]
+        if missing:
+            print(
+                "ERROR: image processing did not create: "
+                + ", ".join(path.name for path in missing),
+                file=sys.stderr,
+            )
+            return "error"
+
+        try:
+            open_images_in_preview(variant_paths)
+        except (OSError, subprocess.CalledProcessError) as error:
+            print(f"ERROR: could not open Preview: {error}", file=sys.stderr)
+            return "error"
+
+        action, selected = request_black_and_white_variant(variant_paths)
+        if action != "selected":
+            return action
+
+        destination = black_and_white_pair(source) or (
+            IMAGES / f"{source.stem}-bw.png"
+        )
+        if not confirm_overwrite(destination):
+            print("Black-and-white image not saved.", file=sys.stderr)
+            return "skip"
+
+        try:
+            IMAGES.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(selected, destination)
+        except OSError as error:
+            print(
+                f"ERROR: could not copy {selected} to {destination}: {error}",
+                file=sys.stderr,
+            )
+            return "error"
+
+        try:
+            display_path = destination.relative_to(ROOT)
+        except ValueError:
+            display_path = destination
+        variant_name = selected.stem[len(source.stem) + 1:]
+        print(f"Saved {display_path} from the {variant_name} variant.")
+        return "selected"
+
+
+def interactive_black_and_white_images(game):
+    game = game.strip()
+    if game:
+        source = find_color_image(game)
+        if source is None:
+            print(f"ERROR: no color image found for {game!r}.", file=sys.stderr)
+            return 1
+        sources = [source]
+    else:
+        sources = color_images_without_black_and_white()
+        if not sources:
+            print("Every color image already has a black-and-white pair.")
+            return 0
+        print(f"Found {len(sources)} color image(s) without black-and-white pairs.")
+
+    had_error = False
+    for source in sources:
+        result = process_black_and_white_image(source)
+        if result == "quit":
+            break
+        if result == "error":
+            had_error = True
+    return 1 if had_error else 0
 
 
 def download_snapshot(downloads_directory=None):
@@ -891,6 +1071,13 @@ def build_parser():
         help="Open a Google Image search and copy the newest download",
     )
     actions.add_argument(
+        "--game-image-bw",
+        nargs="?",
+        const="",
+        metavar="NAME",
+        help="Generate and choose a black-and-white image variant",
+    )
+    actions.add_argument(
         "--format-prompt",
         metavar="RESEARCH",
         help="Print the phase-two YAML prompt using a research file, or - for stdin",
@@ -937,6 +1124,9 @@ def main():
 
     if args.game_image is not None:
         return interactive_game_image(args.game_image)
+
+    if args.game_image_bw is not None:
+        return interactive_black_and_white_images(args.game_image_bw)
 
     if args.format_prompt:
         try:

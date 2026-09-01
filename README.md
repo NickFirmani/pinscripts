@@ -208,6 +208,25 @@ return to the terminal, and press Enter. The newest completed file added to
 otherwise, the basename is derived from the entered game name. The downloaded
 file's extension is preserved.
 
+Create a selected black-and-white companion for one color image:
+
+```sh
+make game-image-bw GAME="Jaws (Pro) Stern 2024"
+```
+
+With no game argument, the command processes every color image that does not
+already have a corresponding `<id>-bw.*` file:
+
+```sh
+make game-image-bw
+```
+
+For each image, it generates the eight grayscale, posterized, and bilevel
+variants, opens them together in Preview, and asks which one to keep. Choose by
+number or variant name. Enter `s` to skip the current image or `q` to stop the
+batch. The selected candidate is saved as `images/<id>-bw.png`; temporary
+variants are removed after each choice.
+
 ### Benchmarking the formatting phase
 
 The Ollama format-prompt harness defaults to the research brief at

@@ -1,16 +1,17 @@
 PYTHON := .venv/bin/python
 
-ifneq ($(filter game-research game-format game-image,$(MAKECMDGOALS)),)
+ifneq ($(filter game-research game-format game-image game-image-bw,$(MAKECMDGOALS)),)
 GAME_RESEARCH_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-research,$(MAKECMDGOALS))))
 GAME_FORMAT_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-format,$(MAKECMDGOALS))))
 GAME_IMAGE_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image,$(MAKECMDGOALS))))
+GAME_IMAGE_BW_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image-bw,$(MAKECMDGOALS))))
 
 # Treat additional command-line goals as the positional game description.
 %:
 	@:
 endif
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt game-format game-image game-research install process-images test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt game-format game-image game-image-bw game-research install process-images test
 
 install:
 	python3 -m venv .venv
@@ -49,6 +50,9 @@ game-format:
 
 game-image:
 	@$(PYTHON) main.py --game-image "$(GAME_IMAGE_INPUT)"
+
+game-image-bw:
+	@$(PYTHON) main.py --game-image-bw "$(GAME_IMAGE_BW_INPUT)"
 
 format-prompt:
 	@test -n "$(RESEARCH)" || (echo 'Usage: make format-prompt RESEARCH="path/to/research.md"' >&2; exit 2)
