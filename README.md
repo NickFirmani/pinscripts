@@ -130,7 +130,8 @@ Content generation is split between two prompts so each model can focus on
 what it does best. The templates are `prompts/research-game.md` and
 `prompts/format-game-yaml.md`. Generate a research prompt for a high-power,
 general-purpose model with internet access. The command prints the prompt,
-offers to copy it to the macOS clipboard, and then waits for the response:
+offers to copy it to the macOS clipboard (the default when pressing Enter),
+and then waits for the response:
 
 ```sh
 make game-research GAME="Jaws Premium 2024"

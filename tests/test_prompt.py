@@ -349,18 +349,19 @@ class PromptTests(unittest.TestCase):
 
         self.assertEqual(result, 1)
 
-    def test_interactive_research_prompt_does_not_copy_by_default(self):
+    def test_interactive_research_prompt_copies_by_default(self):
         with (
             patch("builtins.input", return_value=""),
             patch.object(app, "copy_to_clipboard") as copy,
+            patch.object(app, "request_research_path", return_value=None),
             patch.object(app, "set_terminal_title") as set_title,
             redirect_stdout(io.StringIO()),
             redirect_stderr(io.StringIO()),
         ):
             result = interactive_research_prompt("Jaws")
 
-        self.assertEqual(result, 0)
-        copy.assert_not_called()
+        self.assertEqual(result, 1)
+        copy.assert_called_once_with(research_prompt("Jaws"))
         set_title.assert_called_once_with("Jaws")
 
     def test_interactive_research_prompt_treats_eof_as_no(self):

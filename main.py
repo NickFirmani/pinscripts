@@ -414,11 +414,11 @@ def interactive_research_prompt(game):
     print(prompt)
 
     try:
-        answer = input("\nCopy prompt to clipboard? [y/N] ")
+        answer = input("\nCopy prompt to clipboard? [Y/n] ")
     except EOFError:
-        answer = ""
+        answer = "n"
 
-    if answer.strip().lower() not in {"y", "yes"}:
+    if answer.strip().lower() not in {"", "y", "yes"}:
         print("Prompt not copied.", file=sys.stderr)
         return 0
 
