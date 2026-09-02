@@ -11,7 +11,7 @@ GAME_IMAGE_BW_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image-bw,$(
 	@:
 endif
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-research install process-images test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-research install process-images proofread-content test
 
 install:
 	python3 -m venv .venv
@@ -64,6 +64,10 @@ format-benchmark:
 
 format-codex-batch:
 	$(PYTHON) benchmarks/format_codex.py --promote $(if $(MODEL),--model "$(MODEL)") $(if $(EFFORT),--effort "$(EFFORT)") $(if $(WORKERS),--workers "$(WORKERS)")
+
+proofread-content:
+	@test -n "$(MODEL)" || (echo 'Usage: make proofread-content MODEL="ollama-model" [APPLY="1"] [LIMIT="25"] [START_SERVER="1"]' >&2; exit 2)
+	$(PYTHON) scripts/proofread_content.py --model "$(MODEL)" $(if $(filter 1 true yes,$(APPLY)),--apply) $(if $(LIMIT),--limit "$(LIMIT)") $(if $(filter 1 true yes,$(START_SERVER)),--start-server)
 
 process-images:
 	@test -n "$(IMAGE)" || (echo 'Usage: make process-images IMAGE="images/game.jpg" [OUTPUT_DIR="path"]' >&2; exit 2)

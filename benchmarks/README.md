@@ -89,3 +89,29 @@ repository.
 A valid result means the output parses and conforms to the JSON Schema. It does
 not establish factual accuracy. Review generated drafts against the research
 brief before moving them into `content/`.
+
+## Local sentence-level proofreading
+
+`scripts/proofread_content.py` proofreads only prose-bearing fields in canonical
+YAML. It sends short prompts sequentially through one persistent HTTP connection
+to one warm Ollama model. Sentence results are cached, so an interrupted or
+repeated run does not need to regenerate completed suggestions.
+
+Run a review-only pass first:
+
+```sh
+make proofread-content MODEL="mistral:latest" START_SERVER="1"
+```
+
+The run writes `review.jsonl`, a manifest, and schema-valid corrected copies
+under `benchmarks/results/proofread/`; it does not modify `content/`. Inspect the
+proposals, then use `APPLY=1` to atomically apply safe changes:
+
+```sh
+make proofread-content MODEL="mistral:latest" APPLY="1" START_SERVER="1"
+```
+
+Suggestions that alter numbers, symbols, protected capitalized terms, or text
+length substantially are flagged in `review.jsonl` and never auto-applied. Use
+`LIMIT="25"` for a quick calibration run. This is a grammar and copy-edit pass,
+not factual verification against the research briefs.
