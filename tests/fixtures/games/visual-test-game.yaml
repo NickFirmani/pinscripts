@@ -1,0 +1,125 @@
+id: visual-test-game
+name: The Extraordinary Tournament Test Machine
+manufacturer: Example Pinball & Manufacturing Company
+year: 2026
+metadata:
+  designer: Alexandria Montgomery and B. Q. Example
+  artist: Casey "High Contrast" Rivera
+  production: 1 prototype unit
+  era: Modern solid-state tournament prototype with deliberately long metadata
+  multiball: Three distinct multiballs plus a stacked wizard-mode finale
+hook: >-
+  Build the three colored lanes, choose a scoring route, and cash out at the
+  center lock. This deliberately dense fixture checks wrapping, hierarchy, and
+  the conversion of arrows -> and long dashes - without becoming nonsense.
+rules:
+  primary: >-
+    Complete RED, BLUE, and GOLD to light the center lock. Start a mode at the
+    scoop, build its value on the ramps, then collect before the timer expires.
+  bullets:
+  - The left orbit advances RED and feeds the upper flipper.
+  - The center ramp advances BLUE and returns safely to the right flipper.
+  - The right ramp advances GOLD but rejected shots return through the middle.
+  - Three locks start Fixture Multiball; jackpots alternate between ramps.
+  - Completing all modes lights the final Test Everything challenge.
+watch:
+- title: All three lane colors lit
+  text: The lock is qualified, so the player can stop building and cash out safely.
+- title: Multiplier at 3X
+  text: Ramp values are fully developed and mode shots now dominate the scoring.
+- title: Ten seconds remaining
+  text: The mode is nearly over; watch whether the player collects or takes one more build shot.
+- title: Extra ball converted
+  text: Tournament settings award points instead of an extra ball on this fixture.
+skill_shots:
+- name: Standard lane plunge
+  how: Plunge softly into the flashing top lane.
+  value: Advances one color and awards a controlled return.
+- name: Super skill shot
+  how: Hold the left flipper, plunge through the orbit, then shoot the upper ramp.
+  value: Starts the multiplier at 2X and spots a lock.
+- name: Secret short plunge
+  how: Release the plunge just before the first switch and shoot the scoop immediately.
+  value: Starts a short timed mode with doubled build values.
+features:
+- type: ball-save
+  name: Multiball ball save
+  text: A visible countdown protects the opening seconds of every multiball.
+- type: video-mode
+  name: Pixel pursuit
+  text: Use both flippers to steer through the display targets before time expires.
+- type: extra-ball
+  name: Precision extra ball
+  text: Complete all six numbered shots twice to light the award at the scoop.
+- type: player-control
+  name: Lane change
+  text: Either flipper rotates the lit top lanes before the ball reaches them.
+- type: mystery-award
+  name: Mystery test
+  text: Awards a deterministic tournament-safe value from the center target.
+- type: other
+  name: Rules revision indicator
+  text: The status panel displays the active rules revision for update testing.
+shots:
+- name: Left orbit and upper-flipper feed
+  value: Advances RED, feeds the upper flipper, and becomes a jackpot during multiball.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Builds the active mode and returns the ball toward the left inlane.
+  risk: Low
+  diagram: 2
+- name: Center lock
+  value: Collects qualified locks, mode values, and the final challenge.
+  risk: Medium-High
+  diagram: 3
+- name: Center target bank
+  value: Raises the playfield multiplier but produces lively, unpredictable rebounds.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Advances GOLD and scores alternating jackpots after multiball begins.
+  risk: Medium
+  diagram: 5
+- name: Right orbit and scoop
+  value: Starts modes, collects mystery, and provides the safest late-ball cash-out.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: >-
+    Favor the two ramps and controlled returns. Take the center lock as soon as
+    it is qualified instead of exposing the ball to target-bank rebounds.
+  behind: >-
+    Build the 3X multiplier, stack a mode with multiball, and delay collection
+    until several jackpots are lit for a higher-variance comeback attempt.
+  key_decision: >-
+    Decide whether to collect the qualified center value immediately or spend
+    another controlled shot increasing it before the timer becomes urgent.
+danger:
+- Rejected right-ramp shots return quickly between the flippers.
+- The center targets can rebound directly toward either outlane.
+- Upper-flipper misses fall through a crowded switch area without control.
+- A late scoop rejection can end both the mode and the ball.
+- Tilting forfeits the developed end-of-ball bonus and multiplier value.
+commentary:
+- All three colors are complete, so the center lock is ready.
+- That controlled ramp return gives the player another clean decision.
+- The multiplier is at three times; every lit shot matters now.
+- They are passing on the safe collect to build the value once more.
+- The rejected ramp is the danger - the ball is coming straight down the middle.
+- Multiball is stacked with the mode, so the next jackpot carries both values.
+trivia:
+- This fictional game exists only to make PDF layout changes visible.
+- Every numbered shot in the table has a matching marker in the fixture artwork.
+- Its deliberately long title tests the upper limit of the title treatment.
+- The palette tests color contrast as well as grayscale separation.
+- The rules revision label reserves space for a future update workflow.
+summary: Complete three colors -> light lock -> start mode -> build ramps -> collect center value
+venue_notes:
+- Configured for three-ball tournament play.
+- Extra balls score 25,000 points instead of adding a ball.
+- The outlane posts are set to the medium position.
+- Tilt warnings are set to two before a full tilt.
+- Software revision TEST-2026.09 is installed.
+- Verify the center-target sensitivity before commentary begins.
+image: images/visual-test-game.webp
