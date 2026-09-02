@@ -49,7 +49,7 @@ Formatting rules:
   for the corresponding questions. Do not treat unresolved questions as facts.
 - `summary` should be approximately 3-7 concepts joined by arrows.
 - Number selected shots from left to right with `diagram` values starting at
-  1. Include `x` and `y` only when the brief provides reliable coordinates.
+  1.
 - Map shot risk conservatively to exactly one allowed enum value.
 - Commentary cues should sound natural when spoken aloud and should not make
   unsupported claims more certain than the brief does.

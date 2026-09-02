@@ -231,36 +231,8 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 9
-          },
-          "x": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 1
-          },
-          "y": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 1
           }
-        },
-        "allOf": [
-          {
-            "if": {
-              "required": ["x"]
-            },
-            "then": {
-              "required": ["y"]
-            }
-          },
-          {
-            "if": {
-              "required": ["y"]
-            },
-            "then": {
-              "required": ["x"]
-            }
-          }
-        ]
+        }
       }
     },
     "strategy": {

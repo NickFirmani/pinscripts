@@ -14,6 +14,12 @@ a local Ollama model. It does not modify canonical files under `content/`.
 Keeping both modes makes it possible to measure whether constrained decoding
 improves conformance without changing the source research brief.
 
+`schema/game.schema.json` also stays within OpenAI's Structured Outputs subset:
+every object property is required, every object rejects additional properties,
+and the schema avoids unsupported conditional/composition keywords. The schema
+can therefore be passed directly to `codex exec --output-schema` as well as to
+Ollama's structured-output `format` field.
+
 ## Usage
 
 From the repository root:

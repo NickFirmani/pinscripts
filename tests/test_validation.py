@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import main as app
-from main import CONTENT, schema_validator, validate_content
+from main import CONTENT, load_schema, schema_validator, validate_content
 
 
 class ValidationTests(unittest.TestCase):
@@ -23,6 +23,48 @@ class ValidationTests(unittest.TestCase):
         )
 
         self.assertEqual(errors, [])
+
+    def test_schema_is_openai_structured_outputs_compatible(self):
+        forbidden_keywords = {
+            "allOf",
+            "not",
+            "dependentRequired",
+            "dependentSchemas",
+            "if",
+            "then",
+            "else",
+        }
+
+        def check_schema(node, path="$"):
+            if isinstance(node, dict):
+                forbidden = forbidden_keywords.intersection(node)
+                self.assertEqual(
+                    forbidden,
+                    set(),
+                    f"{path} uses unsupported keywords: {sorted(forbidden)}",
+                )
+
+                if node.get("type") == "object":
+                    properties = set(node.get("properties", {}))
+                    required = set(node.get("required", []))
+                    self.assertEqual(
+                        required,
+                        properties,
+                        f"{path} must require every declared property",
+                    )
+                    self.assertIs(
+                        node.get("additionalProperties"),
+                        False,
+                        f"{path} must set additionalProperties to false",
+                    )
+
+                for key, value in node.items():
+                    check_schema(value, f"{path}.{key}")
+            elif isinstance(node, list):
+                for index, value in enumerate(node):
+                    check_schema(value, f"{path}[{index}]")
+
+        check_schema(load_schema())
 
     def test_game_without_skill_shots_uses_explicit_empty_array(self):
         data = app.load_yaml(CONTENT / "playboy-bally-1978.yaml")
