@@ -283,7 +283,7 @@ def format_one(
     if isinstance(data, dict):
         if data.get("id") != research_id:
             errors.append(f"$.id: expected {research_id!r}, got {data.get('id')!r}")
-        expected_image = f"images/{research_id}.jpg"
+        expected_image = f"images/{research_id}.webp"
         if data.get("image") != expected_image:
             errors.append(
                 f"$.image: expected {expected_image!r}, got {data.get('image')!r}"

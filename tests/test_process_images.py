@@ -41,7 +41,7 @@ class ProcessImagesTests(unittest.TestCase):
         self.assertEqual(
             generated_names,
             {
-                f"playfield-{variant}.png"
+                f"playfield-{variant}.webp"
                 for variant in image_processor.VARIANTS
             },
         )

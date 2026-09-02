@@ -55,6 +55,7 @@ VARIANTS = {
 # independent variants run at once without adding multiprocessing overhead here.
 # Keep the pool modest: the 300% resize can make each conversion memory-hungry.
 MAX_PARALLEL_VARIANTS = 4
+WEBP_OUTPUT_ARGS = ["-define", "webp:lossless=true"]
 
 
 def require_imagemagick() -> str:
@@ -81,6 +82,7 @@ def run_variant(
         magick,
         str(source),
         *args,
+        *WEBP_OUTPUT_ARGS,
         str(output),
     ]
 
@@ -109,7 +111,7 @@ def process_images(
     jobs = [
         (
             source,
-            output_dir / f"{source.stem}-{name}.png",
+            output_dir / f"{source.stem}-{name}.webp",
             variant_args,
             magick,
             show_progress,

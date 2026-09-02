@@ -23,7 +23,7 @@ class VenueNotesReviewTests(unittest.TestCase):
             "- Keep this note.\n"
             "- Remove this note.\n"
             "- Edit this note.\n"
-            "image: images/example-game.jpg\n",
+            "image: images/example-game.webp\n",
             encoding="utf-8",
         )
         return path

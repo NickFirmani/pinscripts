@@ -39,7 +39,7 @@ class ProofreadContentTests(unittest.TestCase):
                     "diagram": 1,
                 }
             ],
-            "image": "images/game.jpg",
+            "image": "images/game.webp",
         }
 
         prose = dict(iter_prose(data))

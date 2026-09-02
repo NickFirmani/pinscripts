@@ -40,7 +40,7 @@ Formatting rules:
   purpose into `value`. Put configuration-sensitive caveats in `venue_notes`
   when they affect what a commentator should say.
 - Turn the canonical game name and year into a lowercase, hyphenated `id`, and
-  set `image` to `images/<id>.jpg`.
+  set `image` to `images/<id>.webp`.
 - Keep the most useful, best-supported facts when the schema's item or length
   limits require selection.
 - Preserve edition, revision, and tournament caveats in `venue_notes` when

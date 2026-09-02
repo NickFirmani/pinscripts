@@ -253,7 +253,7 @@ def structured_formatting_prompt(research, expected_id=None):
     if expected_id:
         identity_rules = (
             f"- Set `id` exactly to `{expected_id}`.\n"
-            f"- Set `image` exactly to `images/{expected_id}.jpg`.\n"
+            f"- Set `image` exactly to `images/{expected_id}.webp`.\n"
         )
         prompt = prompt.replace(
             "- Before answering, silently check the result against every schema "
@@ -318,7 +318,7 @@ def format_research_interactively(research, research_id):
     errors = validation_errors(data, schema_validator())
     if data.get("id") != research_id:
         errors.append(f"$.id: expected {research_id!r}, got {data.get('id')!r}")
-    expected_image = f"images/{research_id}.jpg"
+    expected_image = f"images/{research_id}.webp"
     if data.get("image") != expected_image:
         errors.append(
             f"$.image: expected {expected_image!r}, got {data.get('image')!r}"

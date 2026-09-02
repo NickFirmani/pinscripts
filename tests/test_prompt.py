@@ -146,7 +146,7 @@ class PromptTests(unittest.TestCase):
                 "name": "JAWS",
                 "manufacturer": "Stern",
                 "year": 2024,
-                "image": "images/jaws-2024.jpg",
+                "image": "images/jaws-2024.webp",
             }
         )
         with tempfile.TemporaryDirectory() as directory:
@@ -258,7 +258,7 @@ class PromptTests(unittest.TestCase):
                 "name": "JAWS",
                 "manufacturer": "Stern",
                 "year": 2024,
-                "image": "images/jaws-2024.jpg",
+                "image": "images/jaws-2024.webp",
             }
         )
         research = (

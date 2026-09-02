@@ -17,9 +17,10 @@ from .interaction import confirm_overwrite
 from .paths import DOWNLOADS, GAME_LIST, IMAGES, RESEARCH, ROOT
 
 
-IMAGE_SUFFIXES = {
+DOWNLOAD_IMAGE_SUFFIXES = {
     ".avif", ".bmp", ".gif", ".jpeg", ".jpg", ".png", ".tif", ".tiff", ".webp",
 }
+CANONICAL_IMAGE_SUFFIX = ".webp"
 MIN_IMAGE_LONG_EDGE = 1000
 BLACK_AND_WHITE_PREFETCH = 2
 
@@ -43,10 +44,7 @@ def first_game_without_image(
     ]
     for game in games:
         image_id = image_id_for_game(game, research_directory)
-        has_image = any(
-            path.is_file() and path.stem == image_id
-            for path in images_directory.glob(f"{image_id}.*")
-        )
+        has_image = (images_directory / f"{image_id}{CANONICAL_IMAGE_SUFFIX}").is_file()
         if not has_image:
             return game
     return None
@@ -54,12 +52,8 @@ def first_game_without_image(
 
 def black_and_white_pair(source, images_directory=None):
     images_directory = images_directory or IMAGES
-    matches = sorted(
-        path
-        for path in images_directory.glob(f"{source.stem}-bw.*")
-        if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
-    )
-    return matches[0] if matches else None
+    candidate = images_directory / f"{source.stem}-bw{CANONICAL_IMAGE_SUFFIX}"
+    return candidate if candidate.is_file() else None
 
 
 def color_images_without_black_and_white(images_directory=None):
@@ -74,7 +68,7 @@ def color_images_without_black_and_white(images_directory=None):
         if path.is_file()
         and not path.name.startswith(".")
         and not path.stem.endswith("-bw")
-        and path.suffix.lower() in IMAGE_SUFFIXES
+        and path.suffix.lower() == CANONICAL_IMAGE_SUFFIX
     )
     return [
         source
@@ -87,16 +81,14 @@ def find_color_image(game, images_directory=None, research_directory=None):
     images_directory = images_directory or IMAGES
     supplied_path = Path(game).expanduser()
     if supplied_path.is_file():
-        return supplied_path
+        return (
+            supplied_path
+            if supplied_path.suffix.lower() == CANONICAL_IMAGE_SUFFIX
+            else None
+        )
     image_id = image_id_for_game(game, research_directory)
-    matches = sorted(
-        path
-        for path in images_directory.glob(f"{image_id}.*")
-        if path.is_file()
-        and path.stem == image_id
-        and path.suffix.lower() in IMAGE_SUFFIXES
-    )
-    return matches[0] if matches else None
+    candidate = images_directory / f"{image_id}{CANONICAL_IMAGE_SUFFIX}"
+    return candidate if candidate.is_file() else None
 
 
 def open_images_in_preview(paths):
@@ -136,7 +128,7 @@ class MissingImageVariantsError(RuntimeError):
 
 def generate_black_and_white_variants(source, output_directory, show_progress=True):
     output_dir = process_images(source, output_directory, show_progress=show_progress)
-    variant_paths = [output_dir / f"{source.stem}-{name}.png" for name in VARIANTS]
+    variant_paths = [output_dir / f"{source.stem}-{name}.webp" for name in VARIANTS]
     missing = [path for path in variant_paths if not path.is_file()]
     if missing:
         raise MissingImageVariantsError(
@@ -162,7 +154,9 @@ def review_black_and_white_variants(source, variant_paths):
     action, selected = request_black_and_white_variant(variant_paths)
     if action != "selected":
         return action
-    destination = black_and_white_pair(source) or (IMAGES / f"{source.stem}-bw.png")
+    destination = black_and_white_pair(source) or (
+        IMAGES / f"{source.stem}-bw{CANONICAL_IMAGE_SUFFIX}"
+    )
     if not confirm_overwrite(destination):
         print("Black-and-white image not saved.", file=sys.stderr)
         return "skip"
@@ -352,7 +346,7 @@ def low_resolution_color_images(
             not path.is_file()
             or path.name.startswith(".")
             or path.stem.endswith("-bw")
-            or path.suffix.lower() not in IMAGE_SUFFIXES
+            or path.suffix.lower() != CANONICAL_IMAGE_SUFFIX
         ):
             continue
         try:
@@ -390,41 +384,57 @@ def unused_backup_path(path, backup_directory):
     return candidate
 
 
-def replace_image_preserving_format(download, destination):
+def write_canonical_webp(source, destination):
+    """Write an arbitrary downloaded image as an atomic canonical WebP."""
     destination = destination.resolve()
-    backup_directory = destination.parent / "low-res-backup"
-    backup_directory.mkdir(parents=True, exist_ok=True)
+    destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
-        prefix=f".{destination.stem}-replacement-",
-        suffix=destination.suffix,
+        prefix=f".{destination.stem}-incoming-",
+        suffix=CANONICAL_IMAGE_SUFFIX,
         dir=destination.parent,
         delete=False,
     ) as temporary:
         temporary_path = Path(temporary.name)
     try:
-        if download.suffix.lower() == destination.suffix.lower():
-            shutil.copy2(download, temporary_path)
+        if source.suffix.lower() == CANONICAL_IMAGE_SUFFIX:
+            shutil.copy2(source, temporary_path)
         else:
             magick = require_imagemagick()
             subprocess.run(
-                [magick, str(download), "-auto-orient", str(temporary_path)],
+                [
+                    magick,
+                    str(source),
+                    "-auto-orient",
+                    "-quality",
+                    "92",
+                    str(temporary_path),
+                ],
                 check=True,
             )
         image_dimensions(temporary_path)
-        backup = unused_backup_path(destination, backup_directory)
-        shutil.copy2(destination, backup)
         temporary_path.replace(destination)
-        black_and_white = black_and_white_pair(destination, destination.parent)
-        black_and_white_backup = None
-        if black_and_white is not None:
-            black_and_white_backup = unused_backup_path(
-                black_and_white,
-                backup_directory,
-            )
-            shutil.move(black_and_white, black_and_white_backup)
-        return backup, black_and_white_backup
     finally:
         temporary_path.unlink(missing_ok=True)
+
+
+def replace_canonical_image(download, destination):
+    destination = destination.resolve()
+    if destination.suffix.lower() != CANONICAL_IMAGE_SUFFIX:
+        raise ValueError(f"canonical image must be WebP: {destination}")
+    backup_directory = destination.parent / "low-res-backup"
+    backup_directory.mkdir(parents=True, exist_ok=True)
+    backup = unused_backup_path(destination, backup_directory)
+    shutil.copy2(destination, backup)
+    write_canonical_webp(download, destination)
+    black_and_white = black_and_white_pair(destination, destination.parent)
+    black_and_white_backup = None
+    if black_and_white is not None:
+        black_and_white_backup = unused_backup_path(
+            black_and_white,
+            backup_directory,
+        )
+        shutil.move(black_and_white, black_and_white_backup)
+    return backup, black_and_white_backup
 
 
 def interactive_low_resolution_image_repair(game):
@@ -501,7 +511,7 @@ def interactive_low_resolution_image_repair(game):
                 before = download_snapshot()
                 continue
             try:
-                backup, black_and_white_backup = replace_image_preserving_format(
+                backup, black_and_white_backup = replace_canonical_image(
                     download,
                     source,
                 )
@@ -592,14 +602,19 @@ def interactive_game_image(game):
     if not image_id:
         print("ERROR: could not derive an image filename.", file=sys.stderr)
         return 1
-    destination = IMAGES / f"{image_id}{source.suffix.lower()}"
+    if source.suffix.lower() not in DOWNLOAD_IMAGE_SUFFIXES:
+        print(
+            f"ERROR: unsupported downloaded image format: {source.suffix}",
+            file=sys.stderr,
+        )
+        return 1
+    destination = IMAGES / f"{image_id}{CANONICAL_IMAGE_SUFFIX}"
     if not confirm_overwrite(destination):
         print("Image not copied.", file=sys.stderr)
         return 0
     try:
-        IMAGES.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, destination)
-    except OSError as error:
+        write_canonical_webp(source, destination)
+    except (OSError, subprocess.CalledProcessError, SystemExit) as error:
         print(
             f"ERROR: could not copy {source} to {destination}: {error}",
             file=sys.stderr,

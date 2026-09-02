@@ -8,9 +8,23 @@ from unittest.mock import patch
 
 import main as cli
 import pinscripts.images as app
+from PIL import Image
 
 
 class GameImageTests(unittest.TestCase):
+    def test_downloaded_images_are_written_as_canonical_webp(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "download.png"
+            destination = root / "images" / "game.webp"
+            Image.new("RGB", (40, 60), "#24506f").save(source)
+
+            app.write_canonical_webp(source, destination)
+
+            with Image.open(destination) as image:
+                self.assertEqual(image.format, "WEBP")
+                self.assertEqual(image.size, (40, 60))
+
     def test_matching_research_id_prefers_exact_id(self):
         with tempfile.TemporaryDirectory() as directory:
             research = Path(directory)
@@ -73,8 +87,8 @@ class GameImageTests(unittest.TestCase):
             )
             (research / "jaws-pro-stern-2024.md").touch()
             (research / "captain-fantastic-bally-1977.md").touch()
-            (images / "jaws-pro-stern-2024.jpg").touch()
-            (images / "captain-fantastic-bally-1977-bw.png").touch()
+            (images / "jaws-pro-stern-2024.webp").touch()
+            (images / "captain-fantastic-bally-1977-bw.webp").touch()
 
             result = app.first_game_without_image(
                 game_list,
@@ -110,12 +124,12 @@ class GameImageTests(unittest.TestCase):
     def test_color_images_without_black_and_white_finds_only_unpaired_sources(self):
         with tempfile.TemporaryDirectory() as directory:
             images = Path(directory)
-            paired = images / "paired.jpg"
+            paired = images / "paired.webp"
             missing = images / "missing.webp"
             paired.touch()
             missing.touch()
-            (images / "paired-bw.png").touch()
-            (images / "orphan-bw.png").touch()
+            (images / "paired-bw.webp").touch()
+            (images / "orphan-bw.webp").touch()
             (images / "notes.txt").touch()
 
             result = app.color_images_without_black_and_white(images)
@@ -131,6 +145,7 @@ class GameImageTests(unittest.TestCase):
             images = root / "images"
             research = root / "content" / "research"
             downloads.mkdir()
+            images.mkdir()
             research.mkdir(parents=True)
             (research / "jaws-pro-stern-2024.md").touch()
             downloaded = downloads / "downloaded.JPEG"
@@ -150,13 +165,20 @@ class GameImageTests(unittest.TestCase):
                 ) as opened,
                 patch.object(app, "image_dimensions", return_value=(1600, 2400)),
                 patch.object(app, "first_game_without_image", return_value=None),
+                patch.object(
+                    app,
+                    "write_canonical_webp",
+                    side_effect=lambda source, destination: destination.write_bytes(
+                        source.read_bytes()
+                    ),
+                ),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(stdout),
                 redirect_stderr(stderr),
             ):
                 result = app.interactive_game_image("Jaws (Pro) Stern 2024")
 
-            destination = images / "jaws-pro-stern-2024.jpeg"
+            destination = images / "jaws-pro-stern-2024.webp"
             self.assertEqual(destination.read_bytes(), b"image data")
 
         self.assertEqual(result, 0)
@@ -171,6 +193,7 @@ class GameImageTests(unittest.TestCase):
             images = root / "images"
             research = root / "research"
             downloads.mkdir()
+            images.mkdir()
             research.mkdir()
 
             def download_image(_game):
@@ -215,7 +238,7 @@ class GameImageTests(unittest.TestCase):
                 "Existing Game 2025\nMissing Game 2026\n",
                 encoding="utf-8",
             )
-            (images / "existing-game-2025.jpg").touch()
+            (images / "existing-game-2025.webp").touch()
 
             def download_image(_game):
                 (downloads / "result.jpg").write_bytes(b"image data")
@@ -232,13 +255,20 @@ class GameImageTests(unittest.TestCase):
                     side_effect=download_image,
                 ) as opened,
                 patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(
+                    app,
+                    "write_canonical_webp",
+                    side_effect=lambda source, destination: destination.write_bytes(
+                        source.read_bytes()
+                    ),
+                ),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(stdout),
             ):
                 result = app.interactive_game_image("")
 
             self.assertEqual(
-                (images / "missing-game-2026.jpg").read_bytes(),
+                (images / "missing-game-2026.webp").read_bytes(),
                 b"image data",
             )
 
@@ -277,7 +307,7 @@ class GameImageTests(unittest.TestCase):
             ):
                 result = app.interactive_game_image("A New Game 2026")
 
-            self.assertFalse((images / "a-new-game-2026.jpg").exists())
+            self.assertFalse((images / "a-new-game-2026.webp").exists())
 
         self.assertEqual(result, 0)
         self.assertIn("Downloaded image resolution: 500x900", stdout.getvalue())
@@ -291,6 +321,7 @@ class GameImageTests(unittest.TestCase):
             images = root / "images"
             research = root / "research"
             downloads.mkdir()
+            images.mkdir()
             research.mkdir()
 
             def download_image(_game):
@@ -308,6 +339,13 @@ class GameImageTests(unittest.TestCase):
                 ),
                 patch.object(app, "image_dimensions", return_value=(500, 900)),
                 patch.object(app, "first_game_without_image", return_value=None),
+                patch.object(
+                    app,
+                    "write_canonical_webp",
+                    side_effect=lambda source, destination: destination.write_bytes(
+                        source.read_bytes()
+                    ),
+                ),
                 patch("builtins.input", side_effect=["", "yes"]),
                 redirect_stdout(io.StringIO()),
                 redirect_stderr(io.StringIO()),
@@ -315,7 +353,7 @@ class GameImageTests(unittest.TestCase):
                 result = app.interactive_game_image("A New Game 2026")
 
             self.assertEqual(
-                (images / "a-new-game-2026.jpg").read_bytes(),
+                (images / "a-new-game-2026.webp").read_bytes(),
                 b"rare image",
             )
 
@@ -327,18 +365,18 @@ class GameImageTests(unittest.TestCase):
             root = Path(directory)
             images = root / "images"
             images.mkdir()
-            first = images / "alpha.jpg"
+            first = images / "alpha.webp"
             second = images / "beta.webp"
-            paired = images / "paired.png"
+            paired = images / "paired.webp"
             first.write_bytes(b"alpha color")
             second.write_bytes(b"beta color")
             paired.write_bytes(b"paired color")
-            (images / "paired-bw.png").write_bytes(b"paired bw")
+            (images / "paired-bw.webp").write_bytes(b"paired bw")
 
             def generate_variants(source, output_dir, show_progress=True):
                 output_dir.mkdir(parents=True, exist_ok=True)
                 for name in app.VARIANTS:
-                    (output_dir / f"{source.stem}-{name}.png").write_bytes(
+                    (output_dir / f"{source.stem}-{name}.webp").write_bytes(
                         f"{source.stem}:{name}".encode()
                     )
                 return output_dir
@@ -354,11 +392,11 @@ class GameImageTests(unittest.TestCase):
                 result = app.interactive_black_and_white_images("")
 
             self.assertEqual(
-                (images / "alpha-bw.png").read_bytes(),
+                (images / "alpha-bw.webp").read_bytes(),
                 b"alpha:posterize-4",
             )
             self.assertEqual(
-                (images / "beta-bw.png").read_bytes(),
+                (images / "beta-bw.webp").read_bytes(),
                 b"beta:posterize-6",
             )
 
@@ -368,9 +406,9 @@ class GameImageTests(unittest.TestCase):
 
     def test_black_and_white_batch_prefetches_next_two_during_review(self):
         sources = [
-            Path("/project/images/alpha.jpg"),
-            Path("/project/images/beta.jpg"),
-            Path("/project/images/gamma.jpg"),
+            Path("/project/images/alpha.webp"),
+            Path("/project/images/beta.webp"),
+            Path("/project/images/gamma.webp"),
         ]
         started = {
             source: threading.Event()
@@ -383,7 +421,7 @@ class GameImageTests(unittest.TestCase):
                 started[source].set()
                 release_background.wait(timeout=2)
             return [
-                output_dir / f"{source.stem}-{name}.png"
+                output_dir / f"{source.stem}-{name}.webp"
                 for name in app.VARIANTS
             ]
 
@@ -424,7 +462,7 @@ class GameImageTests(unittest.TestCase):
             research = root / "research"
             images.mkdir()
             research.mkdir()
-            source = images / "jaws-pro-stern-2024.jpg"
+            source = images / "jaws-pro-stern-2024.webp"
             source.touch()
             (research / "jaws-pro-stern-2024.md").touch()
 
@@ -464,10 +502,10 @@ class GameImageTests(unittest.TestCase):
     def test_low_resolution_scan_excludes_large_and_black_and_white_images(self):
         with tempfile.TemporaryDirectory() as directory:
             images = Path(directory)
-            small = images / "small.jpg"
+            small = images / "small.webp"
             large = images / "large.webp"
-            narrow_but_long = images / "narrow.png"
-            black_and_white = images / "small-bw.png"
+            narrow_but_long = images / "narrow.webp"
+            black_and_white = images / "small-bw.webp"
             for path in (small, large, narrow_but_long, black_and_white):
                 path.touch()
 
@@ -487,7 +525,7 @@ class GameImageTests(unittest.TestCase):
 
     def test_low_resolution_repair_searches_for_games_one_at_a_time(self):
         stdout = io.StringIO()
-        first = Path("/project/images/alpha.jpg")
+        first = Path("/project/images/alpha.webp")
         second = Path("/project/images/beta.webp")
         images = [(first, 400, 700), (second, 600, 900)]
 
@@ -504,11 +542,11 @@ class GameImageTests(unittest.TestCase):
             [call.args[0] for call in opened.call_args_list],
             ["alpha", "beta"],
         )
-        self.assertIn("[1/2] alpha.jpg (400x700)", stdout.getvalue())
+        self.assertIn("[1/2] alpha.webp (400x700)", stdout.getvalue())
         self.assertIn("[2/2] beta.webp (600x900)", stdout.getvalue())
 
     def test_low_resolution_repair_resolves_an_explicit_game(self):
-        source = Path("/project/images/jaws-pro-stern-2024.jpg")
+        source = Path("/project/images/jaws-pro-stern-2024.webp")
         with (
             patch.object(app, "find_color_image", return_value=source) as find,
             patch.object(app, "image_dimensions", return_value=(1565, 2560)),
@@ -526,9 +564,9 @@ class GameImageTests(unittest.TestCase):
 
     def test_low_resolution_repair_replaces_download_and_reports_improvement(self):
         stdout = io.StringIO()
-        source = Path("/project/images/alpha.jpg")
+        source = Path("/project/images/alpha.webp")
         download = Path("/downloads/better.png")
-        backup = Path("/project/images/low-res-backup/alpha.jpg")
+        backup = Path("/project/images/low-res-backup/alpha.webp")
 
         with (
             patch.object(
@@ -541,7 +579,7 @@ class GameImageTests(unittest.TestCase):
             patch.object(app, "confirm_image_resolution", return_value=True),
             patch.object(
                 app,
-                "replace_image_preserving_format",
+                "replace_canonical_image",
                 return_value=(backup, None),
             ) as replace,
             patch.object(app, "image_dimensions", return_value=(1400, 2400)),
@@ -558,16 +596,25 @@ class GameImageTests(unittest.TestCase):
     def test_replacement_backs_up_color_and_stale_black_and_white_pair(self):
         with tempfile.TemporaryDirectory() as directory:
             images = Path(directory)
-            destination = images / "game.jpg"
-            black_and_white = images / "game-bw.png"
+            destination = images / "game.webp"
+            black_and_white = images / "game-bw.webp"
             download = images / "download.jpg"
             destination.write_bytes(b"old color")
             black_and_white.write_bytes(b"old bw")
             download.write_bytes(b"new color")
 
-            with patch.object(app, "image_dimensions", return_value=(1600, 2400)):
+            with (
+                patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(
+                    app,
+                    "write_canonical_webp",
+                    side_effect=lambda source, target: target.write_bytes(
+                        source.read_bytes()
+                    ),
+                ),
+            ):
                 backup, black_and_white_backup = (
-                    app.replace_image_preserving_format(download, destination)
+                    app.replace_canonical_image(download, destination)
                 )
 
             self.assertEqual(destination.read_bytes(), b"new color")
@@ -588,7 +635,7 @@ class GameImageTests(unittest.TestCase):
             (research / "jaws-pro-stern-2024.md").touch()
 
             result = app.game_name_for_image(
-                Path("images/jaws-pro-stern-2024.jpg"),
+                Path("images/jaws-pro-stern-2024.webp"),
                 game_list,
                 research,
             )
