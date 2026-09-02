@@ -14,6 +14,7 @@ from urllib.parse import urlencode
 
 import yaml
 from jsonschema import Draft202012Validator
+from PIL import Image, UnidentifiedImageError
 
 from scripts.process_images import VARIANTS, process_images
 from scripts.render import merge_pdfs, render_game
@@ -42,6 +43,7 @@ IMAGE_SUFFIXES = {
     ".tiff",
     ".webp",
 }
+MIN_IMAGE_SHORT_EDGE = 1000
 
 
 class PinRegistryError(ValueError):
@@ -451,6 +453,37 @@ def newest_download_since(snapshot, downloads_directory=None):
     return max(candidates, default=(None, None))[1]
 
 
+def image_dimensions(path):
+    with Image.open(path) as image:
+        return image.size
+
+
+def confirm_image_resolution(path):
+    try:
+        width, height = image_dimensions(path)
+    except (OSError, UnidentifiedImageError) as error:
+        print(
+            f"ERROR: downloaded file is not a readable image: {error}",
+            file=sys.stderr,
+        )
+        return False
+
+    print(f"Downloaded image resolution: {width}x{height}")
+    if min(width, height) >= MIN_IMAGE_SHORT_EDGE:
+        return True
+
+    print(
+        f"WARNING: the image's short edge is below {MIN_IMAGE_SHORT_EDGE}px; "
+        "it may look soft in print.",
+        file=sys.stderr,
+    )
+    try:
+        answer = input("Use this low-resolution image anyway? [y/N] ")
+    except EOFError:
+        answer = ""
+    return answer.strip().lower() in {"y", "yes"}
+
+
 def google_image_search_url(game):
     return "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": game + " playfield"})
 
@@ -508,6 +541,9 @@ def interactive_game_image(game):
             file=sys.stderr,
         )
         return 1
+    if not confirm_image_resolution(source):
+        print("Image not copied.", file=sys.stderr)
+        return 0
 
     research_id = matching_research_id(game)
     image_id = image_id_for_game(game)
