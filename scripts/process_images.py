@@ -3,6 +3,7 @@
 import argparse
 import shutil
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 
@@ -47,56 +48,13 @@ VARIANTS = {
         "-unsharp", "0x1.2+1.0+0.02",
         "-posterize", "6",
     ],
-
-    "bw-55": [
-        "-auto-orient",
-        "-resize", "300%",
-        "-filter", "Lanczos",
-        "-colorspace", "Gray",
-        "-contrast-stretch", "0.5%x0.5%",
-        "-clahe", "8x8+128+3",
-        "-unsharp", "0x1.2+1.0+0.02",
-        "-threshold", "55%",
-        "-type", "bilevel",
-    ],
-
-    "bw-60": [
-        "-auto-orient",
-        "-resize", "300%",
-        "-filter", "Lanczos",
-        "-colorspace", "Gray",
-        "-contrast-stretch", "0.5%x0.5%",
-        "-clahe", "8x8+128+3",
-        "-unsharp", "0x1.2+1.0+0.02",
-        "-threshold", "60%",
-        "-type", "bilevel",
-    ],
-
-    "bw-65": [
-        "-auto-orient",
-        "-resize", "300%",
-        "-filter", "Lanczos",
-        "-colorspace", "Gray",
-        "-contrast-stretch", "0.5%x0.5%",
-        "-clahe", "8x8+128+3",
-        "-unsharp", "0x1.2+1.0+0.02",
-        "-threshold", "65%",
-        "-type", "bilevel",
-    ],
-
-    "bw-clean": [
-        "-auto-orient",
-        "-resize", "300%",
-        "-filter", "Lanczos",
-        "-colorspace", "Gray",
-        "-contrast-stretch", "1%x1%",
-        "-clahe", "8x8+128+3",
-        "-unsharp", "0x1.2+1.0+0.02",
-        "-threshold", "60%",
-        "-morphology", "Close", "Diamond:1",
-        "-type", "bilevel",
-    ],
 }
+
+
+# ImageMagick does the CPU-heavy work in child processes, so threads let several
+# independent variants run at once without adding multiprocessing overhead here.
+# Keep the pool modest: the 300% resize can make each conversion memory-hungry.
+MAX_PARALLEL_VARIANTS = 4
 
 
 def require_imagemagick() -> str:
@@ -117,6 +75,7 @@ def run_variant(
     output: Path,
     args: list[str],
     magick: str = "magick",
+    show_progress: bool = True,
 ) -> None:
     cmd = [
         magick,
@@ -125,11 +84,16 @@ def run_variant(
         str(output),
     ]
 
-    print(f"→ {output.name}")
+    if show_progress:
+        print(f"→ {output.name}")
     subprocess.run(cmd, check=True)
 
 
-def process_images(source: Path, output_dir: Path | None = None) -> Path:
+def process_images(
+    source: Path,
+    output_dir: Path | None = None,
+    show_progress: bool = True,
+) -> Path:
     source = source.resolve()
 
     if not source.exists():
@@ -142,13 +106,26 @@ def process_images(source: Path, output_dir: Path | None = None) -> Path:
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    for name, variant_args in VARIANTS.items():
-        output = output_dir / f"{source.stem}-{name}.png"
-        run_variant(source, output, variant_args, magick)
+    jobs = [
+        (
+            source,
+            output_dir / f"{source.stem}-{name}.png",
+            variant_args,
+            magick,
+            show_progress,
+        )
+        for name, variant_args in VARIANTS.items()
+    ]
+    worker_count = min(MAX_PARALLEL_VARIANTS, len(jobs))
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        futures = [executor.submit(run_variant, *job) for job in jobs]
+        for future in futures:
+            future.result()
 
-    print()
-    print(f"Generated {len(VARIANTS)} variants in:")
-    print(output_dir)
+    if show_progress:
+        print()
+        print(f"Generated {len(VARIANTS)} variants in:")
+        print(output_dir)
 
     return output_dir
 

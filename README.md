@@ -247,11 +247,12 @@ already have a corresponding `<id>-bw.*` file:
 make game-image-bw
 ```
 
-For each image, it generates the eight grayscale, posterized, and bilevel
-variants, opens them together in Preview, and asks which one to keep. Choose by
-number or variant name. Enter `s` to skip the current image or `q` to stop the
-batch. The selected candidate is saved as `images/<id>-bw.png`; temporary
-variants are removed after each choice.
+For each image, it generates four grayscale and posterized variants in
+parallel, opens them together in Preview, and asks which one to keep. During
+batch review, it also prepares the next two image sets in the background.
+Choose by number or variant name. Enter `s` to skip the current image or `q` to
+stop the batch. The selected candidate is saved as `images/<id>-bw.png`;
+temporary variants are removed after each choice.
 
 ### Benchmarking the formatting phase
 

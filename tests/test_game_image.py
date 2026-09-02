@@ -1,5 +1,6 @@
 import io
 import tempfile
+import threading
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
@@ -333,7 +334,7 @@ class GameImageTests(unittest.TestCase):
             paired.write_bytes(b"paired color")
             (images / "paired-bw.png").write_bytes(b"paired bw")
 
-            def generate_variants(source, output_dir):
+            def generate_variants(source, output_dir, show_progress=True):
                 output_dir.mkdir(parents=True, exist_ok=True)
                 for name in app.VARIANTS:
                     (output_dir / f"{source.stem}-{name}.png").write_bytes(
@@ -346,7 +347,7 @@ class GameImageTests(unittest.TestCase):
                 patch.object(app, "IMAGES", images),
                 patch.object(app, "process_images", side_effect=generate_variants),
                 patch.object(app, "open_images_in_preview") as preview,
-                patch("builtins.input", side_effect=["posterize-4", "8"]),
+                patch("builtins.input", side_effect=["posterize-4", "4"]),
                 redirect_stdout(stdout),
             ):
                 result = app.interactive_black_and_white_images("")
@@ -357,12 +358,63 @@ class GameImageTests(unittest.TestCase):
             )
             self.assertEqual(
                 (images / "beta-bw.png").read_bytes(),
-                b"beta:bw-clean",
+                b"beta:posterize-6",
             )
 
         self.assertEqual(result, 0)
         self.assertEqual(preview.call_count, 2)
         self.assertIn("Found 2 color image(s)", stdout.getvalue())
+
+    def test_black_and_white_batch_prefetches_next_two_during_review(self):
+        sources = [
+            Path("/project/images/alpha.jpg"),
+            Path("/project/images/beta.jpg"),
+            Path("/project/images/gamma.jpg"),
+        ]
+        started = {
+            source: threading.Event()
+            for source in sources[1:]
+        }
+        release_background = threading.Event()
+
+        def generate(source, output_dir, _show_progress):
+            if source in started:
+                started[source].set()
+                release_background.wait(timeout=2)
+            return [
+                output_dir / f"{source.stem}-{name}.png"
+                for name in app.VARIANTS
+            ]
+
+        def review(source, _variant_paths):
+            if source == sources[0]:
+                try:
+                    self.assertTrue(started[sources[1]].wait(timeout=2))
+                    self.assertTrue(started[sources[2]].wait(timeout=2))
+                finally:
+                    release_background.set()
+            return "skip"
+
+        with (
+            patch.object(
+                app,
+                "generate_black_and_white_variants",
+                side_effect=generate,
+            ),
+            patch.object(
+                app,
+                "review_black_and_white_variants",
+                side_effect=review,
+            ) as review_variants,
+            redirect_stdout(io.StringIO()),
+        ):
+            result = app.process_black_and_white_batch(sources)
+
+        self.assertEqual(result, 0)
+        self.assertEqual(
+            [call.args[0] for call in review_variants.call_args_list],
+            sources,
+        )
 
     def test_black_and_white_flow_resolves_an_explicit_game_name(self):
         with tempfile.TemporaryDirectory() as directory:
