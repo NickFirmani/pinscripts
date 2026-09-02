@@ -139,12 +139,10 @@ trivia:
 summary: Spider items → multiballs → Snake/FUEL multipliers → Crank It Up → cash or
   continue
 venue_notes:
-- V1.80 software is installed; the first Crank It Up requires 12 of each item.
 - Competition preset is active; the Super Skill Shot Coffin Hurry-Up is deterministically
   the left orbit.
-- Coffin locks cannot be collected during other multiballs under the stock/default
-  behavior.
+- Coffin locks cannot be collected during other multiballs under the stock/default behavior.
 - Extra Balls use competition-default handling.
-- This is the original 2013 Pro, not Metallica Remastered; Pro uses virtual Coffin
-  locks and lacks the Premium/LE hammer and physical three-ball lock.
+- This is the original 2013 Pro, not Metallica Remastered; Pro uses virtual Coffin locks and
+  lacks the Premium/LE hammer and physical three-ball lock.
 image: images/metallica-pro-stern-2013.jpg

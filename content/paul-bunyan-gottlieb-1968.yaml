@@ -94,11 +94,5 @@ trivia:
   months later.
 summary: Ordered A-B-C → lit 500 target → relay recovery → lit 600 holes → shared
   tournament state
-venue_notes:
-- 'Configured for 5 balls: complete A-B-C in order.'
-- Stock A-B-C state carries between players and games until completed.
-- Shoot Again handling is listed as either plunge without flipping or ignored; confirm
-  the local ruling before commentary.
-- Do not assume Big Jack award behavior is identical to Paul Bunyan.
-- Verify the top-rollunder sequence and kick-out eject behavior on this physical game.
+venue_notes: []
 image: images/paul-bunyan-gottlieb-1968.jpg

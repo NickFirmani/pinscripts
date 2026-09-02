@@ -137,13 +137,10 @@ trivia:
 summary: Records → Song → Time Machine Multiball → Albums → Weapon → years → stronger
   stacks
 venue_notes:
-- Venue software is V1.18.
-- The venue uses either Competition Install or Competition Mode; Competition Install
-  disables extra balls.
-- Competition Install uses Freewill MB Easy, Freewill Add-A-Ball Hard, and at most
-  two wildcard records.
-- On V1.18, a completed 80M Song awards the extra five years.
-- Competition Install has been documented with a 3× shot-multiplier cap.
-- 'This is the Pro: Time Machine entrance is stationary, Dead End is a standup, and
-  Freewill uses software/add-a-ball behavior rather than the Premium/LE physical lock.'
+- The venue uses either Competition Install or Competition Mode; Competition Install disables
+  extra balls.
+- Competition Install uses Freewill MB Easy, Freewill Add-A-Ball Hard, and at most two wildcard
+  records.
+- 'This is the Pro: Time Machine entrance is stationary, Dead End is a standup, and Freewill
+  uses software/add-a-ball behavior rather than the Premium/LE physical lock.'
 image: images/rush-pro-stern-2022.jpg

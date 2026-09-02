@@ -108,10 +108,5 @@ summary: Spinner farm → METEOR completion → Bonus X → missile bonus → WO
   → drain control
 venue_notes:
 - This reference covers original Stern rules, not modern replacement code.
-- Venue reports the U1a factory bug-fix ROM.
 - Configured for 3 balls.
-- Extra Balls and WOW awards are disabled or have no value.
-- WOW/Special/Spot lamp movement and center-post configuration are unknown.
-- 'Multiplier persistence follows the original Stern manual: 1×–6× carry; after 7×
-  drains, the next ball begins at 3×.'
 image: images/meteor-stern-electronics-1979.jpg

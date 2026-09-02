@@ -146,16 +146,9 @@ trivia:
 summary: Lower forcefield → build Multiball → stack hurry-ups → Total Annihilation
   → Super Jackpot → attack saucer safely
 venue_notes:
-- Venue machine is the original Bally/Midway 1995 WPC-95 version, not the Chicago
-  Gaming remake.
+- Venue machine is the original Bally/Midway 1995 WPC-95 version, not the Chicago Gaming remake.
 - Tournament/competition mode is enabled.
 - Game is configured for 3 balls.
-- Extra Balls are disabled or converted to points; exact treatment is unresolved.
-- CPU ROM is unknown. Stroke of Luck tournament behavior differs materially between
-  official V1.1 and later 1.13/1.13B code.
-- Super Jackpot progression is ROM-sensitive; do not assume a fixed progression beyond
-  the verified starting value.
-- Video Mode Extra Ball behavior also changes in 1.13.
-- Ball-save durations can be operator-adjusted; only the relative behavior in the
-  brief is safe to describe.
+- Ball-save durations can be operator-adjusted; only the relative behavior in the brief is
+  safe to describe.
 image: images/attack-from-mars-bally-1995.jpg

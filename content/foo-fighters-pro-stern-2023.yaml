@@ -143,9 +143,7 @@ trivia:
   to 1×/2×/4×/8×.
 summary: VAN Mode → Overlord stack → Playfield X → Area 51 → Super Jackpot
 venue_notes:
-- 'Installed code: V1.03.0.'
 - Extra balls are disabled in software; earned extra balls award the normal 10M consolation.
 - Tournament configuration is Competition Install or Competition gameplay mode; Competition
   Install tightens Overlord qualification and Playfield-X and Van Mode timing.
-- Physical return behavior, especially right-ramp and Rock-O-Meter feeds, is setup-sensitive.
 image: images/foo-fighters-pro-stern-2023.jpg

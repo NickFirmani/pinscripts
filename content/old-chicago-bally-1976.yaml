@@ -119,10 +119,8 @@ trivia:
 summary: Spinner builds bonus → center saucer repeats cash-outs → 10K boosts upper-right
   saucer → drops are secondary → saucer kickouts threaten drains
 venue_notes:
-- Configured for five balls; the three-ball three-step top-rollover bonus advance
-  does not apply.
+- Configured for five balls; the three-ball three-step top-rollover bonus advance does not
+  apply.
 - Extra Balls are disabled and worth nothing at this venue.
 - Spinner value is unknown; it may be set to 10 or 100 points per spin.
-- Center Collect Bonus kickout behavior is unknown.
-- Saucer kickouts are the primary drain area at this venue.
 image: images/old-chicago-bally-1976.jpg

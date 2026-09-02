@@ -130,11 +130,7 @@ trivia:
 summary: Castle loops → prepare Mist and Coffin → stack multiballs → relock Castle
   → Tunnel Double Jackpot
 venue_notes:
-- Installed ROM is Williams L-1 production.
 - Extra balls are disabled for this event.
 - Love Never Dies is configured stock/very short, about 2 seconds.
-- Mist magnet works normally.
 - On L-1, Mystery remains random even with Tournament Play.
-- Production L-1 jackpot and bonus behavior should not be confused with prototype
-  ROM behavior.
 image: images/bram-stokers-dracula-1993.jpg

@@ -90,6 +90,17 @@ Clean generated output:
 make clean
 ```
 
+Review Venue Notes one game and one note at a time:
+
+```sh
+make review-venue-notes
+make review-venue-notes GAME="playboy-bally-1978"
+```
+
+Press Enter or `a` to accept a note, `r` to remove it, `e` to enter replacement
+text, or `q` to save completed decisions for the current game and stop. Only the
+`venue_notes` block in each YAML file is rewritten.
+
 ## Adding a game
 
 1. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file. Its `id` must match the filename stem.

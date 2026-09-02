@@ -113,14 +113,6 @@ trivia:
 summary: Choose House → qualify Battles → build multipliers → stack Blackwater → hammer
   Ram Supers → pursue Hand of the King
 venue_notes:
-- Verified software is V1.37.
-- Extra Balls are disabled by the event procedure; do not call a lit Extra Ball as
-  playable.
-- Configuration was reported as Competition Install or Competition Mode only; confirm
-  which is active before describing Competition Install-specific restrictions.
-- Competition Install disables the Lord of Light drop-bank award, changes ball-save
-  settings, and restricts some House powers.
-- The Dragon eject was identified as the notably dangerous feed on this copy; other
-  physical behavior can vary by setup.
-- House selection is unknown; do not assume players choose freely.
+- Competition Install disables the Lord of Light drop-bank award, changes ball-save settings,
+  and restricts some House powers.
 image: images/game-of-thrones-pro-stern-2015.jpg

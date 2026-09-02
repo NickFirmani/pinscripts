@@ -119,12 +119,8 @@ trivia:
 summary: Get upstairs → lock three → start 3-ball → protect triple scoring → collect
   timed spinner and Mystery
 venue_notes:
-- Stock Williams code is installed.
 - Upper LOCK qualification is typically hard and requires the U-turn route.
 - Lit LOCK progress remembers across balls on this machine.
 - 'Extra Balls are disabled: maximum EBs = 0.'
 - Multiplayer Bonus Ball is disabled.
-- The 1981 Limited Edition is cosmetically different with revised trough/lock switches;
-  gameplay is essentially the same.
-- BK25 is not installed; that replacement code uses radically different rules.
 image: images/black-knight-williams-1980.jpg

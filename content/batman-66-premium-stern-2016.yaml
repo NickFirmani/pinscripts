@@ -131,12 +131,10 @@ trivia:
   leading development.
 summary: Catwoman ramps → Batcave Combo → locks → Villain Multiball → stacked multipliers
 venue_notes:
-- Software is 1.14.
 - Competition Mode or custom tournament adjustments are active; exact award normalization
   should be checked.
 - Extra balls are disabled.
 - Standard ball save is approximately five seconds.
-- Premium, LE, and Super LE share core layout and rules; trim, art, audio, and collector
-  hardware differ.
-- Physical turntable, ramp, and orbit feeds are machine/setup-dependent.
+- Premium, LE, and Super LE share core layout and rules; trim, art, audio, and collector hardware
+  differ.
 image: images/batman-66-premium-stern-2016.jpg

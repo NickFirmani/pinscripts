@@ -138,13 +138,10 @@ trivia:
 summary: Mini-modes → Mayhem locks → Carnage stack → Bell Tower X → Spider-Sense →
   Supers
 venue_notes:
-- 'Installed code: V1.06.'
-- Competition Install or Competition Mode is active; persistent Insider Connected
-  progress is not loaded.
-- 'Use the four default hosts only: Eddie Brock, Flash Thompson, Gwen Stacy, and Peter
-  Parker.'
+- Competition Install or Competition Mode is active; persistent Insider Connected progress
+  is not loaded.
+- 'Use the four default hosts only: Eddie Brock, Flash Thompson, Gwen Stacy, and Peter Parker.'
 - Extra Balls are disabled.
-- Premium/LE have transforming geometry and additional mechanisms; this reference
-  is for fixed-geometry Pro.
-- Follow the installed 1.06 skill-shot UI; older control wording differs.
+- Premium/LE have transforming geometry and additional mechanisms; this reference is for fixed-geometry
+  Pro.
 image: images/venom-pro-stern-2023.jpg

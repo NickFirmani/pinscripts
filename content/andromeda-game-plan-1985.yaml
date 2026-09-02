@@ -110,10 +110,5 @@ summary: Drops → build spinner → build Bonus X → lock ball → Launch Ball
   → rip spinner
 venue_notes:
 - Tournament setup is 3 balls.
-- Bonus multiplier recall is not held between balls.
-- Spinner value recall is not held between balls.
 - Extra Balls are disabled; any point conversion is not known.
-- Spinner starting value has not been confirmed.
-- Right-side return behavior and Launch Ball or lock-saucer rejects have not been
-  characterized for this physical machine.
 image: images/andromeda-game-plan-1985.jpg

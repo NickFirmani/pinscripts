@@ -123,7 +123,6 @@ trivia:
 summary: Build EDDIE → win Battles → cash Soul Shards → activate Playfield X → stack
   multiball or Power Jackpot
 venue_notes:
-- Machine is on v1.16.0 code.
 - Competition Install is enabled.
 - Secret Skill Shots are off under the Competition default.
 - Competition Install has no extra balls.

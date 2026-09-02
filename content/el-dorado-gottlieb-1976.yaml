@@ -114,9 +114,6 @@ trivia:
 summary: Moving 5K light → lit drops → spot control → both-bank reset → persistent
   progress
 venue_notes:
-- This is Gottlieb El Dorado model 370, not Target Alpha or a derivative.
-- 'The venue machine is configured for 5 balls: both target banks must be completed
-  for the 5K award, reset, and Special.'
-- Replay/Special tournament handling is unknown.
-- The Special adjustment is unknown.
+- 'The venue machine is configured for 5 balls: both target banks must be completed for the
+  5K award, reset, and Special.'
 image: images/el-dorado-gottlieb-1976.jpg

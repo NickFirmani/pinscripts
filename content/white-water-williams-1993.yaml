@@ -134,12 +134,8 @@ trivia:
 summary: Locks → Multiball → Insanity Falls tier → 5X stack → Hazards and rafts →
   Wet Willie's
 venue_notes:
-- The installed ROM is L-5; its changes from L-4 were service and bug fixes rather
-  than a rules rewrite.
 - Tournament Play / Tournament Mode is enabled; Mystery Canyon awards a fixed 5M.
 - Extra Balls are disabled in software.
-- Physical locks are shared between players. Another player's multiball can empty
-  them, requiring a previously qualified player to shoot No Way Out again.
-- 'Lost Mine kickout behavior is venue-specific: it may feed safely to the right flipper
-  or require a drop catch.'
+- Physical locks are shared between players. Another player's multiball can empty them, requiring
+  a previously qualified player to shoot No Way Out again.
 image: images/white-water-williams-1993.jpg

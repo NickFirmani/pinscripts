@@ -144,12 +144,9 @@ trivia:
 summary: Mission → Razor Crest stack → Hunter/Scope/Boba 6× → Flamethrower 12× shots
   → Jetpack or Ambush payoff
 venue_notes:
-- This Pro is on code 1.45; the detailed maintained rulesheet is based on 1.42, so
-  minor post-1.42 changes may apply.
-- 'Competition Mode or a competition install is in use: Extra Balls and Child Mystery
-  are disabled.'
-- No notable copy-specific physical behavior was reported.
-- Topper-exclusive Mandalorian Madness and Beskar Bonanza are not included unless
-  a topper is installed and enabled.
+- This Pro is on code 1.45; the detailed maintained rulesheet is based on 1.42, so minor post-1.42
+  changes may apply.
+- 'Competition Mode or a competition install is in use: Extra Balls and Child Mystery are
+  disabled.'
 - Ball saves, Razor Crest hit requirements, and difficulty can be operator-adjusted.
 image: images/mandalorian-pro-stern-2021.jpg

@@ -127,13 +127,6 @@ trivia:
 summary: Ramps and lanes → STARWARP → timed center-ramp million → decade travel →
   1950s multiball → build and collect Jackpot
 venue_notes:
-- ROM 2.4 is installed; specific rule changes for that revision are not established
-  here.
-- 'General Spotting is Factory/Easy: ramps and top lanes spot decade targets.'
-- STARWARP Memory setting is unknown; progress may behave differently between balls
-  or players depending on its setting.
-- 'Novelty mode is enabled: Extra Balls and free-play awards are disabled, and Special
-  converts to score.'
-- Laser Kick is set to Factory and starts lit each ball; outside ramps relight it.
-- No significant physical problem was reported for this machine.
+- 'Novelty mode is enabled: Extra Balls and free-play awards are disabled, and Special converts
+  to score.'
 image: images/time-machine-data-east-1988.jpg

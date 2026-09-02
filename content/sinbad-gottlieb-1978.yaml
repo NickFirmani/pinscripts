@@ -120,10 +120,8 @@ trivia:
 summary: Color drops → 2×–5× bonus → spinner and stars build 15K → ten drops cash
   up to 75K → rebuild
 venue_notes:
-- Venue game is the solid-state System 1 version with digital displays, not the similar
-  four-player EM version.
+- Venue game is the solid-state System 1 version with digital displays, not the similar four-player
+  EM version.
 - This game is configured for 3 balls.
 - Purple-lane Extra Ball is disabled and provides no benefit.
-- Raw target and spinner values, plus some reset and Special behavior, can differ
-  between 3-ball and 5-ball settings.
 image: images/sinbad-gottlieb-1978.jpg

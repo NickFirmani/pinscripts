@@ -83,11 +83,5 @@ trivia:
 - The home cabinet has no coin door.
 - Dedicated home instruction and score cards are numbered 0614-00924 and 0614-00926.
 summary: 1-2-3 targets → 3X Bonus → top rollovers → 24K completion → Extra Ball opportunity
-venue_notes:
-- Extra Balls are handled either by disabling them or by plunging an earned ball without
-  flipping.
-- The 50K/100K free-ball adjustment is unknown; do not state its exact threshold behavior.
-- The machine uses the original Bally CPU and program.
-- This is the 1977 home model; commercial Captain Fantastic rules and layout advice
-  do not apply.
+venue_notes: []
 image: images/captain-fantastic-bally-1977.jpg

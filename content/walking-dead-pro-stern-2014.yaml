@@ -130,12 +130,6 @@ trivia:
 summary: Drops and Supplies → modes and multiballs → banked shot X + 2× playfield
   → huge stack cash-outs
 venue_notes:
-- This machine is running ROM v1.60 with Competition Install enabled.
-- Competition Install prevents lighting new modes during multiball and converts Extra
-  Ball awards to points.
-- Prison doors are operating normally.
-- The tilt is normal; Well Walker nudge registration is not expected.
-- No unusually bad feed is reported on this copy.
-- Pro Crossbow is a timed flipper-shot feature; Premium/LE use a physical cannon.
-- At v1.60, 2× playfield is documented as 30 seconds and can be extended before activation.
+- Competition Install prevents lighting new modes during multiball and converts Extra Ball
+  awards to points.
 image: images/walking-dead-pro-stern-2014.jpg

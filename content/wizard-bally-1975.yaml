@@ -110,9 +110,4 @@ summary: Spinner to saucer to Flags lane → upgrades → 19K bonus → Double B
 venue_notes:
 - This machine is configured for 5 balls.
 - Machine-awarded Extra Balls are ignored at this venue.
-- The Flags-lane exit feeds reliably to the right flipper.
-- 'The lit Special is a factory configuration distinction: it may award either a replay
-  or an Extra Ball.'
-- Do not assume Flag persistence between balls without checking the venue machine.
-- The flipper consistency and top-saucer wear condition are unconfirmed for this machine.
 image: images/wizard-bally-1975.jpg

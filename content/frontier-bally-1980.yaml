@@ -122,9 +122,6 @@ summary: Build A-B-C rows → raise Frontier X → spinner to Falls → repeat F
 venue_notes:
 - Three-ball game.
 - Extra Balls are disabled.
-- Frontier Bonus maximum is unknown; standard documentation gives 60K, while a liberal
-  adjustment permits 110K.
-- Special treatment is unknown.
-- This copy’s spinner-to-Falls feed is hard; account for its difficulty when describing
-  or choosing the repeatable loop.
+- Frontier Bonus maximum is unknown; standard documentation gives 60K, while a liberal adjustment
+  permits 110K.
 image: images/frontier-bally-1980.jpg

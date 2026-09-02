@@ -143,12 +143,11 @@ trivia:
 summary: Mission → Bumblebee 2X → Transformers Multiball → qualified jackpots → Final
   Blows and Tech Specs
 venue_notes:
-- 'Installed software: v0.89.0, dated August 12, 2026.'
 - Tournament is using either Full Stern Competition Install or Competition Mode only.
 - Extra Balls are disabled.
 - The once-per-game multiball Add-A-Ball is at stock behavior.
-- 'This is the Pro: static Megatron and simpler lock/feed hardware differ from Premium
-  and LE.'
-- v0.89 substantially reworked Tech Spec Mania and Combiner scoring; older scoring
-  strategy may not apply.
+- 'This is the Pro: static Megatron and simpler lock/feed hardware differ from Premium and
+  LE.'
+- v0.89 substantially reworked Tech Spec Mania and Combiner scoring; older scoring strategy
+  may not apply.
 image: images/transformers-pro-stern-2026.jpg

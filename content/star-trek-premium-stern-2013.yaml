@@ -140,9 +140,5 @@ trivia:
 summary: Mission stack → combo doubles → Warp 2X → medal progress → Klingon jackpots
   → Vengeance cash-out
 venue_notes:
-- 'Installed software: v1.62.0.'
 - Extra Balls are disabled for this venue.
-- Warp Extra Ball configuration is unknown; do not state a fixed threshold.
-- Premium Rescue kickback is functioning normally.
-- Exact skill-shot value progression is not confirmed for the installed code.
 image: images/star-trek-premium-stern-2013.jpg

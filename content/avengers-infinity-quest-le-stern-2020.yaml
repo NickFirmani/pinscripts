@@ -138,9 +138,5 @@ trivia:
   on its Avenger placement and level.'
 summary: Portal Locks → Gem Quest → Multiball stack → Quest win → Victory Laps
 venue_notes:
-- Installed code is LE 1.10.0; detailed public rules coverage is based on 1.08, so
-  confirm revision-sensitive behavior on the machine.
-- 'Full Competition Install is in use: extra balls are disabled.'
 - Standard single-ball save is approximately 5 seconds.
-- No unusual venue-specific dangerous feeds have been identified.
 image: images/avengers-infinity-quest-le-stern-2020.jpg

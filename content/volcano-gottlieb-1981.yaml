@@ -125,7 +125,6 @@ venue_notes:
 - Both cabinet-button mechanisms are reliable.
 - The shaft eject is fast but controllable.
 - Captured balls remain physically locked between players.
-- Right-outlane switch 31 status is unknown; do not assume its one-shot Fire Pit light
-  is available.
-- Physical crater capture, Fire Pit eject behavior, and pop exits remain copy-dependent.
+- Right-outlane switch 31 status is unknown; do not assume its one-shot Fire Pit light is
+  available.
 image: images/volcano-gottlieb-1981.jpg

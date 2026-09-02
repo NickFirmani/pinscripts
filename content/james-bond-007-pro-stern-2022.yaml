@@ -138,14 +138,10 @@ trivia:
 summary: Villain + Jetpack stack → center-loop jackpot lock → Bond Women → 007 Scoring
   → Bird One → Bond… James Bond
 venue_notes:
-- Venue code is 1.06.
 - Event configuration is Competition Install or Competition Mode only.
 - Extra Balls are disabled; the stock 25M compensation applies.
 - Normal ball-save timer is set to normal/default.
-- No feed is unusually dangerous on this copy.
-- The detailed rulesheet basis is 1.01, while the venue runs 1.06; avoid asserting
-  unverified revision-specific behavior.
-- 'This is the Pro model: Bird One locks are virtual, there is no moving magnetic
-  Jetpack, and there is no Swipe-a-Ball.'
+- 'This is the Pro model: Bird One locks are virtual, there is no moving magnetic Jetpack,
+  and there is no Swipe-a-Ball.'
 - Do not confuse this machine with James Bond 007 60th Anniversary.
 image: images/james-bond-007-pro-stern-2022.jpg

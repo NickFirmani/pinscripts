@@ -123,9 +123,6 @@ trivia:
 - Neon tubes and Menagerie captive balls appeared in multiple colors during production.
 summary: Ringmasters → multiball stacks → Marvels → Join the Cirqus
 venue_notes:
-- Official V1.4 ROM is installed.
-- Tournament/Competition Mode is active; Ringmaster Battle scoring is reduced in this
-  mode.
+- Tournament/Competition Mode is active; Ringmaster Battle scoring is reduced in this mode.
 - Extra balls are disabled.
-- Highwire and Juggler physical-lock status is unknown.
 image: images/cirqus-voltaire-bally-1997.jpg

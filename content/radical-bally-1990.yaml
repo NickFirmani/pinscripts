@@ -113,14 +113,7 @@ trivia:
 summary: RADICAL letters → locks → 2-ball Multiball → left-ramp Mega-Million → relight
   jackpot
 venue_notes:
-- Installed ROM is unresolved between original L-1 and licensed Rev 3.0; if Rev 3
-  is installed, Contest Game is enabled.
-- On stock L-1, locks can be shared or stolen in multiplayer; Rev 3 tracks lock progress
-  by player.
 - Extra Balls are disabled.
-- Rev 3 Contest uses deterministic Mega-Million values of 4M, 6M, 8M, and 10M; stock
-  code uses random 3M–10M values.
-- Skill-shot reliability is unknown and depends on shooter-lane adjustment.
-- Mega-Million grace period, base-bonus persistence, and some letter and Extra-Ball
-  behavior can be operator-adjustable.
+- Mega-Million grace period, base-bonus persistence, and some letter and Extra-Ball behavior
+  can be operator-adjustable.
 image: images/radical-bally-1990.jpg

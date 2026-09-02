@@ -125,10 +125,9 @@ trivia:
 summary: Combos → Portal Locks → Gem Quest → multiball stack → Victory Laps → Gem
   placement
 venue_notes:
-- The machine is on latest code, but detailed rules support in the brief is based
-  on 1.08; do not assume every post-1.08 rule is unchanged.
-- Tournament setup is either Competition Mode or Stern Competition Install. Competition
-  Mode removes randomness; Competition Install also changes settings, including disabling
-  extra balls and Gem Mania triggers.
-- Extra-ball treatment should be described according to the active competition configuration.
+- The machine is on latest code, but detailed rules support in the brief is based on 1.08;
+  do not assume every post-1.08 rule is unchanged.
+- Tournament setup is either Competition Mode or Stern Competition Install. Competition Mode
+  removes randomness; Competition Install also changes settings, including disabling extra
+  balls and Gem Mania triggers.
 image: images/avengers-infinity-quest-pro-stern-2020.jpg

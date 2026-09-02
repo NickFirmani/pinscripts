@@ -127,12 +127,9 @@ trivia:
 summary: Mission stack → Danger Room leverage → Sentinel 3X jackpots → doubled Super
   → Future perks → Save the City comeback
 venue_notes:
-- Installed software is v0.98, dated July 1, 2026.
 - Competition Install or Competition Mode is in use; Extra Balls are disabled.
 - The Sentinel mouth/head is operating reliably.
-- Premium/LE have a rising Sentinel body, attacking hands, and an elevated Beast's
-  Lab captive-ball vari-target; Pro uses simpler hardware.
+- Premium/LE have a rising Sentinel body, attacking hands, and an elevated Beast's Lab captive-ball
+  vari-target; Pro uses simpler hardware.
 - Master Mold remains a placeholder in v0.98, so later code may change deep-game strategy.
-- Midtown/Subway feeds and Danger Room survival are setup-sensitive; adjust aggression
-  to this machine's behavior.
 image: images/uncanny-x-men-pro-stern-2024.jpg

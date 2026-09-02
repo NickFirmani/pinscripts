@@ -122,12 +122,11 @@ trivia:
 summary: E-N-T locks → Idol Multiball → left ramp lights → right ramp collects → Idol
   multiplier → Super Jackpot
 venue_notes:
-- This machine uses L-7 software; Super Jackpot bases are 80M, 90M, and 100M.
 - Tournament Play is enabled, equalizing multiplayer multiball and Jackpot state.
 - Extra Balls are disabled.
 - Eternal Life ball save is set to factory/normal.
 - The optional outlane save is disabled.
-- Idol Jackpot multiplier duration is operator-adjustable; factory-medium documentation
-  shows 15 seconds.
+- Idol Jackpot multiplier duration is operator-adjustable; factory-medium documentation shows
+  15 seconds.
 - Right-ramp rejects are notably dangerous on this copy.
 image: images/indiana-jones-williams-1993.jpg

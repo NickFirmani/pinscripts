@@ -129,12 +129,5 @@ trivia:
   simpler two-flipper lower playfield.
 summary: Battles + locks → POWER → Supers → KNIGHT → 3X cash-out
 venue_notes:
-- This Pro is running v1.18 code.
 - Extra Balls are disabled under the venue’s Stern Competition Install setting.
-- Competition Install status is otherwise unconfirmed; if active, it spots no KNIGHT
-  letters and sets Sword difficulty to HARD.
-- Use the current Magna-Save-plus-right-return-lane Super Jackpot rule; the left VUK
-  boosts Supers rather than collecting them.
-- Premium/LE-only Catapult, transparent upper playfield, third flipper, and Last Chance
-  features do not apply to this Pro.
 image: images/black-knight-sword-of-rage-pro-stern-2019.jpg

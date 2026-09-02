@@ -123,16 +123,8 @@ summary: Build locks → Final Draw Multiball → Goal Jackpots → Ultra bonus 
   → Final Match
 venue_notes:
 - 'Tournament Play is enabled: it equalizes Multiball and Jackpot state among players.'
-- Extra Balls are disabled; TV-round and Washington D.C. Extra Ball awards substitute
-  50M.
+- Extra Balls are disabled; TV-round and Washington D.C. Extra Ball awards substitute 50M.
 - Starting Multiball rank is unknown.
-- Corner Kickback configuration is unknown.
 - Magna-Goal is enabled.
-- No unusually dangerous feed has been identified on this copy.
-- Built-in Tournament Play does not itself disable Extra Balls or set Striker Award
-  order.
-- Final Match difficulty is adjustable, and repeat Final Matches can become harder.
-- Ramp shots may spot zero, one, or two Goal rollovers.
-- Latest verified factory ROM is L-2 (July 7, 1994); its change from L-1 was primarily
-  display and pricing fixes.
+- Built-in Tournament Play does not itself disable Extra Balls or set Striker Award order.
 image: images/world-cup-soccer-bally-1994.jpg

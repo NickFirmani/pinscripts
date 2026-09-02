@@ -135,11 +135,5 @@ trivia:
 summary: Choose song → light Notes → build multiball → activate 2×/3× → Cannon Song
   Jackpot
 venue_notes:
-- This is the original 2012 Pro with the fixed Bell lane/standup, not the 2014 LED
-  Pro swinging Bell.
-- 'Software version is unknown: V1.70 uses 5 ramps for first Jam and 7 loops for first
-  Tour; V1.68 uses 6 and 8.'
-- Single-ball ball save is confirmed at about 5 seconds.
 - Tournament configuration converts extra-ball collection to 2.5M points.
-- No machine-specific dangerous rebound, reject, outlane, or spinner tendency is reported.
 image: images/ac-dc-pro-stern-2012.jpg

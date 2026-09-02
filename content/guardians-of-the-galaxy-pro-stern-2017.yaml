@@ -138,11 +138,6 @@ trivia:
 summary: Complete modes → stack Groot → 5X jackpots → re-lock for 2X/3X → use Hadron
   → chase Orb or Quill's Quest
 venue_notes:
-- Software is v1.14.0.
 - Groot locks are configured as physical locks.
 - Extra Balls are disabled under the venue's Competition Install.
-- The Pro has one center playfield magnet and a static open Orb; Premium/LE magnet
-  and Orb behavior does not directly transfer.
-- Competition Install versus Competition Mode was not distinguished beyond the stated
-  physical-lock and no-Extra-Ball settings.
 image: images/guardians-of-the-galaxy-pro-stern-2017.jpg

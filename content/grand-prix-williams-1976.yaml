@@ -119,8 +119,6 @@ summary: Two spinners → 50K side bonus → Double Bonus drops → saucer colle
 venue_notes:
 - This venue is set for 5-ball play.
 - Extra Balls are disabled.
-- Score reels have been tested and are reliable under fast spinner and 100K bonus
-  scoring.
-- Side-saucer behavior, spinner returns, and return-lane danger can vary with mechanical
-  setup and post settings.
+- Side-saucer behavior, spinner returns, and return-lane danger can vary with mechanical setup
+  and post settings.
 image: images/grand-prix-williams-1976.jpg

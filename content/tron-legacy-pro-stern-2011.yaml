@@ -131,9 +131,8 @@ trivia:
 summary: End of Line loops → Light Cycle + Quorra stack → Double Scoring → ladder
   progress → Portal
 venue_notes:
-- This machine is running V1.74.
 - Competition Install / Competition Mode is active.
 - Extra Balls are disabled and converted to 3M points.
-- The Pro has a fixed Recognizer and standup TRON targets; it does not have the LE-only
-  End of Line/Daft Punk Multiball.
+- The Pro has a fixed Recognizer and standup TRON targets; it does not have the LE-only End
+  of Line/Daft Punk Multiball.
 image: images/tron-legacy-pro-stern-2011.jpg

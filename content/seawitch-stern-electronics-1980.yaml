@@ -113,9 +113,7 @@ trivia:
 summary: White-X banks → Bonus X → 2X loops → bonus cash-outs → max spinner
 venue_notes:
 - This venue is set for 3 balls; pop bumpers score 1K.
-- The Bonus-X reset threshold is unknown; reaching its configured 6X or 7X threshold
-  resets the next ball to 3X.
+- The Bonus-X reset threshold is unknown; reaching its configured 6X or 7X threshold resets
+  the next ball to 3X.
 - Extra Ball is disabled at this venue.
-- Special award is unknown; avoid assigning it a value in commentary.
-- A notable loop/spinner return feed is reported.
 image: images/seawitch-stern-electronics-1980.jpg

@@ -137,14 +137,11 @@ trivia:
   or center-disc action.
 summary: Songs → Song Super Jackpot → Beatlemania → loop/spinner multipliers → Taxman
 venue_notes:
-- The machine is reported as v1.27, but custom settings may differ from Competition
-  Install.
-- Competition Install disables extra balls and player game-mode selection, and requires
-  Level 3 on all five songs for Beatlemania.
-- 'Taxman qualification is venue-adjustable: HARD uses Level 5 songs and three All
-  My Loving jackpots; EASY uses Level 3 on other songs and one All My Loving jackpot.'
+- Competition Install disables extra balls and player game-mode selection, and requires Level
+  3 on all five songs for Beatlemania.
+- 'Taxman qualification is venue-adjustable: HARD uses Level 5 songs and three All My Loving
+  jackpots; EASY uses Level 3 on other songs and one All My Loving jackpot.'
 - Do not state a Beatlemania ball count without confirming this machine’s setting.
-- The left-outlane Super Jackpot save status and duration are unconfirmed.
-- Gold, Platinum, and Diamond editions are cosmetic distinctions; no rules or playfield
-  differences were found.
+- Gold, Platinum, and Diamond editions are cosmetic distinctions; no rules or playfield differences
+  were found.
 image: images/beatles-gold-stern-2018.jpg

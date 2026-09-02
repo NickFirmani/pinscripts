@@ -138,10 +138,8 @@ trivia:
   Nedry Save and Trifecta.
 summary: Paddocks → Control Room → multiball → Supply Drop 2× → Visitor's Center
 venue_notes:
-- Installed code is V1.16.0; the core gameplay reference is based on V1.10, whose
-  later updates were primarily system and service support.
-- The venue uses either Competition Install or Competition gameplay mode; these are
-  distinct configurations.
+- The venue uses either Competition Install or Competition gameplay mode; these are distinct
+  configurations.
 - Extra balls are set to 15M points and may be doubled.
 - T-Rex and Raptor gate/lock mechanisms are operating normally.
 - Premium and LE share the T-Rex and motorized Raptor Pen mechanisms; Pro lacks them.

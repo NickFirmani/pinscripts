@@ -145,9 +145,4 @@ trivia:
 summary: Spider control → Coffin Multiball → six Tales → Scared Stiff → Monster Multiball
 venue_notes:
 - Extra Balls are disabled for this event.
-- ROM 1.5 fixes multiplayer skill-shot scoring, Coffin jams, and several Spider and
-  Leaper bugs; 1.3+ improves Coffin handling.
-- Spider-hole kickout, left-ramp rejects, and Leaper rebounds are copy-dependent.
-- The crate is considered typical in danger on this copy.
-- Spider soft-plunge reliability is machine- and plunger-dependent.
 image: images/scared-stiff-bally-1996.jpg

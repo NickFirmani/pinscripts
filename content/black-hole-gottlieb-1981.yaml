@@ -114,12 +114,6 @@ summary: Upper saucer grind → G-Force setup → open Re-Entry Gate → lower b
   locks → Gravity Tunnel multiball
 venue_notes:
 - This machine uses original Gottlieb System 80 software and is configured for 3 balls.
-- The upper-left captive-hole saucer is usually controllable but imperfect; treat
-  the 5K grind as situational.
-- The lower Re-Entry mechanism behaves normally.
-- Extra Ball/Special treatment is unknown; avoid assuming whether an Extra Ball is
-  played or converted to points.
-- On original software, the lower locked ball persists between balls and can be inherited
-  by another player; the upper locked ball does not.
-- Domestic speech and animated backbox differences do not change core gameplay.
+- The upper-left captive-hole saucer is usually controllable but imperfect; treat the 5K grind
+  as situational.
 image: images/black-hole-gottlieb-1981.jpg

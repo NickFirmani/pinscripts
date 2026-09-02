@@ -110,10 +110,4 @@ summary: Build bonus up top → light E/K Double Bonus → choose cash or hold �
 venue_notes:
 - Configured for 5-ball play.
 - Extra Balls are disabled/ignored for this event.
-- Special is disabled for this event.
-- The safest upper feed is unknown on this machine; evaluate the R lane, T lane, and
-  saucer kickout separately.
-- Spinner/runway behavior is not confirmed for this machine; avoid stating an exact
-  per-spin value.
-- The Collect Bonus saucer pays normal bonus even with Double Bonus lit.
 image: images/mars-trek-segasa-sonic-1977.jpg

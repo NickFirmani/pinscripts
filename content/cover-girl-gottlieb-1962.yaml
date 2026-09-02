@@ -114,8 +114,4 @@ summary: 50-point center rollover → lit split target → red/white row progres
   → ball-ending gobble-hole cash-outs
 venue_notes:
 - This machine is configured for 5 balls.
-- Tournament handling of Specials materially changes the value of completing Cover
-  Girl rows.
-- Verify whether partial red/white row progress carries between balls.
-- Verify how this machine's 50/100/150 gobble-hole values behave.
 image: images/cover-girl-gottlieb-1962.jpg

@@ -125,7 +125,4 @@ venue_notes:
 - Tournament Mode is enabled.
 - A fresh game starts at 8:00.
 - Extra Balls are disabled or ignored at this venue.
-- Installed ROM is reported as either L-9 or an earlier factory ROM; L-9-specific
-  behavior should be confirmed before calling it.
-- If L-9 is installed, Million Plus Carryover configuration is unknown.
 image: images/funhouse-williams-1990.jpg

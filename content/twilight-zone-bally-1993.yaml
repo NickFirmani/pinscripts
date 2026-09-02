@@ -135,15 +135,9 @@ trivia:
 summary: Ramps → GUM-BALL → locks and Gumballs → Multiball or Mania → Door Panels
   → Lost in the Zone
 venue_notes:
-- ROM 9.4 installed.
 - Tournament Mode is enabled.
-- Extra Balls are disabled; the Lite Extra Ball Door Panel is automatically considered
-  complete.
+- Extra Balls are disabled; the Lite Extra Ball Door Panel is automatically considered complete.
 - Physical ceramic Powerball is in use with the stock six-ball setup.
-- Ball saver is set to the machine default; confirm the active setting before calling
-  it out.
-- No particular problematic feed was reported.
+- Ball saver is set to the machine default; confirm the active setting before calling it out.
 - The physical Powerball is shared machine state between players.
-- The exact no-Jackpot Multiball restart timer varies by reference; use the machine's
-  observed timer.
 image: images/twilight-zone-bally-1993.jpg

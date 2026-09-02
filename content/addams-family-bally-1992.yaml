@@ -120,12 +120,7 @@ trivia:
 summary: Bear Ramp → Mansion rooms → Tour the Mansion → Greed locks → Jackpot → Super
   Jackpot
 venue_notes:
-- This is a standard 1992 TAF; do not apply Gold/Special Collector’s Edition rules
-  such as Cousin It’s Hideout, Super Seance, altered multiball rules, or buy-in.
-- Stock Bally ROM is installed, but its revision is unknown; documented revisions
-  include L-7 and H-4.
+- This is a standard 1992 TAF; do not apply Gold/Special Collector’s Edition rules such as
+  Cousin It’s Hideout, Super Seance, altered multiball rules, or buy-in.
 - Extra balls are disabled at this venue.
-- No notable venue-specific kickout or reject behavior has been reported.
-- Tour difficulty and Swamp Mansion collection are operator-adjustable; confirm their
-  behavior on the machine before calling them as guaranteed.
 image: images/addams-family-bally-1992.jpg

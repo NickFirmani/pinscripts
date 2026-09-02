@@ -145,12 +145,7 @@ trivia:
 summary: Island Scenes → Spider Pit utility → Kong Multiball → 2× scoring → Crash
   the Gate cash-out
 venue_notes:
-- 'Installed code: 0.97.0.'
 - Competition Mode is enabled.
 - Extra Balls are disabled with stock 15M compensation.
-- Cliffhanger configuration is unknown.
-- No single Premium feed was identified as notably dangerous at this venue.
-- Premium uses physical train locks and animated train destruction; Pro uses virtual
-  locks.
-- Terror on the Tower and 8th Wonder remain undocumented in the 0.97 rules documentation.
+- Premium uses physical train locks and animated train destruction; Pro uses virtual locks.
 image: images/king-kong-myth-of-terror-island-premium-stern-2025.jpg

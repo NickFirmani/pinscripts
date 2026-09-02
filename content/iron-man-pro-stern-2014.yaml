@@ -127,14 +127,9 @@ trivia:
 summary: Stage War Machine → stack a villain multiball → add 2X/Bogey → chase Do or
   Die → manage violent returns
 venue_notes:
-- ROM is V1.86.
 - Extra Balls are disabled and provide no benefit.
 - Competition Mode is enabled.
-- The Iron Man Mode During Multiball adjustment is unknown; its factory default is
-  off.
-- The left-orbit up-post status is unknown, so normal versus alternate skill-shot
-  behavior may differ.
-- Later V1.85/1.86 changes apply to compatible Vault and original Pro versions; the
-  Vault was not a separate rules edition.
+- The left-orbit up-post status is unknown, so normal versus alternate skill-shot behavior
+  may differ.
 - Jericho carryover is operator-adjustable.
 image: images/iron-man-pro-stern-2014.jpg

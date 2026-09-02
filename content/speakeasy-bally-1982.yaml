@@ -120,8 +120,6 @@ summary: Build Bonus X → sequence cards → earn added balls → exploit roule
 venue_notes:
 - The machine is confirmed as the standard two-player Speakeasy, not Speakeasy 4.
 - Roulette operation is confirmed reliable.
-- The installed ROM revision is unknown; two-player revisions are E877-2 Version 1
-  and E877-3 Version 2.
-- Add-A-Ball handling, maximum Balls-to-Play setting, and Hearts-sequence adjustment
-  were not resolved.
+- The installed ROM revision is unknown; two-player revisions are E877-2 Version 1 and E877-3
+  Version 2.
 image: images/speakeasy-bally-1982.jpg

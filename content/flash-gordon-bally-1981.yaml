@@ -119,12 +119,9 @@ trivia:
 summary: Build Bonus X → light spinners → qualify Mini/Super → shoot saucer → cash
   5× window
 venue_notes:
-- Original Bally code is installed.
 - This event is set for 3 balls.
 - Bonus X uses conservative memory and does not carry between balls.
 - Mini Bonus and Super Bonus target progress carry between balls.
 - Extra Balls are disabled.
 - The manufacturer-specified combined 5× playfield-scoring timer is 15 seconds.
-- Stock adjustments can affect saucer awards, Extra Balls, and Specials; do not apply
-  modern Flash Gordon 2021/2024 rules to this machine.
 image: images/flash-gordon-bally-1981.jpg

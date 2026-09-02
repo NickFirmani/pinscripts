@@ -129,14 +129,10 @@ trivia:
 summary: Tour rooms → stack multiball → build Playfield X → collect at Spider Web
   → protect the bank
 venue_notes:
-- Installed code is 2026.08.20.
 - Extra balls are disabled.
-- Competition Mode is enabled; its treatment of Mystery and Wildcard-Memento randomness
-  is unclear.
+- Competition Mode is enabled; its treatment of Mystery and Wildcard-Memento randomness is
+  unclear.
 - 'Wheelbarrow Ghost Multiball uses the default setting: the first successful qualification
   starts multiball.'
-- No known venue-specific feed problems were reported.
 - Ball-save and Run settings are at current defaults.
-- Use the game display as authority for revision-sensitive Playfield X collection
-  timing.
 image: images/winchester-mystery-house-barrels-of-fun-2025.jpg

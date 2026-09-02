@@ -123,10 +123,7 @@ trivia:
 summary: Challenge a rider → open Banzai Hill → double Cliff Jumps → preserve access
   or pursue multiball → collect Victory Laps
 venue_notes:
-- Stock L-3 ROM with normal escalating Cliff Jumps and a normal upper-playfield center
-  post.
-- Super Cycle Stunt's rider challenge count is operator-adjustable and unknown here.
+- Stock L-3 ROM with normal escalating Cliff Jumps and a normal upper-playfield center post.
 - Extra balls are disabled at this venue.
-- Ramp spotting, Time Lock duration, kickback behavior, and Instant Rematch timing
-  are operator-adjustable.
+- Ramp spotting, Time Lock duration, kickback behavior, and Instant Rematch timing are operator-adjustable.
 image: images/banzai-run-williams-1988.jpg

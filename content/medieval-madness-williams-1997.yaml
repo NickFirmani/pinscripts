@@ -147,13 +147,8 @@ trivia:
 summary: Castle setup → destroy castles → Castle Multiball safety → build Madnesses
   → Trolls! stack → major multiball cash-out
 venue_notes:
-- Tournament bank machine is the original Williams 1997 edition, not the Chicago Gaming
-  remake.
-- Installed CPU ROM is unknown.
-- Official production ROM v1.0 resets Merlin-target progress between balls; unofficial
-  1.09-family ROMs carry scored Merlin targets between balls.
+- Tournament bank machine is the original Williams 1997 edition, not the Chicago Gaming remake.
 - Tournament Play is enabled.
-- Extra balls are not played normally; venue configuration may disable them outright
-  or convert them to points.
-- No venue-specific castle, ramp, troll, sling, or outlane tendency has been confirmed.
+- Extra balls are not played normally; venue configuration may disable them outright or convert
+  them to points.
 image: images/medieval-madness-williams-1997.jpg

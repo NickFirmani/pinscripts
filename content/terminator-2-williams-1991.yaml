@@ -130,11 +130,5 @@ trivia:
 summary: Skull → cannon Multiball → 2×/3× Jackpot → 50M Super; ramps → Security →
   Payback; Chase Loop → 5M
 venue_notes:
-- 'Installed CPU ROM: factory L-8.'
 - Extra Balls are set to No Extra Ball.
-- Cannon calibration is consistently accurate.
-- No physical feed is noted as unusually dangerous.
-- Drop-Target Autofire setting is unknown.
-- Payback Time is operator-adjustable; factory-era documentation describes 20 seconds.
-- Later-Multiball Autofire protection depends on ROM and configuration.
 image: images/terminator-2-williams-1991.jpg

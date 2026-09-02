@@ -123,14 +123,9 @@ trivia:
 summary: Flash Bank upstairs → FIRE 2× window → Multiball multipliers → SOLAR 6× bonus
   → manage dangerous returns
 venue_notes:
-- Factory L-2 ROM is installed.
 - SOLAR/Bonus-X and FIRE letters remember between balls at factory settings.
 - Extra Balls and Specials are disabled or converted to points.
-- Stock multiplayer soft lock stealing is in effect; another player's Multiball can
-  clear a physically held ball while earned lock state remains to be re-established.
-- Magna-Save releases are notably dangerous at this venue.
+- Stock multiplayer soft lock stealing is in effect; another player's Multiball can clear
+  a physically held ball while earned lock state remains to be re-established.
 - Drop-bank timing, Mystery timing, and SOLAR timing are operator-adjustable.
-- Flash Bank is a four-target bank.
-- Do not announce Flash Bank behavior after a drain from 3-ball Multiball until observed
-  on this copy.
 image: images/solar-fire-williams-1981.jpg

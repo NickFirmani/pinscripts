@@ -153,11 +153,7 @@ trivia:
 summary: Start Encounter → finish fin jackpot → raise Machete → light Machete → cash
   on major value → use Jaws Multiball for safer setup
 venue_notes:
-- Installed software is Pro v1.02.0.
-- Tournament configuration method is unknown.
 - Extra balls are disabled and convert to 15M.
-- Both configurable cheap-drain protections are enabled.
 - Life Ring uses normal/default difficulty.
-- No abnormal machine-specific feed is currently known.
 - 'This is the Pro layout: no Orca upper playfield or motorized shark bash toy.'
 image: images/jaws-pro-stern-2024.jpg

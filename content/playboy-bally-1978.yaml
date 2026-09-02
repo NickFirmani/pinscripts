@@ -124,10 +124,5 @@ venue_notes:
 - This machine is configured for 3-ball play.
 - Collected Key lamps are held between balls on this machine.
 - The top Key lanes are not paired; lanes 1-4 must be collected individually.
-- Extra Ball and Special tournament behavior is not confirmed; venue staff believe
-  they are probably disabled.
 - The behavior of the 25K outlane lamps after drop-bank completion is currently unknown.
-- No tournament-important physical quirk is currently known for this machine.
-- Factory rules are DIP-adjustment sensitive, so award persistence and outlane behavior
-  should not be assumed from another Playboy machine.
 image: images/playboy-bally-1978.jpg
