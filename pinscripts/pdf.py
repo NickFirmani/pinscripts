@@ -6,10 +6,11 @@ import tempfile
 from xml.sax.saxutils import escape
 
 import yaml
+from PIL import Image, ImageOps
 
 from pypdf import PdfReader, PdfWriter, Transformation
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER
+from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
@@ -38,15 +39,25 @@ class PdfAssetError(ValueError):
 PAGE_W, PAGE_H = letter
 SPREAD_SIZE = (PAGE_W * 2, PAGE_H)
 
-MARGIN = 0.35 * inch
-GUTTER = 0.18 * inch
+OUTER_MARGIN = 0.38 * inch
+INNER_MARGIN = 0.75 * inch
+TOP_MARGIN = 0.42 * inch
+BOTTOM_MARGIN = 0.52 * inch
+GUTTER = 0.16 * inch
 
-USABLE_W = PAGE_W - (2 * MARGIN)
+USABLE_W = PAGE_W - OUTER_MARGIN - INNER_MARGIN
 COL_W = (USABLE_W - GUTTER) / 2
-COL_H = PAGE_H - (2 * MARGIN)
+COL_H = PAGE_H - TOP_MARGIN - BOTTOM_MARGIN
 BODY_FONT_SIZE = 8.5
-BODY_LEADING = 9.8
+BODY_LEADING = 9.7
 SHOTS_GAP = 0.16 * inch
+
+INK = colors.HexColor("#142735")
+ACCENT = colors.HexColor("#176B75")
+MUTED = colors.HexColor("#53636C")
+PALE = colors.HexColor("#EAF2F3")
+RULE = colors.HexColor("#AAB8BD")
+PAPER_TINT = colors.HexColor("#F7F9F8")
 
 
 styles = getSampleStyleSheet()
@@ -55,9 +66,11 @@ TITLE = ParagraphStyle(
     "Title",
     parent=styles["Title"],
     fontName="Helvetica-Bold",
-    fontSize=22,
-    leading=23,
-    spaceAfter=2,
+    fontSize=20,
+    leading=20.5,
+    spaceAfter=3,
+    alignment=TA_LEFT,
+    textColor=INK,
 )
 
 SUBTITLE = ParagraphStyle(
@@ -66,19 +79,19 @@ SUBTITLE = ParagraphStyle(
     fontName="Helvetica",
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
-    textColor=colors.HexColor("#444444"),
+    textColor=MUTED,
 )
 
 SECTION = ParagraphStyle(
     "Section",
     parent=styles["Heading2"],
     fontName="Helvetica-Bold",
-    fontSize=10.5,
-    leading=11.5,
-    spaceBefore=5,
-    spaceAfter=3,
+    fontSize=9.4,
+    leading=10.2,
+    spaceBefore=5.5,
+    spaceAfter=2.5,
     keepWithNext=True,
-    textColor=colors.HexColor("#111111"),
+    textColor=ACCENT,
 )
 
 BODY = ParagraphStyle(
@@ -88,6 +101,7 @@ BODY = ParagraphStyle(
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
     spaceAfter=2,
+    textColor=INK,
 )
 
 SMALL = ParagraphStyle(
@@ -100,6 +114,7 @@ FACT_LABEL = ParagraphStyle(
     parent=SMALL,
     fontName="Helvetica-Bold",
     spaceAfter=0,
+    textColor=ACCENT,
 )
 
 FACT_VALUE = ParagraphStyle(
@@ -112,12 +127,17 @@ TABLE_HEADER = ParagraphStyle(
     "TableHeader",
     parent=SMALL,
     fontName="Helvetica-Bold",
+    fontSize=7.6,
+    leading=8.2,
     spaceAfter=0,
+    textColor=colors.white,
 )
 
 TABLE_BODY = ParagraphStyle(
     "TableBody",
     parent=SMALL,
+    fontSize=7.5,
+    leading=8.3,
     spaceAfter=0,
 )
 
@@ -127,11 +147,12 @@ HOOK = ParagraphStyle(
     fontName="Helvetica-Bold",
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
-    borderWidth=0.5,
-    borderColor=colors.HexColor("#AAAAAA"),
-    borderPadding=5,
-    backColor=colors.HexColor("#F5F5F5"),
-    spaceAfter=5,
+    borderWidth=0.75,
+    borderColor=RULE,
+    borderPadding=5.5,
+    backColor=PALE,
+    textColor=INK,
+    spaceAfter=4,
 )
 
 SUMMARY = ParagraphStyle(
@@ -141,9 +162,11 @@ SUMMARY = ParagraphStyle(
     fontSize=10,
     leading=11.5,
     alignment=TA_CENTER,
-    borderWidth=1,
-    borderColor=colors.black,
-    borderPadding=5,
+    borderWidth=0.8,
+    borderColor=ACCENT,
+    borderPadding=5.5,
+    backColor=PALE,
+    textColor=INK,
     spaceBefore=4,
 )
 
@@ -318,15 +341,17 @@ def build_blocks(data, black_and_white=False):
 
     shots = Table(
         shot_rows,
-        colWidths=[0.20 * inch, 0.78 * inch, COL_W - 1.76 * inch, 0.78 * inch],
+        colWidths=[0.18 * inch, 0.72 * inch, COL_W - 1.58 * inch, 0.68 * inch],
         repeatRows=1,
         hAlign="LEFT",
     )
     shots.setStyle(
         TableStyle(
             [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8E8E8")),
-                ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#AAAAAA")),
+                ("BACKGROUND", (0, 0), (-1, 0), INK),
+                ("BOX", (0, 0), (-1, -1), 0.5, RULE),
+                ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PAPER_TINT]),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
                 ("LEFTPADDING", (0, 0), (-1, -1), 2),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 2),
@@ -464,21 +489,68 @@ def _partition_story(blocks, capacities):
     return story
 
 
-def _draw_image_column(canvas, image_path):
-    if not image_path or not image_path.exists():
-        return
+def _prepare_print_image(source, directory, dpi=220):
+    """Create a bounded JPEG derivative without changing the canonical WebP."""
+    target = directory / f"{source.stem}-print.jpg"
+    max_size = (
+        round((COL_W / inch) * dpi),
+        round((COL_H / inch) * dpi),
+    )
+    with Image.open(source) as image:
+        image = ImageOps.exif_transpose(image)
+        image.thumbnail(max_size, Image.Resampling.LANCZOS)
+        if image.mode in {"RGBA", "LA"}:
+            background = Image.new("RGB", image.size, "white")
+            background.paste(image, mask=image.getchannel("A"))
+            image = background
+        elif image.mode not in {"RGB", "L"}:
+            image = image.convert("RGB")
+        image.save(target, "JPEG", quality=90, optimize=True, progressive=True)
+    return target
+
+
+def _draw_spread_chrome(canvas, image_path, title):
+    image_x = PAGE_W + INNER_MARGIN + COL_W + GUTTER
 
     canvas.saveState()
-    canvas.drawImage(
-        str(image_path),
-        PAGE_W + MARGIN + COL_W + GUTTER,
-        MARGIN,
-        width=COL_W,
-        height=COL_H,
-        preserveAspectRatio=True,
-        anchor="c",
-        mask="auto",
+    canvas.setStrokeColor(RULE)
+    canvas.setLineWidth(0.45)
+    footer_y = BOTTOM_MARGIN - 0.16 * inch
+    canvas.line(OUTER_MARGIN, footer_y, PAGE_W - INNER_MARGIN, footer_y)
+    canvas.line(
+        PAGE_W + INNER_MARGIN,
+        footer_y,
+        (2 * PAGE_W) - OUTER_MARGIN,
+        footer_y,
     )
+    canvas.setFont("Helvetica", 6.5)
+    canvas.setFillColor(MUTED)
+    canvas.drawString(OUTER_MARGIN, footer_y - 9, "PINBALL COMMENTARY BINDER")
+    canvas.drawRightString(
+        (2 * PAGE_W) - OUTER_MARGIN,
+        footer_y - 9,
+        safe(title).upper(),
+    )
+
+    if image_path:
+        with Image.open(image_path) as image:
+            image_width, image_height = image.size
+        scale = min(COL_W / image_width, COL_H / image_height)
+        draw_width = image_width * scale
+        draw_height = image_height * scale
+        draw_x = image_x + ((COL_W - draw_width) / 2)
+        draw_y = BOTTOM_MARGIN + COL_H - draw_height
+        canvas.setStrokeColor(RULE)
+        canvas.setLineWidth(0.5)
+        canvas.rect(draw_x, draw_y, draw_width, draw_height, stroke=1, fill=0)
+        canvas.drawImage(
+            str(image_path),
+            draw_x,
+            draw_y,
+            width=draw_width,
+            height=draw_height,
+            mask="auto",
+        )
     canvas.restoreState()
 
 
@@ -532,8 +604,8 @@ def render_game(
 
     text_columns = [
         Frame(
-            MARGIN,
-            MARGIN,
+            OUTER_MARGIN,
+            BOTTOM_MARGIN,
             COL_W,
             COL_H,
             leftPadding=0,
@@ -543,8 +615,8 @@ def render_game(
             id="text-1",
         ),
         Frame(
-            MARGIN + COL_W + GUTTER,
-            MARGIN,
+            OUTER_MARGIN + COL_W + GUTTER,
+            BOTTOM_MARGIN,
             COL_W,
             COL_H,
             leftPadding=0,
@@ -554,8 +626,8 @@ def render_game(
             id="text-2",
         ),
         Frame(
-            PAGE_W + MARGIN,
-            MARGIN + shots_height + SHOTS_GAP,
+            PAGE_W + INNER_MARGIN,
+            BOTTOM_MARGIN,
             COL_W,
             third_column_height,
             leftPadding=0,
@@ -565,8 +637,8 @@ def render_game(
             id="text-3",
         ),
         Frame(
-            PAGE_W + MARGIN,
-            MARGIN,
+            PAGE_W + INNER_MARGIN,
+            BOTTOM_MARGIN + third_column_height + SHOTS_GAP,
             COL_W,
             shots_height,
             leftPadding=0,
@@ -585,14 +657,20 @@ def render_game(
     )
 
     with tempfile.TemporaryDirectory(dir=output_path.parent) as directory:
-        spread_path = Path(directory) / f"{output_path.stem}-spread.pdf"
+        temporary_directory = Path(directory)
+        spread_path = temporary_directory / f"{output_path.stem}-spread.pdf"
+        print_image = (
+            _prepare_print_image(image_path, temporary_directory)
+            if image_path
+            else None
+        )
         doc = BaseDocTemplate(
             str(spread_path),
             pagesize=SPREAD_SIZE,
-            leftMargin=MARGIN,
-            rightMargin=MARGIN,
-            topMargin=MARGIN,
-            bottomMargin=MARGIN,
+            leftMargin=OUTER_MARGIN,
+            rightMargin=OUTER_MARGIN,
+            topMargin=TOP_MARGIN,
+            bottomMargin=BOTTOM_MARGIN,
             title=data.get("name", ""),
             author="Pinball Commentary Binder",
         )
@@ -601,7 +679,11 @@ def render_game(
                 PageTemplate(
                     id="two-page-spread",
                     frames=text_columns,
-                    onPage=lambda canvas, _doc: _draw_image_column(canvas, image_path),
+                    onPage=lambda canvas, _doc: _draw_spread_chrome(
+                        canvas,
+                        print_image,
+                        data.get("name", ""),
+                    ),
                 )
             ]
         )
