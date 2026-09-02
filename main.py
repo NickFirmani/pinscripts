@@ -452,7 +452,7 @@ def newest_download_since(snapshot, downloads_directory=None):
 
 
 def google_image_search_url(game):
-    return "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": game})
+    return "https://www.google.com/search?" + urlencode({"tbm": "isch", "q": game + " playfield"})
 
 
 def open_google_image_search(game):
@@ -529,6 +529,8 @@ def interactive_game_image(game):
 
     id_source = "research" if research_id else "game name"
     print(f"Copied {source} to {destination.relative_to(ROOT)} ({id_source} ID).")
+    print("Continuing to fetch images...")
+    interactive_game_image("")
     return 0
 
 
