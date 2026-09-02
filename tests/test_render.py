@@ -4,7 +4,10 @@ from copy import deepcopy
 from pathlib import Path
 from unittest.mock import patch
 
-import main as app
+import main as cli
+import pinscripts.build as app
+from pinscripts.content import load_yaml
+from pinscripts.paths import CONTENT
 from pypdf import PdfReader
 from scripts import render as renderer
 
@@ -18,7 +21,7 @@ class RenderTests(unittest.TestCase):
         ]
 
     def test_empty_skill_shots_and_features_do_not_render_sections(self):
-        data = deepcopy(app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml"))
+        data = deepcopy(load_yaml(CONTENT / "playboy-bally-1978.yaml"))
         data["skill_shots"] = []
         data["features"] = []
 
@@ -28,7 +31,7 @@ class RenderTests(unittest.TestCase):
         self.assertNotIn("SPECIAL FEATURES", text)
 
     def test_skill_shots_and_features_render_conditionally(self):
-        data = deepcopy(app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml"))
+        data = deepcopy(load_yaml(CONTENT / "playboy-bally-1978.yaml"))
         data["skill_shots"] = [
             {
                 "name": "Super Skill Shot",
@@ -95,7 +98,7 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_render_game_always_writes_two_letter_pages(self):
-        content_path = app.CONTENT / "playboy-bally-1978.yaml"
+        content_path = CONTENT / "playboy-bally-1978.yaml"
 
         with tempfile.TemporaryDirectory() as directory:
             output_path = Path(directory) / "playboy.pdf"
@@ -108,7 +111,7 @@ class RenderTests(unittest.TestCase):
             self.assertEqual(float(page.mediabox.height), 792)
 
     def test_shot_table_cells_are_wrapping_paragraphs(self):
-        data = app.load_yaml(app.CONTENT / "attack-from-mars-bally-1995.yaml")
+        data = load_yaml(CONTENT / "attack-from-mars-bally-1995.yaml")
         tables = [
             flowable
             for flowable in renderer.build_story(data)
@@ -159,7 +162,7 @@ class RenderTests(unittest.TestCase):
         )
 
     def test_parser_defaults_to_color_and_accepts_both_modes(self):
-        parser = app.build_parser()
+        parser = cli.build_parser()
 
         self.assertFalse(parser.parse_args(["example-game"]).black_and_white)
         self.assertFalse(
@@ -183,9 +186,8 @@ class RenderTests(unittest.TestCase):
             patch.object(app, "validate_all", return_value=True),
             patch.object(app, "render") as render,
             patch.object(app, "merge_pdfs") as merge_pdfs,
-            patch("sys.argv", ["main.py", "--binder", "--bw"]),
         ):
-            result = app.main()
+            result = app.build_selected(True, binder=True)
 
         self.assertEqual(result, 0)
         render.assert_called_once_with([content_path], True)
@@ -193,6 +195,13 @@ class RenderTests(unittest.TestCase):
             [output / "example-game-bw.pdf"],
             output / "binder-bw.pdf",
         )
+
+    def test_main_dispatches_binder_build(self):
+        with patch.object(cli, "build_selected", return_value=0) as build:
+            result = cli.main(["--binder", "--bw"])
+
+        self.assertEqual(result, 0)
+        build.assert_called_once_with(True, binder=True)
 
 
 if __name__ == "__main__":

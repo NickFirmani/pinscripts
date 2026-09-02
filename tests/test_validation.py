@@ -7,8 +7,11 @@ from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
 
-import main as app
-from main import CONTENT, load_schema, schema_validator, validate_content
+import main as cli
+import pinscripts.build as builder
+import pinscripts.content as app
+from pinscripts.content import load_schema, schema_validator, validate_content
+from pinscripts.paths import CONTENT
 
 
 class ValidationTests(unittest.TestCase):
@@ -149,12 +152,12 @@ shots:
             )
 
             with (
-                patch.object(app, "CONTENT", content),
-                patch.object(app, "render") as render,
+                patch.object(builder, "CONTENT", content),
+                patch.object(builder, "render") as render,
                 patch.object(sys, "argv", ["main.py", "broken"]),
                 redirect_stderr(io.StringIO()),
             ):
-                result = app.main()
+                result = cli.main()
 
         self.assertEqual(result, 1)
         render.assert_not_called()

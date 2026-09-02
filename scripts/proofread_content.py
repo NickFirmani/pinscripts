@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from main import error_path, load_schema  # noqa: E402
+from pinscripts.content import error_path, load_schema  # noqa: E402
 
 
 DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"

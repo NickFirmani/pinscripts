@@ -7,7 +7,8 @@ from unittest.mock import patch
 
 import yaml
 
-import main as app
+import main as cli
+import pinscripts.venue_notes as app
 
 
 class VenueNotesReviewTests(unittest.TestCase):
@@ -83,7 +84,7 @@ class VenueNotesReviewTests(unittest.TestCase):
     def test_main_dispatches_venue_notes_review(self):
         with (
             patch.object(
-                app,
+                cli,
                 "interactive_review_venue_notes",
                 return_value=0,
             ) as review,
@@ -92,7 +93,7 @@ class VenueNotesReviewTests(unittest.TestCase):
                 ["main.py", "--review-venue-notes", "example-game"],
             ),
         ):
-            result = app.main()
+            result = cli.main()
 
         self.assertEqual(result, 0)
         review.assert_called_once_with("example-game")

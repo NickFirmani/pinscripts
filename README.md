@@ -301,6 +301,14 @@ ERROR: validation failed: content/example-game-1999.yaml
   - $.shots[0].risk: 'Very High' is not one of ['Low', 'Medium', 'Medium-High', 'High']
 ```
 
+## Code organization
+
+`main.py` owns only argument parsing, CLI-specific validation, and command
+dispatch. Application behavior lives in the `pinscripts` package, grouped by
+feature: AI-assisted workflows, content validation and selection, images,
+venue-note review, and PDF builds. The existing modules under `scripts/`
+remain the lower-level rendering and image-processing backends.
+
 ### Processing images
 
 Generate grayscale, posterized, and black-and-white print variants of a playfield image:

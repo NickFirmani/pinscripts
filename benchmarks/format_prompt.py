@@ -23,12 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from main import (  # noqa: E402
-    error_path,
-    formatting_prompt,
-    load_schema,
-    structured_formatting_prompt,
-)
+from pinscripts.ai import formatting_prompt, structured_formatting_prompt  # noqa: E402
+from pinscripts.content import error_path, load_schema  # noqa: E402
 
 
 DEFAULT_RESULTS = ROOT / "benchmarks" / "results" / "format-prompt"

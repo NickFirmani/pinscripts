@@ -6,18 +6,18 @@ from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
-import main as app
-from main import (
+import pinscripts.ai as app
+from pinscripts.ai import (
     FORMAT_PROMPT_TEMPLATE,
     RESEARCH_PROMPT_TEMPLATE,
     formatting_prompt,
     interactive_game_format,
     interactive_research_prompt,
-    load_schema,
     read_prompt_input,
     research_prompt,
     set_terminal_title,
 )
+from pinscripts.content import load_schema, load_yaml
 
 
 class PromptTests(unittest.TestCase):
@@ -139,7 +139,7 @@ class PromptTests(unittest.TestCase):
         self.assertIn("Research response saved", stdout.getvalue())
 
     def test_interactive_research_prompt_formats_json_and_writes_yaml(self):
-        formatted = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+        formatted = load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
         formatted.update(
             {
                 "id": "jaws-2024",
@@ -178,7 +178,7 @@ class PromptTests(unittest.TestCase):
                 result = interactive_research_prompt("JAWS (Stern, 2024)")
 
             output = content / "jaws-2024.yaml"
-            self.assertEqual(app.load_yaml(output), formatted)
+            self.assertEqual(load_yaml(output), formatted)
 
         self.assertEqual(result, 0)
         self.assertEqual(copy.call_count, 2)
@@ -251,7 +251,7 @@ class PromptTests(unittest.TestCase):
         self.assertIn("**Human answer:** Enabled at venue", resolutions)
 
     def test_game_format_uses_existing_research_and_human_resolutions(self):
-        formatted = app.load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
+        formatted = load_yaml(app.CONTENT / "playboy-bally-1978.yaml")
         formatted.update(
             {
                 "id": "jaws-2024",
@@ -285,7 +285,7 @@ class PromptTests(unittest.TestCase):
             ):
                 result = interactive_game_format("jaws-2024")
 
-            self.assertEqual(app.load_yaml(content / "jaws-2024.yaml"), formatted)
+            self.assertEqual(load_yaml(content / "jaws-2024.yaml"), formatted)
             self.assertEqual(research_path.read_text(encoding="utf-8"), research)
 
         self.assertEqual(result, 0)

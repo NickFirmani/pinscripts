@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-import main as app
+import pinscripts.content as app
 
 
 class RegistryTests(unittest.TestCase):

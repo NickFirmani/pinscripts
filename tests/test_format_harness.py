@@ -15,7 +15,7 @@ from benchmarks.format_prompt import (
     safe_component,
     schema_errors,
 )
-from main import load_schema
+from pinscripts.content import load_schema
 
 
 class FormatHarnessTests(unittest.TestCase):

@@ -6,7 +6,8 @@ from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
-import main as app
+import main as cli
+import pinscripts.images as app
 
 
 class GameImageTests(unittest.TestCase):
@@ -446,7 +447,7 @@ class GameImageTests(unittest.TestCase):
     def test_main_dispatches_black_and_white_image_flow(self):
         with (
             patch.object(
-                app,
+                cli,
                 "interactive_black_and_white_images",
                 return_value=0,
             ) as flow,
@@ -455,7 +456,7 @@ class GameImageTests(unittest.TestCase):
                 ["main.py", "--game-image-bw", "Jaws (Pro) Stern 2024"],
             ),
         ):
-            result = app.main()
+            result = cli.main()
 
         self.assertEqual(result, 0)
         flow.assert_called_once_with("Jaws (Pro) Stern 2024")
@@ -597,7 +598,7 @@ class GameImageTests(unittest.TestCase):
     def test_main_dispatches_low_resolution_image_repair(self):
         with (
             patch.object(
-                app,
+                cli,
                 "interactive_low_resolution_image_repair",
                 return_value=0,
             ) as flow,
@@ -606,7 +607,7 @@ class GameImageTests(unittest.TestCase):
                 ["main.py", "--game-image-low-res", "Jaws (Pro) Stern 2024"],
             ),
         ):
-            result = app.main()
+            result = cli.main()
 
         self.assertEqual(result, 0)
         flow.assert_called_once_with("Jaws (Pro) Stern 2024")
