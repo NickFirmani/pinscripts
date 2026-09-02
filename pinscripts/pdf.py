@@ -554,7 +554,7 @@ def _draw_spread_chrome(canvas, image_path, title):
     canvas.restoreState()
 
 
-def _split_spread(spread_path, output_path, title):
+def _split_spread(spread_path, output_path, title, prepend_blank_page=False):
     reader = PdfReader(str(spread_path))
     if len(reader.pages) != 1:
         raise ValueError(
@@ -563,6 +563,8 @@ def _split_spread(spread_path, output_path, title):
 
     source = reader.pages[0]
     writer = PdfWriter()
+    if prepend_blank_page:
+        writer.add_blank_page(width=PAGE_W, height=PAGE_H)
     for page_number in range(2):
         page = writer.add_blank_page(width=PAGE_W, height=PAGE_H)
         page.merge_transformed_page(
@@ -585,6 +587,7 @@ def render_game(
     output_path: Path,
     black_and_white=False,
     asset_root=ROOT,
+    prepend_blank_page=False,
 ):
     data = load_yaml(content_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -694,7 +697,12 @@ def render_game(
         story.append(FrameBreak)
         story.extend(shots_block)
         doc.build(story)
-        _split_spread(spread_path, output_path, data.get("name", ""))
+        _split_spread(
+            spread_path,
+            output_path,
+            data.get("name", ""),
+            prepend_blank_page,
+        )
 
     print(f"Wrote {output_path}")
 
@@ -710,3 +718,20 @@ def merge_pdfs(paths, output_path: Path):
         writer.write(stream)
 
     print(f"Wrote {output_path} ({len(paths)} games)")
+
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) < 3:
+        print("Usage: python -m pinscripts.pdf <input.yaml> <output.pdf>")
+        sys.exit(1)
+
+    input_path = Path(sys.argv[1])
+    output_path = Path(sys.argv[2])
+    render_game(
+        input_path,
+        output_path,
+        asset_root=Path("tests/fixtures"),
+        prepend_blank_page=True,
+    )
