@@ -1,0 +1,118 @@
+id: wizard-bally-1975
+name: Wizard!
+manufacturer: Bally Manufacturing
+year: 1975
+metadata:
+  designer: Greg Kmiec
+  artist: Dave Christensen
+  production: 10,005 units
+  era: Four-player electromechanical
+  multiball: No multiball
+hook: 'Wizard is Up Top All Day: feed the spinner from the right flipper into the
+  top saucer, then let the Flags lane build the bonus and spinner upgrades.'
+rules:
+  primary: Qualify the four mechanical Flags at their standups or top star rollovers,
+    then collect them through the upper-right Flags lane. Flag 3 enables Double Bonus;
+    Flag 4 raises the spinner from 10 to 100 per spin.
+  bullets:
+  - The top saucer scores 3K, advances bonus three times, and feeds the Flags lane.
+  - Maximum base bonus is 19K; collected Flag 3 doubles it to 38K at ball end.
+  - At 19K bonus, the Extra Ball lane and right Special target light.
+  - Flag 1 upgrades pops from 10 to 100; Flag 2 upgrades the center target from 500
+    to 3K.
+watch:
+- title: Flag 3 collected
+  text: 'Double Bonus is the key end-of-ball swing: 19K base bonus becomes 38K.'
+- title: Flag 4 collected
+  text: The spinner rises from 10 to 100 per spin, making the UTAD loop far more valuable.
+- title: 19K bonus
+  text: The Extra Ball lane and right Special target are lit.
+- title: Top saucer entry
+  text: Expect 3K, three bonus advances, then an immediate Flags-lane feed.
+skill_shots:
+- name: Top-saucer / Flag-4 Skill Shot
+  how: Plunge across the right top star rollover to qualify Flag 4, then drop into
+    the top saucer.
+  value: The saucer gives 3K and three bonus advances, then its Flags-lane feed collects
+    Flag 4 for the 100-point spinner. If the right star is unavailable, prioritize
+    the saucer; the left star can still qualify Flag 1.
+features:
+- type: extra-ball
+  name: Extra Ball lane
+  text: Lights at 19K bonus and awards an Extra Ball when passed through; factory
+    cards limit this to one Extra Ball per ball in play.
+- type: other
+  name: Lit Special
+  text: At 19K bonus, the right Special target lights. Factory versions award either
+    a replay or an Extra Ball.
+shots:
+- name: Spinner / left orbit
+  value: Main UTAD route; repeated upper-field access and 10 or 100 per spinner spin.
+  risk: Low
+  diagram: 1
+- name: Flag 3 standup
+  value: Qualifies Double Bonus; increasingly valuable as base bonus approaches 19K.
+  risk: High
+  diagram: 2
+- name: Top saucer
+  value: 3K, three bonus advances, and a Flags-lane feed; the highest-efficiency setup
+    shot.
+  risk: Medium
+  diagram: 3
+- name: Recessed 5K target
+  value: Immediate 5K; use only for desperation or exact-points situations.
+  risk: High
+  diagram: 4
+- name: Flag 4 standup
+  value: Qualifies the 100-point spinner, strengthening the normal UTAD route.
+  risk: High
+  diagram: 5
+- name: Flags lane
+  value: Collects qualified Flag features and converts setup into scoring upgrades.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Stay on spinner to top saucer to Flags lane, control the lane exit, and avoid
+    deliberate standup attempts. Flag 3 can be the exception when base bonus is large
+    but not doubled.
+  behind: 'Deliberately pursue Flag 3 and Flag 4: a doubled 38K bonus plus repeated
+    100-point spinner trips can close a deficit.'
+  key_decision: Take another safe trip upstairs, or risk a standup now to improve
+    that trip? Double Bonus becomes more worth the rebound risk as bonus nears 19K.
+danger:
+- Balls that miss the saucer and fall through the pops are less controllable and can
+  head directly center.
+- The Flags-lane exit needs control; use a dead bounce, drop catch, tap pass, or nudge
+  if needed.
+- Direct rebounds from any Flag standup make deliberate qualification hazardous.
+- 'The recessed 5K target is a sucker shot: even a successful hit can drain.'
+- A top-edge wear groove can prevent saucer entries and undermine the UTAD strategy.
+commentary:
+- Wizard is basically up top all day—he wants that spinner shot from the right flipper.
+- 'Saucer is ideal: three thousand, three bonus advances, then it feeds all four Flag
+  buttons.'
+- Flag 3 is the important one—that turns nineteen thousand bonus into thirty-eight.
+- Flag 4 is collected; the spinner just went from ten a spin to a hundred.
+- He's abandoning the safe orbit for a Flag target—that says the upgrade is worth
+  the risk now.
+- That five-thousand target looks tempting, but it is one of the nastiest sucker shots
+  on the game.
+trivia:
+- Bally launched Wizard! as a tie-in to Ken Russell's 1975 film Tommy, with Roger
+  Daltrey and Ann-Margret on the backglass.
+- Its 10,005-unit run made it Bally's highest-production flipper game to that point.
+- Wizard is widely credited as an early landmark in officially licensed pinball themes.
+- It is commonly credited as Bally's first title with the mechanical Flip Flag feature.
+- It was Bally's last EM with the knocker mounted in the lower cabinet before the
+  move to the backbox.
+summary: Spinner to saucer to Flags lane → upgrades → 19K bonus → Double Bonus → 38K
+  payoff
+venue_notes:
+- This machine is configured for 5 balls.
+- Machine-awarded Extra Balls are ignored at this venue.
+- The Flags-lane exit feeds reliably to the right flipper.
+- 'The lit Special is a factory configuration distinction: it may award either a replay
+  or an Extra Ball.'
+- Do not assume Flag persistence between balls without checking the venue machine.
+- The flipper consistency and top-saucer wear condition are unconfirmed for this machine.
+image: images/wizard-bally-1975.jpg

@@ -1,0 +1,110 @@
+id: kismet-williams-1961
+name: Kismet
+manufacturer: Williams Electronic Manufacturing Corp.
+year: 1961
+metadata:
+  designer: Steve Kordek
+  artist: George Molentin
+  production: Approximately 700
+  era: Four-player electromechanical
+  multiball: None
+hook: Build this ball's circular light progression upstairs, then time the mechanically
+  moving center target for a huge 50- or 100-point cash-out before the wide lower
+  gap ends the opportunity.
+rules:
+  primary: Advance the circular lamps during the current ball to raise scoring potential,
+    then capitalize on the moving center target. A target hit scores 50 or 100 points;
+    reaching the mechanism but missing the target scores 1 point. The circular progression
+    resets every ball.
+  bullets:
+  - Keep activity in the upper bumper area to build the current ball's scoring state.
+  - The moving center target is the main deliberate 50/100-point payoff.
+  - There is no game-long light carryover, end-of-ball bonus, multiplier, lock, or
+    mode persistence.
+  - The game is configured for 5-ball play at this venue.
+watch:
+- title: Circular lamps
+  text: 'This is the clearest game-state indicator: more progress means greater scoring
+    potential, but it all resets on the next ball.'
+- title: Moving target timing
+  text: Watch its position and pause during travel; the center shot can be timed rather
+    than treated as pure luck.
+- title: Upper bumper action
+  text: A ball working among the upper bumpers is generally building the scoring state
+    the player wants before cashing out.
+- title: Side exits
+  text: A side lane or outlane can produce a major score jump, but an outlane still
+    ends the ball.
+skill_shots: []
+features:
+- type: other
+  name: Two-way match
+  text: Williams advertised a two-way match replay feature; it is not meaningful tournament
+    scoring.
+shots:
+- name: Upper-side lanes / rollovers
+  value: Part of the upper-playfield scoring-state accumulation; keep the ball high
+    and exploit higher-value states.
+  risk: Medium
+  diagram: 1
+- name: Upper bumper garden
+  value: Builds the lit, higher-scoring state before attempting the center cash-out.
+  risk: Medium
+  diagram: 2
+- name: Moving center target
+  value: Primary deliberate cash-out for 50 or 100 points; a miss at the mechanism
+    scores only 1.
+  risk: High
+  diagram: 3
+- name: Center return
+  value: No scoring purpose; survival-only line to avoid through the very wide flipper
+    gap.
+  risk: High
+  diagram: 4
+- name: Lit outlane
+  value: Reported as a possible 100-point terminal payoff that can salvage points
+    from a doomed ball.
+  risk: High
+  diagram: 5
+strategy:
+  ahead: Keep the ball upstairs and convert the current ball into a long productive
+    one. Favor accumulation over repeated center-target attempts.
+  behind: Take the moving target when its timing is favorable; a 100-point hit can
+    quickly change the match. A valuable outlane may be worth accepting on an already-lost
+    ball.
+  key_decision: Farm the upper playfield for scoring potential, or shoot center now
+    for the dangerous 50/100-point cash-out.
+danger:
+- The huge center gap makes lower-center returns brutal.
+- A moving-target miss scores only 1 and can send the ball back toward the lower danger
+  area.
+- Even a successful target shot can surrender upper-playfield control.
+- Upper-bumper exits are uncontrolled and can find either outlane.
+- Outlanes may score heavily, but the payoff is terminal.
+commentary:
+- The circle resets every ball, so all of this setup has to pay off right now.
+- 'That is the whole game: build the lights upstairs, then decide when to challenge
+  the moving target.'
+- A clean target hit can be fifty or a hundred; a miss is basically worthless at one
+  point.
+- Watch the target timing—it pauses during its travel, so this is not completely random.
+- One hundred points is huge on Kismet; that is a legitimate match-moving shot.
+- The strange part is the outlane can be worth a pile of points—the score can jump
+  while the ball is draining.
+trivia:
+- Kismet is a four-player EM, with four mechanical-reel score sets in its backbox.
+- Williams built approximately 700 examples.
+- Its moving-target concept followed Williams' Magic Clock, documented as the first
+  pinball machine to use such a target.
+- Williams sold the mechanism on timing and aiming skill rather than randomness.
+- The title and art use an Arabian Nights/Baghdad visual motif commonly associated
+  with the Kismet musical and film.
+summary: Build circular lights → work upper bumpers → time moving target → cash out
+  50/100 → avoid wide center gap → manage terminal outlanes
+venue_notes:
+- This venue game is configured for 5-ball play.
+- The exact switches that advance the circle of lights are unknown on this restored
+  machine.
+- Which target position or state awards 100 points is unknown.
+- Lower side-lane and outlane scoring behavior is unknown on this copy.
+image: images/kismet-williams-1961.jpg

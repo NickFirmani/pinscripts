@@ -1,0 +1,126 @@
+id: prospector-segasa-sonic-1977
+name: Prospector
+manufacturer: Segasa (Sonic)
+year: 1977
+metadata:
+  designer: ''
+  artist: ''
+  production: Unknown
+  era: Four-player electro-mechanical
+  multiball: None
+hook: Build Gold Bonus through the left orbit, double it with targets 5 and 6, then
+  decide whether to cash Silver or preserve its 1K-spinner scoring engine.
+rules:
+  primary: Gold Bonus builds in 10K steps to 100K, chiefly from the left Gold lane/orbit,
+    and pays at ball end. Complete targets 5 and 6 to double it to a possible 200K.
+    Silver builds to 10K from spinner activity, is collected at a saucer, and at maximum
+    alternates a 1K-per-spin lamp between the two spinners.
+  bullets:
+  - The left Gold orbit adds 10K Gold Bonus; lit gold-star rollovers can also advance
+    it.
+  - Targets 5 and 6 light Double Gold Bonus; targets 1-4 qualify Extra Ball, and 1-6
+    can light Special.
+  - Silver does not automatically pay at ball end; collect it at the center or upper-right
+    saucer.
+  - At max Silver, preserve the alternating lit 1K spinner for repeat scoring, or
+    collect Silver for immediate points.
+  - A left Gold orbit commonly feeds the upper-right saucer for 5K and a Silver advance
+    before entering the bumpers.
+watch:
+- title: Gold Bonus near 100K
+  text: Once Gold is nearly maxed, the player may pivot from the left orbit to targets
+    5 and 6 for Double Gold.
+- title: Double Gold lit
+  text: With 5 and 6 complete, the displayed Gold Bonus pays twice at the drain.
+- title: Silver maxed
+  text: At 10K Silver, one spinner alternates as a 1K-per-spin scoring shot; watch
+    which one is lit.
+- title: Extra Ball and Special
+  text: These lamps matter strategically only if the event gives them value.
+skill_shots:
+- name: Gold-star skill shot
+  how: Plunge through a lit top gold-star rollover.
+  value: Advances Gold Bonus immediately; use the lit gold-star rollover as the visible
+    cue.
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Complete targets 1-4 to qualify Extra Ball.
+- type: other
+  name: Special
+  text: Completing targets 1-6 can light Special.
+shots:
+- name: Gold lane / left orbit
+  value: Adds 10K Gold Bonus; the primary repeatable route toward 100K.
+  risk: Low
+  diagram: 1
+- name: Silver spinners
+  value: Build Silver Bonus and score 1K per spin when lit at max Silver.
+  risk: Medium
+  diagram: 2
+- name: Center Silver saucer
+  value: Collects Silver for an immediate cash-out.
+  risk: Medium-High
+  diagram: 3
+- name: '#5 standup'
+  value: Lights half of Double Gold Bonus.
+  risk: Medium-High
+  diagram: 4
+- name: '#6 standup'
+  value: Completes Double Gold Bonus for the 2x end-of-ball payoff.
+  risk: High
+  diagram: 5
+- name: Upper-right saucer
+  value: Collects Silver; a common left-orbit feed adds 5K and a Silver advance before
+    the bumpers.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor the repeatable left Gold orbit, build Gold to 100K, and only risk targets
+    5-6 if the doubled payout is needed. Once a spinner is lit for 1K, farm it rather
+    than invite standup or rollover rebounds.
+  behind: Complete 5-6 for the possible 200K Gold payout, then attack the lit spinner
+    aggressively. Collect Silver directly when immediate points matter more than preserving
+    spinner value.
+  key_decision: At max Silver, collect it now or preserve the alternating 1K-spinner
+    state. The main tournament approach favors spinner farming, but a cash-out can
+    be correct when immediate points are needed.
+danger:
+- The left Gold-lane return is a key feed, though this copy returns safely to a flipper
+  at most speeds.
+- '#6 can rebound into the nearby left post and create a fast drain threat.'
+- Pop-bumper exits are the main danger after otherwise successful shots.
+- Deliberately shooting gold-star rollovers, especially on the left, invites random
+  rebounds.
+- Center Silver-saucer attempts may require a softer shot; hard attempts can bounce
+  over it.
+commentary:
+- They're living on that left orbit—every trip is another ten thousand of Gold Bonus.
+- Five and six are done, so that Gold Bonus is now doubled at the drain.
+- 'Gold is maxed: there''s potentially two hundred thousand sitting in end-of-ball
+  bonus.'
+- Silver is at ten thousand, so one of those two spinners is always worth a thousand
+  a spin.
+- They're deliberately not collecting Silver—the lit spinner is the repeatable scoring
+  engine.
+- A side drain still scores ten thousand and advances Gold, which can matter in a
+  close game.
+trivia:
+- Prospector was built in Spain by Segasa and marketed under its Sonic name; it is
+  model 995, released in March 1977.
+- The backglass men are identified as Stan Laurel and Oliver Hardy, matching their
+  prospecting comedy Way Out West.
+- Sonic's late-1970s games were often described as having a Williams-like feel, including
+  similar chimes.
+- 'The game has two distinct bonus economies: Gold pays at ball end, while Silver
+  is an in-play collect and spinner enabler.'
+- Prospector is a recurring Classics tournament favorite.
+summary: Left orbit → 100K Gold → targets 5-6 for 2x → max Silver → farm lit spinner
+venue_notes:
+- Configured for 5 balls.
+- Gold Bonus and Double Gold Bonus reset between balls on this copy.
+- Extra Ball handling is either mechanically disabled or requires it to be plunged;
+  verify the event treatment before commentary.
+- Special's tournament value is unknown.
+- Saucer catches, spinner feeds, and bumper exits remain copy-dependent.
+image: images/prospector-segasa-sonic-1977.jpg

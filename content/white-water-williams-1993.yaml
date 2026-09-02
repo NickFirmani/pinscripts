@@ -1,0 +1,145 @@
+id: white-water-williams-1993
+name: White Water
+manufacturer: Williams Electronic Games
+year: 1993
+metadata:
+  designer: Dennis Nordman
+  artist: John Youssi
+  production: 7,008
+  era: WPC Fliptronics II / DMD
+  multiball: White Water Multiball (3-ball); Whirlpool Challenge and Gold Rush (2-ball)
+hook: Build locks for White Water Multiball, establish Double or Triple Jackpot with
+  the opening Insanity Falls volley, and chase the defining 5X Playfield-to-Multiball
+  stack.
+rules:
+  primary: 'Light locks at both green targets around No Way Out, then lock three balls
+    there for White Water Multiball. At launch, use the upper flipper to hit Insanity
+    Falls: two opening hits establish Double Jackpot and all three establish Triple
+    Jackpot for that multiball.'
+  bullets:
+  - The sixth Whirlpool Award gives 25 seconds of 5X Playfield; with L-5, jackpots
+    score at 5X during the timer, then return to the established jackpot tier.
+  - Complete flashing orange Hazard sets to advance rafts. Hazards score 500K times
+    River Class, while raft advances add 2M each to the 10M base multiball jackpot.
+  - Spell R-I-V-E-R at left targets or a lit inlane to raise River Class. Letters
+    persist, but River Class resets to I at every drain.
+  - At the end of raft progress, Wet Willie's requires seven 10M Hazards, then a rapidly
+    moving Hazard for 100M. Its first stage survives a drain; the travelling-shot
+    stage does not.
+  - Vacation Jackpot starts at 200M, but holding multiball for it is usually weaker
+    than repeated 5X jackpots.
+watch:
+- title: 5X staging
+  text: When 5X is flashing at Whirlpool, the ideal setup is two balls locked with
+    the third lock lit before collecting it.
+- title: Opening multiball volley
+  text: 'Count opening Insanity Falls makes: one is Single Jackpot, two establishes
+    Double, and three establishes Triple.'
+- title: River Class
+  text: A high River Class makes Hazards and end-of-ball bonus valuable, but it vanishes
+    when the ball drains.
+- title: Whirlpool cash-out
+  text: A lit Bigfoot Bluff is the route to collect the currently flashing Whirlpool
+    Award; pop hits move the selection.
+skill_shots:
+- name: Insanity Falls Skill Shot
+  how: Make a gentle plunge to the upper playfield, then shoot Insanity Falls with
+    the upper flipper. A hard plunge can cross into Spine Chiller.
+  value: Scores 1M, increasing by 1M per success to 5M. Take Bigfoot Bluff instead
+    when a valuable Whirlpool Award is ready.
+features:
+- type: other
+  name: Whirlpool Awards
+  text: Insanity Falls lights Bigfoot Bluff to collect the flashing award; pops move
+    its selection. Awards include Whirlpool Challenge, Man Overboard, Extra Ball,
+    Advance Raft, Mystery Canyon, and 5X Playfield.
+- type: mystery-award
+  name: Mystery Canyon
+  text: Normally random, but this tournament setting awards a fixed 5M.
+- type: extra-ball
+  name: Extra Ball
+  text: Extra Balls are disabled in software at this venue.
+- type: ball-save
+  name: No conventional ball save
+  text: Ordinary play and main multiball have no standard timed ball saver.
+- type: other
+  name: Bounceback
+  text: The left-outlane kickback relights from the three red center targets; completing
+    them while lit spots a Hazard. White Water Multiball also relights it.
+shots:
+- name: No Way Out
+  value: Locks balls for the main multiball and feeds the upper playfield.
+  risk: Medium-High
+  diagram: 1
+- name: Insanity Falls
+  value: Key skill-shot, jackpot, and Whirlpool-lighting shot; central to multiball
+    scoring.
+  risk: High
+  diagram: 2
+- name: Bigfoot Bluff
+  value: Collects the selected Whirlpool Award, including 5X Playfield.
+  risk: Medium-High
+  diagram: 3
+- name: Disaster Drop
+  value: Spots Hazard and raft progress, avoiding difficult required Hazards.
+  risk: Medium
+  diagram: 4
+- name: Boulder Garden
+  value: Feeds pops to move Whirlpool selection toward 5X.
+  risk: Medium
+  diagram: 5
+- name: Boomerang Bend
+  value: Advances Hazard and raft progress when required.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take the first Multiball promptly, establish the safest available Jackpot
+    tier, keep Bounceback lit, and take easy Hazards rather than forcing a perfect
+    5X stack.
+  behind: Stage two locks with 5X next at Whirlpool, collect 5X, immediately lock
+    ball three, and attack Insanity Falls. This remains the major comeback window
+    on L-5.
+  key_decision: Take Multiball now or hold it for 5X? Extra setup risks wasting the
+    comparatively easy first multiball, but a successful 5X stack can overwhelm ordinary
+    scoring.
+danger:
+- The green Lite Lock standups are mandatory but dangerous; grazing them en route
+  to No Way Out is safer than direct attacks.
+- Lost Mine/Whirlpool kickouts at this venue may be safe to the right flipper or require
+  a drop catch.
+- Boomerang Bend is notoriously difficult and can be the final Hazard blocking raft
+  progress.
+- The upper playfield often offers only one good upper-flipper attempt; missing Insanity
+  Falls wastes a premium chance.
+- No multiball ball save means a poor opening volley can end White Water Multiball
+  immediately.
+commentary:
+- Two balls are locked and 5X is next—that's the dream setup on White Water.
+- 'Count the opening Insanity Falls shots: two gives Double Jackpot, all three gives
+  Triple.'
+- Five-times scoring is running; on this L-5 it overrides the jackpot tier during
+  the timer rather than stacking to fifteen-times.
+- That lit Bigfoot shot is not just a ramp—it's the Whirlpool cash-out.
+- River Class multiplies the Hazards, but it all resets when this ball ends.
+- Vacation Jackpot is flashy, but competitively the real money is 5X Multiball.
+trivia:
+- White Water was designed by Dennis Nordman, with John Youssi art and Mike Boon software.
+- Its upper playfield has a separately controlled upper-right flipper, activated by
+  the second stage of the right flipper button.
+- Bigfoot physically turns to divert balls into the Whirlpool; during Bigfoot Hotfoot,
+  it allows repeated cave shots.
+- Vacation Jackpot begins at 200M and grows by 10K for every game in which it is not
+  collected.
+- Williams produced 7,008 machines.
+summary: Locks → Multiball → Insanity Falls tier → 5X stack → Hazards and rafts →
+  Wet Willie's
+venue_notes:
+- The installed ROM is L-5; its changes from L-4 were service and bug fixes rather
+  than a rules rewrite.
+- Tournament Play / Tournament Mode is enabled; Mystery Canyon awards a fixed 5M.
+- Extra Balls are disabled in software.
+- Physical locks are shared between players. Another player's multiball can empty
+  them, requiring a previously qualified player to shoot No Way Out again.
+- 'Lost Mine kickout behavior is venue-specific: it may feed safely to the right flipper
+  or require a drop catch.'
+image: images/white-water-williams-1993.jpg

@@ -1,0 +1,131 @@
+id: big-game-stern-electronics-1980
+name: Big Game
+manufacturer: Stern Electronics
+year: 1980
+metadata:
+  designer: Harry Williams
+  artist: Doug Watson and Gerry Simkus
+  production: 2,713
+  era: Four-player solid-state widebody
+  multiball: No multiball
+hook: Build persistent bingo-card bonus with numbered drops, then cash in the safe
+  far-left spinner whenever X is lit. The choice is immediate spinner points versus
+  dangerous drops that build a huge game-long end-of-ball bonus.
+rules:
+  primary: Numbered 1–9 drop targets spot their numbers on the selected X, Y, and
+    Z bingo cards. Build completed lines or cards for 2× and 3× bonus, preserve that
+    bonus from ball to ball, and use X-lit spinner shots for repeatable scoring.
+  bullets:
+  - Card selection changes through the top bumper, slingshots, center rollover, and
+    B-I-G top lanes; the lit card matters as much as the drop number.
+  - One completed card, or one line on each card, lights 2×; two completed cards,
+    or two lines on each card, lights 3×.
+  - 'Each spotted position adds 1K bonus. Filling all 27 positions banks 27K Reserve
+    Bonus and permits a second 27K build: 54K before multiplier.'
+  - After a three-target bank has been spotted across all three cards, later completions
+    of that bank score 25K.
+  - B-I-G top lanes, return lanes, and G/A standups spell BIG GAME; the upper eject
+    pays 5K per lit letter plus a completion award.
+watch:
+- title: X lit
+  text: The far-left spinner is worth 2K per spin. A right-flipper trap often signals
+    an attempt to shoot it.
+- title: 2× / 3× Bonus
+  text: These inserts show how much the player's accumulated bingo progress will be
+    worth at the drain.
+- title: Reserve Bonus
+  text: Reserve Bonus means all three cards have been filled once; 27K is banked and
+    a second 27K build can begin.
+- title: BIG GAME letters
+  text: A nearly complete word raises the value of top-lane and upper-eject routes,
+    including the far-left spinner feed.
+skill_shots: []
+features:
+- type: extra-ball
+  name: BIG GAME Extra Ball
+  text: With factory extra balls enabled, completing BIG GAME can light or award an
+    Extra Ball through the left-center side lane.
+- type: extra-ball
+  name: Right-outlane Extra Ball
+  text: Advanced bingo-card patterns can light an Extra Ball at the right outlane.
+- type: other
+  name: Special setting
+  text: Special is operator-selectable as no award, Extra Ball, 100K, or replay.
+- type: other
+  name: Completed-line bonus
+  text: An adjustable 5K-per-completed-line bonus feature can begin on a selected
+    ball.
+shots:
+- name: Far-left spinner / eject lane
+  value: With X lit, scores 2K per spin and feeds the upper eject for BIG GAME letter
+    collection; the best repeatable scoring route.
+  risk: Low
+  diagram: 1
+- name: Inner spinner
+  value: Useful spinner scoring when lit or when other progress is poor.
+  risk: Medium
+  diagram: 2
+- name: 1-2-3 drop bank
+  value: Spots card numbers to build lines and cards; later bank clears can score
+    25K.
+  risk: Medium
+  diagram: 3
+- name: 4-5-6 drop bank
+  value: Builds bingo progress and can finish central card patterns.
+  risk: Medium-High
+  diagram: 4
+- name: 7-8-9 drop bank
+  value: Direct route to missing lower card numbers and future 25K bank clears.
+  risk: High
+  diagram: 5
+- name: B-I-G top lanes
+  value: Collects BIG letters and changes card selection for subsequent drops.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor the far-left spinner whenever X is lit, especially from a controlled
+    right-flipper trap. Let incidental drops and upper-playfield action build the
+    persistent bonus.
+  behind: Attack drop banks to reach 3× and Reserve Bonus faster. A 54K bonus at 3×
+    is 162K before line additions, and completed banks can become repeatable 25K scores.
+  key_decision: Take the safe lit spinner for immediate points, or shoot missing drop
+    numbers to accelerate persistent bonus and future-ball leverage.
+danger:
+- Side drains can arrive quickly from oblique side-to-side motion.
+- An upper-right chute return at the wrong speed can head directly toward the center
+  drain.
+- The center-left upper feed can turn upper-play into a sudden center-drain threat.
+- Drop-target rebounds can throw the ball sideways across the wide lower playfield
+  toward outlanes.
+commentary:
+- X is lit — that's the money spinner at two thousand a rip.
+- He's not just knocking drops down; he's trying to put that number onto the currently
+  selected bingo card.
+- There's 3× bonus — all that accumulated card progress is now worth triple at the
+  drain.
+- Reserve Bonus is up, so he's filled all three cards once and is building the second
+  27,000.
+- With the spinner dark, this is where the drop banks become the better scoring route.
+- That bonus carries forward — the drain scores it, but it doesn't erase the work
+  he's done.
+trivia:
+- Harry Williams, co-founder and namesake of Williams Electronics, designed Big Game
+  while working with Stern Electronics.
+- It was Stern Electronics' first widebody, though its playfield was about 24 inches
+  across.
+- Big Game is credited as the first electronic pinball machine with seven-digit player
+  score displays.
+- Production totaled 2,713 machines.
+- Its X/Y/Z system uses bingo-card logic integrated with conventional drop-target
+  and bonus play.
+summary: Bingo drops → X-lit spinner → persistent bonus → 2×/3× → Reserve Bonus →
+  BIG GAME letters
+venue_notes:
+- Original Stern factory ROM is installed.
+- Factory adjustment allows one or two bingo cards to be active simultaneously.
+- Factory Extra Ball bypass is on; Extra Balls are disabled.
+- Special award setting is unknown.
+- Metal guides beneath and between the paired flippers are installed; scissors drains
+  are not expected.
+- Physical feeds and outlane severity remain setup-sensitive.
+image: images/big-game-stern-electronics-1980.jpg

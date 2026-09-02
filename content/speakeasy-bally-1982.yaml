@@ -1,0 +1,127 @@
+id: speakeasy-bally-1982
+name: Speakeasy
+manufacturer: Bally Manufacturing
+year: 1982
+metadata:
+  designer: George Christian
+  artist: Greg Freres
+  production: 3,000 produced
+  era: Early solid-state
+  multiball: No multiball
+hook: A two-player Add-A-Ball poker-themed game where ordered card sequences, a 10×
+  bonus multiplier, and a roulette wheel can add—or subtract—remaining balls.
+rules:
+  primary: Build Bonus X through the Flyaway targets, then pursue ordered Hearts and
+    Spades sequences for added balls. Hearts 5–9 can award two added balls; Spades
+    10–Ace award an added ball when completed in sequence. Roulette scoring is multiplied
+    by Bonus X.
+  bullets:
+  - Hearts 5–9 must be completed sequentially; their lamps persist between balls,
+    while sequence detection resets each ball.
+  - Complete all five Flyaway targets in any order to advance Bonus X, spinner value,
+    and chip progression; complete them in sequence for an added ball.
+  - Bonus multiplier lamps are 2×, 3×, 5×, and 10×.
+  - Base bonus persists between balls, while Flyaway targets reset each ball.
+  - The core decision is deterministic score and multiplier progress versus routes
+    that create more balls.
+watch:
+- title: Bonus X lamps
+  text: The 2×, 3×, 5×, and 10× lamps reveal the current scoring leverage. High Bonus
+    X boosts roulette scoring as well as end-of-ball bonus.
+- title: Hearts 5–9
+  text: A nearly complete ordered Hearts sequence can turn a top-lane feed into two
+    added balls.
+- title: Flyaway targets
+  text: The five center targets swing upward and lock when hit. Their state shows
+    progress toward multiplier advancement and the Spades sequence.
+- title: Balls-to-Play display
+  text: This display can rise or fall during the game. A roulette result can change
+    the match by adding or subtracting a ball.
+skill_shots: []
+features:
+- type: player-control
+  name: Sacrifice button
+  text: At the beginning of a ball, cancel cards made out of sequence for 25K per
+    card to repair damaged sequence progress.
+- type: other
+  name: Roulette wheel
+  text: Lit side saucers spin the physical wheel for points, Add-A-Ball, or Subtract-A-Ball;
+    it also spins at end of ball if the player did not tilt.
+- type: other
+  name: Jokers
+  text: Advance a Joker through the right-side lane; four Jokers award an added ball.
+    The right saucer feeds this lane.
+- type: other
+  name: Specials
+  text: Under stock rules, one Special awards a replay and later Specials reportedly
+    become Add-A-Ball awards.
+shots:
+- name: Left spinner
+  value: Value rises with Flyaway progress; especially valuable with a high multiplier.
+  risk: Medium
+  diagram: 1
+- name: Left saucer
+  value: Starts roulette for multiplied scoring and a possible added ball.
+  risk: Medium-High
+  diagram: 2
+- name: Hearts 5–9 lanes
+  value: Ordered completion awards two added balls and advances multiplier progress.
+  risk: Medium
+  diagram: 3
+- name: Center Flyaway bank
+  value: Builds Bonus X, spinner and chip value; an ordered completion awards an added
+    ball.
+  risk: High
+  diagram: 4
+- name: Right saucer
+  value: Starts roulette and feeds the Joker lane for efficient Joker progress.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit/Joker lane
+  value: Advances Jokers and Special progression toward added-ball opportunities.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor controlled Bonus X, bonus, and spinner scoring. Avoid unnecessary roulette
+    exposure when a lead is sufficient, since it can subtract a remaining ball.
+  behind: 'Prioritize added-ball routes: ordered Hearts, ordered Spades, four Jokers,
+    and acceptable roulette variance. Extra balls can outweigh ordinary scoring.'
+  key_decision: 'Points versus balls: Sacrifice, a low-value sequence lane, or roulette
+    risk can be correct when it repairs or creates an added-ball route.'
+danger:
+- Direct attacks on the center Flyaway bank can rebound through the open middle.
+- Crossover return lanes can send the ball to the opposite side from expectation.
+- Roulette saucers are strategically hazardous because the wheel can subtract a ball.
+- Upper-card work feeds three widely spaced pop bumpers before returning to the flippers.
+- The right-side Joker and Special area can turn an uncontrolled feed into an outlane
+  drain.
+commentary:
+- This is an Add-A-Ball game—the backglass number is literally how many balls they
+  still have.
+- Those Hearts must be made in sequence; completing all five correctly is worth two
+  more balls.
+- All five Flyaways are down—that advances the bonus multiplier even if they were
+  not hit in order.
+- At ten-times bonus, that is the scoring state Speakeasy players are trying to build.
+- Sacrifice costs 25,000, but it repairs the card sequence.
+- This roulette spin is not automatically good news—it can add a ball or take one
+  away.
+trivia:
+- The playfield uses green composite material rather than conventional plywood.
+- The Flyaway targets are hinged targets that disappear upward instead of dropping
+  vertically; Bally reused the concept on Grand Slam.
+- The dedicated Sacrifice button intentionally trades score for repaired rules progress.
+- Contemporary marketing emphasized sequential poker-card play, not only the roulette
+  theme.
+- Bally made a separate four-player Speakeasy 4; standard Speakeasy is a two-player
+  title.
+summary: Build Bonus X → sequence cards → earn added balls → exploit roulette and
+  spinner → manage survival
+venue_notes:
+- The machine is confirmed as the standard two-player Speakeasy, not Speakeasy 4.
+- Roulette operation is confirmed reliable.
+- The installed ROM revision is unknown; two-player revisions are E877-2 Version 1
+  and E877-3 Version 2.
+- Add-A-Ball handling, maximum Balls-to-Play setting, and Hearts-sequence adjustment
+  were not resolved.
+image: images/speakeasy-bally-1982.jpg

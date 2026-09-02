@@ -1,0 +1,150 @@
+id: venom-pro-stern-2023
+name: Venom (Pro)
+manufacturer: Stern Pinball
+year: 2023
+metadata:
+  designer: Brian Eddy
+  artist: Jeremy Packer / Zombie Yeti
+  production: Pro, SPIKE 2, LCD, two flippers
+  era: Modern Stern
+  multiball: Mayhem and Carnage Multiball can stack
+hook: Build mini-modes into Mayhem locks, defer Mayhem for a larger stack when needed,
+  then combine Carnage, Bell Tower playfield X, and Spider-Sense for the big payoff.
+rules:
+  primary: 'Each host has three color-coded mini-modes: make an untimed first shot,
+    then a timed second shot. Completions fill that host''s Grid column and light
+    Mayhem locks. At two locks, Mayhem tries to start; hold action to defer it and
+    keep locking up to six balls.'
+  bullets:
+  - Mayhem opens with a single-ball Quick Jackpot sequence, then releases locks. Clear
+    major jackpots for the scoop Super; later rounds require Double, then Triple Jackpots.
+  - Left-tank locks award Agony, Lasher, then 2x XP; right-tank locks award Riot,
+    Phage, then +1x playfield during Mayhem.
+  - Bash Carnage fully back into Ravencroft, then shoot the center ramp to start Carnage
+    Multiball. Re-lock Carnage to light its scoop Super.
+  - Center-ramp loops light Bell Tower; a lit Bell raises timed playfield scoring,
+    up to 7x. Web Combos separately multiply only the next shot, up to 5x.
+  - A Battle lit at the center ramp blocks Mayhem locks and Carnage modes until resolved.
+watch:
+- title: Action button after lock two
+  text: Holding the blue action button deliberately defers Mayhem so the player can
+    build more locks, up to six balls.
+- title: Right containment tank
+  text: Three balls in the right tank give the upcoming Mayhem an additional +1x base
+    playfield multiplier.
+- title: Bell Tower
+  text: A lit Bell Tower or active multiplier timer means playfield-X leverage is
+    live; expect attempts to refresh it.
+- title: Spider-Sense ready
+  text: The yellow/red action button signals Spider-Sense. In a Mayhem/Carnage stack,
+    one white-shot completion can accelerate both toward Supers.
+skill_shots:
+- name: Eddie Brock Spot Mini-Mode
+  how: Choose Eddie, then make the left loop/180 skill shot.
+  value: Spots a mini-mode, accelerating Eddie's three mini-modes and Mayhem-lock
+    progress.
+- name: Flash Thompson Spot Mini-Mode
+  how: Choose Flash, then make the right loop/orbit skill shot.
+  value: Spots a mini-mode to advance lock progress while opening Flash's Sleeper
+    and Bell-Tower-friendly route.
+- name: Gwen or Peter Spot Mini-Mode
+  how: Choose Gwen or Peter, then make the left-loop skill shot.
+  value: Spots a mini-mode and advances that host's Grid and Mayhem locks.
+features:
+- type: player-control
+  name: Spider-Sense
+  text: Once per ball, hold the yellow/red action button for more than three-quarters
+    of a second and release. A random white shot becomes a hurry-up; making it dramatically
+    advances the active feature.
+- type: player-control
+  name: Sleeper Team-Up
+  text: Selecting Flash first unlocks Sleeper. During multiball, its action-button
+    use adds a ball; during Battles it adds time.
+- type: video-mode
+  name: Scream
+  text: 'Flipper-controlled video mode: stop Infected approaching from either side.'
+- type: mystery-award
+  name: Mystery
+  text: Qualify Mystery and collect it at the scoop. Competition Mode uses a fixed
+    award sequence.
+- type: extra-ball
+  name: Extra Ball
+  text: Defeating enough Infected lights an Extra Ball at the scoop.
+- type: ball-save
+  name: Grid Extra Ball Save
+  text: This Grid perk lengthens ball saves at ball start and during multiball.
+shots:
+- name: Left loop
+  value: Advances Eddie/Gwen mini-modes, Doppelganger, and Flash's Bell substitute;
+    a frequent progression and combo shot.
+  risk: Medium-High
+  diagram: 1
+- name: Left ramp
+  value: Advances mini-modes, Change Host, and Mayhem Quick Jackpots; useful for host
+    changes and stack scoring.
+  risk: Medium
+  diagram: 2
+- name: Carnage captive ball
+  value: Advances Carnage modes; best attacked under Mayhem protection or ball save.
+  risk: High
+  diagram: 3
+- name: Center ramp
+  value: Starts Battles and Carnage Multiball and qualifies Bell Tower; central to
+    stacks and playfield-X setup.
+  risk: Medium-High
+  diagram: 4
+- name: Bell Tower
+  value: Raises the timed playfield multiplier by 1x, creating major leverage before
+    and during scoring modes.
+  risk: Medium-High
+  diagram: 5
+- name: Scoop / Daily Bugle
+  value: Collects Supers, Mystery, and Toxin; a major cash-out and start shot.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Start a smaller Mayhem instead of risking several more lock attempts. Use
+    Eddie's favorable Mayhem scoring, cash available Supers, and avoid unnecessary
+    Carnage hits outside ball save.
+  behind: Build six-ball Mayhem, seek three right-side locks for +1x, stack Carnage,
+    and run Bell Tower X. Use Spider-Sense during the stack to pursue both Supers.
+  key_decision: Start Mayhem now or keep locking? More balls add safety, bosses, and
+    perks, but every extra single-ball lock attempt risks the entire setup.
+danger:
+- Carnage captive-ball rebounds are dangerous; favor attacks during ball save or multiball.
+- Outer Infected-target rubbers sit above the outlanes and may require an immediate
+  nudge.
+- Containment-vessel releases can create sudden two-ball chaos before an incoming
+  lock arrives.
+- The left-loop return may require a nudge and right-flipper live catch.
+- Repeated Bell Tower attempts can rebound hard into the busy center.
+commentary:
+- That's ball two locked—holding the button means he's refusing Mayhem and trying
+  to build toward six.
+- Three in the right tank gives this Mayhem another base playfield multiplier.
+- Carnage is ready; starting it on the center ramp during Mayhem stacks the two multiballs.
+- Bell Tower is lit—the next hit adds another playfield X, up to seven times.
+- Spider-Sense is available; during this stack, one successful white shot can light
+  both Supers.
+- Battle is lit at center ramp, so Mayhem locks and Carnage progression are blocked
+  until it is handled.
+trivia:
+- Venom was Brian Eddy's second Stern design after returning to pinball.
+- The two vertical containment vessels each hold three balls, enabling six-ball Mayhem.
+- On Premium/LE, host choice can change physical shot routing; Pro geometry is fixed.
+- Mark Tremonti composed and performed original music for the game.
+- A 2025 topper update added Ghost Rider and optional Symbiote Mania, features normally
+  outside tournament-regulation play.
+summary: Mini-modes → Mayhem locks → Carnage stack → Bell Tower X → Spider-Sense →
+  Supers
+venue_notes:
+- 'Installed code: V1.06.'
+- Competition Install or Competition Mode is active; persistent Insider Connected
+  progress is not loaded.
+- 'Use the four default hosts only: Eddie Brock, Flash Thompson, Gwen Stacy, and Peter
+  Parker.'
+- Extra Balls are disabled.
+- Premium/LE have transforming geometry and additional mechanisms; this reference
+  is for fixed-geometry Pro.
+- Follow the installed 1.06 skill-shot UI; older control wording differs.
+image: images/venom-pro-stern-2023.jpg

@@ -1,0 +1,153 @@
+id: guns-n-roses-se-jersey-jack-2020
+name: Guns N' Roses (Standard Edition / SE)
+manufacturer: Jersey Jack Pinball
+year: 2020
+metadata:
+  designer: Eric Meunier and Slash
+  artist: Dayne Henry Jr. and Mark Moliter
+  production: Released October 2020
+  era: Modern LCD-era pinball
+  multiball: Four Booster Multiballs, COMA Multiball, and Song multiballs
+hook: Build the band into virtual locks, stack Boosters and Patches, then decide whether
+  to bank a Song Jackpot or risk everything for another stage.
+rules:
+  primary: Collect band members, convert them into virtual locks at the left ramp,
+    and let six locks start a Song. During Songs, hit lit shots to build value while
+    keeping the Rock-It Meter alive; completed stages send play to the center scoop
+    for the key cash-out-or-continue choice.
+  bullets:
+  - On SE, band-member locks are virtual and collected through the left ramp; six
+    locks automatically start the selected Song.
+  - Song stages score lit shots. At the scoop, single-ball play offers Song Jackpot
+    cash-out or continue for another stage and add-a-ball; multiball advances automatically
+    and adds a ball.
+  - The Rock-It Meter builds through productive Song shots but drains during inactivity
+    and cradling; an empty meter can end the Song.
+  - Patches provide persistent benefits including easier band collection, slower Rock-It
+    decay, Booster benefits, and Extra-Ball qualification.
+  - A full Rock-It Meter at Song completion can award Encore and carry the scoring
+    state into another Song.
+watch:
+- title: Band members and left ramp
+  text: 'Completed band-member inserts explain repeated left-ramp shots: the player
+    is converting qualified members into virtual locks.'
+- title: Five or six locks
+  text: Six virtual locks force the Song start. At five, a player may avoid the left
+    ramp while preparing Boosters or Patches.
+- title: Flashing center scoop
+  text: A completed Song stage lights the scoop. In single-ball play, it is the cash-the-jackpot
+    versus continue-and-add-a-ball decision.
+- title: Rock-It Meter and Song Jackpot
+  text: A falling meter explains why a player will not cradle; a large Song Jackpot
+    explains an immediate cash-out.
+skill_shots:
+- name: Skill Shot
+  how: Soft-plunge into a Crowd Meter insert.
+  value: Advances Crowd and Make Some Noise qualification.
+- name: Super Skill Shot
+  how: Hit the currently blinking Crowd Meter insert.
+  value: Advances Make Some Noise more strongly and is especially useful on the opening
+    plunge.
+features:
+- type: ball-save
+  name: COMA save / COMA Multiball
+  text: Hitting the COMA target can light the left outlane for a save; continued progress
+    develops COMA Multiball.
+- type: player-control
+  name: Action button
+  text: Used for Song and Patch choices, timed awards, and most importantly taking
+    the Song cash-out.
+- type: mystery-award
+  name: Mystery
+  text: Can award shortcuts including ball save, locks, Patches, band-member progress,
+    or Extra-Ball qualification.
+- type: extra-ball
+  name: Extra Balls
+  text: Several qualifications exist through Patches and Song progress; collection
+    is at the upper center lane.
+- type: ball-save
+  name: Normal ball save
+  text: Factory normal ball save is six seconds; Song and multiball protection are
+    separate.
+shots:
+- name: Left ramp
+  value: Advances Duff, SE virtual locks, and Throw the Lights; converts qualified
+    members into locks and prepares Songs.
+  risk: Medium-High
+  diagram: 1
+- name: Record spinner
+  value: Advances Slash plus Song and feature progress; useful for band-member qualification
+    and repeated scoring.
+  risk: Medium
+  diagram: 2
+- name: Center scoop
+  value: Starts Songs, resolves Song stages and jackpots, and serves Mystery; it is
+    the main cash-out decision shot.
+  risk: Medium-High
+  diagram: 3
+- name: Center spinner
+  value: Advances Richard and Song progress; often needed for band completion and
+    lit-shot patterns.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Advances Frank plus Song and feature progress; a repeatable major shot for
+    band setup.
+  risk: Medium
+  diagram: 5
+- name: Make Some Noise shot
+  value: Starts Crowd Booster Multiball when qualified, adding multiball before a
+    Song.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Build enough locks for a safe Song, use useful Booster Multiballs for progress,
+    and cash a healthy Song Jackpot rather than forcing another stage or Encore.
+  behind: Prepare several Booster Multiballs and Patches before the sixth lock, enter
+    at a strong Song Level, and push through stages for a higher-ceiling Song, Band
+    Frenzy, or Encore.
+  key_decision: Is the Song Jackpot enough? Cashing banks guaranteed points; continuing
+    adds a ball and raises the ceiling, but lacks an equivalent fresh safety net and
+    a drain can erase the uncollected opportunity.
+danger:
+- Left-ramp rejects can return rapidly toward center.
+- Center scoop rejects or kickouts can be dangerous depending on setup.
+- COMA-side movement can reach the left outlane unexpectedly when COMA is not lit.
+- Repeated central spinner and standup attempts can create direct rebounds with little
+  recovery time.
+- Cradling during a Song drains the Rock-It Meter.
+commentary:
+- He's got the band member—now two left ramps on the Standard can turn that into a
+  virtual lock.
+- He's sitting on five locks; the next one will force the Song, so he's building the
+  rest of the stack first.
+- 'The scoop is green—that''s the decision point: take the Song Jackpot now or continue
+  and add a ball.'
+- He can't just cradle through this; the Rock-It Meter is falling while he waits.
+- That's a Booster Multiball before the Song—he's trying to build value and protection
+  before committing.
+- No Power Chord on the Standard Edition; these are virtual locks, so he can't park
+  balls in the guitar during the Song.
+trivia:
+- Slash was a hands-on co-designer with Eric Meunier, not only a licensing participant.
+- The game contains 21 full-length Guns N' Roses master recordings, and Songs themselves
+  become multiball scoring modes.
+- Standard Edition has three flippers; LE and CE add a fourth flipper and a physical
+  Gibson-headstock upper playfield.
+- The backbox display is paired with a separate 7-inch stage display embedded in the
+  playfield.
+- 'Power Chord is a genuine rules difference: it is absent from Standard Edition.'
+summary: Band members → virtual locks → Song stages → Rock-It Meter → cash out or
+  continue → Encore
+venue_notes:
+- 'Software installed: V3.03. Song and Album scoring were rebalanced in V3.00, so
+  do not rely on old exact scoring figures.'
+- Competition Mode is enabled; random awards and carry-over features are disabled.
+- Extra Balls are disabled and provide no benefit.
+- 'Ball saves are factory-like: approximately six-second normal save with normal Song
+  saves.'
+- The full normal/adult song set is enabled.
+- 'This is Standard Edition: three flippers, left-ramp virtual locks, and no Power
+  Chord or physical guitar lock.'
+- No notable physical feed issue has been identified on this copy.
+image: images/guns-n-roses-se-jersey-jack-2020.jpg

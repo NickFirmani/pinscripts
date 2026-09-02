@@ -1,0 +1,136 @@
+id: solar-fire-williams-1981
+name: Solar Fire
+manufacturer: Williams Electronics
+year: 1981
+metadata:
+  designer: Barry Oursler
+  artist: Constantino Mitchell and Jeanine Mitchell
+  production: '782'
+  era: Williams System 7 solid-state
+  multiball: 2-ball / 3-ball Multiball
+hook: A two-level, no-pop-bumper Williams game where players climb upstairs to freeze
+  and finish the Flash Bank, then stack FIRE double scoring and Multiball for huge
+  collects.
+rules:
+  primary: Get upstairs and attack the timed four-target Flash Bank. Freeze its cycling
+    value—ideally 100K—on the first target, then finish the bank before the timer
+    expires. Complete the upper 3-bank to build FIRE and start 20 seconds of 2× scoring,
+    then stack that with Multiball when it is safely available.
+  bullets:
+  - Lower 3-bank completions light random eject-hole locks; two locked balls start
+    2-ball Multiball and three start 3-ball.
+  - Flash Bank pays 2× during 2-ball Multiball and 3× during 3-ball Multiball.
+  - SOLAR advances Bonus X from 2× through 6×; normal and Multiball bonus can each
+    build to 63K.
+  - A 100K Flash Bank with 3-ball Multiball and FIRE 2× is a potential 600K collect.
+watch:
+- title: Flash Bank value
+  text: A Flash Bank frozen at 100K makes every remaining upper-bank target urgent
+    before the timer resets.
+- title: FIRE 2× window
+  text: A flashing upper 3-bank completion immediately starts 20 seconds of double
+    scoring; this is the window for a Flash Bank collect or Multiball.
+- title: Locks and eject holes
+  text: Two locked balls put 2-ball Multiball close; three locks and balls enable
+    the largest Flash Bank multiplier.
+- title: SOLAR and Bonus X
+  text: At 5×–6× Bonus X, developed normal and Multiball bonus represent a substantial
+    banked end-of-ball score.
+skill_shots: []
+features:
+- type: player-control
+  name: Magna-Save
+  text: Completing any 3-bank advances Magna-Save. Cabinet buttons activate magnets
+    above the return lanes, though a catch is not guaranteed to settle safely in an
+    inlane.
+- type: ball-save
+  name: Drain Shield
+  text: Repeated upper 3-bank completions advance the horseshoe from 25K to 50K to
+    Drain Shield. Collect it to protect one alternating outlane and return a drain
+    there to the shooter trough.
+- type: mystery-award
+  name: Mystery
+  text: The left inside rollover flashes Mystery at the right-ramp rollunder; it can
+    award Magna-Save, Bonus X, Drain Shield, or points.
+- type: extra-ball
+  name: SOLAR completion
+  text: Completing SOLAR awards an Extra Ball or 200K, depending on configuration;
+    this venue converts Extra Balls to points.
+- type: other
+  name: Solar Gun
+  text: Lower 3-bank progress qualifies 3-, 5-, or 10-second timing. The Solar Gun
+    standup oscillates a magnetic captive ball for scoring, but it is secondary to
+    Flash Bank.
+shots:
+- name: SOLAR ramp/chute
+  value: Builds SOLAR letters and up to 6× Bonus X for end-of-ball bonus.
+  risk: Medium-High
+  diagram: 1
+- name: Upper 3-bank
+  value: Builds FIRE, starts 20 seconds of 2× scoring, and advances the horseshoe
+    toward Drain Shield.
+  risk: Medium-High
+  diagram: 2
+- name: Lower 3-banks
+  value: Build locks, Magna-Save, and Solar Gun progress for the Multiball route.
+  risk: High
+  diagram: 3
+- name: Center ramp
+  value: Accesses the upper playfield; the easier route upstairs.
+  risk: Medium
+  diagram: 4
+- name: Flash Bank
+  value: Timed 20K–100K award; the primary tournament scoring shot.
+  risk: Medium-High
+  diagram: 5
+- name: Lit eject-hole lock
+  value: Locks balls toward 2-ball or 3-ball Multiball.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Stay upstairs and farm Flash Bank. Prefer clean 80K–100K collects over returning
+    downstairs solely to build 3-ball Multiball; use Magna-Save and Drain Shield resources
+    defensively.
+  behind: 'Build the full leverage package: FIRE 2×, 3-ball Multiball, and a 100K
+    Flash Bank for a potential 600K collect. Developing 6× bonus adds a large delayed
+    swing.'
+  key_decision: Remain on the productive upper playfield for Flash Bank, or deliberately
+    return downstairs to build Multiball. Flash Bank comes first; take Multiball when
+    it can be built safely.
+danger:
+- Balls dropping down either upper-playfield ramp are the defining uncontrolled danger.
+- Deliberate lower drop-bank shots carry substantial rebound risk.
+- Magna-Save may not catch the ball or may release it away from the desired inlane.
+- A ball slipping below the upper-right flipper needs an upper-left-flipper recovery
+  or it falls downstairs.
+- The center post is installed with rubber at this venue.
+commentary:
+- They've frozen the Flash Bank at one hundred thousand—now they have to finish it
+  before it resets.
+- That flashing 3-bank completion starts twenty seconds of double scoring right now.
+- Two balls locked means 2-ball Multiball; the Flash Bank will pay double.
+- Three-ball Multiball makes that Flash Bank triple—and FIRE can double it again.
+- 'That''s the full stack: a 100K bank is potentially 600,000 on one collect.'
+- They're staying upstairs rather than building Multiball; on Solar Fire, that's often
+  the safer tournament strategy.
+trivia:
+- Solar Fire was the last of Williams' four early-1980s two-level Magna-Save games.
+- Only 782 machines were produced.
+- It was the only game in that four-game split-level sequence with sound but no speech.
+- The Solar Gun propels a captive ball repeatedly across a scoring switch rather than
+  launching a player's ball.
+- Williams advertised the Flash Bank as a possible 600K scoring opportunity.
+summary: Flash Bank upstairs → FIRE 2× window → Multiball multipliers → SOLAR 6× bonus
+  → manage dangerous returns
+venue_notes:
+- Factory L-2 ROM is installed.
+- SOLAR/Bonus-X and FIRE letters remember between balls at factory settings.
+- Extra Balls and Specials are disabled or converted to points.
+- Stock multiplayer soft lock stealing is in effect; another player's Multiball can
+  clear a physically held ball while earned lock state remains to be re-established.
+- Magna-Save releases are notably dangerous at this venue.
+- Drop-bank timing, Mystery timing, and SOLAR timing are operator-adjustable.
+- Flash Bank is a four-target bank.
+- Do not announce Flash Bank behavior after a drain from 3-ball Multiball until observed
+  on this copy.
+image: images/solar-fire-williams-1981.jpg

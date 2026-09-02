@@ -1,0 +1,123 @@
+id: genie-gottlieb-1979
+name: Genie
+manufacturer: D. Gottlieb & Co.
+year: 1979
+metadata:
+  designer: Ed Krynski
+  artist: Gordon Morison
+  production: 6,800
+  era: Gottlieb System 1 solid-state widebody
+  multiball: No multiball
+hook: 'Bonus is the game: build base bonus to 29K, hit lit yellow drops to reach 5×,
+  then decide when to cash out at the Score Bonus hole.'
+rules:
+  primary: Build base bonus toward 29K. A lit yellow/star drop advances Bonus X, up
+    to 5×; at 20K base bonus, the upper-right kickout lights Score Bonus, which collects
+    the current bonus and resets base bonus while Bonus X remains for that ball.
+  bullets:
+  - Pop bumpers and upper rollovers toggle which yellow targets are lit for Advance
+    Multiplier.
+  - Completing all four yellow drops resets the bank, but only a lit target advances
+    Bonus X.
+  - All playfield features reset after each ball.
+  - Complete red mini-playfield drops to light Special, white drops to light the right
+    Extra Ball target, or both A-B-C-D rollover sets to light the left Extra Ball
+    target.
+watch:
+- title: Lit yellow/star drop
+  text: 'This is the priority cue: the next hit on that lit center bank target advances
+    Bonus X.'
+- title: Bonus-X lamps
+  text: At 4× or 5× with a large base bonus, a player may turn toward the Score Bonus
+    hole to bank the value.
+- title: Score Bonus lit
+  text: The upper-right hole lights once base bonus reaches 20K, creating an in-ball
+    cash-out option.
+- title: Mini-playfield colors
+  text: Completed white drops light the right Extra Ball target; completed red drops
+    light Special.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball qualifications
+  text: Complete both A-B-C-D rollover sets for the left Extra Ball target, or complete
+    the white mini-playfield drops for the right target. Original code allows at most
+    one Extra Ball per ball.
+- type: other
+  name: Special
+  text: Complete all four red mini-playfield drops, then hit the lit Special target.
+    Maximum one Special per ball.
+- type: other
+  name: Lit spinner
+  text: An inlane or star rollover can light the spinner. While lit, spins add bonus,
+    but the lamp goes out on subsequent switch activity.
+shots:
+- name: Upper-left mini-playfield
+  value: Build red and white drop-bank progress toward Special or the right Extra
+    Ball target.
+  risk: High
+  diagram: 1
+- name: Center spinner
+  value: When lit, spins add bonus; otherwise it can send the ball upstairs and help
+    change lamp state.
+  risk: High
+  diagram: 2
+- name: Yellow/star 4-bank
+  value: Hit the currently lit target to advance Bonus X toward 5×; the highest-priority
+    shot when available.
+  risk: Medium
+  diagram: 3
+- name: Upper A-B-C-D lanes
+  value: Build rollover progress toward the left Extra Ball target and change multiplier-related
+    lamp state.
+  risk: High
+  diagram: 4
+- name: Score Bonus hole
+  value: Cash the current bonus after 20K base bonus lights the hole, especially at
+    4× or 5×.
+  risk: Medium-High
+  diagram: 5
+strategy:
+  ahead: 'Prioritize Bonus X over raw points: shoot a lit yellow drop, otherwise send
+    the ball upstairs. At 4× or 5× with substantial bonus, consider cashing out instead
+    of challenging the mini-playfield.'
+  behind: Reach 5×, push base bonus toward 29K, collect it, then rebuild. The collect
+    resets base bonus but leaves the multiplier for that ball.
+  key_decision: Collect now or keep building? At 20K and 5×, the hole banks roughly
+    100K; waiting toward 29K offers more but risks losing the in-ball collect.
+danger:
+- Spinner returns can fall straight down the middle.
+- The gap between the upper mini-playfield flippers is a direct center-drain path.
+- A failed upper-right saucer return can fall centrally.
+- The left A-B-C-D and bumper exit is especially dangerous without a timely nudge.
+- A gentle right-side rubber hit can hop over the right flipper toward the center
+  drain.
+commentary:
+- That yellow target is lit—this is the shot that actually advances the bonus multiplier.
+- They’ve reached five-times; now every thousand of bonus is worth five thousand at
+  cash-out.
+- Twenty thousand bonus lights the hole, but at only two-times they may choose to
+  keep building first.
+- That collect resets the base bonus, not the multiplier for this ball, so they can
+  start building another one.
+- White drops are complete—the right Extra Ball target is now available.
+- This left-side bumper exit is the trouble spot; they want that rebound back toward
+  the center immediately.
+trivia:
+- Genie is generally credited as Gottlieb’s first widebody.
+- It has five flippers, including two small flippers for the upper-left mini-playfield.
+- Gottlieb advertised the mini-playfield as a “Game-Within-A-Game.”
+- The sound board offers two selectable sound sets.
+- A contemporary 1979 report documented its 29K bonus and 5× multiplier.
+summary: Build bonus → light yellow drop → raise Bonus X → cash Score Bonus → rebuild
+venue_notes:
+- This machine is set for 3-ball play.
+- Extra Balls are disabled at this venue.
+- Rules are original System 1 or rule-equivalent.
+- Flippers are normal for Genie.
+- Watch the left A-B-C-D/bumper exit and Score Bonus saucer return especially closely.
+- In 3-ball play, completed red or white banks and the lit kickout add 10K rather
+  than the 5K 5-ball values.
+- Original operator settings can use Replay or Extra Ball game mode; Extra Ball treatment
+  here is disabled.
+image: images/genie-gottlieb-1979.jpg

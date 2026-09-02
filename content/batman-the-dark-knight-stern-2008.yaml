@@ -1,0 +1,141 @@
+id: batman-the-dark-knight-stern-2008
+name: Batman — The Dark Knight
+manufacturer: Stern Pinball
+year: 2008
+metadata:
+  designer: George Gomez
+  artist: Kevin O'Connor and Margaret Hudson
+  production: Approximately 3,500
+  era: S.A.M. dot-matrix era
+  multiball: Joker, Scarecrow, Bat-Pod, and Bat Signal
+hook: Triple Joker at the plunge, add a Mini-Mine multiplier, then prepare Scarecrow
+  before Joker Multiball for the key stack. From there, decide whether to cash Bat
+  Signal or keep building its four-ball jackpot.
+rules:
+  primary: Use the plunge-selected 2× feature multiplier—or 3× from the Super Skill
+    Shot—on Joker, then add a persistent Mini-Mine multiplier and stack Joker with
+    Scarecrow. Bat Signal is the major late-game risk-versus-reward payoff.
+  bullets:
+  - 'Joker: knock down the drop target to light locks, lock three balls, then hit
+    major shots for jackpots; five jackpots light the Super Jackpot.'
+  - 'Scarecrow: start Attack at the scoop, complete five crane positions, then collect
+    five crane jackpots to light a scoop Super Jackpot.'
+  - Scarecrow Attack cannot begin during multiball, but an already-active crane can
+    be completed during another multiball to stack Scarecrow.
+  - Mini-Mines place a 2× multiplier on the next major shot hit for the ball; after
+    all five are multiplied, one can become 3×.
+  - Bat Signal requires Joker Multiball, Scarecrow Multiball, and a Batmobile Hurry-Up;
+    after its challenge, further feature shots build its jackpot before the four-ball
+    start.
+watch:
+- title: Multiplier on Joker
+  text: An X insert at a major shot means it has a Mini-Mine multiplier for the ball.
+    An X on Joker points to a jackpot-focused route.
+- title: Crane extended
+  text: The Scarecrow crane is active. If Joker is nearly ready, the player may be
+    setting up the preferred multiball stack.
+- title: Joker reveal
+  text: The rotating Joker indicates Joker Multiball; all five major arrows are jackpot
+    shots.
+- title: Bat Signal ready
+  text: A flashing left-loop saucer means the player can start Bat Signal or continue
+    risking shots to build its jackpot.
+skill_shots:
+- name: Feature Skill Shot
+  how: Time the plunge through the shooter lane while Joker, Scarecrow, or Batmobile
+    is lit.
+  value: Makes that feature 2× for the ball; Joker is the preferred tournament choice.
+- name: Normal Skill Shot
+  how: Plunge through the flashing top rollover.
+  value: Starts at 250K, rises 25K per success, and awards +5 Bonus X.
+- name: Super Skill Shot
+  how: Hold the left flipper before launch, then quickly hit Joker, the center/Batmobile
+    ramp, or Scarecrow.
+  value: Makes the chosen feature 3× for the ball; reliable players favor Joker.
+features:
+- type: ball-save
+  name: Ball Save
+  text: Factory setting is approximately five seconds; it is operator-adjustable.
+- type: other
+  name: Alfred Add-A-Ball
+  text: Top lanes or Mystery can light Alfred. During multiball, Alfred awards Add-A-Ball
+    once.
+- type: mystery-award
+  name: Mystery
+  text: Complete inlane/outlane lamps and collect at the upper saucer for awards including
+    multipliers, locks, Alfred, bonus, or an extra ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can come from score, Batgadgets, and Gotham City, but they are
+    disabled at this venue.
+- type: other
+  name: Competition Mode
+  text: Competition Mode standardizes feature events and is active at this venue.
+shots:
+- name: Left loop / upper saucer
+  value: Collects Mystery and advances Bat Missions, Bat Signal, and Gotham City.
+  risk: Medium
+  diagram: 1
+- name: Joker
+  value: Lights locks and scores Joker jackpots and Super Jackpots; the prime scoring
+    target when multiplied.
+  risk: Medium-High
+  diagram: 2
+- name: Gordon targets
+  value: Build Mini-Mine multipliers for valuable major shots.
+  risk: High
+  diagram: 3
+- name: Center/Batmobile ramp
+  value: Cashes Batmobile Hurry-Up and advances Bat-Pod and the mini-playfield.
+  risk: High
+  diagram: 4
+- name: Scarecrow scoop / crane
+  value: Starts Scarecrow Attack and scores Scarecrow multiball jackpots.
+  risk: High
+  diagram: 5
+- name: Right loop
+  value: Builds Batmobile Hurry-Up and advances Bat-Pod.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Use the reliable multiplier already available, stack Joker and Scarecrow
+    when prepared, and start Bat Signal instead of greedily maximizing it. Avoid speculative
+    Gordon or Batmobile work when a safe cash-out is enough.
+  behind: Chase 3× Joker from the Super Skill Shot plus a Mini-Mine multiplier, stack
+    Joker with Scarecrow, and build Bat Signal aggressively. A huge Batmobile Hurry-Up
+    is the other high-variance comeback route.
+  key_decision: 'Setup versus cash-out: another multiplier, Bat Signal build shot,
+    or right loop raises the ceiling, but each extends a single-ball risk window.'
+danger:
+- A weak center-ramp attempt can reject straight down the middle.
+- The hanging Scarecrow crane can produce hard rebounds toward the drain.
+- Gordon standups can rebound dangerously toward the middle.
+- A left-loop saucer bounce-out or pop exit can abruptly remove control.
+- During multiball, let upper-playfield activity settle before expecting the Scarecrow
+  scoop to register the intended award.
+commentary:
+- He tripled Joker on the Super Skill Shot—every Joker award this ball now has that
+  leverage.
+- That X is on Joker too; this is where Joker Super Jackpots can become match-changing.
+- The crane is already out, so he can start Joker now and finish Scarecrow inside
+  the multiball.
+- Bat Signal is ready, but he is still building the jackpot—that is pure risk versus
+  reward.
+- He is feeding the Batmobile Hurry-Up with right loops; the left loop can double
+  it once, then the center ramp cashes it.
+- Alfred is lit—during multiball, that is an add-a-ball opportunity.
+trivia:
+- The game pairs George Gomez's playfield design with rules led by Lyman F. Sheats
+  Jr.
+- Its visible mechanisms include the rotating Joker reveal, Scarecrow's moving crane
+  with a suspended ball, and the Batmobile Bridge.
+- The factory manual documents two different Scarecrow crane assemblies.
+- The crane later inspired a modern version used in Batman '66.
+- Approximately 3,500 machines were produced.
+summary: 3× Joker → Mini-Mine multiplier → Joker/Scarecrow stack → Bat Signal cash-out
+venue_notes:
+- This machine is running software revision 2.94.
+- Competition Mode is active.
+- Extra balls are disabled.
+- Ball save is approximately the factory five seconds.
+image: images/batman-the-dark-knight-stern-2008.jpg

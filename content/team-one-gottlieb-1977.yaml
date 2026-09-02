@@ -1,0 +1,122 @@
+id: team-one-gottlieb-1977
+name: Team One
+manufacturer: D. Gottlieb & Co.
+year: 1977
+metadata:
+  designer: Jeff Brenner
+  artist: Gordon Morison
+  production: ~650
+  era: Late electro-mechanical wedgehead
+  multiball: None
+hook: In 5-ball Novelty play, finish numbers 1–6 to turn the moving lit drop into
+  a 50K shot, then cash completed drop banks at the center standup.
+rules:
+  primary: 'Complete numbered objectives 1–6 for 50K and a permanent 10× increase
+    to drop scoring: unlit drops become 5K and the soccer-ball-lit drop becomes 50K.
+    Complete drop banks, then use the center standup to collect 50K per completed
+    bank and reset them.'
+  bullets:
+  - Numbers 1–4 are upper lanes; 5 and 6 are lower lanes, with additional 5/6 pad
+    targets behind the upper drops.
+  - The soccer-ball lamp identifies the moving lit drop target.
+  - Completed drop banks persist until reset by the center standup or an outer return
+    lane.
+  - Outer return lanes reset completed banks for 5K per bank; collect the richer center
+    award first when possible.
+  - Novelty number progress carries across balls.
+watch:
+- title: Six numbered lamps
+  text: 'When all six are complete, drop-target scoring jumps: unlit drops are 5K
+    and the soccer-ball-lit drop is 50K.'
+- title: Soccer-ball lamp
+  text: It marks the moving lit drop target—the main scoring shot after 1–6 is complete.
+- title: Both banks down
+  text: The center standup is worth 100K in Novelty when both completed banks are
+    waiting to reset.
+- title: Return-lane reset
+  text: An outer return lane resets banks for only 5K per bank, much less than the
+    center collect.
+skill_shots:
+- name: Missing-number plunge
+  how: Plunge toward whichever upper number from 1–4 is still missing. On ball one,
+    favor a number other than 4 when practical because 4 may be available later on
+    a soft plunge.
+  value: Advances the 1–6 sequence toward the 50K award and raised drop-target values.
+- name: Inner 2 / 3 plunge
+  how: Favor the inner 2 or 3 lane when its feed is available.
+  value: Advances the numbered sequence; 2 or 3 may spot both numbers if that adjustment
+    is enabled.
+features:
+- type: other
+  name: Novelty conversion
+  text: Backbox connectors convert WOW awards into native 50K point awards; this game
+    is set to Novelty.
+- type: other
+  name: 3- or 5-ball play
+  text: The machine supports either 3- or 5-ball play; this venue game is set for
+    5 balls.
+shots:
+- name: 1 / 4 upper lanes
+  value: Advance the number sequence and can directly finish difficult missing numbers.
+  risk: Medium
+  diagram: 1
+- name: 2 / 3 upper lanes
+  value: Advance the sequence; may spot both 2 and 3 if the adjustment is active.
+  risk: Medium
+  diagram: 2
+- name: Lit drop target
+  value: The moving soccer-ball-lit drop is worth 50K after 1–6 is complete.
+  risk: Medium-High
+  diagram: 3
+- name: 5 / 6 lower lanes and hidden pads
+  value: Complete 1–6 to unlock the raised drop-target values.
+  risk: Medium-High
+  diagram: 4
+- name: Center standup
+  value: Collects 50K per completed bank in Novelty, up to 100K for both, then resets
+    the banks.
+  risk: Medium-High
+  diagram: 5
+- name: Outer return lanes
+  value: Reset completed banks for 5K per bank; take only when the ball naturally
+    goes there.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Finish 1–6, then favor lit 50K drops and center-reset cash-outs. Avoid random
+    unlit drops unless they finish a bank or help reach a missing number.
+  behind: Build both completed banks for the 100K center collect, then repeatedly
+    exploit the raised 50K lit-target value.
+  key_decision: Take the valuable lit target, or complete an unlit target to finish
+    and reset a bank for future 50K opportunities.
+danger:
+- Drop-bank misses and hard rebounds are the main tournament risk.
+- Lower pop bumpers can produce unpredictable lateral or center returns.
+- The center standup can rebound directly toward the flipper gap.
+- The wide flipper gap and posts make the game unforgiving.
+commentary:
+- First goal is all six numbers—after that, the lit drop goes from five thousand to
+  fifty thousand.
+- Watch the soccer-ball lamp; that is the target being hunted.
+- Both banks are down, so the center target is worth a hundred thousand on Novelty.
+- He does not want that return-lane reset if he can avoid it—the center target pays
+  ten times as much.
+- He is taking an unlit target to finish the bank and reset it.
+- This venue game is on Novelty, so WOW awards are fifty-thousand-point awards.
+trivia:
+- Team One is the soccer-themed Add-A-Ball evolution of Abra Ca Dabra, adding numbers
+  5 and 6 to the earlier four-number structure.
+- It is one of the relatively few Gottlieb playfields credited to Jeff Brenner.
+- An export sibling, Kicker, was produced in the same period with different artwork
+  and configuration.
+- The moving high-value target is marked by a soccer-ball lamp above the physical
+  drop.
+- It is a very late Gottlieb single-player EM wedgehead.
+summary: Finish 1–6 → raise drops 10× → hit lit 50K drop → complete banks → center
+  cash-out
+venue_notes:
+- 'This game is set to Novelty: WOW awards are 50K points.'
+- This game is set for 5-ball play.
+- Whether collecting 2 or 3 spots both numbers is unknown on this copy.
+- No particular dangerous feed has been identified for this copy.
+image: images/team-one-gottlieb-1977.jpg

@@ -1,0 +1,144 @@
+id: led-zeppelin-premium-stern-2020
+name: Led Zeppelin (Premium)
+manufacturer: Stern Pinball
+year: 2020
+metadata:
+  designer: Steve Ritchie
+  artist: Greg Freres and Stephen Jensen
+  production: Premium edition; SPIKE 2, LCD, three flippers
+  era: Modern Stern SPIKE 2
+  multiball: Tour, Zeppelin, and Premium-exclusive Electric Magic Multiball/Frenzy
+hook: Build all four Icarus bank multipliers evenly, start the nearest multiball,
+  then trigger Icarus X while jackpots and song shots are lit for the game's biggest
+  scoring swing.
+rules:
+  primary: 'A song mode is always running. Progress song shots and Tour objectives
+    while building Icarus X: finish combos into each of four banks, complete the banks,
+    then hit Icarus for a timed playfield multiplier whose four bank values multiply
+    together.'
+  bullets:
+  - Use the left eject to choose Tours; later Tours require more objectives and add
+    balls, while Tour jackpot values persist.
+  - Lock three balls at the left ramp for the first Zeppelin Multiball; four jackpots
+    light a Super at the eject or the harder Premium side ramp for 2×.
+  - Icarus X lasts 15 seconds plus 5 seconds for each Premium side-ramp shot.
+  - During multiball, three Icarus hits award Add-A-Ball; a saved Super Band Boost
+    also adds a ball.
+  - Five completed songs light Mothership Multiball; all ten light Top of the Charts.
+watch:
+- title: Icarus bank multipliers
+  text: The four central band-symbol banks are components of Icarus X. Once all four
+    are complete, Icarus is ready; their values multiply together.
+- title: Icarus flashing
+  text: The Icarus target flashing signals the critical timed playfield multiplier
+    is ready to start.
+- title: Electric Magic rising
+  text: On Premium, the rising Electric Magic spinner signals its multiball path is
+    active and spinner shots can charge the magnet.
+- title: Red action button
+  text: Red means three Band Boosts are saved for Super Band Boost, an Add-A-Ball
+    during multiball.
+skill_shots:
+- name: LED Skill Shot
+  how: After selecting a song, plunge into the currently lit moving L-E-D target;
+    flippers can move the selection.
+  value: Awards 500K and 5 seconds of ball save, giving a safe opening while starting
+    early progress.
+features:
+- type: player-control
+  name: Band Boost
+  text: The green action button cashes the current single-ball combo at 5× and advances
+    the lowest bank multiplier; during multiball it spots Icarus.
+- type: player-control
+  name: Super Band Boost
+  text: Save three Boosts for a 10× cash-in that advances the two lowest banks; during
+    multiball it adds a ball.
+- type: ball-save
+  name: Left-outlane save
+  text: Complete the far-left two-bank to qualify a left-outlane save; later saves
+    require more completions.
+- type: other
+  name: Zeppelin Awards
+  text: Premium side-ramp shots cycle Super Spinner, Pops, Slings, and Ramps, while
+    adding 5 seconds to the next or current Icarus X.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra-ball qualifications score 10M when disabled; that award is multiplied
+    by Icarus X.
+- type: ball-save
+  name: Factory ball save
+  text: Normal factory ball save is 5 seconds.
+shots:
+- name: Left eject
+  value: Selects and starts Tours; also collects Zeppelin Super Jackpot and can award
+    an Extra Ball.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Builds Zeppelin locks and advances song shots; the fastest basic multiball
+    route.
+  risk: High
+  diagram: 2
+- name: Icarus target
+  value: Starts Icarus X and supplies multiball Add-A-Ball progress.
+  risk: Medium-High
+  diagram: 3
+- name: Center ramp
+  value: Advances song scoring and combos; a repeatable shot during guitar solos.
+  risk: Medium
+  diagram: 4
+- name: Electric Magic spinner
+  value: Builds the Premium-exclusive Electric Magic Multiball/Frenzy route.
+  risk: Medium-High
+  diagram: 5
+- name: Premium side ramp
+  value: Collects Zeppelin Super for 2×, cycles Super features, and extends Icarus
+    X.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take whichever multiball is closest for protection while advancing songs
+    and banks. Start a modest Icarus X instead of risking prolonged single-ball combo
+    building.
+  behind: Build the four banks evenly, prepare a multiball, then start Icarus X in
+    multiball. Electric Magic Frenzy or amplified Zeppelin Supers can make up a large
+    deficit.
+  key_decision: Start multiball now for survival and more lit shots, or build Icarus
+    X further first for a much larger eventual multiplier.
+danger:
+- Left-ramp rejects can return straight down the middle.
+- A Premium side-ramp brick can deflect toward either outlane.
+- Repeated LED/ZEP bank attacks create unpredictable lateral rebounds.
+- An uncontrolled plunge into the LED bank can ricochet toward the right outlane.
+- Fast horizontal motion across the open lower playfield can become an outlane drain.
+commentary:
+- He's building the four bank multipliers—those multiply together for Icarus X.
+- Icarus is ready; the question is whether he starts it now or waits for multiball.
+- That's Super Band Boost stored—during multiball, it's an Add-A-Ball.
+- Electric Magic is up; this is the Premium-exclusive multiball path.
+- Four Zeppelin jackpots are done—now the Super is at the eject or the harder side
+  ramp for double.
+- He finished the combo into that target bank, so that individual Icarus multiplier
+  just went up.
+trivia:
+- Led Zeppelin was Steve Ritchie's final Stern playfield design before he left for
+  Jersey Jack Pinball.
+- Tim Sexton led the rules and software development.
+- All editions synchronize changing shot patterns to the musical structure of ten
+  full Led Zeppelin songs.
+- Premium Electric Magic rises from beneath the playfield, spins, magnetically captures
+  a ball, then lowers out of sight.
+- Premium has four ramps versus Pro's three, including the upper-flipper side return
+  ramp.
+summary: Songs and Tours → balanced Icarus banks → multiball → Icarus X → Add-A-Balls
+  and Supers
+venue_notes:
+- V1.20 is installed.
+- Extra Balls are disabled under the Competition Install and instead award 10M, multiplied
+  by Icarus X.
+- The tournament setup is either the current Competition Install or Competition Mode
+  only.
+- Electric Magic is confirmed reliable.
+- Premium-only Electric Magic and the upper-flipper side ramp distinguish this edition
+  from Pro.
+image: images/led-zeppelin-premium-stern-2020.jpg

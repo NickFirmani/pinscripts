@@ -1,0 +1,148 @@
+id: godzilla-premium-stern-2021
+name: Godzilla — Premium
+manufacturer: Stern Pinball
+year: 2021
+metadata:
+  designer: Keith Elwin
+  artist: Jeremy Packer / Zombie Yeti
+  production: SPIKE 2
+  era: Modern
+  multiball: Godzilla, Mechagodzilla, Bridge Attack, Tank Attack
+hook: Build through ramps and Kaiju Battles, destroy the Premium building for physical
+  locks, then cash in huge Destruction Jackpots, Rodan 2X, and multiball Supers.
+rules:
+  primary: Qualify the first Kaiju Battle with two ramp shots, then use both ramps
+    for later Battles. Gigan first advances both Battle progress and building damage.
+    Destroy the building, physically lock three balls on Premium, and use multiball
+    jackpots to light and multiply major Supers.
+  bullets:
+  - Battle progress persists after failure, though replayed shot values and the final
+    time bonus are reduced.
+  - Start a Tier-1 Battle before multiball to stack it.
+  - Major city objectives light Destruction Jackpot; changing cities erases its temporary
+    base value.
+  - Godzilla Multiball lights a building Super after six jackpots; repeated jackpot
+    completions can raise it to 3X.
+  - Mechagodzilla Multiball has a timed Super worth 1X at the right spinner or 3X
+    through the Tail Whip.
+watch:
+- title: Battle at scoop
+  text: Flashing at the scoop means the player finished ramp qualification and is
+    choosing the next Kaiju.
+- title: Building locks
+  text: A green destroyed building means Premium can physically collect three balls
+    on its roof for Godzilla Multiball.
+- title: Rodan active
+  text: Rodan gives 60 seconds of 2X playfield scoring, making already-lit jackpots
+    far more dangerous.
+- title: Building feed
+  text: When the building grabs a ball and sends it to the upper flipper, Destruction
+    Jackpot is live and the upper loop is the cash-out.
+skill_shots:
+- name: Left Spinner Lane
+  how: Plunge behind the upper flipper into the left spinner lane.
+  value: 5M plus 1M per unique skill shot and 8 seconds of ball save; a strong tournament
+    default when makeable.
+- name: Upper-Loop Secret
+  how: Plunge to the upper flipper, then reflex the upper loop.
+  value: 4M times unique skill shots plus 5 seconds of ball save.
+- name: Super Secret
+  how: Make the left-spinner-lane plunge, then immediately reflex the scoop.
+  value: 10M, +2 Power-Up progress, and immediate collection of a lit Ally.
+features:
+- type: player-control
+  name: Heat Ray
+  text: Center-spinner progress lights the action button. Hold it to 100% to collect
+    several lit shots simultaneously; it cannot collect Destruction Jackpot and is
+    restricted in some late modes.
+- type: ball-save
+  name: Mothra
+  text: Lights a left-outlane ball save.
+- type: player-control
+  name: Anguirus
+  text: Stores an action-button add-a-ball.
+- type: other
+  name: Rodan
+  text: Awards 60 seconds of 2X playfield scoring.
+- type: other
+  name: Oxygen Destroyer
+  text: 'On the last ball, a right-outlane drain can start a one-time rescue: shoot
+    through the building within 12 seconds or the flippers are killed.'
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can come from milestones, but this venue's Competition Install
+    has them disabled.
+shots:
+- name: Left Ramp
+  value: Advances Battles and damages the building; central to Gigan progression and
+    Godzilla Multiball setup.
+  risk: Medium-High
+  diagram: 1
+- name: Building
+  value: Damages the building, handles locks and Godzilla Multiball Super progress,
+    and sets up Destruction Jackpot.
+  risk: High
+  diagram: 2
+- name: Scoop
+  value: Starts Battles, selects cities, and accesses Allies and Power-Ups.
+  risk: High
+  diagram: 3
+- name: Center Spinner
+  value: Builds Heat Ray and Tesla Strike.
+  risk: Medium
+  diagram: 4
+- name: Right Spinner / Mechagodzilla
+  value: Charges and advances Mechagodzilla Multiball.
+  risk: Medium-High
+  diagram: 5
+- name: Upper Loop / Tail Whip
+  value: Cashes Destruction Jackpot, advances loops, and scores the 3X Mechagodzilla
+    Super.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use the reliable Gigan-to-city-change-to-prepared-multiball route. Favor
+    Mothra before greedier Allies, and collect a mature Destruction Jackpot before
+    a city change wipes its temporary base.
+  behind: Create leverage with Titanosaurus during Godzilla, Tank, or Bridge Attack
+    Multiball; use Rodan 2X and Heat Ray with several valuable shots lit; pursue a
+    multiplied Destruction Jackpot or the 3X Tail Whip Mecha Super.
+  key_decision: Cash accumulated value now or keep building it? That decision recurs
+    around Destruction Jackpot, city changes, Allies, Heat Ray, and multiball setup.
+danger:
+- The Battle/City scoop is a sharp late left-flipper shot and commonly dangerous.
+- Right-ramp rejects can return rapidly toward center.
+- Building misses and reverse exits can feed straight down the middle on poorly leveled
+  copies.
+- The UFO pop is useful but inherently uncontrolled.
+- Titanosaurus standups are much safer to attack during multiball than in single-ball
+  play.
+commentary:
+- Gigan first—the ramps are advancing the Battle and tearing down the building at
+  the same time.
+- He's taking London; that improves the Destruction Jackpot for the rest of the route.
+- Rodan is running—that's sixty seconds of double playfield.
+- The building has the ball; this is the Destruction Jackpot setup, and the upper
+  loop is the cash-out.
+- Titanosaurus is much nicer inside multiball—those standups are ugly in single-ball
+  play.
+- 'Mecha Super is ready: right spinner takes 1X, but the Tail Whip is worth triple.'
+trivia:
+- Godzilla debuted Stern Insider Connected alongside its 2021 launch.
+- Premium's motorized skyscraper changes ramp paths as it collapses and physically
+  stores three balls on its roof.
+- The Magna Grab magnetic Newton ball can catch balls from five paths and feed the
+  upper flipper.
+- Premium and LE use a motorized rotating Mechagodzilla bank; Pro's mechanism is static.
+- The game uses footage and audio from ten Showa-era Toho films.
+summary: Ramps → Kaiju Battles → building locks → multiball Supers → Rodan/Heat Ray
+  → Destruction Jackpot cash-out
+venue_notes:
+- Code is v1.16.0.
+- Competition Install is in use, so Extra Balls are disabled.
+- Skill-shot ball-save configuration is unknown.
+- Scoop, ramp, building, and Mechagodzilla feeds can vary with pitch, level, and mechanism
+  adjustment.
+- Premium-specific physical locks, collapsing bridge, and rotating Mechagodzilla geometry
+  differ from Pro.
+image: images/godzilla-premium-stern-2021.jpg

@@ -1,0 +1,126 @@
+id: radical-bally-1990
+name: Radical!
+manufacturer: Bally/Midway
+year: 1990
+metadata:
+  designer: Dan Langlois and Peter Perry
+  artist: John Youssi
+  production: About 1,300 games
+  era: Williams System 11C
+  multiball: 2-ball Multiball / Mega-Million
+hook: Spell R-A-D-I-C-A-L through seven major shots to light locks, then cash the
+  left-ramp Mega-Million in 2-ball Multiball.
+rules:
+  primary: Complete RADICAL to light Skate or Die and the first lock. Lock a ball,
+    complete RADICAL again, then lock the second ball for Multiball. Shoot the left
+    ramp for Mega-Million; rebuild RADICAL during Multiball to relight it.
+  bullets:
+  - RADICAL letters are R Snake Lane, A Vertical Ramp, D left orbit, I right ramp,
+    C lower drops, A right orbit, and L left ramp.
+  - Letter values rise from 20K through 1M but time out; fast distinct shots can make
+    the build highly valuable.
+  - Completing RADICAL relights kickback, lights Bottom Million, and adds 100K to
+    outhole bonus.
+  - Top drop-bank completions build Bonus X to 5x; RADICAL can build base bonus to
+    400K, for up to 2M end-of-ball bonus.
+  - Stock Mega-Million is random from 3M to 10M; Rev 3 Contest uses 4M, 6M, 8M, then
+    10M.
+watch:
+- title: RADICAL letters
+  text: 'Track the seven letters: completion lights the next lock opportunity.'
+- title: Skate or Die / lock lamps
+  text: RADICAL is complete, and any of the three lock routes can bank a ball.
+- title: Mega-Million on left ramp
+  text: This is the Multiball cash-out and can swing the match.
+- title: 500K / 1M letter values
+  text: Fast movement between distinct shots can generate major scoring before Multiball.
+skill_shots:
+- name: RADICAL Skill Shot
+  how: Plunge up the left ramp while RADICAL lamps cycle; the letter lit when the
+    ramp entry registers is spotted.
+  value: Spots a missing RADICAL letter, especially useful on the first qualification
+    cycle.
+features:
+- type: other
+  name: Left-outlane Kickback
+  text: Normally lit at ball start and relit by completing RADICAL; it is a key survival
+    resource.
+- type: extra-ball
+  name: Extra Ball
+  text: SNAKE completion, Vertical Ramp progress, or a Snake Run award can qualify
+    or award it; the shot-based hurry-up moves from the Vertical Ramp to the right
+    outlane.
+- type: mystery-award
+  name: Snake Run
+  text: Complete the upper drop bank, then collect the timed Snake Run for an award
+    such as Skate or Die, Extra Ball, 1M, mystery score, Tail Sliders, or Verticals.
+shots:
+- name: Snake Lane
+  value: RADICAL R, SNAKE progress, and a lock route when lit.
+  risk: High
+  diagram: 1
+- name: Left Ramp
+  value: RADICAL L, lock route, Mega-Million, and skill-shot lane.
+  risk: Medium-High
+  diagram: 2
+- name: Vertical Ramp
+  value: First RADICAL A and Extra Ball progress; a controlled return.
+  risk: Medium
+  diagram: 3
+- name: Left Orbit
+  value: RADICAL D and an upper-right-flipper feed.
+  risk: Medium-High
+  diagram: 4
+- name: Right Ramp
+  value: RADICAL I, Top Million, and a lock route.
+  risk: High
+  diagram: 5
+- name: Lower Drop Bank / Hidden Target
+  value: RADICAL C, Spot Letter, and Bottom Million.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Keep taking distinct RADICAL shots and protect the kickback. Once Multiball
+    starts, take Mega-Million rather than risking a complicated relight setup.
+  behind: Push letter values toward 500K or 1M, collect Mega-Million, then rebuild
+    RADICAL in Multiball to relight the jackpot.
+  key_decision: Take the safest missing RADICAL letter for flow, or use the lower
+    drop/Spot Letter shortcut for an awkward letter at the cost of control.
+danger:
+- Lower drop-bank rebounds can turn immediately into drain threats.
+- Weak left-ramp shots can fall into pop-bumper traffic.
+- Snake Lane is narrow and beside the left outlane.
+- The right outlane is harsh and has no normal kickback.
+- Weak upper-flipper feeds leave little time or angle for required follow-up shots.
+commentary:
+- That's the last RADICAL letter—Skate or Die is lit, so they're shooting for the
+  first lock.
+- First ball locked; now they have to spell RADICAL a second time.
+- Two locks means Multiball, and the left ramp is Mega-Million.
+- This jackpot can completely change the match.
+- Mega-Million is collected; now they're rebuilding RADICAL to relight it.
+- Those letters can reach a million apiece, so speed matters before the value decays.
+trivia:
+- Radical! is an early-1990s celebration of skateboarding culture, complete with ramps,
+  Skate or Die speech, and period slang.
+- Its four flippers and diverters make it unusually flow-oriented, routing successful
+  shots toward another flipper.
+- The game uses only two physical balls, making its physical lock central to game
+  state.
+- It combines physical locks and random jackpots with ramp diverters, timed features,
+  and stackable Multiball rules.
+- Licensed 2020 Rev 3 software was written to improve tournament fairness.
+summary: RADICAL letters → locks → 2-ball Multiball → left-ramp Mega-Million → relight
+  jackpot
+venue_notes:
+- Installed ROM is unresolved between original L-1 and licensed Rev 3.0; if Rev 3
+  is installed, Contest Game is enabled.
+- On stock L-1, locks can be shared or stolen in multiplayer; Rev 3 tracks lock progress
+  by player.
+- Extra Balls are disabled.
+- Rev 3 Contest uses deterministic Mega-Million values of 4M, 6M, 8M, and 10M; stock
+  code uses random 3M–10M values.
+- Skill-shot reliability is unknown and depends on shooter-lane adjustment.
+- Mega-Million grace period, base-bonus persistence, and some letter and Extra-Ball
+  behavior can be operator-adjustable.
+image: images/radical-bally-1990.jpg

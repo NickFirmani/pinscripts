@@ -1,0 +1,124 @@
+id: aztec-williams-1976
+name: Aztec
+manufacturer: Williams Electronics
+year: 1976
+metadata:
+  designer: Gordon Horlick
+  artist: Christian Marche
+  production: 10,150 production EM machines
+  era: Electro-mechanical, score reels
+  multiball: None
+hook: Plunge for A to light the 1,000-point spinner, build bonus up top, then decide
+  whether the riskier Z/T and U-chute routes are worth Double Bonus and letter scoring.
+rules:
+  primary: Collect A through the center top lane to make the spinner worth 1,000 per
+    spin. Spinner shots build a bonus from 5K to a 50K base maximum. Hit Z or T, then
+    make the left orbit/spinner lane or upper-right U-chute to activate Double Bonus
+    for a possible 100K end-of-ball payout.
+  bullets:
+  - The center top rollover scores 1K, collects A, and changes spinner scoring from
+    100 to 1,000 per spin.
+  - Bonus advances in 5K steps from 5K to a 50K base maximum; Double Bonus makes that
+    payout 100K.
+  - Z or T only qualifies Double Bonus; a subsequent left orbit/spinner lane or U-chute
+    shot must activate it.
+  - The U-chute scores 5K, or 10K when doubled, for every lit AZTEC letter and kicks
+    the ball back into play.
+  - Bonus and A-Z-T-E-C progress reset at the end of each ball.
+watch:
+- title: 1000 SPINNER
+  text: A has been collected, so repeated spinner shots are now materially valuable.
+- title: 50,000 bonus
+  text: The base bonus is maxed; with Double Bonus active, the drain payout is 100K.
+- title: DOUBLE BONUS
+  text: Z or T has been followed by a qualifying lane, so the current bonus will pay
+    twice.
+- title: AZTEC letters in U-chute
+  text: Several lit letters make each U-chute visit worth tens of thousands and make
+    its kickout especially important.
+skill_shots:
+- name: Center top rollover
+  how: Plunge through the center of the three top lanes.
+  value: Scores 1K, collects A, and lights the spinner for 1K per spin—the safest
+    repeatable scoring engine. A and spinner qualification reset after the ball.
+features:
+- type: extra-ball
+  name: Center Extra Ball target
+  text: AZTEC-letter progress can light the dangerous center standup for an Extra
+    Ball; qualification is adjustment-sensitive.
+- type: other
+  name: Outlane Special
+  text: The required AZTEC condition plus 50K bonus can light the alternating bottom-outlane
+    Special.
+shots:
+- name: Left spinner / orbit
+  value: Scores 100 or 1,000 per spin, builds bonus, and can activate Double Bonus
+    after Z or T.
+  risk: Medium
+  diagram: 1
+- name: Z target
+  value: Collects Z and qualifies the Double Bonus route.
+  risk: Medium-High
+  diagram: 2
+- name: Center top / A lane
+  value: Collects A and lights the 1,000-point spinner.
+  risk: Low
+  diagram: 3
+- name: Center Extra Ball target
+  value: Awards an Extra Ball when lit, subject to venue setup.
+  risk: High
+  diagram: 4
+- name: T target
+  value: Collects T and qualifies the Double Bonus route.
+  risk: Medium-High
+  diagram: 5
+- name: U-chute / right bonus lane
+  value: Scores 5K, or 10K when doubled, for each lit AZTEC letter; can activate Double
+    Bonus.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor the lit spinner and avoid unnecessary C/E and center-target shots.
+    With bonus healthy, pursue Double Bonus only if the U-chute or orbit return is
+    behaving safely.
+  behind: Chase 50K plus Double Bonus, and exploit a repeatable U-chute kickout. Multiple
+    letters, doubled chute scoring, and a 100K bonus payout can change the match quickly.
+  key_decision: 'Spinner safety versus feature value: the spinner supplies controlled
+    repeat scoring, while Z/T and especially the U-chute offer more leverage with
+    greater rebound and drain risk.'
+danger:
+- The U-chute kickout can hit the upper-right bumper, glance off chute rubber, and
+  head down the middle.
+- Outside grazes around the U-chute are documented center-drain hazards.
+- Upper bumper exits can be unpredictable, particularly toward the left outlane.
+- AZTEC standups can rebound directly toward either side drain.
+- The center Extra Ball target adds center-shot risk when it is not lit or valuable.
+commentary:
+- Center lane gets the A—now the spinner is worth a thousand a rip.
+- They are going up top all day here, building bonus through that spinner.
+- Z is in; now they still need the lane to actually turn on Double Bonus.
+- Fifty thousand is the base max—doubled, that is a hundred thousand waiting at the
+  drain.
+- 'Look at those letters in the U-chute: this shot can score ten thousand for each
+  lit letter.'
+- Watch the kickout—this upper-right feed can turn into a center drain immediately.
+trivia:
+- Williams produced 10,150 EM Aztecs, a large run for the period.
+- Williams also built 10 rare solid-state Aztec prototypes late in 1976; they used
+  digital scoring while much gameplay logic remained electromechanical.
+- Full-production Williams solid state arrived with Hot Tip in 1977.
+- IPDB credits Gordon Horlick, supported in part by confirmation from Barry Oursler.
+- The backglass imagery appears to draw from illustrations in the 1955 book Indians
+  of the Americas.
+summary: Center A → lit spinner → build 50K bonus → qualify and activate Double Bonus
+  → U-chute leverage → manage kickout risk
+venue_notes:
+- This venue has the standard EM, score-reel production version.
+- The machine is configured for 5 balls.
+- Extra Balls may be disabled or handled as plunge-without-flipping; confirm before
+  calling the center target valuable.
+- AZTEC Extra Ball qualification adjustment is unknown; do not state a specific required
+  letter combination.
+- U-chute eject behavior is unknown; assess its safety during play.
+- The 50K base bonus becomes 100K only with Double Bonus active.
+image: images/aztec-williams-1976.jpg

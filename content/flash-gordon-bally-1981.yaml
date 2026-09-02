@@ -1,0 +1,130 @@
+id: flash-gordon-bally-1981
+name: Flash Gordon
+manufacturer: Bally Manufacturing
+year: 1981
+metadata:
+  designer: Claude Fernandez
+  artist: Kevin O’Connor
+  production: 10,000 units
+  era: Early solid-state, split-level pinball
+  multiball: No multiball
+hook: A split-level Bally where drop banks build Bonus X, light spinners, and set
+  up a 15-second 5× playfield-scoring burst.
+rules:
+  primary: Build Bonus X through the right inline drops, upper 1-2-3 bank, and lower-left
+    four-bank; then combine Mini and Super Bonus qualifications at the center saucer
+    for timed playfield multipliers.
+  bullets:
+  - Upper and lower regular bonuses build separately from 1K to 19K; the right inline
+    drops light 2× then 3× Bonus, the upper bank 4×, and the lower-left bank 5×.
+  - Complete flashing upper 1-2-3 objectives for the 50K Mini Bonus and 2× playfield
+    scoring; complete flashing lower-left drops plus matching-color right targets/inlanes
+    for the 100K Super Bonus and 3× playfield scoring.
+  - With both playfield multipliers ready, the center saucer starts 15 seconds of
+    5× playfield scoring.
+  - The solitary upper drop lights the shooter lane to collect the lower bonus during
+    the ball.
+  - Mini and Super Bonus progress carries between balls here, but Bonus X does not.
+watch:
+- title: Bonus X lamps
+  text: The 2×, 3×, 4×, and 5× lamps show progress through the target-bank sequence.
+- title: Playfield multipliers
+  text: If both 2× and 3× playfield lamps are lit at the saucer, one saucer shot starts
+    15 seconds of 5× scoring.
+- title: Lit spinners
+  text: The first lower-left bank completion lights the left spinner; the second lights
+    the right. Players may switch immediately to repeat spinner shots.
+- title: Collect Bonus
+  text: A lit shooter-lane or upper Collect Bonus can be a major cash-out when Bonus
+    X or a playfield multiplier is built.
+skill_shots:
+- name: Upper 1-2-3 Skill Shot
+  how: Plunge to the upper playfield and hit the currently lit target in the upper
+    3-bank as the lit arrow cycles.
+  value: Advances the flashing 1-2-3 set toward the 50K Mini Bonus and 2× playfield
+    qualification; a soft, controlled plunge leaves a better upper-bank attack.
+features:
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls are disabled for this event. Normally, the completed right inline
+    bank lights its rear standup, and the fourth lower-left bank completion can light
+    one at the saucer.
+- type: other
+  name: Bidirectional center saucer
+  text: The saucer alternates lower-to-upper and upper-to-lower ejects; flashing lamps
+    show the next direction.
+shots:
+- name: Right inline drops / Wood Beast
+  value: Builds 2× then 3× Bonus; completing the bank normally lights an Extra Ball.
+  risk: High
+  diagram: 1
+- name: Upper 1-2-3 bank
+  value: Builds 4× Bonus, advances Mini Bonus, and progresses upper awards.
+  risk: Medium-High
+  diagram: 2
+- name: Lower-left four-bank
+  value: Builds 5× Bonus, lights the spinners, and advances saucer awards.
+  risk: Medium-High
+  diagram: 3
+- name: Lit spinners
+  value: Primary repeatable scoring once lit, especially during playfield multipliers.
+  risk: Medium-High
+  diagram: 4
+- name: Center saucer
+  value: Starts the 2×, 3×, or combined 5× timed playfield-scoring window and cashes
+    saucer awards.
+  risk: Medium
+  diagram: 5
+- name: Collect Bonus
+  value: Re-awards the built regular bonus during the ball.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Get useful Bonus X and a lit spinner, then favor spinner shots and upper-playfield
+    safety instead of forcing every target objective.
+  behind: Build toward the 5× playfield window with a spinner lit and a large Collect
+    Bonus ready for a concentrated 15-second scoring burst.
+  key_decision: Cash the spinner and bonus state already built, or risk more target-bank
+    shots to improve the multiplier and light playfield scoring.
+danger:
+- Right-spinner and left-ramp returns can come straight through the middle after crossing
+  levels.
+- A downward center-saucer eject can feed the left bumper/rubbers and reach the right
+  outlane or center.
+- Pop-bumper exits on the confined lower playfield can drain to either outlane or
+  straight down the middle.
+- Direct rebounds from the valuable right inline targets are a major drain source.
+- Upper-bank ricochets can return downstairs uncontrolled; nudging may help steer
+  them toward the upper flipper.
+commentary:
+- Second inline target—that’s double bonus; the third gets them to triple.
+- Upper bank is done, so they’ve reached four-times bonus; the lower-left bank is
+  the last step to five.
+- Both playfield multipliers are ready—one saucer shot starts fifteen seconds of five-times
+  scoring.
+- The spinner is lit now; that’s why they’ve stopped shooting targets and switched
+  to repeated spinner shots.
+- That single upper drop just lit the shooter lane to collect the lower bonus during
+  the ball.
+- This saucer is ejecting downward next—that return can be much more dangerous than
+  the upper feed.
+trivia:
+- Bally’s first production split-level pinball machine.
+- The first Bally game to use the Squawk & Talk sound board.
+- Bally’s second production game with speech, following Xenon.
+- The backbox originally used a strobe lamp behind the Flash Gordon logo; some production
+  machines lack it.
+- Despite its deep rules for 1981, it has no multiball; its leverage comes from bonus
+  and timed playfield multipliers.
+summary: Build Bonus X → light spinners → qualify Mini/Super → shoot saucer → cash
+  5× window
+venue_notes:
+- Original Bally code is installed.
+- This event is set for 3 balls.
+- Bonus X uses conservative memory and does not carry between balls.
+- Mini Bonus and Super Bonus target progress carry between balls.
+- Extra Balls are disabled.
+- The manufacturer-specified combined 5× playfield-scoring timer is 15 seconds.
+- Stock adjustments can affect saucer awards, Extra Balls, and Specials; do not apply
+  modern Flash Gordon 2021/2024 rules to this machine.
+image: images/flash-gordon-bally-1981.jpg

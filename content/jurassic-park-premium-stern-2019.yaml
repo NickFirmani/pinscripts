@@ -1,0 +1,148 @@
+id: jurassic-park-premium-stern-2019
+name: Jurassic Park (Premium)
+manufacturer: Stern Pinball
+year: 2019
+metadata:
+  designer: Keith Elwin
+  artist: Jonathan “Johnny Crap” Bergeron
+  production: Premium edition
+  era: SPIKE 2 LCD era
+  multiball: T-Rex, Chaos, Raptor Tri-Ball, King of the Island, and later wizard multiballs
+hook: Advance paddocks through MAP shots and the left ramp, then stack Control Room
+  or multiball with Supply Drop's 45-second 2× scoring. Raptor Tri-Ball's six-ball
+  Super Jackpot phase is the biggest alternate payoff.
+rules:
+  primary: Advance the island map with MAP shots and the left ramp. In each paddock,
+    rescue staff, complete the required trap targets or Helipad, then capture the
+    dinosaur at its flashing shot; captures grant permanent perks and move progress
+    toward Visitor's Center.
+  bullets:
+  - The first paddock needs one MAP shot; later paddocks normally need three. Truck
+    hits choose the next map branch.
+  - Spell T-REX at the truck, then start it at the left ramp. Feed T-Rex becomes two-ball
+    multiball; five jackpots light a Super worth their total.
+  - Control Room can be lit by the first dinosaur, a Raptor jackpot, two CHAOS spellings,
+    or 15 tower shots. Normally one Control Room mode and one multiball may overlap.
+  - For Raptor Tri-Ball, capture a raptor, weaken the fence, then shoot the dead-end
+    lane. Ramp jackpots lead to CHAOS jackpots and a six-ball Super Jackpot phase.
+  - Supply Drop lights the far-right target for 45 seconds of 2× scoring. This is
+    separate from Bonus X, and major progress persists across balls.
+watch:
+- title: Truck direction
+  text: A deliberate truck hit selects the next map branch and may be routing for
+    progress rather than immediate points.
+- title: Control Room lit
+  text: A lit C means a mode start may be coming, often System Boot, before a prepared
+    multiball.
+- title: Far-right 2× target
+  text: With Supply Drop collected, this target starts 45 seconds of double scoring
+    and can turn a ready mode or multiball into a major stack.
+- title: Raptor gate and lock
+  text: A closed Premium Raptor gate holding a ball signals Tri-Ball setup; after
+    fence integrity reaches zero, one dead-end shot starts it.
+skill_shots:
+- name: Main combo Skill Shot
+  how: Full plunge, then shoot left ramp, right ramp, side/tower ramp, and right orbit
+    in sequence.
+  value: Starts at 2M; Super, Double Super, and Ultra Super raise the sequence to
+    2×, 4×, and 6× base. Each step adds 3 seconds of ball save; completion lights
+    left-outlane Escape.
+- name: MXV Skill Shot
+  how: Insert an upper-loop shot between the right-ramp and side-ramp portions of
+    the main combo.
+  value: Makes the side-ramp award worth 8× base.
+- name: Secret Skill Shots
+  how: Short plunge to a flipper, then immediately shoot C, O, or the pop-area standup;
+    the right-flipper pop standup is the premium version.
+  value: Awards 6M, 8M, or 10M plus 3 seconds of save; the right-flipper pop shot
+    awards 20M and 12 seconds of save. C also advances CHAOS.
+features:
+- type: player-control
+  name: Smart Missile
+  text: After enough rescues, collect it at the left inlane, select with the action
+    button, then hit the amber target between the pops. Clear Paddock, added Rescues,
+    and Raptor Multiball can skip dangerous setup.
+- type: other
+  name: Supply Drop / Super Supply Drop
+  text: Three purple targets light Supply Drop, which also lights 2× scoring. Upper-loop
+    progress can upgrade later drops to deterministic Amber modes on Competition settings.
+- type: ball-save
+  name: Escape and Nedry Save
+  text: Escape is a left-outlane virtual save. Nedry Save is a right-outlane save
+    qualified by repeated hits to the 2× target.
+- type: extra-ball
+  name: Extra Balls
+  text: Several paths can award extra balls; at this venue they are converted to 15M
+    points and can be doubled.
+shots:
+- name: Control Room “C”
+  value: Advances Control Room modes and CHAOS; starts lucrative modes and is also
+    a secret skill-shot target.
+  risk: Medium-High
+  diagram: 1
+- name: Raptor Pen
+  value: Captures raptors and advances Raptor Tri-Ball, a major multiball route.
+  risk: High
+  diagram: 2
+- name: Left ramp / T-Rex
+  value: Advances paddocks, starts T-Rex events, and contributes to wizard progress.
+  risk: Medium-High
+  diagram: 3
+- name: Truck
+  value: Routes the island map and qualifies T-REX.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Advances rescues and Pteranodon; serves Raptor jackpots.
+  risk: Medium-High
+  diagram: 5
+- name: 2× target
+  value: Activates 45 seconds of double scoring and advances Nedry Save qualification.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Cash in completed paddocks, System Boot, and ready multiballs without forcing
+    extra setup. Use Smart Missile to bypass difficult paddock work, and activate
+    2× only with a clear scoring feature ready.
+  behind: Build Control Room with Raptor or T-Rex Multiball, then start 2× scoring.
+    Raptor's six-ball Super Jackpots scale with balls in play and can layer with its
+    own temporary 2× jackpot feature.
+  key_decision: Keep building toward the next stack or cash the feature already ready?
+    Layering modes and multipliers is powerful, but nearly every additional setup
+    shot is difficult.
+danger:
+- The O/right-orbit shot is tight; a brick can leave the ball uncontrolled.
+- Repeated direct Raptor Pen attacks are dangerous; a left-flipper backhand is often
+  preferred.
+- Left, right, and Helipad ramp rejects can return quickly toward center; feed behavior
+  varies by machine.
+- The Premium T-Rex physically throws balls; Museum Mayhem can send one in a random
+  direction.
+commentary:
+- He's finished MAP—left ramp moves the truck into the next paddock.
+- Control Room is ready; he's trying to get the mode running before he starts multiball.
+- Supply Drop lit double scoring—forty-five seconds of 2× if he can hit that far-right
+  target.
+- Raptor Tri-Ball has reached six balls; those Supers scale with balls in play, so
+  this is the explosion point.
+- Smart Missile is active—Clear Paddock here would skip a lot of risky shots.
+- The truck hit wasn't random; he's changing which side of the island he's going to
+  take.
+trivia:
+- Jurassic Park was Keith Elwin's second Stern production design, following Iron Maiden.
+- The game tells an original post-breakdown evacuation story about rescuing staff
+  and recapturing dinosaurs.
+- Premium's T-Rex is an animatronic mechanism that eats and throws balls.
+- The Premium Raptor Pen uses a motorized gate and a physical ball lock, unlike Pro.
+- The 2023 V1.10 update added over 100 speech callouts plus rule additions including
+  Nedry Save and Trifecta.
+summary: Paddocks → Control Room → multiball → Supply Drop 2× → Visitor's Center
+venue_notes:
+- Installed code is V1.16.0; the core gameplay reference is based on V1.10, whose
+  later updates were primarily system and service support.
+- The venue uses either Competition Install or Competition gameplay mode; these are
+  distinct configurations.
+- Extra balls are set to 15M points and may be doubled.
+- T-Rex and Raptor gate/lock mechanisms are operating normally.
+- Premium and LE share the T-Rex and motorized Raptor Pen mechanisms; Pro lacks them.
+image: images/jurassic-park-premium-stern-2019.jpg

@@ -1,0 +1,125 @@
+id: space-odyssey-williams-1976
+name: Space Odyssey
+manufacturer: Williams Electronics
+year: 1976
+metadata:
+  designer: Steve Kordek
+  artist: Christian Marche
+  production: Approximately 4,300
+  era: Electro-mechanical, two-player
+  multiball: No multiball
+hook: 'A two-player EM built around a motor-driven swinging target: build bonus upstairs,
+  qualify Double Bonus, and cash in a potentially massive end-of-ball award.'
+rules:
+  primary: Work the swinging-target sequence for A/B/C progress, use a qualified side
+    saucer to light Double Bonus, and build bonus to its 20K maximum. With Double
+    Bonus lit, a max bonus pays 40K at the drain.
+  bullets:
+  - The swinging target and a lit outer top lane both advance the same 10-position
+    feature sequence.
+  - Yellow standups, the spinner rollover, and the upper-right horseshoe build bonus;
+    the horseshoe advances three steps.
+  - A-B-C completion qualifies the Double-Bonus saucer route and alternates the outlanes
+    for Special/replay.
+  - The swinging-target position is global mechanical state and may carry between
+    players or games.
+  - Tilt ends the ball and forfeits bonus.
+watch:
+- title: Double Bonus lamp
+  text: Once Double Bonus is lit, shift from forcing qualification to protecting the
+    ball and building bonus.
+- title: Swinging-target position
+  text: A favorable feature position can light the spinner for 1K per spin, creating
+    an immediate scoring opportunity.
+- title: Bonus near 20K
+  text: A max 20K bonus becomes 40K when Double Bonus is lit.
+- title: Lit outer top lane
+  text: It lets a plunge or top feed collect the swinging-target value without a direct
+    center-target shot.
+skill_shots:
+- name: Collect Swinging-Target Value
+  how: Plunge through the lit outer top lane; its state can be changed by the upper-right
+    rubber/switch action before collection.
+  value: Scores and advances the swinging-target sequence exactly like a target hit,
+    offering a safer indirect route to A/B/C or 5K progress.
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Certain operator-selected swinging-target positions can light the center upper
+    rollover and 1K spinner together, but Extra Balls are disabled on this machine.
+- type: other
+  name: Special
+  text: Completing A-B-C alternates a lit outlane for Special/replay; its tournament
+    value depends on event handling.
+shots:
+- name: Left spinner
+  value: Top circulation and bonus progress; worth 1K per spin when lit.
+  risk: Medium-High
+  diagram: 1
+- name: Double-Bonus saucer
+  value: Lights Double Bonus once the A/B/C route is qualified, doubling the end-of-ball
+    bonus.
+  risk: Medium
+  diagram: 2
+- name: Swinging target
+  value: Directly advances the A/B/C or 5K feature sequence.
+  risk: High
+  diagram: 3
+- name: Lower kickers
+  value: Score and redirect the ball upward; allowing a natural entry can be safer
+    than flipping.
+  risk: Medium
+  diagram: 4
+- name: Super Bonus Advance horseshoe
+  value: Adds three bonus steps, the fastest confirmed bonus builder.
+  risk: Medium
+  diagram: 5
+- name: Lit outer top lane
+  value: Collects the swinging-target value without directly shooting the center target.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: 'Get Double Bonus lit, then play conservative UTAD: build bonus upstairs
+    and accept natural kicker or saucer feeds. A pending 30–40K drain award can outweigh
+    forcing the center target.'
+  behind: Hunt a visibly lit 1K spinner and max doubled bonus. The spinner can score
+    tens of thousands immediately, while a 40K drain award offers another major swing.
+  key_decision: Choose between directly hitting the swinging target to manipulate
+    feature state or using safer top-lane and kicker circulation to advance it indirectly.
+    Patience is usually preferable unless the needed state justifies the rebound risk.
+danger:
+- The center swinging target has a high-risk rebound toward the drains.
+- Even predictable side-saucer kickouts should be dead-bounced, trapped, or fed into
+  a lower kicker appropriately.
+- A lower-kicker feed into the center-target geometry can become immediate center-drain
+  action on an unfavorable rebound.
+- Upper-area exits return uncontrolled through the pop bumpers.
+- Tilt is especially costly because it erases the pending bonus, including a possible
+  40K doubled award.
+commentary:
+- The basic plan is UTAD—build the bonus upstairs, then get Double Bonus lit.
+- That outer top lane counts exactly like a hit on the swinging target.
+- Double Bonus is on now; twenty thousand base becomes forty at the drain.
+- The spinner is lit for a thousand a spin—this is one of the big score swings on
+  Space Odyssey.
+- He's letting that ball fall into the kicker on purpose; on this game not flipping
+  can be the safer play.
+- That center target advances the feature state, but it's also one of the shots most
+  likely to punish you.
+trivia:
+- Space Odyssey is the two-player companion to Williams' four-player Space Mission.
+- Williams promoted the game in June 1976 with its Moving Bonus Target, Twin Turn
+  Around, Extra Ball, and replay features.
+- Steve Kordek developed the Space Mission concept around the 1975 Apollo-Soyuz mission.
+- Christian Marche's backglass adapts imagery associated with Robert McCall's space
+  artwork.
+- Williams sold the two-player game to distributors for about $780.
+summary: UTAD → swinging-target progress → Double Bonus → 20K bonus → 40K drain award
+venue_notes:
+- This machine is configured for 5-ball play.
+- Extra Balls are disabled and provide no benefit.
+- Spinner/Extra-Ball difficulty setting is unknown; describe the spinner opportunity
+  only when it is visibly lit.
+- Side-saucer and lower-kicker feeds are predictably controllable on this copy.
+- Special/replay value depends on tournament handling.
+image: images/space-odyssey-williams-1976.jpg

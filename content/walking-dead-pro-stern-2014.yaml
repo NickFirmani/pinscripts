@@ -1,0 +1,141 @@
+id: walking-dead-pro-stern-2014
+name: The Walking Dead (Pro)
+manufacturer: Stern Pinball
+year: 2014
+metadata:
+  designer: John Borg
+  artist: Greg Freres and Kevin O’Connor
+  production: Unknown
+  era: SAM DMD platform
+  multiball: Prison (3-ball), Well Walker (2-ball), and Blood Bath (2-ball with add-a-balls)
+hook: Build drops, Supplies, and Walker kills; then turn a mode, a multiball, 2× playfield,
+  and a banked shot X into one enormous stack.
+rules:
+  primary: Complete the left 3-bank drops to light Dead Features and collect all three
+    Supplies. Build Prison or Well Walker, then start Blood Bath with a mode for the
+    biggest scoring stacks. Bank Walker kills for inlane shot X, and combine it with
+    2× playfield for major cash-outs.
+  bullets:
+  - The first Dead Feature takes one drop-bank completion; later features normally
+    take two. Main modes are Barn, CDC, Riot, Tunnel, and Arena.
+  - CDC builds value on the left ramp; score that accumulated value at other lit arrows,
+    then return to the left ramp to cash out.
+  - Prison requires spelling PRISON, clearing the Prison Yard, and completing PRISON
+    again to start 3-ball multiball. Prison progress carries between attempts.
+  - Well Walker starts 2-ball multiball after repeated bash hits. Complete W-E-L-L
+    jackpots to light a Super worth all prior jackpots.
+  - Blood Bath starts after all three Supplies plus a drop-bank completion. Switches
+    build its jackpot; drops collect it, and the first two bank completions add balls.
+watch:
+- title: Dead Feature arrows
+  text: Flashing arrows mean a mode is ready; the left ramp starts CDC, while Riot/Tower
+    starts Riot.
+- title: Three Supplies
+  text: When First Aid, Weapons, and Food are all solid, the next drop-bank completion
+    can start Blood Bath.
+- title: Inlane X
+  text: A large banked shot multiplier explains why a player may pass up an easy shot
+    while waiting for a premium collect.
+- title: 2× playfield / Tower
+  text: A lit Tower signals 2× playfield is available; players may wait to activate
+    it until a strong mode or multiball is running.
+skill_shots:
+- name: Top-lane / star-rollover Super Skill Shot
+  how: Use the flippers to select the flashing top lane before or during the plunge,
+    then make that lane and hit flashing star rollovers on the way up.
+  value: The first completion starts at 250K; documented first-shot maximum with both
+    rollovers is 550K, with later successful plunges increasing sharply.
+features:
+- type: other
+  name: Blood Bath add-a-balls
+  text: The first two drop-bank completions during Blood Bath add a ball, making it
+    especially valuable for long multiball stacks.
+- type: other
+  name: BIT outlane award
+  text: A lit outlane awards points; it is not a ball save or kickback.
+- type: extra-ball
+  name: Woodbury
+  text: Right-ramp/Fish Tank progress can light a return-to-shooter-lane feature.
+    Flippers select an award before replunging, including Extra Ball or Start Multi-Kill.
+- type: other
+  name: Crossbow — Pro
+  text: Weapons Supply lights a timed Crossbow window at major shots from the right
+    ramp. Three successful shots qualify Crossbow Frenzy; Pro uses normal flippers.
+- type: extra-ball
+  name: Competition Extra Ball handling
+  text: Competition Install converts Extra Ball awards to points.
+shots:
+- name: CDC / left ramp
+  value: Starts and advances CDC; build its left-ramp value and cash it out after
+    repeated scores at other lit arrows.
+  risk: Medium
+  diagram: 1
+- name: Supply drops
+  value: Advance modes, Supplies, and Blood Bath qualification; the foundation for
+    major stacks.
+  risk: High
+  diagram: 2
+- name: Riot / Tower
+  value: Advances Riot and activates 2× playfield, a key multiball-stack multiplier.
+  risk: Medium-High
+  diagram: 3
+- name: Prison
+  value: Builds Prison multiball and Siege progression; provides major ball protection.
+  risk: High
+  diagram: 4
+- name: Well Walker
+  value: Builds Well Walker multiball and its potentially huge Super.
+  risk: High
+  diagram: 5
+- name: Right ramp
+  value: Advances Arena, Fish Tank, Woodbury, and Crossbow.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor controlled CDC scoring or a straightforward mode plus Prison stack.
+    Spend a modest X on a reliable collect instead of forcing dangerous standups for
+    the ideal 2× stack.
+  behind: Build Blood Bath with Prison or Well Walker and Riot, add 2× playfield,
+    and preserve a large inlane X for the biggest Super or CDC payout.
+  key_decision: Take multiball protection now, or keep building? Prison and Well can
+    save a dangerous ball, but Blood Bath, a strong mode, 2× playfield, and banked
+    X create the higher ceiling.
+danger:
+- Prison bashes and the magnet can send the ball straight down the middle.
+- Well Walker backhands can ricochet toward the left outlane or straight down the
+  middle.
+- Supply-drop rebounds are a major drain source.
+- The pop-bumper and left-orbit exit can feed either flipper or drain straight down
+  the middle.
+- The stab targets needed for 2× playfield are dangerous.
+commentary:
+- Drops are complete—now they are choosing which Dead Feature to start.
+- CDC is running; they are building that left-ramp value before cashing it across
+  the other shots.
+- All three Supplies are collected, so Blood Bath is ready—and it can stack with Prison
+  or Well.
+- They are sitting on a big inlane X; they do not want to waste it on a small shot.
+- Tower starts double playfield, and that multiplies with the shot X.
+- Well Super is the sum of the prior jackpots—that is exactly the kind of shot to
+  save a huge multiplier for.
+trivia:
+- 'The game reunited John Borg and Lyman Sheats, the design-and-rules pairing behind
+  TRON: Legacy and Metallica.'
+- Walking Dead producer and special-effects artist Greg Nicotero designed the sculpted
+  Walker characters.
+- Stern added the Premium in 2015 after launching the Pro and a 600-unit LE.
+- The 2025 Walking Dead Remastered is based on the original Premium/LE layout rather
+  than this mechanically simpler Pro.
+- Version 1.60 arrived more than three years after the original game.
+summary: Drops and Supplies → modes and multiballs → banked shot X + 2× playfield
+  → huge stack cash-outs
+venue_notes:
+- This machine is running ROM v1.60 with Competition Install enabled.
+- Competition Install prevents lighting new modes during multiball and converts Extra
+  Ball awards to points.
+- Prison doors are operating normally.
+- The tilt is normal; Well Walker nudge registration is not expected.
+- No unusually bad feed is reported on this copy.
+- Pro Crossbow is a timed flipper-shot feature; Premium/LE use a physical cannon.
+- At v1.60, 2× playfield is documented as 30 seconds and can be extended before activation.
+image: images/walking-dead-pro-stern-2014.jpg

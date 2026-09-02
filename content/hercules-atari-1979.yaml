@@ -1,0 +1,123 @@
+id: hercules-atari-1979
+name: Hercules
+manufacturer: Atari
+year: 1979
+metadata:
+  designer: Steve Bicker
+  artist: Jim Kelly
+  production: ''
+  era: Four-player solid-state, Atari Generation/System 2
+  multiball: None
+hook: Atari's giant Hercules revolves around activating features up top, then cashing
+  them through the long Path of Victory orbit while building a bonus that can reach
+  98K with Double Bonus.
+rules:
+  primary: Activate Double Bonus, Extra Ball, or Special through their upper lanes,
+    advance active features with clean Path of Victory orbits, and collect ready awards
+    through that orbit. Build base bonus toward 49K, using the required pad target
+    whenever it stalls at a 10K threshold.
+  bullets:
+  - Base bonus carries from ball to ball; Double Bonus resets each ball.
+  - Double Bonus needs three progress steps after activation, then a Path of Victory
+    collect.
+  - Extra Ball needs five steps and Special needs six when those features are enabled.
+  - One Path of Victory can advance or collect multiple active features.
+  - The orbit must travel cleanly; an intervening switch hit between its star rollovers
+    invalidates it.
+watch:
+- title: Double Bonus lamps
+  text: Three yellow center lamps mean Double Bonus is ready; Path of Victory is the
+    priority.
+- title: Path of Victory
+  text: A flashing orbit can advance or collect several active features at once.
+- title: Bonus threshold
+  text: At 10K, 20K, 30K, or 40K, bonus cannot climb until its matching large pad
+    target is hit.
+- title: New upper lane
+  text: A newly made feature lane identifies which award can now be advanced through
+    Path of Victory.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: If enabled, activate its upper lane, build five progress steps, then collect
+    through Path of Victory.
+- type: other
+  name: Special
+  text: If enabled, activate its upper lane, build six progress steps, then collect
+    through Path of Victory.
+- type: other
+  name: Factory adjustments
+  text: The factory flyer documents 3- or 5-ball play and liberal/conservative settings.
+shots:
+- name: Upper feature lanes
+  value: Activate Double Bonus, Extra Ball, and Special progression; they set up the
+    valuable orbit.
+  risk: High
+  diagram: 1
+- name: 40K bonus pad
+  value: Unlocks bonus beyond 40K and opens the final run to 49K.
+  risk: High
+  diagram: 2
+- name: 20K bonus pad
+  value: Unlocks bonus beyond 20K on the way toward the larger end-of-ball bonus.
+  risk: Medium-High
+  diagram: 3
+- name: 10K bonus pad
+  value: Required to unlock bonus past 10K when it stalls there.
+  risk: Medium
+  diagram: 4
+- name: Path of Victory
+  value: Advances or collects active features and is the highest priority once features
+    are active.
+  risk: Medium
+  diagram: 5
+- name: 30K bonus pad
+  value: Required to unlock deeper bonus beyond 30K.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor the upper-lane and Path-of-Victory cycle. Take pad targets only when
+    bonus is actually capped at that threshold.
+  behind: Build toward 49K base bonus plus Double Bonus for a 98K end-of-ball collect;
+    take the required pad targets despite their rebound danger. Pursue Extra Ball
+    if it is playable.
+  key_decision: Keep taking the comparatively safe orbit/up-top cycle, or risk a pad
+    target to unlock another 10K of bonus when the bonus is stalled?
+danger:
+- Pop-bumper exits are the main uncontrolled region, especially on weak Path attempts.
+- The four giant pad standups can rebound dangerously toward the lower playfield.
+- A weak Path of Victory shot may fall into the bumpers instead of completing the
+  orbit.
+- Visible spin on the oversized, slow-moving ball can change its post-contact path.
+- This machine's sloppy or weak oversized flippers are the nastiest local physical
+  behavior.
+commentary:
+- He's gone up top first—that activates the features he wants to advance through Path
+  of Victory.
+- Path of Victory is lit now; that one orbit can advance several features at once.
+- Bonus is stuck at twenty thousand—he has to hit that pad before it can climb any
+  higher.
+- Base bonus carries to the next ball, but Double Bonus does not, so this Path shot
+  matters before the drain.
+- He's got Double Bonus ready—that turns a full 49K bonus into a 98K end-of-ball collect.
+- That Path attempt came up short; instead of completing the orbit it's dropping into
+  the bumpers, the dangerous feed on Hercules.
+trivia:
+- Atari promoted Hercules as the largest flipper game ever produced, with about 18
+  square feet of play action.
+- Its cue-ball-sized ball required gigantic flippers, bumpers, and other hardware.
+- The factory flyer lists it at roughly 83 inches tall, 93 inches deep, and about
+  275 pounds.
+- Hercules was previewed at the AMOA and IAAPA conventions in November 1978.
+- Atari's original operations/service manual is designated TM-128.
+summary: Activate upper lanes → build bonus → clear threshold pads → Path of Victory
+  → Double Bonus cash-out
+venue_notes:
+- Configured for 3-ball play.
+- Extra Ball handling is unknown.
+- Special's tournament relevance is unknown.
+- Extra Ball and Special progression enablement is unknown.
+- Path of Victory reliability is unknown; oversized flipper condition strongly affects
+  control and orbit completion.
+image: images/hercules-atari-1979.jpg

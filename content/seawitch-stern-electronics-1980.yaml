@@ -1,0 +1,121 @@
+id: seawitch-stern-electronics-1980
+name: Seawitch
+manufacturer: Stern Electronics
+year: 1980
+metadata:
+  designer: Mike Kubin
+  artist: Bob Timm
+  production: 2,503
+  era: 1980 solid-state
+  multiball: No multiball
+hook: Build Bonus X through the white-X drop-bank sequence, then convert a healthy
+  bonus into doubled loops, bonus cash-outs, and a maxed spinner.
+rules:
+  primary: 'Complete the bank marked by the white INCREASE X lamp in order: center,
+    lower-left, upper-right, then repeat. Each completion advances Bonus X toward
+    7X; drops also build loop value.'
+  bullets:
+  - Base bonus is 0–39K. Drops and lit upper standups add 1K; outlanes and the Runway
+    rollover add 3K. At drain, bonus is multiplied up to 7X; tilt forfeits it.
+  - Complete all three drop banks in one ball to light 2X loop value, making completed
+    loops worth up to 20K.
+  - 'After completing a bank, leave one target standing: with SCORE LIT BONUS VALUE
+    flashing, the final target awards current base bonus plus 1K, unmultiplied.'
+  - Light all four upper standups to raise the spinner to 1K per spin.
+  - 'Multiplier carryover and reset depend on Switch 8: reaching either 6X or 7X resets
+    the next ball to 3X.'
+watch:
+- title: White X
+  text: The bank carrying the white X is the next one that advances Bonus X.
+- title: All three banks complete
+  text: The 1-2-3 lamps mean 2X loop value is lit; Extra Ball would also be available
+    if enabled.
+- title: Four upper stars
+  text: All four lit means the spinner is maxed at 1K per spin.
+- title: Pink bonus lamp
+  text: SCORE LIT BONUS VALUE flashing means one final drop will cash the current
+    base bonus during the ball.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Completing all three banks in one ball lights Extra Ball at return lanes,
+    but Extra Ball is disabled at this venue.
+- type: other
+  name: 2X Loop
+  text: Completing all three drop banks in one ball lights doubled loop value, up
+    to 20K per completed loop.
+- type: other
+  name: Spinner build
+  text: Light all four upper standups to increase spinner scoring from 200 up to 1K
+    per spin.
+shots:
+- name: Riptide / loop
+  value: Main repeatable scorer after setup; worth up to 20K with 2X loop lit.
+  risk: Medium
+  diagram: 1
+- name: Spinner
+  value: 200–1K per spin; strongest after all four upper standups are lit.
+  risk: Medium-High
+  diagram: 2
+- name: Lower-left drop bank
+  value: Advances Bonus X to 3X or 6X and builds loop value.
+  risk: Medium-High
+  diagram: 3
+- name: Center drop bank
+  value: Advances Bonus X to 2X or 5X and builds loop value; key early progression
+    bank.
+  risk: High
+  diagram: 4
+- name: Upper-right drop bank
+  value: Advances Bonus X to 4X or 7X and completes the X cycle.
+  risk: Medium-High
+  diagram: 5
+- name: Runway rollover
+  value: Collects built loop value; may collect Special when lit, depending on configuration.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Protect a useful carried multiplier. If this machine resets only at 7X, stopping
+    at 6X before the final ball can preserve value; with X and bonus healthy, favor
+    repeatable loops and bonus cash-outs.
+  behind: Push multiplier progression, complete all three banks for 2X loop, max the
+    spinner, and pursue repeatable loops or bonus cash-outs.
+  key_decision: Take the next Bonus-X advance now, or preserve the current multiplier
+    for the next ball? The reset threshold determines whether the advance costs future
+    carryover.
+danger:
+- Center-drop shots from the upper-left flipper can rebound straight down the middle.
+- Lower-left drop rebounds can feed the left sling or outlane.
+- Bumper-area exits that miss both upper flippers can fall toward center or a sling.
+- An upper-flipper miss can turn controlled upper play into an uncontrolled lower
+  feed.
+- Outlane post position materially affects game length and safe nudging.
+commentary:
+- Follow the white X—that is the only bank that advances the bonus multiplier.
+- 'The reset setting matters here: taking the next X may sacrifice carryover on the
+  next ball.'
+- All three banks are down, so the loop is doubled—those orbits can now be worth twenty
+  thousand.
+- 'Pink lamp on the last drop: that target cashes the current base bonus during the
+  ball.'
+- All four upper standups are lit; the spinner is now a thousand a rip.
+- Watch the loop and spinner return—this machine has a notable feed there.
+trivia:
+- Seawitch was designed by Mike Kubin, with software by Bill Pfutzenreuter and artwork
+  by Bob Timm.
+- Stern produced 2,503 games; licensed production also occurred in Australia through
+  Leisure & Allied Industries.
+- Its four flippers make the upper flippers meaningful tools for attacking multiple
+  banks.
+- Stern's 2018 Beatles modernized the Seawitch layout and credits Kubin as designer
+  of the source playfield.
+summary: White-X banks → Bonus X → 2X loops → bonus cash-outs → max spinner
+venue_notes:
+- This venue is set for 3 balls; pop bumpers score 1K.
+- The Bonus-X reset threshold is unknown; reaching its configured 6X or 7X threshold
+  resets the next ball to 3X.
+- Extra Ball is disabled at this venue.
+- Special award is unknown; avoid assigning it a value in commentary.
+- A notable loop/spinner return feed is reported.
+image: images/seawitch-stern-electronics-1980.jpg

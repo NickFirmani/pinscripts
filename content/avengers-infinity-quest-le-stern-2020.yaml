@@ -1,0 +1,146 @@
+id: avengers-infinity-quest-le-stern-2020
+name: 'Avengers: Infinity Quest (Limited Edition)'
+manufacturer: Stern Pinball
+year: 2020
+metadata:
+  designer: Keith Elwin
+  artist: Jeremy Packer / Zombie Yeti
+  production: Limited to 500 machines worldwide
+  era: Modern Stern LCD-era pinball
+  multiball: Thor Multiball and Iron Man Multiball; Portal Locks can make a Gem Quest
+    multiball
+hook: Bank a Portal Lock, start a Gem Quest through Doctor Strange's Portal, then
+  bring Thor or Iron Man Multiball into it. Finish with extra balls alive to unlock
+  multiplied Victory Laps.
+rules:
+  primary: Spell STRANGE at the disc, shoot the raised Portal, choose a Gem Quest,
+    and protect any Portal Lock balls. One or two locks make the Quest 2× or 3× only
+    while those balls remain alive; complete the Quest to open multiplied Victory
+    Laps.
+  bullets:
+  - After a Quest win, shoot the right ramp to collect the Gem, then make its flashing
+    placement shot to activate its perk.
+  - First Thor Multiball takes three captive-ball hits. Iron Man requires IRON at
+    the return lanes, then locks at Avengers Tower.
+  - Reality Gem can build a Main Avenger shot multiplier; Power Gem makes Avenger
+    advancement count double and preserves that Avenger's level between balls.
+  - Thor and Iron Man Multiball can add a ball by spelling STRANGE and collecting
+    at the Sanctum.
+  - End-of-ball bonus combines ball progress with game-long trophies and Gems, up
+    to 25× Bonus X.
+watch:
+- title: Portal balls
+  text: One ball staged beneath the Portal means the next Quest can be 2×; two mean
+    3×, as long as those extra balls survive.
+- title: STRANGE and raised Portal
+  text: A completed STRANGE and rising Portal means a Gem Quest is ready; expect a
+    Portal shot and Gem selection.
+- title: Reality arrows and disc
+  text: During Reality, disc spins restore STRANGE letters and multiply yellow-shot
+    values. Repeated disc shots are deliberate value-building.
+- title: Thor and Tower progress
+  text: Captive-ball progress signals Thor preparation; balls held at Avengers Tower
+    signal Iron Man locks, often intended to stack with a Quest.
+skill_shots:
+- name: Skill Shot
+  how: Soft plunge into the top rollover near the pops.
+  value: 250K plus 100K per prior success, with 3 seconds of ball save.
+- name: Super Skill Shot
+  how: Full plunge, then shoot Avengers Tower.
+  value: 1M plus 150K per success, with 5 seconds of save; the first success lights
+    Mystery.
+- name: 'Secret Skill Shot #1'
+  how: Medium plunge so the ball rolls backward down the upper loop.
+  value: 3M plus 200K per success, 10-second save, and an immediate Portal Lock.
+features:
+- type: ball-save
+  name: Standard ball save
+  text: Factory standard is 5 seconds; operator-adjustable. Skill shots add separate
+    3-, 5-, or 10-second saves.
+- type: player-control
+  name: Action button
+  text: Confirms Gem selection and activates several Gem abilities, including Mind
+    spotting shots, Space moving Gems, and Soul replenishing balls in Black Order
+    Multiball.
+- type: mystery-award
+  name: Mystery
+  text: Can award Add-A-Ball, 10M, STRANGE progress, timed modes, and other benefits.
+    Competition Mode normalizes Mystery and Computer Grid randomness.
+- type: extra-ball
+  name: Extra balls
+  text: Several qualifications exist, but Full Competition Install disables extra
+    balls.
+- type: other
+  name: Binary Hurry-Up
+  text: On Premium/LE, alternating Captain Marvel and left ramps scores Binary Hurry-Up;
+    each completion adds 1× to Captain Marvel, up to 5×.
+shots:
+- name: Black Widow left ramp
+  value: Advances Black Widow, builds combos, and forms one half of Binary Hurry-Up.
+  risk: Medium
+  diagram: 1
+- name: Doctor Strange Disc / Portal
+  value: Builds STRANGE and Portal Locks; the Portal starts LE Gem Quests.
+  risk: Medium-High
+  diagram: 2
+- name: Avengers Tower
+  value: Locks balls for Iron Man Multiball and collects the Super Skill Shot.
+  risk: Medium
+  diagram: 3
+- name: Gauntlet ramp
+  value: Required during Time Quest and used for various lit-shot objectives.
+  risk: Medium
+  diagram: 4
+- name: Thor captive ball
+  value: Advances THOR and starts the very accessible first Thor Multiball after three
+    hits.
+  risk: High
+  diagram: 5
+- name: Captain Marvel ramp
+  value: Builds Captain Marvel, Binary progress, and the Premium/LE multiplier up
+    to 5×.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use the stack already available. One Portal Lock plus ready Thor is often
+    enough protection; cash the Quest and Victory Laps instead of forcing risky setup
+    solely for 3×.
+  behind: Chase two Portal Locks, start Reality, and stack Thor or Iron Man Multiball.
+    Completing Reality with multiple balls alive opens multiplied Victory Laps; Soul
+    Gem Hard Mode is a later high-variance option.
+  key_decision: 'Decide how much setup is enough: start the Quest now, wait for 2×
+    or 3× Portal Locks, or also stage Thor or Iron Man. More setup raises the ceiling
+    but adds single-ball drain exposure.'
+danger:
+- No venue-specific danger zones are confirmed; monitor unexpected feeds and rebounds
+  during play.
+commentary:
+- He's got one Portal Lock — this Quest is doubled as long as that extra ball stays
+  alive.
+- Two Portal Locks makes this a 3× Gem Quest; now he's trying to bring Thor in on
+  top.
+- Yellow is Reality — the disc restores STRANGE, and those letters are multiplying
+  the lit shots.
+- The first Thor Multiball is only three captive-ball shots, so that's the easy safety
+  net here.
+- Quest complete with multiple balls still alive — now he's earned Victory Laps.
+- That's the LE Binary multiplier building; Captain Marvel can eventually become a
+  5× shot.
+trivia:
+- AIQ was Keith Elwin's third Stern design after his career as an elite competitive
+  player.
+- The LE was limited to 500 units and includes a mirrored backglass, numbered plaque,
+  shaker, upgraded audio, and anti-reflective glass.
+- Avengers Tower uses magnets to visibly hold balls in midair for Iron Man locks.
+- The Premium/LE Doctor Strange assembly rises and routes balls into an under-playfield
+  subway.
+- 'Gem placement is strategic: the same Gem can give different benefits depending
+  on its Avenger placement and level.'
+summary: Portal Locks → Gem Quest → Multiball stack → Quest win → Victory Laps
+venue_notes:
+- Installed code is LE 1.10.0; detailed public rules coverage is based on 1.08, so
+  confirm revision-sensitive behavior on the machine.
+- 'Full Competition Install is in use: extra balls are disabled.'
+- Standard single-ball save is approximately 5 seconds.
+- No unusual venue-specific dangerous feeds have been identified.
+image: images/avengers-infinity-quest-le-stern-2020.jpg

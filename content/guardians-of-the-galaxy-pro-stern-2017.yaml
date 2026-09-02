@@ -1,0 +1,148 @@
+id: guardians-of-the-galaxy-pro-stern-2017
+name: Guardians of the Galaxy — Pro
+manufacturer: Stern Pinball
+year: 2017
+metadata:
+  designer: John Borg
+  artist: Christopher Franchi
+  production: ''
+  era: Early SPIKE 2 with LCD
+  multiball: Groot, Orb, Quill's Quest, Cherry Bomb, Immolation Initiative, Save Xandar
+hook: 'Complete character modes, then stack one with Groot Multiball: its character
+  shot becomes a 5X jackpot. Re-lock in Groot for temporary 2X, then 3X, playfield
+  scoring and use Hadron to avoid dangerous shots.'
+rules:
+  primary: Prioritize character-mode completions, then start a compatible mode before
+    Groot Multiball. During Groot, completed-mode character shots score 5X jackpots;
+    re-locking a ball in Groot grants 20 seconds of 2X playfield, with another re-lock
+    raising it to 3X.
+  bullets:
+  - Choose a character mode at ball start or begin one later at the right scoop. Completion
+    starts its untimed Level 2 feature for the rest of that ball and persists as game
+    progress.
+  - Open Groot and lock three balls for the first Groot Multiball. Major shots score
+    jackpots; jackpot milestones light Groot for Supers and eventually a Double Super
+    Jackpot.
+  - For Orb Multiball, hit the Orb drop and target behind it three times. At the start,
+    quickly hit the drop to secure the hurry-up and release the third ball.
+  - Spell RAMPAGE at Rocket for 45 seconds of 2X playfield; Rocket hits extend it.
+    Complete Nova Corps rollovers for permanent shot multipliers for that ball.
+  - Quill's Quest Level 2 has a hurry-up beginning at 10% of current score and can
+    accept applicable multipliers.
+watch:
+- title: Groot mouth open
+  text: The lock is available; with a mode running, expect the player to stack it
+    into Groot Multiball.
+- title: Strobing character insert
+  text: During Groot Multiball, it marks a previously completed mode, making that
+    character shot a 5X jackpot.
+- title: 2X or 3X playfield timer
+  text: A ball was re-locked in Groot. High-value mode shots and Supers become immediate
+    priorities.
+- title: Hadron button lit
+  text: The player has banked automatic shot completions and can spot an eligible
+    difficult mode or jackpot shot.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge through the flipper-selected flashing top lane.
+  value: 250K, plus 50K for each prior Skill Shot.
+- name: Hands-Free Skill Shot
+  how: Make the normal plunge without touching either flipper.
+  value: Scores twice the normal Skill Shot; using a flipper forfeits only this bonus.
+- name: Super Skill Shot
+  how: Hold the left flipper, full-plunge around the orbit, then quickly shoot the
+    flashing Orb, right ramp, or right orbit.
+  value: Starts at 1M plus 250K per success.
+features:
+- type: player-control
+  name: Hadron Enforcer
+  text: Complete five yellow standups for three action-button charges. Each spots
+    the leftmost eligible lit mode or multiball shot at its multiplied value; some
+    finals and Supers cannot be spotted.
+- type: ball-save
+  name: Right-outlane save
+  text: Hit the two targets flanking Groot to light a virtual kickback. Requalification
+    becomes progressively harder.
+- type: mystery-award
+  name: Mystery
+  text: Spell GUARDIANS at the center target to light Mystery at the right scoop.
+    In either normal multiball, the first Mystery is effectively an Add-A-Ball opportunity.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls normally light at the scoop after major mode or multiball progress,
+    but the venue's Competition Install disables them.
+shots:
+- name: Left orbit
+  value: Advances modes and Sanctuary spotting; a completed associated mode makes
+    it a 5X Groot Multiball jackpot shot.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Advances Pod Chase and character progress; a flowing route toward mode completion
+    and 5X Groot Multiball potential.
+  risk: Medium
+  diagram: 2
+- name: Groot
+  value: Opens locks, starts Groot Multiball, and enables the multiball 2X/3X playfield
+    re-lock engine.
+  risk: Medium-High
+  diagram: 3
+- name: Orb
+  value: Advances Orb Multiball and some mode progress; Orb hits can double the next
+    jackpot during Orb Multiball.
+  risk: High
+  diagram: 4
+- name: Rocket
+  value: Spells RAMPAGE for temporary 2X playfield and advances Escape Kyln's final.
+  risk: High
+  diagram: 5
+- name: Right scoop
+  value: Starts or upgrades modes, collects Mystery, and accesses wizard features.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Finish manageable modes, bank Hadron charges, and carry a mode into Groot
+    Multiball. Take the available 2X Groot playfield window if control is deteriorating
+    rather than forcing the next re-lock for 3X.
+  behind: 'Lean into multipliers: complete Knowhere or another favorable mode, stack
+    Groot Multiball, re-lock toward 3X playfield, and attack its 5X character jackpot.
+    Late Quill''s Quest Level 2 is a volatile percentage-score lever.'
+  key_decision: Start Groot now, or finish and set up a mode first? Groot is accessible,
+    but its ceiling rises sharply with completed modes and prepared shot and playfield
+    multipliers.
+danger:
+- The narrow, close Orb shot and magnet area are dangerous.
+- Rocket is a tight close-range shot; a brick can return almost immediately.
+- Groot ejects and the Pro's center magnet can create unpredictable releases.
+- The left outlane can be a major drain, especially after spin or backspin from nearby
+  shots.
+- Forcing Hadron standups can sacrifice control; let them build naturally when possible.
+commentary:
+- That mode is complete, so its character shot will be worth five times the normal
+  jackpot in Groot.
+- They're starting the mode first, then Groot—that's the stack they want.
+- 'Ball back into Groot: that''s twenty seconds of double playfield; another re-lock
+  can make it triple.'
+- Hadron is loaded, so they do not necessarily have to make the hardest lit shot themselves.
+- Orb Multiball starts with a hurry-up—they need that drop quickly to get all three
+  balls.
+- Quill's Level 2 is percentage scoring; late in a huge game, ten percent can become
+  enormous.
+trivia:
+- Guardians of the Galaxy is a John Borg design from Stern's early SPIKE 2 generation.
+- All three editions use a real four-ball lock inside Groot's head.
+- The Pro has a static open Orb; Premium and LE models physically open and close theirs.
+- Premium and LE use three central magnets, while the Pro has one, making its magnet
+  events physically less chaotic.
+- Marvel documented development of the game with Borg, Lonnie Ropp, and Waison Cheng.
+summary: Complete modes → stack Groot → 5X jackpots → re-lock for 2X/3X → use Hadron
+  → chase Orb or Quill's Quest
+venue_notes:
+- Software is v1.14.0.
+- Groot locks are configured as physical locks.
+- Extra Balls are disabled under the venue's Competition Install.
+- The Pro has one center playfield magnet and a static open Orb; Premium/LE magnet
+  and Orb behavior does not directly transfer.
+- Competition Install versus Competition Mode was not distinguished beyond the stated
+  physical-lock and no-Extra-Ball settings.
+image: images/guardians-of-the-galaxy-pro-stern-2017.jpg

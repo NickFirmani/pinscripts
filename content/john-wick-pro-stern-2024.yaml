@@ -1,0 +1,137 @@
+id: john-wick-pro-stern-2024
+name: John Wick — Pro
+manufacturer: Stern Pinball
+year: 2024
+metadata:
+  designer: Elliot Eismin
+  artist: Randy Martinez
+  production: SPIKE 2/LCD
+  era: Modern
+  multiball: Car Chase, Excommunicado, and Deconsecrated
+hook: Build a Job, stack it with multiball, and attack blue-enemy shots for 2X to
+  4X scoring. Save Lights Out for the biggest cash-out.
+rules:
+  primary: Charge and start Jobs at the Weapons Crate/right VUK, then finish them
+    at Administration for 20% of the Job total and a permanent faction perk. During
+    Jobs and multiballs, blue enemies at a shot multiply it from 2X to 4X.
+  bullets:
+  - Start the Job before multiball to run its timed scoring under multiball protection.
+  - Jobs normally run 60 seconds and gain 3 seconds for each scoring shot.
+  - Ten enemy kills in single-ball play qualify an Adversary Battle; multiball kills
+    do not count toward that qualification.
+  - 'Spell Y-A-G-A, then use the action button for Lights Out: 30 seconds of 2X all
+    scoring.'
+  - At Escape, collect the Battle jackpot or continue to raise later Battle scoring
+    up to 4X.
+watch:
+- title: Blue enemies
+  text: One, two, or three blue enemies at a lit shot mean 2X, 3X, or 4X during a
+    Job or multiball.
+- title: Administration cash-out
+  text: A flashing left Administration eject means the player can finish the Job for
+    20% of its total and a permanent faction perk.
+- title: Lights Out
+  text: 'When the playfield goes dark, Lights Out is active: 30 seconds of double
+    scoring, usually prompting immediate cash-outs.'
+- title: Escape decision
+  text: During an Adversary Battle, lit Escape offers a guaranteed jackpot; declining
+    it can build Battle scoring toward 4X.
+skill_shots:
+- name: Baba Yaga
+  how: Plunge directly into the right VUK without touching another switch.
+  value: 1.5M and immediately starts the lit Job; ideal when a Job is prepared.
+- name: Super Crate
+  how: Reach the VUK after exactly one shooter-lane switch.
+  value: Starts at 750K and advances Crate/Job qualification.
+- name: MXV Super Skill Shot
+  how: On current code, full plunge then combo right orbit, right ramp, and left eject.
+  value: 10M and 10 extra enemies on the next spawn, supporting a planned Job/multiball
+    stack.
+features:
+- type: ball-save
+  name: Marker Ball Save
+  text: Blood Marker standups light one outlane save, movable with the flippers. Assassination
+    upgrades it to both outlanes.
+- type: player-control
+  name: Allies
+  text: Akira, Charon, and Katia can be qualified for the next Job to manipulate enemy
+    placement.
+- type: extra-ball
+  name: Extra Balls
+  text: With Extra Balls disabled, milestones score 10M instead; Lights Out doubles
+    that compensation to 20M.
+shots:
+- name: Administration eject
+  value: Far-left cash-out for Jobs, Battles, Escape, and Extra Ball activity.
+  risk: High
+  diagram: 1
+- name: Left orbit / spinner
+  value: Advances New York faction and Car Chase multiball setup.
+  risk: High
+  diagram: 2
+- name: Weapons Crate / right VUK
+  value: Qualifies and starts Jobs, the primary scoring mode.
+  risk: Medium-High
+  diagram: 3
+- name: Continental captive / center ramp
+  value: Advances WINSTON and Deconsecrated locks.
+  risk: Medium-High
+  diagram: 4
+- name: Car
+  value: Builds Car Chase qualification and selection.
+  risk: High
+  diagram: 5
+- name: Red Circle
+  value: Advances Excommunicado and enemy spawning.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Build a straightforward Job with Deconsecrated or Car Chase, use existing
+    enemy multipliers, and cash Jobs or Battles when ready. Security Detail is especially
+    valuable for later multiball safety.
+  behind: 'Create a large stack: place enemies on valuable shots, run a Job under
+    multiball, then fire Lights Out. Task a Crew, Gather Intel, or continuing a Battle
+    toward 4X can extend the scoring burst.'
+  key_decision: Start multiball now or improve the stack first. If close to 10 single-ball
+    enemy kills, early multiball delays Battle qualification; too much setup risks
+    losing the protected Job.
+danger:
+- Right-orbit returns can be exceptionally fast and may require a parry or intentional
+  deflection.
+- A direct car bash rebound can immediately threaten the flippers.
+- The Red Circle's slings, bumper, and standups create uncontrolled ball motion.
+- Continental captive-ball attempts can produce direct center rebounds.
+- Repeated Blood Marker standup attacks can create the drain the save is meant to
+  prevent.
+commentary:
+- Three blue enemies on that shot—that's 4X if he makes it during the Job.
+- He's starting the Job before multiball; that's the protection stack he wants.
+- Lights Out is running—thirty seconds of double everything.
+- The Job is finished; Administration cashes another twenty percent and earns the
+  permanent perk.
+- He's only a couple of single-ball kills from a Battle, so he may deliberately delay
+  multiball.
+- Escape is ready, but he can refuse it and push the Battle multiplier all the way
+  to four times.
+trivia:
+- Elliot Eismin, previously a Stern mechanical engineer, made his production-game
+  design debut with John Wick.
+- The game has a dynamic AI combat system that moves enemy icons in response to player
+  behavior.
+- It uses footage and audio from all four John Wick films, plus new Ian McShane dialogue.
+- Charlie Benante composed an original game soundtrack.
+- The Pro uses simpler hardware than Premium/LE while retaining the same core competitive
+  rules architecture.
+summary: Jobs → multiball stack → blue-enemy multipliers → Lights Out cash-out → Battle
+  decisions
+venue_notes:
+- 'Installed code: v1.02.0.'
+- Tournament configuration is reported as either full Stern Competition Install or
+  Competition Mode only.
+- Extra Balls are disabled; their milestone compensation is 10M, or 20M during Lights
+  Out.
+- 'Do not state a first Car Chase Multiball hit requirement: the current rules documentation
+  is internally inconsistent and the machine setting is unknown.'
+- The Pro has virtual Deconsecrated locks, a static car, static Blood Oath Marker,
+  and standup-target Weapons Crate; it does not have the Premium/LE car skill shot.
+image: images/john-wick-pro-stern-2024.jpg

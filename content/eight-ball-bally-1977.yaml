@@ -1,0 +1,126 @@
+id: eight-ball-bally-1977
+name: Eight Ball
+manufacturer: Bally Manufacturing
+year: 1977
+metadata:
+  designer: George Christian
+  artist: Paul Faris and Margaret Hudson
+  production: 20,230 machines
+  era: Early solid-state
+  multiball: No multiball
+hook: Light the spinner and left kickback with the 8-ball target, build 5X through
+  Bank Shot, then cash in repeatable spinner scoring while working toward a rack-completing
+  8-ball.
+rules:
+  primary: Odd players collect solids 1–7 and even players stripes 9–15. Each numbered
+    ball scores 500 immediately and adds 3,000 bonus; after all seven, hit the lit
+    8-ball to complete the rack and set up Super Bonus for the next turn.
+  bullets:
+  - Rack progress persists between a player's balls.
+  - Bank Shot advances awards and the bonus multiplier through 2X, 3X, and 5X.
+  - An unqualified 8-ball hit still lights the 1,000-point spinner and Break Shot
+    kickback.
+  - 'Completed racks create Super Bonus on the following turn: 24,000 plus 3,000 per
+    newly lit ball, multiplied by the current bonus multiplier.'
+watch:
+- title: Lit spinner and kickback
+  text: An 8-ball-target hit has made the spinner and left Break Shot/kickback active.
+- title: Bank Shot multiplier
+  text: 2X, 3X, or 5X shows the potential drain-bonus value and how much Bank Shot
+    work remains.
+- title: Seven rack balls lit
+  text: The 8-ball is qualified; hitting it now completes the rack and establishes
+    future Super Bonus.
+- title: SUPER BONUS lit
+  text: That player completed a rack on an earlier ball and begins the drain bonus
+    from a 24,000 base before new rack progress.
+skill_shots:
+- name: Ball-one 4 lane plunge
+  how: On ball one, aim for the 4 lane; its exit can feed the 8-ball target or the
+    clockwise candy-cane route.
+  value: Starts rack progress and can light the spinner/kickback or advance Bank Shot.
+- name: Missing-number plunge
+  how: On later balls, plunge toward whichever numbered top lane is still uncollected.
+  value: Efficiently advances persistent rack progress.
+- name: Lit center-lane plunge
+  how: With all four top numbers collected, aim for the lit 2 or 3 center lane.
+  value: Collects the lit Bank Shot value or advance.
+features:
+- type: other
+  name: Break Shot kickback
+  text: The 8-ball target lights the left outlane. A lit entry scores 5,000 and kicks
+    the ball back into play; unlit, it drains.
+- type: extra-ball
+  name: Bank Shot X-ball award
+  text: After 5X, Bank Shot reaches an X-ball award; it can be configured as an Extra
+    Ball or 15,000 points.
+- type: other
+  name: Right-outlane Special
+  text: Completing a rack lights the right outlane Special; its award and persistence
+    are operator-adjustable.
+shots:
+- name: 8-ball target
+  value: Lights spinner and kickback; completes a qualified rack.
+  risk: Medium-High
+  diagram: 1
+- name: Spinner
+  value: Scores 1,000 per spin when lit and feeds the top lanes.
+  risk: Medium-High
+  diagram: 2
+- name: Bank Shot / candy cane
+  value: Advances points, 2X, 3X, 5X, then the X-ball award.
+  risk: Medium-High
+  diagram: 3
+- name: Top lanes
+  value: Collect balls 1–4 or 9–12 and can enable a Bank Shot advance.
+  risk: Medium
+  diagram: 4
+- name: 5 / 6 standups
+  value: Collect missing rack balls when only these remain.
+  risk: High
+  diagram: 5
+- name: 7-ball return lane
+  value: Collects the final numbered rack ball.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Light the kickback, establish 5X, and favor the lit spinner. Avoid forcing
+    the 5/6 standups or 7-ball return unless rack completion is close.
+  behind: Pursue rack completion earlier, especially if only 5 or 6 remain, because
+    Super Bonus can transform later drains at 5X.
+  key_decision: Finish the rack for future-ball Super Bonus, or keep taking immediate,
+    repeatable spinner scoring. On the final ball, spinner scoring may be stronger
+    because a new Super Bonus waits until the next turn.
+danger:
+- Pop-bumper exits can rocket toward the left outlane.
+- A soft 8-ball-target rebound can dribble down the middle.
+- Weak spinner attempts can return through the spinner toward center drain.
+- 5/6 standup rebounds are dangerous unless rack completion requires them.
+- The 7-ball return is beside the right outlane and is hard to force safely.
+commentary:
+- Eight-ball target first—that turns on both the thousand-a-spin spinner and the left-side
+  save.
+- He's at 5X now; this is where Eight Ball becomes a spinner game.
+- That 7-ball is the awkward one—you generally let the right return lane give it to
+  you rather than force it.
+- Seven are in, so now the 8-ball actually completes the rack.
+- That rack does not pay Super Bonus until the next ball; then 24,000 is locked in
+  before the new rack is counted.
+trivia:
+- Bally produced 20,230 Eight Balls; it remained the highest-production flipper game
+  until The Addams Family surpassed it in 1992.
+- Despite being solid-state, it uses an MPU-controlled four-note chime box rather
+  than a conventional electronic sound board.
+- Odd players use solids and even players stripes while sharing the same physical
+  switches.
+- 'There are no drop targets: the rack is remembered electronically from rollovers
+  and standups.'
+summary: 8-ball target → lit spinner/kickback → Bank Shot to 5X → spinner scoring
+  → rack completion → future Super Bonus
+venue_notes:
+- Configured for 3 balls per game.
+- The Bank Shot X-ball award is 15,000 points when Extra Balls are turned off.
+- Right-outlane Special award and persistence are unknown; both are operator-adjustable.
+- The optimized plunge is competitive terminology, not an official named manufacturer
+  skill shot.
+image: images/eight-ball-bally-1977.jpg

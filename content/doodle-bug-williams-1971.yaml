@@ -1,0 +1,128 @@
+id: doodle-bug-williams-1971
+name: Doodle Bug
+manufacturer: Williams Electronics
+year: 1971
+metadata:
+  designer: Norm Clark
+  artist: Christian Marche
+  production: 3,006
+  era: One-player electro-mechanical
+  multiball: No multiball
+hook: Build the center post, collect 1-2-3-4 in order to multiply the hidden Doodler,
+  then keep the live ball safely up top while it scores.
+rules:
+  primary: Advance the lit 1-2-3-4 standups in sequence; each completed set raises
+    Doodle Bug scoring tenfold, from 10 to 100 to 1,000 to 10,000 per captive-ball
+    hit. Shoot the center Doodle target to start the mechanism, then preserve the
+    live ball while avoiding switches that stop it.
+  bullets:
+  - The upper saucer can spot the currently needed numbered target and cycle awards.
+  - Upper side lanes raise the center post; lit bumper progress can also open the
+    right outlane return gate.
+  - Starting the Doodler immediately lowers the center post.
+  - The Doodler stops on certain lower, side, upper-sling, and right-outlane switches.
+  - Doodle value resets when the ball drains; there is no conventional end-of-ball
+    bonus.
+watch:
+- title: Center post
+  text: A raised post gives the player the protection needed for controlled micro-flips
+    at the numbered standups.
+- title: Lit numbered target
+  text: Only the currently lit 1, 2, 3, or 4 standup advances the sequence.
+- title: Active Doodler
+  text: The captive ball hammering beneath the playfield means scoring is running;
+    at 1,000 or 10,000, survival becomes the priority.
+- title: Yellow and green bumpers
+  text: With both colors lit, the center bumper is worth 1,000 and side-lane protection/progression
+    is valuable.
+skill_shots:
+- name: Top-saucer skill shot
+  how: Plunge for the upper eject hole while its rotating award shows 5,000; upper
+    switches can cycle the award before entry.
+  value: 5,000 is the best immediate award. The saucer can also light yellow or green
+    bumpers and spot the current numbered target.
+features:
+- type: other
+  name: Center up-post
+  text: Upper side lanes raise it, creating the key protection for micro-flip play;
+    starting the Doodler and several lower switches drop it.
+- type: other
+  name: Right-outlane return gate
+  text: Upper-side-lane progress can open a right-outlane return, but tripping that
+    outlane switch stops an active Doodler.
+- type: extra-ball
+  name: Lit center-target extra ball
+  text: This machine is configured to award a live extra ball when the lit center
+    target feature is earned.
+shots:
+- name: Top saucer
+  value: 5,000 skill-shot potential; spots the current 1-2-3-4 target and can award
+    bumper progress.
+  risk: Medium
+  diagram: 1
+- name: Upper side lanes
+  value: Raise the center post and can open the right return gate.
+  risk: Medium
+  diagram: 2
+- name: '#1 target'
+  value: 'Advances the Doodle sequence when #1 is lit.'
+  risk: Medium-High
+  diagram: 3
+- name: '#2 and #3 targets'
+  value: Middle sequence progress; the most controlled numbered shots with the post
+    raised.
+  risk: Medium
+  diagram: 4
+- name: '#4 target'
+  value: Completes the sequence and enables the next tenfold Doodle value.
+  risk: Medium-High
+  diagram: 5
+- name: Center Doodle target
+  value: Starts the Doodler at its built value, but drops the center post.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Keep the post up, favor upper play and 5,000 saucers, and do not force exposed
+    standups. At low Doodle values, safe 1,000-point stop switches can be better than
+    chasing another sequence.
+  behind: Build aggressively to a 1,000 or 10,000 Doodler, start it, and keep the
+    live ball in safe upper-playfield action while avoiding stop switches.
+  key_decision: Build one more tenfold step or start the Doodler now? More value raises
+    the ceiling, but each numbered-target attempt risks a drain and a full reset.
+danger:
+- 'A raised flipper cannot hold a normal cradle: the ball can roll behind it through
+  the flipper-to-sling gap and drain.'
+- An overly hard micro-flip can climb the opposite flipper and fall through the same
+  gap.
+- 'Misses near #1 or #4 can hit DOWN POST rubbers and remove center protection.'
+- With the post down, an upper-playfield exit can head directly through the middle,
+  to a sling, or to an outlane.
+- This machine has unusually harsh target rebounds.
+commentary:
+- The post is up—now the player can micro-flip and pick off that numbered target.
+- The numbers must be hit in order; the lit target is the only one that advances the
+  Doodle.
+- That completes 1-2-3-4, so the Doodler just went up another factor of ten.
+- The bug is running at a thousand a hit now—keeping the live ball alive is the scoring
+  strategy.
+- Starting the Doodler drops the center post, so the scoring starts exactly when the
+  game gets more dangerous.
+- 'Careful with a normal trap here: there is a gap behind the flippers, and holding
+  one up can drain the ball.'
+trivia:
+- The moving Doodle Bug is a real captive pinball beneath the playfield, repeatedly
+  knocked across a scoring rollover.
+- Norm Clark also designed the four-player predecessor Dipsy Doodle.
+- Artwork is by Christian Marche.
+- Williams produced 3,006 Doodle Bugs.
+- Williams revisited a mechanically similar captive-ball scoring idea in Solar Fire
+  in 1981.
+summary: Raise post → collect 1-2-3-4 → multiply Doodler → start it → survive up top
+venue_notes:
+- Configured as an add-a-ball / Love Bug-style setup with five balls.
+- The lit center-target feature awards a live extra ball.
+- Upper pop bumpers are moderate to strong enough for occasional or regular saucer
+  returns.
+- Early-production Doodle Bugs may have a higher display range; common games top normal
+  display at 199,990 before OVER THE TOP lights.
+image: images/doodle-bug-williams-1971.jpg

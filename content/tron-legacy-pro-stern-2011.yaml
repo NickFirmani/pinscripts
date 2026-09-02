@@ -1,0 +1,139 @@
+id: tron-legacy-pro-stern-2011
+name: 'TRON: Legacy (Pro)'
+manufacturer: Stern Pinball
+year: 2011
+metadata:
+  designer: John Borg
+  artist: John Youssi
+  production: ''
+  era: Stern S.A.M. era
+  multiball: Light Cycle, Quorra, and Disc; Light Cycle and Quorra can stack, but
+    Disc cannot stack with them.
+hook: Build and repeatedly cash End of Line through side ramp to Flynn's scoop, then
+  stack Light Cycle with Quorra for durable multiball scoring.
+rules:
+  primary: Make a combo that ends at the side ramp, then quickly shoot Flynn's Arcade
+    scoop for End of Line. It begins at 500K, grows with combos, and retains its built
+    value after collection.
+  bullets:
+  - Light Cycle and Quorra are two-ball multiballs that can be advanced and stacked;
+    Disc Multiball cannot stack or advance alongside them.
+  - Quorra uses the Recognizer for two add-a-balls; its Gem shot scores Super.
+  - Disc Multiball requires the center Recognizer bank and spinning disc. On V1.74,
+    blue-disc jackpots stay lit and a restart is available if the Super is not reached.
+  - 'The nine-step feature ladder uses flashing for played and solid for completed:
+    all flashing lights Sea of Simulation; all solid lights four-ball Portal Multiball.'
+  - Gem shots add Bonus X, and ladder progress can make end-of-ball bonus substantial.
+watch:
+- title: Side ramp to scoop
+  text: 'This is likely an End of Line cash-out: the side ramp sets it up, and the
+    scoop collects it.'
+- title: Light Cycle plus Quorra
+  text: If both are flashing at the scoop, a major stack is ready. Quorra's Recognizer
+    add-a-balls can extend it.
+- title: Double Scoring
+  text: When Double Scoring is flashing at the TRON bank, expect a player to pursue
+    it before a major collect.
+- title: Feature ladder
+  text: Flashing means played and solid means completed. All flashing lights Sea of
+    Simulation; all solid lights Portal.
+skill_shots:
+- name: Flynn's Arcade
+  how: Soft plunge so the ball rebounds from the shooter-lane gate into the scoop.
+  value: 500K, increasing 50K per success; the preferred tournament option.
+- name: Left-ramp alternate
+  how: Super-soft plunge, then immediately shoot the left ramp.
+  value: 200K plus Light Cycle progress.
+- name: Side-ramp alternate
+  how: On a full plunge, hold the left flipper to feed the upper flipper, then shoot
+    the side ramp.
+  value: 300K plus Light Cycle progress; the hardest option.
+features:
+- type: player-control
+  name: Double Scoring
+  text: Complete the TRON bank while Double Scoring is flashing. It doubles essentially
+    all scoring, including End of Line and multiball scoring; the Zen lane lets the
+    next TRON hit start the flashing feature.
+- type: other
+  name: Super Bumpers / Super Spinners
+  text: Complete the TRON bank while the matching award is flashing.
+- type: mystery-award
+  name: Flynn's Arcade Mystery
+  text: Relit by the right orbit. Competition Mode standardizes random and global
+    elements.
+- type: extra-ball
+  name: Extra Ball
+  text: V1.74 added ramp-count qualification. With Extra Balls converted, it is worth
+    3M points.
+shots:
+- name: Left ramp
+  value: Advances Light Cycle and combos; a common End of Line setup shot.
+  risk: Medium
+  diagram: 1
+- name: Quorra / left spinner
+  value: Builds Quorra Multiball and feeds the upper flipper.
+  risk: Medium
+  diagram: 2
+- name: Side ramp
+  value: Sets up End of Line and advances Light Cycle; the primary scoring setup shot.
+  risk: Medium-High
+  diagram: 3
+- name: Flynn's scoop
+  value: Collects End of Line and starts multiballs; also serves Mystery.
+  risk: Medium-High
+  diagram: 4
+- name: Recognizer bank
+  value: Advances Disc Multiball and provides Quorra add-a-balls.
+  risk: High
+  diagram: 5
+- name: Gem inner loop
+  value: Scores Quorra Super, advances Gem, and adds Bonus X.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor repeatable End of Line scoring and the Light Cycle/Quorra stack instead
+    of repeatedly attacking the center bank for Disc. Take Quorra add-a-balls early
+    and protect accumulated end-of-ball bonus.
+  behind: Stack Light Cycle and Quorra under Double Scoring, or pursue Disc Multiball's
+    Super and restart path. Deep ladder progress can produce a large Sea of Simulation
+    payout before Portal.
+  key_decision: Keep taking the safer combo-to-End-of-Line loop, or leave it to pursue
+    feature completion and Disc/Portal progress for a higher deep-game ceiling.
+danger:
+- Recognizer bank rebounds can fire straight toward the drain; Disc is the higher-risk
+  route.
+- Gem is a difficult upper-flipper shot, and misses can surrender upper-playfield
+  control.
+- Fast ramp returns demand immediate control and can become uncontrolled lower-playfield
+  action.
+- The right orbit sends the ball through the pops and is a poor bailout when control
+  is marginal.
+- Scoop kickouts or rejects can punish the game's main cash-out and multiball-start
+  shot.
+commentary:
+- Side ramp made—now the scoop is the priority for End of Line.
+- That End of Line value stays built after collection; it has been growing all ball.
+- Light Cycle and Quorra can stack—Disc Multiball cannot.
+- Quorra has two add-a-balls at the Recognizer, making that center-bank risk more
+  appealing.
+- Double Scoring is flashing at TRON; that is the multiplier to grab before a big
+  collect.
+- 'Everything on the ladder is flashing: Sea of Simulation is lit. Solidifying all
+  nine leads to Portal.'
+trivia:
+- John Borg designed the game; John Youssi created its art, and David Thiel handled
+  sound and music programming.
+- Stern produced 400 LE machines; its exclusive major rule is End of Line/Daft Punk
+  Multiball.
+- The Pro uses a fixed Recognizer over standup targets; the LE uses drop targets and
+  a moving Recognizer.
+- Final V1.74 code arrived in 2013 and materially revised Disc Multiball.
+summary: End of Line loops → Light Cycle + Quorra stack → Double Scoring → ladder
+  progress → Portal
+venue_notes:
+- This machine is running V1.74.
+- Competition Install / Competition Mode is active.
+- Extra Balls are disabled and converted to 3M points.
+- The Pro has a fixed Recognizer and standup TRON targets; it does not have the LE-only
+  End of Line/Daft Punk Multiball.
+image: images/tron-legacy-pro-stern-2011.jpg

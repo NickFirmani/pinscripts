@@ -1,0 +1,131 @@
+id: funhouse-williams-1990
+name: FunHouse
+manufacturer: Williams Electronic Games
+year: 1990
+metadata:
+  designer: Pat Lawlor and Larry DeMar
+  artist: John Youssi
+  production: Approximately 10,750 produced
+  era: Early WPC alphanumeric solid-state
+  multiball: Midnight Multiball (3-ball); Quick Multiball (2-ball)
+hook: Build the clock to 11:30, lock twice through the Hidden Hallway, wake the sleeping-house
+  nightmare, then alternate Trapdoor Million Plus shots with the center ramp for the
+  game's decisive scoring run.
+rules:
+  primary: Advance the clock to 11:30, make two Hidden Hallway locks to put Rudy to
+    sleep, then shoot his open mouth to start 3-ball Midnight Multiball. Collect Million
+    Plus at the Trapdoor and use the center ramp to reopen it at increasing values.
+  bullets:
+  - A fresh game starts at 8:00; clock progress carries between balls, and ordinary
+    play stops advancing it at 11:30.
+  - The first Hidden Hallway lock moves the clock to 11:45; the second reaches midnight
+    and opens Rudy's mouth.
+  - Midnight Multiball starts with a 2M Trapdoor Million Plus. Each center-ramp shot
+    reopens it one million higher, up to 10M.
+  - If Midnight Multiball ends without a Million Plus collect, the Hidden Hallway
+    briefly relights for a 2-ball restart.
+  - Rudy jaw hits build an end-of-ball bonus of 50K times Rudy hits, with the hit
+    count carrying between balls.
+watch:
+- title: 11:30 and LOCK flashing
+  text: Clock building is finished. The Hidden Hallway is now the meaningful progression
+    shot.
+- title: Rudy asleep
+  text: Rudy's open mouth means midnight has been reached; the next mouth shot starts
+    Midnight Multiball.
+- title: Million Plus flashing
+  text: The Trapdoor is live for the major score. After a collect, watch for the center-ramp
+    attempt that reopens it at the next value.
+- title: Mirror award flashing
+  text: A Wind Tunnel detour may be coming, especially when Quick Multiball is selected.
+skill_shots:
+- name: Rudy's Hideout Skill Shot
+  how: Use less than full plunge power so the ball circles the top loop, stalls, and
+    rolls back into the Hidden Hallway/Hideout kicker behind Rudy.
+  value: Awards 250K, then 500K, 750K, and 1M on later successful plunges; it also
+    advances the normal plunge clock progress. The value carries across the game.
+features:
+- type: ball-save
+  name: You Can Have It Back
+  text: An immediate plunge drain can be returned, sometimes even after a weak plunge
+    touches upper switches.
+- type: other
+  name: Steps left-outlane rescue
+  text: With Steps Gate Open active, a center-ramp shot or left-outlane drain sends
+    the ball to the secondary left plunger instead of ending the ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls are collected at the Hidden Hallway and can be lit through Mystery
+    Mirror, Gangways, or Steps.
+- type: mystery-award
+  name: Mystery Mirror
+  text: Wind Tunnel awards can include Extra Ball, Million, max jets, Superdog, Steps
+    Gate Open, or Quick Multiball; jets change the flashing award.
+- type: other
+  name: Quick Multiball
+  text: A two-ball multiball available as a Mystery Mirror award.
+shots:
+- name: Trapdoor loop/door
+  value: Advances the clock, scores 500K to 1M in normal play, and collects Million
+    Plus during Midnight Multiball.
+  risk: High
+  diagram: 1
+- name: Hidden Hallway
+  value: Mandatory lock shot from 11:30 onward; also collects Extra Balls.
+  risk: Medium-High
+  diagram: 2
+- name: Center ramp
+  value: Safest controlled clock progress and the essential shot that reopens Million
+    Plus during Midnight Multiball.
+  risk: Low
+  diagram: 3
+- name: Rudy mouth/jaw
+  value: Starts Midnight Multiball when Rudy is asleep; also advances Rudy-related
+    awards.
+  risk: Medium-High
+  diagram: 4
+- name: Wind Tunnel
+  value: Collects the selected Mystery Mirror award and advances the clock by 15 minutes.
+  risk: Medium
+  diagram: 5
+strategy:
+  ahead: Favor repeated center ramps for controlled progress to 11:30, then focus
+    on Hidden Hallway locks. In Midnight Multiball, take the available Million Plus
+    rather than detouring for elaborate side features.
+  behind: Lean into volatile Trapdoor loops and repeated Million Plus laddering. With
+    Extra Balls active, Mirror and Gangway progress can justify more risk.
+  key_decision: Choose safe, controlled center-ramp clock progress or the faster,
+    higher-value Trapdoor route. The Trapdoor offers immediate scoring but its missed
+    returns are much more dangerous.
+danger:
+- A weak Trapdoor-loop reject can head toward the left outlane or first hit the left
+  sling.
+- Loose slingshot action can quickly expose both outlanes.
+- A Rudy jaw reject can return sharply toward the lower playfield.
+- Deliberately bashing Steps targets sacrifices control.
+- Wind Tunnel eject behavior can vary with machine setup.
+commentary:
+- He's at 11:30—clock shots don't matter now; he needs the Hidden Hallway.
+- First lock makes it 11:45; one more lock puts Rudy to sleep.
+- Rudy's mouth is open—this shot starts the real scoring feature.
+- Two million at the Trapdoor; now the center ramp reopens it for three.
+- That weak Trapdoor loop is trouble—this return likes the left outlane.
+- Tournament Mode can make him earn those locks again next ball.
+trivia:
+- FunHouse was an early Williams WPC game that retained alphanumeric displays rather
+  than using a DMD.
+- Ed Boon, later co-creator of Mortal Kombat, voices Rudy.
+- Rudy's moving eyes, eyelids, and jaw let him physically react to the ball.
+- 'The game has two manual plungers: the normal shooter and the left-side Steps shooter.'
+- L-9 arrived more than two years after release with meaningful tournament and Trapdoor
+  behavior changes.
+summary: Clock to 11:30 → Hidden Hallway locks → Rudy asleep → Midnight Multiball
+  → Trapdoor and ramp Million Plus ladder
+venue_notes:
+- Tournament Mode is enabled.
+- A fresh game starts at 8:00.
+- Extra Balls are disabled or ignored at this venue.
+- Installed ROM is reported as either L-9 or an earlier factory ROM; L-9-specific
+  behavior should be confirmed before calling it.
+- If L-9 is installed, Million Plus Carryover configuration is unknown.
+image: images/funhouse-williams-1990.jpg

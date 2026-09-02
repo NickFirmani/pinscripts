@@ -1,0 +1,139 @@
+id: spider-man-stern-2007
+name: Spider-Man
+manufacturer: Stern Pinball
+year: 2007
+metadata:
+  designer: Steve Ritchie
+  artist: Kevin O’Connor, Margaret Hudson and Mark Galvez
+  production: 3,760 standard-production games
+  era: SAM system, 2007
+  multiball: Black Suit Multiball; three Doc Ock multiballs; Battle Royale; Super
+    Hero
+hook: Build a persistent 2×, then 3×, shot multiplier before multiball—ideally on
+  the right ramp before Battle Royale.
+rules:
+  primary: Clear all six white-arrow major shots, choose the next major shot for 2×
+    for the ball, then finish its timed mode for a 3× opportunity. Multipliers vanish
+    at drain, and white-arrow progress is locked during multiball.
+  bullets:
+  - The six white-arrow shots are both orbits, three ramps, and Doc Ock.
+  - Black Suit Multiball starts after three virtual locks via either orbit; clear
+    12 jackpots for Super Jackpots.
+  - Doc Ock's three villain stages are multiballs and can stack with Black Suit.
+  - Defeat all four villains once for Extra Ball, twice for Battle Royale, and three
+    times for Special and Super Hero progress.
+  - Battle Royale requires all four villain shots, then the right ramp for its cumulative
+    Jackpot; its first two Jackpots add a ball.
+watch:
+- title: White arrows strobing
+  text: All six major shots are complete. The next major shot chosen receives 2× for
+    the rest of the ball.
+- title: Solid white arrow
+  text: A persistent 2× or 3× is active, explaining repeated spinner, Doc Ock, or
+    Venom shooting.
+- title: Villain inserts
+  text: A second defeat of every villain qualifies Battle Royale; watch whether the
+    right ramp has been multiplied.
+- title: Flashing right ramp
+  text: In Battle Royale, all four villain Jackpots are complete and the cumulative
+    Royale Jackpot is ready.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge through the flashing W-E-B top lane.
+  value: 250K plus 25K per successive skill shot, +5 Bonus X, and doubled pop values
+    for the ball; on ball 3, 2× end-of-ball bonus.
+- name: Super Skill Shot
+  how: Soft-plunge to the upper-right flipper, then immediately shoot the Venom side
+    ramp.
+  value: 500K plus 50K per success, +100K Venom Value, and Venom qualification progress;
+    on ball 3, 3× end-of-ball bonus.
+features:
+- type: other
+  name: Spider Sense
+  text: Complete the three right-side targets and shoot the upper-right-flipper lane.
+    It can award Add-A-Ball during multiball or add time during a timed mode.
+- type: extra-ball
+  name: Extra Ball
+  text: Defeat all four villains once to light Extra Ball at the left orbit; combo
+    progression can also award it.
+- type: other
+  name: Last Chance
+  text: With Battle Royale or Super Hero ready on the final ball, outlanes can give
+    limited automatic replunges; center drains are not saved.
+- type: ball-save
+  name: Adjustable ball save
+  text: Standard ball-save duration is setup-dependent; the Super Skill Shot-associated
+    save is very short.
+shots:
+- name: Left orbit / spinner
+  value: Advances white arrows, modes, locks, and Venom Value through spinner spins;
+    a strong repeatable multiplier target.
+  risk: Medium
+  diagram: 1
+- name: Light Lock
+  value: Builds Black Suit locks and a safety-net multiball.
+  risk: High
+  diagram: 2
+- name: Venom side ramp
+  value: Advances Venom and collects Black Suit Super Jackpots; a high-value multiplier
+    target.
+  risk: High
+  diagram: 3
+- name: Sandman
+  value: Advances valuable villain progress and is safer to attack under multiball.
+  risk: High
+  diagram: 4
+- name: Doc Ock
+  value: Advances three Doc Ock multiballs; an easy early multiball and useful multiplier
+    shot.
+  risk: Medium-High
+  diagram: 5
+- name: Right ramp
+  value: Collects the Battle Royale Jackpot; prioritize multiplying it only as Battle
+    Royale approaches.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Establish one strong 2×, take easy Doc Ock value, and use multiball to finish
+    villains safely. Avoid excessive single-ball risk chasing a perfect Battle Royale
+    stack.
+  behind: Finish a timed mode for 3× on the right ramp, then pursue Battle Royale.
+    The deepest comeback route is Super Hero's 250M final collect.
+  key_decision: Start multiball now or delay it until a white-arrow multiplier is
+    established? Multiball provides safety but prevents further white-arrow progress.
+danger:
+- Light Lock can rebound sideways toward either outlane.
+- Repeated Sandman center-target hits can rebound dangerously.
+- The Spider-Sense lane can exit onto the right sling and fall into the right outlane.
+- A weak or late upper-right-flipper shot at the Venom side ramp can create an uncontrolled
+  return.
+- An orbit near a ready multiball can start Black Suit or Battle Royale before multiplier
+  setup is complete.
+commentary:
+- All six white arrows are complete—the next shot decides where that 2× lives for
+  the rest of the ball.
+- They are delaying multiball because white-arrow multiplier progress stops once multiball
+  starts.
+- Doc Ock and Black Suit can stack, making this a safer window to attack Sandman.
+- That is the second win against every villain—Battle Royale is now qualified.
+- They have put the multiplier on the right ramp specifically for the Royale Jackpot.
+- 'Super Hero is the endgame: its final Spider-Sense collect is worth 250 million.'
+trivia:
+- The original game combines characters and material from all three Sam Raimi Spider-Man
+  films.
+- Stern credits the game concept jointly to Steve Ritchie and Lyman Sheats; Sheats
+  wrote the software and rules.
+- The moving Sandman three-bank was inspired by Attack From Mars.
+- Doc Ock uses a magnet to capture and throw the ball during multiball.
+- The 2016 Vault Edition preserves gameplay while replacing the film presentation
+  with Ultimate Spider-Man material.
+summary: White arrows → 2× shot → timed mode → 3× right ramp → Battle Royale → Super
+  Hero
+venue_notes:
+- 'Installed software: original-game version 2.61.'
+- Competition configuration is enabled; Extra Balls are disabled.
+- Physical edition is unknown. The 2007 Black edition is cosmetic only; the 2016 Vault
+  Edition retains gameplay but has renamed modes and different presentation.
+- For 3× selection, use the live flashing-arrow state as the authority.
+- No feed is reported unusually dangerous on this copy.
+image: images/spider-man-stern-2007.jpg

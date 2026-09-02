@@ -1,0 +1,145 @@
+id: rick-and-morty-bse-spooky-2020
+name: Rick and Morty — Blood Sucker Edition
+manufacturer: Spooky Pinball
+year: 2020
+metadata:
+  designer: Scott Danesi
+  artist: Josh Freydkis
+  production: About 750 total games
+  era: Solid-state P3-ROC/LCD
+  multiball: Gromflomite Battle Multiball; Meeseeks Mania
+hook: 'A chaotic layered scorer: qualify Adventures, charge the Portal Gun for Dimensions
+  and Megaseeds, then put blue Meeseeks multipliers on a prepared multiball stack.'
+rules:
+  primary: Adventures provide the obvious progression, but high scores come from Dimensions
+    and persistent Megaseeds. Charge the Portal Gun, enter the Garage for seed opportunities,
+    and layer blue Meeseeks multipliers with Adventures and Gromflomite Battle.
+  bullets:
+  - The first Adventure normally needs one ramp; later Adventures need both. Start
+    at the center scoop, except Pickle Rick at the Garage.
+  - Each Megaseed adds 5% of that ball's score to end-of-ball bonus on every later
+    ball; seeds persist all game.
+  - Up to three blue Meeseeks make their lit shots 2X, 3X, then 4X. Expired Meeseeks
+    turn purple and divide scoring.
+  - Flooble Crank lights physical locks; two locks light Gromflomite Battle at the
+    scoop. Any jackpot lights a Garage Super Jackpot.
+  - 'Physical locks are shared, but player progress is remembered: another player
+    can steal locked balls, requiring compensation Crank hits.'
+watch:
+- title: Blue vs. purple Meeseeks
+  text: Blue arrows are multiplied shots; purple arrows divide scoring. Three active
+    blue Meeseeks means 4X.
+- title: Charged Portal Gun
+  text: A full Portal Gun meter and flashing Garage signal a Dimension change and
+    a hunt for Megaseeds.
+- title: Orange seed arrows
+  text: Collecting a Megaseed permanently grows future end-of-ball bonus by 5% of
+    this ball's score.
+- title: Locks plus green scoop
+  text: Two balls in the Danesi Lock with a green scoop mean Gromflomite Battle is
+    ready; an also-lit Adventure creates a prime stack.
+skill_shots:
+- name: Normal Skill Shot — Noob Noob
+  how: After the auto-plunge feeds the upper flipper, hit Noob Noob.
+  value: Starts at 200K and rises after successful skill shots; the safer choice.
+- name: Super Skill Shot — Garage
+  how: From the same upper-flipper feed, shoot the difficult left Garage entrance.
+  value: Starts at 400K and rises on later successes; higher value but substantially
+    harder.
+- name: Side-loop extension
+  how: Loop the upper-flipper side loop before collecting a skill shot; repeat loops
+    to increase its multiplier further.
+  value: Multiplies the skill-shot value, but each extra upper-flipper exchange risks
+    losing the opportunity.
+features:
+- type: ball-save
+  name: Anti-Gravity save
+  text: Flooble Crank charges a player-operated right-outlane magnet. Pulse the extra
+    right-side button to conserve battery; holding it is easier but costly.
+- type: ball-save
+  name: SLAM Save
+  text: Complete S-L-A-M, then a drain immediately caused by the left Slam bumper
+    can be fired back into play. It is disabled during multiball.
+- type: mystery-award
+  name: Mystery
+  text: Complete Beth, Summer, and Jerry, then shoot the scoop for awards such as
+    Light Lock, Portal Gun charge, Anti-Gravity charge, Meeseeks, or Megaseeds.
+- type: extra-ball
+  name: Extra Ball
+  text: Default qualification is three Dimension changes, collected at the spinner
+    loop.
+shots:
+- name: Flooble Crank
+  value: Lights locks, charges Anti-Gravity, and advances Gromflomite Add-A-Ball;
+    survival and multiball setup in one shot.
+  risk: Medium
+  diagram: 1
+- name: Center scoop
+  value: Starts Adventures, Mystery, and prepared Gromflomite Battle scoring.
+  risk: Medium
+  diagram: 2
+- name: Adventure ramps
+  value: Qualify Adventures for basic mode setup.
+  risk: Medium-High
+  diagram: 3
+- name: Spinner / side loop
+  value: Charges the Portal Gun and collects Extra Ball qualification, opening Dimensions
+    and Megaseeds.
+  risk: Medium-High
+  diagram: 4
+- name: Garage
+  value: Changes Dimensions, collects Super Jackpots, starts Pickle Rick, and offers
+    five seed shots from a full Garage entry.
+  risk: High
+  diagram: 5
+- name: Meeseeks Box
+  value: Spawns Meeseeks to put 2X–4X on valuable shots before scoring.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Keep Anti-Gravity charged, collect available seeds, and avoid letting blue
+    Meeseeks expire while over-preparing. A straightforward Adventure plus Gromflomite
+    stack combines scoring with protection.
+  behind: Pursue Dimensions and Megaseeds, build three blue Meeseeks, then attack
+    a 4X high-value Adventure or jackpot. Gromflomite Battle and Meeseeks Mania can
+    overlap for a high-variance window.
+  key_decision: Take the feature now or add another modifier? Layering Adventure,
+    Dimension, Meeseeks, and multiball is powerful, but one more setup shot may end
+    the ball.
+danger:
+- 'Be ready for the Portal kickout: it fires fast toward the left flipper.'
+- The Slam bumper replaces the left slingshot and can send the ball wildly toward
+  quick drains.
+- The late left-Garage upper-flipper shot can miss toward the left outlane.
+- The right outlane requires sufficient Anti-Gravity charge and a timely magnetic
+  rescue.
+- The steep left ramp can reject short shots into the chaotic lower playfield.
+commentary:
+- Three blue Meeseeks—that lit shot is 4X, but they do not stay friendly forever.
+- Purple Meeseeks now; the multiplier has turned into a divisor.
+- Portal is charged—he wants the Garage because that gives him five Megaseed opportunities.
+- Every seed is another five percent of this ball's score in bonus, and it carries
+  for the rest of the game.
+- Adventure and Gromflomite are both ready; this is the protected stack.
+- The Crank is not just locks—it is also refilling the right-outlane Anti-Gravity
+  save.
+trivia:
+- Rick and Morty was Scott Danesi's second Spooky design, after Total Nuclear Annihilation.
+- 'Bowen Kerins structured the game in layers: Adventures for baseline play, Meeseeks
+  for intermediate play, and Megaseeds and Dimensions for expert scoring.'
+- Danesi Lock 2.0 combines horseshoe/U-turn geometry, two physical ball locks, and
+  multiplayer lock-stealing logic.
+- The left sling is replaced by an actual pop bumper, the Slam bumper, helping create
+  the chaotic lower playfield.
+- Blood Sucker Edition is a collector cosmetic upgrade, not a mechanically different
+  rules edition.
+summary: Adventures → Portal Gun → Dimensions/Megaseeds → Meeseeks multipliers → multiball
+  stack → persistent bonus
+venue_notes:
+- 'Installed code: 2023.03.22.'
+- Tournament Rules is enabled; it alters variable gameplay elements.
+- Physical lock-stealing is stock.
+- Extra Balls are disabled or ignored.
+- Feature ball-save timers are factory, approximately 10 seconds.
+- The Slam bumper to left-outlane feed is notably dangerous on this machine.
+image: images/rick-and-morty-bse-spooky-2020.jpg

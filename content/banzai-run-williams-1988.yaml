@@ -1,0 +1,132 @@
+id: banzai-run-williams-1988
+name: Banzai Run
+manufacturer: Williams Electronic Games
+year: 1988
+metadata:
+  designer: Pat Lawlor and Larry DeMar
+  artist: Mark Sprenger
+  production: Approximately 1,750 units
+  era: Williams System 11B, May 1988
+  multiball: '2-ball multiball: 1M King of the Hill, then unlimited 250K Victory Laps'
+hook: Banzai Run sends the ball up Banzai Hill, a playable vertical backbox playfield.
+  Open the Hill with a rider, build doubled Cliff Jumps, or defeat all four riders
+  for a 1M multiball jackpot.
+rules:
+  primary: Challenge riders on the lower playfield, then defeat them at matching Hill
+    shots. Keep one challenged rider undefeated to leave Banzai Hill open and repeatedly
+    build Cliff Jumps; alternatively defeat all four, lock the Hill, and pursue multiball.
+  bullets:
+  - The main ramp and Bumper Saucer can spot opponent progress before multiball.
+  - Shoot A-B-C on the Hill to double the next Cliff Jump for that visit and extend
+    center-post protection.
+  - After all four riders are defeated, Hill LOCK starts 2-ball multiball; shoot the
+    center saucer for Time Lock, then the Hill captive ball for 1M.
+  - After King of the Hill, the main ramp scores 250K Victory Laps for the rest of
+    multiball.
+  - Cycle Jump value and laps persist between balls; rider progress resets after multiball,
+    and there is no bonus multiplier.
+watch:
+- title: Flashing rider inserts
+  text: At least one flashing rider means Banzai Hill is available; a solid rider
+    has been defeated.
+- title: A-B-C / 2× Cliff Jump
+  text: A completed A-B-C lights a doubled Cliff Jump for the current Hill visit.
+- title: Hill LOCK
+  text: The lock arrow means all four regular riders are defeated and multiball is
+    ready.
+- title: TIME LOCK
+  text: During multiball, a flashing center saucer starts the short setup window for
+    the 1M Hill captive-ball shot.
+skill_shots:
+- name: Super Cycle Stunt / Cycle Stunt
+  how: Plunge directly into the Hill Entrance instead of the normal top lanes.
+  value: Awards 100K on the first success, increasing by 100K to 500K, and normally
+    sends the ball directly to Banzai Hill.
+features:
+- type: other
+  name: Instant Rematch
+  text: If multiball ends before the jackpot, the center saucer can restart it during
+    an operator-adjustable window.
+- type: other
+  name: Left outlane kickback
+  text: The Bumper Saucer relights the left kickback; its initial and persistent behavior
+    is operator-adjustable.
+- type: extra-ball
+  name: Extra balls
+  text: Lap threshold, Finish Line, and an enabled A-B-C route can award extra balls;
+    extra balls are disabled at this venue.
+- type: other
+  name: Freestyle
+  text: A largely uncontrolled mini-playfield can spot or defeat riders after repeated
+    qualification.
+- type: player-control
+  name: Green Machine lane change
+  text: Flipper buttons change the Green Machine top rollovers.
+shots:
+- name: Hill Entrance
+  value: Accesses Banzai Hill, the main scoring area.
+  risk: Medium
+  diagram: 1
+- name: Cliff Jump / Red Hot
+  value: Collects the escalating Cliff Jump and defeats Red Hot when lit.
+  risk: High
+  diagram: 2
+- name: A-B-C
+  value: Doubles the next Cliff Jump and extends Hill center-post protection.
+  risk: High
+  diagram: 3
+- name: Bumper Saucer
+  value: Spots a rider, relights kickback, and starts Time Lock in multiball.
+  risk: Medium
+  diagram: 4
+- name: Hill captive ball
+  value: Scores a lap or the 1M King of the Hill jackpot during Time Lock.
+  risk: High
+  diagram: 5
+- name: Main ramp
+  value: Spots rider targets before multiball and scores Victory Laps afterward.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Challenge a relatively safe rider, typically Green Machine, then preserve
+    that undefeated rider to keep returning to the Hill for doubled Cliff Jumps. Avoid
+    unnecessary rider standups and Freestyle qualification.
+  behind: Finish all four riders for the higher-variance 1M King of the Hill and repeatable
+    250K Victory Laps. If Cliff Jumps are already valuable, repeated doubled Jumps
+    may still be the fastest route.
+  key_decision: Defeat this rider for race progress, or leave them alive to preserve
+    Banzai Hill access and renewable Cliff Jumps?
+danger:
+- Vertical-playfield misses return almost immediately, punishing hesitation.
+- A miss at the Hill mini-flipper can exit the Hill back to the main playfield.
+- The main ramp return drops quickly toward the right-flipper and slingshot area.
+- Some center-saucer ejects can head dangerously toward the middle.
+- Direct lower rider standups are riskier than spotting progress with the ramp or
+  saucer.
+commentary:
+- They’ve challenged Green Machine—that’s enough to open the Hill.
+- They are not passing that rider; preserving it keeps Hill access open for more Cliff
+  Jumps.
+- A-B-C is complete, so this next Cliff Jump is worth double.
+- All four riders are gone—now the Hill lock is lit for two-ball multiball.
+- Time Lock is in; they have a short window to reach the Hill captive ball for the
+  million.
+- King of the Hill collected—now it’s 250K per Victory Lap.
+trivia:
+- Banzai Run was Pat Lawlor’s first released pinball playfield design.
+- Its vertical Banzai Hill replaced the conventional backglass with a functional second
+  playfield.
+- The design evolved from a construction-themed prototype called Wreck’n Ball.
+- The racers’ jerseys include development-team names such as Krutsch, Lawlor, Boon,
+  Sprenger, and Schmidt.
+- It introduced an early multiball restart feature, Instant Rematch.
+summary: Challenge a rider → open Banzai Hill → double Cliff Jumps → preserve access
+  or pursue multiball → collect Victory Laps
+venue_notes:
+- Stock L-3 ROM with normal escalating Cliff Jumps and a normal upper-playfield center
+  post.
+- Super Cycle Stunt's rider challenge count is operator-adjustable and unknown here.
+- Extra balls are disabled at this venue.
+- Ramp spotting, Time Lock duration, kickback behavior, and Instant Rematch timing
+  are operator-adjustable.
+image: images/banzai-run-williams-1988.jpg

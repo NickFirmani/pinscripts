@@ -1,0 +1,149 @@
+id: twilight-zone-bally-1993
+name: Twilight Zone
+manufacturer: Bally
+year: 1993
+metadata:
+  designer: Pat Lawlor
+  artist: John Youssi
+  production: 15,235
+  era: Williams WPC Fliptronics II widebody
+  multiball: 3-ball Multiball, 3-ball Powerball Mania, Fast Lock, and six-ball Lost
+    in the Zone
+hook: Build GUM-BALL on the ramps, turn it into locks and Gumballs, then choose between
+  high-value regular Multiball, Powerball Mania, or a deep Door run to Lost in the
+  Zone.
+rules:
+  primary: Shoot both ramps to spell GUM-BALL. Each completion lights one Lock and
+    one Gumball; use the Lock before building another because locks do not stack,
+    while Gumballs do.
+  bullets:
+  - Cash lit Gumballs at the right orbit for 15M, then 20M, then 25M thereafter.
+  - Start regular Multiball at the Piano. One lock starts a 15M Jackpot; two or more
+    locks start at 40M. Piano collects and Camera relights.
+  - Return the ceramic Powerball to the Gumball Machine through the right orbit to
+    start Powerball Mania.
+  - In Powerball Mania, the upper Powerfield hole scores repeatable 50M Mania Jackpots;
+    relight the Powerfield with the left ramp.
+  - Collect Door Panels en route. Completing the Door lights the 45-second, six-ball
+    Lost in the Zone wizard mode.
+watch:
+- title: GUM-BALL lamps
+  text: The ramp progress, Lock, and Gumball lamps show whether the player is building
+    Multiball, advancing the Powerball, or both.
+- title: Piano and Camera
+  text: A red Piano means Jackpot is ready; a lit Camera means the player needs the
+    relight before another Piano cash-in.
+- title: Powerball plus Gumball
+  text: With the white Powerball in play and Gumball lit, one right-orbit shot can
+    send it back to the machine and start Powerball Mania.
+- title: Flashing Door Handle
+  text: All Door Panels are complete; the next valid Door collect starts Lost in the
+    Zone.
+skill_shots:
+- name: Normal Skill Shot
+  how: 'Soft plunge through a rollover without reaching the scoop: Red, Orange, or
+    Yellow.'
+  value: Red scores 2M and advances one bumper level; Orange scores 5M and advances
+    two; Yellow scores 10M, advances all three, and normally spots the 10M Door Panel.
+    Often skipped because the Rocket feed heads toward Town Square.
+- name: Super Skill Shot
+  how: After its Door Panel is collected, shoot the left ramp for a return to the
+    manual plunger, then make a rollover or scoop result.
+  value: All results score 10M. Red lights Battle the Power, Orange lights outlanes,
+    and Yellow lights a temporary Extra Ball. It cannot stack and overrides a left-ramp
+    Multiball start.
+features:
+- type: ball-save
+  name: Ball Saver
+  text: Factory-style play normally has no standard saver; later code supports ball-save
+    adjustments.
+- type: player-control
+  name: Magna-Flip / Battle the Power
+  text: A lit right ramp sends the ball to the mini-playfield, where flipper buttons
+    control two magnets. The upper hole doubles the Battle's Powerfield value and
+    can award a Door Panel.
+- type: extra-ball
+  name: Extra Balls
+  text: Several routes can light Extra Balls. With Extra Balls disabled in Tournament
+    Mode, the Lite Extra Ball Door Panel is automatically considered complete.
+- type: mystery-award
+  name: Camera Awards
+  text: Camera gives one of eight semi-random awards. Tournament Mode parallelizes
+    its award sequence between players.
+shots:
+- name: Camera
+  value: Relights Multiball Jackpot and collects Camera awards; needed for repeated
+    Piano cash-ins.
+  risk: Medium-High
+  diagram: 1
+- name: Left ramp
+  value: Advances GUM-BALL, relights the Piano Jackpot, and starts regular Multiball
+    with an upper-flipper feed.
+  risk: Medium
+  diagram: 2
+- name: Piano
+  value: Collects Door Panels and regular-Multiball Jackpots.
+  risk: Medium-High
+  diagram: 3
+- name: Right ramp
+  value: Advances GUM-BALL and accesses the Powerfield for Powerball Mania Jackpots.
+  risk: Medium-High
+  diagram: 4
+- name: Lock lane
+  value: Locks balls, offers the one-time no-Jackpot Multiball restart, and can award
+    an Extra Ball.
+  risk: High
+  diagram: 5
+- name: Gumball / right orbit
+  value: Collects Gumballs and returns the Powerball to start Powerball Mania.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Prioritize two-lock regular Multiball, clean Piano Jackpots, and stacked
+    25M Gumballs. Avoid unnecessary bumper and skill-shot exposure.
+  behind: Push Powerball Mania for repeatable 50M upper-hole Jackpots. If the Door
+    is close, finish it for Lost in the Zone's deep scoring ceiling.
+  key_decision: Start Multiball after one lock for earlier protection, or survive
+    long enough for a second lock and the preferred 40M opening Jackpot instead of
+    15M.
+danger:
+- Lock-lane rejects can rebound straight toward the center drain.
+- Town Square bumpers sit by the large left outlane and can also send the ball toward
+  center.
+- The Powerball is lighter, faster, bouncier, and unaffected by Spiral Helper magnets.
+- During Mania, working the Powerfield while other balls remain live can collapse
+  Multiball.
+commentary:
+- They've got two balls locked, so Multiball starts with a 40-million Jackpot instead
+  of fifteen.
+- Piano is the Jackpot; after collecting it, they need the Camera to relight it.
+- That's the Powerball—the right orbit sends it back to the Gumball Machine and starts
+  Powerball Mania.
+- Every upper Powerfield hole is worth 50 million in Mania.
+- Those Mania points are stored in bonus, so a tilt would wipe out a huge apparent
+  run.
+- The Door Handle is flashing—they're one collect away from Lost in the Zone.
+trivia:
+- Twilight Zone was Pat Lawlor's immediate follow-up to The Addams Family and is a
+  mechanically elaborate widebody.
+- Its white ceramic Powerball is lighter than a steel ball and immune to the game's
+  magnets.
+- The mechanical clock nearly disappeared during cost-cutting, and the tooling budget
+  reportedly exceeded target by more than $200,000.
+- Fast Lock tunes through music and callouts from earlier Pat Lawlor games, including
+  Banzai Run, Earthshaker, Whirlwind, FunHouse, and The Addams Family.
+summary: Ramps → GUM-BALL → locks and Gumballs → Multiball or Mania → Door Panels
+  → Lost in the Zone
+venue_notes:
+- ROM 9.4 installed.
+- Tournament Mode is enabled.
+- Extra Balls are disabled; the Lite Extra Ball Door Panel is automatically considered
+  complete.
+- Physical ceramic Powerball is in use with the stock six-ball setup.
+- Ball saver is set to the machine default; confirm the active setting before calling
+  it out.
+- No particular problematic feed was reported.
+- The physical Powerball is shared machine state between players.
+- The exact no-Jackpot Multiball restart timer varies by reference; use the machine's
+  observed timer.
+image: images/twilight-zone-bally-1993.jpg

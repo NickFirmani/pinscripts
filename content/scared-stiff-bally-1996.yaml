@@ -1,0 +1,153 @@
+id: scared-stiff-bally-1996
+name: Scared Stiff
+manufacturer: Bally/Midway
+year: 1996
+metadata:
+  designer: Dennis Nordman and Mark Weyna
+  artist: Greg Freres
+  production: 4,028 units
+  era: WPC-95
+  multiball: Stiff in the Coffin (3-ball), Terror from the Crate (2-ball), and Monster
+    Multiball (4-ball)
+hook: Build Coffin Multiball through the left ramp and far-left loop, use Spider awards
+  for a Coffin or Crate restart and Double Trouble, then finish all six Tales to chase
+  Scared Stiff and Monster Multiball.
+rules:
+  primary: Complete the six Tales of Terror. The left ramp lights Coffin locks and
+    the far-left loop collects them; light all four crate eyes for Terror from the
+    Crate. After all six Tales, shoot the crate to start Scared Stiff and raise the
+    Stiff-O-Meter to level 10 for 5M and Monster Multiball.
+  bullets:
+  - Tales are accomplishments, not mutually exclusive timed modes; Coffin and Crate
+    multiballs cannot run together.
+  - Coffin jackpots begin at 500K and alternate between the ramps after the first
+    jackpot.
+  - Crate starts 2-ball multiball after all four eyes are lit; repeat starts become
+    harder.
+  - Scared Stiff is a 30-second single-ball challenge. Stiff-O-Meter progress persists
+    after a failed attempt, but the six Tales must be completed again.
+  - Three right-ramp shots award Hold Bonus for later balls.
+watch:
+- title: Coffin or Crate Spider award
+  text: A solid Coffin or Crate Spider insert means that multiball has an automatic
+    restart available after it drops to one ball.
+- title: Left-loop Lock lamp
+  text: The player has completed the left-ramp setup and can use the far-left loop
+    to lock a ball for Coffin Multiball.
+- title: All six Tales lit
+  text: The crate now starts Scared Stiff, shifting the game from setup toward its
+    wizard payoff.
+- title: Stiff-O-Meter near 10
+  text: Level 10 awards 5M and starts Monster Multiball, with repeatable 1M ramp and
+    crate shots.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge into the upper Skill Shot hole.
+  value: Scores 250K, increasing by another 250K with each later successful skill
+    shot.
+- name: Spider soft-plunge
+  how: Plunge only far enough through the upper gates to fall into the Spin Spider
+    hole.
+  value: Not the coded skill shot; it can target Coffin, Crate, or Double Trouble,
+    which can outweigh skill-shot points.
+features:
+- type: player-control
+  name: Spin the Spider
+  text: The right ramp lights the Spider hole; flippers stop the backbox pointer for
+    awards including Coffin, Crate, Double Trouble, progress, Light Jackpot, and Extra
+    Ball progress.
+- type: other
+  name: Double Trouble
+  text: Doubles all scoring for 20 seconds; most valuable immediately before multiball
+    or another high-scoring state.
+- type: ball-save
+  name: Saved by the Spell
+  text: Complete the three targets above the left outlane, normally twice, to light
+    a left-outlane drain save; production games serve another ball rather than using
+    a physical kickback.
+- type: other
+  name: Telepathetic Power
+  text: The right-side target toggles the right-outlane award; collecting it grants
+    an award rather than saving the ball.
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit through Spider eyeballs, Web/right-ramp progress, Leaper Mania,
+    Bonus X, and reaching Scared Stiff; collect it at the center passage.
+- type: other
+  name: Spider Mania
+  text: Collecting every Spider award eventually starts a 4-ball feature with broad
+    scoring lit, though it is generally too deep to drive ordinary tournament strategy.
+shots:
+- name: Left loop
+  value: Collects Coffin locks and feeds Deadheads and Lab progress; the core Coffin
+    route.
+  risk: Medium-High
+  diagram: 1
+- name: Left/Boney Beast ramp
+  value: Lights Coffin Lock, advances Boney Beast, and scores Coffin jackpots; the
+    key repeatable shot.
+  risk: Medium-High
+  diagram: 2
+- name: Crate
+  value: Advances Crate Multiball and starts Scared Stiff; also scores Monster Multiball
+    jackpots.
+  risk: High
+  diagram: 3
+- name: Spider hole
+  value: Awards Spider features, especially Coffin/Crate restarts or Double Trouble.
+  risk: Medium-High
+  diagram: 4
+- name: Right ramp
+  value: Relights Spider, advances Hold Bonus, and builds combo scoring.
+  risk: Medium
+  diagram: 5
+- name: Leaper targets
+  value: Complete Night of the Leapers, one of the six Tales.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Prioritize Coffin plus its Spider restart through controlled left-ramp and
+    left-loop play. Take straightforward alternating Coffin jackpots and avoid unnecessary
+    crate bashes or Leaper standups.
+  behind: Take Double Trouble before multiball, or push toward all six Tales and Scared
+    Stiff. Monster Multiball offers a 5M start and repeatable 1M ramp/crate shots
+    that can be doubled.
+  key_decision: Keep farming repeatable Coffin Multiball and left-ramp value, or leave
+    that safer loop to finish the remaining Tales and unlock the larger Monster Multiball
+    ceiling.
+danger:
+- Direct crate shots can produce wild, control-destroying rebounds.
+- A steep left-ramp reject can return straight toward the center drain.
+- Leaper standup rebounds can be instant-drain threats.
+- The Spider/upper kickout can be unpredictable; learn this machine before relying
+  on a catch.
+- Long side-to-side sling action is punishing, and qualifying the left Spell save
+  is itself dangerous.
+commentary:
+- They took Coffin on the Spider—that means this multiball gets one free restart when
+  it collapses.
+- Left ramp lights the lock; now the far-left loop actually parks the ball.
+- Double Trouble is running—everything is two-times for twenty seconds.
+- That was the sixth Tale; the crate now starts Scared Stiff.
+- The Stiff-O-Meter is almost at ten—finish it and they get five million plus Monster
+  Multiball.
+- 'Monster Multiball: both ramps and the crate are now repeatable million-point shots.'
+trivia:
+- Scared Stiff is the second Elvira pinball after Elvira and the Party Monsters (1989);
+  Dennis Nordman later designed Elvira's House of Horrors (2019).
+- The player-controlled Spin the Spider was marketed as an industry-first 3-D interactive
+  backbox feature.
+- Cassandra Peterson provides Elvira's voice; Tim Kitzrow supplied additional callouts.
+- Several planned production embellishments, including more elaborate bone-flipper
+  and skull effects, were cut amid mid-1990s cost pressure.
+- ROM 1.5 arrived after production and fixed Coffin jams, Spider logic issues, and
+  a multiplayer skill-shot bug.
+summary: Spider control → Coffin Multiball → six Tales → Scared Stiff → Monster Multiball
+venue_notes:
+- Extra Balls are disabled for this event.
+- ROM 1.5 fixes multiplayer skill-shot scoring, Coffin jams, and several Spider and
+  Leaper bugs; 1.3+ improves Coffin handling.
+- Spider-hole kickout, left-ramp rejects, and Leaper rebounds are copy-dependent.
+- The crate is considered typical in danger on this copy.
+- Spider soft-plunge reliability is machine- and plunger-dependent.
+image: images/scared-stiff-bally-1996.jpg

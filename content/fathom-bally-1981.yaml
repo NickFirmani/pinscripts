@@ -1,0 +1,119 @@
+id: fathom-bally-1981
+name: Fathom
+manufacturer: Bally Manufacturing
+year: 1981
+metadata:
+  designer: Ward Pemberton
+  artist: Greg Freres and Kevin O'Connor
+  production: 3,500
+  era: Bally AS-2518-35 solid-state
+  multiball: Lagoon (blue) and Cave (green), stackable to 3-ball
+hook: Light the spinner, build Cave multiball when practical, and chase both locks
+  for 3-ball playfield scoring. The inline drops also build the end-of-ball bonus.
+rules:
+  primary: Lock a ball in either Lagoon or Cave to raise that color's three inline
+    drops. Complete them to release the ball for 2-ball multiball; build and release
+    both colors for 3-ball play.
+  bullets:
+  - Two balls double all playfield scoring; three balls triple it.
+  - Inline-drop work advances separate 3×, 4×, and 5× end-of-ball bonus multipliers.
+  - The matching blue or green targets in the left six-bank can spot inline targets
+    and advance that color's bonus.
+  - A relocked ball during multiball leaves play until its release sequence is completed.
+  - Tilt ends the ball and forfeits its bonus.
+watch:
+- title: Lit spinner
+  text: The spinner is worth 5,000 per spin before multiball scoring. At 3-ball, it
+    is effectively 15,000 per spin.
+- title: Lock status
+  text: A ball sitting in Cave or Lagoon with inline drops raised means multiball
+    is being built. Both locks occupied signals a 3-ball setup.
+- title: Bonus lamps
+  text: Blue and green 3× through 5× lamps show end-of-ball bonus leverage and inline-drop
+    progress.
+- title: Inline drops
+  text: 'Count the remaining drops: they release locked balls while raising the separate
+    bonus multiplier.'
+skill_shots:
+- name: A-B-C lane skill shot
+  how: Plunge into an unlit top lane and use the right flipper button to rotate the
+    lit A-B-C lamps. If the lanes are equally useful, favor B because it advances
+    both blue and green bonus.
+  value: Complete A-B-C once to light one return lane for 50K, or twice to light both
+    return lanes.
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Hit the center 1-2-3 drops in order, then the flashing yellow target within
+    its adjusted time limit. Only one Extra Ball can be earned per ball in play.
+shots:
+- name: Spinner
+  value: 'Primary repeatable scoring shot: 5K per spin when lit, or 15K per spin in
+    3-ball play.'
+  risk: Medium
+  diagram: 1
+- name: Lagoon / blue lock
+  value: Starts blue-lock progress and is required to stack 3-ball multiball.
+  risk: High
+  diagram: 2
+- name: Left six-bank
+  value: Spots matching inline targets and advances bonus progress.
+  risk: High
+  diagram: 3
+- name: Inline targets
+  value: Release locked balls for multiball and advance 3×, 4×, and 5× bonus.
+  risk: Medium
+  diagram: 4
+- name: Cave Trap / green lane
+  value: Starts green-lock progress, the generally easier multiball route.
+  risk: Medium-High
+  diagram: 5
+- name: Light Spinner target
+  value: The lower-right standup lights the spinner for 5K per spin.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Light the spinner and collect repeatable points. Favor the easier Cave multiball,
+    but if spinner scoring is enough to win, avoid extra drop-bank exposure.
+  behind: Build both locks, start 3-ball play, then attack a lit spinner. The 3× playfield
+    multiplier creates the highest ceiling while the setup also builds bonus.
+  key_decision: 'Spinner now versus multiball first: the lit spinner is strong in
+    single-ball play, while delaying it for 3-ball offers more upside at the cost
+    of setup shots and drain risk.'
+danger:
+- Spinner shots feed uncontrolled upper-playfield and pop-bumper action.
+- Left and center drop-bank rebounds can kick toward center or either outlane.
+- The lower-lane geometry is reversed from many players' instincts; an incorrect nudge
+  can turn a save into a drain.
+- On the green-side return, forcing a conventional trap can be riskier than a right-to-left
+  dead bounce.
+- Relocking during multiball removes a ball and reduces the active playfield multiplier
+  until release.
+commentary:
+- Spinner's lit—five thousand a spin, and triple that if all three balls are going.
+- That's the green lock; Cave is generally the easier multiball to repeat.
+- 'Those inline drops are doing two jobs: releasing the locked ball and raising the
+  bonus multiplier.'
+- Both traps are loaded—this is the setup for triple playfield scoring.
+- 'He''s choosing spinner now instead of finishing the second multiball: safe score
+  versus ceiling.'
+- Remember, the lanes are reversed on Fathom—that outlane-looking feed may still be
+  saveable with the right nudge.
+trivia:
+- Fathom was designed by Ward Pemberton, with software by Rehman Merchant and artwork
+  by Greg Freres and Kevin O'Connor.
+- Bally produced 3,500 machines in 1981.
+- Its blue and green locks, bonuses, and target progress combine into 3-ball play.
+- Fathom includes synthesized speech.
+- Taito later produced the closely related Hawkman, and Haggis Pinball later created
+  Fathom Revisited.
+summary: Light spinner → build Cave lock → finish inline drops → stack both locks
+  → rip spinner in 3-ball
+venue_notes:
+- Original Bally rules are installed; do not use Home ROM V4 skill-shot behavior or
+  callouts.
+- Bonus, A-B-C, and inline-progress recall settings are unknown and may affect ball-to-ball
+  persistence.
+- Extra Ball and Special handling are unknown; avoid assuming point conversions or
+  normal Extra Ball play.
+image: images/fathom-bally-1981.jpg

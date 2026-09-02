@@ -1,0 +1,105 @@
+id: dealers-choice-williams-1974
+name: Dealer’s Choice
+manufacturer: Williams
+year: 1974
+metadata:
+  designer: Norm Clark
+  artist: Christian Marche
+  production: 8,850
+  era: Electro-mechanical four-player score-reel game
+  multiball: No multiball
+hook: Build bonus to 10,000, sweep the 1–9 matrix for 2× then 3×, and use the upper-right
+  flipper to attack cards cross-playfield. Every ball resets, so cash in before the
+  drain.
+rules:
+  primary: Build base bonus to 10,000 through the top lanes and yellow standups. Complete
+    1–9 once for double bonus and again for triple bonus; a 10,000 bonus at 3× pays
+    30,000 at the drain.
+  bullets:
+  - Complete 10-J-Q-K-A to light the right return lane for Extra Ball.
+  - Further 1–9 sweeps can light Special.
+  - Further card-bank completions can light the side Special rollover.
+  - Bonus, 1–9 progress, and card-bank progress reset after each ball.
+watch:
+- title: Center 1–9 buttons
+  text: The lit center buttons show how close the player is to the next double- or
+    triple-bonus sweep.
+- title: Bonus multiplier
+  text: With triple bonus lit, the end-of-ball bonus may matter more than another
+    small switch score.
+- title: Card-bank lamps
+  text: Completing 10 through Ace lights the right-bottom return lane for Extra Ball.
+- title: Lit right-side lane
+  text: A lit lane is a cash-out for Extra Ball or Special, not merely a return lane.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Card-bank Extra Ball
+  text: Complete 10-J-Q-K-A, then collect the lit right return lane.
+- type: other
+  name: Special
+  text: Repeated 1–9 sweeps or later card-bank completions can light a Special lane.
+shots:
+- name: 10-J-Q-K-A card targets
+  value: Advances toward Extra Ball and later Special.
+  risk: Medium
+  diagram: 1
+- name: Top bonus lanes
+  value: Advance base bonus by 1,000 toward its 10,000 maximum.
+  risk: Medium
+  diagram: 2
+- name: 1–9 rollover matrix
+  value: Completes double and triple bonus; later sweeps can light Special.
+  risk: High
+  diagram: 3
+- name: Yellow bonus standups
+  value: Advance base bonus by 1,000 without sending the ball fully upstairs.
+  risk: Medium
+  diagram: 4
+- name: Special / right return lane
+  value: Collects a previously lit Extra Ball or Special.
+  risk: Medium-High
+  diagram: 5
+- name: Upper-right cross-playfield card shot
+  value: Can advance card targets and often a center number in one shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Secure a clean 2× or 3× bonus, then reduce unnecessary center-matrix attacks.
+    Crosswise card shots offer a more controlled scoring route than repeated direct
+    center attempts.
+  behind: Finish missing 1–9 numbers for 3× bonus, then pursue the card-bank award
+    if its event treatment is valuable.
+  key_decision: Chase the one missing center button for a larger bonus, or protect
+    the bonus already built? The matrix feeds the game’s most chaotic area.
+danger:
+- Center 1–9 entries feed pop action that can exit down the center or either side.
+- The gap between the two lower-left flippers can punish attempted traps.
+- Right-outlane danger is highly adjustment-dependent.
+- Card-target rebounds can occasionally arc directly down the middle.
+- Fast lateral action leaves little recovery time after a miss.
+commentary:
+- That completes one through nine—double bonus. One more sweep makes it triple.
+- Base bonus is already ten thousand, so triple bonus would put thirty thousand on
+  the end of this ball.
+- 'Watch the upper-right flipper: that cross-shot can pick up a center number and
+  a playing card together.'
+- Ten through Ace are complete, so the right return is now an Extra Ball if the tournament
+  is playing them.
+- They only need one center number, but that’s the dangerous decision—the bonus is
+  already sitting there.
+- Triple bonus is secured; now there’s much less reason to keep gambling through the
+  center matrix.
+trivia:
+- Dealer’s Choice was designed by Norm Clark, with art by Christian Marche.
+- Its four-flipper layout includes two adjacent lower-left flippers and an upper-right
+  cross-playfield flipper.
+- Greg Kmiec said Dealer’s Choice inspired the playfield layout of Bally’s Capt. Fantastic.
+- Williams produced 8,850 units.
+- A Dealer’s Choice appears in the bar scenes of the original Rocky.
+summary: Build 10K bonus → complete 1–9 for 2× → sweep again for 3× → cash out at
+  the drain
+venue_notes:
+- Tournament is set to five balls.
+- Extra Ball is not played; the event treatment is disabled or converted to points.
+image: images/dealers-choice-williams-1974.jpg

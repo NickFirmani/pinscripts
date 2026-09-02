@@ -1,0 +1,142 @@
+id: winchester-mystery-house-barrels-of-fun-2025
+name: Winchester Mystery House
+manufacturer: Barrels of Fun
+year: 2025
+metadata:
+  designer: Karl DeAngelo
+  artist: Brad Albright
+  production: Limited run of 525 machines
+  era: Modern LCD-era pinball
+  multiball: Séance Multiball and Wheelbarrow Ghost Multiball
+hook: Tour a room, stack it with Séance or Wheelbarrow Ghost Multiball, then protect
+  the huge Playfield X bank long enough to collect it at the Spider Web.
+rules:
+  primary: Select a room, travel to it, and start it. White travel shots build that
+    room's value, with combos building faster. Stack a started room with Séance or
+    Wheelbarrow Ghost Multiball, then cash in safely.
+  bullets:
+  - A key can unlock a room or skip its door while retaining built room value; a travel
+    drain carries the tour to the next ball but halves that value.
+  - Qualify Séance locks through the inline drops, or light the captive ball green
+    to lower them before locking. Start a room before Séance when possible.
+  - Complete OPEN, hit a cyan ramp, then the cyan hallway or Stairs shot for Wheelbarrow
+    Ghost Multiball. On this machine, the first successful qualification starts it.
+  - Fill Spirit Energy with a lit spinner, then hit the X target for 2× and again
+    for 3×. Scoring goes into a bank that must be collected at Spider Web before it
+    expires or drains.
+  - The third right-ramp hit starts Stair Madness. Cashing Left Ramp to Right Ramp
+    doubles its bank; Center or Side to Left to Right makes it 4×.
+watch:
+- title: Blue playfield
+  text: 'Playfield X is active: score is being banked under the multiplier and remains
+    unsafe until the Spider Web collect.'
+- title: Apron Spirit Board
+  text: Its countdown shows short room and multiplier timers without needing to read
+    the LCD.
+- title: Captive ball colors
+  text: Green can lower the Séance drops; red during Séance Multiball advances toward
+    the Super Jackpot shot.
+- title: Red mansion-map dots
+  text: They mark failed rooms that released Angry Spirits; three trigger a Reckoning.
+skill_shots:
+- name: Rotating drop-bank skill shot
+  how: Plunge so the first switch hit is the currently flashing center drop.
+  value: 'Awards one opening prize: complete OPEN, max Spirit Energy, +3 to every
+    Thirteen category, or points when all three are lit. +3 Thirteens builds long-term
+    scoring; OPEN advances Wheelbarrow; max Energy sets up Playfield X.'
+features:
+- type: player-control
+  name: Run
+  text: Hold Action during travel to sprint or escape Angry Spirits. It starts ready
+    once; using it sacrifices scoring or opportunity, and requalification difficulty
+    is adjustable.
+- type: other
+  name: Help target
+  text: Once per room it sends a spirit to spot progress; during either primary multiball
+    it provides add-a-ball.
+- type: ball-save
+  name: Return kickback
+  text: The left-outlane rescue can be lit by Mystery; current code can instead use
+    a virtual save if the physical kickback is disabled.
+- type: mystery-award
+  name: Mystery
+  text: Tiered partly hidden awards can provide keys, OPEN, room value, Spirit Energy,
+    timer extensions, kickback, and other progress.
+- type: other
+  name: Wildcard Memento
+  text: A qualified Wildcard Memento can randomly award the Signature Quill for 99M.
+shots:
+- name: Séance Room
+  value: Locks balls and starts Séance Multiball; strongest when a room is already
+    running.
+  risk: Medium-High
+  diagram: 1
+- name: Captive ball
+  value: Lowers Séance drops when green, advances the Séance Super when red, and advances
+    Mementos.
+  risk: Medium
+  diagram: 2
+- name: Spinner / inner loop
+  value: Builds Spirit Energy for Playfield X and advances Wheelbarrow jackpots.
+  risk: Medium-High
+  diagram: 3
+- name: Left ramp
+  value: Advances Tour and Wheelbarrow routes and starts Stair Madness cash-out combos.
+  risk: Medium
+  diagram: 4
+- name: Right ramp
+  value: Advances Tour and Wheelbarrow, starts Stair Madness, and scores supers.
+  risk: Medium
+  diagram: 5
+- name: Right orbit / Spider Web
+  value: Collects the Playfield X bank and advances Mystery and Thirteens; mandatory
+    before the bank times out.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor reachable rooms over repeatedly spending keys to inflate room value.
+    Use Run to avoid dangerous travel encounters, take straightforward Stair Madness
+    cash-outs, and only start Playfield X when the Spider Web collect looks secure.
+  behind: Stack a room with Séance or Wheelbarrow, use 2× or 3× around valuable scoring,
+    extend travel value with keys, and build simultaneous Thirteens for higher variance.
+  key_decision: 'Build versus cash out: keys can keep room value growing, Stair Madness
+    rewards extra combo setup, and Playfield X puts all accumulated banked scoring
+    at risk until collected.'
+danger:
+- The left outlane remains a major danger even with Return available.
+- Repeated direct attacks on the close Séance drop bank can create uncontrolled rebounds.
+- The rotating hallway changes ball paths by turntable position, so returns are not
+  fixed.
+- A drain before the Spider Web collect destroys the entire Playfield X bank.
+commentary:
+- They've started the room first, so now they can bring Séance Multiball into it.
+- Green captive ball means they can lower the Séance targets without pounding directly
+  through the bank.
+- 'Everything''s blue: the spirits are stealing the score, and none of that multiplier
+  money is safe yet.'
+- Now they need the Spider Web collect; a drain here erases that entire bank.
+- OPEN is complete, so the next cyan ramp can set up Wheelbarrow.
+- They're spending a key instead of entering the room, deliberately keeping that room
+  value building.
+trivia:
+- Karl DeAngelo made his commercial game-design debut with Winchester Mystery House.
+- 'The 525-machine run matches the mansion''s address: 525 S. Winchester Blvd.'
+- The Ghost Box uses a Pepper's Ghost illusion to place digital spirits within the
+  physical playfield.
+- The revolving hallway has three entrances and eight positions, routing balls differently
+  through the same structure.
+- The collapsing tower references the tower lost in the 1906 San Francisco earthquake.
+summary: Tour rooms → stack multiball → build Playfield X → collect at Spider Web
+  → protect the bank
+venue_notes:
+- Installed code is 2026.08.20.
+- Extra balls are disabled.
+- Competition Mode is enabled; its treatment of Mystery and Wildcard-Memento randomness
+  is unclear.
+- 'Wheelbarrow Ghost Multiball uses the default setting: the first successful qualification
+  starts multiball.'
+- No known venue-specific feed problems were reported.
+- Ball-save and Run settings are at current defaults.
+- Use the game display as authority for revision-sensitive Playfield X collection
+  timing.
+image: images/winchester-mystery-house-barrels-of-fun-2025.jpg

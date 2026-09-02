@@ -1,0 +1,140 @@
+id: terminator-2-williams-1991
+name: 'Terminator 2: Judgment Day'
+manufacturer: Williams Electronics
+year: 1991
+metadata:
+  designer: Steve Ritchie
+  artist: Doug Watson
+  production: 15,202
+  era: Early WPC Dot Matrix
+  multiball: Three-ball Skull/Cannon Multiball
+hook: Drop the skull, load the cannon, and turn a double or triple Jackpot into repeatable
+  50M Super Jackpots—or build Security through alternating ramps for Payback Time.
+rules:
+  primary: 'The highest-ceiling route is Skull/Cannon Multiball: drop the skull, shoot
+    the popper, then fire the oscillating cannon at lit targets. During Multiball,
+    lock live balls for 2× or 3× Jackpots; a 2× or 3× Jackpot lights the repeatable
+    50M Super Jackpot while two or more balls remain.'
+  bullets:
+  - Alternate left and right ramps to complete five Security advances on each side
+    and start Payback Time; Security progress persists game-long.
+  - Payback Time is normally 20 seconds of repeatable 5M major shots, but its timer
+    is adjustable.
+  - Chase Loops build from 250K to 5M for the ball, with escalating consecutive-loop
+    bonuses.
+  - Escape Route progress persists ball-to-ball; its awards include Hold Bonus, Multiball,
+    Extra Ball, and 10M.
+  - Top lanes build Bonus X to 8×; Hold Bonus carries bonus and X to the next ball.
+watch:
+- title: Skull down / Load Gun
+  text: The central popper is open and a cannon opportunity is close.
+- title: Green lock arrows
+  text: In Multiball, each additional parked ball raises the upcoming cannon Jackpot
+    from 1× toward 3×, up to 30M.
+- title: Get Super Jackpot
+  text: The moving target is lit for the repeatable 50M Super Jackpot.
+- title: Security lamps
+  text: Five completed Security levels on both ramps starts Payback Time.
+skill_shots:
+- name: Trigger Skill Shot
+  how: 'Autoplunged ball: pull the gun trigger as the moving white lamp reaches the
+    standup target the ball will hit.'
+  value: First success is 1M; each later success adds another million. The lamp speeds
+    up after successes.
+features:
+- type: ball-save
+  name: Autofire
+  text: Protects the ball at ball start. The first Multiball has a short Autofire
+    period identified as 7 seconds in L-8 code analysis.
+- type: ball-save
+  name: Drop-Target Autofire
+  text: A separate adjustment can briefly protect dangerous skull-target shots; factory
+    default is Off. Its setting is unknown here.
+- type: other
+  name: Kickback
+  text: Left-outlane survival feature; starting and memory behavior are difficulty-adjustable.
+- type: mystery-award
+  name: Database
+  text: The skull target lights the lower-left eject for adaptive pseudo-random awards
+    including points, Multiball, Autofire, Hurry-Up, Extra Ball, and Video Mode.
+- type: video-mode
+  name: Video Mode
+  text: Qualified through Escape Route and return-lane progression; use flipper buttons
+    to move the sight and shoot Terminators.
+- type: extra-ball
+  name: Extra Balls
+  text: Available through Escape Route, Bonus-X/drop-target progression, Database,
+    and Video Mode; this machine is set to No Extra Ball.
+shots:
+- name: Escape Route / left orbit
+  value: Persistent utility awards and Multiball locks; collect sequential awards
+    at the upper-left hole.
+  risk: Medium
+  diagram: 1
+- name: Cannon targets
+  value: Start Multiball and score Jackpots or Super Jackpots; the core Multiball
+    payoff.
+  risk: High
+  diagram: 2
+- name: Left ramp
+  value: Advances Security toward Payback Time; alternate rapidly with the right ramp.
+  risk: Medium
+  diagram: 3
+- name: Skull drop + popper
+  value: Opens the cannon route, starts Multiball, and drives Jackpot/Super Jackpot
+    scoring.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Advances Security toward Payback Time; supports fast ramp alternation.
+  risk: Medium
+  diagram: 5
+- name: Chase Loop
+  value: Builds from 250K to 5M plus consecutive-loop Million-Plus bonuses.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: If ramp feeds are clean, favor the repeatable, lower-complexity Payback route.
+    A developed 5M Chase Loop is another strong grind.
+  behind: Force Multiball, trap aggressively, reach at least a 2× Jackpot, then repeatedly
+    attack the 50M Super Jackpot.
+  key_decision: Choose Multiball/Super Jackpot for trapping and cannon control, or
+    ramp-flow/Payback for clean alternating-ramp execution.
+danger:
+- Skull-drop rejects can become immediate center drains.
+- 'Cannon timing is critical: a miss can lose a Multiball, Jackpot, or 50M Super Jackpot
+  opportunity.'
+- Do not aim the cannon at Super Jackpot with another ball live unless that ball is
+  trapped.
+- Later Escape Route 3-bank completions are timed and can produce poor standup rebounds.
+- Stock-code ball-popper state bugs are documented; this machine runs factory L-8.
+commentary:
+- Skull is down—one more shot into the popper loads the cannon for Multiball.
+- They've locked two live balls, so this cannon shot is a triple Jackpot—up to 30
+  million.
+- 'A double or triple Jackpot lights the real prize: 50 million Super Jackpot.'
+- They're trapping before firing the cannon, giving themselves time to aim while protecting
+  the other ball.
+- 'Five Security levels on each ramp: Payback Time, with every major shot worth five
+  million.'
+- They're living on the right orbit; once Chase is maxed, that is five million every
+  loop.
+trivia:
+- Terminator 2 was the first Williams game designed around the standard 128×32 dot-matrix
+  display, though Gilligan's Island reached production first.
+- It is generally credited as the first pinball with a player-fired swing-out cannon.
+- It introduced pinball's first widely recognized DMD video mode.
+- Arnold Schwarzenegger recorded custom speech for the game.
+- Steve Ritchie had conceived the rotating-cannon idea years before realizing it on
+  T2.
+summary: Skull → cannon Multiball → 2×/3× Jackpot → 50M Super; ramps → Security →
+  Payback; Chase Loop → 5M
+venue_notes:
+- 'Installed CPU ROM: factory L-8.'
+- Extra Balls are set to No Extra Ball.
+- Cannon calibration is consistently accurate.
+- No physical feed is noted as unusually dangerous.
+- Drop-Target Autofire setting is unknown.
+- Payback Time is operator-adjustable; factory-era documentation describes 20 seconds.
+- Later-Multiball Autofire protection depends on ROM and configuration.
+image: images/terminator-2-williams-1991.jpg

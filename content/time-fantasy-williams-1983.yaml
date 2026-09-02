@@ -1,0 +1,125 @@
+id: time-fantasy-williams-1983
+name: Time Fantasy
+manufacturer: Williams Electronics
+year: 1983
+metadata:
+  designer: Barry Oursler
+  artist: Seamus McLaughlin
+  production: 608 total units
+  era: System 7 solid-state, four-player production
+  multiball: No multiball; Snail Time is its timed unlimited-ball feature.
+hook: 'Build 1–5 and TIME, then unleash Snail Time: a timed mode where drains relaunch
+  the ball and mature 1–5 sets can become enormous.'
+rules:
+  primary: Complete 1–5 to raise its set value from 10K to 90K and advance the Snail
+    Time playfield multiplier to 5X. Spell TIME at the tunnel to start Snail Time;
+    it lasts at least 30 seconds, can be built to 99 seconds beforehand, and drains
+    relaunch without reducing the clock.
+  bullets:
+  - TIME letters carry between balls, but the 1–5 playfield multiplier does not.
+  - 'Before Snail Time, #1 adds 10 seconds, lit return lanes add 5, and FANTASY completion
+    adds 5; no time can be added after the mode starts.'
+  - FANTASY standups advance end-of-ball Bonus X through 2X, 3X, 5X, and 10X. Base
+    bonus tops out at 39K and resets each ball.
+  - Build the horseshoe from 10K to 100K with left-orbit shots and arrow-direction
+    horseshoe shots; taking it opposite the arrow lowers it one step.
+watch:
+- title: TIME letters
+  text: With T-I-M already collected, one tunnel shot starts Snail Time—and that progress
+    survives a drain.
+- title: Snail Time clock
+  text: While the clock runs, drains relaunch the ball. Expect fast plunge-and-score
+    play until time expires.
+- title: 1–5 and playfield X
+  text: A delayed TIME shot may signal deliberate setup for 4X or 5X before starting
+    the clock.
+- title: Horseshoe arrow
+  text: The arrow shows whether a horseshoe shot will build its 10K-to-100K value
+    or reduce it.
+skill_shots:
+- name: 1–5 Skill Shot
+  how: Plunge through the flashing top 1–5 lane; use right-flipper lane change to
+    position the lit lane.
+  value: 'The flashing lane spots a TIME letter. #1 also adds 10 seconds toward the
+    next Snail Time, making it the premium setup lane.'
+features:
+- type: ball-save
+  name: Snail Time ball save
+  text: For the full timed feature, drained balls are replaced without reducing the
+    timer. It is continuous protection rather than a brief conventional ball save.
+shots:
+- name: TIME tunnel
+  value: Spells TIME and starts Snail Time; the mandatory gateway to the primary scoring
+    mode.
+  risk: High
+  diagram: 1
+- name: 1–5 lanes
+  value: Build escalating set awards and the Snail Time playfield multiplier; the
+    core setup and scoring route.
+  risk: Medium
+  diagram: 2
+- name: '#1 lane'
+  value: Advances 1–5 and adds 10 seconds toward Snail Time, making it the best pre-mode
+    lane.
+  risk: Medium
+  diagram: 3
+- name: Left orbit
+  value: Raises horseshoe value and feeds the ball back to the upper playfield.
+  risk: Medium
+  diagram: 4
+- name: Horseshoe / mushroom jump
+  value: Builds a directional 10K-to-100K repeatable award when made with the arrow.
+  risk: High
+  diagram: 5
+- name: FANTASY standups
+  value: Advance Bonus X to 10X and can add 5 seconds upon FANTASY completion; maximum
+    bonus is 390K.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Get TIME close, build a reasonable 1–5 multiplier, then start Snail Time
+    rather than waiting greedily for a perfect 99-second, 5X setup. Use the safe relaunches
+    to attack the upper lanes.
+  behind: Push toward 5X and bank more time before starting Snail Time, then aggressively
+    cycle through 1–5. A mature 90K set at 5X is 450K; a built horseshoe or maximum
+    390K bonus offers separate leverage.
+  key_decision: Start Snail Time now or keep building it? Thirty seconds of protected
+    scoring is valuable, but a long timer and 5X can be devastating; every extra setup
+    shot risks a normal-ball drain.
+danger:
+- TIME tunnel rebounds can return straight down the middle.
+- 'Avoid forcing FANTASY standups: their rebounds are dangerous.'
+- Pop-bumper exits can feed down the back side of the horseshoe toward center.
+- The horseshoe can side drain and is safer to test while Snail Time is protecting
+  the ball.
+- Failed post-pass or shatz transfers can expose the wide lower playfield on a fast
+  game.
+commentary:
+- He has three letters of TIME—one tunnel shot starts Snail Time, and those letters
+  carry between balls.
+- He's delaying TIME because he wants the 1-through-5 multiplier higher before starting
+  the clock.
+- Snail Time is running now—drains don't matter until that clock expires.
+- At five times, the mature 1-through-5 completion is 450,000.
+- 'The horseshoe is directional: make it with the arrow and the value climbs; go the
+  wrong way and it drops.'
+- FANTASY is the other multiplier—this one is end-of-ball bonus, topping out at ten
+  times.
+trivia:
+- Programmer Ed Suchocki recalled the team had less than three weeks to get the game
+  ready so the factory line would not shut down.
+- It was intended as a low-cost game with limited play time while Williams concentrated
+  heavily on video games.
+- Only 608 machines were produced.
+- Williams experimented with a two-player version before distributors pushed for the
+  four-player production configuration.
+- Collectors sometimes call its giant-snail artwork “Acid Trip Snail,” though that
+  is not an official title.
+summary: Build 1–5 → spell TIME → start Snail Time → exploit relaunches → chase 5X
+  and bonus
+venue_notes:
+- Venue machine is the standard four-player production version.
+- Installed ROM is L-5.
+- Tilt is normal.
+- TIME progress carries between balls; the playfield multiplier resets each ball.
+image: images/time-fantasy-williams-1983.jpg

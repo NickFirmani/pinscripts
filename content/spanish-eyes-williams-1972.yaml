@@ -1,0 +1,134 @@
+id: spanish-eyes-williams-1972
+name: Spanish Eyes
+manufacturer: Williams
+year: 1972
+metadata:
+  designer: Norm Clark
+  artist: John Craig
+  production: 3,905
+  era: Early-1970s electromechanical
+  multiball: No multiball
+hook: Build 1–6 to raise the center saucer to 6,000, then decide whether to farm its
+  value or reset the numbers through the horseshoe award—all while surviving the pop
+  bumper between the flippers.
+rules:
+  primary: Light the six numbered standups to raise the center saucer from 500 to
+    6,000. Completing 1–6 lights the horseshoe award and both lower rollovers for
+    5,000; taking the horseshoe award resets 1–6. Complete A–E for the other sequence
+    award. There is no end-of-ball bonus.
+  bullets:
+  - The saucer scores 500 with no numbers lit, then 1,000 per lit number.
+  - In Novelty, completed A–E or 1–6 sequences award 10,000 points instead of another
+    ball.
+  - The 5,000-point lower rollovers stay lit for the rest of the ball after 1–6 is
+    completed.
+  - A–E completion resets its letter sequence.
+  - All meaningful scoring is immediate; there is no accumulated bonus to lose.
+watch:
+- title: Number lamps 1–6
+  text: They reveal the center saucer value. With all six lit, it is worth 6,000.
+- title: Horseshoe award
+  text: Once 1–6 is complete, the player must choose between taking the award and
+    resetting profitable number progress.
+- title: A–E lamps
+  text: They show progress toward the other sequence award.
+- title: ON BUMPERS
+  text: A successful plunge through this rollover lights the upper side bumpers for
+    100 points.
+skill_shots:
+- name: Competitive two-part plunge
+  how: Plunge through the ON BUMPERS rollover above C, then aim for an unlit A–E lane;
+    C is a common opening choice, while later balls target the missing letter.
+  value: Lights upper side bumpers for 100 instead of 10 and advances the A–E sequence
+    toward its award.
+features:
+- type: extra-ball
+  name: Two sequence award routes
+  text: Under normal or Add-A-Ball settings, complete A–E, or complete 1–6 and shoot
+    the lit horseshoe, for an Extra Ball.
+- type: other
+  name: Novelty conversion
+  text: Novelty changes either completed sequence award into 10,000 points instead
+    of another ball.
+- type: other
+  name: Lit lower rollovers
+  text: Completing 1–6 lights both lower side rollovers/outlanes for 5,000 for the
+    remainder of the ball.
+shots:
+- name: Lit bottom rollover
+  value: 5,000 after 1–6 is complete; a large consolation score, but it is effectively
+    an outlane.
+  risk: High
+  diagram: 1
+- name: Number targets 1–6
+  value: Build center-saucer value and qualify the horseshoe award plus 5,000 lower
+    rollovers.
+  risk: Medium
+  diagram: 2
+- name: A–E top lanes
+  value: Advance the letter sequence toward its award; especially useful from the
+    plunge.
+  risk: Medium
+  diagram: 3
+- name: ON BUMPERS rollover
+  value: Lights the upper side bumpers for 100 points instead of 10.
+  risk: Medium
+  diagram: 4
+- name: Horseshoe
+  value: Scores 5,000 and collects the lit 1–6 sequence award, but its return can
+    be dangerous.
+  risk: High
+  diagram: 5
+- name: Center saucer
+  value: Scores 500 to 6,000 based on lit numbers; a repeatable cash shot after setup.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor whichever center return the physical game handles more safely. If both
+    are dangerous, stay upstairs to build numbers; with all six lit, repeatedly scoring
+    the 6,000 saucer may beat resetting progress.
+  behind: 'Accept center-shot variance: the 5,000 horseshoe and 6,000 saucer outscore
+    ordinary switches. In Novelty, completed A–E and 1–6 sets become immediate 10,000-point
+    targets.'
+  key_decision: Choose horseshoe or saucer based on the actual return, then decide
+    whether the sequence award is worth resetting a valuable 1–6 state.
+danger:
+- The pop bumper between and below the flippers is the defining hazard; center returns
+  often feed it.
+- Open spaces beneath both flippers can drain a ball after a mistimed defensive flip.
+- A horseshoe return can rebound repeatedly from the bottom bumper and head down the
+  middle.
+- Saucer kickouts often head toward the right flipper or bottom pop and are not reliably
+  catchable.
+- The bottom bumper can propel a ball past a raised flipper and into an outlane.
+commentary:
+- He's building the numbers because every one raises the value of that center saucer.
+- All six are lit—saucer is six thousand, and the horseshoe now offers the sequence
+  award.
+- Taking that award resets the numbers, so he may keep farming the six-thousand-point
+  saucer instead.
+- That center horseshoe is five thousand, but the real question is what the bottom
+  bumper does with the return.
+- He got ON BUMPERS on the plunge; the upper pops are now worth a hundred.
+- If this machine is set to Novelty, those sequence completions are ten thousand points
+  instead.
+trivia:
+- 'Spanish Eyes is a famous middle-pop layout: its fourth pop bumper sits directly
+  between and below the flippers.'
+- The factory manual specifies 24-volt operation with rectified DC powering components
+  including bumpers and kickers.
+- Norm Clark designed the game; archival consensus credits John Craig for the artwork.
+- Granada shares the visual family and add-a-ball concept but has a different playfield
+  layout.
+- Segasa produced its own Spanish Eyes version in 1973 with the same basic layout
+  and different artwork.
+summary: Build 1–6 → raise saucer value → weigh 6K against reset → survive center
+  returns → convert sets for 10K
+venue_notes:
+- The venue configuration is five-ball.
+- 'The venue reports a probably-Novelty setting: completed A–E and 1–6 sequences may
+  award 10,000 points rather than an Extra Ball.'
+- Center-shot safety remains machine-dependent; watch horseshoe and saucer returns
+  before committing to either route.
+- The pop bumpers are reported strong enough for normal Spanish Eyes strategy.
+image: images/spanish-eyes-williams-1972.jpg

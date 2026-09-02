@@ -1,0 +1,130 @@
+id: black-knight-williams-1980
+name: Black Knight
+manufacturer: Williams Electronics
+year: 1980
+metadata:
+  designer: Steve Ritchie; software by Larry DeMar
+  artist: Tony Ramunni
+  production: 13,075 standard machines
+  era: Williams System 7 solid-state, four-player
+  multiball: 2- or 3-ball multiball; playfield scoring is multiplied by balls remaining
+hook: 'Black Knight is an upper-playfield control game: get upstairs, lock three balls
+  through the mini-orbit, and keep them alive for triple scoring.'
+rules:
+  primary: Use the left ramp to reach the upper playfield, then lock balls at the
+    upper mini-orbit. Three upper locks start 3-ball multiball; every playfield score
+    is worth 3× with three balls alive and 2× with two. There are no jackpots.
+  bullets:
+  - A flashing LOCK arrow makes a lock permanent and lights the lower eject hole.
+  - All four drop-target 3-banks are timed; complete one before it resets for 10K,
+    an arrow advance, and a Magna-Save light.
+  - The lower eject starts 2-ball with one ball locked or 3-ball with two locked,
+    but the upper-lock start keeps all balls upstairs initially.
+  - Bonus reaches 49K; the turnaround can build Bonus X to 5× for a 245K maximum end-of-ball
+    bonus.
+  - Last Chance can release locked balls on the final regular ball, but without multiball
+    scoring.
+watch:
+- title: Upper lock stack
+  text: Physically stacked balls in the upper lock signal progress toward three-ball,
+    triple-scoring multiball.
+- title: Magna-Save lit
+  text: The matching outlane has an armed player-controlled rescue; the player must
+    press the red cabinet button.
+- title: Right inlane to spinner
+  text: The right inlane briefly lights the spinner for 2,500 per spin.
+- title: Left inlane to Mystery
+  text: The left inlane briefly lights the center ramp for a 20K–99K Mystery award.
+skill_shots: []
+features:
+- type: player-control
+  name: Magna-Save
+  text: Completing drop banks lights manually triggered magnets above the outlanes.
+    A red cabinet button activates one for a short, adjustable duration; it is not
+    guaranteed to save the ball.
+- type: mystery-award
+  name: Mystery Score
+  text: Left inlane briefly lights the center-ramp rollunder for 20K–99K; the award
+    is multiplied during multiball.
+- type: other
+  name: Super Spinner
+  text: Right inlane briefly raises the spinner from 100 to 2,500 per spin.
+- type: extra-ball
+  name: Extra Balls
+  text: Repeated drop-bank completions can earn Extra Balls, collected at the upper
+    left-ramp rollover or turnaround.
+shots:
+- name: Left ramp / upper entrance
+  value: Primary route upstairs; use it to leave the lower playfield and establish
+    upper-flipper control.
+  risk: Medium-High
+  diagram: 1
+- name: Upper mini-orbit / lock
+  value: Locks balls and starts three-ball multiball; the central long-term objective.
+  risk: Medium
+  diagram: 2
+- name: Lower eject hole
+  value: 'Starts multiball with existing locks: take 2-ball with one locked or 3-ball
+    with two.'
+  risk: Medium
+  diagram: 3
+- name: Spinner
+  value: Scores 100 normally or 2,500 per spin while lit; a major timed multiball
+    opportunity.
+  risk: Medium
+  diagram: 4
+- name: Center ramp / Mystery
+  value: Collects the timed 20K–99K Mystery award, worth up to 297K in three-ball
+    multiball.
+  risk: High
+  diagram: 5
+- name: Turnaround / half-figure-eight
+  value: Builds Bonus X through 5× toward a possible 245K end-of-ball bonus.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Stay upstairs, lock deliberately, and protect the three-ball multiball. Avoid
+    chasing the turnaround solely for Bonus X; let multiball action advance it incidentally.
+  behind: Prioritize three-ball multiball and the timed Mystery and spinner awards.
+    If a third lock is out of reach, taking the lower eject with one lock for immediate
+    two-ball can be justified.
+  key_decision: Take multiball now from the lower eject, or risk more single-ball
+    play to release all three from the safer upper lock? Three locked upstairs is
+    generally preferred.
+danger:
+- An upper-level exit can send a ball straight down the middle.
+- The half-figure-eight or turnaround can feed the left outlane.
+- Lower drop-bank rebounds can create center or outlane danger.
+- Partial ramp shots can return violently toward the flippers.
+- A Magna-Save can alter the path without preventing an outlane drain.
+commentary:
+- He's going straight back upstairs—on Black Knight the lock loop is the whole game.
+- Three balls up top means triple playfield scoring as long as he keeps all three
+  alive.
+- Right inlane lit the spinner; that's 2,500 a spin before the multiball multiplier.
+- Left inlane lit Mystery—he's only got a short window for that center ramp.
+- That Magna-Save is armed, but the player still has to press the button and the save
+  isn't automatic.
+- Taking the lower eject here starts multiball now, but he'd rather release all three
+  from the upper lock.
+trivia:
+- Black Knight was the first solid-state pinball machine with a two-level playfield.
+- It introduced Williams' Magna-Save, a player-controlled electromagnet above each
+  outlane.
+- Steve Ritchie designed the game and supplied the Black Knight's taunting voice.
+- Williams produced 13,075 standard machines, followed by 600 cosmetically upgraded
+  Limited Editions in 1981.
+- Its multiball scores through 2× and 3× playfield scoring rather than modern-style
+  jackpots.
+summary: Get upstairs → lock three → start 3-ball → protect triple scoring → collect
+  timed spinner and Mystery
+venue_notes:
+- Stock Williams code is installed.
+- Upper LOCK qualification is typically hard and requires the U-turn route.
+- Lit LOCK progress remembers across balls on this machine.
+- 'Extra Balls are disabled: maximum EBs = 0.'
+- Multiplayer Bonus Ball is disabled.
+- The 1981 Limited Edition is cosmetically different with revised trough/lock switches;
+  gameplay is essentially the same.
+- BK25 is not installed; that replacement code uses radically different rules.
+image: images/black-knight-williams-1980.jpg

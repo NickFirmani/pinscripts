@@ -1,0 +1,142 @@
+id: batman-66-premium-stern-2016
+name: Batman ’66 (Premium)
+manufacturer: Stern Pinball
+year: 2016
+metadata:
+  designer: George Gomez
+  artist: Kevin O’Connor and Christopher Franchi
+  production: ''
+  era: SPIKE 2
+  multiball: Villain Multiball
+hook: Qualify Catwoman with both ramps, start her at the Bat-Phone, double the mode
+  with the Batcave Combo, then build locks and multipliers toward Villain Multiball.
+rules:
+  primary: Qualify a Major Villain through its matching shots, hit the Bat-Phone to
+    start its mode, and build Super Jackpot value. Scoop then hit the orange left
+    orbit before the first mode shot to double the mode’s base scoring.
+  bullets:
+  - Catwoman uses ramps, Joker uses Villain-Vision/turntable targets, Penguin uses
+    the scoop, and Riddler uses orbits.
+  - At a lit scoop Super Jackpot, cash out for security or continue for +1× mode scoring
+    and a larger future jackpot.
+  - Three Gordon hits light permanent shot multipliers from 2× through 6×; the next
+    major shot receives the multiplier.
+  - Batmobile-side targets light 2× playfield for 30 seconds; repeat during the timer
+    for 3×.
+  - Lock three balls through the right orbit during a villain mode to start Villain
+    Multiball.
+watch:
+- title: Bat-Phone exposed
+  text: A Major Villain is qualified; the next Bat-Phone hit starts that villain mode.
+- title: Flashing white X
+  text: A permanent Gordon shot multiplier is assigned there for the rest of the ball;
+    count the flashes for its value.
+- title: Villain Multiball
+  text: Green major-shot arrows and balls on the rotating turntable signal Villain
+    Multiball. After jackpots, watch for Atomic Pile Super Jackpot.
+- title: Main Channel
+  text: The large LCD TV is the Main Channel. Holding action changes it, which matters
+    when King Tut's multiplier is in play.
+skill_shots:
+- name: Top-Lane Skill Shot
+  how: Plunge when the desired top lane indicator is lit, then collect that lit rollover.
+  value: 600K plus 200K per prior success, with +5 Bonus X.
+- name: Penguin Skill Shot
+  how: Soft-plunge directly into the Penguin scoop, or quickly backhand it after a
+    short plunge.
+  value: About 1M–1.2M, +5 Bonus X, and advances the scoop’s normal award.
+- name: Super Skill Shot
+  how: Hold the left flipper while plunging, then make a flashing major shot within
+    five seconds.
+  value: Instantly qualifies that villain when none is running; during a villain,
+    awards a Gadget.
+features:
+- type: ball-save
+  name: Ball Save
+  text: Standard ball save is approximately five seconds. Villain Multiball has its
+    own save; completing Shame adds a ball and +10 seconds to multiball base save.
+- type: player-control
+  name: Gadgets and Main Channel
+  text: Complete GADGET, then tap action to spot a mode shot. Holding action changes
+    the TV Main Channel.
+- type: mystery-award
+  name: Mystery
+  text: Complete return lanes and collect at the left-orbit saucer. During multiball
+    it gives Add-A-Ball; during timed modes it can add time.
+- type: extra-ball
+  name: Extra Ball
+  text: Normally lights at the left-orbit saucer after two captured Major Villains,
+    at combo thresholds, or from percentage-based Mystery.
+shots:
+- name: Left orbit / saucer
+  value: Advances minor villains, Mystery, extra ball, and the Batcave Combo.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Advances Catwoman and combos; a flow-oriented route for Catwoman qualification
+    and scoring.
+  risk: Medium
+  diagram: 2
+- name: Turntable / Bat-Phone
+  value: Advances villains, locks, Joker, and mode progression; central multiball
+    setup.
+  risk: Medium-High
+  diagram: 3
+- name: Atomic Pile
+  value: Builds Bat Turn, 2×/3× playfield, and Villain Multiball Super Jackpot.
+  risk: High
+  diagram: 4
+- name: Penguin scoop
+  value: Advances Penguin and cashes villain Super Jackpot; begins the Batcave Combo.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit
+  value: Advances Riddler and locks balls for Villain Multiball once lit.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use Catwoman into Shame into Villain Multiball, take strong Super Jackpot
+    cash-outs, and lean on ramp flow rather than spending a whole ball building deep
+    infrastructure.
+  behind: Invest in stacked multipliers or the Bookworm → Freeze → Tut engine, and
+    consider advancing Major Villain stages instead of immediately cashing Super Jackpot.
+  key_decision: Cash the villain Super Jackpot now for security, or continue for another
+    +1× mode scoring and a potentially much larger eventual cash-out.
+danger:
+- Turntable magnet releases are setup-dependent and can range from a left-flipper
+  feed to a center drain.
+- Poor left-ramp or wireform alignment can produce airballs or rejects.
+- The right orbit can return quickly to a sling or outlane rather than a clean flipper
+  feed.
+- Atomic Pile is a narrow center shot; misses can return uncontrolled.
+- Repeated Gordon, TV, and GADGET standup attempts trade away ramp flow.
+commentary:
+- Catwoman is qualified—the Bat-Phone now starts the villain mode.
+- They got the Batcave Combo before the first mode shot, so the base villain scoring
+  is doubled.
+- That Gordon multiplier stays on that shot for the rest of this ball.
+- Three locks collected—Villain Multiball is coming off the turntable.
+- Super Jackpot is ready, but they can refuse the cash-out and advance the mode at
+  another plus-one-times.
+- Freeze is complete; those timers no longer matter, making Bat Turn and playfield
+  X much more dangerous.
+trivia:
+- Batman ’66 debuted Stern’s SPIKE 2 platform and HD LCD presentation, using footage
+  from the 1966 television series.
+- Adam West and Burt Ward supplied speech for the game.
+- The rotating Action Turntable alternates between the Bat-Phone/Villain Vision and
+  Batcave mechanisms.
+- Stern released it for its 30th anniversary and the television show’s 50th anniversary.
+- The game was inspired by former Stern designer Joe Kaminkow, with Gomez and Sheats
+  leading development.
+summary: Catwoman ramps → Batcave Combo → locks → Villain Multiball → stacked multipliers
+venue_notes:
+- Software is 1.14.
+- Competition Mode or custom tournament adjustments are active; exact award normalization
+  should be checked.
+- Extra balls are disabled.
+- Standard ball save is approximately five seconds.
+- Premium, LE, and Super LE share core layout and rules; trim, art, audio, and collector
+  hardware differ.
+- Physical turntable, ramp, and orbit feeds are machine/setup-dependent.
+image: images/batman-66-premium-stern-2016.jpg

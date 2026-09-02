@@ -1,0 +1,144 @@
+id: dialed-in-jersey-jack-2017
+name: Dialed In!
+manufacturer: Jersey Jack Pinball
+year: 2017
+metadata:
+  designer: Pat Lawlor
+  artist: John Youssi
+  production: ''
+  era: Modern LCD-era pinball
+  multiball: Under Attack, Quick Multiballs, and Quantum Theater Multiball
+hook: 'Build SIM Cards through Disaster Modes: each card makes every later completed
+  mode worth more. Secure the blinking SIM before draining, then decide whether to
+  finish modes naturally or use Big Bang as the guaranteed escape hatch.'
+rules:
+  primary: Hit QED to charge the phone, start a Disaster Mode at the green Phone Scoop,
+    complete it, and collect the lit SIM Card at the upper-right scoop before a drain.
+    SIM Cards persist and add copies of completed-mode value, making later modes increasingly
+    important.
+  bullets:
+  - Mode qualification grows from one to as many as four QED hits; extra hits can
+    Overcharge the phone for more mode scoring.
+  - Flipper buttons select the available Disaster Mode before it starts.
+  - Big Bang can instantly finish a mode and light its SIM Card, but skipped shots
+    do not add to the mode total.
+  - Under Attack Multiball can be deferred so a Disaster Mode can be started and stacked
+    with it.
+  - Advance Kilowatts, Spiders, Drones, and Transit toward Quantum Theater Multiball.
+    Eight SIM Cards qualify Showdown.
+watch:
+- title: Green phone border
+  text: A Disaster Mode is ready. Watch the phone display for the chosen mode.
+- title: Blinking SIM scoop
+  text: A SIM Card is waiting. It normally disappears if the ball drains, so collection
+    is often the immediate priority.
+- title: Big Bang lit
+  text: The player has a guaranteed mode-completion option; its value depends heavily
+    on the existing SIM total.
+- title: Arrow colors
+  text: Blue arrows are Crazy Mode shots, green arrows are multiball locks, and red
+    arrows are multiball jackpots.
+skill_shots:
+- name: Normal Skill Shot
+  how: Short-plunge to stop behind the Theater and cross the shooter-lane switch at
+    the desired lit award.
+  value: Starts at 5K and rises with successive successes. Hold awards can preserve
+    Bonus, Drones, Kilowatts, Transit, or Spider resources across balls.
+- name: Super Skill Shot
+  how: After a successful normal skill shot feeds the upper flipper, shoot the side
+    ramp.
+  value: Improves the selected skill-shot award or value.
+- name: Super Duper Skill Shot
+  how: From the same upper-flipper feed, shoot the SIM Card scoop.
+  value: Awards the strongest version of the selected award, especially useful for
+    Bonus X or resource holds.
+features:
+- type: ball-save
+  name: Kickback
+  text: Complete the lower-left B-O-B targets to light the left kickback.
+- type: extra-ball
+  name: Extra Ball
+  text: Normally lights after three Disaster Modes; other qualifications include high
+    combo totals and some awards.
+- type: mystery-award
+  name: Drone Mystery / Competition behavior
+  text: Competition Mode normalizes some random behavior; Singularity's final shot
+    becomes the left orbit.
+- type: player-control
+  name: Flipper controls
+  text: Flippers select Disaster Modes and can move the active inlane hurry-up.
+shots:
+- name: QED moving target
+  value: Charges or Overcharges the phone and advances Under Attack Super Jackpots.
+  risk: Medium-High
+  diagram: 1
+- name: Phone Scoop
+  value: Starts Disaster Modes or Under Attack and adds mode time.
+  risk: Medium-High
+  diagram: 2
+- name: SIM Card Scoop
+  value: Collects lit SIM Cards; the priority cash-out after completing a mode.
+  risk: High
+  diagram: 3
+- name: Light Big Bang target
+  value: Qualifies the Big Bang bailout before difficult modes.
+  risk: Medium-High
+  diagram: 4
+- name: Big Bang target
+  value: Completes a mode or collects lit multiball jackpots.
+  risk: Medium
+  diagram: 5
+- name: Side ramp
+  value: Locks balls, scores 2X Under Attack jackpots, and serves the Super Skill
+    Shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Light Kickback, choose Disaster Modes that can be finished naturally, and
+    collect every SIM immediately. With several SIMs, preserve the larger value of
+    manually made mode shots rather than using Big Bang unnecessarily.
+  behind: Choose harder, higher-value modes, Overcharge the phone, stack a mode with
+    multiball where possible, and use Big Bang when needed to guarantee SIM progress.
+  key_decision: Finish the Disaster manually for its full SIM-enhanced value, or fire
+    Big Bang now to guarantee the SIM Card. Score position, difficulty, and remaining
+    time decide it.
+danger:
+- The upper-flipper SIM Card shot is vital and difficult; a miss can lose the card
+  before drain.
+- QED is a moving standup that can create sharp, unpredictable rebounds.
+- The Theater return can be very fast, making Theater-to-side-ramp control difficult.
+- Big Bang access is especially narrow when QED is near its home position.
+- During Under Attack, an approaching attack can briefly disable the affected flipper
+  if it reaches it first.
+commentary:
+- Mode complete—now the real job is getting that SIM Card before the ball gets away.
+- Every SIM makes the rest of the Disaster Modes more valuable, so this scoring curve
+  accelerates quickly.
+- Big Bang is ready; that guarantees the completion, but it leaves the unmade mode
+  shots—and their multiplier value—on the table.
+- They’re deliberately holding off on Under Attack so they can start a Disaster and
+  bring the mode into multiball.
+- QED has charged the phone green—now watch the mode selection on the handset.
+- That red line is an Under Attack Super Jackpot coming toward the flipper; if it
+  gets there first, the flipper actually shuts down briefly.
+trivia:
+- Dialed In! was Pat Lawlor’s first new pinball design in roughly a decade and reunited
+  him with John Youssi.
+- It was Jersey Jack Pinball’s third game and used an original, rather than licensed,
+  theme.
+- Jersey Jack Pinball calls it the first pinball machine with Bluetooth connectivity,
+  a built-in camera, and smartphone integration.
+- The game references earlier Lawlor titles including Whirlwind, Earthshaker!, Road
+  Show, No Good Gofers, and Twilight Zone.
+- The original working title was reportedly Killer App.
+summary: QED → Disaster Mode → SIM Card → larger later modes → multiball stacks →
+  Showdown
+venue_notes:
+- This machine is running software v2.02 with Competition/League Mode enabled.
+- The left kickback is typically unlit at game start and must be earned through B-O-B.
+- Extra Balls are disabled for this event.
+- Standard, Limited, and Collector’s editions share the same core gameplay; differences
+  are primarily cosmetic and collectible upgrades.
+- The smartphone-control app is no longer supported from v1.75 onward; do not describe
+  remote Big Bang activation as a current feature.
+image: images/dialed-in-jersey-jack-2017.jpg

@@ -1,0 +1,129 @@
+id: space-time-bally-1972
+name: Space Time
+manufacturer: Bally Manufacturing
+year: 1972
+metadata:
+  designer: Jim Patla
+  artist: Christian Marche
+  production: 5,000
+  era: 1970s electro-mechanical
+  multiball: No multiball
+hook: Time the 3-D Time Tunnel to 5,000, collect it at the center target to raise
+  the post, then use that control position to repeat the shot.
+rules:
+  primary: The Time Tunnel cycles from 1,000 to 5,000. Stop its value in the shooter
+    alley, then collect that live value at the center target, side gates, and other
+    Tunnel features. The center target also raises the post between the flippers.
+  bullets:
+  - At 3,000 to 5,000, collect and repeat the center target; at 1,000 to 2,000, use
+    Start Tunnel or upper play to cycle toward a better value.
+  - Either upper saucer opens a side gate. An open gate collects the Tunnel and returns
+    the ball to the shooter lane for another timed plunge.
+  - The two white rollovers above the slings lower the raised center post.
+  - Tunnel Bonus is an in-play collect, not a conventional end-of-ball bonus ladder.
+watch:
+- title: Tunnel value
+  text: At 4,000 to 5,000, repeated center collecting is attractive. A 1,000 to 2,000
+    value often sends the player upstairs to restart the Tunnel.
+- title: Center post
+  text: When the post is raised, expect soft taps and controlled attempts to repeat
+    the center Collect Tunnel target.
+- title: Open side gate
+  text: A gate return collects the Tunnel and gives the player another shooter-lane
+    plunge.
+- title: Extra Ball lamp
+  text: The Extra Ball target may light intermittently, but Extra Ball is disabled
+    for this event.
+skill_shots:
+- name: Collect Tunnel Skill Shot
+  how: Stop the cycling Tunnel at 5,000 in the shooter alley, then plunge strongly
+    enough to reach the top Collect Tunnel lane.
+  value: Collects the current Tunnel value, ideally 5,000, and starts the ball with
+    the best value to exploit.
+features:
+- type: other
+  name: Double return gates
+  text: Each upper saucer opens a side gate; an open gate returns the ball to the
+    shooter lane rather than awarding an Extra Ball.
+- type: player-control
+  name: Center up-post
+  text: The center Collect Tunnel target raises the post between the flippers; either
+    white rollover above the slings lowers it.
+- type: extra-ball
+  name: Extra Ball target
+  text: The target is lit on an intermittent mechanical stepper basis. Extra Ball
+    is disabled for this event.
+shots:
+- name: Left kickout / collect lane
+  value: Collects Tunnel and returns the ball upstairs; useful when the Tunnel value
+    is strong.
+  risk: Medium-High
+  diagram: 1
+- name: Side gates
+  value: Collect Tunnel and return to the shooter lane for another skill-shot chance
+    when open.
+  risk: Low
+  diagram: 2
+- name: Center Collect Tunnel target
+  value: Collects the Tunnel and raises the center post; the main repeatable scoring
+    shot.
+  risk: High
+  diagram: 3
+- name: Start Tunnel targets
+  value: Restart or cycle a poor 1,000 to 2,000 Tunnel value.
+  risk: High
+  diagram: 4
+- name: Collect Tunnel plunge lane
+  value: The top-center skill-shot lane collects the current Tunnel value.
+  risk: Medium-High
+  diagram: 5
+- name: Upper saucers
+  value: Open side gates, creating later Tunnel collects and replunges.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: With a 3,000 to 5,000 Tunnel and the post raised, settle the ball and repeat
+    the center collect rather than deliberately shooting dangerous Start Tunnel standups.
+  behind: 'Chase 5,000 Tunnel cycles: use gate returns and restart opportunities for
+    replunges instead of repeatedly collecting 1,000 to 2,000 values.'
+  key_decision: 'Cash the current Tunnel or restart it: collect at 3,000 to 5,000;
+    accept more risk to cycle a 1,000 to 2,000 value.'
+danger:
+- The center Collect target is lucrative but its frequent rebounds head toward the
+  slings and outlanes on this copy.
+- Start Tunnel standups have severe direct rebounds.
+- Accidentally hitting a white down-post rollover removes the main control resource.
+- Balls falling from the four-bumper upper playfield arrive fast into sling and outlane
+  action.
+- Outlanes are punishing; gate state materially changes the danger.
+commentary:
+- They stopped the Tunnel on five thousand—that is exactly the value they want to
+  farm.
+- That center target collects the Tunnel and puts the center post up.
+- With the post raised, watch for tiny taps as they try to settle and repeat the center
+  shot.
+- Only two thousand is lit, so they are going upstairs to restart the Tunnel rather
+  than cash it.
+- That gate is open; getting through it collects Tunnel and earns another plunge.
+- The center target is lucrative, but the rebound is the whole risk on Space Time.
+trivia:
+- Bally produced 5,000 Space Times; the two-player Time Zone followed in 1973 with
+  the same essential concept.
+- The earlier Time Tunnel prototype was reworked into Space Time, adding the center
+  up-post.
+- Bally's original flyer highlighted the three-dimensional Bonus Tunnel and double
+  return gates.
+- 'Christian Marche''s art combines dinosaurs, space travel, and futuristic imagery
+  in a broad time-travel theme. '
+summary: Time 5K Tunnel → collect center target → raise post → control repeat shots
+  → use gates for replunges
+venue_notes:
+- Tournament setting is 5 balls.
+- Extra Ball is disabled.
+- Both side gates and both top saucers operate reliably.
+- Center Collect Tunnel target rebounds frequently toward slings and outlanes on this
+  copy.
+- Time Zone is the two-player 1973 production version with essentially the same rules
+  and playfield; the Time Tunnel prototype lacks Space Time's center up-post and has
+  fewer bumpers.
+image: images/space-time-bally-1972.jpg

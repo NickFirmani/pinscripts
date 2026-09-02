@@ -1,0 +1,139 @@
+id: time-machine-data-east-1988
+name: Time Machine
+manufacturer: Data East
+year: 1988
+metadata:
+  designer: Ed Cebula and Joe Kaminkow
+  artist: Kevin O'Connor and Margaret Hudson
+  production: 2,896
+  era: Late-1980s alphanumeric solid-state
+  multiball: Three-ball multiball reached by traveling back to the 1950s
+hook: A ramp-driven time-travel game where STARWARP's timed million-point center-ramp
+  collect can rival the payoff from reaching 1950s three-ball multiball.
+rules:
+  primary: Use ramps and top lanes to build STARWARP and, on this factory/easy setup,
+    spot decade targets. Complete STARWARP and collect its timed center-ramp value,
+    while outside ramps advance qualified decades toward 1950s multiball.
+  bullets:
+  - Triangles qualify the 1970s, circles the 1960s, and squares the 1950s; once qualified,
+    either outside ramp travels backward.
+  - All three ramps and top lanes spot STARWARP letters. Complete all eight, then
+    shoot the center ramp within its timer; factory value is 1M.
+  - At the 1950s, three-ball multiball starts. During multiball, light decade targets
+    to add 100K each to the center-ramp Jackpot, from 100K up to 1M.
+  - Three consecutive center-ramp shots within the Mini-Jackpot timer score 100K,
+    200K, or 300K by ball number.
+  - Top-lane completions can award a back-panel feature, including 100K, Bonus Hold,
+    Extra Ball, or 20 seconds of 2X All Scores.
+watch:
+- title: STARWARP ready
+  text: When all STARWARP letters are complete and the center ramp flashes, a timed
+    500K-1.5M collect is available; factory value is 1M.
+- title: Decade ramp flashing
+  text: A flashing 1970s, 1960s, or 1950s ramp insert means its targets are complete;
+    the next outside ramp advances time and may lock a ball.
+- title: Decade sound change
+  text: Music and sound change as time travel progresses. The 1950s uses cabinet-mounted
+    electromechanical chimes.
+- title: 2X All Scores
+  text: A top-lane award can light 2X All Scores for about 20 seconds. Expect an immediate
+    STARWARP, Jackpot, or other large collect.
+skill_shots: []
+features:
+- type: ball-save
+  name: Laser Kick
+  text: Left-outlane kickback starts lit each ball on the resolved factory setting.
+    Either outside ramp relights it.
+- type: other
+  name: Einstein Shot
+  text: Pop bumpers build Energy; take a return lane and then shoot the opposite ramp
+    before the factory 12-second timer expires to collect it.
+- type: extra-ball
+  name: Extra Balls
+  text: Top-lane completions or two 1950s trips on one ball can light an outlane Extra
+    Ball, but this venue uses Novelty mode, so Extra Balls and free-play awards are
+    disabled and Special converts to score.
+- type: other
+  name: Mini-Jackpot
+  text: Make three consecutive center-ramp shots within its timer for 100K, 200K,
+    or 300K depending on ball number.
+shots:
+- name: Left ramp
+  value: Advances Time Travel, spots STARWARP, and relights Laser Kick.
+  risk: Medium-High
+  diagram: 1
+- name: Decade standups
+  value: Qualify the 1970s, 1960s, and 1950s; during multiball, each lit decade target
+    adds 100K to Jackpot.
+  risk: High
+  diagram: 2
+- name: Center / STARWARP ramp
+  value: Collects timed STARWARP, Mini-Jackpot, and multiball Jackpot; the main repeatable
+    cash-out.
+  risk: Medium-High
+  diagram: 3
+- name: Top lanes
+  value: Spot STARWARP and decade progress on this factory/easy setup, and can award
+    a back-panel feature.
+  risk: Medium
+  diagram: 4
+- name: Right ramp
+  value: Advances Time Travel, spots STARWARP, supports Einstein, and relights Laser
+    Kick; the primary setup loop on factory spotting.
+  risk: Medium
+  diagram: 5
+- name: Return lane to opposite ramp
+  value: Collects Einstein Energy after a return lane feeds the required opposite
+    ramp.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor ramps and prompt STARWARP collects rather than raw standup attacks.
+    Keep Laser Kick lit; multiball is useful protection, but do not overbuild Jackpot
+    when another STARWARP collect covers the opponent.
+  behind: Push for repeated 1M STARWARP and a 1M multiball Jackpot. If 2X All Scores
+    appears, cash a large value immediately; multiball offers the higher-variance
+    comeback route.
+  key_decision: Keep traveling toward multiball or divert to the timed center-ramp
+    STARWARP collect. The outside-ramp loop advances both objectives, but the immediate
+    million can be too valuable to pass up.
+danger:
+- The left outlane is the major drain; check whether Laser Kick is lit.
+- Direct decade-standup shots can rebound dangerously, especially when Hard settings
+  require them.
+- The timed center-ramp STARWARP collect invites a rushed shot at a tight entrance.
+- Einstein encourages pop-bumper play, but pop exits return to the lower playfield
+  unpredictably.
+commentary:
+- STARWARP is complete—the center ramp is worth a million for about twenty seconds.
+- 'Right ramp again: on this factory spotting setup, it advances both STARWARP and
+  the decade targets.'
+- 'He has reached the 1950s: that starts three-ball multiball, and now the real chimes
+  come in.'
+- The Jackpot starts at 100K, and every lit decade target adds another 100K up to
+  a million.
+- Double All Scores just came out of the top lanes—every big collect is urgent now.
+- Laser Kick is gone; an outside ramp here relights the left-outlane save as well
+  as advancing progress.
+trivia:
+- The 1950s uses physical electromechanical-style chimes mounted in the cabinet; the
+  operator can select OFF, STREET, or SUPER intensity.
+- Music and sound change as the game travels backward from the 1980s through earlier
+  decades.
+- Time Machine was an early Data East title built on the company's Version 2 MPU architecture.
+- The factory 1M STARWARP value is operator-adjustable as high as 1.5M.
+- Factory setup includes an automatic system intended to maintain roughly a 65-second
+  average ball time by periodically adjusting difficulty.
+summary: Ramps and lanes → STARWARP → timed center-ramp million → decade travel →
+  1950s multiball → build and collect Jackpot
+venue_notes:
+- ROM 2.4 is installed; specific rule changes for that revision are not established
+  here.
+- 'General Spotting is Factory/Easy: ramps and top lanes spot decade targets.'
+- STARWARP Memory setting is unknown; progress may behave differently between balls
+  or players depending on its setting.
+- 'Novelty mode is enabled: Extra Balls and free-play awards are disabled, and Special
+  converts to score.'
+- Laser Kick is set to Factory and starts lit each ball; outside ramps relight it.
+- No significant physical problem was reported for this machine.
+image: images/time-machine-data-east-1988.jpg

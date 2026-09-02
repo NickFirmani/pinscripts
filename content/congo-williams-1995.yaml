@@ -1,0 +1,146 @@
+id: congo-williams-1995
+name: Congo
+manufacturer: Williams Electronic Games
+year: 1995
+metadata:
+  designer: John Trudeau
+  artist: Kevin O’Connor
+  production: 2,129 units
+  era: WPC-95
+  multiball: Volcano, Diamond Hunt, Ghost Tribe, and Super Multiball
+hook: Shoot the GRAY loop for gorilla progress and diamonds, take lit Volcano locks
+  promptly, then use AMY and the upper loop to maximize multiball jackpots.
+rules:
+  primary: 'Diamonds drive Congo: GRAY completion opens the lower gorilla feature,
+    Volcano locks are qualified by diamonds, and 100 diamonds starts Super Multiball.
+    The first GRAY Attack awards 20 diamonds; the second starts multiball directly.'
+  bullets:
+  - Each GRAY letter is worth 5M; GRAY progress may carry between balls depending
+    on adjustment.
+  - Volcano Multiball is normally 3-ball. Shoot either ramp for jackpots; AMY lights
+    a timed Super Jackpot, then the upper-upper orbit scores 2× Jackpot.
+  - At Factory Medium, Volcano locks begin with one lock available at a time; collect
+    a lit lock promptly.
+  - MAP progression via the left ramp can award 25M, diamonds, Jungle/Ghost Tribe
+    features, Diamond Hunt Multiball, and Skill Fire.
+  - End-of-ball bonus is 500K per diamond times Bonus X.
+watch:
+- title: G-R-A-Y letters
+  text: Near completion, one more loop starts the lower gorilla feature; the first
+    win awards 20 diamonds and the second starts multiball.
+- title: LOCK lamps
+  text: A lit Volcano lock usually means an immediate lock attempt, before farming
+    more diamonds.
+- title: MAP and diverter
+  text: When MAP is completed, the left-ramp diverter feeds the left flipper for a
+    MAP saucer attempt instead of the normal return.
+- title: AMY during multiball
+  text: AMY lights the timed Super Jackpot; watch for the immediate upper-upper-orbit
+    attempt.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge toward the three left-side kickback targets and hit the currently lit
+    target.
+  value: Starts at 10M and rises by 5M after each success; repeated success makes
+    the cycling lamp faster.
+- name: Super Skill Shot
+  how: Deliberately plunge into the left outlane.
+  value: Awards 25M; the kickback fires for this shot even if it was not already lit.
+features:
+- type: ball-save
+  name: Ball Save
+  text: ROM 2.1 is installed. Factory setting is one saved drain per game with a 4-second
+    timer.
+- type: other
+  name: Left Kickback
+  text: Complete the left three-bank to relight it. Keeping it lit is important for
+    survival; its starting state and memory vary by difficulty.
+- type: mystery-award
+  name: ZINJ Mystery
+  text: Spell ZINJ, then collect at the Mystery saucer for awards including points,
+    locks, diamonds, extra balls, and multiballs. Tournament Mode uses a fixed random-award
+    sequence.
+- type: player-control
+  name: Mine Shaft
+  text: The upper-upper orbit starts a choice-based display mode. Choose correct routes
+    for points and diamonds; successful progress carries to the next attempt.
+- type: video-mode
+  name: Video Mode
+  text: Complete hieroglyphics and collect Mystery, then steer a boat with the flipper
+    buttons around rocks and hippos.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls are disabled at this venue.
+shots:
+- name: GRAY lane
+  value: 'Core progression to GRAY Attack: first victory gives 20 diamonds; second
+    starts multiball.'
+  risk: Medium-High
+  diagram: 1
+- name: Left ramp
+  value: Advances MAP for safe flow, MAP awards, diamonds, and modes; diverter can
+    feed the MAP saucer.
+  risk: Low
+  diagram: 2
+- name: Lock loops
+  value: Collect lit Volcano locks immediately to advance toward Volcano Multiball.
+  risk: Medium
+  diagram: 3
+- name: AMY / upper-upper orbit
+  value: AMY lights the multiball Super Jackpot; the upper-upper orbit cashes it for
+    2× Jackpot.
+  risk: Medium-High
+  diagram: 4
+- name: Volcano ramp
+  value: Advances 3× HIPPO, can qualify extra balls, and scores multiball jackpots.
+  risk: High
+  diagram: 5
+- name: Mystery saucer
+  value: Collects Mystery and can lead to Video Mode.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Stay on repeatable GRAY and left-ramp flow, collect lit locks promptly, keep
+    the kickback active, and take ordinary Volcano Multiballs rather than chasing
+    deep progression.
+  behind: 'Chase high-ceiling states: Skill Fire, repeated Volcano jackpots and Super
+    Jackpots, or rapid diamonds toward Super Multiball. A first GRAY Attack''s 20
+    diamonds accelerates all of them.'
+  key_decision: 'GRAY versus MAP: GRAY is the direct route to 20 diamonds and second-completion
+    multiball; MAP is longer but offers safer flow and potential Diamond Hunt, Ghost
+    Tribe, and Skill Fire awards.'
+danger:
+- Pop-bumper exits from AMY, Mine Shaft, and right-orbit play can threaten the outlanes.
+- The right/Volcano route can feed uncontrolled bumper action after a miss.
+- The right outlane has no kickback and is effectively unrecoverable once entered.
+- With the left kickback unlit, left-outlane play becomes a normal drain risk.
+commentary:
+- One more GRAY letter and they'll get the gorilla—first completion is twenty diamonds.
+- That lock is lit; they want to take it now so they can start working toward the
+  next one.
+- Second GRAY victory starts multiball outright—this is why players live on that loop.
+- AMY lights the Super Jackpot; now they've got about twenty seconds to bring it back
+  through the upper loop.
+- MAP has changed the diverter, so this ramp return is setting up the saucer.
+- Skill Fire is ready—that's one of the few Congo features that can turn the scoreboard
+  around very quickly.
+trivia:
+- Congo was based on Paramount's 1995 film, but the pinball machine entered production
+  in November.
+- Its mechanical GRAY gorilla mini-playfield uses flipper buttons to move the gorilla's
+  arms and bat a separate ball at C-O-N-G-O targets.
+- It was one of Williams' earliest WPC-95 releases.
+- Williams also sold Congo as a conversion kit for compatible WPC Security cabinets.
+- It was the last pinball title produced at Williams' California Avenue plant before
+  production moved.
+summary: GRAY loop → gorilla diamonds → Volcano locks → AMY Super Jackpot → Skill
+  Fire or Super Multiball
+venue_notes:
+- ROM 2.1 is installed.
+- 'Factory Medium difficulty is in use: Volcano Multiball begins with one lock available
+  at a time.'
+- Tournament Mode is enabled; Mystery random awards follow a fixed sequence.
+- Extra balls are disabled.
+- No notably dangerous copy-specific feed was reported.
+- GRAY carryover between balls is unknown for this venue.
+image: images/congo-williams-1995.jpg

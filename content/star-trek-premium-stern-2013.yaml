@@ -1,0 +1,148 @@
+id: star-trek-premium-stern-2013
+name: Star Trek — Premium
+manufacturer: Stern Pinball
+year: 2013
+metadata:
+  designer: Steve Ritchie
+  artist: ''
+  production: Premium production began November 2013.
+  era: SAM/DMD generation
+  multiball: Klingon Multiball, Vengeance Multiball, Kobayashi Maru, Enterprise Amok,
+    Five Year Mission
+hook: Start a mission and stack it with Klingon Multiball, use combos to double awards,
+  then cash in Warp 2X scoring on jackpots, medals, or Vengeance.
+rules:
+  primary: Advance the six three-level mission families, earn medals, and stack active
+    missions with Klingon Multiball. Combos double mission, medal, and jackpot awards;
+    Warp can provide 60 seconds of 2X scoring.
+  bullets:
+  - Galactic Away Team changes Tier-I objectives, adds 20 seconds, and concentrates
+    scoring on fewer valuable shots.
+  - Light three green locks, then lock three balls at Vengeance and/or the left scoop
+    for Klingon Multiball.
+  - Klingon jackpots build through Super and Double Jackpot to a 20M Double Super
+    at the Warp Ramp; the Double Super also awards a gold medal.
+  - Completing a Tier-III mission permanently gives 2X scoring on one major shot for
+    the rest of the game.
+  - Deep Vengeance progression leads to Vengeance Battle, whose final cash-out is
+    10% of total score before combo and 2X effects.
+watch:
+- title: Mission arrows
+  text: Mission color and flashing arrows show the active mission and its currently
+    scoring shots.
+- title: Klingon locks
+  text: Green lock lamps at the scoop and Vengeance show Klingon Multiball preparation.
+    With Mission Start lit, a player may be deliberately waiting to stack.
+- title: Warp 2X
+  text: 'Watch the Warp Ramp chase and active 2X scoring: jackpots, medals, and major
+    cash-outs can double.'
+- title: Vengeance III
+  text: A raised Vengeance drop target during Vengeance III signals that a precise
+    percentage-of-score sequence is close.
+skill_shots:
+- name: Warp Skill Shot
+  how: Soft-plunge to the upper-right flipper, then shoot the Warp Ramp.
+  value: Awards the Warp skill shot; repeated successes historically increased its
+    value.
+- name: Super Skill Shot
+  how: Hold the left flipper during launch to feed the left flipper, then make the
+    lit major shot.
+  value: Awards a larger skill-shot value on the selected major shot.
+- name: Super Warp Skill Shot
+  how: Hold the right flipper on a full plunge so the ball rebounds from the upper
+    gate toward the upper flipper, then hit Warp.
+  value: Awards the Super Warp skill shot; repeated successes historically increased
+    its value.
+features:
+- type: ball-save
+  name: Rescue kickback
+  text: On Premium/LE, the physical left-outlane kickback saves the ball. Complete
+    the associated left-side blue target bank to requalify it.
+- type: player-control
+  name: Photon Torpedoes
+  text: Complete the three orange torpedo standups for three shots, then use the lockdown-bar
+    Fire button to register Vengeance hits. Torpedoes cannot take the final Vengeance
+    hit.
+- type: other
+  name: Multiball Add-A-Ball
+  text: During multiball, qualify the Black Hole target through Red Matter hits for
+    one Add-A-Ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls can be awarded through Warp progression and the second Vengeance
+    feature.
+shots:
+- name: Mission Start scoop
+  value: Starts missions and serves as a Klingon lock; use it to begin the primary
+    mode stack.
+  risk: Low
+  diagram: 1
+- name: Left ramp
+  value: Advances missions and combos and scores jackpots; a common repeatable mission
+    shot.
+  risk: Medium
+  diagram: 2
+- name: Vengeance
+  value: Advances locks, the Vengeance sequence, and major finals; central to multiball
+    setup and percentage cash-outs.
+  risk: High
+  diagram: 3
+- name: Right ramp
+  value: Advances missions, combos, and jackpots; a flowing high-value combo shot.
+  risk: Medium
+  diagram: 4
+- name: Warp Ramp
+  value: Builds Warp awards and 2X scoring, and collects the Klingon Double Super
+    Jackpot.
+  risk: Medium-High
+  diagram: 5
+- name: Away Team
+  value: Activates Galactic Away Team to add time and concentrate mission scoring.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take straightforward Tier-I progress and pair one strong mission with Klingon
+    Multiball. Cash a good medal rather than forcing dangerous gold shots, and keep
+    Rescue lit as insurance.
+  behind: Build Warp 2X, then attack a deep Klingon jackpot ladder or high-value mission.
+    In desperation, Vengeance III can cash 10% of total score, 20% with combo, or
+    40% with combo plus 2X.
+  key_decision: Start Klingon Multiball now, or wait until a useful mission and 2X
+    state are prepared? Its ceiling rises sharply when it protects and multiplies
+    mission scoring.
+danger:
+- A Mission Start scoop miss or nearby rebound can head toward the sling, center,
+  or outlane.
+- Repeated direct Vengeance attacks can return violently; the Premium kicker and magnet
+  feed are machine-sensitive.
+- Missing the upper-flipper Warp Ramp can dump the ball into uncontrolled lower play.
+- A shallow left-ramp reject can return immediately to the flippers.
+- Rescue saves the ball but its upper-playfield return still requires awareness.
+commentary:
+- He's holding the third Klingon lock until he gets a mission running—that's the stack.
+- That red combo arrow means the next award is doubled.
+- Warp has started double scoring; now every jackpot and medal becomes much more dangerous.
+- Galactic Away Team adds twenty seconds and narrows the mode to more valuable shots.
+- That's the Klingon Double Super—twenty million base, and it also gives him a gold
+  medal.
+- 'Vengeance III is percentage scoring: this final sequence can be worth ten, twenty,
+  even forty percent of his current score.'
+trivia:
+- Star Trek was designed by Steve Ritchie, whose résumé includes High Speed, Terminator
+  2, and AC/DC.
+- Stern marketed the game as its first all-LED Pro model, with seven RGB mission paths
+  guiding the player.
+- Premium/LE add the animated Vengeance crash effect, physical Rescue kickback, and
+  more elaborate lighting and playfield hardware.
+- The theme uses the 2009 Star Trek and Star Trek Into Darkness movie continuity,
+  with Vengeance and Khan as the central antagonist.
+- Karl Urban supplied game voice work, and Steve Ritchie also performs callouts.
+summary: Mission stack → combo doubles → Warp 2X → medal progress → Klingon jackpots
+  → Vengeance cash-out
+venue_notes:
+- 'Installed software: v1.62.0.'
+- Extra Balls are disabled for this venue.
+- Warp Extra Ball configuration is unknown; do not state a fixed threshold.
+- Premium Rescue kickback is functioning normally.
+- Exact skill-shot value progression is not confirmed for the installed code.
+image: images/star-trek-premium-stern-2013.jpg

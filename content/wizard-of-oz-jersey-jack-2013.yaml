@@ -1,0 +1,143 @@
+id: wizard-of-oz-jersey-jack-2013
+name: The Wizard of Oz
+manufacturer: Jersey Jack Pinball
+year: 2013
+metadata:
+  designer: Joe Balcer
+  artist: Jerry Vanderstelt, Greg Freres and Matt Riesterer
+  production: Jersey Jack Pinball's first production game
+  era: Widebody, five-flipper LCD-era solid-state game
+  multiball: Emerald City, Rescue, Munchkin, Haunted Forest, Battle the Wicked Witch
+hook: 'Build several features at once: stack Crystal Ball scoring with multiball and
+  Super X across the game''s three playfields, then convert that setup into Emerald
+  City or Rescue value.'
+rules:
+  primary: Qualify Lion, Tin Man, and Scarecrow with their rollovers, then shoot the
+    center ramp after each one to lock three balls for Emerald City Multiball. Build
+    B-A-L-L for a Crystal Ball multiplier, and use multiple active playfields during
+    multiball to raise Super X.
+  bullets:
+  - Rescue Multiball begins by capturing Dorothy, entering the Castle, spelling R-E-S-C-U-E,
+    breaking the doors, and shooting the saucer.
+  - Crystal Ball modes begin from B-A-L-L plus the spinner/VUK; the first four score
+    2× and Flipper Frenzy scores 3× with reversed flippers.
+  - Rescue jackpots advance toward Super Jackpot; six jackpot shots at 3× light Mega
+    Jackpot through the Search Orbit-to-Castle-door combo.
+  - Battle the Wicked Witch requires ECM, Rescue Multiball, a Munchkin Mode, and Fireball
+    Frenzy.
+  - Eight jewels across the major branches light Somewhere Over the Rainbow.
+watch:
+- title: Character lock progress
+  text: A qualified character rollover followed by the lit center-ramp lock means
+    Emerald City Multiball is being built.
+- title: Crystal Ball ready
+  text: Completed B-A-L-L and a glowing Crystal Ball mean a 2× scoring mode is one
+    spinner/VUK shot away.
+- title: Super X
+  text: The Super X insert shows the multiplier from simultaneously active playfields;
+    Crystal Ball scoring multiplies on top.
+- title: Eight jewels
+  text: Eight jewels and a lit SOTR ramp mean the player is ready for Somewhere Over
+    the Rainbow.
+skill_shots:
+- name: B-A-L-L Skill Shot
+  how: Note the flashing B-A-L-L target before plunging, feed the upper flipper, and
+    hit that target.
+  value: Spots all four B-A-L-L letters and immediately qualifies a Crystal Ball mode.
+    Competition Mode makes the chosen target deterministic.
+- name: Haunted Forest Skill Shot
+  how: Feed the upper-right flipper and hit the Haunted Forest skill target.
+  value: Starts a Haunted mode for immediate progression.
+- name: O-Z Lane Skill Shot
+  how: Plunge through the lit O-Z lane.
+  value: Awards an OZ multiplier. Competition rules fix the skill lane rather than
+    randomizing it.
+features:
+- type: ball-save
+  name: There's No Place Like Home
+  text: 'A left-outlane rescue: activate the five nearby targets after entering the
+    outlane to start a timed recovery sequence. Qualified target state can carry between
+    balls.'
+- type: ball-save
+  name: Toto Escape
+  text: Complete T-O-T-O; a right-outlane drain then starts a timed escape challenge
+    instead of immediately ending the ball. Later saves require more shots.
+- type: extra-ball
+  name: Extra Balls
+  text: Several progression routes award Extra Balls at the Throne Room.
+- type: mystery-award
+  name: Glinda/Wizard awards
+  text: Semi-random utility awards; Competition Mode makes major random sequences
+    deterministic.
+shots:
+- name: Crystal Ball spinner/VUK
+  value: Starts Crystal Ball modes and their 2× or 3× scoring for stacks.
+  risk: Medium
+  diagram: 1
+- name: Center ramp
+  value: Central progression hub for ECM locks, Munchkin/Twister access, and Somewhere
+    Over the Rainbow.
+  risk: Medium-High
+  diagram: 2
+- name: Castle entrance / Winkie
+  value: Advances Rescue Multiball and Castle progress.
+  risk: High
+  diagram: 3
+- name: Witch target
+  value: Advances Witch hurry-ups, Fireball Frenzy, and Battle the Wicked Witch.
+  risk: High
+  diagram: 4
+- name: Throne Room
+  value: Advances ECM gifts and can collect Extra Balls and Wizard awards.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit
+  value: Captures Dorothy and advances O-Z lanes for Rescue progression.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use Emerald City Multiball with a favorable Crystal Ball mode instead of
+    forcing Castle or Witch shots. Preserve control and cash in the multiplier stack
+    already built.
+  behind: 'Build a larger stack: Crystal Ball scoring plus multiple active playfields
+    for Super X, then pursue Rescue Mega Jackpot or completed ECM gifts.'
+  key_decision: Start a ready feature now or delay it until another mode or multiball
+    is qualified. Stacking is powerful, but Fireball Frenzy can interfere with normal
+    scoring.
+danger:
+- Winkie/Castle is a required center-right drop-target bash for Rescue.
+- Witch magnets deliberately alter ball motion and can make returns unpredictable.
+- A center-ramp reject can return quickly toward the flippers.
+- Castle and Twister exits can create uncontrolled re-entry to the main playfield.
+- Munchkin scoring is applied in bonus, so a tilt can erase substantial accumulated
+  points.
+commentary:
+- That character is qualified—now the ramp locks it toward Emerald City Multiball.
+- B-A-L-L is complete; Crystal Ball is ready, and that's two-times scoring.
+- Balls are active on two playfields, so Super X is at two-times on top of the mode
+  multiplier.
+- They're delaying the multiball because Wizard of Oz is stronger when these features
+  are stacked together.
+- Dorothy is captured—now the Castle sequence is the route to Rescue Multiball.
+- Eight jewels complete; the ramp is lit for Somewhere Over the Rainbow.
+trivia:
+- Wizard of Oz was Jersey Jack Pinball's first production game.
+- It helped establish the modern LCD era by making a full-color LCD central to its
+  presentation.
+- 'The game has three simultaneously playable levels: the main playfield, Munchkinland/Twister,
+  and Witch''s Castle.'
+- Dennis Nordman built the original spinning-house model and conceived the original
+  Witch mechanism.
+- Version 3.0 added Somewhere Over the Rainbow, Super X, Haunted Multiball, and persistent
+  ECM/Rescue progression.
+summary: Build features → qualify Crystal Ball → stack multiball and Super X → collect
+  jewels → Somewhere Over the Rainbow
+venue_notes:
+- Software is version 8.02.
+- Competition Mode is enabled; major random sequences are deterministic.
+- Extra Balls are disabled or converted to score.
+- No unusually dangerous physical feed has been reported.
+- Standard, Emerald City LE, 75th Anniversary, and Yellow Brick Road LE have substantially
+  the same core rules; differences are primarily cosmetics, trim, toys, and included
+  hardware.
+image: images/wizard-of-oz-jersey-jack-2013.jpg

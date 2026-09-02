@@ -1,0 +1,140 @@
+id: bram-stokers-dracula-1993
+name: Bram Stoker’s Dracula
+manufacturer: Williams Electronic Games
+year: 1993
+metadata:
+  designer: Barry Oursler and Mark Sprenger
+  artist: Mark Sprenger
+  production: Approximately 6,801
+  era: WPC Fliptronics II
+  multiball: Castle, Mist, and Coffin; stackable
+hook: Build Castle, Mist, and Coffin together, then cash huge stacked Castle Double
+  Jackpots—while surviving one of pinball’s most punishing left-ramp rejects.
+rules:
+  primary: Prepare all three multiballs before starting one when possible. The left
+    Castle ramp drives loops, Bats, Mist, Castle locks, and Castle relocks; in Castle
+    Multiball, relock balls there to light the Tunnel Jackpot or Double Jackpot.
+  bullets:
+  - Five Castle-ramp loops normally light Mist; shoot the Tunnel and knock free the
+    magnet-carried ball to begin it.
+  - Build Coffin locks at the right ramp, then spell D-R-A-C-U-L-A through Coffin
+    shots; letters persist across Coffin multiballs.
+  - Stacking two multiballs gives 2× jackpots; stacking all three gives 3× jackpots
+    and selected features.
+  - Bats and Rats persist as recurring end-of-ball awards. On L-1, Bonus X reaches
+    10× and carries between balls, but does not multiply Bats or Rats.
+  - Once modes are stacked, two balls remaining keep all active multiballs alive.
+watch:
+- title: Multiball lamps
+  text: Coffin, Castle, and Mist lamps above the flippers show which multiballs are
+    active; green 2× and 3× lamps show the stacked jackpot multiplier.
+- title: Moving Mist ball
+  text: A ball moving sideways across the playfield means Mist is triggered. The player
+    must hit the magnet-carried ball free to start Mist Multiball.
+- title: Castle Jackpot at Tunnel
+  text: The Tunnel Jackpot lamp means one Castle ball is relocked. A second relock
+    sets up the much larger Double Jackpot.
+- title: Bats completion
+  text: A completed Bats award returns at the end of every remaining ball, making
+    an early completion especially important.
+skill_shots:
+- name: Gargoyle Skill Shot
+  how: Time the autoplunged ball for the cycling center gargoyle face.
+  value: Starts at 1M and rises by 1M per successful center award to 5M; also spots
+    a VIDEO letter and normally advances the Coffin ramp, its key strategic value.
+features:
+- type: ball-save
+  name: Love Never Dies
+  text: Configured stock and very short, about 2 seconds; it also activates briefly
+    at multiball starts.
+- type: ball-save
+  name: Altar rescue
+  text: After an Altar eject, Love Never Dies briefly protects only the left outlane;
+    a center drain remains live.
+- type: video-mode
+  name: Video Mode
+  text: Spell VIDEO via the right orbit and skill shot, then shoot the right orbit
+    to the upper sinkhole. Flipper buttons shoot werewolves; completing wave two typically
+    awards an extra ball.
+- type: mystery-award
+  name: Mystery
+  text: May award locks, Video Mode, Bonus X, Extra Ball, or points. On installed
+    production L-1, Mystery remains random.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through Castle-loop thresholds, Mystery, and Video Mode; extra
+    balls are disabled for this event.
+- type: player-control
+  name: Flipper-button controls
+  text: Flipper buttons steer the top rollover lanes and control Video Mode.
+shots:
+- name: Castle / left ramp
+  value: 'Primary setup: advances loops, Bats, Mist, and Castle locks; relocks Castle
+    balls for jackpots.'
+  risk: High
+  diagram: 1
+- name: Tunnel / Mist hole
+  value: Starts Mist, collects Castle Jackpots, and can award Extra Ball or Mystery.
+  risk: Medium-High
+  diagram: 2
+- name: Coffin ramp / Coffin
+  value: Builds Coffin locks and DRACULA letters; starts Coffin and collects Coffin
+    Jackpots.
+  risk: Medium-High
+  diagram: 3
+- name: Right orbit
+  value: Advances VIDEO and supports Video Mode progression.
+  risk: Medium-High
+  diagram: 4
+- name: Castle-lock target banks
+  value: Alternative route to light a Castle Lock when the ramp route is unavailable.
+  risk: High
+  diagram: 5
+- name: Altar
+  value: Advances Rats and offers outlane utility when Rat progress matters.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: If Mist alone is enough, take it, or start a prepared two-way stack instead
+    of risking more single-ball setup. Favor controlled Castle-ramp loops over Castle
+    standups.
+  behind: Build the full Castle, Mist, and Coffin stack, then pursue Castle Double
+    Jackpots at the Tunnel. A triple-stacked Double Castle Jackpot can approach 480M.
+  key_decision: Start a ready multiball now or keep single-ball play alive to prepare
+    the others. Stacking matters more than the exact start order.
+danger:
+- A weak Castle-ramp attempt can reject straight down the middle.
+- Pop-bumper exits can feed hard across the short lightning flippers toward exposed
+  outlanes.
+- Short lightning flippers leave less margin for passes, catches, and recovery.
+- An Altar kickout can head centrally if the setup is poor.
+- On L-1, a late tilt warning near the drain can skip the entire end-of-ball bonus,
+  including Bats and Rats.
+commentary:
+- Five Castle loops lights Mist; now the question is whether they start it or keep
+  building the stack.
+- Coffin is ready, so the next loop bonus can go toward the harder Castle lock.
+- Two multiballs running means doubled jackpots; a third makes them triple.
+- Two Castle balls are relocked—that is a Double Castle Jackpot waiting at the Tunnel.
+- That Bats completion returns in bonus every ball for the rest of the game.
+- 'Careful with the shake: a late warning can wipe out Dracula’s entire end-of-ball
+  bonus.'
+trivia:
+- The lightning flippers are about 1/8 inch shorter than standard contemporary Williams
+  flippers.
+- Mist uses an under-playfield magnet to carry a ball horizontally for the player
+  to knock loose.
+- The game is based on Francis Ford Coppola’s 1992 film Bram Stoker’s Dracula.
+- Production L-1 was the final Williams rules release.
+- Its display uses a distinctive blood-red DMD filter treatment.
+summary: Castle loops → prepare Mist and Coffin → stack multiballs → relock Castle
+  → Tunnel Double Jackpot
+venue_notes:
+- Installed ROM is Williams L-1 production.
+- Extra balls are disabled for this event.
+- Love Never Dies is configured stock/very short, about 2 seconds.
+- Mist magnet works normally.
+- On L-1, Mystery remains random even with Tournament Play.
+- Production L-1 jackpot and bonus behavior should not be confused with prototype
+  ROM behavior.
+image: images/bram-stokers-dracula-1993.jpg

@@ -1,0 +1,154 @@
+id: transformers-pro-stern-2026
+name: 'TRANSFORMERS: More Than Meets the Eye — Pro'
+manufacturer: Stern Pinball
+year: 2026
+metadata:
+  designer: Elliot Eismin
+  artist: ''
+  production: ''
+  era: SPIKE 3
+  multiball: Transformers Multiball, Combiner Multiball, Tech Spec Mania, and Dinobot
+    Island two-ball multiball
+hook: Start a Mission before Transformers Multiball, build Bumblebee 2X, then qualify
+  several jackpots before collecting. The recurring question is whether to cash in
+  now or risk more setup for a larger stack.
+rules:
+  primary: 'Start and complete five 60-second Missions behind Megatron while preparing
+    Transformers Multiball: hit Optimus to light each lock, then lock three balls
+    at the center VUK. Missions can run during multiball if started first, and their
+    progress persists through a timeout or drain.'
+  bullets:
+  - Spinner shots fill Energon Cubes. Spend one to Energize the next Mission for an
+    easier, lower-value mode; finish without Energon to make the next Mission Rusted,
+    harder but higher scoring.
+  - A completed Mission can be followed by an optional Megatron Final Blow. It awards
+    a random 2X Shot-X opportunity that activates when a Tech Spec is collected at
+    that shot.
+  - In Transformers Multiball, major shots progress Decepticon, Autobot, then jackpot.
+    A jackpot is multiplied by the number of jackpots currently qualified; three jackpots
+    light the side-ramp Super Jackpot.
+  - Repeated lit captive-ball hits spell BUMBLEBEE for 30 seconds of 2X scoring. The
+    multiball add-a-ball sequence can raise an already-active 2X to 3X for 30 seconds.
+  - After two Missions, the right ramp lights One Shall Fall; players can start it
+    or play more Missions first to improve the battle.
+watch:
+- title: Energized or Rusted Mission
+  text: This shows whether the player chose an easier, lower-value Mission or a harder,
+    higher-value one.
+- title: Bumblebee 2X
+  text: Flashing BUMBLEBEE or captive-ball 2X often means the player is preparing
+    to carry the multiplier into multiball.
+- title: Qualified jackpots
+  text: Several red and white jackpot arrows during Transformers Multiball can signal
+    a deliberate delay before the first collection.
+- title: One Shall Fall
+  text: A flashing right ramp means two Missions are complete; passing it may mean
+    the player is improving the mini-wizard first.
+skill_shots:
+- name: Optimus Skill Shot
+  how: Short plunge to the upper flipper, then hit Optimus.
+  value: 500K and 5 seconds of ball save.
+- name: Side Ramp Skill Shot
+  how: From the upper-flipper feed, shoot the side ramp.
+  value: 5M and 8 seconds of ball save.
+- name: Space Bridge Super Skill Shot
+  how: From the upper-flipper feed, make the difficult Space Bridge shot.
+  value: 8M and 10 seconds of ball save.
+features:
+- type: ball-save
+  name: Multiball Add-A-Ball
+  text: Once per game after the normal multiball ball save expires, Space Bridge adds
+    and holds a ball for 10 seconds. Hit the captive ball before release for 30 seconds
+    of 2X, or 3X if Bumblebee 2X was already active.
+- type: ball-save
+  name: Left Outlane Save
+  text: Lit at the beginning of the game and can be relit through Mystery after use.
+- type: ball-save
+  name: Countdown to Extinction
+  text: On the last ball, a right-outlane drain starts an 18-second rescue; make the
+    right ramp to continue the ball while other mode timers pause.
+- type: player-control
+  name: Action Button / Tech Specs
+  text: Cassette combos light the action button to light all Tech Specs temporarily.
+    During Combiner Multiball, it cycles and selects Combiners.
+- type: extra-ball
+  name: Extra Balls
+  text: Space Bridge lights an extra ball after all five Missions or 15 Tech Specs.
+shots:
+- name: Grimlock / Left Orbit
+  value: Advances Dinobot Missions and feeds the upper flipper for skill shots.
+  risk: Medium-High
+  diagram: 1
+- name: Optimus
+  value: Lights Transformers Multiball locks and builds jackpots.
+  risk: Medium
+  diagram: 2
+- name: Lock VUK
+  value: Locks balls for Transformers Multiball after Optimus lights Lock.
+  risk: Medium
+  diagram: 3
+- name: Center Spinner
+  value: Builds Energon Cubes, Golden Lagoon, and multiball scoring.
+  risk: Medium
+  diagram: 4
+- name: Megatron Bank / Scoop
+  value: Starts Missions and collects Final Blows.
+  risk: Medium-High
+  diagram: 5
+- name: Side Ramp
+  value: Builds Combiner parts and collects Transformers Multiball Super Jackpots.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take Energized Missions, build a modest 2X stack, and start Transformers
+    Multiball rather than forcing another multiplier step or a Rusted Mission. Use
+    the VUK for controlled progression and take available Mystery or outlane insurance.
+  behind: 'Chase multiplicative stacks: Rust the next Mission, activate Bumblebee
+    2X, start the Rusted Mission into Transformers Multiball, then convert the add-a-ball
+    sequence to 3X with several jackpots qualified. Tech Spec Mania is also a comeback
+    route.'
+  key_decision: Start the prepared feature now or improve it first? Rusted Missions,
+    more qualified jackpots, One Shall Fall perks, and Combiner completion reward
+    delay, but difficult shots and the volatile lower playfield make extra setup costly.
+danger:
+- A short side-ramp miss can bounce between the bumper and slings and end the ball
+  quickly.
+- The hidden lower-left sling and bumper near Grimlock can accelerate the ball toward
+  lower slings or outlanes.
+- Megatron drop-bank and scoop rebounds can return quickly through center.
+- Right-ramp rejects return quickly into the lower playfield.
+- Missing an upper-flipper feed can drop the ball directly into the chaotic lower
+  half.
+commentary:
+- He's starting the Mission before multiball—that's the stack order.
+- 'He passed on the Energon Cube, so the next Mission can be Rusted: harder, but worth
+  more.'
+- Several jackpots are flashing; the next collect is multiplied by how many he has
+  qualified.
+- Bumblebee double scoring is ready—carrying it into multiball can turn the add-a-ball
+  sequence into triple.
+- One Shall Fall is available after two Missions, but he's making the battle stronger
+  before taking it.
+- That side ramp is valuable, but a short shot drops into the bumper-and-sling blender.
+trivia:
+- This is Stern's first Transformers title based specifically on the original Generation
+  1 animated continuity; its 2011 game used the live-action films.
+- 'The release coincides with the 40th anniversary of The Transformers: The Movie
+  and includes “The Touch” by Stan Bush.'
+- Peter Cullen and Frank Welker recorded new Optimus Prime and Megatron-Soundwave
+  callouts.
+- The game introduced Stern's SPIKE 3 hardware.
+- The Pro keeps Megatron static; Premium and LE use an animated robot with a ball-firing
+  fusion cannon.
+summary: Mission → Bumblebee 2X → Transformers Multiball → qualified jackpots → Final
+  Blows and Tech Specs
+venue_notes:
+- 'Installed software: v0.89.0, dated August 12, 2026.'
+- Tournament is using either Full Stern Competition Install or Competition Mode only.
+- Extra Balls are disabled.
+- The once-per-game multiball Add-A-Ball is at stock behavior.
+- 'This is the Pro: static Megatron and simpler lock/feed hardware differ from Premium
+  and LE.'
+- v0.89 substantially reworked Tech Spec Mania and Combiner scoring; older scoring
+  strategy may not apply.
+image: images/transformers-pro-stern-2026.jpg

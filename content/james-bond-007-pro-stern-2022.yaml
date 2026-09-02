@@ -1,0 +1,151 @@
+id: james-bond-007-pro-stern-2022
+name: James Bond 007 (Pro)
+manufacturer: Stern Pinball
+year: 2022
+metadata:
+  designer: George Gomez
+  artist: Kevin O’Connor
+  production: 'Rules/code: Lonnie Ropp and Mike Vinikour'
+  era: Modern Stern era
+  multiball: Jetpack, Bird One, and Bond… James Bond
+hook: Stack a Villain mode into Jetpack Multiball, lock in the center-loop jackpot
+  immediately, then build Bird One and Bond Women for huge 007 Scoring multipliers.
+rules:
+  primary: Qualify Jetpack at the left eject, start a Villain at the right ramp, then
+    start Jetpack at the left ramp so the mode runs during multiball. Build Bond Women
+    and use timed 007 Scoring during a lucrative multiball.
+  bullets:
+  - 'Jetpack: hit center loop first to lock the countdown jackpot value; collect five
+    jackpots, then shoot left ramp for Double Jackpot and the Pro’s roving Super Jackpot.'
+  - 'Bird One: complete Osato drops to light virtual center-loop locks; three locks
+    start multiball. Jackpots advance through single, double, and triple waves.'
+  - Bond Women collect at the upper loop. One gives 2× scoring; more women add multiplier
+    and time, up to 7× for 70 seconds.
+  - Villain and Henchman modes can run in Jetpack or Bird One. Starting both modes
+    and both main multiballs qualifies Bond… James Bond.
+  - SPECTRE Weapon countdowns and Q Branch 2-ball multiballs cannot stack with other
+    multiballs.
+watch:
+- title: Pink action button
+  text: Solid Bond Women means 007 Scoring is ready; expect it to be saved for multiball
+    or a wizard state.
+- title: Jetpack left ramp
+  text: A flashing left ramp means Jetpack is ready. A player may start Villain first
+    to stack the mode into multiball.
+- title: Osato drops and Bird One locks
+  text: These show progress toward the second major multiball.
+- title: Left eject and right ramp lit
+  text: 'After play stops, both lit means Villain, Henchman, Jetpack, and Bird One
+    prerequisites are complete: Bond… James Bond is ready.'
+skill_shots:
+- name: Classified / MI6
+  how: Plunge the naturally flashing MI6 top lane for Classified, or use flippers
+    to move the flashing lane before plunging for MI6.
+  value: Both award points and +1 Bonus X; Classified is the stronger direct lane
+    hit.
+- name: Missile Super Skill Shots
+  how: 'Make the indicated post-plunge shot: Undercover at right ramp, Double “O”
+    at side ramp, Licensed to Kill at left eject, Eyes Only at DB5 eject, or Top Secret
+    at the upper-flipper bumper lane.'
+  value: Normally worth 2.5M-plus and awards one Smart Missile on the first unique
+    completion. Left eject and side ramp also advance Jetpack or Henchman setup.
+- name: MXV Super Skill Shot
+  how: After the plunge, shoot right orbit, upper loop, then side ramp.
+  value: Awards two Smart Missiles.
+features:
+- type: player-control
+  name: Smart Missiles
+  text: The blue action button collects a lit mode shot, prioritizing harder shots.
+    Up to four store; missiles are disabled while a Super Jackpot is lit. Flippers
+    choose Missile or 007 Scoring when both are available.
+- type: ball-save
+  name: Outlane save
+  text: Five Dragon Tank hits light an outlane save that alternates with slingshot
+    hits; further tank hits can queue another save.
+- type: extra-ball
+  name: Extra Ball compensation
+  text: Extra Ball is normally collected at the left eject. With Extra Balls disabled,
+    it awards 25M instead, multiplied by 007 Scoring.
+- type: mystery-award
+  name: High Stakes
+  text: Every second B-O-N-D return-lane completion lights a random award at the left
+    eject.
+shots:
+- name: Left eject
+  value: Advances Jetpack, Extra Ball, and High Stakes; opens the primary tournament
+    multiball.
+  risk: High
+  diagram: 1
+- name: Left ramp
+  value: Starts Jetpack and collects its jackpots; main Jetpack cash-out.
+  risk: Medium-High
+  diagram: 2
+- name: Center loop
+  value: Bird One locks, Jetpack jackpot-value lock-in, and upper-flipper feed; critical
+    to both main multiballs.
+  risk: Medium-High
+  diagram: 3
+- name: Upper loop
+  value: Collects Bond Women to enable 2×–7× playfield scoring.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Starts Villain modes and advances Bond… James Bond.
+  risk: Medium-High
+  diagram: 5
+- name: Side ramp
+  value: Starts Henchman modes and collects the Bond… James Bond Super Jackpot.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take the straightforward Villain-plus-Jetpack stack, cash jackpots, and use
+    a modest ready 007 multiplier. Avoid Dragon Tank and demanding upper-flipper shots
+    unless required.
+  behind: Build multiple Bond Women, then use 4×–7× 007 Scoring during Bird One, Power
+    Pack, or Bond… James Bond. Bird One’s Rocket Super Jackpot can be especially explosive.
+  key_decision: Use 007 Scoring now or preserve collected women for a bigger state?
+    The multiplier is timed and collected women can be lost at drain, so cashing 2×–3×
+    can be right while trailing players may gamble for 5×–7×.
+danger:
+- Left-eject kickout can re-enter the scoop, strike Dragon Tank, or head toward center
+  drain.
+- Dragon Tank can light outlane saves but is a dangerous direct standup target.
+- Steep left-ramp rejects return quickly toward the flippers.
+- Late upper-flipper shots at the upper loop or side ramp can threaten the right outlane.
+- Osato drops and the Bird One rocket create hard central rebounds; backhanding the
+  bank can help control the ball.
+commentary:
+- They’ve lit Jetpack, but they’re starting a Villain first so the mode can run inside
+  the multiball.
+- Center loop locks in the Jetpack jackpot value—this is the important first shot.
+- That upper loop collects another Bond Woman; the pink button is building toward
+  a playfield multiplier.
+- 007 Scoring is active—that’s not just double scoring; this game can go all the way
+  to seven-times.
+- Third virtual Bird One lock—now watch the upper flipper immediately for the multiball
+  extension.
+- They’ve started Villain, Henchman, Jetpack and Bird One; that means Bond… James
+  Bond is qualified.
+trivia:
+- The cornerstone game uses footage and music from the six Sean Connery Bond films
+  released from 1962–1971.
+- The Pro edition is visually themed around Dr. No.
+- All cornerstone editions feature a sculpted Aston Martin DB5 that ejects balls vertically
+  through its roof.
+- Premium/LE use a moving magnetic Jetpack; Pro uses a roving Super Jackpot shot instead.
+- Bird One uses virtual locks on Pro and physical locks on Premium/LE; Swipe-a-Ball
+  is Premium/LE-only.
+summary: Villain + Jetpack stack → center-loop jackpot lock → Bond Women → 007 Scoring
+  → Bird One → Bond… James Bond
+venue_notes:
+- Venue code is 1.06.
+- Event configuration is Competition Install or Competition Mode only.
+- Extra Balls are disabled; the stock 25M compensation applies.
+- Normal ball-save timer is set to normal/default.
+- No feed is unusually dangerous on this copy.
+- The detailed rulesheet basis is 1.01, while the venue runs 1.06; avoid asserting
+  unverified revision-specific behavior.
+- 'This is the Pro model: Bird One locks are virtual, there is no moving magnetic
+  Jetpack, and there is no Swipe-a-Ball.'
+- Do not confuse this machine with James Bond 007 60th Anniversary.
+image: images/james-bond-007-pro-stern-2022.jpg

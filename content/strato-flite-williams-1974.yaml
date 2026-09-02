@@ -1,0 +1,132 @@
+id: strato-flite-williams-1974
+name: Strato-Flite
+manufacturer: Williams Electronics
+year: 1974
+metadata:
+  designer: Norm Clark
+  artist: Christian Marche
+  production: 5,977 produced
+  era: 1970s electro-mechanical
+  multiball: None
+hook: A fast Williams EM built around completing letter groups for 2× and 3× end-of-ball
+  bonus, then keeping the ball up top while gates create 5K reshoots.
+rules:
+  primary: 'Complete the three targets in any A, B, C, or D group to light its star:
+    one star gives 2× bonus and two stars give 3×. Letter progress resets each ball;
+    the base bonus reaches 10K and counts down at end of ball.'
+  bullets:
+  - A third completed group adds no further multiplier; all four groups light the
+    center target for Special.
+  - The upper saucer cycles through 500, 5K, open upper gate, and open lower gate
+    as nearby switches are hit.
+  - An open return gate scores 5K and sends the ball back to the shooter lane for
+    another trip upstairs.
+  - Two stars light the left-bottom inside rollover for Extra Ball, though Extra Balls
+    are disabled at this venue.
+watch:
+- title: 'One star: Double Bonus'
+  text: One completed letter group means 2× bonus. The usual next objective is the
+    group closest to completion.
+- title: 'Two stars: Triple Bonus'
+  text: The multiplier is capped at 3×. Expect safer UTAD play instead of forcing
+    more letter targets.
+- title: Extra Ball lane
+  text: Two stars light the left-bottom inside rollover, but Extra Balls are disabled
+    on this machine.
+- title: Open Bottom Gate
+  text: The top saucer has created the preferred 5K reshoot route through the lower
+    return gate.
+skill_shots:
+- name: Top-saucer skill shot
+  how: Plunge to settle the ball in the upper kickout hole when its best award is
+    lit; controlled bounces off the small nearby slings can cycle that award first.
+  value: Priority is open bottom gate, then 5K, open upper gate, and 500. The lower
+    gate supplies a 5K shooter-lane reshoot.
+features:
+- type: other
+  name: Lower ball-return gate
+  text: When opened by the upper saucer, the lower gate scores 5K and returns the
+    ball to the shooter lane.
+- type: other
+  name: Upper ball-return gate
+  text: Also gives a 5K reshoot when open, but it is encountered less often than the
+    lower gate.
+- type: extra-ball
+  name: Two-star Extra Ball
+  text: Two stars light the left-bottom inside rollover for Extra Ball; factory rules
+    limit one Extra Ball per ball in play.
+- type: other
+  name: Four-star Special
+  text: Completing all four groups lights the dangerous center target for Special.
+shots:
+- name: A target group
+  value: Complete the three left-side A targets to light a star toward 2× or 3× bonus.
+  risk: Medium-High
+  diagram: 1
+- name: Left-bottom inside lane
+  value: Collects Extra Ball after two stars; it has no benefit at this venue because
+    Extra Balls are disabled.
+  risk: High
+  diagram: 2
+- name: B target group
+  value: Finish this upper-left-center group when it is the closest route to a second
+    star.
+  risk: Medium
+  diagram: 3
+- name: Top saucer
+  value: Best plunge target; cycles gate awards and can establish a 5K reshoot route.
+  risk: Medium
+  diagram: 4
+- name: C target group
+  value: Finish this upper-right-center group when it is the closest route to a second
+    star.
+  risk: Medium
+  diagram: 5
+- name: D target group
+  value: Complete the three right-side D targets to light a star toward 2× or 3× bonus.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Complete two convenient groups for 3×, then stop forcing letters. Keep the
+    ball upstairs, use an open lower gate, and protect the large end-of-ball bonus.
+  behind: Still pursue two stars first. An open bottom gate can create repeated 5K
+    reshoots; chase all four groups only if the Special award proves meaningful.
+  key_decision: After two stars, play safe or chase remaining groups? Groups three
+    and four add no multiplier, so protecting 3× is normally stronger than pursuing
+    the center Special.
+danger:
+- The center Special target can rebound directly to the drain.
+- Pop-bumper exits are fast and offer limited control.
+- On fast copies, the right sling, left sling, and outlane sequence can be punishing.
+- Direct letter-target rebounds can fire sideways toward slings and outlanes.
+- The left return lane is fast, though it can be an intentional transfer to the right
+  flipper.
+commentary:
+- One letter group complete—that's double bonus.
+- Second star gets triple bonus, and the Extra Ball lane is lit, though it is disabled
+  here.
+- He's done with the multiplier now; the third and fourth groups only lead toward
+  Special.
+- That top saucer opened the bottom gate, so there's a five-thousand-point reshoot
+  available.
+- He's going UTAD here—up top all day—letting the pops and bank shots finish the letters.
+- Center Special is lit, but that's a nasty direct target with no bonus multiplier
+  left to gain.
+trivia:
+- Strato-Flite was designed by Norm Clark, whose Williams work also includes Spanish
+  Eyes, Gulfstream, and Star Pool.
+- Christian Marche's backglass shows a delta-wing military aircraft against a stylized
+  purple space background.
+- Williams produced 5,977 Strato-Flites; Super-Flite followed as the two-player counterpart.
+- DC-powered pop bumpers contribute to the game's exceptionally fast EM character.
+- The Strong's Williams project archive holds Strato-Flite notes, sketches, wiring
+  diagrams, and bills of materials from 1972–1974.
+summary: Letters → stars → 2×/3× bonus → UTAD → gate reshoots → protect bonus
+venue_notes:
+- Configured for 5-ball play.
+- Two-star Extra Balls are disabled and provide no benefit.
+- Both ball-return gates work normally.
+- The Special award is unknown on this machine; treat four-star pursuit as setup-dependent.
+- The factory Special can be adjusted to replay or Extra Ball, so its tournament value
+  varies by setup.
+image: images/strato-flite-williams-1974.jpg

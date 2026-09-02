@@ -1,0 +1,122 @@
+id: el-dorado-gottlieb-1976
+name: El Dorado
+manufacturer: D. Gottlieb & Co.
+year: 1975
+metadata:
+  designer: Ed Krynski
+  artist: Gordon Morison
+  production: 2,875
+  era: 1975 electro-mechanical wedgehead
+  multiball: None
+hook: 'A moving 5K light turns one drop target at a time into the priority: move it
+  to a makeable shot, collect the value, and manage the target banks for another scoring
+  cycle.'
+rules:
+  primary: Lit drop targets score 5,000 while dark targets score 500. The center star
+    rollover and lower standup move the traveling light, so the central decision is
+    whether to shoot the current lit target or reposition the light first.
+  bullets:
+  - On this 5-ball configuration, complete both target banks to score 5K, reset the
+    banks, and light Special.
+  - Target progress carries across ordinary drains; banks reset at game start and
+    when the qualifying sequence is completed.
+  - 'There is no end-of-ball bonus: direct shot value, especially lit 5K drops, drives
+    scoring.'
+  - Lit pops score 100 on 5-ball; the Moving Spot switch award is 1,000.
+watch:
+- title: The lit drop
+  text: 'The lit insert beneath a standing drop is the money target: 5K instead of
+    500.'
+- title: Spot movement
+  text: A center-star or lower bull's-eye hit moves the light and can immediately
+    change the intended target.
+- title: Bank reset
+  text: When both banks reset during play, the qualifying sequence is complete; Special
+    is lit and a fresh scoring cycle begins.
+- title: Progress after drains
+  text: Target state survives an ordinary drain, so the player can continue the same
+    bank progress on the next ball.
+skill_shots:
+- name: Lit-lane Skill Shot
+  how: Soft-plunge into the lit 5,000-point upper-right lane.
+  value: Scores 5K, equal to a lit drop target, without first taking target-bank rebound
+    risk.
+features:
+- type: other
+  name: Special / replay
+  text: After qualifying bank completion, Special lights on the traveling top-target
+    position. It awards a replay, not an extra ball; tournament handling is unknown.
+shots:
+- name: Lit upper-bank drop
+  value: 5K and progress toward qualifying completion; the primary scoring target.
+  risk: Medium-High
+  diagram: 1
+- name: Center star rollover
+  value: Moves the traveling spot to reposition the 5K light.
+  risk: Medium
+  diagram: 2
+- name: Spot-advance standup
+  value: Moves the traveling spot toward a preferred target.
+  risk: High
+  diagram: 3
+- name: Lit right-bank drop
+  value: 5K and progress toward qualifying completion; often the easiest lit target.
+  risk: Medium-High
+  diagram: 4
+- name: Lit upper-right lane
+  value: 5K on the skill shot or an opportunistic return.
+  risk: Medium
+  diagram: 5
+- name: Remaining top-bank drops
+  value: Clear them when advancing toward the eventual two-bank completion and reset
+    is preferable to forcing a bad lit shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take controllable lit 5K targets. Avoid forcing long cross-playfield shots
+    merely to complete a bank; safely move the spot when the current lit target is
+    ugly.
+  behind: Be more willing to clear dark upper targets to build toward completing both
+    banks, resetting all targets, and reopening the moving-spot scoring cycle.
+  key_decision: Shoot the current 5K target now, or move the spot and clear targets
+    toward a better shot and eventual reset?
+danger:
+- Any drop target can rebound toward center or an outlane.
+- The left upper feed can exit toward the left outlane/inlane or kick right toward
+  the flipper or center.
+- A slow right-side feed can leak toward the right inlane/outlane divider and may
+  need an early nudge.
+- A fast right-side feed may cross safely toward the left flipper; unnecessary nudging
+  can worsen it.
+- Right-side drops are rarely clean conventional backhands; a moving backhand may
+  be useful when trapping is unlikely.
+commentary:
+- Lit targets are ten times value here—five thousand instead of five hundred.
+- That star just moved the money light, so the player has a completely different target
+  now.
+- They're ignoring the lit shot and building toward both banks; on this five-ball
+  setup, that is what resets everything.
+- 'That''s the reset: five thousand, fresh targets, and Special is now lit.'
+- The target state survives the drain, so this player can continue that bank progress
+  next ball.
+- Watch this right-side return—the feed speed determines whether it wants the outlane
+  or crosses safely.
+trivia:
+- El Dorado is one of Ed Krynski's best-known drop-target layouts, with Gordon Morison
+  artwork.
+- Gottlieb produced 2,875 originals.
+- Its ten-target upper bank spans almost the entire top of the playfield, with another
+  five-target bank down the right side.
+- Gottlieb reused the layout for Gold Strike, Lucky Strike, Target Alpha, Canada Dry,
+  Solar City, and later El Dorado City of Gold.
+- The multiplayer derivatives replaced original El Dorado's moving-spot scoring with
+  bonus-oriented rules.
+summary: Moving 5K light → lit drops → spot control → both-bank reset → persistent
+  progress
+venue_notes:
+- This is Gottlieb El Dorado model 370, not Target Alpha or a derivative.
+- 'The venue machine is configured for 5 balls: both target banks must be completed
+  for the 5K award, reset, and Special.'
+- Replay/Special tournament handling is unknown.
+- The Special adjustment is unknown.
+image: images/el-dorado-gottlieb-1976.jpg

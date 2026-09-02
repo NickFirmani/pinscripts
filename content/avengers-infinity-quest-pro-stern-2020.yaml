@@ -1,0 +1,134 @@
+id: avengers-infinity-quest-pro-stern-2020
+name: 'Avengers: Infinity Quest (Pro)'
+manufacturer: Stern Pinball
+year: 2020
+metadata:
+  designer: Keith Elwin
+  artist: Zombie Yeti (Jeremy Packer)
+  production: SPIKE 2 platform
+  era: Modern
+  multiball: Thor Multiball, Iron Man Multiball, Black Order Multiball
+hook: Build combos for Portal Locks, qualify a Gem Quest through STRANGE, then stack
+  Thor or Iron Man Multiball to finish the quest with extra balls alive for multiplied
+  Victory Laps.
+rules:
+  primary: Spell STRANGE at the spinning disc and right ramp, then choose a Gem Quest
+    at the right ramp. Quest health falls continuously; a drain fails the quest and
+    gives that Gem to Thanos. Complete it with multiple balls alive to start Victory
+    Laps.
+  bullets:
+  - Four combos light the first Portal Lock; 10 combos light another. One lock gives
+    2× and two locks give 3× Gem Quest scoring while the extra balls survive.
+  - Portal Locks can also come from the secret skill shot, Hawkeye Challenge, or Computer
+    Grid.
+  - After a quest win, use the right ramp to collect the Gem, then choose a flashing
+    shot for placement.
+  - Reality Gem gives a 2× shot multiplier, or 3×/4× when placed on a level-1/level-2
+    Avenger.
+  - Avenger collection persists; levels normally do not persist between balls unless
+    Power Gem is placed on that Avenger.
+watch:
+- title: Disc / STRANGE
+  text: Near-complete STRANGE inserts mean a Gem Quest is nearly available.
+- title: Portal Locks
+  text: Extra balls entering a quest signal 2× or 3× Gem Quest scoring.
+- title: Reality Gem arrows
+  text: Yellow arrows mean multiplied Reality shots; disc spins rebuild the multiplier.
+- title: Thor letters
+  text: Near-complete THOR during a quest signals an intentional multiball stack may
+    be coming.
+skill_shots:
+- name: Normal Skill Shot
+  how: Soft-plunge into the top rollover by the pops.
+  value: 250K plus 100K per prior success, with 3 seconds of ball save.
+- name: Super Skill Shot
+  how: Full-plunge, then shoot Avengers Tower.
+  value: 1M plus 150K per prior success, 5 seconds of ball save, and the first success
+    lights Mystery.
+- name: 'Secret Skill Shot #1'
+  how: Medium-plunge so the ball rolls backward through the upper loop.
+  value: 3M plus 200K per prior success, 10 seconds of ball save, and an immediate
+    Portal Lock.
+features:
+- type: ball-save
+  name: Skill-shot ball saves
+  text: Skill shots add 3, 5, or 10 seconds of ball save depending on difficulty.
+- type: ball-save
+  name: Super Ball Saver
+  text: Computer Grid can award a 30-second Super Ball Saver.
+- type: mystery-award
+  name: Mystery
+  text: Awards can include Add-A-Ball, STRANGE progress, THOR/IRON progress, 10M,
+    and other prizes.
+- type: player-control
+  name: Action button
+  text: Selects Gem Quests and Gem placement; a placed Mind Gem can automatically
+    collect lit shots.
+- type: extra-ball
+  name: Extra balls
+  text: Several qualification routes exist; tournament handling depends on configuration.
+shots:
+- name: Left ramp / Black Widow
+  value: Advances an Avenger and builds combos; a safer major shot for Portal Lock
+    progress.
+  risk: Low
+  diagram: 1
+- name: Dr. Strange disc
+  value: Advances STRANGE, supports locks, and builds Reality Gem multiplier.
+  risk: Medium-High
+  diagram: 2
+- name: Gauntlet ramp
+  value: Builds major-shot combos and supports modes and quests.
+  risk: High
+  diagram: 3
+- name: Avengers Tower
+  value: Builds Iron Man locks and provides high-value cash-outs.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Starts and collects Gem Quests on the Pro.
+  risk: Medium
+  diagram: 5
+- name: Thor captive ball
+  value: Advances THOR toward its quick first multiball and is ideal for quest stacking.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor controlled left-ramp combo work and take the first Portal Lock. A clean
+    2× quest is preferable to draining while forcing a bigger stack.
+  behind: Pursue two Portal Locks plus Thor or Iron Man, preferably into Reality Gem.
+    A three-ball quest that reaches Victory Laps is the accessible high-upside package.
+  key_decision: Start the Gem Quest now to bank progress, or delay for another Portal
+    Lock and multiball at the cost of greater drain risk.
+danger:
+- Short Gauntlet-ramp shots can reject toward the middle and threaten a center drain.
+- Repeated Thor captive-ball attempts can create less predictable rebounds than the
+  safer left ramp, especially with one ball left in a multiplied quest.
+commentary:
+- Four combos lights the first Portal Lock, so the next Gem Quest can be worth double.
+- They are holding Thor right on the edge, looking to bring that multiball into the
+  quest.
+- Two Portal Locks means this Gem Quest begins at three-times scoring while those
+  balls survive.
+- Reality is running—watch the Strange disc; every spin rebuilds that yellow-shot
+  multiplier.
+- They finished the Gem with multiball alive, so now they get Victory Laps.
+- That short Gauntlet ramp is dangerous—the miss can come back through the middle.
+trivia:
+- AIQ was Keith Elwin's third Stern design, following Iron Maiden and Jurassic Park.
+- The machine is based on the Marvel Comics universe rather than the Marvel Cinematic
+  Universe films.
+- The Dr. Strange disc detects spin direction and velocity for gameplay.
+- Avengers Tower uses a magnet to visibly hold balls in midair for Iron Man locks.
+- Premium/LE use a physical Portal/subway, while the Pro uses the right-ramp rule
+  instead.
+summary: Combos → Portal Locks → Gem Quest → multiball stack → Victory Laps → Gem
+  placement
+venue_notes:
+- The machine is on latest code, but detailed rules support in the brief is based
+  on 1.08; do not assume every post-1.08 rule is unchanged.
+- Tournament setup is either Competition Mode or Stern Competition Install. Competition
+  Mode removes randomness; Competition Install also changes settings, including disabling
+  extra balls and Gem Mania triggers.
+- Extra-ball treatment should be described according to the active competition configuration.
+image: images/avengers-infinity-quest-pro-stern-2020.jpg

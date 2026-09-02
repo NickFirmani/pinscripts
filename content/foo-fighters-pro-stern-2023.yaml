@@ -1,0 +1,151 @@
+id: foo-fighters-pro-stern-2023
+name: Foo Fighters (Pro)
+manufacturer: Stern Pinball
+year: 2023
+metadata:
+  designer: Jack Danger
+  artist: Zombie Yeti
+  production: SPIKE 2, LCD, 3 flippers
+  era: Modern SPIKE 2
+  multiball: Overlord, Area 51, Combotron, and FooBot
+hook: Build VAN and Overlord together, start a city, then bring multiball and Playfield
+  X into the mode. On the Pro, repeated right-ramp shots can add Area 51 to the stack.
+rules:
+  primary: Spell VAN on white arrows, select a city at the left ramp, and stack an
+    active Van Mode with Overlord Multiball. Build Rock-O-Meter for 2× Playfield,
+    refill it for 3×, and use Area 51, Bot Frenzy, and Ray Gun multipliers for bigger
+    cash-outs.
+  bullets:
+  - Van Mode progress and Van Mods carry between balls; after a failed mode, it remains
+    ready to restart.
+  - Qualify and capture the Overlord ball, then bash it to start multiball. Re-locking
+    during multiball opens a 20-second 2× jackpot window.
+  - On the Pro, five right ramps start first Area 51; later starts require nine. Eight
+    jackpots light the right-ramp-to-UFO Super Jackpot sequence.
+  - Ray Gun targets make the next shot 2×; hit the opposite Ray Gun immediately for
+    4×. They stack with Playfield X and FooBot multipliers.
+  - The UFO button can spot a valuable eligible lit shot, but cannot start a mode
+    or multiball.
+watch:
+- title: VAN ready
+  text: White arrows and a flashing left ramp mean VAN is qualified; the player is
+    ready to select or resume a city.
+- title: Overlord captured
+  text: A captured Overlord ball means multiball is close, so captive-ball hits are
+    deliberate qualification shots.
+- title: Playfield X active
+  text: A full Rock-O-Meter or 2×/3× display usually signals an immediate push for
+    mode finals, supers, spinners, or ramps.
+- title: Area 51 flashing
+  text: On the Pro, a flashing Area 51 right-ramp insert means the next right ramp
+    starts it; with another feature running, a stack is imminent.
+skill_shots:
+- name: Rock-O-Meter
+  how: Soft-plunge through the right crossover and Rock-O-Meter lane, timing the flashing
+    level.
+  value: Makes substantial progress toward Playfield X.
+- name: Van Mod-ulator
+  how: Plunge into the three drops to collect the currently flashing Van Mod level.
+  value: Awards a Van Mod; often a strong tournament plunge when ball save is short
+    or off.
+- name: Combo Hi-Five Super Skill Shot
+  how: Hit the left crossover, then continue the lit combo chain for up to six shots.
+  value: Each successive shot extends ball save.
+features:
+- type: player-control
+  name: UFO action button
+  text: Captive-ball hits charge one to three uses. The button spots the highest-value
+    eligible shot and awards or advances it, except it cannot start modes or multiballs.
+- type: ball-save
+  name: Overdrive
+  text: Once lit on the Pro, a left-outlane drain is automatically saved; promptly
+    hit the left flipper for an Overdrive score award.
+- type: ball-save
+  name: Missile save
+  text: The first Bot Award lights a separate right-outlane ball save.
+- type: mystery-award
+  name: Mystery
+  text: Sonic Radio completions briefly light a target for an award. In Competition
+    Mode, the sequence is deterministic; the first Mystery in multiball is Add-A-Ball
+    when available.
+- type: extra-ball
+  name: Extra Ball
+  text: Earned after two completed Van Modes or bot thresholds. With extra balls disabled,
+    it awards 10M instead, affected by Playfield and Ray Gun multipliers.
+shots:
+- name: Left ramp / Van
+  value: Starts Van Modes and advances FooBot; the core progression start.
+  risk: Medium
+  diagram: 1
+- name: Overlord
+  value: Qualifies locks and Overlord Multiball, then scores jackpots.
+  risk: High
+  diagram: 2
+- name: Mod-ulator
+  value: Advances Van Mods and can re-light Rock-O-Meter.
+  risk: Medium-High
+  diagram: 3
+- name: Spinner
+  value: Advances New York and Bot Frenzy; especially valuable with mode multipliers
+    and Playfield X.
+  risk: High
+  diagram: 4
+- name: Right ramp
+  value: Advances Area 51 on the Pro; five shots start the first multiball.
+  risk: High
+  diagram: 5
+- name: Right orbit
+  value: Builds Rock-O-Meter toward Playfield X.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use first Overlord or Area 51 as a utility multiball inside an active Van
+    Mode. Take 2× when convenient instead of forcing a difficult 3× refill, and use
+    UFO to remove hard lit shots.
+  behind: 'Build the stack first: Van Mode plus Overlord, optionally Area 51, then
+    activate 2× or 3× Playfield. Bot Frenzy, New York spinner scoring, and Ray Gun
+    multipliers offer explosive upside.'
+  key_decision: Start the prepared feature now, or risk more single-ball shots to
+    build multiplier, multiball, or Van Mods first? Stacking pays heavily, but center
+    shots and fast returns punish greed.
+danger:
+- Overlord and adjacent targets can rebound directly into the lower playfield; a controlled
+  right-flipper backhand is often safer.
+- Right-ramp rejects are fast, and some setups can send returns toward the shooter
+  lane or right outlane.
+- The right-orbit Rock-O-Meter return can skim the right sling or outlane instead
+  of feeding cleanly.
+- Mod-ulator misses and paddle rebounds can feed directly into dangerous center geometry.
+- Missing the upper-flipper crossover can turn a controlled feed into fast, uncontrolled
+  lower-playfield action.
+commentary:
+- He's got VAN ready, but he's setting up Overlord first so he can bring the multiball
+  into the city.
+- Rock-O-Meter is full—that's double playfield; fill it again before time expires
+  and it becomes triple.
+- Five right ramps on the Pro gets Area 51 started—there's no upper playfield to qualify
+  here.
+- That Ray Gun gives the next shot double; hit the opposite side immediately and it's
+  four times.
+- UFO button is charged—he can spot the best lit shot, but it can't actually start
+  the feature.
+- That's eight Area 51 jackpots; now it's right ramp into the captive ball for the
+  Super.
+trivia:
+- Foo Fighters was Jack Danger's first full Stern production design after joining
+  Stern from his Dead Flip streaming career.
+- The theme is the original fictional Saturday-morning cartoon universe, “Foo Fighters
+  Saturday Morning Action Time!”
+- Stern collaborated directly with the band and included 15 full-length songs.
+- The Pro has three flippers versus four on Premium and LE, while retaining the unusual
+  upper side-loop and side-ramp geometry.
+- V1.03.0 buffed Combotron Multiball and changed Bot Frenzy's unique-bot spinner multiplier
+  to 1×/2×/4×/8×.
+summary: VAN Mode → Overlord stack → Playfield X → Area 51 → Super Jackpot
+venue_notes:
+- 'Installed code: V1.03.0.'
+- Extra balls are disabled in software; earned extra balls award the normal 10M consolation.
+- Tournament configuration is Competition Install or Competition gameplay mode; Competition
+  Install tightens Overlord qualification and Playfield-X and Van Mode timing.
+- Physical return behavior, especially right-ramp and Rock-O-Meter feeds, is setup-sensitive.
+image: images/foo-fighters-pro-stern-2023.jpg

@@ -1,0 +1,150 @@
+id: pulp-fiction-se-chicago-gaming-2023
+name: Pulp Fiction — Special Edition
+manufacturer: Chicago Gaming Company / Play Mechanix
+year: 2023
+metadata:
+  designer: Mark Ritchie
+  artist: Scott Pikulski
+  production: Chicago Gaming Company / Play Mechanix
+  era: Retro-styled solid-state
+  multiball: Briefcase Boogie, Pawn Shop Panic, Cast Chaos, Pulp Fiction Frenzy, The
+    Shot
+hook: Build Big Kahuna playfield X in single-ball play, spend it on a Roll Scene cash-out,
+  and advance the five objectives toward Divine Intervention, which doubles the entire
+  current score.
+rules:
+  primary: 'Big Kahuna is the central scoring engine: hit both green standups by the
+    pops, then the Bullseye Magnet to reach 2X playfield scoring. Each further completed
+    cycle adds 1X for the rest of that ball; this venue is set to a 6X maximum.'
+  bullets:
+  - Roll Scenes are 40-second modes. Build value, then collect at the right saucer
+    in the final 10 seconds; successful collects carry base value into later Scenes.
+  - Big Kahuna multiplies both Scene building and the right-saucer collect. Scenes
+    pause during multiball rather than stacking with it.
+  - Three Briefcase locks start three-ball Briefcase Boogie; three Pawn Shop locks
+    start Pawn Shop Panic. Competition settings use virtual locks here.
+  - Collect five Cast characters to start Cast Chaos. The left standup can light Hold
+    Cast, which preserves collected characters between balls.
+  - After four normal Scenes, The Shot is an untimed four-ball multiball; repeated
+    right-drop payoffs use accumulated Scene value, then reset it.
+watch:
+- title: Big Kahuna sign
+  text: A 2X, 3X, or higher display means current playfield scoring is multiplied
+    for the rest of the ball.
+- title: Late Scene saucer
+  text: A flashing right saucer in the final 10 seconds is the Scene cash-out window,
+    where the built value and carried Scene base can be collected.
+- title: Multiball readiness
+  text: Three locks at Pawn Shop or Briefcase make multiball available, though a player
+    may wait to establish multiplier or other progress.
+- title: Five objective inserts
+  text: When all five are solid, Divine Intervention is ready; completing it doubles
+    the player's entire current score.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge into the top saucer.
+  value: Scores 3K per lit arrow, plus 100K when all five arrows are lit; also qualifies
+    a character for the right-saucer collect.
+- name: Super Skill Shot
+  how: Hold the left flipper on the plunge, then hit any briefly lit Payoff shot before
+    time expires.
+  value: Awards 100K, trading the normal top-saucer character qualification for a
+    timed flipper shot.
+features:
+- type: ball-save
+  name: Outlane saves
+  text: The first right Roll Scene drop lights the left outlane save; the second on
+    the same ball lights the right. With one lit, sling hits alternate the protected
+    outlane. Saves reset at drain.
+- type: extra-ball
+  name: Extra Balls
+  text: Normally qualified through a developed 1-2-3-4/Bonus-X ladder or 146+ MPH
+    Bonus, but disabled here by Competition Mode.
+- type: player-control
+  name: Lane change and Gun Bonus
+  text: Flippers move 1-2-3-4 lane lamps. Completing all four advances Bonus X and
+    lights Royale with Cheese; its hurry-up can light Super Spinners and Collect Gun
+    Bonus.
+- type: other
+  name: Competition Mode
+  text: 'Enabled at this venue: ordinary ball save, Extra Balls, and several safety
+    compensations are disabled; locks are virtual and character-start behavior is
+    fixed.'
+shots:
+- name: Briefcase drops / kicker
+  value: Left-side locks start Briefcase Boogie and advance a main objective after
+    at least one Super Payoff.
+  risk: Medium
+  diagram: 1
+- name: Orbits / spinners
+  value: Drive Clean the Car, Drive Fast, and Super Spinners; a major route for multiplied
+    scoring.
+  risk: Medium-High
+  diagram: 2
+- name: Big Kahuna standups
+  value: Upper standups qualify the playfield-X sequence and are the primary scoring
+    setup.
+  risk: Medium-High
+  diagram: 3
+- name: Pawn Shop drops / scoop
+  value: Center drops expose the lock for Pawn Shop Panic, a practical early multiball
+    route.
+  risk: High
+  diagram: 4
+- name: Bullseye Magnet / Gun
+  value: Completes Big Kahuna X progression and advances Gun Bonus.
+  risk: Medium-High
+  diagram: 5
+- name: Roll Scene drop / saucer
+  value: Starts and cashes Scenes, lights outlane saves, and collects characters.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Buy outlane insurance with the right drop, take a reasonable 2X or 3X Kahuna,
+    then spend it instead of repeatedly forcing another multiplier cycle. Pawn Shop
+    Panic is a useful objective route with protection.
+  behind: 'Push the high-leverage chain: Kahuna X into a lucrative Roll Scene and
+    a successful late saucer cash-out. A deep Divine Intervention attempt is the ultimate
+    variance play because it doubles the full score.'
+  key_decision: How much Big Kahuna X should be built before scoring? Each level multiplies
+    much of the game, but requires more single-ball standup and Magnet attempts, and
+    all of it disappears at drain.
+danger:
+- Big Kahuna standups sit around the pop area; forcing them can create unpredictable
+  bumper and outlane action.
+- A Bullseye Magnet miss can rebound directly through center field; successful catches
+  are controlled, misses less so.
+- Pawn Shop locks release above the left slingshot, creating immediate multiball chaos.
+- Repeated right drop and saucer attempts can produce unpredictable rejects toward
+  the flippers.
+- Small pitch changes can noticeably alter outlane behavior and shot returns.
+commentary:
+- Big Kahuna is running—everything on the playfield is multiplied for the rest of
+  this ball.
+- They are holding the Scene collect; the right saucer becomes the cash-out only during
+  the final ten seconds.
+- The Scene pauses during multiball—it does not stack—so this is protection, not simultaneous
+  Scene scoring.
+- They are going back for another Kahuna level instead of spending the multiplier;
+  that is Pulp Fiction's central risk decision.
+- Five objectives are complete—Divine Intervention is ready, and finishing it doubles
+  the entire score.
+- That right drop also buys outlane insurance, so it is not only a mode shot.
+trivia:
+- The project began after Quentin Tarantino requested an 1980s-style Pulp Fiction
+  pinball machine for his home and remained involved in development.
+- This was Mark Ritchie's first new production pinball design in more than two decades.
+- The retro presentation has no ramps and alphanumeric-style displays, alongside modern
+  RGB lighting, physical subway locks, a magnet, and deep software.
+- The game includes more than 250 film dialogue clips and five licensed soundtrack
+  songs.
+- Bad Mother Flipper LE shares the SE's gameplay mechanisms and rules; its differences
+  are presentation and feedback features.
+summary: Big Kahuna X → Roll Scene cash-out → multiball/objective progress → Divine
+  Intervention score double
+venue_notes:
+- 'Installed software: v1.0.1.'
+- Big Kahuna maximum is set to 6X.
+- 'Competition Mode is enabled: virtual locks are active, and Extra Balls are disabled.'
+- No notable venue-specific feed was reported.
+image: images/pulp-fiction-se-chicago-gaming-2023.jpg

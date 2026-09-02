@@ -1,0 +1,141 @@
+id: stranger-things-premium-stern-2019
+name: Stranger Things — Premium
+manufacturer: Stern Pinball
+year: 2019
+metadata:
+  designer: Brian Eddy
+  artist: Bob Stevlic
+  production: Premium edition
+  era: SPIKE 2 / LCD
+  multiball: Telekinesis, Demogorgon Battle, Total Isolation, Send It Back, Light
+    the Fire, and Final Showdown
+hook: Start a Chapter before Telekinesis Multiball, build Burn It Back for Spell of
+  Protection and 2X scoring, then cash in a stacked Telekinesis Super.
+rules:
+  primary: Qualify Chapters through ramp and orbit shots, then start Telekinesis Multiball
+    after completing the green LIGHT LOCK standups and making three left-ramp locks.
+    Chapter modes generally cannot be started during TKMB, so start the Chapter first.
+  bullets:
+  - Four different Chapters qualify Total Isolation I; eight qualify Total Isolation
+    II. Six Season-1 Chapters lead to Send It Back, and six Season-2 Chapters to Light
+    the Fire.
+  - During TKMB, five jackpots light a 6M Super at the left eject. On Premium, one
+    or two magnet-locked balls make it 2X or 3X; Burn It Back 2X can double it again.
+  - The action button can use the once-per-game Demogorgon Bomb for a reduced-value
+    instant kill.
+  - Major achievements build permanent end-of-ball bonus; Chapter scoring adds 10%
+    of that ball's Chapter points, and Bonus X can reach 5X.
+watch:
+- title: Telekinesis locks
+  text: Three balls suspended on Eleven's magnetic wall mean Telekinesis Multiball
+    is ready. Fewer stored locks can become Swipe-a-Ball ammunition.
+- title: 2X at left eject
+  text: When Burn It Back has lit 2X scoring, expect a player to time the 60-second
+    double-scoring collect around a multiball or valuable Chapter.
+- title: Demogorgon ready
+  text: When the ramp drops and the Demogorgon mouth is exposed, a Battle is ready
+    and the center shot becomes critical.
+- title: Bonus X
+  text: As Bonus X approaches 5X, a drain can make a huge score jump and a tilt becomes
+    especially costly.
+skill_shots:
+- name: Skill Shot
+  how: Plunge into the flashing center drop target.
+  value: Scores 5M, plus 1M for each prior success.
+- name: Super Skill Shot
+  how: Soft-plunge to the flippers, then shoot the left eject/kicker.
+  value: Scores 10M, plus 2.5M for each prior success.
+- name: MXV Super Skill Shot
+  how: On one plunge, use a drop-target rebound to make both the Skill Shot and Super
+    Skill Shot.
+  value: Awards both underlying shots plus 25M and 5M per MXV, along with a Drawing
+    that adds to wizard-mode jackpots and bonus.
+features:
+- type: ball-save
+  name: Spell of Protection
+  text: Burn It Back can light a one-use save at the left outlane; thresholds include
+    3, 12, and 25 loops, then every 14.
+- type: other
+  name: 2X Scoring
+  text: Burn It Back can light the left eject for 60 seconds of double scoring; thresholds
+    include 7 and 18 loops, then every 14.
+- type: mystery-award
+  name: Mystery
+  text: Normally pseudo-random and deterministic in Competition Mode; important awards
+    include Add-A-Ball, Light Lock, Start Chapter, Spell of Protection, and Add Time.
+- type: extra-ball
+  name: Extra Balls
+  text: Multiple qualifications exist. Disabled Extra Balls score 15M in the documented
+    rules; Competition Install sets no Extra Balls.
+- type: player-control
+  name: Swipe-a-Ball
+  text: 'Premium/LE only: when TK balls are physically locked as another multiball
+    begins, the action button can steal one into that multiball at the cost of a stored
+    TK lock.'
+- type: player-control
+  name: Demogorgon Bomb
+  text: Once per game, the action button instantly kills the current Demogorgon for
+    reduced value; it is often saved for a harder later Demogorgon.
+shots:
+- name: Left ramp / Telekinesis
+  value: Advances Chapters, locks, and TKMB; the primary stack and multiball route.
+  risk: High
+  diagram: 1
+- name: Burn It Back
+  value: Builds Spell of Protection and 2X scoring, creating major leverage.
+  risk: Medium
+  diagram: 2
+- name: Demogorgon drops / mouth
+  value: Advances Demogorgon Battles and later multiball scoring.
+  risk: High
+  diagram: 3
+- name: Left eject
+  value: Handles Demodog, Mystery, 2X collection, and the TK Super.
+  risk: Medium-High
+  diagram: 4
+- name: Right orbit
+  value: Advances Chapters and Dart/pops for flowing mode progress.
+  risk: Medium
+  diagram: 5
+- name: Major ramps and orbits
+  value: Primary Chapter scoring and combo shots during stacked modes.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Prioritize Spell of Protection, safe Chapter progress, and a straightforward
+    Chapter plus TKMB stack. Protect the accumulated bonus rather than forcing dangerous
+    Demogorgon drops.
+  behind: Build 2X, then pursue a Chapter → Demodog → TK stack, Premium's 3X TK Super
+    potential, or a lucrative Demogorgon multiball.
+  key_decision: 'Decide how much setup is worth risking before multiball: the full
+    three-feature stack has huge potential, but another center or left-ramp setup
+    shot can end the ball.'
+danger:
+- Center drop targets produce severe straight-down-the-middle rebounds; use multiball
+  protection when practical.
+- Premium Telekinesis ramp rejects can return straight down the middle.
+- A failed Telekinesis magnet catch can dump the ball back down the left ramp.
+- Left eject kickouts may feed the sling dangerously.
+- Demogorgon mouth alignment can vary materially by machine.
+commentary:
+- Chapter first, then Telekinesis—that's the protected stack.
+- He's adding Demodog before multiball; that's the full three-feature stack.
+- Burn It Back has lit double scoring—sixty seconds of 2X whenever he cashes it.
+- Two balls on Eleven's magnet means the Telekinesis Super can be triple value.
+- 'Watch the bonus here: Stranger Things can award a gigantic end-of-ball count, so
+  a tilt would be catastrophic.'
+- Those center drops are progress, but they're also one of the most dangerous shots
+  on the machine.
+trivia:
+- Stranger Things marked Brian Eddy's return to production pinball design after classics
+  including Attack from Mars and Medieval Madness.
+- Premium/LE introduced Stern's first playfield video projector, projecting animations
+  directly onto the Demogorgon screen, ramps, and targets.
+- The wall-mounted magnetic lock physically suspends balls to represent Eleven's telekinesis.
+- David Harbour recorded custom Jim Hopper speech for the game.
+- The main code is based on the show's first two seasons, with six Chapter modes for
+  each season.
+summary: Chapters → Burn It Back → 2X → Telekinesis stack → giant bonus
+venue_notes:
+- Venue reports LE/PRE v1.12.0.
+image: images/stranger-things-premium-stern-2019.jpg

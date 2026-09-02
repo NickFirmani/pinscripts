@@ -1,0 +1,130 @@
+id: frontier-bally-1980
+name: Frontier
+manufacturer: Bally Manufacturing
+year: 1980
+metadata:
+  designer: George Christian
+  artist: Greg Freres, Kevin O’Connor, and Margaret Hudson
+  production: 1,850 units
+  era: Bally AS-2518-35 solid-state
+  multiball: No multiball
+hook: Build two separate bonuses, multiply Frontier at the left inline targets, then
+  repeatedly route the lit spinner into Frontier Falls without resetting the bonus.
+rules:
+  primary: Build Predator Bonus with A-B-C lanes and animal standups while completed
+    predator rows add Frontier Bonus. Open Frontier Falls and light the spinner with
+    the first left inline target; deeper left targets raise Frontier Bonus to 2×,
+    3×, and 4×. Frontier Falls repeatedly collects the multiplied Frontier Bonus without
+    resetting its base value.
+  bullets:
+  - Each animal adds 3K Predator Bonus; all 15 make 45K, and a second completed set
+    can raise the base to 90K.
+  - Each completed horizontal predator row adds 10K Frontier Bonus; the usual maximum
+    is 60K, with a liberal adjustment documented at 110K.
+  - The right 3-bank advances Predator Bonus through 2×, 3×, and 4×.
+  - Both base bonuses carry between balls; Predator Bonus pays only at end of ball,
+    while Frontier Bonus can be collected during play at Frontier Falls.
+watch:
+- title: Frontier multipliers
+  text: The 2×, 3×, and 4× Frontier lamps determine the value of every Frontier Falls
+    collect.
+- title: Gate and spinner
+  text: A lit spinner and open Frontier Falls gate signal that the primary scoring
+    route is available.
+- title: Predator grid
+  text: A nearly full or completed grid makes the risky right 3-bank more valuable
+    because it multiplies Predator Bonus.
+- title: Frontier Bonus ladder
+  text: A large Frontier Bonus can make repeated Falls collections dominant even without
+    more bonus building.
+skill_shots:
+- name: A-B-C lane skill shot
+  how: Plunge into the least-advanced top lane; there is no lane change, so strength
+    and angle choose the lane.
+  value: Advances its Predator column and can complete a horizontal row for Frontier
+    Bonus; prioritize progress over raw switch points.
+features:
+- type: extra-ball
+  name: A-B-C Extra Ball
+  text: A later A-B-C completion can qualify or award Extra Ball, but Extra Balls
+    are disabled for this event.
+- type: other
+  name: Special
+  text: Later A-B-C completions, a completed Predator grid, and other deep progression
+    can produce Specials; event treatment is unknown.
+shots:
+- name: Left inline drops / Grizzly
+  value: Opens Frontier Falls, lights the spinner, and advances Frontier Bonus multipliers
+    to 4×.
+  risk: Medium
+  diagram: 1
+- name: A-B-C lanes
+  value: Builds Predator columns, Frontier rows, and A-B-C award progression.
+  risk: Low
+  diagram: 2
+- name: Predator standups
+  value: Fill missing predator animals and help complete Frontier rows.
+  risk: Medium-High
+  diagram: 3
+- name: Right spinner
+  value: Lit spinner scoring and the main route toward Frontier Falls.
+  risk: High
+  diagram: 4
+- name: Right 3-bank
+  value: Advances Predator Bonus multiplier from 2× through 4×.
+  risk: High
+  diagram: 5
+- name: Frontier Falls
+  value: Repeatedly collects multiplied Frontier Bonus without resetting its base
+    value.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Build Frontier Bonus and its multiplier, then use the spinner/Falls route
+    when the feed is trustworthy. Avoid the right bank unless Predator Bonus is large
+    enough to justify its rebound risk.
+  behind: Push Frontier toward 4× for repeated Falls collections and attack the right
+    bank for 4× Predator Bonus. A second completed Predator set can make the end-of-ball
+    award 360K.
+  key_decision: Stay on the repeatable Frontier Falls engine or risk the right bank
+    to multiply Predator Bonus; weigh score differential against how safely the spinner/Falls
+    route plays.
+danger:
+- A short spinner shot can return through the center toward the drain.
+- Direct rebounds from the right drop bank are immediate drain threats.
+- Pop-bumper exits create uncontrolled danger after an upstairs trip.
+- Unnecessary Predator standup shots add rebound risk.
+- Hard rejects from the left inline targets can still head toward the middle.
+commentary:
+- That first inline target opens Frontier Falls and lights the spinner—now the main
+  scoring loop is available.
+- They’re at four-times Frontier Bonus, so every Falls collect is worth four times
+  that center ladder.
+- And importantly, collecting Frontier doesn’t reset it—they can reopen the gate and
+  take the same bonus again.
+- The Predator grid is nearly full; now those dangerous right-side drops become worth
+  shooting for the multiplier.
+- Predator Bonus only pays at end of ball, so there’s a lot of score sitting there
+  that still has to survive the drain.
+- That spinner came up short—this is the dangerous return, right back through the
+  middle.
+trivia:
+- Frontier was designed by George Christian, programmed by Rehman Merchant, with art
+  by Greg Freres, Kevin O’Connor, and Margaret Hudson.
+- Bally produced 1,850 units.
+- The machine was designed in May 1980 and manufactured in late 1980.
+- Its separate Frontier and Predator bonus systems, each with multipliers, make both
+  end-of-ball scoring and in-ball collection central.
+- Bally described Frontier as “rugged” and “down to earth,” matching its wilderness
+  artwork.
+summary: Build A-B-C rows → raise Frontier X → spinner to Falls → repeat Frontier
+  collect → multiply Predator at the right bank
+venue_notes:
+- Three-ball game.
+- Extra Balls are disabled.
+- Frontier Bonus maximum is unknown; standard documentation gives 60K, while a liberal
+  adjustment permits 110K.
+- Special treatment is unknown.
+- This copy’s spinner-to-Falls feed is hard; account for its difficulty when describing
+  or choosing the repeatable loop.
+image: images/frontier-bally-1980.jpg

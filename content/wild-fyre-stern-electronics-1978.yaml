@@ -1,0 +1,116 @@
+id: wild-fyre-stern-electronics-1978
+name: Wild Fyre
+manufacturer: Stern Electronics
+year: 1978
+metadata:
+  designer: Harry Williams
+  artist: ''
+  production: 2,400
+  era: Early solid-state
+  multiball: None
+hook: Build bonus from 2K to 20K, exploit the spinner's 1K windows, earn 2X, then
+  cash the upper-right Collect Bonus eject and rebuild. On the final ball, 5X timing
+  can make a drain correct.
+rules:
+  primary: Build base bonus in 2K steps to 20K, then collect it at the upper-right
+    eject or at the drain. Collection resets base bonus to 2K, but an earned 2X multiplier
+    remains.
+  bullets:
+  - Earn Double Bonus by completing the upper 3-bank twice or advancing the right-side
+    Arrow feature three times.
+  - The spinner is 1K per spin only at 2K, 8K, 14K, and 20K bonus; otherwise it is
+    100 per spin.
+  - At 20K, the 1K spinner lamp stays lit for the rest of the ball.
+  - On the final ball after Double Bonus, switch hits alternate 2X and 5X.
+  - In 3-ball play, pop bumpers score 1K.
+watch:
+- title: Spinner windows
+  text: At 2K, 8K, 14K, or 20K bonus, the spinner is worth 1K per spin; a sudden switch
+    to spinner attempts follows that lamp.
+- title: Double Bonus
+  text: With 2X established, Collect Bonus can be worth up to 40K; final-ball 2X/5X
+    alternation is now possible.
+- title: Final-ball multiplier
+  text: At max bonus, a switch changing 5X to 2X changes the eventual award by 60K.
+- title: WILD FYRE progress
+  text: These drops matter chiefly for Special qualification, since the Extra Ball
+    lane is disabled.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball lane
+  text: Spelling WILD lights the inner-right Extra Ball lane. This venue has the Extra
+    Ball feature software-disabled.
+- type: other
+  name: Special qualification
+  text: Completing WILD FYRE lights the inner-left Special lane; the top-eject sequence
+    offers another Special route.
+shots:
+- name: Spinner
+  value: 100 per spin normally; 1K per spin at the four bonus windows. Attack immediately
+    when lit.
+  risk: Medium
+  diagram: 1
+- name: Upper 3-bank drops
+  value: One route toward Double Bonus; complete the bank twice to earn 2X.
+  risk: High
+  diagram: 2
+- name: WILD FYRE bank
+  value: Advances Special qualification rather than the core bonus engine.
+  risk: Medium-High
+  diagram: 3
+- name: Bonus rollovers
+  value: Advance base bonus by 2K; use them to grow the next collect.
+  risk: Medium
+  diagram: 4
+- name: Arrow orbit/target
+  value: Alternate Double Bonus route; three advances earn 2X and make its rollover
+    worth 10K.
+  risk: Medium-High
+  diagram: 5
+- name: Collect Bonus eject
+  value: Cashes base bonus times multiplier and resets base bonus to 2K; the primary
+    repeatable payoff.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor controlled bonus-build and Collect Bonus cycles. Once 2X is earned,
+    avoid forcing WILD FYRE or drop targets unless Special has meaningful event value;
+    take the 1K spinner whenever it is lit.
+  behind: Push toward 20K, secure 2X, and exploit every 1K spinner window. On the
+    final ball, preserve 5X if its bonus can pass the opponent; if it is enough, draining
+    can beat risking another switch hit.
+  key_decision: Collect now or keep building? Collecting banks value but resets base
+    bonus; continuing can reach 20K or a 1K-spinner window while exposing the ball
+    to chaotic feeds.
+danger:
+- Central return-lane dividers can ricochet a ball into an outlane or center drain.
+- Balls falling from the upper 3-bank can reach the flippers with little warning.
+- Right-side returns can produce uncontrolled feeds.
+- Direct drop-target rebounds can immediately create center-drain danger.
+commentary:
+- Bonus is at fourteen thousand—that is one of the four numbers where the spinner
+  becomes a thousand a spin.
+- Double Bonus is established, so the upper-right saucer will cash the value at 2X.
+- Collecting resets the base bonus, not the multiplier—he can build it right back
+  up.
+- 'Final ball is the unusual one: 2X and 5X alternate with switch hits.'
+- If five-times is enough to win, another switch can actually hurt him.
+- Those WILD FYRE drops are not the normal scoring route unless Special has event
+  value.
+trivia:
+- Wild Fyre was designed by Harry Williams, founder of Williams Manufacturing and
+  later a designer for Stern Electronics.
+- Stern produced 2,400 examples.
+- Its artwork depicts Roman-era chariot racing.
+- It uses Stern's early M-100 electronics and SB-100 electronic sound hardware.
+- The Reignyted conversion was created to change stock spinner lighting and final-ball-only
+  alternating 5X behavior.
+summary: Build 2K–20K bonus → chase 1K spinner windows → earn 2X → collect → rebuild
+  → time final-ball 5X
+venue_notes:
+- Stock Stern Wild Fyre rules are installed; do not apply Reignyted rules.
+- This game is set for 3-ball play; pop bumpers score 1K.
+- The Extra Ball feature is software-disabled.
+- Special's tournament award is not confirmed locally.
+image: images/wild-fyre-stern-electronics-1978.jpg

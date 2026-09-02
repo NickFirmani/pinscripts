@@ -1,0 +1,146 @@
+id: dungeons-and-dragons-premium-stern-2025
+name: 'Dungeons & Dragons: The Tyrant’s Eye (Premium)'
+manufacturer: Stern Pinball
+year: 2025
+metadata:
+  designer: Brian Eddy
+  artist: Vince Proce
+  production: ''
+  era: SPIKE 2, 2025
+  multiball: Dragon → Town Celebration, Gelatinous Cube, and Tavern Brawl
+hook: Build Dragon Multiball, Gelatinous Cube Multiball, and a Dungeon Crawl; then
+  shoot the center spinner to start Tavern Brawl. Cube offers the immediate jackpot
+  path, while Hidden Temple can bring 20 seconds of 2× scoring into a big feature.
+rules:
+  primary: Start Dragon Multiball, Gelatinous Cube Multiball, and Dungeon Crawl to
+    light Tavern Brawl at the center spinner. In Competition play, campaign progress
+    and legendary equipment are removed.
+  bullets:
+  - Spell DRAGON at Rath’s 3-bank, then shoot the right orbit or side ramp to start
+    Dragon Multiball.
+  - During Dragon, major-shot jackpots advance from 1× to 3×; defeat Rath to start
+    Town Celebration.
+  - Use the left orbit to lower the Cube ramp, then repeat the left ramp to capture
+    a ball. Start Cube immediately or add locks for more balls and larger jackpots.
+  - Town Dungeons lock out multiballs.
+  - Hidden Temple gives 20 seconds of 2× scoring and can be extended by repeating
+    the Secret Door/Temple sequence.
+watch:
+- title: DRAGON letters / Rath
+  text: DRAGON progress builds Dragon Multiball; during it, the remaining letters
+    also show Rath’s remaining health.
+- title: Cube capture
+  text: 'A ball suspended in the Gelatinous Cube is the decision point: start the
+    multiball now or risk another lock for a larger feature.'
+- title: Tavern Brawl spinner
+  text: A lit center spinner means Dragon, Cube, and Dungeon Crawl have all been started;
+    it is now the Tavern Brawl start shot.
+- title: Flashing Shield button
+  text: Shield is ready to rescue a center drain and can also be used to stage a difficult
+    ramp or orbit shot.
+skill_shots:
+- name: Upper Loop Skill Shot
+  how: Make a short plunge, then send the ball through the upper loop.
+  value: Awards 2M times ball number; Extra Balls add another multiplier step.
+- name: Super Skill Shot
+  how: Shoot left eject, then side ramp, then right ramp.
+  value: Starts at 6M.
+- name: MXV Skill Shot
+  how: Shoot the Hidden Temple lane behind the upper flipper.
+  value: Starts at 6M.
+features:
+- type: player-control
+  name: Shield
+  text: Press the flashing action button to raise the between-flipper bar for a center-drain
+    rescue. Return lanes relight uses, with up to two normally stored; it can also
+    stage the ball.
+- type: player-control
+  name: Ranged Attack
+  text: During battles, hold the action button and release on the desired damage shot
+    to spot it, avoiding a dangerous required shot.
+- type: other
+  name: Critical Hit
+  text: Hit the captive ball twice within 15 seconds to spot a battle or mode shot
+    and advance DRAGON, Cube, or 2× preparation.
+- type: extra-ball
+  name: Extra Ball
+  text: Normally lit at the right ramp through several routes, but disabled for this
+    Competition setup.
+- type: other
+  name: Hidden Temple 2×
+  text: Hidden Temple starts 20 seconds of 2× scoring; repeated Secret Door/Temple
+    sequences extend it in 5-second chunks.
+shots:
+- name: Left orbit
+  value: Lowers the Cube ramp and feeds the upper flipper; it opens the lucrative
+    Cube route.
+  risk: High
+  diagram: 1
+- name: Gelatinous Cube ramp
+  value: Builds Cube locks and starts the high-value Cube multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Rath / DRAGON bank
+  value: Advances DRAGON letters and damages Rath to qualify and win Dragon Multiball.
+  risk: Medium-High
+  diagram: 3
+- name: Center spinner / Dungeon
+  value: Advances Dungeon Crawl and starts Tavern Brawl after its prerequisites are
+    complete.
+  risk: Medium-High
+  diagram: 4
+- name: Right orbit
+  value: Starts Dragon Multiball and provides Cube-lock utility.
+  risk: Medium-High
+  diagram: 5
+- name: Hidden Temple
+  value: Activates 2× scoring for an upcoming high-scoring feature.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Prioritize Cube jackpots or a safely prepared Dragon Multiball rather than
+    building every Tavern Brawl requirement. Ardor the Paladin makes Rath easier to
+    defeat when Dragon reliability matters.
+  behind: Commit to Tavern Brawl, ideally with 2× scoring available. During Brawl,
+    build the looping left-ramp jackpot toward 3× and pursue the Premium pop-up Dungeon
+    shot for Super Jackpot qualification.
+  key_decision: When Cube captures its first ball, cash it now to protect the feature
+    or add locks for more balls and higher jackpots while risking a single-ball drain.
+danger:
+- The left orbit is essential to Cube progression but is one of the game’s toughest
+  important shots.
+- The tight right orbit, ramp, and shortcut geometry can break control on misses.
+- Direct hits on the Premium Dungeon target can rebound toward center.
+- Shield has a perceptible raising delay, so a last-second save attempt can fail.
+commentary:
+- The Cube has the first ball—now they have to decide whether to start it or gamble
+  on another lock.
+- DRAGON is complete; that right orbit now starts the Rath fight.
+- Those balls keep coming back in Dragon Multiball, but every drain moves Rath closer
+  to winning.
+- They beat Rath—now Town Celebration turns that Dragon jackpot work into the cash-out.
+- All three Tavern Brawl prerequisites are done; the center spinner is the start shot.
+- Shield is lit, so that apparent center drain is not necessarily dead—and it may
+  stage the next ramp.
+trivia:
+- The game arrived during Dungeons & Dragons’ 50th-anniversary era; the tabletop game
+  debuted in 1974, and the 740-game LE run references that date.
+- Premium/LE Rath is a multi-axis animatronic dragon with impact sensing that can
+  launch balls from its mouth.
+- The Gelatinous Cube uses an electromagnet to suspend a real pinball inside its translucent
+  sculpt.
+- Premium/LE include a motorized trap door and pop-up ball capture in front of the
+  center spinner for Dungeon Crawl.
+- The voice cast includes Michael Dorn, Matthew Mercer, Laura Bailey, Marisha Ray,
+  Kevin Smith, Brendon Small, Gerard Way, and Luke Gygax.
+summary: Build Dragon + Cube + Dungeon Crawl → light Tavern Brawl → add Hidden Temple
+  2× → cash Cube or Brawl
+venue_notes:
+- 'Competition mode is in use: saved campaign progress, legendary equipment, and campaign-unlocked
+  characters are excluded; randomness uses a constant seed.'
+- The machine is on code 1.01; the detailed rulesheet is maintained against 1.00.
+- Extra Balls are disabled for this Competition setup.
+- No notable physical issue is reported for this Premium.
+- The number of Cube-ramp hits required for first capture was not confirmed for this
+  event copy.
+image: images/dungeons-and-dragons-premium-stern-2025.jpg

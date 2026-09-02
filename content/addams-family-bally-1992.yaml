@@ -1,0 +1,131 @@
+id: addams-family-bally-1992
+name: The Addams Family
+manufacturer: Bally/Midway
+year: 1992
+metadata:
+  designer: Pat Lawlor and Larry DeMar
+  artist: John Youssi
+  production: 20,270 standard machines
+  era: WPC Fliptronics I
+  multiball: Greed/Vault, Quick, and Thing Multiball
+hook: Build Mansion rooms with Bear Ramp to Chair progression, race for Tour the Mansion,
+  or pivot to volatile Greed Multiball jackpots.
+rules:
+  primary: 'Shoot either main ramp to relight the Electric Chair, then collect the
+    flashing Mansion room at the yellow-lit Chair or Swamp. Complete 12 rooms and
+    collect the flashing question mark for Tour the Mansion: 50M plus automatic replay
+    of major Mansion features.'
+  bullets:
+  - Bear Kicks persist all game; milestone counts spot Mansion rooms, and thresholds
+    can light extra balls.
+  - 'Greed Multiball: spell GREED at the Bookcase, lock balls, collect Train Wreck
+    Jackpot, then shoot Million Plus for Super Jackpot. First Super is 2× Jackpot;
+    later multiballs are 3×.'
+  - Million Plus resets each ball by default and rises from 1M to 10M with side-ramp
+    shots; it also advances THING.
+  - During multiball, Mansion rooms, Stars, 5× Graveyard, and Thing Flips cannot be
+    collected.
+  - Bonus is based on Bear Kicks and Mansion rooms, multiplied by Bonus X up to 5×;
+    Bonus X resets each ball.
+watch:
+- title: Yellow Chair lamp
+  text: A yellow-lit Chair can collect the flashing Mansion room; an unlit Chair gives
+    the “not plugged in yet” non-award.
+- title: Mansion window and question mark
+  text: The flashing window identifies the next Mansion room. A flashing question
+    mark means Tour the Mansion is ready.
+- title: Bookcase and Vault lamps
+  text: GREED completion and an open Vault mean locks are available; red Vault state
+    signals multiball-start or jackpot-related progress.
+- title: Lightning bolts and flashers
+  text: The Power magnets are active, making lower-playfield ball motion less predictable.
+skill_shots:
+- name: Thing’s Eject skill shot
+  how: Plunge so the ball settles into Thing’s Eject near the upper-right shooter
+    lane. A hard plunge tends toward the bumpers; too soft can fall toward the Swamp.
+  value: Scores 2M, then 3M, 4M, and 5M across successful plunges for the game. If
+    Thing’s Eject is lit for a lock or feature, the plunge can also advance it.
+features:
+- type: extra-ball
+  name: Extra balls
+  text: Extra balls can be lit through Bear Kick thresholds, the Mansion extra-ball
+    room, Train Wrecks, and Tour the Mansion.
+- type: player-control
+  name: The Power control
+  text: Holding both flippers briefly disables the under-playfield magnets during
+    their active features; this is an observed competitive technique.
+- type: other
+  name: Thing Flips
+  text: After the far-left inlane lights it, a Bear Ramp shot is diverted to the upper-left
+    mini-flipper and the game attempts the Swamp shot using calibrated timing.
+shots:
+- name: Electric Chair
+  value: Collect the flashing Mansion room and starts some multiballs.
+  risk: Medium
+  diagram: 1
+- name: Million Plus ramp
+  value: Builds 1M–10M, advances THING, and collects the Super Jackpot.
+  risk: Medium-High
+  diagram: 2
+- name: Train Wreck
+  value: Collects Jackpot in multiball and can preserve Graveyard value.
+  risk: High
+  diagram: 3
+- name: Bear Kick ramp
+  value: Advances Bear Kicks, relights Chair, and drives Mansion milestones.
+  risk: Medium
+  diagram: 4
+- name: Bookcase / Vault
+  value: Builds GREED, enables locks, starts Greed Multiball, and relights Jackpot.
+  risk: Medium-High
+  diagram: 5
+- name: Swamp / 5× Graveyard
+  value: Collects a Mansion room when available or cashes up to 5× Graveyard, potentially
+    20M.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor repeatable Bear Ramp to Chair progression, controlled kickouts, and
+    already-lit awards. Avoid forcing the upper-left-flipper 5× Swamp shot while The
+    Power is active.
+  behind: Favor Greed Multiball volatility, especially later multiballs where Super
+    Jackpot is 3× a Jackpot that can reach 25M. A maximized 5× Graveyard is another
+    20M swing.
+  key_decision: Continue Mansion progression toward Tour, or cash into Greed Multiball
+    now? Mansion rooms are unavailable during multiball, while multiball offers greater
+    immediate variance.
+danger:
+- The Power magnets deliberately randomize lower-playfield trajectories during important
+  scoring states.
+- Avoid the upper-left-flipper 5× Swamp cash-out while magnets are active.
+- Control the Chair kickout with a bounce pass or drop catch.
+- Swamp kickouts and side-ramp or Train Wreck ricochets can threaten the center; a
+  timely nudge can turn a reject into a controlled Swamp kickout.
+commentary:
+- That Bear ramp relights the Chair—now they can take the flashing Mansion room.
+- Twelve rooms done; the question mark is lit, so Tour the Mansion is one scoop away.
+- Jackpot at Train Wreck, then the big money is the Super Jackpot on the side ramp.
+- This is a later Greed Multiball, so that Super is triple the Jackpot.
+- Thing Flips is lit—the game itself is going to take this upper-left-flipper shot.
+- Five-times Graveyard is available, but with The Power running that’s a very dangerous
+  cash-out.
+trivia:
+- With 20,270 standard units, The Addams Family was a record-setting commercial success
+  for solid-state pinball.
+- The 1994 Gold edition added 1,000 numbered collector machines and materially expanded
+  the rules.
+- Thing physically emerges and magnetically picks up the ball.
+- The Power uses under-playfield electromagnets to distort ball movement.
+- The early WPC Fliptronics I system enables the software-controlled Thing Flips mini-flipper.
+summary: Bear Ramp → Mansion rooms → Tour the Mansion → Greed locks → Jackpot → Super
+  Jackpot
+venue_notes:
+- This is a standard 1992 TAF; do not apply Gold/Special Collector’s Edition rules
+  such as Cousin It’s Hideout, Super Seance, altered multiball rules, or buy-in.
+- Stock Bally ROM is installed, but its revision is unknown; documented revisions
+  include L-7 and H-4.
+- Extra balls are disabled at this venue.
+- No notable venue-specific kickout or reject behavior has been reported.
+- Tour difficulty and Swamp Mansion collection are operator-adjustable; confirm their
+  behavior on the machine before calling them as guaranteed.
+image: images/addams-family-bally-1992.jpg

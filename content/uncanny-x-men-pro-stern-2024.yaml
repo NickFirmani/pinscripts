@@ -1,0 +1,138 @@
+id: uncanny-x-men-pro-stern-2024
+name: The Uncanny X-Men — Pro
+manufacturer: Stern Pinball
+year: 2024
+metadata:
+  designer: Jack Danger
+  artist: Jeremy Packer (Zombie Yeti)
+  production: ''
+  era: SPIKE 2/LCD
+  multiball: Sentinel, Save the City, To Me, My X-Men, and Berzerker
+hook: Start a Mission before Sentinel Multiball to stack them, then decide whether
+  to risk the lower-left Danger Room for massive multipliers or cash out safely.
+rules:
+  primary: Qualify Missions at white shots and start them at Midtown or Subway. Complete
+    a Mission, then succeed in the Future for a permanent character perk. Start the
+    Mission before multiball if you want them stacked.
+  bullets:
+  - Danger Room Level 1 doubles the next Mission; Levels 2 and 3 make the Future easier
+    and more valuable. Its level resets when a Mission is played.
+  - Sentinel Multiball starts after roughly six Sentinel hits. The Danger Room exit
+    raises jackpots to 2X then 3X; a direct Sentinel mouth shot doubles the Super.
+  - Three right-pop hits or an alley pass loads Gambit for 2X on the next mode or
+    multiball shot; Gambit's perk improves it to 3X.
+  - Save the City requires three hits to each of six City shots. It cannot start during
+    another multiball, but its progress can continue.
+watch:
+- title: Danger Room colors
+  text: Green means the next Mission is 2X; later levels signal an easier and more
+    valuable Future.
+- title: Sentinel mouth
+  text: An open, lowered mouth signals the high-value direct Sentinel shot, including
+    the doubled Super Jackpot opportunity.
+- title: Gambit multiplier
+  text: A 2X or 3X indicator applies to the next mode or multiball shot; watch where
+    the player spends it.
+- title: Save the City ready
+  text: Six green City areas and yellow Midtown indicate Save the City is qualified.
+skill_shots:
+- name: Plunger Skill Shot
+  how: Soft plunge onto the switch near the right/highway ramp.
+  value: +1 Bonus X; the low-risk tournament choice.
+- name: X-Jet Skill Shot
+  how: Shoot X-Jet; if it cleanly enters the Danger Room, make the exit-ramp shot.
+  value: +3 Bonus X, with the exit ramp earning the Super Skill Shot.
+- name: Time Loop Skill Shot
+  how: Loop Downtown repeatedly, up to five times, then finish at Uptown.
+  value: Full completion extends the initial ball save.
+features:
+- type: player-control
+  name: Bishop action-button spot
+  text: After enough Bishop bumper hits, use the action button during a Mission or
+    multiball to spot a valuable lit shot.
+- type: ball-save
+  name: X-Mansion right-outlane save
+  text: Four X-Mansion target hits light a save at the right outlane.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls can light at the right inlane after 3 and 7 completed Missions,
+    and from the first Level-3 Beast's Lab award.
+- type: mystery-award
+  name: Beast's Lab
+  text: Mystery-style awards whose level increases through combos.
+shots:
+- name: X-Jet orbit
+  value: Feeds the Danger Room and advances City progress and the Berzerker Super.
+  risk: High
+  diagram: 1
+- name: Danger Room exit
+  value: Builds training, raises Sentinel Multiball jackpot multipliers, and supports
+    doubled Supers.
+  risk: High
+  diagram: 2
+- name: Uptown ramp
+  value: Advances Cerebro, Missions, and To Me, My X-Men Multiball Supers; a safe
+    opener.
+  risk: Medium
+  diagram: 3
+- name: Sentinel
+  value: Builds Sentinel Multiball and Sentinel kills, then collects the Super Jackpot.
+  risk: Medium-High
+  diagram: 4
+- name: Midtown ramp
+  value: Starts Missions, escapes the Future, advances City progress, and serves as
+    a repeatable Mission shot.
+  risk: Medium-High
+  diagram: 5
+- name: Subway/right loop
+  value: Alternative Mission start and Future escape shot that also advances City
+    progress.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor the Uptown skill shot into a straightforward Mission and Sentinel Multiball.
+    Take Sentinel jackpots and Supers rather than risking extra Danger Room setup.
+  behind: Train the Danger Room, stack a Mission into Sentinel Multiball, build to
+    3X jackpots, and use Gambit on a Super or Mission finish. Save the City and Berzerker
+    are major comeback routes.
+  key_decision: Choose between entering the Danger Room for leverage and cashing the
+    feature safely now; a missed mini-flipper shot can erase the setup.
+danger:
+- Danger Room misses can drain immediately from the lower-left outlane area.
+- A missed X-Jet standup can deflect toward the center drain; shoot it late from the
+  right flipper.
+- A Midtown ramp reject can enter the pops and threaten the right outlane.
+- The Subway/right-loop rubber can feed the pop and slingshot cluster.
+- Sentinel attacks can return violently; a right-flipper backhand is a safer documented
+  technique.
+commentary:
+- He's starting the Mission first so Sentinel Multiball can stack on top of it.
+- Green Danger Room means the next Mission is doubled.
+- He got the Danger Room exit—Sentinel jackpots are now two-times, and another one
+  gets him to three.
+- Gambit is loaded; the next mode or jackpot shot is doubled, so he'll try to spend
+  that on something big.
+- That's the mouth shot on Sentinel—the Super Jackpot itself gets doubled.
+- Save the City is ready; the spinner Super can move the match by tens of millions.
+trivia:
+- Jack Danger designed the layout; it was his second Stern cornerstone game after
+  Foo Fighters.
+- The game draws on the Days of Future Past comic storyline rather than the films
+  or X-Men '97'.
+- The Danger Room occupies the lower-left outlane area and includes its own mini-flipper
+  and spinner.
+- Charlie Benante of Anthrax/Pantera composed the original soundtrack.
+- The LE production limit of 811 references Earth-811, the Days of Future Past dystopian
+  timeline.
+summary: Mission stack → Danger Room leverage → Sentinel 3X jackpots → doubled Super
+  → Future perks → Save the City comeback
+venue_notes:
+- Installed software is v0.98, dated July 1, 2026.
+- Competition Install or Competition Mode is in use; Extra Balls are disabled.
+- The Sentinel mouth/head is operating reliably.
+- Premium/LE have a rising Sentinel body, attacking hands, and an elevated Beast's
+  Lab captive-ball vari-target; Pro uses simpler hardware.
+- Master Mold remains a placeholder in v0.98, so later code may change deep-game strategy.
+- Midtown/Subway feeds and Danger Room survival are setup-sensitive; adjust aggression
+  to this machine's behavior.
+image: images/uncanny-x-men-pro-stern-2024.jpg

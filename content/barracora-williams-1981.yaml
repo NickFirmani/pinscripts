@@ -1,0 +1,127 @@
+id: barracora-williams-1981
+name: Barracora
+manufacturer: Williams Electronics
+year: 1981
+metadata:
+  designer: Roger Sharpe, Steve Epstein, Barry Oursler
+  artist: Doug Watson
+  production: 2,350
+  era: Williams System 7 solid-state
+  multiball: 2-ball and 3-ball
+hook: 'Barracora is a high-stakes bonus game: build persistent multipliers, lock a
+  ball to protect the turn, then cash a 25× bonus collect worth up to 725,000 points.'
+rules:
+  primary: Complete the B-A-RR and A-C-O-R-A banks in order to build regular Bonus
+    X and persistent Super Bonus X. Together they reach 25×; build base bonus to 29,000,
+    complete the six top lanes, and collect at the upper saucer for up to 725,000.
+  bullets:
+  - Completing either drop bank advances regular Bonus X from 2× through 5×; completing
+    both advances Super Bonus X from 2× through 5×.
+  - Regular Bonus X resets between balls, while Super Bonus X and most progress persist.
+  - Shoot the right orbit into the upper-left saucer to lock a ball. If the active
+    ball drains before 3-ball starts, that ball releases and the turn continues.
+  - Complete B-A-RR and enter the lower saucer for 2-ball. For 3-ball, qualify both
+    locks, enter the upper saucer first, then the lower saucer.
+  - Stock multiball doubles or triples only the BARRACORA lane, lower eject hole,
+    and upper-right bull's-eye.
+watch:
+- title: Upper lock occupied
+  text: 'A ball in the upper-left saucer protects the turn: a drain releases it unless
+    the player converts the setup into 3-ball multiball.'
+- title: Bonus multipliers
+  text: Orange and green inserts show regular Bonus X and Super Bonus X. The combined
+    ceiling is 25×.
+- title: Collect Bonus lit
+  text: When the upper saucer is lit for Collect Bonus, expect a right-orbit shot
+    to cash the built bonus.
+- title: 1K spinner
+  text: Completing either drop bank temporarily raises spinner value from 100 to 1,000
+    per spin; spinner work also builds base bonus through the BARRACORA lane.
+skill_shots: []
+features:
+- type: ball-save
+  name: Upper-lock rescue
+  text: 'An upper-saucer lock is effectively turn protection: draining the active
+    ball releases the locked ball back into play before 3-ball begins.'
+- type: player-control
+  name: Lane change
+  text: The right flipper rotates 1-2-3 and the left flipper rotates 4-5-6.
+- type: extra-ball
+  name: 4-5-6 Extra Ball
+  text: Completing the 4-5-6 progression advances the upper-right bull's-eye through
+    20K, 40K, then Extra Ball.
+- type: other
+  name: Bonus Ball
+  text: Factory multiplayer settings can award the high scorer 30 seconds of additional
+    play after the game.
+shots:
+- name: B-A-RR bank
+  value: Builds Bonus X and, with the other bank complete, Super Bonus X; also qualifies
+    the lower lock.
+  risk: Medium-High
+  diagram: 1
+- name: Spinner / BARRACORA lane
+  value: Builds base bonus toward 29K and scores 1K per spin while lit.
+  risk: Medium
+  diagram: 2
+- name: Lower-left saucer
+  value: Starts 2-ball or 3-ball multiball once the required locks are qualified.
+  risk: Medium
+  diagram: 3
+- name: Target Bonus horseshoe
+  value: Collects a built Target Bonus worth up to 250K.
+  risk: High
+  diagram: 4
+- name: A-C-O-R-A bank
+  value: Builds Bonus X and lights the upper lock, establishing turn protection.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit to upper saucer
+  value: Locks a ball and collects a lit bonus at the upper saucer.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Establish the upper lock, preserve the protected single-ball state, and build
+    bonus, spinner value, and lanes. Take bonus collects instead of forcing dangerous
+    center targets or unnecessary multiball.
+  behind: Push bank completions toward 25× and pursue the 725K Collect Bonus. A built
+    Target Bonus can add up to 250K; stock-ROM multiball is chiefly protection and
+    progress rather than universal multiplied scoring.
+  key_decision: Keep the upper ball locked as turn insurance, or spend that insurance
+    to start 3-ball multiball. On stock code, delaying multiball can be exceptionally
+    valuable.
+danger:
+- Drop-target rebounds from either bank can kick toward center or the outlanes.
+- Center bull's-eye targets can build a 250K Target Bonus but are direct drain-risk
+  shots.
+- Pop-bumper exits can return the ball unpredictably.
+- Outlane-post position materially changes the game's difficulty.
+commentary:
+- That upper lock is more than multiball progress—as long as that ball stays there,
+  the player's turn is not over.
+- They're building two bonus multipliers here; together they can reach 25 times.
+- Twenty-nine thousand at 25 times is a 725,000-point bonus collect.
+- 'They''re avoiding the lower saucer: hitting it now would trade the protected single-ball
+  state for multiball.'
+- The spinner is lit for a thousand a rip, and it is rebuilding that base bonus.
+- Target Bonus can reach 250,000, but those center targets are some of the nastiest
+  shots on the game.
+trivia:
+- Barracora was designed by Roger Sharpe, Steve Epstein, and Barry Oursler, with artwork
+  by Doug Watson and software by Ed Suchocki.
+- The project began as Las Vegas, became Jet Orbit, and was rethemed as Barracora
+  before release.
+- Doug Watson drew backglass inspiration from H.R. Giger's Li I; the central face
+  was modeled from a young Brooke Shields.
+- Williams produced 2,350 machines.
+- Taito do Brasil later used essentially the same playfield layout for Titan with
+  different art and theme.
+summary: Lock for insurance → build 25× bonus → fill 29K base → light lanes → collect
+  725K
+venue_notes:
+- 'Stock Williams ROM installed: multiball scoring is limited to three specified switches,
+  not a universal playfield multiplier.'
+- Extra Balls are disabled.
+- Factory end-of-game Bonus Ball is disabled.
+- The lower-left saucer kickout is safe and controllable to a flipper.
+image: images/barracora-williams-1981.jpg

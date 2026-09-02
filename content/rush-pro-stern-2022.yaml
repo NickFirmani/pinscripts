@@ -1,0 +1,149 @@
+id: rush-pro-stern-2022
+name: Rush (Pro)
+manufacturer: Stern Pinball
+year: 2022
+metadata:
+  designer: John Borg
+  artist: Michael Barnard
+  production: January 2022
+  era: SPIKE 2 LCD, three flippers
+  multiball: Red Barchetta, Subdivisions, Fly By Night, Far Cry, Freewill, and Headlong
+    Flight
+hook: Build a Song and Time Machine Multiball together, start the Song first, then
+  use Albums and The Weapon to sweep shots or add a ball.
+rules:
+  primary: Collect colored records to qualify and strengthen Song Modes, bash the
+    Time Machine toward multiball, then stack the ready Song before starting Time
+    Machine Multiball.
+  bullets:
+  - Matching-color Song shots score 2× mode points; all six records in one color or
+    rainbow can make all six shots 3×.
+  - 'Build 1-2-3 combos to earn Albums for The Weapon: a matching Song Album spots
+    lit mode shots, while a matching multiball Album adds a ball.'
+  - Dead End selects the next Time Machine Multiball among Red Barchetta, Subdivisions,
+    and Fly By Night.
+  - Far Cry uses green targets and the right ramp to qualify locks; 15 jackpots light
+    the Time Machine Super and One Little Victory victory laps.
+  - Years from Songs and multiball goals upgrade later play; 10 years adds a ball
+    and 10 seconds of save to Time Machine Multiballs.
+watch:
+- title: Red Time Machine lamp
+  text: A flashing red lamp means Song Mode is qualified. If multiball is also nearly
+    ready, expect the player to start the Song first.
+- title: Weapon button color
+  text: Blue means The Weapon can sweep lit Song shots; green means it can add a ball
+    to the active multiball.
+- title: Colored record arrows
+  text: Record concentration reveals the intended Song and its multiplier strength.
+    A single-color board signals deliberate mode preparation.
+- title: Year thresholds
+  text: 'Watch 10, 30, 60, and 90 years: these upgrades add balls and save time to
+    major multiballs.'
+skill_shots:
+- name: Regular Skill Shot
+  how: Short-plunge to the upper flipper, then shoot the side loop, side ramp, or
+    side scoop.
+  value: Loop scores 1×, ramp 2×, and scoop 3×; each success adds ball-save time.
+- name: Super Skill Shot
+  how: Shoot the side loop, then quickly hit the side ramp or side scoop.
+  value: Scores twice the corresponding regular award and doubles the added ball-save
+    time.
+features:
+- type: player-control
+  name: The Weapon action button
+  text: Completed 1-2-3 combos earn Albums. A matching Song Album spots lit shots;
+    a matching multiball Album adds a ball. A quick press otherwise controls the ramp-return
+    diverter.
+- type: mystery-award
+  name: Roll the Bones Mystery
+  text: Complete all three return lanes and collect at the scoop. During multiball,
+    the first eligible Mystery is Add-A-Ball.
+- type: ball-save
+  name: Movable outlane save
+  text: Repeated RUSH-bank completions light an outlane save; the flippers select
+    the left or right side.
+- type: extra-ball
+  name: Extra Balls
+  text: Ramp count, five Albums, a Time Machine upgrade, and Mystery can qualify extra
+    balls.
+- type: other
+  name: Hold Awards
+  text: Ramp Hold Awards can preserve spinner, combo, pop, ramp, instrument, record,
+    or Bonus-X progress between balls.
+shots:
+- name: Left orbit
+  value: Advances records, combos, and Drum Bonus; a common mode and combo shot.
+  risk: High
+  diagram: 1
+- name: Main scoop
+  value: Collects Mystery and advances or starts Far Cry locks; especially valuable
+    for multiball Add-A-Ball.
+  risk: Medium
+  diagram: 2
+- name: Dead End
+  value: Changes the Time Machine Multiball and advances Spirit of Radio.
+  risk: High
+  diagram: 3
+- name: Time Machine
+  value: Starts Songs, advances Albums and upgrades, starts multiballs, and collects
+    Supers.
+  risk: Medium-High
+  diagram: 4
+- name: Spinner lane
+  value: Advances records, Spirit of Radio, and combos; offers an upper-flipper feed.
+  risk: Medium
+  diagram: 5
+- name: Right ramp
+  value: Advances Far Cry locks, Bastille Day, and combos; the main alternate multiball
+    qualifier.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Start the prepared Song plus Time Machine Multiball rather than overbuilding
+    Albums or years. Use Mystery for Add-A-Ball and favor straightforward mode completion.
+  behind: Prepare a matching Album before the Song-plus-multiball stack. Far Cry into
+    Super and One Little Victory, stacked Headlong Flight, or La Villa Strangiato
+    offer high-variance comeback routes.
+  key_decision: Start the ready stack now or spend more single-ball shots preparing
+    Albums, records, and years. Preparation pays, but pops and tight upper-flipper
+    shots punish greed.
+danger:
+- Avoid a full plunge into the pops; exits can immediately lead to an outlane or center
+  drain.
+- Avoid the right orbit unless required because it feeds the dangerous pop area.
+- On Pro, Dead End is a standup and direct hits can rebound sharply downfield.
+- Weak right-ramp attempts can reject quickly.
+- Missing upper-flipper side shots gives up controlled possession.
+commentary:
+- He wants the Song before the multiball—starting Time Machine Multiball first would
+  shut that stack out.
+- That Album matches the mode, so the blue Weapon button can spot every lit Song shot.
+- Green button now—that's a Weapon add-a-ball.
+- 'Ten years collected: the next Time Machine Multiball gets another ball and ten
+  more seconds of save.'
+- That's Far Cry Super—now One Little Victory throws three more balls into play.
+- He's short-plunging deliberately; a full plunge into these Rush pops can end a ball
+  almost immediately.
+trivia:
+- 'Rush was designed by John Borg and shares visible layout DNA with TRON: Legacy,
+  though the rules and shot purposes differ.'
+- Geddy Lee and Alex Lifeson recorded custom speech; Ed Robertson supplied callouts
+  and helped coach recording sessions.
+- The machine includes 16 Rush songs, including both books of Cygnus X-1 and 2112.
+- Stern tied the launch to support for the Neil Peart Research Award through the Glioblastoma
+  Foundation.
+- The Pro retains the deep rules architecture while replacing several Premium mechanisms
+  with software or standup equivalents.
+summary: Records → Song → Time Machine Multiball → Albums → Weapon → years → stronger
+  stacks
+venue_notes:
+- Venue software is V1.18.
+- The venue uses either Competition Install or Competition Mode; Competition Install
+  disables extra balls.
+- Competition Install uses Freewill MB Easy, Freewill Add-A-Ball Hard, and at most
+  two wildcard records.
+- On V1.18, a completed 80M Song awards the extra five years.
+- Competition Install has been documented with a 3× shot-multiplier cap.
+- 'This is the Pro: Time Machine entrance is stationary, Dead End is a standup, and
+  Freewill uses software/add-a-ball behavior rather than the Premium/LE physical lock.'
+image: images/rush-pro-stern-2022.jpg

@@ -20,6 +20,22 @@ and the schema avoids unsupported conditional/composition keywords. The schema
 can therefore be passed directly to `codex exec --output-schema` as well as to
 Ollama's structured-output `format` field.
 
+For an authenticated Codex CLI batch, format every research brief that has
+human resolutions and no existing canonical YAML, validate each result, and
+promote valid outputs to `content/`:
+
+```sh
+make format-codex-batch \
+  MODEL="gpt-5.6-terra" \
+  EFFORT="medium" \
+  WORKERS="3"
+```
+
+The batch stops launching model calls after a usage/rate-limit response and is
+safe to resume: a later invocation skips content files already promoted. Exact
+prompts, JSONL events, responses, YAML, per-game reports, and a batch manifest
+are stored under `benchmarks/results/format-prompt/`.
+
 ## Usage
 
 From the repository root:

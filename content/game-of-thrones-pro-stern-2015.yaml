@@ -1,0 +1,126 @@
+id: game-of-thrones-pro-stern-2015
+name: Game of Thrones (Pro)
+manufacturer: Stern Pinball
+year: 2015
+metadata:
+  designer: Steve Ritchie
+  artist: Dave Link and Greg Freres
+  production: October 2015
+  era: First-generation SPIKE, DMD, two flippers
+  multiball: Blackwater, Battle for the Wall, Winter Has Come, Hand of the King, and
+    Iron Throne
+hook: Choose a House, qualify two Battles, then stack them with Blackwater while Playfield
+  X and shot multipliers turn the Ram's Super Jackpots into the main payoff.
+rules:
+  primary: Three completions at a House's associated shot qualify its Battle; use
+    the left ramp to start up to two qualified Battles together, then stack them with
+    Blackwater. Complete three Houses for Extra Ball, four for Hand of the King, and
+    all Houses for Iron Throne.
+  bullets:
+  - Blackwater uses the right 2-bank to light locks and the left ramp to lock three
+    balls; five major jackpots light repeated timed Battering Ram Super Jackpots.
+  - Ram hits build Playfield X from 2x to 5x after Swords raise its cap; higher levels
+    last less time, and Ram hits refresh or advance them.
+  - Flowing shots build separate shot multipliers up to 5x. A 5x shot during 5x Playfield
+    X is a 25x scoring state.
+  - Three iced House shots start a hurry-up; collect four to begin Winter Has Come,
+    a four-ball multiball.
+  - Complete the two top lanes six times, then shoot the Dragon to start Battle for
+    the Wall on the Pro.
+watch:
+- title: Two Battles ready
+  text: Two flashing House shields and a lit left ramp signal a possible double-Battle
+    start. If Blackwater is close, the player may be preparing the main stack.
+- title: Multiplier state
+  text: Ram inserts show Playfield X; small numbers at major shots are separate shot
+    multipliers. Watch for the powerful 5x-by-5x state.
+- title: Blackwater setup
+  text: With three balls locked and the left ramp ready, Blackwater is imminent. Another
+    House qualification may mean the player is delaying multiball to improve the stack.
+skill_shots:
+- name: Pro Skill Shot
+  how: Use the flipper buttons to select the lit top lane, then hard-plunge through
+    it.
+  value: Awards 500K times the ball number and adds +1 Bonus X.
+features:
+- type: player-control
+  name: House action buttons
+  text: 'On V1.37, each House has a distinct power: Martell adds a ball, Stark completes
+    a running mode for reduced points, Baratheon enables brief outlane saves, Lannister
+    buys Playfield X with Gold, Tyrell cashes multipliers into Iron Bank points, Targaryen
+    freezes non-ball-save timers, and Greyjoy stealsa'
+shots:
+- name: Left drop bank
+  value: Advances Baratheon and spinner level; normally lights Lord of Light outlane
+    saves.
+  risk: Medium
+  diagram: 1
+- name: Left orbit / spinner
+  value: Advances Greyjoy, spinner scoring, and combinations.
+  risk: Medium
+  diagram: 2
+- name: Dragon
+  value: Advances Targaryen and collects Mystery or Extra Ball; starts Battle for
+    the Wall.
+  risk: High
+  diagram: 3
+- name: Left ramp
+  value: Starts House Battles, locks for Blackwater, and starts Hand of the King or
+    Iron Throne.
+  risk: Medium-High
+  diagram: 4
+- name: Battering Ram
+  value: Builds Playfield X and collects Blackwater Super Jackpots.
+  risk: High
+  diagram: 5
+- name: Right 2-bank
+  value: Advances Tyrell, lights Blackwater locks, and advances Wildfire.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor Martell's multiball insurance, start qualified Battles rather than
+    overbuilding, and cash Playfield X opportunities. Avoid naked Ram and right-bank
+    attempts when the current stack is enough.
+  behind: Use Tyrell or Lannister for multiplier leverage. Stack two compatible Battles
+    with Blackwater, raise Playfield X, then attack Super Jackpots or a large mode
+    cash-out.
+  key_decision: Start now or keep stacking? Battles, multiball, shot multipliers,
+    and Playfield X compound dramatically, but every extra setup shot risks a single-ball
+    drain.
+danger:
+- The right 2-bank can rebound directly above the right outlane.
+- Left-ramp attempts from the left flipper can reject toward the center drain.
+- The Battering Ram is a valuable but dangerous direct central target.
+- Dragon ejects can be unpredictable and demand an immediate reaction.
+- Orbit returns through the pop bumpers can quickly feed a sling or outlane.
+commentary:
+- He's got two Houses ready—he's waiting to bring both of them into Blackwater.
+- That's Playfield X running; now look at the multiplier on the individual shot too.
+- Five jackpots are done—Battering Ram is now a repeatable Blackwater Super Jackpot.
+- Martell's button is still available, so draining to one ball doesn't necessarily
+  end this multiball.
+- Four Houses complete—that means Hand of the King is now available at the left ramp.
+- He's deliberately shooting the Ram during multiball; that's when you want to build
+  multiplier without exposing a single ball.
+trivia:
+- Steve Ritchie designed the playfield, and its fast ramp-orbit geometry is characteristic
+  of his style.
+- Rory McCann, who played Sandor “The Hound” Clegane, recorded custom speech for the
+  machine.
+- Game of Thrones was one of Stern's earliest SPIKE-system games.
+- ReelPops use the pop bumpers to spin virtual DMD reels for game resources.
+- The major 2019 V1.36/V1.37 update changed House selection and powers, not just bugs.
+summary: Choose House → qualify Battles → build multipliers → stack Blackwater → hammer
+  Ram Supers → pursue Hand of the King
+venue_notes:
+- Verified software is V1.37.
+- Extra Balls are disabled by the event procedure; do not call a lit Extra Ball as
+  playable.
+- Configuration was reported as Competition Install or Competition Mode only; confirm
+  which is active before describing Competition Install-specific restrictions.
+- Competition Install disables the Lord of Light drop-bank award, changes ball-save
+  settings, and restricts some House powers.
+- The Dragon eject was identified as the notably dangerous feed on this copy; other
+  physical behavior can vary by setup.
+- House selection is unknown; do not assume players choose freely.
+image: images/game-of-thrones-pro-stern-2015.jpg

@@ -1,0 +1,113 @@
+id: faces-segasa-sonic-1976
+name: Faces
+manufacturer: Segasa d.b.a. Sonic
+year: 1976
+metadata:
+  designer: ''
+  artist: ''
+  production: ''
+  era: Four-player electro-mechanical score-reel game
+  multiball: No multiball
+hook: Build red and green bonuses up top, keep the selected color protected for the
+  drain, then cash out Double Bonus or a lit spinner.
+rules:
+  primary: Build two independent red and green bonus ladders to 100K. Only the currently
+    selected color pays at end of ball; A + B lights Double Bonus to double that selected
+    payout.
+  bullets:
+  - Green left-side features advance green; red right-side standups advance red.
+  - The Change Bonus target changes the active color, and the top saucer can alter
+    or select it through cycling awards.
+  - At 100K, that color's spinner is worth 1K per spin.
+  - The upper-left controlled gate changes routing; it is not a ball-save gate.
+  - F-A-C-E-S is secondary here because Extra Balls are mechanically disabled.
+watch:
+- title: Red and green ladders
+  text: Track both bonus totals; a large bonus only matters if its color is selected
+    at the drain.
+- title: Selected bonus color
+  text: The lit color is the actual end-of-ball payout, so selection can be as important
+    as building bonus.
+- title: Double Bonus
+  text: Once A and B are collected, the selected bonus pays double at end of ball.
+- title: Lit spinner
+  text: A maxed color lights its spinner for 1K per spin, creating a repeatable scoring
+    route.
+skill_shots:
+- name: Yellow Top-Saucer Skill Shot
+  how: Plunge to reach the top saucer while its cycling indicator is on the yellow
+    circle; avoid an over-hard plunge.
+  value: Awards 5K, advances both bonuses, and opens the upper-left gate.
+features:
+- type: extra-ball
+  name: F-A-C-E-S progression
+  text: Completing the five rollover buttons first lights the bumpers and 5K right-side
+    exit lane. Extra Balls are mechanically disabled at this venue.
+- type: other
+  name: Upper-left controlled gate
+  text: 'An earned routing change: when open, a right-orbit shot can travel around
+    the top and down the left instead of feeding toward the saucer.'
+shots:
+- name: Green standups
+  value: Advance the green bonus; use them to bring the weaker green ladder toward
+    100K.
+  risk: Medium
+  diagram: 1
+- name: Top saucer
+  value: Advances red, green, or both bonuses and can affect bonus selection and the
+    gate.
+  risk: Medium-High
+  diagram: 2
+- name: A + B targets
+  value: Light Double Bonus after substantial bonus is built; B is especially dangerous.
+  risk: High
+  diagram: 3
+- name: Change Bonus target
+  value: Select the active bonus color to protect the stronger end-of-ball payout.
+  risk: Medium
+  diagram: 4
+- name: Red standups
+  value: Advance the red bonus; use them to bring the weaker red ladder toward 100K.
+  risk: Medium
+  diagram: 5
+- name: Red/right spinner
+  value: Worth 1K per spin once red bonus is maxed; a strong repeatable scoring route.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Keep both bonuses balanced and favor upper-playfield action over forcing
+    A and B early. Once a spinner is lit, repeat it rather than repeatedly attacking
+    standups.
+  behind: Chase the 100K bonus plus Double Bonus package. A maxed selected bonus with
+    Double Bonus is a 200K end-of-ball payout, while a lit spinner can add a fast
+    scoring burst.
+  key_decision: Balance the weaker bonus to protect the drain payout, or exploit the
+    already-maxed side through its lit spinner.
+danger:
+- B target rebounds can expose the right outlane.
+- Pop-bumper exits along the outer lower rubbers can head toward the center drain.
+- Balls rolling off the right side of the central triangle can leak into the right
+  outlane.
+- An over-hard plunge can create a violent cross-top rebound near the controlled gate.
+- The open-gate orbit feed is copy-dependent.
+commentary:
+- 'Yellow at the saucer—that''s the ideal plunge: 5K and both bonuses advance.'
+- Green is maxed, but red is low; only the lit color pays on the drain.
+- A is collected; B is the dangerous half still needed for Double Bonus.
+- Both ladders are at 100K. With Double Bonus, 200K is waiting at end of ball.
+- Red is maxed, so that right spinner is worth 1K a rip.
+- They're changing bonus selection to protect the end-of-ball cash-out.
+trivia:
+- Faces was made in Spain by Segasa under the Sonic trade name in 1976.
+- Its layout is closely related to Williams' Grand Prix, but Faces adds its own gate
+  and third-flipper geometry.
+- The upper-left flipper gives a direct attack on the right-side spinner.
+- The upper-left gate is relay-controlled routing, not an outlane rescue.
+summary: Build both bonuses → select the paying color → light Double Bonus → exploit
+  lit spinners → avoid B rebounds
+venue_notes:
+- This venue uses 5 balls.
+- Extra Balls are mechanically disabled.
+- The upper-left gate works; its orbit feed should be judged during play.
+- Bonus-selection lamps and mechanism are probably reliable.
+image: images/faces-segasa-sonic-1976.jpg

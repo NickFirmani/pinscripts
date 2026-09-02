@@ -1,0 +1,141 @@
+id: foo-fighters-premium-stern-2023
+name: Foo Fighters — Premium
+manufacturer: Stern Pinball
+year: 2023
+metadata:
+  designer: Jack Danger
+  artist: Zombie Yeti
+  production: Premium edition
+  era: SPIKE 2
+  multiball: All My Life, Monkey Wrench, The Pretender, Area 51, Combotron, and FooBot
+    Multiball
+hook: Build Van Mods and multipliers, start a city mode, then stack it with All My
+  Life or Area 51 multiball for enormous Ray Gun-assisted cash-outs.
+rules:
+  primary: Spell V-A-N at white arrows, start a city at the left ramp, and take its
+    time-sensitive Overlord final. Build toward All My Life by qualifying the Overlord
+    targets, locking a ball, and bashing the captive ball three times.
+  bullets:
+  - 'Van Mods come from the center drops: Engine adds mode time, Speakers raise shot
+    value, and Bomb spots progress; each applies to the next Van Mode.'
+  - Use the right orbit to start 2X playfield, then refill it during the timer for
+    3X.
+  - Ray Gun gives 2X next-shot scoring; activating both makes it 4X. It stacks with
+    playfield and FooBot multipliers.
+  - During an Overlord multiball, re-locking a ball starts a 20-second 2X jackpot
+    window.
+  - FooBot parts can award 2X at an associated shot for the ball, then persist for
+    the game after an upgrade.
+watch:
+- title: V-A-N complete
+  text: A flashing left ramp means a city mode is ready. Delaying it usually means
+    the player is building Mods, multiball, or multipliers first.
+- title: Playfield multiplier
+  text: At 2X or 3X playfield, expect an immediate shift from setup shots toward valuable
+    awards.
+- title: Ray Gun window
+  text: A lit or hit Ray Gun means the next major shot has a brief 2X window; both
+    targets make it 4X.
+- title: Overlord capture
+  text: A captured ball signals All My Life is close; during Overlord multiball, a
+    re-lock instead doubles jackpots for 20 seconds.
+skill_shots:
+- name: Rock-O-Meter
+  how: Soft plunge into the right crossover lane and time the flashing level.
+  value: Advances playfield X and scores more at higher levels; a strong default when
+    building multipliers.
+- name: Van Mod-ulator
+  how: Short-plunge into the drop bank.
+  value: Awards 250K plus one level of the flashing Van Mod; useful when prioritizing
+    an immediate city.
+- name: Super Sonic Radio
+  how: Plunge to the flippers, then hit either radio target.
+  value: Awards 1M, mystery, and radio-dial progress.
+features:
+- type: ball-save
+  name: Overdrive / Deadpost
+  text: Premium's left outlane starts lit. The ball hits the Deadpost; hold the left
+    flipper to deflect it back, then make a major shot for an Overdrive bonus. Radio
+    completions relight it.
+- type: ball-save
+  name: Right-outlane save
+  text: The first Bot Award lights a conventional save at the right outlane.
+- type: player-control
+  name: UFO action button
+  text: Captive-ball hits charge up to three uses. The button collects the most valuable
+    currently lit shot and its progress, but cannot start a mode or multiball.
+- type: mystery-award
+  name: Radio Mystery
+  text: Competition Mode fixes the radio mystery sequence rather than randomizing
+    it.
+- type: extra-ball
+  name: Extra Ball consolation
+  text: Extra Balls are disabled here; the award becomes 10M, which is affected by
+    playfield and Ray Gun multipliers.
+shots:
+- name: Left ramp / Van
+  value: Starts Van Modes and advances wizard modes; use it to begin a prepared mode
+    or stack.
+  risk: Medium
+  diagram: 1
+- name: MOD-ulator drops / paddle
+  value: Builds Van Mods and Bonus X before a mode.
+  risk: Medium
+  diagram: 2
+- name: Overlord
+  value: Handles mode finals, locks, multiball progress, and super jackpots.
+  risk: High
+  diagram: 3
+- name: Right orbit / Rock-O-Meter
+  value: Starts 2X playfield and can advance it to 3X.
+  risk: Medium-High
+  diagram: 4
+- name: Right ramp / Area 51
+  value: Accesses the Premium upper playfield, Area 51 multiball, and FooBot head.
+  risk: Medium
+  diagram: 5
+- name: UFO captive ball
+  value: Charges action-button collects and builds UFO bonus.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: 'Favor controllable setup: saves, an easy Van Mode, and All My Life. When
+    a valuable stack is ready, take 2X playfield instead of overextending for 3X.'
+  behind: Build Speaker Mods, reach 3X playfield, bring a city into multiball, and
+    use Ray Gun 2X or 4X on major finals or jackpots.
+  key_decision: Cash a ready mode or multiball now, or risk more setup shots for Van
+    Mods and playfield X first? Preparation pays heavily, but every extra shot can
+    prevent the payoff.
+danger:
+- Overlord side-target misses and rebounds can become very fast drains.
+- Both outlanes are hungry, even with their explicit save mechanisms.
+- Bot targets beside the ramps can reject an intended ramp shot.
+- 'The Premium Deadpost is a physical rescue: failing to hold the left flipper can
+  waste lit Overdrive.'
+commentary:
+- VAN is ready, but he is building the multiplier before starting the city.
+- There is 2X playfield—if he refills the Rock-O-Meter during the timer, it becomes
+  3X.
+- Ray Gun is active; the next major shot is doubled, and the other target would make
+  it 4X.
+- He is bringing the city into All My Life—that is the standard tournament stack.
+- That ball re-locked at the Overlord, so jackpots are doubled for 20 seconds.
+- On the Premium, Area 51 is a real upper playfield; Competition Install makes players
+  earn that progress rather than spotting it from ramp shots.
+trivia:
+- Foo Fighters is Jack Danger's first full production pinball design for Stern.
+- The game uses an original fictional cartoon universe, “Foo Fighters Saturday Morning
+  Action Time!”
+- Stern marketed the Premium Deadpost as an industry-first outlane mechanism.
+- Premium and LE have a second Area 51 playfield with its own flipper, loops, spinner,
+  standups, diverter, and Secret Files target.
+- Dave Grohl and the other band members provided creative input during the game's
+  more-than-two-year development.
+summary: Van Mods → city mode → playfield X → Ray Gun → multiball stack → Overlord
+  cash-out
+venue_notes:
+- 'Installed software: v1.03.0.'
+- Multiplayer Overlord locks are virtualized between players.
+- Extra Balls are disabled; their award is a 10M consolation value.
+- No known dangerous machine-specific return has been reported for this venue.
+image: images/foo-fighters-premium-stern-2023.jpg

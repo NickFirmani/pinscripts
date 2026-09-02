@@ -1,0 +1,131 @@
+id: cirqus-voltaire-bally-1997
+name: Cirqus Voltaire
+manufacturer: Bally/Midway
+year: 1997
+metadata:
+  designer: John Popadiuk and Cameron Silver
+  artist: Linda Deal
+  production: 2,704
+  era: Williams WPC-95
+  multiball: Highwire, Juggler, Strike-an-Arc, and Ringmaster multiballs
+hook: Build a multiball, raise and defeat Ringmasters, then layer their multiballs
+  together while collecting Marvels toward Join the Cirqus.
+rules:
+  primary: Progress Ringmasters by spelling WOW, raising the Ringmaster, hitting him
+    five times, then shooting underneath to defeat him. Prepare Highwire, Juggler,
+    or Strike-an-Arc alongside that progress; the main scoring decision is whether
+    to start a ready multiball now or hold it to stack with a Ringmaster multiball.
+  bullets:
+  - 'Highwire: light locks at the standups beside the left ramp, then lock three balls
+    on that ramp.'
+  - 'Juggler: make six left-loop shots total—three to qualify, then three to lock
+    and start.'
+  - 'Strike-an-Arc: repeat left-ramp loops to start a two-ball frenzy; switch hits
+    charge its jackpot.'
+  - Nine Marvels light all CIRQUS letters and lead to the multi-stage Join the Cirqus
+    wizard mode.
+  - Ringmaster Battle follows the fifth Ringmaster under its qualifying condition,
+    is exclusive, and has reduced scoring in Tournament Mode.
+watch:
+- title: Raised Ringmaster
+  text: The player is in the five-hit attack phase and may leave the final defeat
+    waiting to stack it with another multiball.
+- title: Highwire locks queued
+  text: Three balls at Highwire mean the left ramp is ready or nearly ready to start
+    the multiball.
+- title: Marvels and CIRQUS letters
+  text: Completed Marvel lamps and letters show progress toward Join the Cirqus; three
+    Marvels in a line light the corresponding letter.
+- title: Boom Balloon rising
+  text: A short pop-bumper opportunity is active, and its value matters later in Party
+    Multiball.
+skill_shots:
+- name: Simple Skill Shot
+  how: Plunge to hit the sideways skill-shot target behind the playfield display area.
+  value: Scores 200K times successful skill shots, rising to 1M and then staying there.
+features:
+- type: ball-save
+  name: Ringmaster Magnet Save
+  text: After WOW, the Ringmaster magnet catches and unpredictably throws the ball;
+    a brief saver can protect an immediate drain.
+- type: mystery-award
+  name: Spot Marvel
+  text: The right inlane briefly lights the left ramp to spot one unfinished Marvel,
+    normally once per ball.
+- type: mystery-award
+  name: Side Show
+  text: Ballyhoo targets light the hidden scoop for awards including Neon Multiball,
+    Spot Marvel, Light Lock, Extra Ball, points, or Amazing Roonie.
+- type: video-mode
+  name: Amazing Roonie
+  text: Jump obstacles to complete the mode for about 2.9M in the documented ruleset.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can be earned through Ringmaster progression, Boom Balloon, Side
+    Show, and other features; they are disabled at this venue.
+shots:
+- name: Left Loop / Juggler
+  value: Builds Juggler qualification and locks, accesses Side Show, and collects
+    a Highwire jackpot.
+  risk: Medium
+  diagram: 1
+- name: Highwire / Left Ramp
+  value: Lights and locks Highwire, advances Strike-an-Arc, and can collect Spot Marvel.
+  risk: Medium-High
+  diagram: 2
+- name: Ringmaster
+  value: Advances Ringmaster progression and its multiballs, leading toward Battle.
+  risk: High
+  diagram: 3
+- name: Ringmaster Loop
+  value: Advances SPIN and serves as a Highwire jackpot shot.
+  risk: High
+  diagram: 4
+- name: Acrobats / Right Ramp
+  value: Advances the Acrobats Marvel and scores a Highwire jackpot.
+  risk: Medium-High
+  diagram: 5
+- name: Ballyhoo Standups
+  value: Advance Side Show and Ringmaster hits.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Start a prepared Highwire or Juggler rather than taking extra single-ball
+    setup risk, then add an active Ringmaster multiball if available. Tournament Mode
+    reduces Ringmaster Battle scoring.
+  behind: Build a super-stack, especially Highwire plus Strike-an-Arc plus Ringmaster,
+    and attack overlapping jackpots with four balls.
+  key_decision: Start the multiball already qualified, or hold it while finishing
+    the next Ringmaster so its multiball can be layered on top?
+danger:
+- Weak counter-clockwise Ringmaster-loop attempts can return straight down the middle.
+- Weak right-ramp shots can dribble out near the Juggler drain.
+- The Ringmaster magnet release is intentionally unpredictable and briefly removes
+  control.
+- The unusual left inlane/outlane geometry has a large open rubber-and-post area,
+  making nudging important.
+- Physical locks and diverter feeds can materially affect ball routing.
+commentary:
+- He’s leaving that Ringmaster one shot from done—he wants to start it on top of Highwire.
+- Highwire is ready; if he can add Frenzie here, that becomes a four-ball stack.
+- That’s the Ringmaster loop jackpot, but a weak one there can come straight down
+  the middle.
+- Tournament mode matters here—Ringmaster Battle scoring is deliberately reduced.
+- Nine Marvels gets him to Join the Cirqus; the lights show how close that wizard-mode
+  path is.
+- The Ringmaster just threw the ball—the release is intentionally unpredictable, with
+  a brief save available.
+trivia:
+- Its DMD is mounted directly on the playfield rather than in the backbox.
+- The Boom Balloon is a pop bumper that rises from and disappears beneath the playfield.
+- The backglass acrobat was modeled on designer John Popadiuk.
+- There is no physical replay knocker; it uses an electronic sound.
+- Neon tubes and Menagerie captive balls appeared in multiple colors during production.
+summary: Ringmasters → multiball stacks → Marvels → Join the Cirqus
+venue_notes:
+- Official V1.4 ROM is installed.
+- Tournament/Competition Mode is active; Ringmaster Battle scoring is reduced in this
+  mode.
+- Extra balls are disabled.
+- Highwire and Juggler physical-lock status is unknown.
+image: images/cirqus-voltaire-bally-1997.jpg

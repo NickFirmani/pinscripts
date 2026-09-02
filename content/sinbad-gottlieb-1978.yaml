@@ -1,0 +1,129 @@
+id: sinbad-gottlieb-1978
+name: Sinbad
+manufacturer: D. Gottlieb & Co.
+year: 1978
+metadata:
+  designer: Ed Krynski
+  artist: Gordon Morison
+  production: 12,000 solid-state games
+  era: System 1 solid-state
+  multiball: No multiball
+hook: Build bonus with the spinner and upper-left stars while completing white, yellow,
+  purple, then red drops for 2× through 5×. Ten drops cash the bonus immediately,
+  then reset the cycle.
+rules:
+  primary: 'Complete the color groups to establish bonus multipliers: white for 2×,
+    white plus yellow for 3×, add purple for 4×, then red for 5×. Build base bonus
+    to 15K; all ten drops immediately collect it at the current multiplier and reset
+    the bonus and targets.'
+  bullets:
+  - The multiplier depends on completed color sets, not merely the number of drops
+    hit; white must be down for any multiplier.
+  - Center spinner advances base bonus 1K per five spins; lit upper-left green stars
+    also advance it 1K.
+  - A 15K bonus at 5× is a 75K immediate collect.
+  - End of ball also awards the current bonus, so a long ball can collect completed
+    cycles plus a final partial or full bonus.
+  - After a ten-drop collect, rebuild another bonus-and-multiplier cycle on the same
+    ball.
+watch:
+- title: Multiplier lamps
+  text: The 2×, 3×, 4×, and 5× lamps show what the current bonus cash-out is worth.
+- title: White target
+  text: A nearly cleared field can still be worth only 1× if the single white target
+    remains standing.
+- title: 15K bonus
+  text: With base bonus maxed, completing all ten drops is a 75K immediate collect
+    at 5×.
+- title: Purple top lane
+  text: Purple completion normally lights its top lane for Extra Ball, but that award
+    is disabled at this venue.
+skill_shots:
+- name: Leftmost top lane
+  how: Plunge for the 5K leftmost top lane; avoid missing the upper lanes and feeding
+    the far-left side.
+  value: Scores 5K and, more importantly, avoids the immediate right-outlane danger
+    associated with a far-left miss.
+features:
+- type: extra-ball
+  name: Purple Extra Ball lane
+  text: Completing purple normally lights the matching top rollover for Extra Ball;
+    the Extra Ball award is disabled at this venue.
+- type: other
+  name: Red Special lane
+  text: Completing red lights its matching top rollover for Special/replay; it is
+    generally irrelevant unless converted to points.
+shots:
+- name: Left orbit / upper stars
+  value: Builds base bonus and provides the UTAD route after multiplier progress is
+    established.
+  risk: Medium
+  diagram: 1
+- name: Red drops
+  value: Completes 5× bonus and lights Special.
+  risk: Medium-High
+  diagram: 2
+- name: Center spinner
+  value: Advances base bonus; five spins add 1K.
+  risk: Medium
+  diagram: 3
+- name: Purple drops
+  value: Establishes 4× and normally lights the Extra Ball lane.
+  risk: Medium-High
+  diagram: 4
+- name: Yellow drops
+  value: With white complete, establishes 3× bonus.
+  risk: Medium-High
+  diagram: 5
+- name: White drop
+  value: 'The essential foundation: it must be down before any bonus multiplier exists.'
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Get a useful multiplier, then lower variance by going up top through the
+    left orbit and spinner to build base bonus instead of repeatedly attacking drops.
+  behind: Chase the 15K × 5 completion for a 75K immediate collect. A long ball can
+    reset and repeat that payoff.
+  key_decision: Finish another dangerous multiplier color or protect a substantial
+    base bonus by building it more safely up top. A large bonus at 2×–4× may already
+    be worth preserving.
+danger:
+- A far-left upper-lane miss can rebound across toward the right outlane.
+- A straight descent through the left side of the spinner gap can feed the center
+  drain.
+- White and yellow drop rebounds are dangerous early-target attacks.
+- With four in-line flippers, reflexively flipping both can let the ball slip between
+  the upper and lower bats.
+- Drop-target greed repeatedly exposes the ball to direct rebounds, often one target
+  short of the next multiplier.
+commentary:
+- White is the key—without that single target, the rest of the drops do not give him
+  a bonus multiplier.
+- White and yellow are complete, so that is triple bonus now.
+- He is at fifteen thousand base with five-times lit—that is a seventy-five-thousand
+  collect if he finishes the drops.
+- 'All ten down: the game cashes the bonus right now, resets the targets, and he can
+  build another one.'
+- Multiplier is established, so now he is going UTAD—up top all day—to build the base
+  bonus more safely.
+- Purple is complete; that top rollover normally awards an Extra Ball, but it is disabled
+  here.
+trivia:
+- Sinbad was one of Gottlieb's earliest System 1 solid-state titles and its second
+  production solid-state game after Cleopatra.
+- It was a promotional tie-in to Columbia Pictures' 1977 film Sinbad and the Eye of
+  the Tiger.
+- Gottlieb made 12,000 solid-state Sinbads, roughly 950 four-player EM Sinbads, and
+  a rarer two-player EM Eye of the Tiger.
+- The rotating center target creates a crossed-swords effect while it spins.
+- Sinbad ranked second among pinball earners in Play Meter's 1978 operator survey.
+summary: Color drops → 2×–5× bonus → spinner and stars build 15K → ten drops cash
+  up to 75K → rebuild
+venue_notes:
+- Venue game is the solid-state System 1 version with digital displays, not the similar
+  four-player EM version.
+- This game is configured for 3 balls.
+- Purple-lane Extra Ball is disabled and provides no benefit.
+- Raw target and spinner values, plus some reset and Special behavior, can differ
+  between 3-ball and 5-ball settings.
+image: images/sinbad-gottlieb-1978.jpg

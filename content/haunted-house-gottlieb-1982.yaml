@@ -1,0 +1,123 @@
+id: haunted-house-gottlieb-1982
+name: Haunted House
+manufacturer: D. Gottlieb & Co.
+year: 1982
+metadata:
+  designer: John Osborne
+  artist: Terry Doerzaph and Richard Tracy
+  production: 6,835 games
+  era: System 80 solid-state widebody
+  multiball: No multiball
+hook: A three-level, eight-flipper widebody where controlled attic and cellar play
+  builds Monster Bonus, Bonus X, and floor-specific double scoring.
+rules:
+  primary: Work the attic or cellar targets to build Monster Bonus and productive
+    level changes for Bonus X, up to 5X. At 5X, end-of-ball bonus becomes the major
+    scoring lever.
+  bullets:
+  - Eleven qualifying attic hits light double scoring downstairs; eleven cellar hits
+    light it upstairs. Two cellar-bank completions or three attic-bank completions
+    light main-floor double scoring.
+  - Bonus X advances on productive level changes, with exceptions for entering the
+    cellar up-kicker from the main floor and rolling down the attic ramp. An upward
+    attic-ramp entry advances only after an attic target.
+  - Two cellar banks qualify attic Double Bonus, three attic banks qualify main-floor
+    Double Bonus, and completing 1-2-3-4-5 in order qualifies cellar Double Bonus.
+  - Flashing 1-5 targets add two bonus increments. Bonus is collected at drain and
+    multiplied by Bonus X.
+  - This venue is set for 3-ball play; pop bumpers score 1,000 points.
+watch:
+- title: Bonus X lamps
+  text: The 1X-5X lamps show end-of-ball bonus leverage; 5X makes every bonus increment
+    matter.
+- title: Floor double scoring
+  text: A lit DOUBLE SCORING lamp identifies the floor whose target value is temporarily
+    doubled.
+- title: Sub-playfield control
+  text: 'A ball held in the attic or cellar is usually intentional: those floors build
+    bonus away from the open main-floor chaos.'
+- title: Trap door
+  text: When open, the main-floor mini-orbit can send the ball down to the cellar.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball qualification
+  text: Completing 1-2-3-4-5 or either drop-target bank lights Extra Ball at the right-side
+    kicker. On this venue, Extra Balls are disabled.
+- type: other
+  name: Novelty Mode
+  text: If operator switch 20 is on, playfield Specials and Extra Balls score 50,000
+    points instead of their normal awards.
+shots:
+- name: Cellar drop bank
+  value: Builds bonus and progresses Extra Ball, double scoring, and Double Bonus/Special
+    states; the preferred repeated setup route.
+  risk: Medium
+  diagram: 1
+- name: Secret Passage
+  value: The center main-floor standup drops the ball directly to the cellar for fast
+    bonus-building access.
+  risk: Medium-High
+  diagram: 2
+- name: 1-2-3-4-5 targets
+  value: Build bonus and qualify cellar Double Bonus plus Extra Ball/Special progression
+    when completed in order.
+  risk: Medium-High
+  diagram: 3
+- name: Attic ramp
+  value: Gets the ball to the upper playfield; after an attic target, the route can
+    advance Bonus X.
+  risk: Medium-High
+  diagram: 4
+- name: Trap Door
+  value: Drops the ball to the cellar as another productive level change.
+  risk: Medium
+  diagram: 5
+- name: Attic drop bank
+  value: Builds bonus and progresses Extra Ball, double scoring, and Double Bonus/Special
+    states while scoring upstairs.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Stay in the attic or cellar, especially a cooperative cellar. Build bonus
+    and Bonus X while avoiding open main-floor danger; at 5X, prioritize survival.
+  behind: Chase repeated bank completions for double scoring and Double Bonus. Use
+    1-2-3-4-5 when its feature progression can provide a meaningful payoff.
+  key_decision: Farm controlled target and bonus value on a sub-playfield, or return
+    to the main floor to qualify additional features.
+danger:
+- The small center drain between the two right-side main-floor flippers is an awkward
+  loss path.
+- Main-floor target rebounds can send the ball unpredictably across the widebody.
+- Attic-ramp returns can arrive fast and uncontrolled.
+- Pop-bumper exits can cause sudden loss of control.
+- Main-floor flippers use the forward cabinet buttons; attic and cellar flippers use
+  the rear pair.
+commentary:
+- Another floor change—that advances the Monster Bonus multiplier.
+- They're at 5X now, so every bonus increment has become much more important.
+- Two cellar banks are in; that lights double scoring upstairs and opens other payoff
+  states.
+- They're staying in the cellar on purpose—it's generally the cleaner scoring area.
+- 'Watch the hands: the attic and cellar use the second pair of flipper buttons.'
+- If Novelty Mode is active, that Extra Ball is 50,000 points instead of another ball.
+trivia:
+- Haunted House was the first production pinball machine with three playable levels,
+  including a visible playfield beneath the main floor.
+- Its eight flippers were a record when the game appeared.
+- The center Secret Passage is a standup that physically drops away and swallows the
+  ball into the cellar.
+- A fifth six-digit display serves as a live bonus display rather than another player
+  score.
+- Its organ soundtrack incorporates Bach's Toccata and Fugue in D minor and Gounod's
+  Funeral March of a Marionette.
+summary: Attic/cellar control → Bonus X → floor doubles → Monster Bonus → survive
+  at 5X
+venue_notes:
+- Configured for 3-ball play; pop bumpers score 1,000 points.
+- All three playfields and all eight flippers are functional.
+- Extra Balls are disabled at this venue.
+- Novelty Mode setting is unknown; only describe the 50,000-point conversion conditionally.
+- The plunge is a level choice, not a formal scored Skill Shot award.
+- No later scoring revision was verified beyond Game PROM 669/1.
+image: images/haunted-house-gottlieb-1982.jpg

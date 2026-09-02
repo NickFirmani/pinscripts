@@ -1,0 +1,150 @@
+id: metallica-pro-stern-2013
+name: Metallica (Pro)
+manufacturer: Stern Pinball
+year: 2013
+metadata:
+  designer: John Borg
+  artist: Donny Gillies (“Dirty Donny”)
+  production: April 2013
+  era: S.A.M. DMD era
+  multiball: Electric Chair, Grave Marker, Snake, and Coffin
+hook: Build the four items through Spider-fed shots, turn them into multiballs and
+  multipliers, then risk a single-ball Crank It Up cash-out for the huge score.
+rules:
+  primary: Collect Electric Chair, Grave Marker, Snake, and Coffin items to qualify
+    multiballs and eventually Crank It Up. At 12 of each item, Crank It Up lights
+    at the scoop; build its jackpot, then choose to collect or continue at risk.
+  bullets:
+  - Move the Spider, then hit Sparky, Snake, or Grave Marker to light that item at
+    the Spider shot; repeated makes collect it.
+  - Electric Chair progress persists; Grave Marker requires the inline drops and marker,
+    but its qualification resets on a drain.
+  - 'Coffin locks on Pro are virtual: qualify them with 5, then 10 and 10 captive-ball
+    hits. Locks cannot be collected during another multiball.'
+  - During multiball, complete the four Pick targets and shoot Snake for an add-a-ball,
+    about 10 seconds of ball save, and 20 seconds of 2× playfield.
+  - FUEL lights Dead End for 20 seconds of 2× playfield; with Snake 2× active, scoring
+    becomes 4×.
+watch:
+- title: Four item lamps
+  text: All four pulsing above the flippers means Crank It Up is ready at the scoop.
+- title: Spider-fed shot
+  text: The Spider arrow and item inserts reveal that a repeated ramp or orbit is
+    being used to farm Crank It Up items.
+- title: Snake flashing in multiball
+  text: The Pick targets are complete; Snake can immediately award an add-a-ball and
+    temporary 2× playfield.
+- title: Crank It Up scoop
+  text: 'After the four physical features are hit, the flashing scoop presents the
+    key choice: cash out or continue building the jackpot.'
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge to the flashing top rollover; the right lane is the 2× lane.
+  value: Starts at 200K and increases 50K for each prior successful skill shot.
+- name: Super Skill Shot
+  how: Hold the left flipper while plunging to disable the orbit post, then shoot
+    a major feature.
+  value: Generally worth about 2× the normal skill-shot value; Dead End qualifies
+    FUEL 2×, the scoop awards Mystery, and a flashing major shot qualifies its Coffin
+    Hurry-Up.
+- name: Super rollover
+  how: Use the Super Skill Shot and make the top rollover, ideally through the right
+    lane.
+  value: Awards 2× normal skill-shot value, or 4× through the right lane.
+features:
+- type: ball-save
+  name: Snake add-a-ball save
+  text: In multiball, completing Pick targets then shooting Snake adds a ball and
+    starts about 10 seconds of ball save.
+- type: other
+  name: FUEL 2×
+  text: Complete FUEL to light the far-left Dead End for 20 seconds of double playfield
+    scoring; it stacks with Snake 2× for 4×.
+- type: mystery-award
+  name: Mystery
+  text: Complete all five top and inlane rollovers, using flippers to change lanes.
+    Awards can include points, items, letters, and Bonus X; during Crank It Up it
+    spots useful mode progress.
+- type: extra-ball
+  name: Extra Ball
+  text: Extra Ball can light at the scoop from captive-ball thresholds, combos, or
+    Blown Pistons. On V1.80, the first captive-ball threshold is 10 hits.
+shots:
+- name: FUEL / Dead End
+  value: Lights or collects FUEL's 2× playfield multiplier, especially valuable before
+    a major cash-out.
+  risk: High
+  diagram: 1
+- name: Grave Marker
+  value: Advances Grave Marker Multiball and items; clearing the inline drops then
+    hitting it is a fast multiball route.
+  risk: Medium-High
+  diagram: 2
+- name: Sparky / Electric Chair
+  value: Advances the persistent Electric Chair Multiball route and collects items.
+  risk: High
+  diagram: 3
+- name: Left and right ramps
+  value: Advance METALLICA and Lady Justice while offering flowing scoring and Spider
+    item collection.
+  risk: Medium
+  diagram: 4
+- name: Coffin captive ball
+  value: Builds Coffins, virtual locks, and Hurry-Ups; it is a key Crank It Up bottleneck.
+  risk: Medium-High
+  diagram: 5
+- name: Snake
+  value: Advances Snake letters and multiball; in multiball it can trigger the add-a-ball
+    and 2× package.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor the multiball route already closest, usually Electric Chair or Grave
+    Marker, and use its safety to accumulate items. Take a healthy Crank It Up escape
+    rather than forcing further setup.
+  behind: Optimize Spider placement, build Crank It Up, choose For Whom the Bell Tolls,
+    and keep building before escape when the potential jackpot justifies the risk.
+    FUEL 2× before collection can enable a large comeback.
+  key_decision: Take the score now, or keep preparing leverage? Another item, multiplier,
+    or stack may improve the payoff but exposes a controlled single ball before collection.
+danger:
+- The left inlane/outlane complex is exceptionally hungry; ricochets off the double-inlane
+  rail or slings can hop directly out.
+- FUEL / Dead End is strategically valuable but feeds the dangerous left-outlane area.
+- Direct Sparky shots can rebound dangerously through the center.
+- Frontal Grave Marker attempts can rebound center; a left-flipper backhand is safer.
+- Captive-ball rebounds matter because repeated Coffin hits are mandatory for major
+  progress.
+commentary:
+- He’s moving the Spider first—that means his next Sparky hit will light this ramp
+  for Electric Chair items.
+- Pick targets are done; Snake now gives him an add-a-ball and twenty seconds of double
+  scoring.
+- FUEL is lit too—if he gets both multipliers running, that’s four-times playfield.
+- All four item lamps are complete; Crank It Up is ready at the scoop.
+- For Whom the Bell Tolls is the preferred Pro choice—he can flow those ramps and
+  build a very large collect.
+- 'The scoop is lit for escape: cash what he’s built, or keep playing and risk losing
+  that uncollected jackpot.'
+trivia:
+- John Borg designed the game, with rules by Lyman F. Sheats Jr.; post-release development
+  substantially transformed it after launch.
+- Premium and LE models add a moving Grave Marker, animated Snake, and ball-smashing
+  hammer that the Pro lacks.
+- The 2014 Pro LED changed lighting and backbox presentation while retaining the Pro
+  layout and rules.
+- Brendon Small of Metalocalypse voices Sparky and the Snake; James Hetfield and Lars
+  Ulrich supplied custom speech.
+- V1.80 arrived more than five years after the 2013 release.
+summary: Spider items → multiballs → Snake/FUEL multipliers → Crank It Up → cash or
+  continue
+venue_notes:
+- V1.80 software is installed; the first Crank It Up requires 12 of each item.
+- Competition preset is active; the Super Skill Shot Coffin Hurry-Up is deterministically
+  the left orbit.
+- Coffin locks cannot be collected during other multiballs under the stock/default
+  behavior.
+- Extra Balls use competition-default handling.
+- This is the original 2013 Pro, not Metallica Remastered; Pro uses virtual Coffin
+  locks and lacks the Premium/LE hammer and physical three-ball lock.
+image: images/metallica-pro-stern-2013.jpg

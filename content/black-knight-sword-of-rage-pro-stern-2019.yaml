@@ -1,0 +1,140 @@
+id: black-knight-sword-of-rage-pro-stern-2019
+name: 'Black Knight: Sword of Rage — Pro'
+manufacturer: Stern Pinball
+year: 2019
+metadata:
+  designer: Steve Ritchie
+  artist: Kevin O’Connor
+  production: Pro edition
+  era: SPIKE 2 LCD era
+  multiball: Triple Knights Challenge, KNIGHT Multiball, The King’s Ransom, RAGE Multiball
+hook: Build Monster Battles and Triple Knights Challenge together, charge POWER for
+  doubled Battle scoring, then turn advanced Supers into a huge KNIGHT Multiball cash-out.
+rules:
+  primary: Qualify Monster Battles through the dangerous center shots, then make the
+    ramp and shoot behind the raised shield to start a Battle. Build three virtual
+    locks through the Light Lock target and shield scoop for Triple Knights Challenge,
+    while Battles, WAR Hurry-Ups, and Triple Knights Super Jackpots build K-N-I-G-H-T.
+  bullets:
+  - During a Battle, collect lit POWER at the center target for 2X Battle scoring
+    and easier completion rules.
+  - 'Triple Knights Challenge is a three-ball multiball: complete the left spinner
+    lane, ramp, and shield, then clear jackpots to relight the ramp for a 3X Super
+    Jackpot and a KNIGHT letter.'
+  - Completing KNIGHT lights the left spinner lane for three-ball KNIGHT Multiball,
+    where playfield scoring is multiplied by balls in play, up to 3X.
+  - Spinner activity lights Supers at the center target. The left VUK boosts active
+    Supers during single-ball play, up to purple.
+  - Current Super Jackpot collection is Magna-Save activation followed by the right
+    return-lane switch within five seconds.
+watch:
+- title: POWER at center
+  text: A lit POWER collect can double the current Battle and make its rules easier;
+    waiting may be intentional.
+- title: Super colors
+  text: Green, yellow, red, then purple indicate increasingly valuable Supers. Purple
+    is maxed.
+- title: KNIGHT spellout
+  text: Once K-N-I-G-H-T is complete, the left spinner lane starts the balls-in-play
+    multiplier window.
+- title: Magna-Save lit
+  text: With valuable Supers active, a Magna-Save followed by the right return lane
+    can collect a major Super Jackpot.
+skill_shots:
+- name: Standard Skill Shot
+  how: Plunge the lit W-A-R top lane; flippers can lane-change.
+  value: 750K, increasing by 250K on successive skill shots.
+- name: Locked-lane Super Skill Shot
+  how: Hold the left flipper and plunge the already-lit WAR lane without changing
+    it.
+  value: 3X the normal Skill Shot value.
+- name: Center-shot Super Skill Shot
+  how: Hold the left flipper through the plunge, then hit the flail, center target,
+    or shield.
+  value: 1.5M, plus 500K for each subsequent Super Skill Shot.
+features:
+- type: player-control
+  name: Magna-Save
+  text: The lockdown-bar button fires a magnet over the right outlane. Complete the
+    right drop bank to relight it; it also enables Super Jackpot collection.
+- type: ball-save
+  name: Left-outlane Ball Save
+  text: Complete the two Add Time standups enough times to light a left-outlane save;
+    later saves take more work to requalify.
+- type: extra-ball
+  name: Extra Balls
+  text: Battles, U-Turns, King’s Ransom, and some Mystery outcomes can light Extra
+    Ball at the shield scoop.
+- type: mystery-award
+  name: Mystery
+  text: Spell R-A-G-E on the return/outlanes for a randomized award; Competition Mode
+    alternates between 3M and Advance WAR Lanes.
+shots:
+- name: Left spinner / VUK
+  value: Boosts Supers and starts KNIGHT Multiball; build Supers before the multiplier
+    window.
+  risk: Medium-High
+  diagram: 1
+- name: Flail ramp
+  value: Advances Battle qualification and start sequence, plus Triple Knights Challenge.
+  risk: High
+  diagram: 2
+- name: Center target
+  value: Builds POWER, starts Supers, and scores hurry-ups.
+  risk: High
+  diagram: 3
+- name: Shield / scoop
+  value: Starts Battles, builds virtual locks, and handles Mystery or Extra Ball.
+  risk: High
+  diagram: 4
+- name: Light Lock target
+  value: Lights Triple Knights Challenge locks for a major multiball route.
+  risk: Medium-High
+  diagram: 5
+- name: Right drop bank
+  value: Builds the Sword meter and relights Magna-Save.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Cradle and backhand the center shots. Keep Magna-Save lit and favor the reliable
+    Battle-plus-Triple-Knights stack rather than extending Supers indefinitely.
+  behind: Build multiple high-level Supers, push toward KNIGHT, and cash the Super
+    Jackpot during its 3X window. WAR Hurry-Ups are another aggressive route that
+    also advances KNIGHT.
+  key_decision: Use Magna-Save now for survival or an available cash-out, or preserve
+    it to build a larger Super Jackpot for KNIGHT Multiball.
+danger:
+- Forehanded central shots can reject brutally from the close rubber posts.
+- A Light Lock target miss or rebound can head quickly toward the right drain.
+- The shield can reject the ball with substantial speed.
+- Incomplete flail-ramp entries can produce unpredictable returns from the motorized
+  flail and center posts.
+- Right drop-bank rebounds are dangerous despite its POWER and Magna-Save value.
+commentary:
+- He’s qualified the Battle and the lock together — this is the classic mode-plus-Triple-Knights
+  setup.
+- POWER is ready; that center target will double the Battle and make the rules easier.
+- He’s purple on that Super — now the question is whether he waits for KNIGHT Multiball
+  to cash it at 3X.
+- KNIGHT is complete; the left spinner lane is now the big multiplier start.
+- That Magna-Save isn’t just defense — it’s also his Super Jackpot cash register.
+- Competition setup spots no KNIGHT letters, so that retro multiball is substantially
+  farther away.
+trivia:
+- Sword of Rage is Steve Ritchie’s third Black Knight game, following Black Knight
+  and Black Knight 2000.
+- The player-controlled Magna-Save continues a signature Black Knight franchise mechanic.
+- The soundtrack was written and performed by Scott Ian and Brendon Small.
+- Premium and LE add the transparent upper playfield and Catapult; the Pro uses a
+  simpler two-flipper lower playfield.
+summary: Battles + locks → POWER → Supers → KNIGHT → 3X cash-out
+venue_notes:
+- This Pro is running v1.18 code.
+- Extra Balls are disabled under the venue’s Stern Competition Install setting.
+- Competition Install status is otherwise unconfirmed; if active, it spots no KNIGHT
+  letters and sets Sword difficulty to HARD.
+- Use the current Magna-Save-plus-right-return-lane Super Jackpot rule; the left VUK
+  boosts Supers rather than collecting them.
+- Premium/LE-only Catapult, transparent upper playfield, third flipper, and Last Chance
+  features do not apply to this Pro.
+image: images/black-knight-sword-of-rage-pro-stern-2019.jpg

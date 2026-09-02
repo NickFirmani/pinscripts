@@ -1,0 +1,117 @@
+id: meteor-stern-electronics-1979
+name: Meteor
+manufacturer: Stern Electronics
+year: 1979
+metadata:
+  designer: Steve Kirk
+  artist: Leslie Kaip and Jorge Obregon
+  production: 7,939 complete games; 8,362 including 423 knock-down/export games for
+    Australia
+  era: Stern M-200 MPU solid-state
+  multiball: No multiball
+hook: Build M and R plus three middle METEOR targets, leave one standing for a 2,000-point
+  spinner, then rip the around-the-world shot while protecting Bonus X.
+rules:
+  primary: 'Meteor is a spinner-first game: preserve one standing middle METEOR target
+    to farm the 2,000-per-spin setup, or finish the bank to advance Bonus X and rebuild.'
+  bullets:
+  - Spinner starts at 200; middle METEOR targets add 200 each, while M and R add 600
+    each.
+  - Completing METEOR resets its bank and spinner value, scores 20K from the six targets,
+    and advances Bonus X toward 7×.
+  - METEOR target states are player-specific and persist between that player's balls;
+    numbered missile banks reset each ball.
+  - Numbered missile targets add 1K bonus each, up to 7K per row and 21K total; 7×
+    makes that 147K at ball end.
+  - Tilting forfeits end-of-ball bonus.
+watch:
+- title: METEOR bank state
+  text: M and R down with three middle letters down and one standing is the ideal
+    2,000-per-spin farm state.
+- title: Bonus X
+  text: A 5× or 6× multiplier is valuable carried equity; another METEOR completion
+    can push toward 7×.
+- title: Missile rows
+  text: Rows nearing 7K build a major end-of-ball bonus and can align a WOW opportunity.
+- title: Lit award movement
+  text: 'Watch the lit Spot/WOW/Special lamp: sling behavior can move it depending
+    on the machine adjustment.'
+skill_shots: []
+features:
+- type: extra-ball
+  name: WOW / Extra Ball
+  text: Matching all three missile-row values can light rotating WOW; deep METEOR
+    progression can also light it at an operator-selected 6× or 7×. Awards are configurable.
+- type: other
+  name: Spot and award lamp movement
+  text: Slingshots may move lit WOW, Special, or Spot lamps, or leave them stationary,
+    according to operator settings.
+shots:
+- name: M target
+  value: Adds 600 per spinner spin, one of the two highest-value setup targets.
+  risk: Medium
+  diagram: 1
+- name: '#2 missile bank'
+  value: Builds base bonus and is a preferred numbered-bank shot from a right-side
+    feed.
+  risk: Medium
+  diagram: 2
+- name: Middle METEOR targets
+  value: Each adds 200 per spin; leave one standing to avoid resetting the spinner
+    value.
+  risk: Medium
+  diagram: 3
+- name: R target
+  value: Adds 600 per spinner spin and is often deliberately picked off for the ideal
+    setup.
+  risk: Medium-High
+  diagram: 4
+- name: Spinner
+  value: Primary scoring engine, worth up to the sustainable 2,000 per spin setup.
+  risk: High
+  diagram: 5
+strategy:
+  ahead: Establish a strong spinner value, repeat the spinner rather than force lower
+    drops, and preserve a 4×–6× multiplier when possible.
+  behind: Complete METEOR for Bonus X, rebuild the spinner, and pursue 2,000-per-spin
+    rips; a 21K bonus at 7× is 147K.
+  key_decision: Leave one METEOR target standing for immediate spinner farming, or
+    complete the bank for a Bonus-X step and later-ball equity.
+danger:
+- A full around-the-world spinner return can drain to either side.
+- A miss through the upper-right gap can hit the bumper or post and rebound toward
+  center.
+- An aggressive shatz or inlane transfer can travel up the inlane and down the outlane.
+- Numbered drop banks offer bonus but carry direct rebound risk.
+- Center-post configuration materially changes drain saves and transfer techniques.
+commentary:
+- M and R are down with one middle letter still standing—that spinner is now two thousand
+  a rip.
+- If they finish METEOR, the spinner resets, but they gain another step of Bonus X.
+- Meteor remembers those six targets between balls, so that partial spinner setup
+  remains for this player.
+- They are at six-times bonus, and on stock rules that multiplier carries through
+  the drain.
+- All three missile rows are aligning—that can bring the rotating WOW into play.
+- That spinner made the full trip around; this is where a great shot can become an
+  immediate drain.
+trivia:
+- Meteor is licensed from the 1979 disaster film starring Sean Connery and Natalie
+  Wood, though the actors do not appear on the artwork.
+- The backglass and flyer image derives from a film advertising painting by space
+  artist Robert McCall.
+- Meteor was the first Stern game to use the SB-300 sound board, with continuous background
+  sound that rises in pitch during play.
+- Some machines carried apron stickers reading “selected for tournament play.”
+- The center post was internally nicknamed the Kirk Post after designer Steve Kirk.
+summary: Spinner farm → METEOR completion → Bonus X → missile bonus → WOW opportunities
+  → drain control
+venue_notes:
+- This reference covers original Stern rules, not modern replacement code.
+- Venue reports the U1a factory bug-fix ROM.
+- Configured for 3 balls.
+- Extra Balls and WOW awards are disabled or have no value.
+- WOW/Special/Spot lamp movement and center-post configuration are unknown.
+- 'Multiplier persistence follows the original Stern manual: 1×–6× carry; after 7×
+  drains, the next ball begins at 3×.'
+image: images/meteor-stern-electronics-1979.jpg

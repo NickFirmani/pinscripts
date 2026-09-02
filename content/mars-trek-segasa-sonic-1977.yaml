@@ -1,0 +1,119 @@
+id: mars-trek-segasa-sonic-1977
+name: Mars Trek
+manufacturer: Sonic / Segasa
+year: 1977
+metadata:
+  designer: ''
+  artist: ''
+  production: Model 993; four-player electromechanical
+  era: 1970s electromechanical
+  multiball: None
+hook: A fast three-flipper EM built around taking the ball up top to build 100K bonus,
+  then deciding whether to cash it or protect a doubled end-of-ball payout.
+rules:
+  primary: Build bonus through the upper routes, return lanes, star rollover, and
+    right-side spinner; it tops out at 100K. E and K light Double Bonus for end-of-ball
+    bonus only, while the Collect Bonus saucer always pays normal value.
+  bullets:
+  - Complete MARS for 10K; complete TREK to make the center target worth 10K; completing
+    MARS TREK lights Special.
+  - At exactly 50K bonus, the Runway lights Extra Ball; advancing or collecting bonus
+    can remove that state.
+  - At 100K with Double Bonus lit, preserving the bonus for a drain can pay 200K;
+    collecting pays 100K and requires rebuilding.
+  - With max bonus, the lit spinner becomes a repeatable scoring route.
+watch:
+- title: Bonus near 100K
+  text: The key cash-versus-hold decision is approaching.
+- title: E and K lit
+  text: Double Bonus is active at the drain, not at the Collect Bonus saucer.
+- title: Maxed bonus / lit spinner
+  text: The spinner becomes an attractive repeatable scoring play.
+- title: 50K bonus
+  text: The Runway Extra Ball is briefly available, though Extra Balls are disabled
+    for this event.
+skill_shots:
+- name: Competitive top-saucer plunge
+  how: Plunge for the top saucer rather than treating it as an official named skill
+    shot.
+  value: Advances bonus and spots a top T or R letter; its safety depends on this
+    machine's kickout and alternate upper feeds.
+features:
+- type: extra-ball
+  name: Runway Extra Ball
+  text: At exactly 50K bonus, the lit semi-circular Runway awards an Extra Ball. Extra
+    Balls are disabled for this event.
+- type: other
+  name: MARS TREK Special
+  text: Completing MARS TREK lights Special. Special is disabled for this event.
+shots:
+- name: Left orbit / star route
+  value: Repeatable up-top route that advances bonus.
+  risk: Medium-High
+  diagram: 1
+- name: MARS targets
+  value: Build MARS toward its 10K completion and Special progress.
+  risk: High
+  diagram: 2
+- name: E/K center target
+  value: Spots alternating E or K; after TREK it is worth 10K. Force it chiefly to
+    complete Double Bonus.
+  risk: High
+  diagram: 3
+- name: Top saucer / upper route
+  value: Advances bonus and spots T or R; a primary bonus-building route.
+  risk: Medium-High
+  diagram: 4
+- name: Runway / dual spinners
+  value: Strong after bonus is maxed; the Runway can award Extra Ball at 50K, though
+    Extra Balls are disabled here.
+  risk: Medium-High
+  diagram: 5
+- name: Collect Bonus saucer
+  value: Cash the stored bonus at normal value when certainty matters; it never honors
+    Double Bonus.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: 'Build bonus safely and complete E/K naturally. At 100K with Double Bonus
+    lit, do not automatically collect: protecting the potential 200K drain bonus can
+    be better.'
+  behind: At 100K, cashing the Collect Bonus saucer supplies immediate points and
+    lets the player rebuild. A lit spinner offers faster scoring, and a center E/K
+    attempt is more defensible when it completes the doubler.
+  key_decision: At a large bonus, collect it now for normal value or preserve it for
+    a potentially doubled end-of-ball payout.
+danger:
+- Top R/T feeds can ricochet through the center and MARS area toward the left outlane;
+  T usually carries more speed.
+- The left-facing E/K center-target rebound is a major left-outlane threat.
+- Attacking MARS from the upper-right flipper can create dangerous side-to-side motion.
+- A top-saucer kickout may head toward the right sling or post and is machine-specific.
+- A missed spinner-loop attempt can fall into Collect Bonus and cash an undoubled
+  bonus unintentionally.
+commentary:
+- This is an up-top-all-day game—he's building that bonus toward a hundred thousand.
+- E and K are complete, so the stored bonus is doubled at the drain.
+- 'Important distinction: the Collect Bonus saucer does not get the doubler.'
+- He's sitting on a hundred thousand doubled; that saucer is a strategic choice, not
+  an automatic collect.
+- That center E/K target can finish the doubler, but its rebound loves the left outlane.
+- Bonus is maxed, so the lit spinner becomes the repeatable scoring play.
+trivia:
+- Mars Trek was built in Madrid by Segasa under the Sonic name; its flyer calls Segasa
+  “d.b.a.” Sonic.
+- Its two spinners sit in front of the same horseshoe/runway.
+- Sonic advertised a polyurethane playfield.
+- The asymmetric, fast three-flipper layout is unusually aggressive for an EM.
+summary: Build bonus up top → light E/K Double Bonus → choose cash or hold → repeat
+  lit spinner
+venue_notes:
+- Configured for 5-ball play.
+- Extra Balls are disabled/ignored for this event.
+- Special is disabled for this event.
+- The safest upper feed is unknown on this machine; evaluate the R lane, T lane, and
+  saucer kickout separately.
+- Spinner/runway behavior is not confirmed for this machine; avoid stating an exact
+  per-spin value.
+- The Collect Bonus saucer pays normal bonus even with Double Bonus lit.
+image: images/mars-trek-segasa-sonic-1977.jpg

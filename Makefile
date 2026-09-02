@@ -11,7 +11,7 @@ GAME_IMAGE_BW_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image-bw,$(
 	@:
 endif
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-prompt game-format game-image game-image-bw game-research install process-images test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-research install process-images test
 
 install:
 	python3 -m venv .venv
@@ -61,6 +61,9 @@ format-prompt:
 format-benchmark:
 	@test -n "$(MODEL)" || (echo 'Usage: make format-benchmark MODEL="ollama-model" [RESEARCH="path"] [MODE="structured-json|direct-yaml"] [THINK="false|true|low|medium|high"] [PROGRESS_INTERVAL="seconds"]' >&2; exit 2)
 	$(PYTHON) benchmarks/format_prompt.py --model "$(MODEL)" $(if $(RESEARCH),--research "$(RESEARCH)") $(if $(MODE),--mode "$(MODE)") $(if $(THINK),--think "$(THINK)") $(if $(PROGRESS_INTERVAL),--progress-interval "$(PROGRESS_INTERVAL)")
+
+format-codex-batch:
+	$(PYTHON) benchmarks/format_codex.py --promote $(if $(MODEL),--model "$(MODEL)") $(if $(EFFORT),--effort "$(EFFORT)") $(if $(WORKERS),--workers "$(WORKERS)")
 
 process-images:
 	@test -n "$(IMAGE)" || (echo 'Usage: make process-images IMAGE="images/game.jpg" [OUTPUT_DIR="path"]' >&2; exit 2)

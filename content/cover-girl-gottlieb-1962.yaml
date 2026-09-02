@@ -1,0 +1,121 @@
+id: cover-girl-gottlieb-1962
+name: Cover Girl
+manufacturer: D. Gottlieb & Co.
+year: 1962
+metadata:
+  designer: Wayne Neyens
+  artist: Roy Parker
+  production: 2,100 machines
+  era: Single-player electro-mechanical wedgehead
+  multiball: None
+hook: A compact 1962 wedgehead where the 50-point top-center rollover lights a split
+  target, turning precise center shots into fast progress toward red and white Cover
+  Girl rows.
+rules:
+  primary: Make the 50-point top-center rollover to light the split target. The red
+    or white target half then spots progress in its matching 1–6 Cover Girl row. Finish
+    either color for a Special; finish all 12 to light Specials at the side gobble
+    holes.
+  bullets:
+  - Ordinary numbered rollovers score 5 points.
+  - One rotating lit pop bumper scores 10 points per hit.
+  - Side gobble holes cash out for 50, 100, or 150 points but end the ball.
+  - This game was built around replay Specials, so row completion matters in competition
+    only if the event gives Specials value.
+watch:
+- title: Cover Girl rows
+  text: The two backglass rows of six show red and white completion progress at a
+    glance.
+- title: Lit split target
+  text: A lit center target means the top-center rollover was made; its red and white
+    halves can spot matching numbers.
+- title: Hot pop
+  text: Only one pop is lit at a time, making that bumper worth 10 points.
+- title: Side-hole setup
+  text: A player aiming for a side gobble hole may be choosing a deliberate 50/100/150-point
+    cash-out that ends the ball.
+skill_shots:
+- name: Top-center rollover
+  how: Make the top-center rollover; no specific plunge technique is established.
+  value: Scores 50 points and lights the split target, enabling faster red or white
+    number collection.
+features:
+- type: other
+  name: Specials / replays
+  text: Complete either red or white 1–6 row for a Special. Complete all 12 to light
+    1, 2, or 3 Specials at the side gobble holes.
+- type: other
+  name: Match
+  text: The normal Gottlieb Match feature can award a replay after the game.
+shots:
+- name: Red numbered rollovers
+  value: Advance red 1–6 and the lower Cover Girl row; ordinary rollover value is
+    5 points.
+  risk: Medium
+  diagram: 1
+- name: Side gobble holes
+  value: A 50/100/150-point cash-out, or Specials when qualified; taking one ends
+    the ball immediately.
+  risk: High
+  diagram: 2
+- name: Top-center rollover
+  value: 50 points and lights the split target; the key documented scoring and setup
+    shot.
+  risk: Medium
+  diagram: 3
+- name: Split target
+  value: Spots matching red or white numbered progress after it is lit; a perfect
+    center hit can sometimes register both sides.
+  risk: Medium-High
+  diagram: 4
+- name: Lit pop bumper
+  value: Repeat 10-point scoring while its rotating lamp is active.
+  risk: Medium
+  diagram: 5
+- name: White numbered rollovers
+  value: Advance white 1–6 and the upper Cover Girl row; ordinary rollover value is
+    5 points.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Avoid gobble holes and unnecessary square hits on the center standup. Favor
+    the 50-point top-center rollover and opportunistic scoring on the lit pop; do
+    not risk a ball just to finish a row if Specials have no event value.
+  behind: Use the split target to spot missing numbers quickly. Late in a ball or
+    with a large deficit, a 100- or 150-point gobble-hole cash-out can be worthwhile
+    despite ending the ball.
+  key_decision: Choose between repeatable scoring and deliberately ending the ball
+    in a high-value gobble hole; separately decide whether row completion is worth
+    pursuing under the event's Special treatment.
+danger:
+- Side gobble holes end the ball immediately.
+- A direct split-target rejection can return quickly.
+- Outside number lanes sit near edges and gobble-hole entrances.
+- Upper-pop exits surrender ball control.
+- Short two-inch flippers make late saves less forgiving.
+commentary:
+- That's the big center rollover—50 points, and now the split target is live.
+- Red half spots red numbers, white half spots white; a perfect center hit can sometimes
+  get both.
+- Only one pop is hot at a time, and that's worth ten a hit.
+- Six of either color earns the native Special; whether that matters today depends
+  on tournament settings.
+- All twelve Cover Girls puts the Specials onto those side gobble holes.
+- He's actually looking at the gobble here—up to 150 points, but the ball is over
+  the instant he takes it.
+trivia:
+- Wayne Neyens designed Cover Girl and Roy Parker supplied the artwork.
+- Gottlieb's 1962 advertising promoted a new split-target skill feature.
+- The backglass has 12 Cover Girls, matching the 12 red-and-white numbered objectives.
+- Production totaled 2,100 machines.
+- The score reels display only through 1,999, making 50- and 150-point shots especially
+  significant.
+summary: 50-point center rollover → lit split target → red/white row progress → Specials
+  → ball-ending gobble-hole cash-outs
+venue_notes:
+- This machine is configured for 5 balls.
+- Tournament handling of Specials materially changes the value of completing Cover
+  Girl rows.
+- Verify whether partial red/white row progress carries between balls.
+- Verify how this machine's 50/100/150 gobble-hole values behave.
+image: images/cover-girl-gottlieb-1962.jpg

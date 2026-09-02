@@ -1,0 +1,124 @@
+id: stars-stern-electronics-1978
+name: Stars
+manufacturer: Stern Electronics
+year: 1978
+metadata:
+  designer: Steve Kirk
+  artist: Jorge Obregon
+  production: 5,127
+  era: Stern M-100 solid-state
+  multiball: No multiball
+hook: On this three-ball setup, complete all five Stars to make the right spinner
+  worth 1,000 per spin and chase the open-ended 100,000-point moving Special; drop
+  banks offer the alternate 3×-bonus route.
+rules:
+  primary: Build Stars for the escalating right spinner and rotating Special, or work
+    the two drop banks for Bonus X and the left spinner. With 100,000-point open-ended
+    Specials, the Star route is the dominant scoring opportunity.
+  bullets:
+  - Bonus starts at 1K, tops out at 19K, and is collected at drain; lit return lanes
+    and outlanes add three advances.
+  - Complete qualifying drop banks for 2×, then 3× bonus. Bonus X resets after the
+    ball drains.
+  - Each drop target is 500 and advances bonus; a lone remaining center target in
+    a bank is worth 7K.
+  - Each ball begins with one random Star spotted. Each additional Star raises the
+    right spinner by 200, up to 1K per spin.
+  - All five Stars in one ball light a rotating Special; ordinary 500-point scoring
+    moves the lit red Star.
+watch:
+- title: Five Stars lit
+  text: The right spinner is now worth 1,000 per spin, and the rotating Star Special
+    is qualified.
+- title: Red Special Star
+  text: The red-lit Star is worth 100,000 points on this setup and can be collected
+    repeatedly.
+- title: 2× / 3× Bonus
+  text: This shows the progress and drain value of the drop-bank route; 19K base bonus
+    becomes 57K at 3×.
+- title: Center target left
+  text: With the two outside targets down in either bank, the remaining center target
+    is worth 7K.
+skill_shots:
+- name: Star Target Skill Shot
+  how: On the plunge, hit an accessible upper Star standup that is not already spotted;
+    aim for an unlit white or green Star when available.
+  value: Spots another Star toward the 1K right spinner and toward qualifying the
+    rotating Special.
+features:
+- type: other
+  name: Rotating Star Special
+  text: After all five Stars are completed in one ball, one Star is lit for Special;
+    ordinary scoring rotates the lit target. This venue awards 100,000 points and
+    allows open-ended Specials.
+- type: extra-ball
+  name: WOW / Extra Ball
+  text: Deep drop-bank progression can normally award an Extra Ball, but WOW is disabled
+    on this setup.
+shots:
+- name: Left spinner
+  value: Increasing direct scoring as center drop-target state develops.
+  risk: Medium
+  diagram: 1
+- name: Left drop bank
+  value: Builds Bonus X and develops the left-spinner route.
+  risk: Medium-High
+  diagram: 2
+- name: Colored Star targets
+  value: Build right-spinner value and qualify the moving Special after all five Stars.
+  risk: Medium-High
+  diagram: 3
+- name: Lit Special Star
+  value: The moving red target awards 100,000 points and may be repeated.
+  risk: High
+  diagram: 4
+- name: Right drop bank
+  value: Completes 2× and 3× bonus progression and develops the left spinner.
+  risk: Medium-High
+  diagram: 5
+- name: Right spinner
+  value: Scores up to 1,000 per spin after all five Stars are collected.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: With a Special already collected, favor the cleanest full-orbit spinner and
+    avoid unnecessary standup or drop-target rebounds. Protect an established 3× bonus.
+  behind: Finish all five Stars, then repeatedly chase the moving red 100,000-point
+    Special—the highest-variance comeback route.
+  key_decision: 'Stars versus drop banks: Stars build the right spinner and open repeated
+    Specials; drops build Bonus X and the left spinner. Machine condition still affects
+    the choice.'
+danger:
+- A right-spinner shot that comes up short can fall back dangerously.
+- Balls dropping just right of the exposed pop bumper have a high drain percentage.
+- Drop-target rebounds often feed directly into slings and can quickly become drains.
+- Repeated direct Star shots for the moving Special carry similar sling and rebound
+  danger.
+- Center-post behavior changes substantially depending on whether it has rubber, is
+  bare, or is removed.
+commentary:
+- That's the fifth Star—the right spinner is now worth a thousand a spin.
+- Special is lit red on that Star, and on this setup it's worth 100,000 points.
+- These Specials are open-ended, so they can keep chasing that moving red target.
+- First bank completion gives them double bonus; they're building toward triple now.
+- Nineteen thousand is max base bonus, so triple gives them 57K at the drain.
+- That spinner came up short; that's one of Stars' classic danger feeds.
+trivia:
+- Stars was Steve Kirk's first of three designs for Stern Electronics.
+- Its artwork is by Jorge Obregon, who contributed art to several early Stern titles.
+- Although fully solid-state, Stars has no electronic sound board and uses traditional
+  chimes.
+- Stern supported two-player instead of four-player operation, and dedicated two-player
+  backglasses are known.
+- The small post between the flippers was informally called the Kirk Post after Steve
+  Kirk.
+summary: Stars → right spinner → moving 100K Special → drop banks → 3× bonus
+venue_notes:
+- Special awards 100,000 points and Star Specials are open-ended on this setup.
+- WOW / Extra Ball is disabled.
+- This venue is set for three balls.
+- Triple Bonus qualification setting is unknown.
+- Center-post configuration is unknown.
+- Two-player versus four-player configuration changes player capacity and backglass,
+  not the core rules.
+image: images/stars-stern-electronics-1978.jpg

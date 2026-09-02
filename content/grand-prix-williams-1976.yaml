@@ -1,0 +1,126 @@
+id: grand-prix-williams-1976
+name: Grand Prix
+manufacturer: Williams Electronics
+year: 1976
+metadata:
+  designer: Steve Kordek
+  artist: Christian Marche
+  production: 10,554 units
+  era: Four-player electro-mechanical
+  multiball: No multiball
+hook: 'A fast 1976 EM built around two long spinners: build either side bonus to 50K,
+  light Double Bonus through the drops, then decide whether to keep ripping 1K spinners
+  or collect and rebuild.'
+rules:
+  primary: Build either independent side bonus with its spinner, then use A+B or C+D
+    drops to advance the Star feature. Star 1 lights Double Bonus; with it lit, collecting
+    a maxed 50K side bonus at its eject hole pays 100K, resets that side, and starts
+    the build cycle again.
+  bullets:
+  - Every five spinner revolutions advances that spinner's bonus by 5K; each side
+    tops out at 50K.
+  - A spinner at a 50K bonus is worth 1K per spin instead of 100 points.
+  - A+B or C+D advances the four-step Star feature; Star 2 lights an Extra Ball lane.
+  - Only the side indicated by the red end-of-ball arrow pays on a drain; the other
+    side resets.
+watch:
+- title: Star 1 / Double Bonus
+  text: Once Double Bonus is lit, every side-bonus collect has doubled leverage.
+- title: 50K ladder and spinner
+  text: A side at 50K has a 1K-per-spin spinner, inviting repeated spinner attacks.
+- title: Red end-of-ball arrow
+  text: The arrow shows which side bonus is insured at drain, making the opposite
+    saucer the urgent collect.
+- title: Star 2 and lower lane
+  text: This marks Extra Ball progression, though Extra Balls are disabled at this
+    venue.
+skill_shots:
+- name: Top Saucer Skill Shot
+  how: Plunge directly into the top eject hole; nudge its kick toward the nearby A/B
+    drops.
+  value: Scores 5K and advances bonus while potentially setting up rapid Double Bonus
+    progress.
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Star 2 lights one of the two inner bottom rollover lanes for Extra Ball.
+- type: other
+  name: Special
+  text: An outer bottom rollover can light Special at Star 3 or Star 4, depending
+    on operator adjustment.
+- type: other
+  name: Ball Count
+  text: Grand Prix is mechanically adjustable for 3- or 5-ball play.
+shots:
+- name: Left Spinner
+  value: Builds left bonus; at 50K it scores 1K per spin.
+  risk: Medium
+  diagram: 1
+- name: Top Saucer
+  value: Scores 5K, advances bonus, and feeds the A/B-drop area.
+  risk: Medium-High
+  diagram: 2
+- name: A/B Drops
+  value: Completing the pair advances Star progression toward Double Bonus.
+  risk: Medium-High
+  diagram: 3
+- name: C/D Drops
+  value: Completing the pair also advances Star progression.
+  risk: Medium-High
+  diagram: 4
+- name: Right Spinner
+  value: Builds right bonus; at 50K it scores 1K per spin.
+  risk: Medium
+  diagram: 5
+- name: Side Bonus Saucers
+  value: Collect the matching side bonus for 50K, or 100K with Double Bonus lit, then
+    rebuild it.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Get Double Bonus, then favor clean spinner shots. A maxed 1K spinner offers
+    strong, low-complexity scoring without risking a saucer kickout; prefer dead-bounce
+    transfers over marginal live catches.
+  behind: Repeatedly max and collect doubled 50K bonuses, then rebuild them. Strong
+    1K spinner rips plus repeated 100K collections can swing a game quickly.
+  key_decision: At a maxed side, keep ripping the 1K spinner or collect and rebuild.
+    Undoubled, spinner value is competitive; with Double Bonus lit, collect-and-rebuild
+    has more upside. Favor the side opposite the red arrow because the arrowed bonus
+    is already insured at drain.
+danger:
+- Short spinner shots can fall onto a sling or toward center.
+- Side-saucer kickouts can feed straight down the middle or leave weak same-side flipper
+  control.
+- Live catches near the return lanes can disappear through the unusual gaps beside
+  the inlanes.
+- Pop-bumper exits can head to outlanes, slings, or center.
+commentary:
+- That pair of drops gets Star One—Double Bonus is lit.
+- That side is at fifty thousand, so its spinner is now worth a thousand a spin.
+- They can take a hundred thousand at the saucer, reset it, and start building the
+  same bonus again.
+- Watch the red arrow—the other side is the bonus they really need to cash before
+  a drain.
+- That spinner came up short; this is exactly the dangerous sling-and-center return.
+- Extra Balls are off, so once Double Bonus is established there’s very little reason
+  to keep chasing those drops.
+trivia:
+- Grand Prix was designed by Steve Kordek, who later described it as a particularly
+  successful design.
+- Its backglass depicts the Monaco harbor and race-course area.
+- Roger Sharpe called 1976 the “year of the spinner” and praised Grand Prix's fast
+  two-spinner gameplay.
+- Williams converted five Grand Prix machines into experimental solid-state prototypes
+  in 1977.
+- Liberty Bell reworks the basic playfield concept, but its rules and lower-lane geometry
+  differ.
+summary: Two spinners → 50K side bonus → Double Bonus drops → saucer collect and rebuild
+  → red-arrow drain management
+venue_notes:
+- This venue is set for 5-ball play.
+- Extra Balls are disabled.
+- Score reels have been tested and are reliable under fast spinner and 100K bonus
+  scoring.
+- Side-saucer behavior, spinner returns, and return-lane danger can vary with mechanical
+  setup and post settings.
+image: images/grand-prix-williams-1976.jpg

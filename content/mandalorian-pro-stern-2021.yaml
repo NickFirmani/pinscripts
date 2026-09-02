@@ -1,0 +1,155 @@
+id: mandalorian-pro-stern-2021
+name: The Mandalorian (Pro)
+manufacturer: Stern Pinball
+year: 2021
+metadata:
+  designer: Brian Eddy
+  artist: Randy Martinez
+  production: SPIKE 2
+  era: Modern
+  multiball: 'Three Razor Crest Multiballs: Ice Spider, Jetpack, and Pirates'
+hook: Light a Mission with both ramps and start it at the left scoop, then stack Razor
+  Crest Multiball from the center ramp. Build Hunter and Scope first when the extra
+  multiplier is worth delaying multiball.
+rules:
+  primary: Make both ramps to light a 60-second Mission, start it at the left scoop,
+    and stack it with Razor Crest Multiball. Qualify Razor Crest with the hanging
+    center target followed by the full center-ramp shot; Boba Fett targets select
+    the next numbered multiball.
+  bullets:
+  - Completed Missions add 2.5M to end-of-ball bonus and can run during Razor Crest
+    Multiball.
+  - Hunter and Scope each add +1× playfield scoring for 75 seconds; Boba Fett adds
+    +1× initially for 30 seconds. Completing all three produces 6× total playfield
+    scoring.
+  - After multiball, completing Hunter relights Razor Crest for a Hurry-Up and later
+    multiball; if unavailable at a drain, Razor Crest is re-enabled next ball.
+  - 'Flamethrower begins each game with one use: hold the action button to light major
+    shots right to left, then each lit shot scores 2× once. Flames clear at drain.'
+  - Encounter progress carries between attempts; Beskar persists and can be banked
+    for Foundry purchases.
+watch:
+- title: Multiplier inserts
+  text: Above the right sling, purple means active and blue/purple strobing means
+    the timer is nearly gone. All three active means 6× playfield scoring, not 4×.
+- title: Orange action button
+  text: Flamethrower is available. The player may save it for a valuable mode or multiball
+    shot.
+- title: Razor Crest ready
+  text: A flashing center Razor Crest insert means multiball or Hurry-Up is ready.
+    Ignoring it can signal Hunter or Scope setup first.
+- title: Mission plus Razor Crest
+  text: A flashing Mission at the left scoop with Razor Crest ready is the classic
+    tournament stack.
+skill_shots:
+- name: Regular Skill Shot
+  how: Plunge into the cycling lit C-H-I-L-D top lane.
+  value: 'Scores 1M, increasing by 1M on each successive skill shot, plus a rotating
+    award: +2 Bonus X, Light Child, or +1 Super Pops.'
+- name: Super Skill Shot
+  how: Hold the left flipper during the plunge, then make U-Turn, right ramp, and
+    a chosen final shot, with roughly five seconds per step.
+  value: Left scoop starts a lit Mission, left ramp starts a lit Encounter, and center
+    ramp starts lit Razor Crest Multiball or Hurry-Up; it skips setup steps to establish
+    the intended feature.
+features:
+- type: player-control
+  name: Equipment / action button
+  text: Flamethrower gives a one-shot 2× award; Amban Rifle adds a ball after multiball
+    save expires; Whistling Birds collects flashing mission or jackpot shots; Rising
+    Phoenix on Pro completes one Encounter wave.
+- type: other
+  name: Foundry
+  text: Spend retained Beskar on equipment, Razor Crest qualification, Mission or
+    Encounter starts, Scope, Heal, Extra Ball, or +1 playfield multiplier. Repeated
+    purchase costs rise 50%.
+- type: ball-save
+  name: Heal
+  text: An outlane rescue earned from Child or the Foundry.
+- type: extra-ball
+  name: Extra Ball
+  text: Normally lit at the left scoop after two Missions, purchasable at the Foundry,
+    or awarded from Child; disabled here by Competition Mode.
+- type: mystery-award
+  name: Child Mystery
+  text: Normally offers random awards including equipment, Beskar, Super Spinner,
+    multiplier, and Heal; disabled here by Competition Mode.
+- type: other
+  name: Ambush
+  text: On Pro, the U-Turn can trigger Ambush. Under competition settings, the second
+    candidate shot starts it; its cash-out can reach 720M with all multipliers active.
+shots:
+- name: Razor Crest target / center ramp
+  value: Qualifies the three multiballs and Hurry-Up; the main multiball engine.
+  risk: Medium-High
+  diagram: 1
+- name: Left scoop
+  value: Starts Missions and accesses Foundry and Extra Ball.
+  risk: Medium
+  diagram: 2
+- name: Left ramp
+  value: Advances Missions and Encounters and accesses the Pro mini-playfield.
+  risk: Medium
+  diagram: 3
+- name: Right ramp
+  value: Advances Missions and Scope, and cashes out Ambush.
+  risk: Medium-High
+  diagram: 4
+- name: U-Turn
+  value: Advances Scope, Ambush, and Super Jackpot collects; a critical Pro high-value
+    collect.
+  risk: High
+  diagram: 5
+- name: Hunter bank / left orbits
+  value: Advances Hunter, Beskar, and +1 playfield multiplier before multiball.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use the reliable Mission plus Razor Crest stack and cash available jackpots.
+    A single Hunter or Scope multiplier is often sufficient; avoid spending an entire
+    ball building the full 6× Fire Triangle.
+  behind: Build Hunter and Scope, start multiball, then complete Boba Fett for 6×.
+    Flamethrower creates 12× opportunities; Jetpack's post-multiball Super Jackpot
+    and an extended Ambush offer large comeback potential.
+  key_decision: Start ready multiball now for ball protection and dependable scoring,
+    or delay for Hunter and Scope. The delay adds single-ball risk but can greatly
+    multiply the eventual payoff.
+danger:
+- Weak Razor Crest target or ramp attempts can return toward the middle quickly.
+- Hunter and Boba standup rebounds can cause an immediate loss of control.
+- The Pro's static one-flipper Encounter area can return the ball quickly when progress
+  stalls.
+- Fast orbit or top-lane returns can make imperfect feeds difficult to recover.
+commentary:
+- They've got a Mission running—now they're going straight to Razor Crest to stack
+  the multiball.
+- They're deliberately not starting multiball yet; Hunter would add a 75-second playfield
+  multiplier.
+- All three colors are active—that's six-times playfield, not four-times.
+- Flamethrower is ready, so the next flaming shot can effectively become twelve-times
+  base value.
+- This is Jetpack—the Super Jackpot gets built now but is collected after multiball
+  ends.
+- 'That U-Turn Super Jackpot can be enormous: with full playfield X and Flamethrower,
+  the documented ceiling is 600 million.'
+trivia:
+- The game was released May 11, 2021 and uses material from the first two seasons
+  of the Disney+ series.
+- Carl Weathers recorded exclusive Greef Karga speech for the machine.
+- A hanging target beneath the sculpted Razor Crest qualifies the three central multiballs.
+- Premium and LE use a tilting two-flipper Encounter area; Pro uses a fast static
+  single-flipper version.
+- 'Dwight Sullivan described the equipment economy as mirroring Mando''s progression:
+  earn weapons and armor, then improve later encounters.'
+summary: Mission → Razor Crest stack → Hunter/Scope/Boba 6× → Flamethrower 12× shots
+  → Jetpack or Ambush payoff
+venue_notes:
+- This Pro is on code 1.45; the detailed maintained rulesheet is based on 1.42, so
+  minor post-1.42 changes may apply.
+- 'Competition Mode or a competition install is in use: Extra Balls and Child Mystery
+  are disabled.'
+- No notable copy-specific physical behavior was reported.
+- Topper-exclusive Mandalorian Madness and Beskar Bonanza are not included unless
+  a topper is installed and enabled.
+- Ball saves, Razor Crest hit requirements, and difficulty can be operator-adjusted.
+image: images/mandalorian-pro-stern-2021.jpg

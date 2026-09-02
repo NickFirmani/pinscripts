@@ -1,0 +1,145 @@
+id: ac-dc-pro-stern-2012
+name: AC/DC (Pro)
+manufacturer: Stern Pinball
+year: 2012
+metadata:
+  designer: Steve Ritchie
+  artist: Kevin O'Connor
+  production: March 2012
+  era: Stern S.A.M. DMD era
+  multiball: Jam, Album, and Tour
+hook: Choose a song around a repeatable key shot, build Jam or another multiball,
+  bring up 2× or 3× at the Bell, then cash the Song Jackpot through the Cannon before
+  a drain resets it.
+rules:
+  primary: A chosen song remains active until changed. Its key task lights five white
+    Note shots—left loop, left ramp, Bell, right ramp, and right loop—which score
+    song value and build the Song Jackpot. Load the Cannon at the right ramp and fire
+    it at its assigned target to collect; collecting or draining resets the jackpot.
+  bullets:
+  - Jam is ramp-based, Tour is loop-based, and Album is target-bank-based; all start
+    at the right ramp once qualified.
+  - Three Bell hits start 2× playfield for 20 seconds; the sixth reaches 3×. Further
+    Bell hits refresh the active timer, while Bell progress survives drains.
+  - VIP Passes carry between balls and can award selected current-song progress; in
+    multiball they prioritize missing Note shots.
+  - Complete all five Note shots during multiball for an add-a-ball. Album can award
+    a Song Bonus without resetting the underlying Song Jackpot.
+  - Current-code first qualifications are 5 ramps for Jam and 7 loops for Tour; older
+    code uses 6 and 8. Album starts after 3 target-bank completions.
+watch:
+- title: White Note shots
+  text: Five white arrows mean the active song's setup task is complete. Those shots
+    are now scoring song value and building the Song Jackpot.
+- title: 2×/3× timer
+  text: Rapid flashing means playfield multiplier is active; faster flashing signals
+    the 20-second timer is nearly gone.
+- title: Multiball insert
+  text: A flashing Jam, Album, or Tour insert means that multiball is qualified. The
+    player will head to the right ramp to start it.
+- title: Cannon display
+  text: The display previews Cannon awards. A large Song Jackpot explains why a player
+    may establish 2× or 3× before collecting.
+skill_shots:
+- name: Skill Shot
+  how: Plunge into the Jukebox, let the ball fall toward the A-X-E top lanes, and
+    lane-change to the lit lane.
+  value: 250K base, +2 Bonus X, and 1 VIP Pass; take it when the guaranteed VIP and
+    lane progress matter.
+- name: Super Skill Shot
+  how: Hold the right flipper as the ball leaves the Jukebox; it feeds the right loop,
+    then hit any white Note shot within 5 seconds.
+  value: 350K base, +5 Bonus X, and 2 VIP Passes; usually preferred because VIPs can
+    protect multiball add-a-ball progress.
+features:
+- type: ball-save
+  name: Standard ball save
+  text: The normal single-ball save is set to about 5 seconds; multiball also begins
+    with a short saver.
+- type: extra-ball
+  name: Extra balls
+  text: Target-bank and combo milestones can qualify extra balls. This tournament
+    setting converts their collection to 2.5M points, eligible for playfield X.
+- type: player-control
+  name: Action/fire button
+  text: The button fires the Cannon and spends VIP Passes. A Cannon miss or timeout
+    can erase most lit Cannon awards.
+- type: other
+  name: Tunes N Stuff
+  text: Completing Devil Horn—Bell, right loop, left loop—can light the Jukebox for
+    awards including 7.5M or 10M points.
+shots:
+- name: Left loop / spinner
+  value: Builds Tour and advances War Machine; a repeatable spinner route can be a
+    viable alternative scoring plan.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Builds Jam and advances many song and combo rules; often the safest repeated
+    ramp progress.
+  risk: Medium
+  diagram: 2
+- name: Bell
+  value: Builds 2×/3× playfield, serves as a Note shot, and advances high-value multiball
+    scoring.
+  risk: High
+  diagram: 3
+- name: Right ramp
+  value: Builds Jam, starts qualified multiballs, and loads the Cannon for major collects.
+  risk: Medium-High
+  diagram: 4
+- name: Right loop
+  value: Builds Tour and advances Jukebox and extra-ball progress; it can also change
+    songs.
+  risk: Medium-High
+  diagram: 5
+- name: Target banks
+  value: Advance Album and target-based songs; necessary for Album but hazardous on
+    the Pro's standups.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor controlled backhand ramps, take a ready Jam, and cash a meaningful
+    Song Jackpot rather than forcing dangerous Bell shots for 3×.
+  behind: Build Song Jackpot through song and multiball scoring, attack the Bell for
+    2× or 3×, then use the Cannon collect. Tour/War Machine can be a higher-variance
+    alternative.
+  key_decision: 'Cash now versus build and multiply: a drain wipes an uncollected
+    Song Jackpot, but another Bell sequence can double or triple it.'
+danger:
+- The Bell is the highest-risk major shot; rejects or rebounds can drain.
+- AC/DC, TNT, and ROCK standups can rebound directly into center or outlane danger.
+- A Cannon shot into AC/DC targets can ricochet toward the right side or outlane;
+  a miss may erase the award.
+- Cross-field ramp attempts carry more lateral risk than repeatable backhands.
+- A weak right-loop feed can fall into chaotic top lanes and bumpers instead of returning
+  cleanly.
+commentary:
+- Those white arrows are up—the song is now feeding the Song Jackpot.
+- Jam is ready on current code after five ramps; now it is the right ramp to start
+  it.
+- Three Bell hits gets double playfield; six gets triple.
+- He is sitting on a big Song Jackpot—the question is whether he cashes it or risks
+  the Bell first.
+- That VIP Pass can spot a remaining Note shot and potentially buy the add-a-ball.
+- Cannon is loaded—this is the swing shot; miss it and most of those lit awards disappear.
+trivia:
+- Steve Ritchie designed the game and Lyman F. Sheats Jr. wrote its software.
+- Players choose among 12 AC/DC songs, and the selection changes scoring rules rather
+  than only the soundtrack.
+- The original 2012 Pro omitted the Premium/LE lower playfield and drop targets.
+- A 2014 LED Pro refresh added a swinging Bell while retaining the other features
+  and rules.
+- V1.70 made initial Jam and Tour qualification easier, nearly six years after the
+  game's debut.
+summary: Choose song → light Notes → build multiball → activate 2×/3× → Cannon Song
+  Jackpot
+venue_notes:
+- This is the original 2012 Pro with the fixed Bell lane/standup, not the 2014 LED
+  Pro swinging Bell.
+- 'Software version is unknown: V1.70 uses 5 ramps for first Jam and 7 loops for first
+  Tour; V1.68 uses 6 and 8.'
+- Single-ball ball save is confirmed at about 5 seconds.
+- Tournament configuration converts extra-ball collection to 2.5M points.
+- No machine-specific dangerous rebound, reject, outlane, or spinner tendency is reported.
+image: images/ac-dc-pro-stern-2012.jpg

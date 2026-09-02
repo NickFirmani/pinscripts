@@ -1,0 +1,113 @@
+id: quick-draw-gottlieb-1975
+name: Quick Draw
+manufacturer: D. Gottlieb & Co.
+year: 1975
+metadata:
+  designer: Ed Krynski
+  artist: Gordon Morison
+  production: ''
+  era: 1970s electro-mechanical
+  multiball: None
+hook: A two-player EM where safe upper-playfield scoring builds saucers and ABC, while
+  dangerous drop banks build bonus and unlock repeatable 5K targets.
+rules:
+  primary: Play UTAD—up top all day—through ABC lanes, bumpers, and kickout holes
+    early. Each ABC letter adds 1K to both kickouts, from 1K to 4K. Drops build end-of-ball
+    bonus to 15K; on five-ball play, ball 5 scores double bonus, or triple with ABC
+    complete.
+  bullets:
+  - ABC and drop progress reset after every ball.
+  - Complete both five-drop banks to raise only the two center black targets; they
+    score 5K each and reset after both fall.
+  - Completing ABC plus its corresponding bank lights that side's kickout for a replay
+    Special; the holes light alternately.
+  - Nearly simultaneous drop hits may register only one bonus advance on the EM mechanism.
+watch:
+- title: ABC lamps
+  text: Each collected letter raises both saucers by 1K, up to 4K.
+- title: Banks nearly complete
+  text: With only a few drops left, finishing all ten can justify leaving the safer
+    upper-playfield route.
+- title: Black targets active
+  text: Once all ten drops are down, the two center black targets are the repeatable
+    5K scoring route.
+- title: Ball 5
+  text: The entire bonus is automatically doubled on ball 5, or tripled if ABC is
+    complete.
+skill_shots:
+- name: B-lane plunge
+  how: Plunge for the center B lane, which feeds directly into the center bumper.
+  value: A preferred competitive opening route and ABC progress; it is not a separate
+    scoring award.
+features:
+- type: other
+  name: Special
+  text: Complete ABC plus either corresponding five-bank to light that side's kickout
+    for an alternating replay Special.
+shots:
+- name: Left drop bank
+  value: Builds end-of-ball bonus and helps unlock the 5K black-target phase after
+    both banks are completed.
+  risk: High
+  diagram: 1
+- name: Left saucer
+  value: Scores 1K–4K based on ABC and can be lit for Special.
+  risk: Medium
+  diagram: 2
+- name: B rollover
+  value: Advances ABC and supports the upper-playfield route; preferred plunge lane.
+  risk: Medium
+  diagram: 3
+- name: Black center targets
+  value: After both banks are complete, each scores 5K and resets after both are knocked
+    down.
+  risk: Medium-High
+  diagram: 4
+- name: Right saucer
+  value: Scores 1K–4K based on ABC and can be lit for Special.
+  risk: Medium
+  diagram: 5
+- name: Right drop bank
+  value: Builds end-of-ball bonus and helps unlock the 5K black-target phase; especially
+    valuable on ball 5.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: 'Stay UTAD: collect ABC and saucers, avoiding forced drop-bank shots unless
+    only one or two drops remain.'
+  behind: Attack the banks, especially on ball 5. Finish all ten drops to unlock repeatable
+    5K black targets while building the 15K bonus.
+  key_decision: Choose safe upper-playfield scoring or accept dangerous drop-bank
+    rebounds for bonus and late-game 5K-target leverage.
+danger:
+- Direct drop-bank hits can rebound immediately toward the center or an outlane.
+- Pop-bumper exits can head straight down the middle or toward an outlane.
+- A and C plunge lanes can be setup-dependent and may feed straight down the middle.
+- A ball can rattle on an inlane-divider post and bounce inward to the drain or outward
+  to an outlane.
+- Slow dead bounces may not reach the opposite flipper.
+commentary:
+- The basic tournament line here is UTAD—up top all day—until there is a compelling
+  reason to attack the drops.
+- Every A-B-C letter adds another thousand to both saucers.
+- Those drop targets build bonus, but they are also the dangerous shots on Quick Draw.
+- All ten are down—now only the two black targets come back, and they are five thousand
+  apiece.
+- This is ball five, so the bonus is automatically doubled; ABC would make it triple.
+- He got two drops physically, but the EM may have registered only one bonus advance.
+trivia:
+- Quick Draw is the two-player companion to the four-player Fast Draw.
+- Ed Krynski designed the game and Gordon Morison created its art.
+- Gottlieb reused essentially the same playfield architecture for Amazon Hunt in 1983.
+- Quick Draw has no conventional slingshots; its long drop banks sit exposed along
+  the sides.
+- The factory instruction card is document B-15969-2.
+summary: UTAD → ABC saucers → drop bonus → ball-5 double/triple → black-target 5K
+  loop
+venue_notes:
+- This venue is configured for five-ball play.
+- Specials are replay-only or ignored, not tournament points.
+- The safest physical plunge feed is unknown; watch early plunges before assuming
+  B is safest.
+- Physical rebound behavior is copy-dependent.
+image: images/quick-draw-gottlieb-1975.jpg

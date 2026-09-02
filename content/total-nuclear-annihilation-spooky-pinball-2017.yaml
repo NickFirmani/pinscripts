@@ -1,0 +1,140 @@
+id: total-nuclear-annihilation-spooky-pinball-2017
+name: Total Nuclear Annihilation
+manufacturer: Spooky Pinball
+year: 2017
+metadata:
+  designer: Scott Danesi
+  artist: Matt Andrews
+  production: 'Original production: 550; Collector''s Edition (2022): 250'
+  era: Modern solid-state, early-1980s Bally-style design
+  multiball: 3-ball Multiball, expandable to 4 balls via Super Jackpot/add-a-ball
+hook: Complete the keypad, start and heat reactors to Critical, then destroy them—ideally
+  during Multiball, where every ball in play multiplies the playfield.
+rules:
+  primary: Fill the 3×3 keypad and shoot the scoop to start a reactor. Heat it through
+    lit orbit(s) and the upper Reactor area to 100% Critical, then hit the flashing
+    RAD, DESTROY, or pop-bumper kill shots. Progress carries between balls; destroy
+    all nine reactors to end the game.
+  bullets:
+  - Later reactors require more heating and kill shots but score more.
+  - Refilling the keypad during an active reactor awards a Reactor Jackpot worth 25%
+    of current Reactor Value.
+  - In Multiball, clear the three inline drops for 1×, 2×, then 3× Jackpot, then shoot
+    the scoop for a 5× Super Jackpot.
+  - On v1.6.0, same-reactor Multiball jackpots fall to 55% on the second Multiball
+    and 10% on the third and later ones.
+  - Physical locks are shared and stealable in multiplayer.
+watch:
+- title: Reactor Start ready
+  text: An all-pink keypad and flashing scoop mean the player can start a reactor.
+- title: Critical approaching
+  text: The upper numeric display nearing 100 and the red beacon signal the reactor
+    is nearly Critical.
+- title: Kill sequence
+  text: White flashing RAD, DESTROY, and pop-bumper shots are the reactor kill sequence.
+- title: Shared locks
+  text: Balls trapped behind the inline drops are physical shared locks; with two
+    locked, the next lock starts Multiball.
+skill_shots:
+- name: Hands-Free Skill Shot
+  how: Before plunging, use flippers to select a C-O-R-E lane; make that lane without
+    changing the selection after launch.
+  value: 100K, completes the entire keypad, and adds a full lane-ball-save level.
+    During an active reactor, it awards a Reactor Jackpot instead.
+- name: Regular Skill Shot
+  how: After plunging, change the lit C-O-R-E lane, then hit it.
+  value: 50K plus one full lane-ball-save level.
+- name: Secret Skill Shot
+  how: With fewer than two locks, full-plunge and quickly shoot the lock lane.
+  value: 100K and locks the ball.
+features:
+- type: ball-save
+  name: SAVE Ball Save
+  text: Light three S-A-V-E in/outlanes, then collect the flashing fourth for a 10-second
+    save. Levels can be banked; unused levels add 10K each to bonus.
+- type: mystery-award
+  name: Mystery
+  text: Complete R-A-D and shoot the scoop for awards including grid completion, lock
+    enable, Super Spinner, ball save, Bonus X, and points. Tournament Mode fixes award
+    order and removes free-point awards.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls are normally awarded at reactor thresholds, with surviving manual
+    defaults at reactors 3 and 6.
+- type: other
+  name: C-O-R-E Bonus X
+  text: Completing C-O-R-E raises end-of-ball Bonus X.
+shots:
+- name: Lit Orbit
+  value: Heats the active reactor through the upper Reactor area; the safest documented
+    route to upper progress.
+  risk: Medium
+  diagram: 1
+- name: Reactor Scoop
+  value: Starts a qualified reactor and collects Mystery.
+  risk: High
+  diagram: 2
+- name: Keypad Targets
+  value: Qualify reactors and award Reactor Jackpots during an active reactor.
+  risk: High
+  diagram: 3
+- name: RAD / DESTROY / Pop Kill Shots
+  value: Destroy a Critical reactor by completing the flashing kill sequence.
+  risk: Medium-High
+  diagram: 4
+- name: Inline Lock Lane
+  value: Builds locks and advances Multiball jackpots.
+  risk: Medium-High
+  diagram: 5
+- name: Lock Scoop
+  value: Collects the 5× Super Jackpot and can add a fourth ball.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Advance reactors rather than repeatedly playing Multiball on one reactor.
+    Take the Hands-Free Skill Shot, make safe progress, and cash reactor kills instead
+    of forcing marginal keypad shots.
+  behind: Pair a high-value reactor kill with 3× or 4× Multiball, then pursue the
+    3× Jackpot to 5× Super sequence.
+  key_decision: Destroy the reactor now to secure progress, or wait for Multiball
+    to multiply a major scoring opportunity. Maxing reactor value and destroying it
+    in Multiball is the high-upside play.
+danger:
+- Keypad standups create direct center-target rebounds.
+- The Reactor scoop eject returns the ball very quickly.
+- A slow right-orbit return can clip the right sling.
+- Each lowered inline drop makes the lock lane more hazardous.
+- The upper Reactor exit can send the ball downstairs quickly through slings, kickers,
+  and the mini-flipper.
+commentary:
+- Hands-free skill shot—that completes the whole keypad, so Reactor Start is already
+  ready.
+- Reactor's at one hundred percent; now the white lower-playfield shots are the kill
+  sequence.
+- They're waiting on the reactor kill because three balls alive means three-times
+  playfield.
+- First, second, third drop are the one-, two-, and three-times jackpots; the scoop
+  behind them is the five-times Super.
+- That's their second Multiball on this same reactor, so on 1.6 the jackpots are already
+  down to 55 percent.
+- Two balls are physically locked—and on TNA those locks are stealable.
+trivia:
+- Scott Danesi began TNA as a homebrew project in November 2015; Spooky picked it
+  up in 2016 and production began in 2017.
+- Danesi designed it as an early-1980s Bally-style game with modern electronics, displays,
+  and lighting.
+- Danesi composed the synthwave soundtrack and sound package.
+- The physical two-tier lock is commonly called the Danesi Lock.
+- 'Destroying all nine reactors wins the game: the flippers shut off and play ends.'
+summary: Keypad → reactor scoop → upper heating → Critical kill shots → Multiball
+  jackpots → nine-reactor endgame
+venue_notes:
+- This machine is on v1.6.0 with Tournament Mode enabled.
+- Extra Balls are disabled by event ruling, even though Tournament Mode itself does
+  not remove them.
+- Reactor Difficulty is set to default.
+- Stock shared physical locks are in use; lock stealing is allowed.
+- Original and Collector's Edition rules are nearly identical, though physical upgrades
+  can affect feeds and shot behavior.
+- No feed is identified as unusually dangerous on this copy.
+image: images/total-nuclear-annihilation-spooky-pinball-2017.jpg

@@ -1,0 +1,156 @@
+id: king-kong-myth-of-terror-island-premium-stern-2025
+name: 'King Kong: Myth of Terror Island (Premium)'
+manufacturer: Stern Pinball
+year: 2025
+metadata:
+  designer: Keith Elwin
+  artist: Kevin O’Connor, Greg Freres, and Jeremy “Zombie Yeti” Packer
+  production: Premium edition
+  era: Modern SPIKE 2
+  multiball: King Kong, Spider Pit, Island-Scene, and T-Rex multiballs
+hook: Build Island Scenes and Spider Pit utility multiballs, then load the train for
+  King Kong Multiball. Big swings come from 2× playfield, Kong relocks, and an escalating
+  Crash the Gate Super Jackpot.
+rules:
+  primary: Start 60-second Island Scenes at the gong, collect map segments, and complete
+    all five to reach Crash the Gate. Build Spider Pit early for safer mode progress,
+    then clear drops and lock three balls at the center ramp to start King Kong Multiball.
+  bullets:
+  - An Island Lock turns the next scene into a 2-ball multiball with Island Jackpot,
+    but pauses other multiball progress until single-ball play resumes.
+  - In King Kong Multiball, hit drops to light Jackpots; after a Jackpot, the side
+    ramp collects Super Jackpot.
+  - Complete green awards and relock at the center ramp for 20 seconds of 2× Jackpots
+    and Super Jackpots.
+  - Complete four orange X targets, then hit the roving orange target to start 2×
+    playfield scoring.
+  - Crash the Gate cycles five hurry-ups into a side-ramp Super Jackpot; additional
+    cycles raise its multiplier from 2× to 4× to 8× and beyond.
+watch:
+- title: Train locks
+  text: Three physical balls stored in the train means King Kong Multiball is imminent.
+- title: Orange X targets
+  text: Four completed orange X lamps plus the roving lit target means 2× playfield
+    is ready.
+- title: Log Bridge
+  text: A flashing action button routes the River feed to the mini-flipper for drops
+    or Cliffs attempts.
+- title: Island Lock
+  text: A steady Island Lock means the next Island Scene becomes 2-ball play with
+    Island Jackpot and Victory Challenge enabled.
+skill_shots:
+- name: Pit / River skill shots
+  how: Plunge into the Spider Pit targets for Skill Shot, or through the River lane
+    near the mini-flipper for Super Skill Shot.
+  value: Each unique skill shot immediately earns a KING KONG letter and, on default
+    settings, adds initial ball-save time.
+- name: Inlane secret shots
+  how: Plunge into the inner or outer left inlane for Secret or Super Secret.
+  value: A unique shot earns a KING KONG letter and adds initial ball-save time on
+    default settings.
+- name: Mega Secret
+  how: Feed the upper-left flipper, reflex the Cliffs Ramp, then follow with Biplane
+    or U-turn for increased value.
+  value: Awards 1.75M and 8 seconds of ball save; the follow-up can raise value to
+    2× or 3×.
+features:
+- type: player-control
+  name: Log Bridge
+  text: The action button activates a hidden River diverter to feed the mini-flipper
+    for drops or Cliffs. It starts with one use and additional uses are earned.
+- type: ball-save
+  name: Cliffhanger
+  text: After sufficient Cliffs shots, a left-outlane drain can start a 12-second
+    Power-Up rescue challenge; this machine's configuration is unconfirmed.
+- type: mystery-award
+  name: Island Mystery
+  text: Competition Mode reduces the award pool to 10M or Add-A-Ball when applicable.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra Balls are disabled here; qualifying routes instead award the stock 15M
+    compensation, or 30M during 2× playfield.
+- type: ball-save
+  name: Deadeye
+  text: Premium lights Deadeye later in KING KONG than Pro; it gives 30 seconds of
+    unlimited saved plunges and skill shots, with repeated Deadeye Jackpots.
+shots:
+- name: Spider Pit
+  value: Advances Pit multiballs and T-Rex Pummel; an early utility multiball helps
+    finish scenes safely.
+  risk: Medium
+  diagram: 1
+- name: Sweepable drops
+  value: Advance Kong locks and Lost Temple; the fast route toward King Kong Multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Cliffs Ramp
+  value: Lights the 2× Kong Jackpot and advances Island Jackpot setup.
+  risk: High
+  diagram: 3
+- name: Center ramp / train
+  value: Locks physical Kong balls and later relocks for the 20-second 2× Jackpot
+    window.
+  risk: Medium-High
+  diagram: 4
+- name: Gong
+  value: Starts and extends Island Scenes, the game's primary timed modes.
+  risk: Medium
+  diagram: 5
+- name: Side ramp
+  value: Advances Biplane Attack and cashes King Kong Multiball Super Jackpots.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take reliable Island Scene and Spider Pit Multiball value, then play a controlled
+    King Kong Multiball. Collect available Jackpots and Supers instead of forcing
+    a relock or extended Crash the Gate buildup.
+  behind: Bring 2× playfield into King Kong Multiball, pursue the relock multiplier,
+    or build Crash the Gate's escalating Super Jackpot. Treasure Hunt five is a fixed
+    500M award if reachable.
+  key_decision: Stack modes with multiball for safety, or play them cleanly first.
+    Pit and Kong multiballs protect many scenes, but Cross the Chasm and Stegosaurus
+    Encounter favor precise single-ball play.
+danger:
+- The gong forehand can rebound into nearby X standups; a backhand may be easier to
+  recover.
+- The punchback sends the ball across the playfield toward the upper flipper, demanding
+  a controlled recovery.
+- Missed mini-flipper sweeps or Cliffs shots can return unpredictably to the lower
+  playfield.
+- The left outlane between two left inlanes has unusual geometry; Cliffhanger only
+  helps if qualified.
+- A weak center-ramp shot can fall back through the middle.
+commentary:
+- That Spider Pit multiball is utility—they're using the extra ball to finish the
+  scene safely.
+- Third physical lock—Kong is about to destroy the train and start multiball.
+- 'They''ve lit the Cliffs Ramp: that''s the two-times Jackpot shot.'
+- All the green awards are done; center ramp now relocks a ball for twenty seconds
+  of doubled Jackpots.
+- The orange X targets are complete—2× playfield is available if they can hit the
+  roving target.
+- They're delaying the Crash the Gate Super Jackpot; another full hurry-up set doubles
+  that multiplier again.
+trivia:
+- Keith Elwin designed the game; Stern links its creative lineage to Jaws, Godzilla,
+  and Jurassic Park.
+- The theme uses original Stern-created King Kong material inspired principally by
+  the original 1930s story.
+- Data East developed an unreleased King Kong machine around 1990, roughly 35 years
+  before Stern's 2025 game.
+- Premium Kong moves his torso and arms and physically destroys/releases the train
+  lock at multiball start.
+- The hidden “2.42 Million Bananas” lane references Data East's unreleased “1 Million
+  Bananas” insert.
+summary: Island Scenes → Spider Pit utility → Kong Multiball → 2× scoring → Crash
+  the Gate cash-out
+venue_notes:
+- 'Installed code: 0.97.0.'
+- Competition Mode is enabled.
+- Extra Balls are disabled with stock 15M compensation.
+- Cliffhanger configuration is unknown.
+- No single Premium feed was identified as notably dangerous at this venue.
+- Premium uses physical train locks and animated train destruction; Pro uses virtual
+  locks.
+- Terror on the Tower and 8th Wonder remain undocumented in the 0.97 rules documentation.
+image: images/king-kong-myth-of-terror-island-premium-stern-2025.jpg

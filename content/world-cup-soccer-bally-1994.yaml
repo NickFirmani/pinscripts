@@ -1,0 +1,138 @@
+id: world-cup-soccer-bally-1994
+name: World Cup Soccer ’94
+manufacturer: Bally/Midway
+year: 1994
+metadata:
+  designer: John Popadiuk and Larry DeMar
+  artist: Kevin O’Connor
+  production: 8,743
+  era: WPC Security (WPC-S)
+  multiball: Final Draw Multiball
+hook: Build five locks, start Final Draw Multiball, and cash Goal Jackpots up the
+  rankings; Cities offer a longer route to the World Cup Final Match.
+rules:
+  primary: 'Prioritize Multiball: complete the five BUILD panels, lock on either ramp,
+    then shoot Final Draw. During Multiball, Goal scores the current opponent Jackpot;
+    shoot a ramp or Assist to relight Goal.'
+  bullets:
+  - A lit Goal scores 10M and starts an Ultra. Complete the four star rollovers to
+    relight it; Striker can spot an unlit rollover.
+  - Ultras score Spinner 1M per spin, Jets 2M per hit, Ramps 5M per shot, or Goalie
+    5M per hit. Reach 30M for a 10M completion bonus.
+  - Ultra scoring pays through end-of-ball bonus, along with 5M per Goal and 5M per
+    City accumulated. Tilt forfeits that bonus.
+  - Every two pre-Multiball Goals improve the first-Multiball rank; locking a ball
+    improves it four more positions.
+  - 'Travel through nine Cities to Los Angeles, then shoot Final Draw for Final Match:
+    75M per Goal and 500M for beating Germany.'
+watch:
+- title: BUILD panels / Lock
+  text: With all five BUILD panels complete, either ramp locks a ball; Final Draw
+    is the next step to Multiball.
+- title: Ranking and opponent
+  text: 'Watch the current opponent: Jackpots rise sharply at France for 100M and
+    Germany for 250M.'
+- title: Goal lamp and spinning ball
+  text: A lit Goal is a 10M score and starts an Ultra feature; in Multiball it is
+    the Jackpot shot.
+- title: City lamps
+  text: Los Angeles flashing or complete means Final Draw can start Final Match.
+skill_shots:
+- name: Coin Toss Skill Shot
+  how: Plunge into one of the three flashing Coin Toss holes above the shooter lane.
+  value: New holes score 5M, then 10M; all three score 30M and advance one City. Repeated
+    holes score 1M, so finish the set to accelerate Final Match progress.
+features:
+- type: ball-save
+  name: Corner Kickback
+  text: Protects the left outlane. After the right inlane, shoot the temporarily lit
+    lower-left target to add a charge; up to three may stack depending on adjustment.
+- type: player-control
+  name: Magna-Goal
+  text: A second left cabinet button activates a magnet at the left-flipper tip to
+    rescue or control a center-bound ball. Only one charge can be held.
+- type: extra-ball
+  name: Extra Balls
+  text: Available from the second TV round, Washington D.C., and Striker awards. Here,
+    disabled TV-round and Washington D.C. Extra Balls substitute 50M.
+- type: other
+  name: Striker Awards
+  text: Possible awards include Multiball, three Cities, Extra Ball, three Goals,
+    Unlimited Kickback, Super Free Kick, Penalty Kick, or points.
+shots:
+- name: Left orbit / spinner
+  value: Travels Cities when Travel is lit and powers Ultra Spinner scoring; central
+    to the Final Match route.
+  risk: Medium
+  diagram: 1
+- name: Left ramp
+  value: Builds locks, locks balls, collects tickets, and relights Multiball Jackpots.
+  risk: Medium
+  diagram: 2
+- name: Assist saucer
+  value: Relights Goal in Multiball and offers an assisted Goal route.
+  risk: Medium
+  diagram: 3
+- name: Goal
+  value: Starts Goals and Ultras; during Multiball, scores the current opponent Jackpot.
+  risk: Medium-High
+  diagram: 4
+- name: Final Draw / TV scoop
+  value: Starts Multiball, TV modes, and Final Match after setup.
+  risk: High
+  diagram: 5
+- name: Right ramp
+  value: Builds locks, locks balls, collects tickets, and relights Multiball Jackpots;
+    often feeds the left flipper.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor the repeatable Multiball route, cash Goal Jackpots, maintain Corner
+    Kickback, and protect accumulated end-of-ball bonus rather than forcing risky
+    play.
+  behind: Push toward Germany's 250M Jackpot and 50M Victory Laps, or commit to the
+    nine-City Final Match for its larger ceiling.
+  key_decision: Repeat Multiball for the consistent scoring route, or chase Cities
+    for the harder-to-reach Final Match and bigger single-feature potential.
+danger:
+- Final Draw is a difficult scoop; repeated misses can destroy a ready Multiball setup.
+- 'Relight Corner Kickback quickly after use: the left outlane is dangerous.'
+- The moving goalie can reject Goal attempts into uncontrolled rebounds.
+- Left-ramp speed and diverter state can send the ball to different feeds, including
+  pop traffic.
+- 'During Final Match, space Goal shots: near-simultaneous entries can register as
+  only one Goal.'
+commentary:
+- Five BUILD panels are done—now either ramp locks the ball for Final Draw Multiball.
+- Every two Goals before the first Multiball improve the starting rank, so these Goals
+  are doing double duty.
+- Goal is the Jackpot; now they need a ramp or the Assist to relight it.
+- They’re into Germany—this Goal is 250 million, then Victory Laps are fifty million
+  each.
+- That Ultra scoring is sitting in end-of-ball bonus, so a tilt here would be catastrophic.
+- Los Angeles is complete—Final Draw now starts the 45-second World Cup Final.
+trivia:
+- World Cup Soccer was John Popadiuk's first design to reach full production; Larry
+  DeMar co-designed and programmed it.
+- It uses Striker, the official mascot of the 1994 FIFA World Cup in the United States.
+- It was among the first titles using Williams' WPC Security CPU.
+- Announcer Tim Kitzrow came to the game immediately after his work on NBA Jam.
+- 'Final Match has no autoplunger: replacement balls must be manually launched during
+  the mode.'
+summary: Build locks → Final Draw Multiball → Goal Jackpots → Ultra bonus → Cities
+  → Final Match
+venue_notes:
+- 'Tournament Play is enabled: it equalizes Multiball and Jackpot state among players.'
+- Extra Balls are disabled; TV-round and Washington D.C. Extra Ball awards substitute
+  50M.
+- Starting Multiball rank is unknown.
+- Corner Kickback configuration is unknown.
+- Magna-Goal is enabled.
+- No unusually dangerous feed has been identified on this copy.
+- Built-in Tournament Play does not itself disable Extra Balls or set Striker Award
+  order.
+- Final Match difficulty is adjustable, and repeat Final Matches can become harder.
+- Ramp shots may spot zero, one, or two Goal rollovers.
+- Latest verified factory ROM is L-2 (July 7, 1994); its change from L-1 was primarily
+  display and pricing fixes.
+image: images/world-cup-soccer-bally-1994.jpg

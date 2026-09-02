@@ -1,0 +1,136 @@
+id: harlem-globetrotters-bally-1979
+name: Harlem Globetrotters On Tour
+manufacturer: Bally Manufacturing
+year: 1979
+metadata:
+  designer: Greg Kmiec
+  artist: Greg Freres
+  production: 14,550 units
+  era: Late-1970s Bally solid-state
+  multiball: No multiball
+hook: Build the right-side Free Throw drops for 5× bonus and a 2K Fast Break spinner,
+  open the right-outlane rescue gate, then cash in with long spinner rips and a protected
+  Super Bonus.
+rules:
+  primary: Complete the four Free Throw inline drops to build Bonus X from 2× to 3×
+    to 5× while raising the Fast Break spinner from 100 to 2,000 per spin. With drops
+    complete, repeatedly shoot Fast Break; build base bonus toward 49K for a 245K
+    5× end-of-ball bonus.
+  bullets:
+  - Base bonus runs from 1K to 49K; the last three Free Throw drops award 2×, 3×,
+    and 5× Bonus X.
+  - 'Super Bonus memory is enabled: reaching 20K, 30K, or 40K preserves that starting-bonus
+    threshold for later balls.'
+  - G-L-O-B-E progress carries between balls. The top saucer and Free Throw drops
+    spot the lit letter; completion scores 50K and resets the letters.
+  - GLOBE is configured sequentially, so the top saucer reliably spots one letter
+    at a time.
+  - Tilt forfeits the entire end-of-ball bonus.
+watch:
+- title: Inline drops remaining
+  text: They show both Bonus-X and Fast Break progress. With three drops down, Fast
+    Break is already worth 1K per spin.
+- title: Bonus multipliers
+  text: At 5× with a substantial base bonus, a large end-of-ball score is waiting.
+- title: Right-side gate
+  text: An open gate makes the next right-outlane entry survivable, but it closes
+    once used.
+- title: Super Bonus lamps
+  text: At 20K, 30K, and 40K, the enabled memory setting preserves that bonus threshold
+    for later balls.
+skill_shots:
+- name: Top GLOBE Saucer Skill Shot
+  how: Plunge into the top-center GLOBE saucer; watch the lit letter.
+  value: Scores 3K, adds three bonus steps, and spots a GLOBE letter. Sequential GLOBE
+    makes repeated saucer plunges especially valuable toward a 50K completion.
+features:
+- type: other
+  name: Free-Ball Gate
+  text: A lit Slam Dunk opens the right-outlane gate. A ball entering that outlane
+    returns to the right flipper and closes the gate.
+- type: extra-ball
+  name: Players Targets Awards
+  text: Completing the five Players targets advances Slam Dunk toward an Extra Ball,
+    but Extra Balls are disabled at this venue.
+- type: other
+  name: Center Spinners
+  text: Normally worth 100; every fifth spin advances bonus when active. They can
+    help reach a Super Bonus threshold but trail Fast Break for scoring.
+shots:
+- name: Fast Break spinner
+  value: Far-left repeatable scoring shot; worth up to 2K per spin after all four
+    Free Throw drops.
+  risk: Medium
+  diagram: 1
+- name: Free Throw inline drops
+  value: 'Right-side primary setup: advances Bonus X, Fast Break value, and GLOBE.'
+  risk: High
+  diagram: 2
+- name: Top GLOBE saucer
+  value: Top-center skill-shot target that advances GLOBE and bonus; key for sequential
+    GLOBE progress.
+  risk: Medium
+  diagram: 3
+- name: Players targets
+  value: Left-center bank advancing the Slam Dunk award toward Extra Ball, Special,
+    then 5K.
+  risk: Medium-High
+  diagram: 4
+- name: Free Throw saucer
+  value: Behind the drops; first collection scores 25K. On this setup, the drops stay
+    down afterward.
+  risk: Medium
+  diagram: 5
+- name: Slam Dunk
+  value: Far-right standup that opens the outlane rescue gate when lit.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Open the Free-Ball Gate, establish 3× to 5× bonus, then favor repeatable
+    Fast Break spinner shots over further dangerous standups. A Super Bonus threshold
+    is especially valuable because memory is enabled.
+  behind: Finish all four inline drops, aggressively rip the 2K Fast Break spinner,
+    and push base bonus toward 49K for a possible 245K end-of-ball bonus.
+  key_decision: Open the gate first or attack inline drops immediately? The gate costs
+    a dangerous standup shot but protects the right outlane; the drops accelerate
+    scoring much faster.
+danger:
+- Inline-drop rebounds are this copy's strongest hazard and can fire directly toward
+  the center drain.
+- The gap between the two left scissor flippers can drain a trapped ball; dead-bouncing
+  toward the right flipper can be safer.
+- Pop-bumper exits commonly create uncontrolled drains.
+- Soft center-spinner exits can angle toward center and may require active nudging.
+- The right outlane drains when the gate has not already been opened.
+commentary:
+- Three inline drops—that gives them three-times bonus and a thousand-point spinner.
+- 'Last drop: now it''s five-times bonus and two thousand every spinner revolution.'
+- The gate is open, so the right outlane is not a drain this time—but using it will
+  close the gate.
+- They just crossed twenty thousand bonus, and with memory enabled that twenty is
+  protected for the next ball.
+- GLOBE is complete—that's fifty thousand, and the letters reset so they can do it
+  again.
+- Bonus is at forty-nine thousand with five-times waiting—that's 245K at the drain,
+  assuming they do not tilt.
+trivia:
+- Harlem Globetrotters On Tour was designed by Greg Kmiec, who also designed Paragon,
+  Xenon, and Vector.
+- The artwork was an early Bally assignment for Greg Freres.
+- Bally produced approximately 14,550 units, a comparatively high-volume late-1970s
+  solid-state title.
+- The stacked scissor left flippers create unusual passing opportunities and a notorious
+  gap drain.
+- Original Bally code uses six-digit scoring; a later unofficial seven-digit conversion
+  exists.
+summary: Free Throw drops → Bonus X → 2K Fast Break → Super Bonus memory → Free-Ball
+  Gate → GLOBE 50K
+venue_notes:
+- 'Super Bonus memory is enabled: 20K, 30K, and 40K thresholds hold between balls.'
+- GLOBE is set to sequential, one-letter-at-a-time selection.
+- After the first Free Throw saucer collect, the inline drops stay down.
+- Extra Balls are disabled.
+- The game is configured for 3-ball play.
+- A later unofficial seven-digit display conversion ROM may not be rules-identical
+  to stock.
+image: images/harlem-globetrotters-bally-1979.jpg

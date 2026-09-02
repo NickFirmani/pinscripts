@@ -1,0 +1,155 @@
+id: star-wars-fote-premium-stern-2025
+name: 'Star Wars: Fall of the Empire (Premium)'
+manufacturer: Stern Pinball
+year: 2025
+metadata:
+  designer: John Borg
+  artist: Jeremy Packer (Zombie Yeti) and Vincent Proce
+  production: Released September 12, 2025
+  era: SPIKE 3
+  multiball: Lightspeed, Battle of Hoth, Death Star, Death Star II, and Premium-exclusive
+    Mynock
+hook: Build character jackpot leverage and Ion Cannon multipliers, then start Lightspeed
+  before the third Hoth lock for the game’s signature legal multiball stack.
+rules:
+  primary: Spell FORCE to play Rebel Missions at character shots, then complete missions
+    and make combos to strengthen character jackpots before multiball.
+  bullets:
+  - A played mission gives that character a 2× jackpot Force Boost; completing it
+    makes it permanent 3×, and a later Bonus Mission can raise it to 4×.
+  - One natural combo makes a character’s multiball jackpot progress count 2×; two
+    make it count 3× and start that character’s Super Mode.
+  - Droids lights Hoth locks at Luke. In Hoth Multiball, build AT-AT letters, spell
+    AT-AT, then shoot Luke for the Super.
+  - Open and lock three at Death Star. Fifteen jackpots start a 30-second Super build;
+    3 more jackpots make it 2× and 7 make it 3×.
+  - Bumpers charge Ion Cannon; hit a pulsing major shot to keep 2× scoring there for
+    the ball. After all major shots are multiplied, a roving 3× is available.
+watch:
+- title: Hoth stack setup
+  text: With the third Hoth lock lit and Lightspeed ready, expect Lightspeed first,
+    then Hoth for the legal stack.
+- title: Portrait versus name inserts
+  text: Portraits show Force Boosts to jackpot value; name inserts show Rebel Assistance
+    that multiplies jackpot-progress credit.
+- title: Pulsing shot icon
+  text: A pulsing Rebel Alliance icon means the next make places a 2× Ion Cannon Shot
+    X there for the rest of the ball.
+- title: JEDI and action button
+  text: On this Premium, JEDI progress and a glowing action button can turn an apparent
+    outlane drain into a magnetic Jedi Save.
+skill_shots:
+- name: Regular Skill Shot
+  how: After the plunge, hit any flashing major shot within six switch hits.
+  value: Starts at 1M and rises 1M per successful skill shot; select a perk that supports
+    the current plan.
+- name: Super Skill Shot
+  how: Hit the flashing major shot within the first three switches.
+  value: Awards twice the regular skill-shot value plus that shot’s utility perk.
+- name: Shot-specific perks
+  how: Choose Droids, Death Star, center ramp, Luke, left orbit, or right ramp when
+    flashing.
+  value: They respectively spot a Hoth lock, spot a Death Star lock, add two Falcon
+    advances, add three FORCE letters, add two JEDI letters, or add three TIE Fighters.
+features:
+- type: player-control
+  name: Jedi Save
+  text: Spinner hits spell JEDI. The action button pulses the under-flipper magnet
+    to steer an outlane ball; with JEDI complete, it can grab and fling the ball back
+    into play.
+- type: other
+  name: Multiball Add-A-Ball
+  text: Ten Sarlacc spins during multiball light one action-button Add-A-Ball; each
+    later activation costs 10 more spins.
+- type: mystery-award
+  name: Dark Side Mystery
+  text: Return lanes light the Vader scoop for awards including mission or multiball
+    progress, JEDI, Ion Cannon charge, a Stormtrooper hurry-up, or Extra Ball.
+- type: other
+  name: Mynock Multiball
+  text: 'Premium-exclusive: lowered center-ramp shots score 10M, and ten shots light
+    Extra Ball.'
+- type: extra-ball
+  name: Extra Balls
+  text: Multiple routes can award them; when no more can be awarded, the compensation
+    is 25M and can be multiplied by Ion Cannon Shot X.
+shots:
+- name: Vader scoop
+  value: Advances Vader modes and Dark Side Mystery for mode and Mystery scoring.
+  risk: High
+  diagram: 1
+- name: Luke / AT-AT
+  value: Advances Hoth locks, the Hoth Super, and missions; it is the central Hoth
+    cash-out.
+  risk: Medium-High
+  diagram: 2
+- name: Droids target
+  value: Lights Hoth locks and is the fastest Hoth-preparation route.
+  risk: Medium-High
+  diagram: 3
+- name: Death Star
+  value: Advances Death Star locks and Supers for a major standalone scoring route.
+  risk: High
+  diagram: 4
+- name: Center / Falcon ramp
+  value: Builds Falcon and Lightspeed progress; the Premium Hyperspace lift ramp adds
+    mechanical timing.
+  risk: Medium-High
+  diagram: 5
+- name: Sarlacc Pit
+  value: Advances Jabba events and supplies multiball Add-A-Ball utility.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take Hoth or Lightspeed once safely prepared rather than spending extra single-ball
+    time optimizing every character multiplier. Keep JEDI charged and favor relatively
+    controllable orbit feeds.
+  behind: Prepare the Lightspeed-plus-Hoth stack, build Force Boosts and combos, and
+    place Ion Shot X on Luke, Droids, or center ramp. Death Star’s 2×/3× Super build
+    is another high-variance comeback route.
+  key_decision: Cash a ready multiball now, or risk more setup shots to build permanent
+    mission and combo leverage first?
+danger:
+- Death Star misses carry severe drain risk; controlled right-flipper attempts are
+  preferred.
+- Vader scoop ejects quickly toward the right flipper and may require an immediate
+  bailout flip.
+- Ion Cannon bumpers sit beside the slings and outlanes, making their useful charge
+  physically hazardous.
+- The Sarlacc exit may need a leftward nudge for a controlled catch.
+- Premium moving-ramp and AT-AT timing can alter returns; confirm the actual copy
+  before calling a feed predictable.
+commentary:
+- Third Hoth lock is ready—he’s waiting to start Lightspeed first so he can stack
+  the two multiballs.
+- 'That portrait is a Force Boost: this character’s jackpot is permanently multiplied.'
+- The name insert is different—it makes one shot count as multiple jackpots of progress.
+- He’s placing Ion Cannon double scoring on Luke because that is where the Hoth Super
+  will eventually be.
+- JEDI is charged; on the Premium, that action button controls the magnet under the
+  flippers.
+- Fifteen Death Star jackpots are done—now he has thirty seconds to build the Super
+  to three-times before cashing.
+trivia:
+- John Borg returned to Star Wars more than 30 years after designing Data East’s 1992
+  Star Wars, his first pinball design.
+- This was Stern’s first SPIKE 3 game, with an 18.5-inch HD display and upgraded audio
+  architecture.
+- The Premium’s motorized AT-AT works with a spiral loop to recreate the tow-cable
+  takedown.
+- Chris Bartlett recorded the C-3PO callouts.
+- Version 0.96 added Death Star II Multiball; version 0.97 was primarily a rules and
+  bug-fix release.
+summary: Missions and combos → Ion Shot X → Lightspeed/Hoth stack → Death Star Super
+  → Jedi Save
+venue_notes:
+- Installed software is V0.97.
+- 'Competition Install is active: it raises Hoth difficulty, sets Jedi Save difficulty
+  to Medium, and disables Extra Balls.'
+- The Premium Jedi Save magnet is fully operational.
+- With Extra Balls disabled, do not call normal Extra Ball awards in play.
+- Skill-shot structure and perks are confirmed; displayed scoring follows the installed
+  code.
+- Premium magnet behavior and moving-ramp, Vader, and Sarlacc feeds remain physical-copy
+  dependent.
+image: images/star-wars-fote-premium-stern-2025.jpg

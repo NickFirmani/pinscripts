@@ -1,0 +1,113 @@
+id: surfer-gottlieb-1976
+name: Surfer
+manufacturer: D. Gottlieb & Co.
+year: 1976
+metadata:
+  designer: Ed Krynski
+  artist: Gordon Morison
+  production: About 2,700
+  era: Electromechanical, two-player
+  multiball: No multiball
+hook: Build the five central stars to raise the upper-right saucer to 6K, then decide
+  whether to farm it or chase the side-lane bonus multiplier.
+rules:
+  primary: Collect central star rollovers to increase the upper-right eject hole from
+    1K to 6K. Complete all five stars to light the side lanes, then use one to activate
+    Double Bonus; on the final ball, Double Bonus begins active and a lit side lane
+    advances to Triple Bonus.
+  bullets:
+  - Top lanes and the upper-left advance lane build bonus to 15K; most feature state
+    resets each ball.
+  - 'Stars plus the complete five-drop bank scores 5K, resets the bank, and lights
+    the outlanes: Extra Ball left and Special right.'
+  - This venue is set to 5 balls, so pop bumpers score 100.
+  - A full 15K bonus at Triple Bonus is worth 45K.
+watch:
+- title: Central stars
+  text: Each star raises the eject hole by 1K. All five means the saucer is worth
+    6K and the side lanes are available.
+- title: Bonus multiplier
+  text: 'Watch Double and Triple Bonus lamps, especially on the final ball: Double
+    is already active, and a lit side lane can make full bonus worth 45K.'
+- title: Side lanes
+  text: Once stars are complete, either lit side lane advances Bonus X; take the feed
+    that presents itself best.
+- title: Drop bank and outlanes
+  text: A reset drop bank and lit outlanes show that stars plus drops have been completed;
+    Extra Ball is left and Special is right.
+skill_shots:
+- name: Observed tournament plunge
+  how: If the return is safe, plunge or shoot the left orbit; otherwise aim for the
+    currently useful top lane.
+  value: A physical-feed-dependent opening choice that can start useful progression.
+features:
+- type: extra-ball
+  name: Left-outlane Extra Ball
+  text: Completing all stars and drops lights the left outlane for an Extra Ball.
+    At this venue, the award is ignored.
+- type: other
+  name: Right-outlane Special
+  text: The same stars-and-drops completion lights the right outlane for Special/replay.
+shots:
+- name: Drop bank
+  value: Builds bonus; with all stars complete, finishing the bank scores 5K, resets
+    it, and lights the outlanes.
+  risk: Medium-High
+  diagram: 1
+- name: Left side lane
+  value: Activates Double or Triple Bonus when lit; major bonus leverage.
+  risk: High
+  diagram: 2
+- name: Star rollovers
+  value: Raise saucer value from 1K to 6K and light the Bonus-X side lanes when all
+    five are complete.
+  risk: Medium-High
+  diagram: 3
+- name: Center spinner
+  value: Traverses the central-star route; its value increases after stars.
+  risk: Medium
+  diagram: 4
+- name: Eject hole
+  value: Repeatable 1K-6K payoff; the primary scoring route once built.
+  risk: Medium-High
+  diagram: 5
+- name: Right side lane
+  value: Also advances Bonus X when lit; take it when the feed is more favorable.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Once the saucer reaches 5K-6K, stop forcing difficult star or drop geometry
+    and favor repeated eject-hole attempts. On the final ball, protect a large Triple
+    Bonus rather than chase marginal features.
+  behind: Finish the stars, pursue a side lane for Double or Triple Bonus, and attack
+    the 6K saucer. In this 5-ball setup, bonus matters more than 100-point pop hits.
+  key_decision: Keep building features or farm the saucer? Build with the right flipper,
+    then shift toward the left flipper once the eject hole is lucrative.
+danger:
+- The second star from the right can rebound hard from the right pop bumper.
+- Side-lane exits can return straight down the middle or clip a sling post unpredictably.
+- Drop-bank rebounds are hazardous because of tight geometry behind the pop.
+- The saucer kickout enters the right-bumper area and is not consistently safe on
+  this machine.
+commentary:
+- Every star raises that saucer another thousand; max is six thousand.
+- All five stars are done, so now those side lanes can light Double Bonus.
+- It's the last ball, so Double is already on—one lit side lane gets to Triple.
+- Full bonus at triple is forty-five thousand; that's the real leverage here.
+- He's done building the stars and has switched flippers—now it's saucer all day.
+- 'Stars plus the whole drop bank lights the outlanes: Extra Ball left, Special right.'
+trivia:
+- Ed Krynski designed Surfer, with surfing artwork by Gordon Morison.
+- Surfer is the two-player version of Surf Champ.
+- The two pop bumpers are wired together, so one hit activates both mechanisms.
+- Gottlieb produced about 2,700 Surfers.
+- The low central spinner complicates access to the five stars and upper drop bank.
+summary: Build stars → raise saucer → light side lanes → multiply bonus → farm 6K
+  saucer
+venue_notes:
+- 'Configured for 5-ball play: pop bumpers score 100.'
+- Lit left-outlane Extra Ball is ignored at this venue.
+- The final ball correctly begins with Double Bonus active.
+- No important feed is consistently safe on this machine.
+- Center spinner behavior is normal.
+image: images/surfer-gottlieb-1976.jpg

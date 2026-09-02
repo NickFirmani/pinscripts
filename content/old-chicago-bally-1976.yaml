@@ -1,0 +1,128 @@
+id: old-chicago-bally-1976
+name: Old Chicago
+manufacturer: Bally Manufacturing
+year: 1976
+metadata:
+  designer: Greg Kmiec
+  artist: Dave Christensen; original concept art by John Youssi
+  production: 7,155
+  era: Four-player electro-mechanical
+  multiball: None
+hook: Build OLD CHICAGO bonus with the left spinner, then repeatedly cash it at the
+  center Collect Bonus hole without resetting it. On this five-ball setup, the drop
+  bank is a secondary route because Extra Balls are disabled.
+rules:
+  primary: Bonus begins at 1K and builds to 10K. Build it through the spinner's five-light
+    sequences, the lower-left target, upper-right feature saucer, or lit top rollover;
+    then collect the current value at center without reducing it. A drain pays and
+    resets bonus.
+  bullets:
+  - The center Collect Bonus hole pays the lit bonus without stepping it down, enabling
+    repeated cash-outs.
+  - The left spinner advances bonus after every completed five-light sequence; its
+    raw per-spin score is adjustment-dependent.
+  - The upper-right saucer adds 1K bonus and scores 500 until bonus is 10K, when it
+    scores 5K.
+  - Each drop target scores 500; completing all five scores 5K, resets the bank, and
+    activates Special/Extra-Ball rules.
+  - Double Bonus is operator-set and applies only to the drain bonus, never to the
+    center Collect Bonus hole.
+watch:
+- title: Bonus lamps
+  text: Each OLD CHICAGO letter represents 1K of bonus. At 10K, every center collect
+    is worth 10K and the upper-right saucer rises to 5K.
+- title: Spinner sequence
+  text: Every completed five-light spinner sequence advances bonus, so a long spinner
+    run raises later center-saucer collections.
+- title: Double Bonus lamp
+  text: It doubles the bonus only if the ball drains; center-saucer collections remain
+    single value.
+- title: Completed drop bank
+  text: The first completion activates outlane Special/Extra-Ball rules, though Extra
+    Balls are disabled at this venue.
+skill_shots:
+- name: Lit top rollover
+  how: Plunge into the currently lit upper lane. The lit lane can shift after upper-rubber
+    hits, so a lag plunge or nudge may help steer toward it.
+  value: Scores 3K and advances bonus one step on this five-ball setup; it is a useful
+    opening shortcut toward the 10K maximum.
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: The first drop-bank completion enables the right-outlane Extra Ball opportunity,
+    but Extra Balls are disabled at this venue.
+- type: other
+  name: Special
+  text: The first drop-bank completion enables the left-outlane Special; later completed
+    banks can also score Specials.
+shots:
+- name: Left spinner
+  value: 'Primary bonus builder: every completed five-light sequence advances bonus.'
+  risk: Medium-High
+  diagram: 1
+- name: Lower-left bonus target
+  value: Advances bonus by 1K when the spinner route is unavailable.
+  risk: High
+  diagram: 2
+- name: Collect Bonus hole
+  value: Pays the current bonus without reset; the repeatable cash-out shot once bonus
+    is built.
+  risk: Medium
+  diagram: 3
+- name: Five-bank drops
+  value: Five targets complete for 5K, reset, and activate Special/Extra-Ball rules.
+  risk: High
+  diagram: 4
+- name: Upper-right saucer
+  value: Adds 1K bonus; scores 500 until 10K bonus, then 5K.
+  risk: Medium
+  diagram: 5
+- name: Lit top rollover
+  value: Scores 3K and advances bonus one step on this five-ball game.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Build enough bonus to make center collections worthwhile, then favor repeat
+    center-saucer cash-outs over attacking the drop bank. Be patient with controllable
+    feeds.
+  behind: Rip the spinner to reach 10K, then loop center-saucer collections. Preserve
+    a Double Bonus ball for the full drain award when possible.
+  key_decision: Keep building bonus or begin collecting it? Around 6K, repeated center
+    collections become attractive; below that, building through the spinner usually
+    has more upside.
+danger:
+- Saucer kickouts are the venue's primary drain concern.
+- Spinner returns can come directly toward the center drain.
+- Upper-right saucer exits can feed center or the lower pops.
+- Drop-bank rebounds can create uncontrolled lower-playfield action.
+- Lower pop bumpers are a general drain generator, especially when weak.
+commentary:
+- 'This game is really about bonus: spinner builds it, and the center saucer cashes
+  it without resetting it.'
+- That lit top lane is worth 3K and a bonus step on this five-ball game.
+- At 10K, every center collect is ten grand, and the upper-right saucer itself becomes
+  five thousand.
+- Double Bonus only applies at the drain; the saucer collect stays at single value.
+- At this bonus value, the priority shifts from setup to looping the Collect Bonus
+  hole.
+- That first drop-bank completion turned on the Special and Extra-Ball outlane rules,
+  although Extra Balls are disabled here.
+trivia:
+- Old Chicago was designed by Greg Kmiec.
+- Production totaled 7,155 machines.
+- The backglass gangster represents John Dillinger, while the woman in red references
+  Anna Sage.
+- This was John Youssi's first pinball art project; Dave Christensen substantially
+  reworked the production art.
+- It has no conventional slingshots; two unusually low pop bumpers occupy the space
+  above the flippers and inlanes.
+summary: Spinner builds bonus → center saucer repeats cash-outs → 10K boosts upper-right
+  saucer → drops are secondary → saucer kickouts threaten drains
+venue_notes:
+- Configured for five balls; the three-ball three-step top-rollover bonus advance
+  does not apply.
+- Extra Balls are disabled and worth nothing at this venue.
+- Spinner value is unknown; it may be set to 10 or 100 points per spin.
+- Center Collect Bonus kickout behavior is unknown.
+- Saucer kickouts are the primary drain area at this venue.
+image: images/old-chicago-bally-1976.jpg

@@ -1,0 +1,132 @@
+id: iron-maiden-pro-stern-2018
+name: 'Iron Maiden: Legacy of the Beast — Pro'
+manufacturer: Stern Pinball
+year: 2018
+metadata:
+  designer: Keith Elwin
+  artist: Jeremy Packer / Zombie Yeti
+  production: SPIKE 2
+  era: Modern
+  multiball: Trooper, Mummy, Cyborg, Aces High, and Rime of the Ancient Mariner
+hook: Build EDDIE for Battles, cash their Soul Shards at center, and choose when to
+  convert Playfield X and Power Jackpot buildup into a huge score.
+rules:
+  primary: 'Prioritize Eddie Battles: complete white-arrow E-D-D-I-E, start the selected
+    Battle at center, win it, then hit the bullseye within 10 seconds to collect its
+    Soul Shard.'
+  bullets:
+  - Single-ball Battles can be started before Trooper or Mummy Multiball and carried
+    into it; Aces High and Rime are two-ball multiballs that cannot stack.
+  - Soul Shards begin at 20% of the Battle score; bullseye accuracy can double or
+    triple the award, while a miss loses it.
+  - Complete the four orange X targets for 2X or 3X playfield and save activation
+    for a major scoring moment. Qualification carries between balls.
+  - Trooper Multiball starts after three virtual locks from the drop-bank cycle; three
+    jackpots light Super, which relights jackpots at a higher multiplier.
+  - Power Features light the Orb for Power Jackpot. More completed Features while
+    it is lit add multiplier value, so cashing it is a recurring decision.
+watch:
+- title: White arrows / EDDIE
+  text: Completed letters advance Battle qualification; once EDDIE is complete, the
+    center shot starts the Battle.
+- title: Flashing bullseye
+  text: After a Battle, the Soul Shard is a 10-second hurry-up. Center accuracy determines
+    whether it pays at 1X, 2X, or 3X.
+- title: Playfield X insert
+  text: Solid means Playfield X is qualified; flashing means it is active.
+- title: Power Jackpot display
+  text: A player leaving the Orb lit may be deliberately building a larger Power Jackpot
+    multiplier.
+skill_shots:
+- name: Normal Skill Shot
+  how: Soft-plunge into the dedicated target.
+  value: 1M, one EDDIE letter, and five seconds of ball save.
+- name: Super Skill Shot
+  how: Hold the left flipper, plunge around the inner orbit to the upper flipper,
+    then hit the Super Jackpot target.
+  value: 10M base, instant Playfield X qualification, and additional ball-save time.
+features:
+- type: ball-save
+  name: Revive
+  text: Spinner hits spell R-E-V-I-V-E to light outlane rescues. Lit Revives carry
+    between balls; at the factory setting, each outlane rescue is consumed independently.
+- type: mystery-award
+  name: Orb Mystery
+  text: Drop-bank progress lights the Orb. Repeating Light Orb before collection raises
+    Mystery to Level 2 or 3; Competition Mode removes randomness from relevant awards.
+- type: extra-ball
+  name: Extra Balls
+  text: 'Extra balls can be qualified through Power Features, Tomb Treasure #5, and
+    loop progress, but Competition Install has no extra balls.'
+shots:
+- name: Left spinner / orbit
+  value: Advances EDDIE, REVIVE, and Power Spinners; valuable for modes and outlane
+    insurance.
+  risk: High
+  diagram: 1
+- name: Orb
+  value: Collects Mystery or a matured Power Jackpot.
+  risk: Medium
+  diagram: 2
+- name: Trooper drops
+  value: Advance Orb, Bonus X, locks, and Cannon shots; the primary Trooper Multiball
+    path.
+  risk: Medium-High
+  diagram: 3
+- name: Bullseye / center ramp
+  value: Starts Battles, collects Soul Shards, and advances Cyborg and mode finals.
+  risk: Medium-High
+  diagram: 4
+- name: Mummy captive ball
+  value: Advances MUMMY and Mummy Multiball from a relatively controlled upper-flipper
+    area.
+  risk: Medium
+  diagram: 5
+- name: Right ramp
+  value: Advances EDDIE, Power Ramps, and Flight of Icarus scoring.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor straightforward Battles, collect Soul Shards promptly, take 2X rather
+    than overreaching for 3X, and use multiball ball-save time to build REVIVE.
+  behind: Stack Hallowed Be Thy Name or Flight of Icarus into Trooper or Mummy, activate
+    3X playfield, and pursue a multiplied Soul Shard or mature Power Jackpot.
+  key_decision: Cash value now or keep building multipliers? That choice recurs through
+    Playfield X, Power Jackpot, Soul Shards, loop jackpots, and multiball jackpot
+    ladders.
+danger:
+- The left REVIVE spinner is a documented high-risk shot; attack it with multiball
+  or ball-save protection when possible.
+- A square bullseye hit can produce a fast, uncontrolled center return.
+- Repeated direct Trooper drop-bank shots can rebound dangerously through the center.
+- Missing the upper-flipper mini-loop or Super target gives up controlled possession
+  and returns the ball to traffic.
+commentary:
+- EDDIE is complete—center starts the Battle.
+- 'Mode''s finished, but the job isn''t done: ten seconds to cash the Soul Shard.'
+- Center bullseye matters here—the better hit can triple that Shard.
+- Playfield X is qualified, not running yet; the player is saving activation for something
+  valuable.
+- The Power Jackpot is still lit because each additional completed feature can add
+  another multiplier.
+- That's the Cannon during Trooper—the first one adds a ball and can spot up to three
+  jackpots.
+trivia:
+- Iron Maiden was Keith Elwin's first production Stern design; the playfield evolved
+  from his earlier Archer homebrew layout.
+- All three editions use four flippers and two spinners.
+- The game has 12 selectable Iron Maiden songs; song selection changes the soundtrack,
+  not gameplay.
+- Premium and LE add a motorized sarcophagus and lifting center ramp; the Pro uses
+  distinct fixed-center geometry.
+- Run to the Hills requires ten Tomb Treasures and begins a six-ball multiball.
+summary: Build EDDIE → win Battles → cash Soul Shards → activate Playfield X → stack
+  multiball or Power Jackpot
+venue_notes:
+- Machine is on v1.16.0 code.
+- Competition Install is enabled.
+- Secret Skill Shots are off under the Competition default.
+- Competition Install has no extra balls.
+- 'Revive uses the factory/easier setting: left and right rescues are consumed independently.'
+- Super Skill Shot base value is 10M on current code.
+image: images/iron-maiden-pro-stern-2018.jpg

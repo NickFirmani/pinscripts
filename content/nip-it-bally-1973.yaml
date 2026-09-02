@@ -1,0 +1,123 @@
+id: nip-it-bally-1973
+name: Nip-It
+manufacturer: Bally Manufacturing
+year: 1973
+metadata:
+  designer: Ted Zale
+  artist: Dick White
+  production: 4,580
+  era: Electro-mechanical
+  multiball: Physical captive-ball two-ball multiball
+hook: Zip the flippers, build bonus to 10K, lock a ball in the Bonus Hole, then hit
+  a lit Release target to cash the bonus without resetting it and begin two-ball play.
+rules:
+  primary: Hit the center mushroom to zip the flippers closed, then build the 1K-to-10K
+    bonus. The Bonus Hole physically captures a ball and lights both Release Captive
+    Ball targets; either lit target collects the current bonus, releases the captive
+    ball, and leaves the bonus intact for another cycle.
+  bullets:
+  - Advance Bonus and the Balligator right alley each add 1K, up to 10K.
+  - A drain awards the current bonus, then resets it to 1K.
+  - The white rollover beside the mushroom reopens the zipper flippers; they also
+    open at turn end or tilt.
+  - There are no jackpots, bonus multipliers, or modern stacking rules.
+watch:
+- title: Zipped flippers
+  text: A center-mushroom hit closes the flippers together, shrinking the center gap
+    and enabling controlled micro-flips.
+- title: Bonus near 10K
+  text: A valuable bonus makes the Bonus Hole to lit Release-target cycle the priority.
+- title: Ball in Bonus Hole
+  text: The ball is physically captive, a second ball is served, and both Release
+    targets are lit; the player may wait before releasing.
+- title: Free Ball Gate
+  text: A lit Open Gate target or open right-outlane gate means a physical outlane
+    rescue is available.
+skill_shots:
+- name: Balligator skill sequence
+  how: Plunge through an upper white rollover, ideally into the 500-point top saucer.
+    On its upper-right eject, time the Gator button to catch the ball.
+  value: The Balligator right alley scores 1K and advances bonus 1K, normally feeding
+    the right flipper.
+features:
+- type: player-control
+  name: Balligator button
+  text: A dedicated right-side cabinet button operates the grabber. Timed correctly
+    it catches the ball; an early press can deflect a near-miss left.
+- type: other
+  name: Free Ball Gate
+  text: When the lit upper-left Open Gate target is hit, the right-outlane gate opens
+    for one use until a ball passes through or the turn ends.
+- type: other
+  name: Left alley kickback
+  text: The left alley scores 1K and mechanically kicks the ball back to the top for
+    another opportunity.
+shots:
+- name: Mushroom bumper
+  value: Closes the zipper flippers; the highest-priority survival setup.
+  risk: Medium
+  diagram: 1
+- name: Balligator / right alley
+  value: Scores 1K and advances bonus 1K for controlled bonus building.
+  risk: Medium
+  diagram: 2
+- name: Bonus Hole
+  value: Captures a ball, serves the second ball, and lights the Release targets.
+  risk: Medium
+  diagram: 3
+- name: Release Captive Ball targets
+  value: Collect the current bonus without resetting it and release the captive ball
+    into two-ball play.
+  risk: Medium-High
+  diagram: 4
+- name: Left alley
+  value: Scores 1K and kicks the ball back to the top for a repeat route.
+  risk: Medium
+  diagram: 5
+- name: Open Gate target
+  value: Opens the right-outlane Free Ball Gate when lit.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Zip the flippers and favor controlled Balligator and left-alley circulation.
+    Once the bonus is respectable, take the Release-target collect instead of stretching
+    a single-ball setup solely for 10K.
+  behind: Build to 10K, lock a ball, release it for the collect, then re-lock and
+    release repeatedly. Sustained two-ball bonus cycles are the main comeback route.
+  key_decision: Release the captive ball now for the bonus cash-out and two-ball play,
+    or leave it parked while building a more valuable bonus in simpler single-ball
+    play.
+danger:
+- With flippers open, the center gap is enormous; closing them is the first survival
+  priority.
+- Pop-bumper exits can find a sling or drain instead of a flipper.
+- Balligator returns can be dangerous on some copies, including straight down the
+  middle.
+- Standup targets carry direct rebound risk on this open electro-mechanical layout.
+- Two-ball play with flippers open can turn a controlled opportunity into chaos.
+commentary:
+- 'First priority on Nip-It: hit the mushroom and zip those flippers together.'
+- He's built the bonus, and now he's parking a ball in the Bonus Hole.
+- The lock doesn't cash the bonus—the lit Release target does, and it doesn't reset
+  the value.
+- That's ten thousand again; if he can relock a ball, he can recycle that same bonus.
+- The Gator button is player-controlled—he has to time the grab himself.
+- That ball is physically locked, so the next player can steal it.
+trivia:
+- Nip-It was Ted Zale's final design for Bally.
+- It is generally identified as Bally's last electro-mechanical pinball with zipper
+  flippers.
+- Balligator was marketed as a major player-skill device, activated by a dedicated
+  cabinet button.
+- Nip-It appeared in Arnold's on Happy Days despite being anachronistic for the show's
+  1950s setting.
+- Bally produced 4,580 machines.
+summary: Zip flippers → build bonus → lock ball → release to collect → re-lock for
+  two-ball cycles
+venue_notes:
+- This machine is configured for 5-ball play.
+- Stock physical lock stealing is allowed between players.
+- Both zipper-flipper positions are functioning reliably.
+- Balligator is fully operational with a reliable, controllable right-flipper feed.
+- The right-outlane Free Ball Gate is functional.
+image: images/nip-it-bally-1973.jpg

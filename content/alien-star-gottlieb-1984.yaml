@@ -1,0 +1,112 @@
+id: alien-star-gottlieb-1984
+name: Alien Star
+manufacturer: Gottlieb/Mylstar
+year: 1984
+metadata:
+  designer: John Trudeau
+  artist: Larry Day
+  production: 1,065 units
+  era: System 80A solid-state
+  multiball: 2-ball multiball
+hook: Complete ALIEN, build the spinner to 5X, then start multiball and pair the right
+  inlane with the spinner for the game's explosive scoring.
+rules:
+  primary: Complete the right-side A-L-I-E-N standups to light the left capture saucer.
+    Spinner shots select a 2X, 3X, or 5X multiball multiplier; capture freezes it
+    and starts 2-ball multiball. During multiball, the right inlane temporarily makes
+    the spinner worth 10K per spin, or 50K per spin at 5X.
+  bullets:
+  - Each ALIEN completion also enables another top-lane award; pop hits rotate the
+    selected award.
+  - Collect a top-lane award only when both its award lamp and corresponding S-T-A-R
+    lane are lit.
+  - ALIEN progress and a lit capture carry between balls in this 3-ball configuration;
+    upper award lamps do not.
+  - Bonus can reach 29K times 5X, but lit-spinner scoring is normally the priority.
+watch:
+- title: Capture saucer flashing
+  text: ALIEN is complete and the left saucer is ready to begin multiball.
+- title: 2X / 3X / 5X inserts
+  text: These show the multiplier that will freeze when the ball is captured; the
+    key choice is lock now or keep spinning for 5X.
+- title: Right inlane to left orbit
+  text: The player is exploiting the brief 10K-per-spin spinner window.
+- title: Second ball plunged
+  text: Multiball is live; watch for right-inlane-to-spinner combinations.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Top-lane Extra Ball
+  text: When Extra Ball is lit, scoring the corresponding R top rollover awards it.
+    ALIEN completions can add available upper awards; this venue's Extra Ball handling
+    is unknown.
+- type: other
+  name: Special
+  text: Completing ALIEN and STAR can light Special; a lit outlane scores it. Its
+    tournament value depends on operator or event settings.
+shots:
+- name: ALIEN targets
+  value: Complete the mid-right standup bank to light capture/multiball and advance
+    upper awards.
+  risk: High
+  diagram: 1
+- name: Spinner / left orbit
+  value: Cycles the multiball multiplier before lock and becomes the major scoring
+    shot when the right inlane has lit it.
+  risk: Medium-High
+  diagram: 2
+- name: Capture saucer
+  value: Starts 2-ball multiball and freezes the selected multiplier.
+  risk: High
+  diagram: 3
+- name: Right inlane
+  value: Temporarily lights the spinner for 10K per spin, setting up the game's highest-value
+    combo.
+  risk: High
+  diagram: 4
+- name: STAR rollovers
+  value: Collect a qualifying lit upper award, including potential Extra Ball.
+  risk: Medium
+  diagram: 5
+strategy:
+  ahead: Favor repeatable right-inlane-to-spinner single-ball scoring rather than
+    repeatedly attacking ALIEN and a hazardous saucer eject. If multiball is ready,
+    accepting 2X or 3X can be wiser than risking another shot for 5X.
+  behind: Build ALIEN, seek 5X, start multiball, then create right-inlane-to-spinner
+    chances. One strong 50K-per-spin rip can erase a major deficit.
+  key_decision: Lock now or shoot the spinner again for 5X? Conservative play may
+    skip multiball entirely and cash lit spinner shots.
+danger:
+- ALIEN standup hits can rebound hard toward the center or outlanes.
+- The N target is partly obstructed by the top of the right slingshot.
+- The left saucer eject can clip the left sling and threaten the left outlane.
+- Orbit and top shots can exit the pop bumpers unpredictably.
+- A right-inlane shatz hit too hard can travel into the outlane.
+commentary:
+- ALIEN is complete — the capture saucer is ready for multiball.
+- Three X is showing, but the player is gambling on another spinner shot to find five
+  X.
+- There’s the right inlane — the spinner is hot at ten thousand a spin.
+- At five-X multiball, that spinner is fifty thousand per rotation.
+- Watch this saucer kickout; the left outlane is very much in play.
+- They may not need multiball here — a couple of lit spinner rips could be enough.
+trivia:
+- Alien Star was released in June 1984 during Gottlieb's Mylstar/System 80A period,
+  with 1,065 documented machines.
+- John Trudeau designed the game; Larry Day supplied the art and Craig Beierwaltes
+  the sound.
+- ROM revisions 689 and 689A are documented; 689A accompanied hardware and wiring
+  revisions rather than a verified major rules rewrite.
+- Alien Star has appeared at elite events including PAPA and the 2023 INDISC High
+  Stakes first-place tiebreaker.
+summary: Complete ALIEN → build 5X → capture multiball → right inlane → hot spinner
+venue_notes:
+- 'Configured for 3-ball play: ALIEN progress and a lit capture carry ball to ball;
+  upper award lamps do not.'
+- Machine is stock/original-compatible 689 or 689A rules.
+- Extra Ball handling at this venue is unknown.
+- Special value depends on operator or event settings.
+- The specific left saucer eject behavior is unknown.
+- 689A is associated with production wiring and fusing revisions, with no verified
+  scoring-rule difference.
+image: images/alien-star-gottlieb-1984.jpg

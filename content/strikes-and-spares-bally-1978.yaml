@@ -1,0 +1,118 @@
+id: strikes-and-spares-bally-1978
+name: Strikes and Spares
+manufacturer: Bally Manufacturing
+year: 1978
+metadata:
+  designer: Gary Gayton
+  artist: Kevin O'Connor
+  production: 12,820
+  era: Early Bally AS-2518-17 solid-state with mechanical chimes
+  multiball: None
+hook: An early Bally bowling game where the B lane lights a powerful spinner, A-B-C
+  builds 2×, 3×, then 5× bonus, and the safest tournament route stays up top.
+rules:
+  primary: Prioritize B to light the spinner, then keep cycling the upper lanes with
+    the lit spinner or right orbit. Each A-B-C completion raises Bonus X from 2× to
+    3× to 5×; base bonus can reach 29K, making a full 5× bonus worth 145K at drain.
+  bullets:
+  - B adds bonus, lights the spinner and center 1K bumper, and—on this setup's alternating
+    Automatic Strike state—can score and advance Strike value when active.
+  - Top saucer scores the current Strike value, advances its ladder, and adds three
+    bonus steps.
+  - Central pins score 1K lit or 100 unlit; completing all ten scores and advances
+    Strike, then resets them.
+  - S-P-A-R-E progresses return-lane Extra Ball and later Special opportunities; award
+    value is venue-dependent.
+  - Tilt forfeits bonus.
+watch:
+- title: B and spinner lamp
+  text: B lights the spinner, explaining the immediate return to that shot.
+- title: Bonus X
+  text: Watch 2×, 3×, and 5× inserts. A maxed 29K bonus at 5× is 145K at drain.
+- title: Strike value
+  text: At 20K or 30K, an incidental saucer or active Automatic Strike becomes a meaningful
+    cash-out.
+- title: Return and outlane awards
+  text: If Extra Balls or Special conversions have value, S-P-A-R-E becomes strategically
+    relevant.
+skill_shots:
+- name: B-lane skill shot
+  how: Plunge through the center B lane.
+  value: Lights the spinner and center 1K bumper, adds bonus, and can score and advance
+    Strike when alternating Automatic Strike is active.
+features:
+- type: extra-ball
+  name: Extra Ball and Special awards
+  text: S-P-A-R-E and later A-B-C or Strike progression can generate awards. Only
+    one Extra Ball is allowed per ball in play.
+- type: other
+  name: No ball save or kickback
+  text: There is no conventional ball save or kickback.
+shots:
+- name: B lane
+  value: Lights spinner, adds bonus, and controls Automatic Strike; top-lane priority.
+  risk: Medium
+  diagram: 1
+- name: Speed-ball spinner
+  value: Repeatable direct scoring and the dominant shot when lit.
+  risk: Medium
+  diagram: 2
+- name: Right orbit
+  value: Feeds A-B-C and saucer area; preferred upper route when spinner is unlit.
+  risk: Medium-High
+  diagram: 3
+- name: Top saucer
+  value: Scores and advances Strike value and adds three bonus steps.
+  risk: High
+  diagram: 4
+- name: A/C lanes
+  value: Advance A-B-C and bonus toward the next Bonus-X cycle.
+  risk: Medium
+  diagram: 5
+- name: S-P-A-R-E bank
+  value: Advances Extra Ball and Special progression when awards matter.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: 'Stay on the safer upper route: lit spinner or right orbit into A-B-C. Build
+    Bonus X rather than chasing exposed pins or standups.'
+  behind: Exploit the lit spinner, push toward 5× and 29K bonus, and advance Strike
+    toward 30K or Special. Valuable Special conversions can justify deeper progression.
+  key_decision: Keep shooting safely up top, or leave that route to chase S-P-A-R-E
+    and pins? The upper spinner-orbit route is normally preferred unless awards materially
+    change the value.
+danger:
+- The top saucer ejects toward a sling on this setup.
+- A saucer lip-out can fall directly toward the center drain.
+- Pop-bumper exits after upper shots can be unpredictable.
+- S-P-A-R-E standups can rebound more dangerously than spinner-orbit flow.
+- The central pin rack invites uncontrolled rollover and bumper traffic.
+commentary:
+- They got B—that lights the spinner, so expect them to rip that shot repeatedly.
+- 'Another A-B-C completion: that''s three-times bonus; the next one gets them to
+  five-times.'
+- Max bonus is 29,000, so five-times puts 145K in the bank at the drain.
+- The Strike value is already at 30K; the next saucer or automatic strike is worth
+  real money.
+- They're ignoring the bowling pins completely—that's normal tournament strategy on
+  this game.
+- S-P-A-R-E only becomes attractive if its Extra Ball or Special award has tournament
+  value.
+trivia:
+- A high-volume early Bally solid-state title, with 12,820 produced.
+- It uses Bally's AS-2518-17 MPU and mechanical chimes.
+- Gary Gayton recalled it was only the second game he designed.
+- The ten central rollovers are arranged as a ten-pin bowling rack.
+- The woman on the backglass was fictional, according to Kevin O'Connor.
+summary: B lane → lit spinner → A-B-C → 2×/3×/5× bonus → Strike cash-outs
+venue_notes:
+- Three-ball game.
+- Automatic Strike on the B lane alternates on this setup.
+- Bonus Multiplier Memory setting is unknown; Bonus X may carry between balls or reset.
+- Strike-value starting setting is unknown; 5K may be enabled or skipped.
+- Top saucer ejects toward a sling.
+- Extra Ball and Special value is unresolved between no tournament value and stock
+  Novelty points; confirm before treating S-P-A-R-E as a scoring priority.
+- Spinner strength and saucer behavior are copy-dependent.
+- Use Bally 1978; some pages show a 1977 project date.
+image: images/strikes-and-spares-bally-1978.jpg

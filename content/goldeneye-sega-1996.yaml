@@ -1,0 +1,144 @@
+id: goldeneye-sega-1996
+name: GoldenEye
+manufacturer: Sega Pinball
+year: 1996
+metadata:
+  designer: Ward Pemberton
+  artist: Jeff Busch and Paul Faris
+  production: About 2,200
+  era: Early Sega/Stern Whitestar
+  multiball: Satellite Multiball, Tank Multiball, 007 Encounter, and GOLDENEYE! wizard
+    multiball
+hook: 'A magnetic rotating satellite turns GoldenEye into a high-leverage game: build
+  Satellite Multiball, collect four jackpots, then launch a ball into the dish to
+  knock loose a 200M payoff and chase moving Super Jackpots.'
+rules:
+  primary: Hit Center Eject to light the Lock Ramp; two virtual locks qualify Satellite
+    Multiball. The left inlane raises the pop-up jump ramp, which sends the ball to
+    the rotating magnetic satellite.
+  bullets:
+  - Satellite Multiball jackpots are the far-left ramp, Lock Ramp, Mode Start lane,
+    and right ramp; guard targets cycle their value from 10M to 100M.
+  - After four Satellite jackpots, hit the raised satellite ramp to release the held
+    ball for 200M; a 150M Super Jackpot then moves among the jackpot shots.
+  - Single-ball ramp shots spell GOLDENEYE. Complete three 50M countdown ramp hurry-ups,
+    then shoot the satellite for the accumulated value plus 10M.
+  - GOLDENEYE! requires all five 007 Encounters, completed 007 lanes, Shootout, Q's
+    Pen, and GOLDENEYE spelled. In the wizard mode, switches score 3M, ramps score
+    20M, and every 50 switches adds a ball.
+  - Bonus is ramp and Mode Start shots times 1M, multiplied by Bonus X from the 007
+    lanes.
+watch:
+- title: Raised satellite ramp
+  text: 'After the left inlane, the pop-up ramp rises: Satellite Multiball or another
+    satellite collection is ready.'
+- title: Ball held on the dish
+  text: A ball stuck to the satellite is a reserve multiball ball. The player is hunting
+    four jackpots before knocking it loose.
+- title: Nearly completed GOLDENEYE
+  text: Repeated ramp shooting is close to the three-ramp hurry-up sequence and its
+    large satellite cash-out.
+- title: Eject or Die lit
+  text: An outlane drain may be rescued by the lower magnet; the player then has about
+    six seconds to hit Center Eject.
+skill_shots: []
+features:
+- type: ball-save
+  name: Eject or Die
+  text: Finish Shootout to light both outlanes. A single-ball outlane drain is magnetically
+    thrown back into play, but Center Eject must be hit within about six seconds or
+    the ball is lost.
+- type: video-mode
+  name: Shootout
+  text: Clear three white standups and hit the yellow target, then fire the cabinet
+    gun trigger six times to finish the display feature and light Eject or Die.
+- type: player-control
+  name: Tank Multiball cancel
+  text: The gun trigger can cancel Tank Multiball during its start animation, preserving
+    Satellite Multiball qualification.
+- type: extra-ball
+  name: Xenia Extra Ball
+  text: The Xenia Encounter briefly lights Center Eject for an Extra Ball.
+- type: mystery-award
+  name: Mystery
+  text: The right inlane briefly lights Mode Start for Mystery; documented awards
+    include 10M or 2×.
+- type: ball-save
+  name: Kickout saves
+  text: Short automatic saves protect some dangerous Center Eject and Mode Start kickouts.
+shots:
+- name: Far-left ramp
+  value: Advances GOLDENEYE and Satellite jackpots; feeds the left inlane to set up
+    the satellite ramp.
+  risk: Low
+  diagram: 1
+- name: Lock Ramp
+  value: Builds virtual locks for Satellite Multiball and scores a Satellite jackpot.
+  risk: Medium
+  diagram: 2
+- name: Center Eject
+  value: Lights locks or Tank, supports Extra Ball and Eject or Die, and is the gateway
+    to major progress.
+  risk: Medium-High
+  diagram: 3
+- name: Mode Start
+  value: Starts Encounters, collects Mystery, advances wizard progress, and serves
+    as a Satellite jackpot.
+  risk: Medium
+  diagram: 4
+- name: Satellite jump
+  value: Starts Satellite Multiball and collects the 200M satellite payoff after jackpots
+    are complete.
+  risk: High
+  diagram: 5
+- name: Right ramp
+  value: Advances GOLDENEYE, Tank progress, and Satellite jackpots.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take Satellite Multiball when ready. Collect four jackpots without overworking
+    the jackpot value, then take the 200M satellite collect and moving 150M Super.
+    Avoid the right ramp on copies with an outlane-hop return.
+  behind: Pursue both Satellite Multiball and the GOLDENEYE ramp hurry-up into satellite
+    collect. GOLDENEYE! has the deepest ceiling, but Q's Pen is a dangerous bottleneck.
+  key_decision: Take immediate Tank Multiball safety, or cancel it with the gun trigger
+    and risk the satellite shot for the 200M payoff and repeatable 150M Supers.
+danger:
+- The right-ramp return can hop over the inlane and drain without registering the
+  outlane.
+- A missed satellite jump is airborne and can ricochet almost anywhere.
+- Q's Pen requires repeated standup attacks and is both dangerous and a wizard-mode
+  bottleneck.
+- Center Eject is rebound-prone, despite code-provided short saves for some immediate
+  drains.
+- The pop exits feed between Center Eject and the satellite target bank with little
+  control.
+commentary:
+- Two virtual locks are in—now the left inlane will raise the jump ramp for Satellite
+  Multiball.
+- That ball is staying on the satellite; if play drops to one ball, the game can release
+  it and keep multiball alive.
+- Four jackpots are done—now he can knock the satellite ball loose for 200 million.
+- 'GOLDENEYE is complete: three ramp hurry-ups, then the satellite for the big cash-out.'
+- Eject or Die just saved him, but he has about six seconds to hit the center target.
+- He's cancelling Tank with the trigger—passing on immediate multiball for the more
+  valuable Satellite shot.
+trivia:
+- GoldenEye was Ward Pemberton's final documented pinball design.
+- Production GoldenEye machines reportedly debuted at a Flint, Michigan pinball tournament
+  in January 1996, before the March release.
+- The satellite shot leaves the playfield and must be caught by a magnet in the rotating
+  dish.
+- A March 1996 service bulletin addressed a GI overload and magnet-processor power
+  changes.
+- There is no mechanical knocker; an electronic “BLOP” announces a replay.
+summary: Build locks → raise satellite ramp → collect four jackpots → 200M satellite
+  release → moving Super Jackpot
+venue_notes:
+- CPU is reported as probably 4.04; the detailed rules documentation is based on CPU
+  4.02, so exact revision differences are not established.
+- Sega Tournament Mode is enabled.
+- Extra Ball handling is unknown.
+- Satellite and Eject-or-Die magnet reliability is unknown.
+- Q-target rebounds are the notably dangerous feed on this machine.
+image: images/goldeneye-sega-1996.jpg

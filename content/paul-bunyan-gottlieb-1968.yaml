@@ -1,0 +1,104 @@
+id: paul-bunyan-gottlieb-1968
+name: Paul Bunyan
+manufacturer: D. Gottlieb & Co.
+year: 1968
+metadata:
+  designer: Wayne Neyens, Ed Krynski and Steve Kirk
+  artist: Art Stenholm
+  production: 1,900
+  era: Two-player electromechanical
+  multiball: No multiball
+hook: 'Six short flippers turn Paul Bunyan into a relay-recovery game: complete A-B-C
+  in order, cash the lit 500-point letter, and pounce on lit 600-point kick-outs.'
+rules:
+  primary: On this 5-ball game, complete A-B-C in order to light a running A, B, or
+    C target for 500 points. Hit that lit target to collect the award and reset the
+    sequence.
+  bullets:
+  - The A-B-C bank carries between players and games until the sequence is completed.
+  - Bullseye-target progress lights the top rollunder for Shoot Again.
+  - Either lit kick-out hole scores 600 points.
+  - There is no end-of-ball bonus, jackpot ladder, or later-style scoring multiplier.
+watch:
+- title: A-B-C progress
+  text: 'Track the shared A-B-C lamps: on this 5-ball setup the letters must be completed
+    in order.'
+- title: Lit letter target
+  text: A lit A, B, or C target is the immediate 500-point cash-out and resets the
+    sequence.
+- title: Top rollunder
+  text: When lit, it is a qualified upper-flipper opportunity for Shoot Again.
+- title: Lit kick-out holes
+  text: Either lit side kick-out is worth 600 points, a massive swing on this scoring
+    scale.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Shoot Again rollunder
+  text: Bullseye-target progress lights the top rollunder for Shoot Again. Confirm
+    the venue's handling before describing the award in detail.
+- type: other
+  name: Lit kick-out holes
+  text: Each side kick-out can light for 600 points; the qualification sequence is
+    not specified here.
+shots:
+- name: Left kick-out hole
+  value: Up to 600 points when lit; a major immediate payoff.
+  risk: Medium
+  diagram: 1
+- name: A-B-C targets
+  value: Complete the ordered sequence to set up the 500-point lit-letter target.
+  risk: High
+  diagram: 2
+- name: Top rollunder
+  value: Qualified Shoot Again or high-value upper-flipper opportunity.
+  risk: Medium-High
+  diagram: 3
+- name: Right kick-out hole
+  value: Up to 600 points when lit; a major immediate payoff.
+  risk: Medium
+  diagram: 4
+strategy:
+  ahead: Favor survival and relay recovery, using each flipper pair to return the
+    ball upstairs. Cash an already-lit 500-point target or 600-point hole, but do
+    not force lower-field standups merely to build features.
+  behind: Attack the lit 500-point A-B-C cash-out and lit 600-point kick-outs aggressively;
+    a few awards can outweigh ordinary switch scoring.
+  key_decision: 'Take the risky high-value shot now, or use the possession to recover
+    upstairs? The shared A-B-C state also matters before the plunge: a player may
+    inherit, or leave, a nearly completed sequence.'
+danger:
+- Below the middle flippers, survival can become extremely short.
+- Dual outlanes make lateral rebounds particularly punishing.
+- A-B-C standup rebounds can remove the chance to recover upstairs.
+- The two-inch flippers make controlled cradles inconsistent.
+- Kick-out eject direction and strength are restoration-dependent.
+commentary:
+- 'A-B-C is the setup here: on this five-ball game, those letters have to be completed
+  in order.'
+- That lit letter is worth 500 points, enormous on this scoring scale.
+- Sequence complete, cash collected, and now A-B-C resets.
+- 'Six short flippers make this a relay-recovery game: keep sending the ball back
+  upstairs.'
+- That kick-out is lit for 600; one shot can move the entire match.
+- The A-B-C bank can carry across players and games, so this progress may have been
+  inherited.
+trivia:
+- Gottlieb promoted the six flippers as enabling relay recovery shots from one playfield
+  section to the next.
+- Paul Bunyan and its related Big Jack were Wayne Neyens' final conventional Gottlieb
+  design before Challenger.
+- The design team combined Wayne Neyens, Ed Krynski, and Steve Kirk.
+- Art Stenholm's backglass depicts the giant lumberjack with oversized grooming tools.
+- Gottlieb produced 1,900 Paul Bunyans; the related Italian Add-A-Ball Big Jack followed
+  months later.
+summary: Ordered A-B-C → lit 500 target → relay recovery → lit 600 holes → shared
+  tournament state
+venue_notes:
+- 'Configured for 5 balls: complete A-B-C in order.'
+- Stock A-B-C state carries between players and games until completed.
+- Shoot Again handling is listed as either plunge without flipping or ignored; confirm
+  the local ruling before commentary.
+- Do not assume Big Jack award behavior is identical to Paul Bunyan.
+- Verify the top-rollunder sequence and kick-out eject behavior on this physical game.
+image: images/paul-bunyan-gottlieb-1968.jpg

@@ -1,0 +1,140 @@
+id: iron-man-pro-stern-2014
+name: Iron Man (Pro Vault Edition)
+manufacturer: Stern Pinball
+year: 2014
+metadata:
+  designer: John Borg
+  artist: ''
+  production: Vault Edition re-release of the 2010 Iron Man Pro
+  era: S.A.M. system / DMD
+  multiball: War Machine, Iron Monger, Whiplash, and Do or Die Multiball
+hook: Stage War Machine with Monger or Whiplash, start War Machine first for the stack,
+  and add 2X or Bogey before multiball when the risk is worth it.
+rules:
+  primary: Complete Drone targets to light War Machine, build Monger with spinner
+    work or Whiplash with its standups, then start War Machine before either villain
+    to stack it. Monger and Whiplash cannot stack with each other.
+  bullets:
+  - 'Iron Monger: spell MONGER at the spinner to raise him, then hit Monger directly
+    to start multiball; repeated Monger hits light the center-spinner Super Jackpot
+    during it.'
+  - Whiplash standups qualify its multiball. On V1.85+, jackpots start at 350K, with
+    a 2.5M halfway collect and a 5M Super Jackpot.
+  - Iron Man standups cycle timed features including Fast Scoring, 2X Scoring, and
+    a hurry-up; 2X and Bogey can run underneath multiball.
+  - Starting all five character objectives on one ball lights the 35M Do or Die hurry-up
+    at the center spinner; it is separate from Do or Die Multiball.
+  - Repeated ramps start We Got a Bogey, a timed ramp-scoring round; later rounds
+    may require balanced left/right ramp work.
+watch:
+- title: War Machine lit
+  text: All four Drone objectives are complete and War Machine Multiball is ready.
+    Starting it first preserves the chance to stack a villain multiball.
+- title: Iron Monger rises
+  text: Monger Battle is active. If War Machine is already running, direct Monger
+    hits can turn this into the valuable stacked multiball.
+- title: Iron Man targets pulsing
+  text: A timed scoring feature is ready. With multiball approaching, the player may
+    start it first so it runs underneath the multiball.
+- title: Five character inserts lit
+  text: All five character objectives have started on this ball, lighting the 35M
+    Do or Die hurry-up at the center spinner.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge into the flashing top rollover lane. The left-orbit up-post normally
+    helps feed the top lanes, while flippers select the lane.
+  value: Controlled plunge behavior and the normal skill-shot award.
+- name: Alternate Skill Shot
+  how: Hold the left flipper before plunging. The orbit post stays down and the normal
+    skill shot is disabled; either top lane collects it.
+  value: Scores 1M plus 250K for each additional successful skill shot, with freer
+    orbit flow but less controlled plunge behavior.
+features:
+- type: mystery-award
+  name: S.H.I.E.L.D. Mystery
+  text: Complete the two top lanes and four lower lanes, then collect at War Machine.
+- type: extra-ball
+  name: Iron Man Standup Extra Ball
+  text: V1.85 added an Extra Ball for completing the Iron Man standups; factory qualification
+    is two completions.
+- type: ball-save
+  name: Ball Save
+  text: Factory-standard ball save is 5 seconds; Competition Mode is enabled at this
+    venue.
+- type: other
+  name: Jericho Missile Mayhem
+  text: Collect Mark I–VI suits to reach this long-game path.
+shots:
+- name: Left ramp
+  value: Builds Bogey and flowing combo scoring; a safer repeatable scoring line.
+  risk: Medium
+  diagram: 1
+- name: Center spinner
+  value: Advances Monger, collects Do or Die, and contributes Mark bonus.
+  risk: Medium-High
+  diagram: 2
+- name: Iron Monger
+  value: Finishes Monger Battle and starts Monger Multiball, especially valuable under
+    War Machine.
+  risk: High
+  diagram: 3
+- name: Whiplash
+  value: Stages and starts Whiplash Multiball.
+  risk: High
+  diagram: 4
+- name: War Machine kicker
+  value: Starts War Machine Multiball and collects S.H.I.E.L.D. awards.
+  risk: Medium-High
+  diagram: 5
+- name: Drone targets
+  value: Complete Ground, Air, Tactical, and Sea to qualify War Machine.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take the prepared War Machine-to-Monger or Whiplash stack without insisting
+    on 2X or Do or Die. Flowing ramp and Bogey scoring is attractive when simply protecting
+    a lead.
+  behind: Light 2X, prepare multiple characters, start War Machine, then layer Monger
+    or Whiplash and pursue the same-ball 35M Do or Die hurry-up.
+  key_decision: Cash the ready multiball now, or leave it staged while preparing 2X,
+    Bogey, or Do or Die? Extra setup raises the payoff and the chance of losing the
+    ball first.
+danger:
+- Repeated Iron Monger bashes can rebound toward either outlane or the middle.
+- Whiplash catches and accelerates the ball magnetically, making possession unpredictable.
+- War Machine ejects forcefully toward the flippers; be ready for an uncontrolled
+  return.
+- Weak ramp attempts can reject quickly into the danger area.
+- The left outlane is regarded as especially hungry; early nudging is often required.
+commentary:
+- War Machine is ready—starting it first is what keeps the stack available.
+- Monger and Whiplash do not coexist, so committing to one closes the other route.
+- He is holding multiball for 2X first; that is where the leverage comes from.
+- All five characters are started on this ball—that lights Do or Die for a 35-million
+  hurry-up.
+- Iron Monger is up; now direct bash shots can turn this fight into multiball.
+- That War Machine eject comes back with authority—it is not automatically a controlled
+  return.
+trivia:
+- The 2014 game was Stern's first announced Vault Edition, bringing the 2010 title
+  back into production.
+- The Vault retained the original rules; V1.83 notes report no game-rule differences
+  between VE and non-VE builds.
+- The three major toys were remolded as stronger one-piece figures for the Vault Edition.
+- Whiplash catches and accelerates the ball magnetically, while War Machine fires
+  it back at the player.
+- The 2020 update added a skill shot and rebalanced Whiplash Multiball.
+summary: Stage War Machine → stack a villain multiball → add 2X/Bogey → chase Do or
+  Die → manage violent returns
+venue_notes:
+- ROM is V1.86.
+- Extra Balls are disabled and provide no benefit.
+- Competition Mode is enabled.
+- The Iron Man Mode During Multiball adjustment is unknown; its factory default is
+  off.
+- The left-orbit up-post status is unknown, so normal versus alternate skill-shot
+  behavior may differ.
+- Later V1.85/1.86 changes apply to compatible Vault and original Pro versions; the
+  Vault was not a separate rules edition.
+- Jericho carryover is operator-adjustable.
+image: images/iron-man-pro-stern-2014.jpg

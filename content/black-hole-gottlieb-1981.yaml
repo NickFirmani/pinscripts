@@ -1,0 +1,125 @@
+id: black-hole-gottlieb-1981
+name: Black Hole
+manufacturer: D. Gottlieb & Co.
+year: 1981
+metadata:
+  designer: John Buras and Adolf Seitz Jr.
+  artist: Terry Doerzaph
+  production: 8,774
+  era: System 80 widebody
+  multiball: 3-ball multiball with physical locks on both playfields
+hook: 'A widebody built around its reversed lower playfield: safely grind the upper
+  saucer, or risk the Gravity Tunnel for huge lower-playfield scoring and multiball.'
+rules:
+  primary: Complete B-L-A-C-K and H-O-L-E to raise lower-playfield G-Force scoring,
+    open the Re-Entry Gate before going downstairs, then build Bonus X and locks for
+    multiball.
+  bullets:
+  - Four yellow standups light the upper captive-hole lock and Open Gate arrow; upper-lock
+    qualification is player-specific.
+  - One completed letter sequence gives 2× G-Force; both give 3× for the current ball.
+  - All bonus is earned downstairs, displayed separately, and added at end of ball
+    with Bonus X up to 5×.
+  - The lower captive hole is always active; on original software its locked ball
+    persists between balls, while an upper locked ball ejects at that player's turn
+    end.
+  - With both locks occupied, shoot the Gravity Tunnel for two-ball lower-playfield
+    action, then three-ball upper-playfield action after re-entry.
+watch:
+- title: Blue captive-hole lamp
+  text: A flashing blue lamp means the upper-left saucer will lock the ball. If it
+    is dark, repeated saucer shots may be an intentional 5K grind.
+- title: G-Force lamps
+  text: One completed sequence means 2× lower-playfield scoring; both means 3× for
+    the current ball.
+- title: Re-Entry Gate
+  text: The green Open Gate arrow is survival state. A closed gate makes a basement
+    trip far more dangerous.
+- title: Both locks occupied
+  text: The Enter Gravity Tunnel callout means multiball is ready; the next tunnel
+    shot begins the lower-playfield phase.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit at the upper captive hole by completing the lit lower four-bank
+    or through upper rollunder progression. Original settings allow one extra ball
+    per ball-in-play.
+- type: other
+  name: Re-Entry Gate
+  text: 'Not a conventional ball save: an earned open gate can return a lower-playfield
+    drain to the upper playfield.'
+shots:
+- name: B-L-A-C-K drops
+  value: Advances G-Force and lights the spinner; use it to set up 2× or 3× lower
+    scoring.
+  risk: Medium-High
+  diagram: 1
+- name: Gravity Tunnel / spinner
+  value: Enters the lower playfield and starts multiball when both locks are occupied.
+  risk: High
+  diagram: 2
+- name: Upper captive-hole saucer
+  value: Scores a repeatable 5K while unlit; when lit, it locks a ball for multiball.
+  risk: Low
+  diagram: 3
+- name: H-O-L-E drops
+  value: Advances G-Force and lights the 10K rollover for the same multiplier setup.
+  risk: Medium-High
+  diagram: 4
+- name: Lower drop banks
+  value: Open the Re-Entry Gate; make these the priority downstairs when the gate
+    is closed.
+  risk: High
+  diagram: 5
+- name: Lower captive hole / rollunder
+  value: Locks the lower ball and builds Bonus X toward 5×.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: If the upper saucer feed is reasonably controllable, repeatedly take the
+    unlit 5K saucer and avoid completing all four yellow standups so it does not become
+    a lock.
+  behind: Chase 3× G-Force, 5× Bonus X, lower-playfield scoring, and multiball for
+    the larger ceiling.
+  key_decision: Keep banking safe upper-saucer points, or light its lock and commit
+    to the riskier Black Hole progression route.
+danger:
+- 'Entering downstairs with the Re-Entry Gate closed: a lower drain is lost unless
+  a lower target bank is completed first.'
+- Upper pops can close an opened gate, making a previously safe tunnel trip dangerous.
+- Upper drop-target rebounds can return directly toward the center gap.
+- At lower right, a ball can push through the gate, have it close behind, and drain.
+- Lower-left cradle attempts can climb the rail and dribble through the corner gap.
+commentary:
+- They’re leaving that blue lock dark so they can keep taking the five-thousand-point
+  saucer.
+- One G-Force accelerator is lit—that means everything downstairs is building at double.
+- 'Both sequences are done: three-times G-Force if they can survive the basement.'
+- The gate is closed—they need either lower target bank before that ball comes back.
+- That was successful re-entry; sending it straight back downstairs before another
+  upper switch can keep the gate open.
+- Both locks are occupied—the Gravity Tunnel now starts the two-ball lower-playfield
+  phase of multiball.
+trivia:
+- 'The reversed lower playfield was a major novelty: its flippers sit at the far end
+  and fire the ball back toward the player.'
+- Gottlieb produced 8,774 machines.
+- Domestic machines use Votrax SC-01 robotic speech.
+- Domestic cabinets used an infinity-mirror backglass with a rotating black-hole effect;
+  export versions were often simplified.
+- A separate fifth display through the playfield shows bonus accumulated on the lower
+  level.
+summary: Upper saucer grind → G-Force setup → open Re-Entry Gate → lower bonus and
+  locks → Gravity Tunnel multiball
+venue_notes:
+- This machine uses original Gottlieb System 80 software and is configured for 3 balls.
+- The upper-left captive-hole saucer is usually controllable but imperfect; treat
+  the 5K grind as situational.
+- The lower Re-Entry mechanism behaves normally.
+- Extra Ball/Special treatment is unknown; avoid assuming whether an Extra Ball is
+  played or converted to points.
+- On original software, the lower locked ball persists between balls and can be inherited
+  by another player; the upper locked ball does not.
+- Domestic speech and animated backbox differences do not change core gameplay.
+image: images/black-hole-gottlieb-1981.jpg

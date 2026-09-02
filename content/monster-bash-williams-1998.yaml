@@ -1,0 +1,144 @@
+id: monster-bash-williams-1998
+name: Monster Bash
+manufacturer: Williams Electronic Games
+year: 1998
+metadata:
+  designer: George Gomez
+  artist: Kevin O'Connor
+  production: 3,361
+  era: WPC-95 / DMD
+  multiball: Frankenstein Multiball, Mosh Pit Multiball, Monster Bash, and Monsters
+    of Rock
+hook: Start monster features, stack timed modes, then use Frankenstein Multiball to
+  freeze their clocks. Six started monsters light Monster Bash; six completed monsters
+  earn instruments and light the bigger Monsters of Rock.
+rules:
+  primary: Monster qualification is player-specific and persists across balls. Starting
+    a monster feature collects its portrait; completing its objective earns that monster's
+    instrument. Timed monster modes freeze during multiball, though their shots remain
+    live, so build the stack before starting Frankenstein.
+  bullets:
+  - Six started monster features light the scoop for four-ball Monster Bash; monster
+    shots begin at 2M and the center spinner collects a growing Bash Jackpot.
+  - 'Six instruments light the scoop for four-ball Monsters of Rock. Its first-trip
+    start value is at least 55M: 5M per instrument plus 25M per completed set.'
+  - Collect Frankenstein progress, then shoot the exposed center ramp to start three-ball
+    Frankenstein Multiball. Major shots score jackpots; Frank scores Supers that improve
+    after other jackpots.
+  - Six Mosh Pit spinner shots light Mosh Pit Multiball; 12 qualify an Extra Ball.
+  - The Big Six runs all six monster modes together, with Frankenstein started last
+    to freeze the other timed modes; it awards a 15M bonus.
+watch:
+- title: Portraits versus instruments
+  text: A lit portrait means that monster feature has started; a lit instrument means
+    it was completed. Six portraits light Monster Bash, while six instruments light
+    Monsters of Rock.
+- title: Exploding clock
+  text: During multiball, the exploding-clock display confirms active monster-mode
+    timers are frozen.
+- title: Frankenstein bank
+  text: When Frankenstein's target bank lowers, the center ramp is exposed and multiball
+    is ready. A delay usually signals more mode stacking.
+- title: Flashing scoop
+  text: 'A flashing scoop can be a major transition: Monster Bash or Monsters of Rock.
+    Monsters of Rock supersedes the ordinary Bash opportunity.'
+skill_shots:
+- name: Top-lane Skill Shot
+  how: Use flipper lane change to place the flashing D-I-G lane under the plunge.
+  value: Awards escalating points and a monster-specific Monster Bomb, which can spot
+    one required shot during that monster's active mode.
+features:
+- type: other
+  name: Monster Bombs
+  text: One themed bomb per monster can spot progress during that monster's active
+    mode. Bombs come from the skill shot, periodic spinner progress, and scoop awards.
+- type: player-control
+  name: Phantom Flip
+  text: Blue standups can qualify an automatic computer-controlled flip from a lit
+    return lane. It can stack and carry between balls on normal software.
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit from monster progression, 12 Mosh Pit shots, or a scoop award;
+    collect it at the scoop.
+- type: ball-save
+  name: Ball Save
+  text: The factory beginning-of-ball save is off. Multiballs have dedicated ball-save
+    windows.
+shots:
+- name: Creature lagoon
+  value: Advances Creature Feature; a relatively safe stack component whose shots
+    overlap broad multiball play.
+  risk: Medium
+  diagram: 1
+- name: Left and right Bride ramps
+  value: Start and complete Ball & Chain; especially lucrative when its timer is frozen
+    during multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Frankenstein center shot
+  value: Builds toward Frankenstein Multiball and Supers, plus the keyboard instrument.
+  risk: High
+  diagram: 3
+- name: Mosh Pit spinner
+  value: Builds Monster Bombs, Mosh Pit Multiball, and Extra Ball progress; a strong
+    alternate scoring route.
+  risk: High
+  diagram: 4
+- name: Left and right orbits
+  value: Advance Full Moon Fever and bumper progress toward Mummy Mayhem.
+  risk: Medium-High
+  diagram: 5
+- name: Scoop
+  value: Starts prepared Drac, Mummy, Monster Bash, Monsters of Rock, and Extra Ball
+    awards.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Take a practical two- or three-feature stack into Frankenstein rather than
+    chase the perfect six-mode setup. Creature and Full Moon Fever are attractive
+    overlaps; once Monster Bash is lit, taking it is generally safer.
+  behind: Push for a larger stack, the Big Six, or a long Monsters of Rock. After
+    Ball & Chain is completed, its remaining ramp and spinner scoring is tripled while
+    frozen in multiball; a dialed spinner offers a high-variance Mosh Pit route.
+  key_decision: How much more should be built before starting Frankenstein? Each added
+    mode raises overlap and instrument potential, but another setup shot can drain
+    or let timers expire.
+danger:
+- A dead-center miss at the Mosh Pit spinner can drain immediately.
+- A weak left-ramp attempt can roll back, hit a Phantom Flip target, and feed the
+  right slingshot.
+- Orbit returns can become uncontrolled through bumpers, slings, and outlanes.
+- Repeated Frankenstein bank shots can produce hard center rebounds.
+- If Phantom Flip is enabled, its automatic attempt can remove control and send a
+  ball to an outlane.
+commentary:
+- Frank is ready, but the player is holding off—more monster modes are being stacked
+  before multiball.
+- The clock exploded on the display, so those active mode timers are frozen for this
+  multiball.
+- Six monsters started means Monster Bash; six instruments completed means Monsters
+  of Rock.
+- Creature is excellent in this stack because so many major shots advance it.
+- 'That is the Big Six: all six monster modes running, with Frankenstein protecting
+  the clocks.'
+- The spinner can light Mosh Pit, but a brick there is aimed straight at the drain.
+trivia:
+- Monster Bash was among Williams' final conventional WPC games; Cactus Canyon followed
+  before Pinball 2000.
+- 'The six Universal Monsters form a rock band: Creature on sax, Wolf Man on drums,
+  Frankenstein on keyboard, Bride on vocals, Dracula on guitar, and Mummy on bass.'
+- Phantom Flip evolved from The Addams Family's Thing Flips and uses learned timing
+  to flip automatically.
+- The backglass hides appearances by Elvira and Wonder Woman, and the software includes
+  Williams cow jokes.
+- Lyman's Lament is an easter egg that replaces normal music and callouts with programmer
+  Lyman Sheats complaining about the game.
+summary: Start monsters → stack modes → Frankenstein freezes timers → collect instruments
+  → Monsters of Rock
+venue_notes:
+- This is the original 1998 Williams machine running official ROM v1.0.
+- Extra Balls are disabled or ignored for this event.
+- Do not confuse this machine with the 2018 Chicago Gaming Monster Bash Remake.
+- Frankenstein body-part counts vary by documentation; avoid stating a count in commentary.
+- Physical feeds are machine-specific.
+image: images/monster-bash-williams-1998.jpg

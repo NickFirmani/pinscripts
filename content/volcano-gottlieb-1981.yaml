@@ -1,0 +1,131 @@
+id: volcano-gottlieb-1981
+name: Volcano
+manufacturer: D. Gottlieb & Co.
+year: 1981
+metadata:
+  designer: John Osborne and Tom Szafransky
+  artist: David Moore
+  production: 3,655 produced
+  era: System 80 widebody
+  multiball: Three-ball Eruption multiball
+hook: Clear both drop banks to repeatedly collect the 50K Fire Pit conversion, or
+  chase lit craters for Lava Flow multipliers and three-ball Eruption multiball.
+rules:
+  primary: Complete both drop banks to light the Fire Pit; on this venue's 50K Extra
+    Ball conversion, it remains lit for repeat collections. Alternatively, capture
+    three balls through the currently lit crater to start Eruption multiball, with
+    2× playfield scoring in this 3-ball game.
+  bullets:
+  - The individually lit drop target advances Seismic bonus and lights the manual
+    left-outlane Ball Save.
+  - Only the currently lit crater locks; unlit craters return the ball through the
+    Volcano shaft. Locked balls persist between balls and players.
+  - Crater 2, 3, and 4 light timed 2×, 3×, and 4× Lava Flow scoring; craters 3 and
+    4 also light the spinner.
+  - At maximum base bonus, Collect Seismic lights; collecting resets the Seismic multiplier
+    to 1×.
+  - Visit all four craters, then collect at the top hole for Special.
+watch:
+- title: Fire Pit lit
+  text: Both drop banks completed means the Fire Pit is ready; here it stays lit and
+    scores 50K repeatedly.
+- title: Lava Level lamps
+  text: One flashing lamp means one ball is locked; two means the next successful
+    lit crater starts multiball.
+- title: Crater light
+  text: The lit crater determines the available lock and whether a timed Lava Flow
+    multiplier can be started.
+- title: Left Ball Save
+  text: A lit save means a left-outlane ball can still be rescued with the left green
+    cabinet button.
+skill_shots:
+- name: Moving Shooter Guide
+  how: On the plunge, use the right green cabinet button to freeze the moving shooter
+    guide and lit drop-target sequence, then plunge toward that target.
+  value: Hitting the individually lit target advances Seismic bonus and lights the
+    manual left-outlane Ball Save.
+features:
+- type: ball-save
+  name: Manual Left-Outlane Ball Save
+  text: After the individually lit drop target is hit, press the left green cabinet
+    button at the right moment to fire the save kicker.
+- type: player-control
+  name: Crater-Light Freeze
+  text: The right green button freezes moving crater lights for about one second;
+    another scoring switch must occur before it can be used again.
+- type: extra-ball
+  name: Fire Pit 50K Conversion
+  text: Both banks light the Fire Pit. At this venue, Extra Ball converts to 50K and
+    the Fire Pit remains lit for repeated collections.
+- type: extra-ball
+  name: Right-Outlane Fire Pit Light
+  text: If operator switch 31 is enabled, the closed-gate right outlane lights Fire
+    Pit for one shot.
+shots:
+- name: Fire Pit
+  value: Repeatable 50K collection after both drop banks are complete on this conversion
+    setup.
+  risk: Medium
+  diagram: 1
+- name: Spinner lane
+  value: Scores after craters 3 or 4 light the spinner.
+  risk: Medium
+  diagram: 2
+- name: Lit drop target
+  value: Advances Seismic bonus and lights the manual Ball Save.
+  risk: Medium
+  diagram: 3
+- name: Collect Seismic hole
+  value: Collects the maximum Seismic bonus and resets its multiplier to 1×.
+  risk: Medium
+  diagram: 4
+- name: Crater ramp
+  value: Captures lit craters toward multiball and starts Lava Flow multipliers.
+  risk: High
+  diagram: 5
+- name: Crater 4
+  value: Scores 16K, advances bonus by four, and starts timed 4× Lava Flow.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Finish the drop banks, farm the repeatable 50K Fire Pit, and keep the manual
+    left-outlane save armed rather than taking unnecessary crater risk.
+  behind: Chase crater locks and three-ball multiball, using timed Lava Flow multipliers
+    for larger scoring swings.
+  key_decision: Choose deterministic drops and repeated Fire Pit collections versus
+    the higher-variance crater, multiplier, and multiball route.
+danger:
+- The Volcano shaft eject is fast but controllable on this copy; be ready for an immediate
+  return.
+- Fast lower pop-bumper exits can send the ball directly to center drain.
+- The right lane and outlane are dangerous even with the gate.
+- Drop-target rebounds are a constant hazard while clearing both banks.
+- Three sequential multiball releases can overwhelm control before the first return
+  is settled.
+commentary:
+- Both banks are down, and on this setup the Fire Pit is a repeatable fifty-thousand-point
+  shot.
+- That lit target advances Seismic bonus and arms the manual left-outlane save.
+- Two balls are underground; one more successful lit crater starts the eruption.
+- This is a three-ball setup, so multiball doubles playfield scoring.
+- 'Crater four is the big one: sixteen thousand, four bonus advances, and timed four-times
+  scoring.'
+- Left outlane is not dead yet—the player has to press the save button themselves.
+trivia:
+- The four-hole crater assembly is a miniature skee-ball ramp.
+- Its motorized shooter guide can be stopped by the player to aim the plunge.
+- A double-layer backglass and light effect makes the volcano appear to erupt.
+- Volcano was Gottlieb's second speech game, following Mars God of War.
+- Contemporary trade coverage reported strong location-test earnings.
+summary: Drops → repeatable Fire Pit 50K → crater locks → Lava Flow → three-ball 2×
+  multiball
+venue_notes:
+- Extra Balls convert to 50K, and the Fire Pit remains lit after collection.
+- The game is configured for 3-ball play; Eruption multiball awards 2× playfield scoring.
+- Both cabinet-button mechanisms are reliable.
+- The shaft eject is fast but controllable.
+- Captured balls remain physically locked between players.
+- Right-outlane switch 31 status is unknown; do not assume its one-shot Fire Pit light
+  is available.
+- Physical crater capture, Fire Pit eject behavior, and pop exits remain copy-dependent.
+image: images/volcano-gottlieb-1981.jpg

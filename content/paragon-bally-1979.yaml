@@ -1,0 +1,139 @@
+id: paragon-bally-1979
+name: Paragon
+manufacturer: Bally Manufacturing
+year: 1979
+metadata:
+  designer: Greg Kmiec
+  artist: Paul Faris
+  production: 9,120 units
+  era: 1979 Bally solid-state widebody
+  multiball: No multiball
+hook: Build a lasting Super Bonus floor early, then clear Valley of Demons for escalating
+  multipliers and the Treasure Chamber's 5× bonus.
+rules:
+  primary: 'Build base bonus to 20K as early as possible: the 20K, 30K, and 40K Super
+    Bonus floors persist for that player across remaining balls. Valley of Demons
+    is the main route, progressing to 2×, 3×, and then a first-visit 5× Treasure Chamber
+    collect.'
+  bullets:
+  - Base bonus runs from 1K to 49K; spinner, targets, saucers, and Waterfall can advance
+    it.
+  - Valley targets 1–2 advance points or bonus; target 3 gives 2× and target 4 gives
+    3×. The first Treasure Chamber visit that ball collects 5×.
+  - A second Treasure Chamber visit that ball awards an Extra Ball or its configured
+    substitute and resets Valley; a later completed Valley can light a Special there.
+  - Golden Cliffs rises from 2K to 20K in 2K steps and keeps its value between balls;
+    at 20K it also advances bonus.
+  - PARAGON letters persist. With sequential letters on this game, the right saucer
+    spots the lit letter; completion lights it for 25K plus Special.
+watch:
+- title: Super Bonus floor
+  text: At 20K, 30K, or 40K, the Super Bonus floor is protected for that player's
+    later balls.
+- title: Valley progress
+  text: Three Valley drops down means 2× is active; all four means 3×, with Treasure
+    Chamber open for 5×.
+- title: Golden Cliffs
+  text: Its value persists between balls. Once it reaches 20K, every later visit remains
+    a major repeatable score.
+- title: PARAGON letters
+  text: Letters are sequential here, so a nearly complete word makes the right saucer
+    especially valuable.
+skill_shots:
+- name: Right Paragon saucer plunge
+  how: With sequential PARAGON letters, plunge toward the right Paragon saucer to
+    spot the currently useful letter and advance bonus.
+  value: Builds persistent PARAGON progress and bonus. This is an observed plunge
+    strategy, not a dedicated coded skill-shot award.
+features:
+- type: ball-save
+  name: Beast's Lair Save-A-Ball
+  text: The lower-left escape ramp can return the ball to the flippers, but survival
+    is difficult and often needs nudging or mini-flipper intervention. It is passive,
+    not a timed ball save.
+- type: extra-ball
+  name: Second Treasure Chamber visit
+  text: The second Treasure Chamber visit in one ball awards an Extra Ball, or its
+    configured substitute.
+- type: other
+  name: Special awards
+  text: PARAGON, Waterfall, right-drop progression, and Treasure Chamber can light
+    Specials; their award is operator-configurable.
+shots:
+- name: Valley of Demons
+  value: 'Primary bonus and multiplier setup: target 3 gives 2×, target 4 gives 3×.'
+  risk: Medium-High
+  diagram: 1
+- name: Treasure Chamber
+  value: 'Behind Valley: first visit collects 5× bonus; later visits can award the
+    configured Extra Ball and eventually a Special.'
+  risk: High
+  diagram: 2
+- name: Golden Cliffs
+  value: Builds a persistent 2K-to-20K value; at 20K it also advances bonus.
+  risk: Medium
+  diagram: 3
+- name: Spinner
+  value: Can advance bonus efficiently toward a Super Bonus floor on a strong copy.
+  risk: Medium-High
+  diagram: 4
+- name: Paragon saucer
+  value: Spots sequential PARAGON letters, advances bonus, and pays 25K plus Special
+    when PARAGON is complete.
+  risk: Medium-High
+  diagram: 5
+- name: Waterfall
+  value: Advances bonus and collects its lit value; best taken opportunistically.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Secure the earliest Super Bonus floor, then favor Valley and controllable
+    returns. Do not chase the center Advance Bonus standup or Waterfall for marginal
+    value.
+  behind: Chase 5× and push base bonus toward 40K–49K; a 49K × 5 end-of-ball count
+    is 245K. A mature 20K Golden Cliffs or point-converted Special can supply immediate
+    comeback scoring.
+  key_decision: 'Valley versus spinner: Valley builds multiplier with relatively controllable
+    returns, while a strong spinner may reach Super Bonus faster but feeds unpredictable
+    bumpers. Choose by copy behavior.'
+danger:
+- Beast's Lair can turn into lower-left bumper and rubber chaos despite its escape
+  passage.
+- With both right scissor flippers held up, the ball can drain between them; keep
+  them down unless needed.
+- Waterfall exits can feed cleanly, hit a sling, or go straight down the middle.
+- Hard Valley or Treasure Chamber shots can reject rapidly off drops or blocking plastic.
+- A top-right bumper-to-rubber ricochet can head directly toward the center drain.
+commentary:
+- That third Valley target gives them double bonus; one more gets triple.
+- The Valley is clear—now the Treasure Chamber is the five-times-bonus shot.
+- They just reached twenty thousand, so that Super Bonus is locked in for the rest
+  of the game.
+- Five times with forty-nine thousand base would be 245,000 at the drain.
+- Golden Cliffs is up to twenty thousand now—that value persists, so every later visit
+  stays lucrative.
+- Here comes the Waterfall exit; on Paragon, making the shot is only half the problem.
+trivia:
+- Bally's first production Super Size widebody was advertised as 6½ inches wider than
+  a conventional game.
+- Valley of Demons introduced the in-line drop-target mechanism to production pinball.
+- Contemporary advertising promoted the Beast's Lair Save-A-Ball Ramp as a signature
+  feature.
+- Paul Faris reportedly depicted himself and his wife in the fantasy artwork.
+- Golden Cliffs plays an increasingly long musical phrase as its value rises, derived
+  from “Funky Worm.”
+summary: Super Bonus floors → Valley multipliers → Treasure Chamber 5× → Golden Cliffs
+  persistence → controlled survival
+venue_notes:
+- This is a 3-ball tournament game.
+- PARAGON letters are sequential.
+- Valley bonus-advance setting is unknown; Valley targets spotting PARAGON letters
+  is also unknown.
+- Extra Balls and Specials use stock novelty values of 25K and 50K, respectively,
+  or are disabled.
+- 'All noted physical feeds are especially dangerous on this copy: Valley rejects,
+  Treasure Chamber rejects, Waterfall exit, Beast''s Lair, and the right scissor-flipper
+  area.'
+- Standard domestic Paragon has four flippers; rarer European export games used three
+  flippers.
+image: images/paragon-bally-1979.jpg

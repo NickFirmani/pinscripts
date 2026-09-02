@@ -1,0 +1,140 @@
+id: family-guy-stern-2007
+name: Family Guy
+manufacturer: Stern Pinball
+year: 2007
+metadata:
+  designer: Pat Lawlor
+  artist: John Youssi and Margaret Hudson
+  production: Approximately 2,500
+  era: Stern S.A.M. DMD era
+  multiball: Fart, Lard, Stewie, and final Sperm Attack
+hook: Build TV through the Lois spinner, use Death's visible center post for safety,
+  then stack TV modes with Fart or Lard Multiball—or gamble on Stewie's miniature
+  playfield for a huge jackpot swing.
+rules:
+  primary: Grind the Lois spinner to light TV at the scoop, start and complete all
+    five TV modes for TV Wizard, and stack modes with Fart or Lard Multiball when
+    possible. Fart Multiball begins after three F-A-R-T-bank completions; Stewie Pinball
+    and its multiball are the high-variance alternate route.
+  bullets:
+  - TV needs 10 spinner rotations first, then five more per qualification up to 30;
+    pop bumpers select the next unplayed mode.
+  - TV Wizard jackpots are built from shots made during earlier TV modes; each jackpot
+    raises its multiplier.
+  - Fart Multiball starts at three F-A-R-T completions; later starts require progressively
+    more, up to six.
+  - Spell P-I-N-B-A-L-L at the captive ball, then shoot the scoop for Stewie Pinball.
+    Complete all five Griffins there to start Stewie Multiball.
+  - During Stewie Multiball, collect each character on both playfields to light a
+    2M Super Jackpot at Evil Monkey; it briefly lights a Triple Super Secret Jackpot
+    at the Drunken Clam.
+watch:
+- title: TV at the scoop
+  text: Flashing TV means enough spinner work is complete and a mode can be started
+    at the scoop.
+- title: Death post raised
+  text: The visible center post is temporarily protecting the drain, opening a short
+    window for riskier shots.
+- title: PINBALL complete
+  text: The next scoop enters Stewie Pinball rather than an ordinary TV feature.
+- title: Clam after Stewie Super
+  text: A flashing Drunken Clam immediately after the Super Jackpot is the brief Triple
+    Super Secret Jackpot chance.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge onto the lowest F target in the F-A-R-T bank while Skill Shot is lit.
+  value: 500K initially, rising 250K after each successful skill shot; also advances
+    Fart Multiball.
+- name: Secret Skill Shot
+  how: Keep the Skill Shot lamp lit through the plunge, reach the upper flipper without
+    touching F-A-R-T or Death, then shoot Evil Monkey.
+  value: Scores twice the current Skill Shot value and advances the next value; often
+    called the super skill shot.
+features:
+- type: ball-save
+  name: Death ball-save post
+  text: A lit Death target raises a physical post between the flippers for a temporary
+    center-drain save.
+- type: mystery-award
+  name: Drunken Clam Mystery
+  text: Can award points, Bonus X, Collect Bonus, Extra Ball, PINBALL or TV progress,
+    ball-save features, Crazy Chris, and other context-aware awards.
+- type: extra-ball
+  name: Extra Ball
+  text: Left-ramp progress can light Extra Ball at the upper captive ball; Mystery
+    can also light one.
+shots:
+- name: Evil Monkey ramp/lane
+  value: Advances Evil Monkey, Crazy Chris, Stewie Super Jackpot, and the secret skill
+    shot.
+  risk: Medium-High
+  diagram: 1
+- name: Death target
+  value: Raises the center ball-save post for a temporary safety window.
+  risk: Medium-High
+  diagram: 2
+- name: F-A-R-T bank
+  value: Builds toward Fart Multiball and receives the normal skill shot.
+  risk: Medium-High
+  diagram: 3
+- name: Beer Can
+  value: Advances Beer Can awards, including Lard Multiball.
+  risk: Medium
+  diagram: 4
+- name: TV scoop
+  value: Starts qualified TV modes, Stewie Pinball, and wizard features.
+  risk: Medium
+  diagram: 5
+- name: Lois spinner / right orbit
+  value: Lights TV modes through spinner rotations; the core repeatable progression
+    shot.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Raise Death when available, favor repeatable spinner-to-TV progression, and
+    bring TV modes into multiball instead of exposing a controlled ball. Consider
+    whether Stewie Pinball is worth leaving a stable main-playfield ball.
+  behind: Stack a lucrative TV mode or Crazy Chris with Fart or Lard Multiball, or
+    chase Stewie Multiball. The 2M Stewie Super into the 6M Triple Super Secret Jackpot
+    is a visible swing sequence.
+  key_decision: Keep grinding predictable TV and multiball scoring, or divert into
+    Stewie Pinball for larger jackpots and wizard progress on a much tougher miniature
+    playfield.
+danger:
+- Stewie's miniature flippers are unforgiving, and balls can jump over them—especially
+  from the Lois-ramp return.
+- When the Stewie timer expires, the next mini-ball drain ends the feature.
+- Direct F-A-R-T and Death-target hits can rebound quickly toward center.
+- The Drunken Clam eject returns into the pop-bumper area rather than a controlled
+  flipper.
+- When the Death-post gong countdown ends, a previously protected center drain becomes
+  live again.
+commentary:
+- The spinner has TV lit—now they're looking at the scoop to bring a mode in.
+- Death is up, so that center post gives them a few seconds to attack.
+- That's three F-A-R-T banks; here comes the first multiball.
+- Crazy Chris can get to a million a shot—this is absolutely a match-moving mode.
+- PINBALL is complete; the scoop now sends them upstairs to Stewie's miniature game.
+- Stewie Super is in—watch the Clam, because the Triple Super Secret Jackpot is only
+  there briefly.
+trivia:
+- Family Guy was designed by Pat Lawlor and was one of his later Stern designs before
+  CSI.
+- The machine has exclusive Seth MacFarlane dialogue and Adult, Moderate, and Family
+  speech settings.
+- Stewie's mini-playfield has its own smaller ball, flippers, ramp, targets, and orbits.
+- Stern reused the basic physical playfield for Shrek in 2008, replacing Stewie Pinball
+  with Donkey Pinball.
+- Final software v12.0 arrived in January 2008, less than a year after the initial
+  February 2007 release.
+summary: Death safety → spinner TV → multiball stacks → Stewie gamble → jackpot swing
+venue_notes:
+- 'Software installed: v12.0.'
+- Competitive configuration is Stern Tournament Game/tournament rules or Competition
+  Mode.
+- Under Stern Tournament Game defaults, Extra Balls, Specials, and bonus credits are
+  disabled.
+- Stewie Multiball is best described as simultaneous main- and mini-playfield multiball;
+  published ball counts vary by whether the separate mini-ball is included.
+- The secret Evil Monkey-lane Skill Shot is also commonly called the super skill shot.
+image: images/family-guy-stern-2007.jpg

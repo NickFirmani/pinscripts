@@ -1,0 +1,150 @@
+id: beatles-gold-stern-2018
+name: The Beatles — Gold Edition
+manufacturer: Stern Pinball / Ka-Pow Pinball
+year: 2018
+metadata:
+  designer: George Gomez
+  artist: Christopher Franchi
+  production: 1,614 Gold Edition machines
+  era: SPIKE 2 LCD retro-style layout
+  multiball: All My Loving, Beatlemania, and Taxman
+hook: Start and finish songs, then decide whether to cash the drain-sensitive Song
+  Super Jackpot or risk stacking it. Level up all five songs for Beatlemania, while
+  timing loop and spinner multipliers with their matching modes.
+rules:
+  primary: 'Four normal songs are 60-second modes: Drive My Car uses loops, I Should
+    Have Known Better uses drop banks, Ticket to Ride uses spinners, and It Won’t
+    Be Long uses pops. All My Loving is an untimed two-ball multiball with doubled
+    scoring.'
+  bullets:
+  - After a song, complete F-A-B and F-O-U-R, then shoot the upper magnet to begin
+    another song.
+  - A completed song lights its total as a Song Super Jackpot behind F-A-B. Completing
+    more songs before collecting can multiply earlier values, but a drain loses the
+    uncollected award.
+  - On Competition Install, all five songs must reach Level 3 to qualify Beatlemania.
+    Its opening single-ball build raises the jackpot with drop-bank completions.
+  - 'Spell BEATLEMANIA with loops for ordered awards: 2X spinners, 5X loops, Collect
+    Bonus, then 10X loops.'
+  - Bonus can reach 75K times 7X; Bonus X carries from ball to ball.
+watch:
+- title: Song inserts
+  text: A quick flash marks the selected song, slow flash means previously played,
+    and solid means that song is complete at Level 5.
+- title: Song Super Jackpot
+  text: A lit target behind F-A-B means a completed-song total is waiting, and it
+    disappears if the ball drains.
+- title: BEATLEMANIA and upper magnet
+  text: Loop progress earns ordered multiplier and bonus awards; the upper magnet
+    is also central to song and wizard-mode starts.
+- title: Five songs at threshold
+  text: At the required song level, the upper magnet can start Beatlemania, a major
+    scoring breakpoint.
+skill_shots:
+- name: Super Duper Skill Shot
+  how: Plunge below the upper magnet so the first major contact is the top pop, or
+    shoot that pop from the upper-left flipper.
+  value: 100K; a strong tournament choice.
+- name: Super Skill Shot
+  how: Feed the upper-right flipper, then shoot the upper loop.
+  value: 25K; repeated successful Super and Super-Duper shots increase in value.
+- name: Secret Skill Shot
+  how: After rolling through the left inlane during play, shoot the temporarily lit
+    star rollover.
+  value: 75K on v1.10 and later.
+features:
+- type: ball-save
+  name: Multiball and Super Jackpot saves
+  text: Competition Install sets dedicated saves of 10 seconds for All My Loving,
+    15 seconds for Beatlemania, and 20 seconds for Taxman. A separate adjustable left-outlane
+    save can protect a recent Super Jackpot shot.
+- type: extra-ball
+  name: Extra Ball
+  text: Complete all three drop banks on one ball; the award alternates between the
+    inlanes with sling hits. Disabled extra balls score 200K.
+- type: mystery-award
+  name: Mystery
+  text: Competition Mode uses a deterministic award sequence. During relevant multiballs
+    and timed songs, Add-A-Ball or Add Time takes priority.
+- type: player-control
+  name: Song selection
+  text: With a ball detected in the shooter lane, use the flipper buttons to select
+    an available song.
+shots:
+- name: Left loop
+  value: Advances modes, BEATLEMANIA letters, and loop value; useful repeat scoring
+    and multiplier setup.
+  risk: Medium
+  diagram: 1
+- name: 1-9-6-4 bank
+  value: Advances drop features plus Bonus X and loop progression; often the safer
+    bank to work.
+  risk: Medium
+  diagram: 2
+- name: F-A-B bank / Song Super Jackpot
+  value: Required for next-song qualification and exposes the Song Super Jackpot target;
+    collect completed-song value here.
+  risk: High
+  diagram: 3
+- name: Upper magnet
+  value: Starts the next song, awards, jackpots, and wizard modes.
+  risk: Medium
+  diagram: 4
+- name: F-O-U-R bank
+  value: Required for next-song qualification and advances drop features.
+  risk: Medium-High
+  diagram: 5
+- name: Right loop
+  value: Advances modes, BEATLEMANIA letters, and loop value; useful repeat scoring
+    and multiplier setup.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Cash a lit Song Super Jackpot rather than greedily stacking it, take All
+    My Loving when convenient, and favor pop and loop routes over dangerous direct
+    drop shots.
+  behind: Push all five songs toward the Beatlemania threshold, pair 2X spinners or
+    5X loops with matching song modes, and consider stacking Song Super Jackpot. Taxman
+    is the high-variance ceiling.
+  key_decision: Cash Song Super Jackpot now, or risk another completed mode to multiply
+    it? A drain destroys the uncollected value, so match the choice to score position.
+danger:
+- Direct F-A-B shots are drain-prone; use early ball save when available.
+- F-O-U-R from the upper-left flipper can produce a particularly dangerous rebound.
+- A Super Jackpot return can head directly toward the left outlane.
+- Reverse or backhand feeds around the left inlane/outlane can pick up bad spin and
+  sling out.
+- The spinning record adds magnetic chaos; Competition Install limits it to multiball.
+commentary:
+- That song is finished — now the Super Jackpot behind F-A-B is worth the whole mode.
+- He can cash it now, or leave it alive and try to multiply it with another completed
+  song.
+- If this machine is on Competition Install, Level 3 across all five songs qualifies
+  Beatlemania.
+- That BEATLEMANIA award is 2X spinners — perfect if Ticket to Ride is coming next.
+- All My Loving is the built-in two-ball multiball, and everything scores double.
+- That Super Jackpot shot is not benign — watch the left outlane on the return.
+trivia:
+- The playfield modernizes Mike Kubin’s 1980 Stern Seawitch layout; Gomez changed
+  the geometry and added magnets, skill shots, and a hidden return.
+- Exactly 1,964 machines were announced in reference to the Beatles’ 1964 American
+  breakthrough; 1,614 are Gold Edition.
+- Despite its SPIKE 2 LCD platform, it uses simulated score reels and a ramp-free,
+  four-flipper retro layout.
+- Cousin Brucie, who introduced the Beatles at Shea Stadium, recorded custom game
+  callouts.
+- Version 1.22 added Classic Mode, with Seawitch-like scoring and no multiballs, magnets,
+  or center-disc action.
+summary: Songs → Song Super Jackpot → Beatlemania → loop/spinner multipliers → Taxman
+venue_notes:
+- The machine is reported as v1.27, but custom settings may differ from Competition
+  Install.
+- Competition Install disables extra balls and player game-mode selection, and requires
+  Level 3 on all five songs for Beatlemania.
+- 'Taxman qualification is venue-adjustable: HARD uses Level 5 songs and three All
+  My Loving jackpots; EASY uses Level 3 on other songs and one All My Loving jackpot.'
+- Do not state a Beatlemania ball count without confirming this machine’s setting.
+- The left-outlane Super Jackpot save status and duration are unconfirmed.
+- Gold, Platinum, and Diamond editions are cosmetic distinctions; no rules or playfield
+  differences were found.
+image: images/beatles-gold-stern-2018.jpg

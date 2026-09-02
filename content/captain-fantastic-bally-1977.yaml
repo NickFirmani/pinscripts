@@ -1,0 +1,93 @@
+id: captain-fantastic-bally-1977
+name: Captain Fantastic and the Brown Dirt Cowboy — Home Model
+manufacturer: Bally/Midway
+year: 1977
+metadata:
+  designer: ''
+  artist: ''
+  production: ''
+  era: Bally Series II solid-state home pinball
+  multiball: None
+hook: The rare 1977 solid-state home version rewards 1-2-3 targets for 2X and 3X bonus,
+  then top-rollover completion for 24K and a lit Extra Ball lane.
+rules:
+  primary: Build bonus through the top rollovers and numbered 1-2-3 targets. Targets
+    1 and 2 establish Double Bonus; all three establish Triple Bonus, paid when the
+    ball leaves the playfield.
+  bullets:
+  - Each top rollover scores 1K and adds 1K to bonus.
+  - Complete the top rollover set for 24K; its lamps reset and the lower outside Extra
+    Ball rollovers light.
+  - Top-rollover progress, target progress, and Extra Ball state are player-specific
+    and carry to that player's next ball until collected.
+  - A tilt disables scoring and forfeits the current end-of-ball bonus, though an
+    Extra Ball already earned remains.
+watch:
+- title: Top rollover lamps
+  text: Each dark lamp is progress toward the 24K completion award and lit lower-outside
+    Extra Ball rollovers.
+- title: Double/Triple Bonus
+  text: Two numbered targets made means 2X Bonus; all three means 3X end-of-ball bonus.
+- title: Lower outside Extra Ball lamps
+  text: Lit lamps mean the top set is complete, but the player must still collect
+    the Extra Ball through an outside rollover.
+- title: Same Player Shoots Again
+  text: This confirms that an Extra Ball has been earned.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Lower outside Extra Ball rollovers
+  text: Completing all top rollovers lights these rollovers. Passing through a lit
+    rollover earns an Extra Ball; multiple Extra Balls can accumulate.
+shots:
+- name: Top rollovers
+  value: Each scores 1K and adds 1K bonus; complete the set for 24K and light Extra
+    Ball collection.
+  risk: Medium
+  diagram: 1
+- name: 1-2-3 targets
+  value: Advance bonus; targets 1 and 2 make 2X Bonus, while all three make 3X Bonus.
+  risk: Medium-High
+  diagram: 2
+- name: Lower outside Extra Ball rollover
+  value: Collects a lit Extra Ball, subject to the venue's Extra Ball handling.
+  risk: High
+  diagram: 3
+strategy:
+  ahead: Finish the 1-2-3 targets and protect a Triple Bonus. Take a nearly complete
+    top set for its verified 24K award, but do not force the dangerous outside Extra
+    Ball collection.
+  behind: 'Chase the full combination: 3X Bonus, top-rollover completion, and the
+    Extra Ball opportunity. The 24K completion and another ball create the largest
+    variance.'
+  key_decision: Once Extra Ball is lit, decide whether the score and venue rules justify
+    attacking the lower outside rollover in drain territory.
+danger:
+- 'Lower outside Extra Ball rollover: its prize sits beside drain territory.'
+- Direct 1-2-3 target shots can rebound quickly.
+- The upper rollover area advances the feature but offers less-controlled returns.
+- Tilt is especially costly because it erases the end-of-ball bonus payout.
+commentary:
+- Two numbered targets are in—that means Double Bonus; the third makes it Triple.
+- 'They need one more top rollover: that is 24,000 and it lights the Extra Ball lanes.'
+- The Extra Ball is lit, not collected—they still have to survive that outside rollover.
+- That progress is player-specific and carries over, so they get another chance next
+  ball.
+- At Triple Bonus, survival is worth much more than another low-value switch.
+- 'Important distinction: this is the 1977 solid-state home game, not the four-flipper
+  commercial Captain Fantastic.'
+trivia:
+- This is model 614-2000, part of Bally's Series II home range.
+- It is a non-coin-operated home machine with digital scoring and four-player capability.
+- Series II hardware uses a Mostek 3870 processor.
+- The home cabinet has no coin door.
+- Dedicated home instruction and score cards are numbered 0614-00924 and 0614-00926.
+summary: 1-2-3 targets → 3X Bonus → top rollovers → 24K completion → Extra Ball opportunity
+venue_notes:
+- Extra Balls are handled either by disabling them or by plunging an earned ball without
+  flipping.
+- The 50K/100K free-ball adjustment is unknown; do not state its exact threshold behavior.
+- The machine uses the original Bally CPU and program.
+- This is the 1977 home model; commercial Captain Fantastic rules and layout advice
+  do not apply.
+image: images/captain-fantastic-bally-1977.jpg
