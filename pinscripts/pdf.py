@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Game-sheet rendering and binder PDF assembly."""
 
 from io import BytesIO
 from pathlib import Path
@@ -28,6 +28,11 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parent.parent
+WEBP_SUFFIX = ".webp"
+
+
+class PdfAssetError(ValueError):
+    """Raised when configured artwork cannot be used for PDF generation."""
 
 
 PAGE_W, PAGE_H = letter
@@ -175,21 +180,19 @@ def bullet(text, style=BODY):
     return Paragraph(f"&bull;&nbsp; {markup(text)}", style)
 
 
-def resolve_image_path(image_path, black_and_white=False):
+def resolve_image_path(image_path, black_and_white=False, root=ROOT):
     path = Path(image_path)
+
+    if path.suffix.lower() != WEBP_SUFFIX:
+        raise PdfAssetError(f"PDF image assets must be WebP: {image_path}")
 
     if black_and_white and not path.stem.endswith("-bw"):
         path = path.with_name(f"{path.stem}-bw{path.suffix}")
 
-    resolved = ROOT / path
-    if resolved.exists():
-        return resolved
-
-    for suffix in (".png", ".jpg", ".jpeg"):
-        alternative = resolved.with_suffix(suffix)
-        if alternative.exists():
-            return alternative
-
+    resolved = root / path
+    if not resolved.is_file():
+        mode = "black-and-white" if black_and_white else "color"
+        raise PdfAssetError(f"missing {mode} WebP image asset: {resolved}")
     return resolved
 
 
@@ -505,7 +508,12 @@ def _split_spread(spread_path, output_path, title):
         writer.write(stream)
 
 
-def render_game(content_path: Path, output_path: Path, black_and_white=False):
+def render_game(
+    content_path: Path,
+    output_path: Path,
+    black_and_white=False,
+    asset_root=ROOT,
+):
     data = load_yaml(content_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -571,7 +579,7 @@ def render_game(content_path: Path, output_path: Path, black_and_white=False):
 
     configured_image = data.get("image")
     image_path = (
-        resolve_image_path(configured_image, black_and_white)
+        resolve_image_path(configured_image, black_and_white, asset_root)
         if configured_image
         else None
     )

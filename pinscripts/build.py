@@ -2,7 +2,7 @@
 
 import sys
 
-from scripts.render import merge_pdfs, render_game
+from .pdf import merge_pdfs, render_game
 
 from .content import (
     PinRegistryError,
