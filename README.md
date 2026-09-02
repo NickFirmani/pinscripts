@@ -206,7 +206,33 @@ return to the terminal, and press Enter. The newest completed file added to
 `~/Downloads` after the search opened is copied into `images/`. A matching
 `content/research/<id>.md` supplies the destination basename when available;
 otherwise, the basename is derived from the entered game name. The downloaded
-file's extension is preserved.
+file's extension is preserved. Before copying, the command reports the image's
+pixel dimensions. Images with a long edge below 1000 pixels are treated as
+low resolution and are rejected by default; confirm the override only when a
+better source is unavailable.
+
+For a one-off pass over existing low-resolution images, search for replacement
+playfield images in Chrome:
+
+```sh
+make game-image-low-res
+```
+
+This scans color images whose long edge is below 1000 pixels and opens a Google
+Image search for each corresponding game in Chrome. Download a better result
+and press Enter in the terminal. Enter `s` to skip or `q` to stop.
+
+The replacement must pass the resolution check and is converted to preserve
+the original filename and format. The low-resolution original is retained in
+`images/low-res-backup/`. Any existing black-and-white companion is moved into
+the backup directory too, allowing `make game-image-bw` to regenerate it from
+the improved source. To inspect just one game or image path, provide it
+explicitly:
+
+```sh
+make game-image-low-res GAME="Jaws (Pro) Stern 2024"
+make game-image-low-res images/jaws-pro-stern-2024.jpg
+```
 
 Create a selected black-and-white companion for one color image:
 

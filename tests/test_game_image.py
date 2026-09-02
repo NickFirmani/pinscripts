@@ -146,6 +146,8 @@ class GameImageTests(unittest.TestCase):
                     "open_google_image_search",
                     side_effect=download_image,
                 ) as opened,
+                patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(app, "first_game_without_image", return_value=None),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(stdout),
                 redirect_stderr(stderr),
@@ -182,6 +184,8 @@ class GameImageTests(unittest.TestCase):
                     "open_google_image_search",
                     side_effect=download_image,
                 ),
+                patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(app, "first_game_without_image", return_value=None),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(io.StringIO()),
             ):
@@ -225,6 +229,7 @@ class GameImageTests(unittest.TestCase):
                     "open_google_image_search",
                     side_effect=download_image,
                 ) as opened,
+                patch.object(app, "image_dimensions", return_value=(1600, 2400)),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(stdout),
             ):
@@ -238,6 +243,81 @@ class GameImageTests(unittest.TestCase):
         self.assertEqual(result, 0)
         opened.assert_called_once_with("Missing Game 2026")
         self.assertIn("Selected first game without an image", stdout.getvalue())
+
+    def test_game_image_rejects_low_resolution_download_by_default(self):
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            downloads = root / "Downloads"
+            images = root / "images"
+            research = root / "research"
+            downloads.mkdir()
+            research.mkdir()
+
+            def download_image(_game):
+                (downloads / "result.jpg").write_bytes(b"low resolution")
+
+            with (
+                patch.object(app, "ROOT", root),
+                patch.object(app, "DOWNLOADS", downloads),
+                patch.object(app, "IMAGES", images),
+                patch.object(app, "RESEARCH", research),
+                patch.object(
+                    app,
+                    "open_google_image_search",
+                    side_effect=download_image,
+                ),
+                patch.object(app, "image_dimensions", return_value=(500, 900)),
+                patch("builtins.input", side_effect=["", ""]),
+                redirect_stdout(stdout),
+                redirect_stderr(stderr),
+            ):
+                result = app.interactive_game_image("A New Game 2026")
+
+            self.assertFalse((images / "a-new-game-2026.jpg").exists())
+
+        self.assertEqual(result, 0)
+        self.assertIn("Downloaded image resolution: 500x900", stdout.getvalue())
+        self.assertIn("below 1000px", stderr.getvalue())
+        self.assertIn("Image not copied", stderr.getvalue())
+
+    def test_game_image_can_override_low_resolution_warning(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            downloads = root / "Downloads"
+            images = root / "images"
+            research = root / "research"
+            downloads.mkdir()
+            research.mkdir()
+
+            def download_image(_game):
+                (downloads / "result.jpg").write_bytes(b"rare image")
+
+            with (
+                patch.object(app, "ROOT", root),
+                patch.object(app, "DOWNLOADS", downloads),
+                patch.object(app, "IMAGES", images),
+                patch.object(app, "RESEARCH", research),
+                patch.object(
+                    app,
+                    "open_google_image_search",
+                    side_effect=download_image,
+                ),
+                patch.object(app, "image_dimensions", return_value=(500, 900)),
+                patch.object(app, "first_game_without_image", return_value=None),
+                patch("builtins.input", side_effect=["", "yes"]),
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+            ):
+                result = app.interactive_game_image("A New Game 2026")
+
+            self.assertEqual(
+                (images / "a-new-game-2026.jpg").read_bytes(),
+                b"rare image",
+            )
+
+        self.assertEqual(result, 0)
 
     def test_black_and_white_flow_processes_every_unpaired_color_image(self):
         stdout = io.StringIO()
@@ -328,12 +408,164 @@ class GameImageTests(unittest.TestCase):
         self.assertEqual(result, 0)
         flow.assert_called_once_with("Jaws (Pro) Stern 2024")
 
+    def test_low_resolution_scan_excludes_large_and_black_and_white_images(self):
+        with tempfile.TemporaryDirectory() as directory:
+            images = Path(directory)
+            small = images / "small.jpg"
+            large = images / "large.webp"
+            narrow_but_long = images / "narrow.png"
+            black_and_white = images / "small-bw.png"
+            for path in (small, large, narrow_but_long, black_and_white):
+                path.touch()
+
+            dimensions = {
+                small: (500, 900),
+                large: (1200, 1800),
+                narrow_but_long: (500, 1200),
+            }
+            with patch.object(
+                app,
+                "image_dimensions",
+                side_effect=lambda path: dimensions[path],
+            ):
+                result = app.low_resolution_color_images(images)
+
+        self.assertEqual(result, [(small, 500, 900)])
+
+    def test_low_resolution_repair_searches_for_games_one_at_a_time(self):
+        stdout = io.StringIO()
+        first = Path("/project/images/alpha.jpg")
+        second = Path("/project/images/beta.webp")
+        images = [(first, 400, 700), (second, 600, 900)]
+
+        with (
+            patch.object(app, "low_resolution_color_images", return_value=images),
+            patch.object(app, "open_google_image_search") as opened,
+            patch("builtins.input", side_effect=["s", "q"]),
+            redirect_stdout(stdout),
+        ):
+            result = app.interactive_low_resolution_image_repair("")
+
+        self.assertEqual(result, 0)
+        self.assertEqual(
+            [call.args[0] for call in opened.call_args_list],
+            ["alpha", "beta"],
+        )
+        self.assertIn("[1/2] alpha.jpg (400x700)", stdout.getvalue())
+        self.assertIn("[2/2] beta.webp (600x900)", stdout.getvalue())
+
+    def test_low_resolution_repair_resolves_an_explicit_game(self):
+        source = Path("/project/images/jaws-pro-stern-2024.jpg")
+        with (
+            patch.object(app, "find_color_image", return_value=source) as find,
+            patch.object(app, "image_dimensions", return_value=(1565, 2560)),
+            patch.object(app, "open_google_image_search") as opened,
+            patch("builtins.input", return_value="s"),
+            redirect_stdout(io.StringIO()),
+        ):
+            result = app.interactive_low_resolution_image_repair(
+                "Jaws (Pro) Stern 2024"
+            )
+
+        self.assertEqual(result, 0)
+        find.assert_called_once_with("Jaws (Pro) Stern 2024")
+        opened.assert_called_once_with("Jaws (Pro) Stern 2024")
+
+    def test_low_resolution_repair_replaces_download_and_reports_improvement(self):
+        stdout = io.StringIO()
+        source = Path("/project/images/alpha.jpg")
+        download = Path("/downloads/better.png")
+        backup = Path("/project/images/low-res-backup/alpha.jpg")
+
+        with (
+            patch.object(
+                app,
+                "low_resolution_color_images",
+                return_value=[(source, 400, 700)],
+            ),
+            patch.object(app, "download_snapshot", return_value={}),
+            patch.object(app, "newest_download_since", return_value=download),
+            patch.object(app, "confirm_image_resolution", return_value=True),
+            patch.object(
+                app,
+                "replace_image_preserving_format",
+                return_value=(backup, None),
+            ) as replace,
+            patch.object(app, "image_dimensions", return_value=(1400, 2400)),
+            patch.object(app, "open_google_image_search"),
+            patch("builtins.input", return_value=""),
+            redirect_stdout(stdout),
+        ):
+            result = app.interactive_low_resolution_image_repair("")
+
+        self.assertEqual(result, 0)
+        replace.assert_called_once_with(download, source)
+        self.assertIn("400x700 -> 1400x2400", stdout.getvalue())
+
+    def test_replacement_backs_up_color_and_stale_black_and_white_pair(self):
+        with tempfile.TemporaryDirectory() as directory:
+            images = Path(directory)
+            destination = images / "game.jpg"
+            black_and_white = images / "game-bw.png"
+            download = images / "download.jpg"
+            destination.write_bytes(b"old color")
+            black_and_white.write_bytes(b"old bw")
+            download.write_bytes(b"new color")
+
+            with patch.object(app, "image_dimensions", return_value=(1600, 2400)):
+                backup, black_and_white_backup = (
+                    app.replace_image_preserving_format(download, destination)
+                )
+
+            self.assertEqual(destination.read_bytes(), b"new color")
+            self.assertEqual(backup.read_bytes(), b"old color")
+            self.assertFalse(black_and_white.exists())
+            self.assertEqual(black_and_white_backup.read_bytes(), b"old bw")
+
+    def test_game_name_for_image_uses_the_original_list_description(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            game_list = root / "list_of_games.txt"
+            research = root / "research"
+            research.mkdir()
+            game_list.write_text(
+                "Jaws (Pro) Stern 2024\n",
+                encoding="utf-8",
+            )
+            (research / "jaws-pro-stern-2024.md").touch()
+
+            result = app.game_name_for_image(
+                Path("images/jaws-pro-stern-2024.jpg"),
+                game_list,
+                research,
+            )
+
+        self.assertEqual(result, "Jaws (Pro) Stern 2024")
+
+    def test_main_dispatches_low_resolution_image_repair(self):
+        with (
+            patch.object(
+                app,
+                "interactive_low_resolution_image_repair",
+                return_value=0,
+            ) as flow,
+            patch(
+                "sys.argv",
+                ["main.py", "--game-image-low-res", "Jaws (Pro) Stern 2024"],
+            ),
+        ):
+            result = app.main()
+
+        self.assertEqual(result, 0)
+        flow.assert_called_once_with("Jaws (Pro) Stern 2024")
+
     def test_google_image_search_url_encodes_the_game_name(self):
         url = app.google_image_search_url("AC/DC (Pro) Stern 2012")
 
         self.assertEqual(
             url,
-            "https://www.google.com/search?tbm=isch&q=AC%2FDC+%28Pro%29+Stern+2012",
+            "https://www.google.com/search?"
+            "tbm=isch&q=AC%2FDC+%28Pro%29+Stern+2012+playfield",
         )
 
 

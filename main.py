@@ -16,7 +16,11 @@ import yaml
 from jsonschema import Draft202012Validator
 from PIL import Image, UnidentifiedImageError
 
-from scripts.process_images import VARIANTS, process_images
+from scripts.process_images import (
+    VARIANTS,
+    process_images,
+    require_imagemagick,
+)
 from scripts.render import merge_pdfs, render_game
 
 
@@ -43,7 +47,7 @@ IMAGE_SUFFIXES = {
     ".tiff",
     ".webp",
 }
-MIN_IMAGE_SHORT_EDGE = 1000
+MIN_IMAGE_LONG_EDGE = 1000
 
 
 class PinRegistryError(ValueError):
@@ -469,11 +473,11 @@ def confirm_image_resolution(path):
         return False
 
     print(f"Downloaded image resolution: {width}x{height}")
-    if min(width, height) >= MIN_IMAGE_SHORT_EDGE:
+    if max(width, height) >= MIN_IMAGE_LONG_EDGE:
         return True
 
     print(
-        f"WARNING: the image's short edge is below {MIN_IMAGE_SHORT_EDGE}px; "
+        f"WARNING: the image's long edge is below {MIN_IMAGE_LONG_EDGE}px; "
         "it may look soft in print.",
         file=sys.stderr,
     )
@@ -482,6 +486,215 @@ def confirm_image_resolution(path):
     except EOFError:
         answer = ""
     return answer.strip().lower() in {"y", "yes"}
+
+
+def low_resolution_color_images(
+    images_directory=None,
+    minimum_long_edge=MIN_IMAGE_LONG_EDGE,
+):
+    images_directory = images_directory or IMAGES
+    try:
+        paths = images_directory.iterdir()
+    except OSError as error:
+        raise OSError(
+            f"could not read images directory {images_directory}: {error}"
+        )
+
+    low_resolution = []
+    for path in sorted(paths):
+        if (
+            not path.is_file()
+            or path.name.startswith(".")
+            or path.stem.endswith("-bw")
+            or path.suffix.lower() not in IMAGE_SUFFIXES
+        ):
+            continue
+        try:
+            width, height = image_dimensions(path)
+        except (OSError, UnidentifiedImageError) as error:
+            print(
+                f"WARNING: could not inspect {path}: {error}",
+                file=sys.stderr,
+            )
+            continue
+        if max(width, height) < minimum_long_edge:
+            low_resolution.append((path, width, height))
+    return low_resolution
+
+
+def game_name_for_image(source, game_list=None, research_directory=None):
+    game_list = game_list or GAME_LIST
+    try:
+        games = [
+            line.strip()
+            for line in game_list.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+    except OSError:
+        games = []
+
+    for game in games:
+        if image_id_for_game(game, research_directory) == source.stem:
+            return game
+    return source.stem.replace("-", " ")
+
+
+def unused_backup_path(path, backup_directory):
+    candidate = backup_directory / path.name
+    index = 2
+    while candidate.exists():
+        candidate = backup_directory / f"{path.stem}-{index}{path.suffix}"
+        index += 1
+    return candidate
+
+
+def replace_image_preserving_format(download, destination):
+    destination = destination.resolve()
+    backup_directory = destination.parent / "low-res-backup"
+    backup_directory.mkdir(parents=True, exist_ok=True)
+
+    with tempfile.NamedTemporaryFile(
+        prefix=f".{destination.stem}-replacement-",
+        suffix=destination.suffix,
+        dir=destination.parent,
+        delete=False,
+    ) as temporary:
+        temporary_path = Path(temporary.name)
+
+    try:
+        if download.suffix.lower() == destination.suffix.lower():
+            shutil.copy2(download, temporary_path)
+        else:
+            magick = require_imagemagick()
+            subprocess.run(
+                [
+                    magick,
+                    str(download),
+                    "-auto-orient",
+                    str(temporary_path),
+                ],
+                check=True,
+            )
+
+        image_dimensions(temporary_path)
+        backup = unused_backup_path(destination, backup_directory)
+        shutil.copy2(destination, backup)
+        temporary_path.replace(destination)
+
+        black_and_white = black_and_white_pair(destination, destination.parent)
+        black_and_white_backup = None
+        if black_and_white is not None:
+            black_and_white_backup = unused_backup_path(
+                black_and_white,
+                backup_directory,
+            )
+            shutil.move(black_and_white, black_and_white_backup)
+        return backup, black_and_white_backup
+    finally:
+        temporary_path.unlink(missing_ok=True)
+
+
+def interactive_low_resolution_image_repair(game):
+    game = game.strip()
+    if game:
+        source = find_color_image(game)
+        if source is None:
+            print(f"ERROR: no color image found for {game!r}.", file=sys.stderr)
+            return 1
+        try:
+            width, height = image_dimensions(source)
+        except (OSError, UnidentifiedImageError) as error:
+            print(f"ERROR: could not inspect {source}: {error}", file=sys.stderr)
+            return 1
+        search_name = game_name_for_image(source) if Path(game).is_file() else game
+        images = [(source, width, height, search_name)]
+    else:
+        try:
+            images = low_resolution_color_images()
+        except OSError as error:
+            print(f"ERROR: {error}", file=sys.stderr)
+            return 1
+        if not images:
+            print(
+                "No color images are below the "
+                f"{MIN_IMAGE_LONG_EDGE}px long-edge threshold."
+            )
+            return 0
+        images = [
+            (source, width, height, game_name_for_image(source))
+            for source, width, height in images
+        ]
+
+    print(
+        f"Found {len(images)} image(s). Opening a Google Image search for each "
+        "game in Chrome."
+    )
+    for index, (source, width, height, search_name) in enumerate(images, start=1):
+        print(f"\n[{index}/{len(images)}] {source.name} ({width}x{height})")
+        before = download_snapshot()
+        try:
+            open_google_image_search(search_name)
+        except (OSError, subprocess.CalledProcessError) as error:
+            print(
+                f"ERROR: could not open Google Image search for {source}: {error}",
+                file=sys.stderr,
+            )
+            return 1
+
+        while True:
+            try:
+                answer = input(
+                    "Download a better result, then press Enter to replace this "
+                    "image (s to skip, q to quit): "
+                )
+            except EOFError:
+                answer = "q"
+            if answer.strip().lower() in {"q", "quit"}:
+                return 0
+            if answer.strip().lower() in {"s", "skip"}:
+                break
+
+            download = newest_download_since(before)
+            if download is None:
+                print(
+                    f"No new completed file was found in {DOWNLOADS}; "
+                    "download an image or skip this one.",
+                    file=sys.stderr,
+                )
+                continue
+            if not confirm_image_resolution(download):
+                print(
+                    "Replacement rejected; download a better image or skip "
+                    "this one.",
+                    file=sys.stderr,
+                )
+                before = download_snapshot()
+                continue
+
+            try:
+                backup, black_and_white_backup = replace_image_preserving_format(
+                    download,
+                    source,
+                )
+            except (OSError, subprocess.CalledProcessError, SystemExit) as error:
+                print(
+                    f"ERROR: could not replace {source}: {error}",
+                    file=sys.stderr,
+                )
+                return 1
+
+            new_width, new_height = image_dimensions(source)
+            print(
+                f"Replaced {source.name}: {width}x{height} -> "
+                f"{new_width}x{new_height}; backup: {backup}"
+            )
+            if black_and_white_backup is not None:
+                print(
+                    "Moved the stale black-and-white pair to "
+                    f"{black_and_white_backup}."
+                )
+            break
+    return 0
 
 
 def google_image_search_url(game):
@@ -1116,6 +1329,13 @@ def build_parser():
         help="Generate and choose a black-and-white image variant",
     )
     actions.add_argument(
+        "--game-image-low-res",
+        nargs="?",
+        const="",
+        metavar="NAME",
+        help="Replace low-resolution images using Google Image search",
+    )
+    actions.add_argument(
         "--format-prompt",
         metavar="RESEARCH",
         help="Print the phase-two YAML prompt using a research file, or - for stdin",
@@ -1165,6 +1385,9 @@ def main():
 
     if args.game_image_bw is not None:
         return interactive_black_and_white_images(args.game_image_bw)
+
+    if args.game_image_low_res is not None:
+        return interactive_low_resolution_image_repair(args.game_image_low_res)
 
     if args.format_prompt:
         try:
