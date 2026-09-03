@@ -135,7 +135,7 @@ SMALL = ParagraphStyle(
 BULLET = ParagraphStyle(
     "Bullet",
     parent=BODY,
-    spaceAfter=SPACE_XS,
+    spaceAfter=5,
 )
 
 TABLE_HEADER = ParagraphStyle(
