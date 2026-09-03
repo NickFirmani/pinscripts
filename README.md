@@ -115,6 +115,34 @@ text, or `q` to save completed decisions for the current game and stop. Only the
    YAML should continue to reference the color filename.
 3. Render the game. `main.py` validates the YAML first; inspect the resulting PDF after validation succeeds.
 
+### Placing shot labels
+
+Open the browser-based shot label editor for a specific game:
+
+```sh
+make shot-labels GAME="jaws-pro-stern-2024"
+```
+
+Or omit the game to open the first selected game whose labels are missing or
+stale:
+
+```sh
+make shot-labels
+```
+
+Click the playfield once for each Important Shots entry. The editor immediately
+renders each numbered marker with the same image renderer used by the PDF. Use
+**Back** to remove and reposition the previous marker, **Start over** to clear
+the pass, and **Save labels** after reviewing the completed image.
+
+Placements are stored separately from researched content in
+`shot-labels/<id>.yaml`. Each file records absolute `x` and `y` coordinates, the
+oriented source-image dimensions, and a SHA-256 fingerprint. A changed image,
+changed shot list, or changed diagram numbering makes the placements stale and
+stops the build with an instruction to redo them. Games without a shot-label
+file continue to render with an unannotated image, which allows the collection
+to be labeled incrementally.
+
 ## Selecting games
 
 `pins.yaml` contains only ordered lists of pin IDs:

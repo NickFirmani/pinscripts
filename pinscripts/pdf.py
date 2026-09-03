@@ -29,6 +29,8 @@ from reportlab.platypus import (
     TableStyle,
 )
 
+from .shot_labels import ShotLabelError, draw_shot_labels, load_shot_labels
+
 
 ROOT = Path(__file__).resolve().parent.parent
 WEBP_SUFFIX = ".webp"
@@ -50,9 +52,24 @@ GUTTER = 0.16 * inch
 USABLE_W = PAGE_W - OUTER_MARGIN - INNER_MARGIN
 COL_W = (USABLE_W - GUTTER) / 2
 COL_H = PAGE_H - TOP_MARGIN - BOTTOM_MARGIN
+
 BODY_FONT_SIZE = 8.5
-BODY_LEADING = 9.7
-SHOTS_GAP = 0.16 * inch
+BODY_LEADING = 10
+SMALL_FONT_SIZE = 7.5
+SMALL_LEADING = 8.5
+SECTION_FONT_SIZE = 9.5
+SECTION_LEADING = 11
+TITLE_FONT_SIZE = 20
+TITLE_LEADING = 22
+SUMMARY_FONT_SIZE = 10
+SUMMARY_LEADING = 12
+
+SPACE_XS = 2
+SPACE_SM = 4
+SPACE_MD = 6
+SPACE_LG = 8
+TABLE_CELL_PADDING = SPACE_XS
+SHOTS_GAP = SPACE_LG + SPACE_SM
 
 INK = colors.HexColor("#142735")
 ACCENT = colors.HexColor("#176B75")
@@ -68,30 +85,21 @@ TITLE = ParagraphStyle(
     "Title",
     parent=styles["Title"],
     fontName="Helvetica-Bold",
-    fontSize=20,
-    leading=20.5,
-    spaceAfter=3,
+    fontSize=TITLE_FONT_SIZE,
+    leading=TITLE_LEADING,
+    spaceAfter=SPACE_SM,
     alignment=TA_RIGHT,
     textColor=INK,
-)
-
-SUBTITLE = ParagraphStyle(
-    "Subtitle",
-    parent=styles["Normal"],
-    fontName="Helvetica",
-    fontSize=BODY_FONT_SIZE,
-    leading=BODY_LEADING,
-    textColor=MUTED,
 )
 
 SECTION = ParagraphStyle(
     "Section",
     parent=styles["Heading2"],
     fontName="Helvetica-Bold",
-    fontSize=9.4,
-    leading=10.2,
-    spaceBefore=5.5,
-    spaceAfter=2.5,
+    fontSize=SECTION_FONT_SIZE,
+    leading=SECTION_LEADING,
+    spaceBefore=SPACE_MD,
+    spaceAfter=SPACE_XS,
     keepWithNext=True,
     textColor=ACCENT,
 )
@@ -102,35 +110,21 @@ BODY = ParagraphStyle(
     fontName="Helvetica",
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
-    spaceAfter=2,
+    spaceAfter=SPACE_XS,
     textColor=INK,
 )
 
 SMALL = ParagraphStyle(
     "Small",
     parent=BODY,
-)
-
-FACT_LABEL = ParagraphStyle(
-    "FactLabel",
-    parent=SMALL,
-    fontName="Helvetica-Bold",
-    spaceAfter=0,
-    textColor=ACCENT,
-)
-
-FACT_VALUE = ParagraphStyle(
-    "FactValue",
-    parent=SMALL,
-    spaceAfter=0,
+    fontSize=SMALL_FONT_SIZE,
+    leading=SMALL_LEADING,
 )
 
 TABLE_HEADER = ParagraphStyle(
     "TableHeader",
     parent=SMALL,
     fontName="Helvetica-Bold",
-    fontSize=7.6,
-    leading=8.2,
     spaceAfter=0,
     textColor=colors.white,
 )
@@ -138,9 +132,14 @@ TABLE_HEADER = ParagraphStyle(
 TABLE_BODY = ParagraphStyle(
     "TableBody",
     parent=SMALL,
-    fontSize=7.5,
-    leading=8.3,
     spaceAfter=0,
+)
+
+METADATA_LABEL = ParagraphStyle(
+    "MetadataLabel",
+    parent=TABLE_BODY,
+    fontName="Helvetica-Bold",
+    textColor=ACCENT,
 )
 
 HOOK = ParagraphStyle(
@@ -151,25 +150,52 @@ HOOK = ParagraphStyle(
     leading=BODY_LEADING,
     borderWidth=0.75,
     borderColor=RULE,
-    borderPadding=5.5,
+    borderPadding=SPACE_MD,
     backColor=PALE,
     textColor=INK,
-    spaceAfter=4,
+    spaceAfter=SPACE_SM,
 )
 
 SUMMARY = ParagraphStyle(
     "Summary",
     parent=BODY,
     fontName="Helvetica-Bold",
-    fontSize=10,
-    leading=11.5,
+    fontSize=SUMMARY_FONT_SIZE,
+    leading=SUMMARY_LEADING,
     alignment=TA_CENTER,
     borderWidth=0.8,
     borderColor=ACCENT,
-    borderPadding=5.5,
+    borderPadding=SPACE_MD,
     backColor=PALE,
     textColor=INK,
-    spaceBefore=4,
+    spaceBefore=SPACE_SM,
+)
+
+DATA_TABLE_STYLE = TableStyle(
+    [
+        ("BACKGROUND", (0, 0), (-1, 0), INK),
+        ("BOX", (0, 0), (-1, -1), 0.5, RULE),
+        ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PAPER_TINT]),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("RIGHTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("TOPPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+    ]
+)
+
+METADATA_TABLE_STYLE = TableStyle(
+    [
+        ("BOX", (0, 0), (-1, -1), 0.5, RULE),
+        ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
+        ("ROWBACKGROUNDS", (0, 0), (-1, -1), [colors.white, PAPER_TINT]),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("RIGHTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_SM),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_SM),
+    ]
 )
 
 
@@ -226,54 +252,29 @@ def build_blocks(data, black_and_white=False):
     del black_and_white  # Image placement is handled by the spread page callback.
 
     metadata = data.get("metadata", {})
-    header_parts = [
-        safe(metadata.get("manufacturer")),
-        safe(metadata.get("year")),
-        safe(metadata.get("designer")),
-        safe(metadata.get("era")),
-    ]
+    blocks = [[Paragraph(markup(data["name"]).upper(), TITLE)]]
 
-    blocks = [
+    fact_rows = [
         [
-            Paragraph(markup(data["name"]).upper(), TITLE),
-            Paragraph(
-                " &nbsp;&bull;&nbsp; ".join(
-                    markup(part) for part in header_parts if part
-                ),
-                SUBTITLE,
-            ),
-        ]
-    ]
-
-    facts = [
-        [
-            Paragraph(markup(label), FACT_LABEL),
-            Paragraph(markup(value), FACT_VALUE),
+            Paragraph(markup(label), METADATA_LABEL),
+            Paragraph(markup(value), TABLE_BODY),
         ]
         for label, value in (
+            ("Manufacturer", metadata.get("manufacturer", "")),
+            ("Year", metadata.get("year", "")),
             ("Designer", metadata.get("designer", "")),
             ("Artist", metadata.get("artist", "")),
             ("Production", metadata.get("production", "")),
+            ("Era", metadata.get("era", "")),
             ("Multiball", metadata.get("multiball", "")),
         )
     ]
-
     fact_table = Table(
-        facts,
+        fact_rows,
         colWidths=[0.72 * inch, COL_W - 0.72 * inch],
         hAlign="LEFT",
     )
-    fact_table.setStyle(
-        TableStyle(
-            [
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 2),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 2),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
-                ("TOPPADDING", (0, 0), (-1, -1), 1),
-            ]
-        )
-    )
+    fact_table.setStyle(METADATA_TABLE_STYLE)
     blocks.append([fact_table])
     blocks.append([Paragraph(markup(data.get("hook")), HOOK)])
 
@@ -346,21 +347,7 @@ def build_blocks(data, black_and_white=False):
         repeatRows=1,
         hAlign="LEFT",
     )
-    shots.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), INK),
-                ("BOX", (0, 0), (-1, -1), 0.5, RULE),
-                ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
-                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PAPER_TINT]),
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 2),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 2),
-                ("TOPPADDING", (0, 0), (-1, -1), 2),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
-            ]
-        )
-    )
+    shots.setStyle(DATA_TABLE_STYLE)
     blocks.append([section("Important shots"), shots])
 
     strategy = data.get("strategy", {})
@@ -408,7 +395,7 @@ def build_blocks(data, black_and_white=False):
         [
             KeepTogether(
                 [
-                    Spacer(1, 4),
+                    Spacer(1, SPACE_SM),
                     Paragraph(markup(data.get("summary")), SUMMARY),
                 ]
             )
@@ -446,7 +433,13 @@ def _is_shots_block(block):
     )
 
 
-def _prepare_print_image(source, directory, dpi=220):
+def _prepare_print_image(
+    source,
+    directory,
+    dpi=220,
+    shot_labels=None,
+    black_and_white=False,
+):
     """Create a bounded JPEG derivative without changing the canonical WebP."""
     target = directory / f"{source.stem}-print.jpg"
     max_size = (
@@ -455,6 +448,21 @@ def _prepare_print_image(source, directory, dpi=220):
     )
     with Image.open(source) as image:
         image = ImageOps.exif_transpose(image)
+        if shot_labels:
+            expected_size = (
+                shot_labels["image_width"],
+                shot_labels["image_height"],
+            )
+            if image.size != expected_size:
+                raise PdfAssetError(
+                    f"labeled image is {expected_size[0]}x{expected_size[1]}, "
+                    f"but print source is {image.width}x{image.height}"
+                )
+            image = draw_shot_labels(
+                image,
+                shot_labels["coordinates"],
+                black_and_white,
+            )
         image.thumbnail(max_size, Image.Resampling.LANCZOS)
         if image.mode in {"RGBA", "LA"}:
             background = Image.new("RGB", image.size, "white")
@@ -471,7 +479,7 @@ def _build_reference_story(blocks, image_path, canvas):
     if not image_path:
         return story
 
-    image_gap = 8
+    image_gap = SPACE_LG
     content_height = sum(_flowable_height(item, canvas) for item in story)
     available_height = COL_H - content_height - image_gap
 
@@ -503,7 +511,8 @@ def _build_reference_story(blocks, image_path, canvas):
             ]
         )
     )
-    story.extend([Spacer(1, image_gap), image_box])
+    bottom_space = max(0, available_height - draw_height)
+    story.extend([Spacer(1, image_gap + bottom_space), image_box])
     return story
 
 
@@ -613,7 +622,7 @@ def render_game(
         ),
         Frame(
             PAGE_W + INNER_MARGIN,
-            BOTTOM_MARGIN,
+            BOTTOM_MARGIN + shots_height + SHOTS_GAP,
             COL_W,
             third_column_height,
             leftPadding=0,
@@ -624,7 +633,7 @@ def render_game(
         ),
         Frame(
             PAGE_W + INNER_MARGIN,
-            BOTTOM_MARGIN + third_column_height + SHOTS_GAP,
+            BOTTOM_MARGIN,
             COL_W,
             shots_height,
             leftPadding=0,
@@ -652,12 +661,25 @@ def render_game(
         if configured_image
         else None
     )
+    try:
+        shot_labels = load_shot_labels(data, asset_root) if image_path else None
+    except ShotLabelError as error:
+        game_id = data.get("id", content_path.stem)
+        raise PdfAssetError(
+            f"invalid shot labels for {game_id}: {error}; "
+            f"run make shot-labels GAME=\"{game_id}\""
+        ) from error
 
     with tempfile.TemporaryDirectory(dir=output_path.parent) as directory:
         temporary_directory = Path(directory)
         spread_path = temporary_directory / f"{output_path.stem}-spread.pdf"
         print_image = (
-            _prepare_print_image(image_path, temporary_directory)
+            _prepare_print_image(
+                image_path,
+                temporary_directory,
+                shot_labels=shot_labels,
+                black_and_white=black_and_white,
+            )
             if image_path
             else None
         )

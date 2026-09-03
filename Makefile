@@ -1,11 +1,12 @@
 PYTHON := .venv/bin/python
 
-ifneq ($(filter game-research game-format game-image game-image-bw game-image-low-res review-venue-notes,$(MAKECMDGOALS)),)
+ifneq ($(filter game-research game-format game-image game-image-bw game-image-low-res shot-labels review-venue-notes,$(MAKECMDGOALS)),)
 GAME_RESEARCH_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-research,$(MAKECMDGOALS))))
 GAME_FORMAT_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-format,$(MAKECMDGOALS))))
 GAME_IMAGE_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image,$(MAKECMDGOALS))))
 GAME_IMAGE_BW_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image-bw,$(MAKECMDGOALS))))
 GAME_IMAGE_LOW_RES_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image-low-res,$(MAKECMDGOALS))))
+SHOT_LABELS_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out shot-labels,$(MAKECMDGOALS))))
 VENUE_NOTES_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out review-venue-notes,$(MAKECMDGOALS))))
 
 # Treat additional command-line goals as the positional game description.
@@ -13,7 +14,7 @@ VENUE_NOTES_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out review-venue-notes
 	@:
 endif
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes test
+.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes shot-labels test
 
 install:
 	python3 -m venv .venv
@@ -58,6 +59,9 @@ game-image-bw:
 
 game-image-low-res:
 	@$(PYTHON) main.py --game-image-low-res "$(GAME_IMAGE_LOW_RES_INPUT)"
+
+shot-labels:
+	@$(PYTHON) main.py --shot-labels "$(SHOT_LABELS_INPUT)"
 
 review-venue-notes:
 	@$(PYTHON) main.py --review-venue-notes "$(VENUE_NOTES_INPUT)"

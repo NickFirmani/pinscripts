@@ -7,10 +7,12 @@ from .pdf import merge_pdfs, render_game
 from .content import (
     PinRegistryError,
     content_for_selected_pins,
+    load_yaml,
     schema_validator,
     validate_content,
 )
 from .paths import CONTENT, MANIFEST, OUTPUT
+from .shot_labels import ShotLabelError, load_shot_labels
 
 
 class BuildInputError(ValueError):
@@ -23,6 +25,15 @@ def validate_all(paths):
 
     for path in paths:
         errors = validate_content(path, validator)
+        if not errors:
+            try:
+                data = load_yaml(path)
+                load_shot_labels(data)
+            except ShotLabelError as error:
+                errors.append(
+                    f"shot labels: {error}; run "
+                    f"make shot-labels GAME=\"{data.get('id', path.stem)}\""
+                )
         if errors:
             valid = False
             print(f"ERROR: validation failed: {path}", file=sys.stderr)

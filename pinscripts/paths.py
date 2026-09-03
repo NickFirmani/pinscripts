@@ -11,6 +11,7 @@ class ProjectPaths:
     research: Path
     output: Path
     images: Path
+    shot_labels: Path
     downloads: Path
     game_list: Path
     manifest: Path
@@ -27,6 +28,7 @@ class ProjectPaths:
             research=content / "research",
             output=root / "output",
             images=root / "images",
+            shot_labels=root / "shot-labels",
             downloads=Path.home() / "Downloads",
             game_list=content / "list_of_games.txt",
             manifest=root / "pins.yaml",
@@ -43,6 +45,7 @@ CONTENT = PATHS.content
 RESEARCH = PATHS.research
 OUTPUT = PATHS.output
 IMAGES = PATHS.images
+SHOT_LABELS = PATHS.shot_labels
 DOWNLOADS = PATHS.downloads
 GAME_LIST = PATHS.game_list
 MANIFEST = PATHS.manifest

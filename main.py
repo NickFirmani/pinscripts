@@ -17,6 +17,7 @@ from pinscripts.images import (
     interactive_game_image,
     interactive_low_resolution_image_repair,
 )
+from pinscripts.shot_labels import interactive_shot_labels
 from pinscripts.venue_notes import interactive_review_venue_notes
 from scripts.process_images import process_images
 
@@ -77,6 +78,13 @@ def build_parser():
         help="Replace low-resolution images using Google Image search",
     )
     actions.add_argument(
+        "--shot-labels",
+        nargs="?",
+        const="",
+        metavar="GAME",
+        help="Place numbered shot markers on a game's playfield image",
+    )
+    actions.add_argument(
         "--review-venue-notes",
         nargs="?",
         const="",
@@ -132,6 +140,8 @@ def main(argv=None):
         return interactive_black_and_white_images(args.game_image_bw)
     if args.game_image_low_res is not None:
         return interactive_low_resolution_image_repair(args.game_image_low_res)
+    if args.shot_labels is not None:
+        return interactive_shot_labels(args.shot_labels)
     if args.review_venue_notes is not None:
         return interactive_review_venue_notes(args.review_venue_notes)
     if args.format_prompt:
