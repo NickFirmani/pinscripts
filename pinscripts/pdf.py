@@ -120,6 +120,7 @@ BODY = ParagraphStyle(
     fontName="Helvetica",
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
+    spaceBefore=0,
     spaceAfter=SPACE_XS,
     textColor=INK,
 )
