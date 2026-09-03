@@ -1,8 +1,8 @@
 id: paragon-bally-1979
 name: Paragon
-manufacturer: Bally Manufacturing
-year: 1979
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1979
   designer: Greg Kmiec
   artist: Paul Faris
   production: 9,120 units

@@ -1,8 +1,8 @@
 id: stars-stern-electronics-1978
 name: Stars
-manufacturer: Stern Electronics
-year: 1978
 metadata:
+  manufacturer: Stern Electronics
+  year: 1978
   designer: Steve Kirk
   artist: Jorge Obregon
   production: 5,127

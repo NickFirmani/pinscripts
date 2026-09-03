@@ -1,8 +1,8 @@
 id: indiana-jones-williams-1993
 name: 'Indiana Jones: The Pinball Adventure'
-manufacturer: Williams Electronics
-year: 1993
 metadata:
+  manufacturer: Williams Electronics
+  year: 1993
   designer: Mark Ritchie and Doug Watson
   artist: Doug Watson
   production: 12,716

@@ -1,8 +1,8 @@
 id: speakeasy-bally-1982
 name: Speakeasy
-manufacturer: Bally Manufacturing
-year: 1982
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1982
   designer: George Christian
   artist: Greg Freres
   production: 3,000 produced

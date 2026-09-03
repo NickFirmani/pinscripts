@@ -1,8 +1,8 @@
 id: time-machine-data-east-1988
 name: Time Machine
-manufacturer: Data East
-year: 1988
 metadata:
+  manufacturer: Data East
+  year: 1988
   designer: Ed Cebula and Joe Kaminkow
   artist: Kevin O'Connor and Margaret Hudson
   production: 2,896

@@ -1,8 +1,8 @@
 id: alien-star-gottlieb-1984
 name: Alien Star
-manufacturer: Gottlieb/Mylstar
-year: 1984
 metadata:
+  manufacturer: Gottlieb/Mylstar
+  year: 1984
   designer: John Trudeau
   artist: Larry Day
   production: 1,065 units

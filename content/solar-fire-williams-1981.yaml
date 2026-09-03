@@ -1,8 +1,8 @@
 id: solar-fire-williams-1981
 name: Solar Fire
-manufacturer: Williams Electronics
-year: 1981
 metadata:
+  manufacturer: Williams Electronics
+  year: 1981
   designer: Barry Oursler
   artist: Constantino Mitchell and Jeanine Mitchell
   production: '782'

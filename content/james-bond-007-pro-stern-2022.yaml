@@ -1,8 +1,8 @@
 id: james-bond-007-pro-stern-2022
 name: James Bond 007 (Pro)
-manufacturer: Stern Pinball
-year: 2022
 metadata:
+  manufacturer: Stern Pinball
+  year: 2022
   designer: George Gomez
   artist: Kevin O’Connor
   production: 'Rules/code: Lonnie Ropp and Mike Vinikour'

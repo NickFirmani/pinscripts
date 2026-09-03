@@ -144,9 +144,13 @@ class PromptTests(unittest.TestCase):
             {
                 "id": "jaws-2024",
                 "name": "JAWS",
+                "image": "images/jaws-2024.webp",
+            }
+        )
+        formatted["metadata"].update(
+            {
                 "manufacturer": "Stern",
                 "year": 2024,
-                "image": "images/jaws-2024.webp",
             }
         )
         with tempfile.TemporaryDirectory() as directory:
@@ -256,9 +260,13 @@ class PromptTests(unittest.TestCase):
             {
                 "id": "jaws-2024",
                 "name": "JAWS",
+                "image": "images/jaws-2024.webp",
+            }
+        )
+        formatted["metadata"].update(
+            {
                 "manufacturer": "Stern",
                 "year": 2024,
-                "image": "images/jaws-2024.webp",
             }
         )
         research = (

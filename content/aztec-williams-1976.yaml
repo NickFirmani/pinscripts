@@ -1,8 +1,8 @@
 id: aztec-williams-1976
 name: Aztec
-manufacturer: Williams Electronics
-year: 1976
 metadata:
+  manufacturer: Williams Electronics
+  year: 1976
   designer: Gordon Horlick
   artist: Christian Marche
   production: 10,150 production EM machines

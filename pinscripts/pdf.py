@@ -227,8 +227,8 @@ def build_blocks(data, black_and_white=False):
 
     metadata = data.get("metadata", {})
     header_parts = [
-        safe(data.get("manufacturer")),
-        safe(data.get("year")),
+        safe(metadata.get("manufacturer")),
+        safe(metadata.get("year")),
         safe(metadata.get("designer")),
         safe(metadata.get("era")),
     ]

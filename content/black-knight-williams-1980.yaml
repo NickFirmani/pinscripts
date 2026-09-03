@@ -1,8 +1,8 @@
 id: black-knight-williams-1980
 name: Black Knight
-manufacturer: Williams Electronics
-year: 1980
 metadata:
+  manufacturer: Williams Electronics
+  year: 1980
   designer: Steve Ritchie; software by Larry DeMar
   artist: Tony Ramunni
   production: 13,075 standard machines

@@ -1,8 +1,8 @@
 id: dealers-choice-williams-1974
 name: Dealer’s Choice
-manufacturer: Williams
-year: 1974
 metadata:
+  manufacturer: Williams
+  year: 1974
   designer: Norm Clark
   artist: Christian Marche
   production: 8,850

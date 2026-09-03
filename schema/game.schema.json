@@ -7,8 +7,6 @@
   "required": [
     "id",
     "name",
-    "manufacturer",
-    "year",
     "metadata",
     "hook",
     "rules",
@@ -34,19 +32,12 @@
       "type": "string",
       "minLength": 1
     },
-    "manufacturer": {
-      "type": "string",
-      "minLength": 1
-    },
-    "year": {
-      "type": "integer",
-      "minimum": 1930,
-      "maximum": 2100
-    },
     "metadata": {
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "manufacturer",
+        "year",
         "designer",
         "artist",
         "production",
@@ -54,6 +45,15 @@
         "multiball"
       ],
       "properties": {
+        "manufacturer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1930,
+          "maximum": 2100
+        },
         "designer": {
           "type": "string"
         },

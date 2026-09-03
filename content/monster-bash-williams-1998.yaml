@@ -1,8 +1,8 @@
 id: monster-bash-williams-1998
 name: Monster Bash
-manufacturer: Williams Electronic Games
-year: 1998
 metadata:
+  manufacturer: Williams Electronic Games
+  year: 1998
   designer: George Gomez
   artist: Kevin O'Connor
   production: 3,361

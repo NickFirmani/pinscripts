@@ -1,8 +1,8 @@
 id: led-zeppelin-premium-stern-2020
 name: Led Zeppelin (Premium)
-manufacturer: Stern Pinball
-year: 2020
 metadata:
+  manufacturer: Stern Pinball
+  year: 2020
   designer: Steve Ritchie
   artist: Greg Freres and Stephen Jensen
   production: Premium edition; SPIKE 2, LCD, three flippers

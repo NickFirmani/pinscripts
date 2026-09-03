@@ -1,8 +1,8 @@
 id: frontier-bally-1980
 name: Frontier
-manufacturer: Bally Manufacturing
-year: 1980
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1980
   designer: George Christian
   artist: Greg Freres, Kevin O’Connor, and Margaret Hudson
   production: 1,850 units

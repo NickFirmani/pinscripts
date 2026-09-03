@@ -19,7 +19,8 @@ respect all array, string, pattern, numeric, and enum constraints.
 
 Formatting rules:
 
-- Map identity facts to the top-level identity fields and `metadata`; the
+- Map the game name to the top-level `name` field and all other identity facts
+  to `metadata`; the
   thirty-second overview to `hook` and `summary`; core rules to `rules`; skill
   shots to `skill_shots`; secondary features to `features`; and the remaining
   named brief sections to their corresponding schema properties.

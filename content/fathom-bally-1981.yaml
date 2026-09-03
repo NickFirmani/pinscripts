@@ -1,8 +1,8 @@
 id: fathom-bally-1981
 name: Fathom
-manufacturer: Bally Manufacturing
-year: 1981
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1981
   designer: Ward Pemberton
   artist: Greg Freres and Kevin O'Connor
   production: 3,500

@@ -1,8 +1,8 @@
 id: old-chicago-bally-1976
 name: Old Chicago
-manufacturer: Bally Manufacturing
-year: 1976
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1976
   designer: Greg Kmiec
   artist: Dave Christensen; original concept art by John Youssi
   production: 7,155

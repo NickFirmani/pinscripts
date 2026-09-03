@@ -1,8 +1,8 @@
 id: attack-from-mars-bally-1995
 name: Attack From Mars
-manufacturer: Bally/Midway
-year: 1995
 metadata:
+  manufacturer: Bally/Midway
+  year: 1995
   designer: Brian Eddy
   artist: Doug Watson
   production: Approximately 3,450 original machines

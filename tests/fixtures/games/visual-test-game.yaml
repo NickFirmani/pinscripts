@@ -1,8 +1,8 @@
 id: visual-test-game
 name: The Extraordinary Tournament Test Machine
-manufacturer: Example Pinball & Manufacturing Company
-year: 2026
 metadata:
+  manufacturer: Example Pinball & Manufacturing Company
+  year: 2026
   designer: Alexandria Montgomery and B. Q. Example
   artist: Casey "High Contrast" Rivera
   production: 1 prototype unit

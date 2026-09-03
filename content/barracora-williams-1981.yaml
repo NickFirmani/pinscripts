@@ -1,8 +1,8 @@
 id: barracora-williams-1981
 name: Barracora
-manufacturer: Williams Electronics
-year: 1981
 metadata:
+  manufacturer: Williams Electronics
+  year: 1981
   designer: Roger Sharpe, Steve Epstein, Barry Oursler
   artist: Doug Watson
   production: 2,350

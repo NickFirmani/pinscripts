@@ -1,8 +1,8 @@
 id: wizard-bally-1975
 name: Wizard!
-manufacturer: Bally Manufacturing
-year: 1975
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1975
   designer: Greg Kmiec
   artist: Dave Christensen
   production: 10,005 units

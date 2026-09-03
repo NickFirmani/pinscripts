@@ -1,8 +1,8 @@
 id: seawitch-stern-electronics-1980
 name: Seawitch
-manufacturer: Stern Electronics
-year: 1980
 metadata:
+  manufacturer: Stern Electronics
+  year: 1980
   designer: Mike Kubin
   artist: Bob Timm
   production: 2,503

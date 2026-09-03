@@ -1,8 +1,8 @@
 id: terminator-2-williams-1991
 name: 'Terminator 2: Judgment Day'
-manufacturer: Williams Electronics
-year: 1991
 metadata:
+  manufacturer: Williams Electronics
+  year: 1991
   designer: Steve Ritchie
   artist: Doug Watson
   production: 15,202

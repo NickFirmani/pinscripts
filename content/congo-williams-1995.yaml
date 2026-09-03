@@ -1,8 +1,8 @@
 id: congo-williams-1995
 name: Congo
-manufacturer: Williams Electronic Games
-year: 1995
 metadata:
+  manufacturer: Williams Electronic Games
+  year: 1995
   designer: John Trudeau
   artist: Kevin O’Connor
   production: 2,129 units

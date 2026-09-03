@@ -1,8 +1,8 @@
 id: big-game-stern-electronics-1980
 name: Big Game
-manufacturer: Stern Electronics
-year: 1980
 metadata:
+  manufacturer: Stern Electronics
+  year: 1980
   designer: Harry Williams
   artist: Doug Watson and Gerry Simkus
   production: 2,713

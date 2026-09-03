@@ -1,8 +1,8 @@
 id: hercules-atari-1979
 name: Hercules
-manufacturer: Atari
-year: 1979
 metadata:
+  manufacturer: Atari
+  year: 1979
   designer: Steve Bicker
   artist: Jim Kelly
   production: ''

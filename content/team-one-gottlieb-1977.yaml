@@ -1,8 +1,8 @@
 id: team-one-gottlieb-1977
 name: Team One
-manufacturer: D. Gottlieb & Co.
-year: 1977
 metadata:
+  manufacturer: D. Gottlieb & Co.
+  year: 1977
   designer: Jeff Brenner
   artist: Gordon Morison
   production: ~650

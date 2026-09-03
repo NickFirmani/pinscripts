@@ -1,8 +1,8 @@
 id: grand-prix-williams-1976
 name: Grand Prix
-manufacturer: Williams Electronics
-year: 1976
 metadata:
+  manufacturer: Williams Electronics
+  year: 1976
   designer: Steve Kordek
   artist: Christian Marche
   production: 10,554 units

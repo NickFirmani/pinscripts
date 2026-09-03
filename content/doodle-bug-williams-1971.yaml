@@ -1,8 +1,8 @@
 id: doodle-bug-williams-1971
 name: Doodle Bug
-manufacturer: Williams Electronics
-year: 1971
 metadata:
+  manufacturer: Williams Electronics
+  year: 1971
   designer: Norm Clark
   artist: Christian Marche
   production: 3,006

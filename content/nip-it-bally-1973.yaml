@@ -1,8 +1,8 @@
 id: nip-it-bally-1973
 name: Nip-It
-manufacturer: Bally Manufacturing
-year: 1973
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1973
   designer: Ted Zale
   artist: Dick White
   production: 4,580

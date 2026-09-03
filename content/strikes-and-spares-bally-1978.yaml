@@ -1,8 +1,8 @@
 id: strikes-and-spares-bally-1978
 name: Strikes and Spares
-manufacturer: Bally Manufacturing
-year: 1978
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1978
   designer: Gary Gayton
   artist: Kevin O'Connor
   production: 12,820

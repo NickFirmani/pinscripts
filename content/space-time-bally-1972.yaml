@@ -1,8 +1,8 @@
 id: space-time-bally-1972
 name: Space Time
-manufacturer: Bally Manufacturing
-year: 1972
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1972
   designer: Jim Patla
   artist: Christian Marche
   production: 5,000

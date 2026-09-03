@@ -1,8 +1,8 @@
 id: flash-gordon-bally-1981
 name: Flash Gordon
-manufacturer: Bally Manufacturing
-year: 1981
 metadata:
+  manufacturer: Bally Manufacturing
+  year: 1981
   designer: Claude Fernandez
   artist: Kevin O’Connor
   production: 10,000 units
