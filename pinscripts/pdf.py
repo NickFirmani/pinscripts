@@ -475,10 +475,15 @@ def _partition_story(blocks, capacities):
             if best is None or score < best[0]:
                 best = (score, first_break, second_break, column_heights)
 
-    if best is None or best[0][0]:
-        values = () if best is None else best[3]
-        heights_text = ", ".join(f"{value:.1f}" for value in values)
-        raise ValueError(f"content does not fit the spread text frames: {heights_text}")
+    if best is None:
+        raise ValueError("content cannot be partitioned across the spread text frames")
+
+    if best[0][0]:
+        heights_text = ", ".join(f"{value:.1f}" for value in best[3])
+        print(
+            "WARNING: too much information for the spread text frames; "
+            f"allowing overflow: {heights_text}"
+        )
 
     _, first_break, second_break, _ = best
     story = []
