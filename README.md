@@ -135,17 +135,20 @@ make shot-labels
 ```
 
 Click the playfield once for each Important Shots entry. The editor immediately
-renders each numbered marker with the same image renderer used by the PDF. Use
-**Back** to remove and reposition the previous marker, **Start over** to clear
-the pass, and **Save labels** after reviewing the completed image.
+renders each numbered marker with the same image renderer used by the PDF and
+shows the shot description and difficulty while placing it. Use **Another #**
+to place the same number at multiple physical targets, **Back** to remove and
+reposition the previous marker, and **Start over** to clear the pass. After a
+save, the same editor loads the next selected game whose labels are missing or
+stale. Use **Stop without saving this game** when the batch should end.
 
 Placements are stored separately from researched content in
-`shot-labels/<id>.yaml`. Each file records absolute `x` and `y` coordinates, the
-oriented source-image dimensions, and a SHA-256 fingerprint. A changed image,
-changed shot list, or changed diagram numbering makes the placements stale and
-stops the build with an instruction to redo them. Games without a shot-label
-file continue to render with an unannotated image, which allows the collection
-to be labeled incrementally.
+`content/shot-labels/<id>.yaml`. Each file records absolute `x` and `y`
+coordinates, the oriented source-image dimensions, and a SHA-256 fingerprint.
+A changed image, changed shot list, or changed diagram numbering makes the
+placements stale and stops the build with an instruction to redo them. Games
+without a shot-label file continue to render with an unannotated image, which
+allows the collection to be labeled incrementally.
 
 ## Selecting games
 

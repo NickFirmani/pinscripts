@@ -585,14 +585,26 @@ def _prepare_print_image(
                 shot_labels["image_width"],
                 shot_labels["image_height"],
             )
-            if image.size != expected_size:
+            expected_aspect = expected_size[0] / expected_size[1]
+            print_aspect = image.width / image.height
+            if abs(expected_aspect - print_aspect) > 0.002:
                 raise PdfAssetError(
-                    f"labeled image is {expected_size[0]}x{expected_size[1]}, "
-                    f"but print source is {image.width}x{image.height}"
+                    "the labeled color image and print image have different "
+                    "aspect ratios; regenerate the print image or redo the labels"
                 )
+            scale_x = image.width / expected_size[0]
+            scale_y = image.height / expected_size[1]
+            coordinates = [
+                {
+                    **point,
+                    "x": round(point["x"] * scale_x),
+                    "y": round(point["y"] * scale_y),
+                }
+                for point in shot_labels["coordinates"]
+            ]
             image = draw_shot_labels(
                 image,
-                shot_labels["coordinates"],
+                coordinates,
                 black_and_white,
             )
         image.thumbnail(max_size, Image.Resampling.LANCZOS)

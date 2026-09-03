@@ -7,6 +7,7 @@ import yaml
 from PIL import Image
 
 import main as cli
+from pinscripts.pdf import _prepare_print_image
 import pinscripts.shot_labels as app
 
 
@@ -14,9 +15,9 @@ class ShotLabelTests(unittest.TestCase):
     def make_game(self, root, color="navy"):
         images = root / "images"
         content = root / "content"
-        labels = root / "shot-labels"
         images.mkdir()
         content.mkdir()
+        labels = content / "shot-labels"
         image_path = images / "test-game.webp"
         Image.new("RGB", (400, 700), color).save(image_path, "WEBP", lossless=True)
         data = {
@@ -24,8 +25,18 @@ class ShotLabelTests(unittest.TestCase):
             "name": "Test Game",
             "image": "images/test-game.webp",
             "shots": [
-                {"diagram": 1, "name": "Left orbit"},
-                {"diagram": 2, "name": "Right ramp"},
+                {
+                    "diagram": 1,
+                    "name": "Left orbit",
+                    "value": "Builds the mode.",
+                    "risk": "Medium",
+                },
+                {
+                    "diagram": 2,
+                    "name": "Right ramp",
+                    "value": "Collects the jackpot.",
+                    "risk": "High",
+                },
             ],
         }
         content_path = content / "test-game.yaml"
@@ -117,6 +128,23 @@ class ShotLabelTests(unittest.TestCase):
             with self.assertRaisesRegex(app.ShotLabelError, "shot list"):
                 app.load_shot_labels(data, root)
 
+    def test_multiple_coordinates_can_share_one_shot_number(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data, _content, image_path, labels = self.make_game(root)
+            coordinates = [
+                {"diagram": 1, "x": 75, "y": 180},
+                {"diagram": 1, "x": 125, "y": 180},
+                {"diagram": 2, "x": 320, "y": 260},
+            ]
+
+            app.write_shot_labels(data, image_path, coordinates, labels)
+
+            self.assertEqual(
+                app.load_shot_labels(data, root)["coordinates"],
+                coordinates,
+            )
+
     def test_first_game_needing_labels_skips_current_labels(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -158,6 +186,127 @@ class ShotLabelTests(unittest.TestCase):
 
         self.assertNotEqual(rendered.getpixel((210, 350)), (255, 255, 255))
         self.assertEqual(source.getpixel((200, 350)), (255, 255, 255))
+
+    def test_editor_shows_details_and_can_add_another_label(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data, _content, image_path, labels = self.make_game(root)
+            session = app._LabelSession(data, image_path, labels)
+
+            first = session.state()["active_shot"]
+            self.assertEqual(first["description"], "Builds the mode.")
+            self.assertEqual(first["difficulty"], "Medium")
+
+            session.place(75, 180)
+            self.assertEqual(session.state()["active_shot"]["diagram"], 2)
+            session.add_another()
+            self.assertTrue(session.state()["placing_extra"])
+            self.assertEqual(session.state()["active_shot"]["diagram"], 1)
+            session.place(125, 180)
+            session.place(320, 260)
+
+            self.assertTrue(session.state()["complete"])
+            self.assertEqual(
+                [point["diagram"] for point in session.coordinates],
+                [1, 1, 2],
+            )
+
+    def test_save_loads_the_next_unlabelled_game(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first, _content, first_image, labels = self.make_game(root)
+            second_image = root / "images" / "second-game.webp"
+            Image.new("RGB", (400, 700), "green").save(
+                second_image,
+                "WEBP",
+                lossless=True,
+            )
+            second = {
+                **first,
+                "id": "second-game",
+                "name": "Second Game",
+                "image": "images/second-game.webp",
+            }
+            session = app._LabelSession(
+                first,
+                first_image,
+                labels,
+                next_game_loader=lambda: (second, second_image, "labels missing"),
+            )
+            session.place(75, 180)
+            session.place(320, 260)
+
+            session.save()
+
+            state = session.state()
+            self.assertEqual(state["game"], "Second Game")
+            self.assertEqual(state["shots_placed"], 0)
+            self.assertIn("Loaded the next game", state["message"])
+            self.assertTrue((labels / "test-game.yaml").is_file())
+
+    def test_remaining_loader_selects_the_next_unlabelled_game_in_order(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _first, first_path, _first_image, _labels = self.make_game(root)
+            second_image = root / "images" / "second-game.webp"
+            Image.new("RGB", (400, 700), "green").save(
+                second_image,
+                "WEBP",
+                lossless=True,
+            )
+            second = {
+                "id": "second-game",
+                "name": "Second Game",
+                "image": "images/second-game.webp",
+                "shots": [
+                    {
+                        "diagram": 1,
+                        "name": "Center ramp",
+                        "value": "Starts multiball.",
+                        "risk": "Medium",
+                    }
+                ],
+            }
+            second_path = root / "content" / "second-game.yaml"
+            second_path.write_text(
+                yaml.safe_dump(second, sort_keys=False),
+                encoding="utf-8",
+            )
+            loader = app._remaining_game_loader(
+                first_path,
+                root,
+                [first_path, second_path],
+            )
+
+            selected, selected_image, issue = loader()
+
+        self.assertEqual(selected["id"], "second-game")
+        self.assertEqual(selected_image, second_image)
+        self.assertEqual(issue, "shot coordinates are missing")
+
+    def test_print_renderer_scales_labels_for_higher_resolution_variant(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "print.webp"
+            Image.new("RGB", (800, 1400), "white").save(
+                source,
+                "WEBP",
+                lossless=True,
+            )
+            labels = {
+                "image_width": 400,
+                "image_height": 700,
+                "coordinates": [{"diagram": 1, "x": 100, "y": 200}],
+            }
+
+            rendered_path = _prepare_print_image(
+                source,
+                root,
+                dpi=1000,
+                shot_labels=labels,
+            )
+            with Image.open(rendered_path) as rendered:
+                self.assertNotEqual(rendered.getpixel((220, 400)), (255, 255, 255))
 
     def test_cli_dispatches_shot_label_editor(self):
         with patch.object(cli, "interactive_shot_labels", return_value=0) as editor:

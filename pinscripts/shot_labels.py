@@ -109,6 +109,10 @@ def label_path_for_game(game_id, labels_directory=None):
     return labels_directory / f"{game_id}.yaml"
 
 
+def labels_directory_for_root(root):
+    return root / "content" / "shot-labels"
+
+
 def _expected_diagrams(data):
     diagrams = [shot.get("diagram") for shot in data.get("shots", [])]
     if len(set(diagrams)) != len(diagrams):
@@ -180,7 +184,7 @@ def _validate_label_document(document, data, image_path):
     if not isinstance(coordinates, list):
         raise ShotLabelError("coordinates must be a list")
     expected = _expected_diagrams(data)
-    actual = []
+    diagram_groups = []
     for index, point in enumerate(coordinates):
         if not isinstance(point, dict) or set(point) != {"diagram", "x", "y"}:
             raise ShotLabelError(f"coordinate {index + 1} is malformed")
@@ -194,8 +198,13 @@ def _validate_label_document(document, data, image_path):
             raise ShotLabelError(
                 f"coordinate for diagram {diagram} is outside the image"
             )
-        actual.append(diagram)
-    if actual != expected:
+        if not diagram_groups or diagram_groups[-1] != diagram:
+            if diagram in diagram_groups:
+                raise ShotLabelError(
+                    "labels for the same shot must be stored together"
+                )
+            diagram_groups.append(diagram)
+    if diagram_groups != expected:
         raise ShotLabelError(
             "shot list or diagram numbering changed; redo shot labels"
         )
@@ -206,7 +215,7 @@ def load_shot_labels(data, root=ROOT, labels_directory=None):
     """Load current labels, returning ``None`` when a game has not been labeled."""
     path = label_path_for_game(
         data.get("id"),
-        labels_directory or root / "shot-labels",
+        labels_directory or labels_directory_for_root(root),
     )
     if not path.is_file():
         return None
@@ -252,7 +261,7 @@ def write_shot_labels(data, image_path, coordinates, labels_directory=None):
 def shot_label_issue(data, root=ROOT, labels_directory=None):
     path = label_path_for_game(
         data.get("id"),
-        labels_directory or root / "shot-labels",
+        labels_directory or labels_directory_for_root(root),
     )
     if not path.is_file():
         return "shot coordinates are missing"
@@ -277,41 +286,84 @@ def first_game_needing_labels(paths=None, root=ROOT, labels_directory=None):
 
 
 class _LabelSession:
-    def __init__(self, data, image_path, labels_directory):
+    def __init__(
+        self,
+        data,
+        image_path,
+        labels_directory,
+        next_game_loader=None,
+    ):
+        self.labels_directory = labels_directory
+        self.next_game_loader = next_game_loader
+        self.saved_paths = []
+        self.finished = threading.Event()
+        self.lock = threading.Lock()
+        self.batch_complete = False
+        self.message = ""
+        self.revision = 0
+        self._load_game(data, image_path)
+
+    def _load_game(self, data, image_path):
         self.data = data
         self.image_path = image_path
-        self.labels_directory = labels_directory
         with oriented_image(image_path) as image:
             self.width, self.height = image.size
         self.shots = data["shots"]
         self.coordinates = []
-        self.revision = 0
-        self.result = None
-        self.finished = threading.Event()
-        self.lock = threading.Lock()
+        self.current_index = 0
+        self.extra_for_index = None
+        self.revision += 1
+
+    def _shot_details(self, index):
+        if index is None or not 0 <= index < len(self.shots):
+            return None
+        shot = self.shots[index]
+        return {
+            "diagram": shot["diagram"],
+            "name": shot["name"],
+            "description": shot.get("value", ""),
+            "difficulty": shot.get("risk", ""),
+        }
 
     def state(self):
         with self.lock:
-            placed = len(self.coordinates)
+            complete = self.current_index == len(self.shots)
+            active_index = (
+                self.extra_for_index
+                if self.extra_for_index is not None
+                else self.current_index if not complete else None
+            )
+            previous_index = self.current_index - 1
             return {
                 "game": self.data["name"],
                 "width": self.width,
                 "height": self.height,
-                "shots": [
-                    {"diagram": shot["diagram"], "name": shot["name"]}
-                    for shot in self.shots
-                ],
+                "active_shot": self._shot_details(active_index),
+                "previous_shot": self._shot_details(previous_index),
                 "coordinates": list(self.coordinates),
-                "placed": placed,
-                "complete": placed == len(self.shots),
+                "shots_placed": self.current_index,
+                "shot_count": len(self.shots),
+                "label_count": len(self.coordinates),
+                "placing_extra": self.extra_for_index is not None,
+                "complete": complete,
+                "batch_complete": self.batch_complete,
+                "message": self.message,
                 "revision": self.revision,
             }
 
     def place(self, x, y):
         with self.lock:
-            if len(self.coordinates) >= len(self.shots):
+            if self.batch_complete:
                 return
-            shot = self.shots[len(self.coordinates)]
+            if self.extra_for_index is not None:
+                shot_index = self.extra_for_index
+                self.extra_for_index = None
+            elif self.current_index < len(self.shots):
+                shot_index = self.current_index
+                self.current_index += 1
+            else:
+                return
+            shot = self.shots[shot_index]
             self.coordinates.append(
                 {
                     "diagram": shot["diagram"],
@@ -320,40 +372,106 @@ class _LabelSession:
                 }
             )
             self.revision += 1
+            self.message = ""
+
+    def add_another(self):
+        with self.lock:
+            if (
+                self.batch_complete
+                or self.extra_for_index is not None
+                or self.current_index == 0
+            ):
+                return
+            self.extra_for_index = self.current_index - 1
+            self.revision += 1
+            self.message = ""
 
     def back(self):
         with self.lock:
-            if self.coordinates:
-                self.coordinates.pop()
+            if self.extra_for_index is not None:
+                self.extra_for_index = None
                 self.revision += 1
+                return
+            if self.coordinates:
+                point = self.coordinates.pop()
+                diagram = point["diagram"]
+                if not any(item["diagram"] == diagram for item in self.coordinates):
+                    shot_index = next(
+                        index
+                        for index, shot in enumerate(self.shots)
+                        if shot["diagram"] == diagram
+                    )
+                    self.current_index = min(self.current_index, shot_index)
+                self.revision += 1
+                self.message = ""
 
     def reset(self):
         with self.lock:
             self.coordinates.clear()
+            self.current_index = 0
+            self.extra_for_index = None
             self.revision += 1
+            self.message = ""
 
     def save(self):
         with self.lock:
-            if len(self.coordinates) != len(self.shots):
+            if (
+                self.current_index != len(self.shots)
+                or self.extra_for_index is not None
+            ):
                 raise ShotLabelError("place every shot before saving")
             coordinates = list(self.coordinates)
+            saved_game = self.data["name"]
+            data = self.data
+            image_path = self.image_path
         destination = write_shot_labels(
-            self.data,
-            self.image_path,
+            data,
+            image_path,
             coordinates,
             self.labels_directory,
         )
-        self.result = destination
-        self.finished.set()
+        self.saved_paths.append(destination)
+
+        try:
+            next_game = self.next_game_loader() if self.next_game_loader else None
+        except (
+            KeyError,
+            OSError,
+            PinRegistryError,
+            ShotLabelError,
+            UnidentifiedImageError,
+            yaml.YAMLError,
+        ) as error:
+            with self.lock:
+                self.batch_complete = True
+                self.message = (
+                    f"Saved {saved_game}, but could not load the next game: "
+                    f"{error}"
+                )
+                self.revision += 1
+            self.finished.set()
+            return
+        if next_game is None:
+            with self.lock:
+                self.batch_complete = True
+                self.message = f"Saved {saved_game}. Every selected game is labeled."
+                self.revision += 1
+            self.finished.set()
+            return
+
+        data, image_path, issue = next_game
+        with self.lock:
+            self._load_game(data, image_path)
+            self.message = f"Saved {saved_game}. Loaded the next game: {issue}."
 
     def cancel(self):
-        self.result = None
         self.finished.set()
 
     def preview(self):
         with self.lock:
             coordinates = list(self.coordinates)
-        with oriented_image(self.image_path) as image:
+            image_path = self.image_path
+        with oriented_image(image_path) as image:
             annotated = draw_shot_labels(image, coordinates)
         output = io.BytesIO()
         annotated.save(output, "PNG")
@@ -370,26 +488,33 @@ def _page_html(token):
 :root {{ color-scheme: dark; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }}
 * {{ box-sizing: border-box; }}
 body {{ margin: 0; background: #091722; color: #eef5f6; min-height: 100vh; }}
-main {{ display: grid; grid-template-columns: minmax(0,1fr) 310px; gap: 20px; padding: 20px; min-height: 100vh; }}
+main {{ display: grid; grid-template-columns: minmax(0,1fr) 360px; gap: 20px; padding: 20px; min-height: 100vh; }}
 .stage {{ display:flex; align-items:center; justify-content:center; min-width:0; }}
 #board {{ display:block; max-width:100%; max-height:calc(100vh - 40px); width:auto; height:auto; cursor:crosshair; border:1px solid #52636d; box-shadow:0 14px 45px #0009; }}
 aside {{ align-self:center; background:#142735; border:1px solid #53636c; border-radius:14px; padding:20px; box-shadow:0 14px 45px #0007; }}
 .eyebrow {{ color:#73cbd1; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }}
 h1 {{ font-size:23px; margin:6px 0 4px; }}
 #progress {{ color:#aab8bd; font-size:13px; }}
-#instruction {{ min-height:76px; margin:22px 0; font-size:17px; line-height:1.4; }}
+#notice {{ color:#73cbd1; font-size:13px; line-height:1.4; margin-top:12px; }}
+#instruction {{ margin:20px 0 12px; font-size:17px; font-weight:700; line-height:1.4; }}
+#details {{ background:#0d202d; border:1px solid #405865; border-radius:9px; padding:13px; margin-bottom:16px; }}
+#shot-name {{ font-weight:750; margin-bottom:7px; }} #description {{ color:#cfdbdf; font-size:14px; line-height:1.45; }}
+#difficulty {{ display:inline-block; background:#254858; border-radius:999px; color:#fff; font-size:12px; font-weight:700; margin-top:10px; padding:4px 9px; }}
 button {{ appearance:none; border:1px solid #71828a; border-radius:8px; background:#203b4b; color:#fff; font:inherit; font-weight:650; padding:10px 13px; cursor:pointer; }}
 button:hover:not(:disabled) {{ background:#2b5062; }} button:disabled {{ opacity:.4; cursor:default; }}
 #save {{ width:100%; background:#176b75; border-color:#56aeb5; margin-top:10px; }}
-.row {{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }}
+.row {{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }}
+#reset {{ width:100%; margin-top:8px; }}
 #cancel {{ width:100%; border:0; background:transparent; color:#aab8bd; margin-top:8px; }}
 .hint {{ color:#8fa0a8; font-size:12px; line-height:1.45; margin-top:18px; }}
 @media (max-width:800px) {{ main {{ grid-template-columns:1fr; }} #board {{ max-height:70vh; }} aside {{ width:min(100%,560px); justify-self:center; }} }}
 </style></head><body><main><div class="stage"><img id="board" alt="Playfield"></div>
 <aside><div class="eyebrow">Shot label editor</div><h1 id="game">Loading…</h1><div id="progress"></div>
-<div id="instruction"></div><div class="row"><button id="back">Back</button><button id="reset">Start over</button></div>
-<button id="save">Save labels</button><button id="cancel">Cancel without saving</button>
-<div class="hint">Click the center of each shot. Back removes the most recent marker so you can place it again. The preview uses the same marker renderer as the PDF.</div></aside>
+<div id="notice"></div><div id="instruction"></div>
+<div id="details"><div id="shot-name"></div><div id="description"></div><div id="difficulty"></div></div>
+<div class="row"><button id="another">Add another</button><button id="back">Back</button></div><button id="reset">Start over</button>
+<button id="save">Save &amp; next game</button><button id="cancel">Stop without saving this game</button>
+<div class="hint">Each click advances to the next shot. Use Add another when one table entry has multiple physical targets. Back removes the most recent marker. Saving automatically loads the next unlabeled game.</div></aside>
 </main><script>
 const base={json.dumps(base)}; let state=null;
 async function request(action, body={{}}) {{
@@ -400,22 +525,35 @@ async function request(action, body={{}}) {{
 async function load() {{ state=await (await fetch(`${{base}}/state`)).json(); render(); }}
 function render() {{
   document.querySelector('#game').textContent=state.game;
-  document.querySelector('#progress').textContent=`${{state.placed}} of ${{state.shots.length}} placed`;
+  document.querySelector('#progress').textContent=`${{state.shots_placed}} of ${{state.shot_count}} shots · ${{state.label_count}} labels`;
+  document.querySelector('#notice').textContent=state.message;
   const instruction=document.querySelector('#instruction');
-  if(state.complete) instruction.innerHTML='<strong>All shots placed.</strong><br>Review the image, go back to adjust, or save.';
-  else {{ const shot=state.shots[state.placed]; instruction.innerHTML=`Click <strong>shot ${{shot.diagram}}</strong>:<br>${{escapeHtml(shot.name)}}`; }}
-  document.querySelector('#back').disabled=state.placed===0;
-  document.querySelector('#reset').disabled=state.placed===0;
-  document.querySelector('#save').disabled=!state.complete;
+  if(state.batch_complete) instruction.textContent='All selected games are labeled.';
+  else if(state.placing_extra) instruction.textContent=`Click another location for shot ${{state.active_shot.diagram}}.`;
+  else if(state.complete) instruction.textContent='Review the image, then save or go back.';
+  else instruction.textContent=`Click shot ${{state.active_shot.diagram}}.`;
+  const details=document.querySelector('#details'); const shot=state.active_shot;
+  details.hidden=!shot;
+  if(shot) {{
+    document.querySelector('#shot-name').textContent=shot.name;
+    document.querySelector('#description').textContent=shot.description;
+    const difficulty=document.querySelector('#difficulty');
+    difficulty.textContent=shot.difficulty ? `Difficulty: ${{shot.difficulty}}` : 'Difficulty: not specified';
+  }}
+  const another=document.querySelector('#another');
+  another.disabled=state.batch_complete || state.placing_extra || !state.previous_shot;
+  another.textContent=state.previous_shot ? `Another #${{state.previous_shot.diagram}}` : 'Add another';
+  document.querySelector('#back').disabled=state.label_count===0 && !state.placing_extra;
+  document.querySelector('#reset').disabled=state.label_count===0;
+  document.querySelector('#save').disabled=state.batch_complete || !state.complete || state.placing_extra;
   document.querySelector('#board').src=`${{base}}/preview.png?v=${{state.revision}}`;
 }}
-function escapeHtml(value) {{ const node=document.createElement('div'); node.textContent=value; return node.innerHTML; }}
 document.querySelector('#board').addEventListener('click', event => {{
-  if(!state || state.complete) return;
+  if(!state || state.batch_complete || (state.complete && !state.placing_extra)) return;
   const rect=event.currentTarget.getBoundingClientRect();
   request('place',{{x:(event.clientX-rect.left)*state.width/rect.width,y:(event.clientY-rect.top)*state.height/rect.height}});
 }});
-document.querySelector('#back').onclick=()=>request('back'); document.querySelector('#reset').onclick=()=>request('reset');
+document.querySelector('#another').onclick=()=>request('add-another'); document.querySelector('#back').onclick=()=>request('back'); document.querySelector('#reset').onclick=()=>request('reset');
 document.querySelector('#save').onclick=()=>request('save'); document.querySelector('#cancel').onclick=()=>request('cancel');
 document.addEventListener('keydown',event=>{{ if(event.key==='Backspace'){{event.preventDefault();request('back');}} }}); load();
 </script></body></html>"""
@@ -432,6 +570,7 @@ def _handler_for(session, token):
             if not path.startswith(prefix):
                 return None
             return path[len(prefix):] or "/"
+
         def _send(self, content, content_type, status=HTTPStatus.OK):
             self.send_response(status)
             self.send_header("Content-Type", content_type)
@@ -466,6 +605,8 @@ def _handler_for(session, token):
                 body = json.loads(self.rfile.read(length) or b"{}")
                 if route == "/place":
                     session.place(body["x"], body["y"])
+                elif route == "/add-another":
+                    session.add_another()
                 elif route == "/back":
                     session.back()
                 elif route == "/reset":
@@ -495,6 +636,44 @@ def _content_path_for_game(game):
     return CONTENT / f"{game}.yaml"
 
 
+def _game_for_editor(content_path, issue="", root=ROOT):
+    data = load_yaml(content_path)
+    image_path = root / data["image"]
+    if not image_path.is_file():
+        raise ShotLabelError(f"missing image: {image_path}")
+    _expected_diagrams(data)
+    return data, image_path, issue
+
+
+def _remaining_game_loader(current_path, root=ROOT, paths=None):
+    paths = list(paths) if paths is not None else content_for_selected_pins()
+    resolved_current = current_path.resolve()
+    current_index = next(
+        (
+            index
+            for index, path in enumerate(paths)
+            if path.resolve() == resolved_current
+        ),
+        None,
+    )
+    if current_index is not None:
+        paths = paths[current_index + 1:] + paths[:current_index]
+
+    def load_next():
+        while paths:
+            path = paths.pop(0)
+            data = load_yaml(path)
+            image = data.get("image")
+            if not image or not (root / image).is_file():
+                continue
+            issue = shot_label_issue(data, root)
+            if issue:
+                return _game_for_editor(path, issue, root)
+        return None
+
+    return load_next
+
+
 def interactive_shot_labels(game):
     """Open the browser label editor for one game, or the next incomplete game."""
     game = game.strip()
@@ -515,12 +694,15 @@ def interactive_shot_labels(game):
             return 0
 
     try:
-        data = load_yaml(content_path)
-        image_path = ROOT / data["image"]
-        if not image_path.is_file():
-            raise ShotLabelError(f"missing image: {image_path}")
-        _expected_diagrams(data)
-        session = _LabelSession(data, image_path, SHOT_LABELS)
+        data, image_path, _issue = _game_for_editor(content_path, issue or "")
+        session = _LabelSession(
+            data,
+            image_path,
+            SHOT_LABELS,
+            next_game_loader=_remaining_game_loader(content_path),
+        )
+        if issue:
+            session.message = f"Selected {data['name']}: {issue}."
     except (KeyError, OSError, ShotLabelError, UnidentifiedImageError, yaml.YAMLError) as error:
         print(f"ERROR: could not start shot labeling: {error}", file=sys.stderr)
         return 1
@@ -548,8 +730,10 @@ def interactive_shot_labels(game):
         server.server_close()
         thread.join(timeout=2)
 
-    if session.result:
-        print(f"Saved shot labels to {session.result}")
+    if session.saved_paths:
+        print(f"Saved shot labels for {len(session.saved_paths)} game(s):")
+        for path in session.saved_paths:
+            print(f"  {path}")
     else:
         print("Shot labels were not changed.")
     return 0

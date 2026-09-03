@@ -80,7 +80,7 @@ def build_game(game_id, black_and_white=False):
 
 def build_selected(black_and_white=False, binder=False):
     try:
-        paths = content_for_selected_pins()
+        paths = content_for_selected_pins()[:5]
     except PinRegistryError as error:
         print(f"ERROR: invalid {MANIFEST}: {error}", file=sys.stderr)
         return 1
