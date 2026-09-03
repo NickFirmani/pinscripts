@@ -6,15 +6,17 @@ import subprocess
 import tempfile
 from xml.sax.saxutils import escape
 
+import qrcode
 import yaml
 from PIL import Image, ImageOps
 
 from pypdf import PdfReader, PdfWriter, Transformation
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_RIGHT
+from reportlab.lib.enums import TA_RIGHT, TA_CENTER
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import (
     BaseDocTemplate,
@@ -899,14 +901,75 @@ def merge_pdfs(paths, output_path: Path):
 
     title_page_stream = BytesIO()
     title_page = Canvas(title_page_stream, pagesize=letter)
-    title_page.setTitle("Pinball Commentary Binder")
+    title_page.setTitle("Pinball Commentary Quickstart")
     title_page.setFillColor(INK)
+    # Draw the following text in a centered position on the page
+    # Draw the title first
     title_page.setFont("Helvetica-Bold", 24)
     title_page.drawCentredString(
         PAGE_W / 2,
-        PAGE_H / 2,
-        "PINBALL COMMENTARY BINDER",
+        PAGE_H / 2 + 144,
+        "Pinball Commentary Quick Reference",
     )
+    subtitle = """A collection of quick informational sheets for pinball commentary.
+    
+    Disclaimer: The content was researched by LLMs (from official sources), and may contain inaccuracies. 
+    
+    If you find an issue or have notes on a game, please feel free to just write on the sheets! 
+    
+    The content lives at the GitHub repository below, and if you want to contribute, please submit a pull request.
+    """.lstrip().replace("\n", "<br/>")
+    subtitle_style = ParagraphStyle(
+        "subtitle",
+        fontName="Helvetica",
+        fontSize=12,
+        leading=16,
+        alignment=TA_CENTER,
+    )
+
+    subtitle_width = 440
+    subtitle_paragraph = Paragraph(subtitle, subtitle_style)
+
+    w, h = subtitle_paragraph.wrap(subtitle_width, PAGE_H)
+
+    subtitle_paragraph.drawOn(
+        title_page,
+        (PAGE_W - subtitle_width) / 2,
+        (PAGE_H / 2) - 25,
+    )
+
+    # Add a link and QR code to the GitHub repository
+    url = "https://github.com/NickFirmani/pinscripts"
+    title_page.setFont("Helvetica", 10)
+    title_page.drawCentredString(
+        PAGE_W / 2,
+        (PAGE_H / 2) - 50,
+        f"GitHub Repository: {url}"
+    )
+    # Generate and add a QR code to the GitHub repository
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(url)
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    img_stream = BytesIO()
+    img.save(img_stream, format="PNG")
+    img_stream.seek(0)
+
+    title_page.drawImage(
+        ImageReader(img_stream),
+        (PAGE_W / 2) - 50,
+        (PAGE_H / 2) - 160,
+        width=100,
+        height=100,
+    )
+
     title_page.save()
     title_page_stream.seek(0)
     writer.add_page(PdfReader(title_page_stream).pages[0])

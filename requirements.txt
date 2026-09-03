@@ -3,4 +3,4 @@ PyYAML>=6.0
 Pillow>=10.0
 pypdf>=5.0
 jsonschema>=4.23
-
+qrcode[pil]>=8.0
