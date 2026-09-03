@@ -87,7 +87,7 @@ TITLE = ParagraphStyle(
     fontName="Helvetica-Bold",
     fontSize=TITLE_FONT_SIZE,
     leading=TITLE_LEADING,
-    spaceAfter=SPACE_SM,
+    spaceAfter=SPACE_LG,
     alignment=TA_RIGHT,
     textColor=INK,
 )
@@ -193,6 +193,8 @@ METADATA_TABLE_STYLE = TableStyle(
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
         ("RIGHTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("RIGHTPADDING", (0, 0), (0, -1), SPACE_SM),
+        ("LEFTPADDING", (1, 0), (1, -1), SPACE_SM),
         ("TOPPADDING", (0, 0), (-1, -1), SPACE_SM),
         ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_SM),
     ]
@@ -271,7 +273,7 @@ def build_blocks(data, black_and_white=False):
     ]
     fact_table = Table(
         fact_rows,
-        colWidths=[0.72 * inch, COL_W - 0.72 * inch],
+        colWidths=[0.78 * inch, COL_W - 0.78 * inch],
         hAlign="LEFT",
     )
     fact_table.setStyle(METADATA_TABLE_STYLE)
