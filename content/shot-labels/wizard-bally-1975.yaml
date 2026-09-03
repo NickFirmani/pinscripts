@@ -1,0 +1,26 @@
+game_id: wizard-bally-1975
+image: images/wizard-bally-1975.webp
+image_width: 1080
+image_height: 1920
+image_sha256: 281e8707dd9eb298cc56442d04a3ca1f9af22eb8567e6f5040a784f899a5efe8
+shots_sha256: 17175cac1cf66832439300544783eef437e081db921477836c95a78ccc84b6bb
+coordinates:
+- diagram: 1
+  x: 107
+  y: 617
+- diagram: 2
+  x: 89
+  y: 1098
+- diagram: 3
+  x: 491
+  y: 159
+- diagram: 4
+  x: 773
+  y: 926
+- diagram: 5
+  x: 709
+  y: 814
+- diagram: 6
+  x: 812
+  y: 428
+skipped_diagrams: []

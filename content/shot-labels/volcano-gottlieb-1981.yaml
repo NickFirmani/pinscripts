@@ -1,0 +1,26 @@
+game_id: volcano-gottlieb-1981
+image: images/volcano-gottlieb-1981.webp
+image_width: 1080
+image_height: 1919
+image_sha256: 5fd9cecff700b51a73f35f612beb2b239834cdaa2c17dc89e68d72e6b45486ac
+shots_sha256: 7dc98c1024675b7df425618be7903858eaeeb2d508e6b2988b1c7b7f2381585c
+coordinates:
+- diagram: 1
+  x: 108
+  y: 800
+- diagram: 2
+  x: 231
+  y: 591
+- diagram: 3
+  x: 280
+  y: 205
+- diagram: 4
+  x: 540
+  y: 82
+- diagram: 5
+  x: 896
+  y: 266
+- diagram: 6
+  x: 890
+  y: 135
+skipped_diagrams: []

@@ -1,0 +1,24 @@
+game_id: attack-from-mars-bally-1995
+image: images/attack-from-mars-bally-1995.webp
+image_width: 1080
+image_height: 1985
+image_sha256: d73a3ec22857a134817d692d095dfd8a17e805ff071062a27bec6a74c46123dc
+shots_sha256: 820405c222d5355a72d21eb6b459862fa8c03926836abf328c59bce636e8e875
+coordinates:
+- diagram: 1
+  x: 291
+  y: 523
+- diagram: 2
+  x: 534
+  y: 503
+- diagram: 3
+  x: 106
+  y: 1272
+- diagram: 3
+  x: 852
+  y: 1253
+- diagram: 5
+  x: 732
+  y: 611
+skipped_diagrams:
+- 4

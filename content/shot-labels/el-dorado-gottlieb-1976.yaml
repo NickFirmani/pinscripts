@@ -1,0 +1,24 @@
+game_id: el-dorado-gottlieb-1976
+image: images/el-dorado-gottlieb-1976.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 5e157c3392b198661429ac848fec4ac50f98d70586725a1251baed759fd1d51c
+shots_sha256: f1b6dec864b3401a8eaf371637adbf2c45f0e316e7e62c59c3c5ab863efc62ff
+coordinates:
+- diagram: 1
+  x: 460
+  y: 241
+- diagram: 2
+  x: 577
+  y: 611
+- diagram: 3
+  x: 291
+  y: 861
+- diagram: 4
+  x: 801
+  y: 712
+- diagram: 5
+  x: 899
+  y: 540
+skipped_diagrams:
+- 6

@@ -1,0 +1,24 @@
+game_id: scared-stiff-bally-1996
+image: images/scared-stiff-bally-1996.webp
+image_width: 1080
+image_height: 2252
+image_sha256: 54c32f1e09e1ca39d10784edabafa77b2851c70a64a2bb293948e871673496d6
+shots_sha256: e273f438a7d1f4e30ad1b6b6a36ad74356ca85e805e466b0e1e3ddc4aaf25683
+coordinates:
+- diagram: 1
+  x: 149
+  y: 922
+- diagram: 2
+  x: 281
+  y: 850
+- diagram: 3
+  x: 491
+  y: 618
+- diagram: 4
+  x: 873
+  y: 1078
+- diagram: 5
+  x: 763
+  y: 944
+skipped_diagrams:
+- 6

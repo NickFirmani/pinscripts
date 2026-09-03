@@ -1,0 +1,26 @@
+game_id: jurassic-park-premium-stern-2019
+image: images/jurassic-park-premium-stern-2019.webp
+image_width: 1080
+image_height: 1985
+image_sha256: b7f45d2375dd99f52540ce943146a6dc4234b22f1645805f06a6fb17c5bdf8d8
+shots_sha256: 59db5591dc47bba83e00b77034219e3daf4082bb2518e6e9082d9cd727ec5895
+coordinates:
+- diagram: 1
+  x: 98
+  y: 964
+- diagram: 2
+  x: 236
+  y: 887
+- diagram: 3
+  x: 353
+  y: 356
+- diagram: 4
+  x: 602
+  y: 529
+- diagram: 5
+  x: 844
+  y: 551
+- diagram: 6
+  x: 979
+  y: 1218
+skipped_diagrams: []

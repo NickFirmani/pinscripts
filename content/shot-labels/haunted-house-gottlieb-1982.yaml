@@ -1,0 +1,26 @@
+game_id: haunted-house-gottlieb-1982
+image: images/haunted-house-gottlieb-1982.webp
+image_width: 1080
+image_height: 1988
+image_sha256: c1bd74b1be340a896aadba282ea92c55df7bd72decdb4a4c7e92e82ccf1db7b0
+shots_sha256: 7fd909a7f5b3be20618b0f750fa6330d371f384cd3ca3ba0d385719153f58183
+coordinates:
+- diagram: 1
+  x: 455
+  y: 1182
+- diagram: 2
+  x: 571
+  y: 485
+- diagram: 3
+  x: 11
+  y: 874
+- diagram: 4
+  x: 927
+  y: 510
+- diagram: 5
+  x: 537
+  y: 344
+- diagram: 6
+  x: 518
+  y: 184
+skipped_diagrams: []

@@ -1,0 +1,26 @@
+game_id: wild-fyre-stern-electronics-1978
+image: images/wild-fyre-stern-electronics-1978.webp
+image_width: 1080
+image_height: 1920
+image_sha256: 1baafb98da698b69966ae03772f762606e83d295b6d26698dbab817ff1f7867c
+shots_sha256: 4c7dcf24d7253e1bc8dfd2b527a384b59a0d1e3e9de437b2ca782ee2db6ad0b6
+coordinates:
+- diagram: 1
+  x: 89
+  y: 476
+- diagram: 2
+  x: 211
+  y: 341
+- diagram: 3
+  x: 41
+  y: 817
+- diagram: 4
+  x: 489
+  y: 1091
+- diagram: 5
+  x: 899
+  y: 694
+- diagram: 6
+  x: 824
+  y: 382
+skipped_diagrams: []

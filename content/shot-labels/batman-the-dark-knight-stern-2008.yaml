@@ -1,0 +1,22 @@
+game_id: batman-the-dark-knight-stern-2008
+image: images/batman-the-dark-knight-stern-2008.webp
+image_width: 1080
+image_height: 1985
+image_sha256: a7863cde4e01394fd91ca72a9e804832495078aade448893776c61193583c41a
+shots_sha256: 60b4ea0a1dbc31ddc2634019a133fca9fa1d86df4782cdd7a26e84293afa07dc
+coordinates:
+- diagram: 1
+  x: 279
+  y: 795
+- diagram: 2
+  x: 450
+  y: 738
+- diagram: 4
+  x: 579
+  y: 736
+- diagram: 6
+  x: 923
+  y: 834
+skipped_diagrams:
+- 3
+- 5

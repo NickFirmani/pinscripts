@@ -1,0 +1,22 @@
+game_id: kismet-williams-1961
+image: images/kismet-williams-1961.webp
+image_width: 1080
+image_height: 1986
+image_sha256: a730fdbfb43f3aab6f870b7d69b810fc21d613c8726b4cd79b8582e749c17d56
+shots_sha256: f4a70550496ec1e1c69b5aa1f046830c469b63e7b5149aa2e9596c2e6b0892c3
+coordinates:
+- diagram: 1
+  x: 192
+  y: 342
+- diagram: 1
+  x: 837
+  y: 351
+- diagram: 2
+  x: 508
+  y: 463
+- diagram: 3
+  x: 515
+  y: 851
+skipped_diagrams:
+- 4
+- 5

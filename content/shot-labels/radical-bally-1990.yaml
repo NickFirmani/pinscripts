@@ -1,0 +1,26 @@
+game_id: radical-bally-1990
+image: images/radical-bally-1990.webp
+image_width: 1080
+image_height: 1920
+image_sha256: ac0fe7d954cce677cb05d47a87ad73267e99459f2821fdf2467ff9a20e4b8ef1
+shots_sha256: 0569e8158806626e5abcd35add121408d3ba7df4447a96889d4443b4890163ae
+coordinates:
+- diagram: 1
+  x: 214
+  y: 1101
+- diagram: 2
+  x: 311
+  y: 994
+- diagram: 3
+  x: 187
+  y: 648
+- diagram: 4
+  x: 408
+  y: 473
+- diagram: 5
+  x: 902
+  y: 480
+- diagram: 6
+  x: 730
+  y: 780
+skipped_diagrams: []

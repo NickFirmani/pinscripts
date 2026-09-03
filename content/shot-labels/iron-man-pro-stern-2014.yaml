@@ -1,0 +1,20 @@
+game_id: iron-man-pro-stern-2014
+image: images/iron-man-pro-stern-2014.webp
+image_width: 1080
+image_height: 1985
+image_sha256: db74ba4d1e51e709df7857361a904048d021e49d4893f2cf3558ead69e7ede4b
+shots_sha256: 47ced28311aead82d8cb12dc3c1ae8f7cf7b82f4a30e8e869c0b7c18a94ec586
+coordinates:
+- diagram: 1
+  x: 362
+  y: 591
+- diagram: 2
+  x: 504
+  y: 529
+- diagram: 3
+  x: 494
+  y: 951
+skipped_diagrams:
+- 4
+- 5
+- 6

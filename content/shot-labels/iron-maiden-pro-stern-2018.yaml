@@ -1,0 +1,26 @@
+game_id: iron-maiden-pro-stern-2018
+image: images/iron-maiden-pro-stern-2018.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 70f398220ced297994b2ae2a70f6148e00b73b15ee57289df4191d760afd2429
+shots_sha256: 4df17629cad7a9ea2b7de1c7f5b529ec73745290c33959dec91c6e9c7580128a
+coordinates:
+- diagram: 1
+  x: 256
+  y: 557
+- diagram: 2
+  x: 195
+  y: 1049
+- diagram: 3
+  x: 770
+  y: 719
+- diagram: 4
+  x: 627
+  y: 364
+- diagram: 5
+  x: 498
+  y: 472
+- diagram: 6
+  x: 869
+  y: 757
+skipped_diagrams: []

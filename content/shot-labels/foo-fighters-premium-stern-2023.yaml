@@ -1,0 +1,26 @@
+game_id: foo-fighters-premium-stern-2023
+image: images/foo-fighters-premium-stern-2023.webp
+image_width: 1080
+image_height: 1822
+image_sha256: 417db38349754d10263a2b1d1aa2404250f30ceca93481b20aaf136543ee90e3
+shots_sha256: ece8e492dde98e038a6af6f5b403ce6d3bbfb4095cb3af74cfe939dc391daba9
+coordinates:
+- diagram: 1
+  x: 358
+  y: 710
+- diagram: 2
+  x: 424
+  y: 636
+- diagram: 3
+  x: 621
+  y: 385
+- diagram: 4
+  x: 829
+  y: 517
+- diagram: 5
+  x: 766
+  y: 456
+- diagram: 6
+  x: 451
+  y: 382
+skipped_diagrams: []

@@ -1,0 +1,26 @@
+game_id: world-cup-soccer-bally-1994
+image: images/world-cup-soccer-bally-1994.webp
+image_width: 1080
+image_height: 1920
+image_sha256: f0834c7eafd7a0906371c7d72e2fe68ce7b101279a1ef7a5ca117e19475df346
+shots_sha256: 96e604168f18401841902d8b1fe0e97211134dced18781844400124986a16caf
+coordinates:
+- diagram: 1
+  x: 174
+  y: 774
+- diagram: 2
+  x: 295
+  y: 648
+- diagram: 3
+  x: 380
+  y: 468
+- diagram: 4
+  x: 398
+  y: 308
+- diagram: 5
+  x: 748
+  y: 786
+- diagram: 6
+  x: 849
+  y: 859
+skipped_diagrams: []

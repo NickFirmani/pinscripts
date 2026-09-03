@@ -1,0 +1,26 @@
+game_id: strato-flite-williams-1974
+image: images/strato-flite-williams-1974.webp
+image_width: 1080
+image_height: 1920
+image_sha256: 20fc5ae5d7871376eb44a26c079f10befabf005e3867171a64526478f1983253
+shots_sha256: 4a2d8fc67afb7bb122dc557f4c7636f2867b5cb8d336b50407cc8205804c1485
+coordinates:
+- diagram: 1
+  x: 63
+  y: 747
+- diagram: 2
+  x: 120
+  y: 1360
+- diagram: 3
+  x: 243
+  y: 284
+- diagram: 4
+  x: 494
+  y: 118
+- diagram: 5
+  x: 733
+  y: 286
+- diagram: 6
+  x: 902
+  y: 775
+skipped_diagrams: []

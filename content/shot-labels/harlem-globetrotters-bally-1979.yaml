@@ -1,0 +1,26 @@
+game_id: harlem-globetrotters-bally-1979
+image: images/harlem-globetrotters-bally-1979.webp
+image_width: 1080
+image_height: 1986
+image_sha256: e7ae926fe768930ec2d89ffc8dabe7230ec7f0caa68dcbc5870d7eb05cb1290e
+shots_sha256: b3b65cd686653648ccee36ee64d9b1ad46ccf066779471796d83eac89d1f2bd7
+coordinates:
+- diagram: 1
+  x: 99
+  y: 584
+- diagram: 2
+  x: 939
+  y: 650
+- diagram: 3
+  x: 526
+  y: 336
+- diagram: 4
+  x: 50
+  y: 1076
+- diagram: 5
+  x: 911
+  y: 327
+- diagram: 6
+  x: 1033
+  y: 949
+skipped_diagrams: []

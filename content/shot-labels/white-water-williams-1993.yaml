@@ -1,0 +1,20 @@
+game_id: white-water-williams-1993
+image: images/white-water-williams-1993.webp
+image_width: 1080
+image_height: 1920
+image_sha256: c2b8837fafcd26475e470b48fb48b851f2809c3df7a922999f7015e81e3574f0
+shots_sha256: a7186a559742fe7b848e44be2ac35ff876f18f9e6dbb897fc27c8533e1d0ac47
+coordinates:
+- diagram: 1
+  x: 420
+  y: 576
+- diagram: 2
+  x: 347
+  y: 305
+- diagram: 3
+  x: 506
+  y: 233
+skipped_diagrams:
+- 4
+- 5
+- 6

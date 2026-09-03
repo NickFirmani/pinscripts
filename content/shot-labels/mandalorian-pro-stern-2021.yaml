@@ -1,0 +1,26 @@
+game_id: mandalorian-pro-stern-2021
+image: images/mandalorian-pro-stern-2021.webp
+image_width: 1080
+image_height: 1986
+image_sha256: d23c01990fadbe494ea90d86f8ca9123d2f200dfbef6ff919f14a767bf9f6384
+shots_sha256: a8576b80ff2f44efd8f75b359f5844004221ad5e8626ae3e796a9f7a661fdfeb
+coordinates:
+- diagram: 1
+  x: 555
+  y: 709
+- diagram: 2
+  x: 288
+  y: 697
+- diagram: 3
+  x: 404
+  y: 630
+- diagram: 4
+  x: 869
+  y: 667
+- diagram: 5
+  x: 753
+  y: 625
+- diagram: 6
+  x: 211
+  y: 967
+skipped_diagrams: []

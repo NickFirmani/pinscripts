@@ -1,0 +1,24 @@
+game_id: batman-66-premium-stern-2016
+image: images/batman-66-premium-stern-2016.webp
+image_width: 1080
+image_height: 1984
+image_sha256: 3e8f53c145df57e5bf5284a7c7e6b9dbf17b1126ffb0f9a41895789658af350e
+shots_sha256: d7aab83b6068996908fe7d14f16d673c3dc360e3a7f848faaa43f267315d9f1c
+coordinates:
+- diagram: 1
+  x: 128
+  y: 764
+- diagram: 2
+  x: 196
+  y: 609
+- diagram: 3
+  x: 399
+  y: 543
+- diagram: 5
+  x: 894
+  y: 648
+- diagram: 6
+  x: 962
+  y: 759
+skipped_diagrams:
+- 4

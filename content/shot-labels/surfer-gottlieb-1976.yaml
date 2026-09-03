@@ -1,0 +1,26 @@
+game_id: surfer-gottlieb-1976
+image: images/surfer-gottlieb-1976.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 9631e58f0447e64900aa9b493749b24bd748a0aeeaac72e3d1bdc7b0feb3e05c
+shots_sha256: fc560248d0b45eb82491eb7a74f52dff28e1ec13e0eaf375d19fc0d92908b398
+coordinates:
+- diagram: 1
+  x: 242
+  y: 370
+- diagram: 2
+  x: 21
+  y: 912
+- diagram: 3
+  x: 545
+  y: 889
+- diagram: 4
+  x: 534
+  y: 570
+- diagram: 5
+  x: 889
+  y: 447
+- diagram: 6
+  x: 1002
+  y: 892
+skipped_diagrams: []

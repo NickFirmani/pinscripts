@@ -1,0 +1,26 @@
+game_id: sinbad-gottlieb-1978
+image: images/sinbad-gottlieb-1978.webp
+image_width: 1080
+image_height: 1920
+image_sha256: ab294b230cb56da0d1ac2793fb8a62140e9386c9d3bf4becef0b3e110a7da063
+shots_sha256: 778044bb783de290166561cb2a8c1464ab58d50953c188fe82b9993229af6bd5
+coordinates:
+- diagram: 1
+  x: 117
+  y: 576
+- diagram: 2
+  x: 240
+  y: 458
+- diagram: 3
+  x: 591
+  y: 690
+- diagram: 4
+  x: 734
+  y: 774
+- diagram: 5
+  x: 458
+  y: 760
+- diagram: 6
+  x: 214
+  y: 745
+skipped_diagrams: []

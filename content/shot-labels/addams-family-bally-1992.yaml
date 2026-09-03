@@ -1,0 +1,26 @@
+game_id: addams-family-bally-1992
+image: images/addams-family-bally-1992.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 4c7335da52d06cdd02f25df536256fecad1bbf42d21e0a36a11098eca92df5be
+shots_sha256: 3a50a58af48b523e94f07eb69ed6558e19a254af0e1af689af39e5c75fd8c22a
+coordinates:
+- diagram: 1
+  x: 444
+  y: 864
+- diagram: 2
+  x: 342
+  y: 478
+- diagram: 3
+  x: 324
+  y: 277
+- diagram: 4
+  x: 617
+  y: 367
+- diagram: 5
+  x: 775
+  y: 472
+- diagram: 6
+  x: 960
+  y: 955
+skipped_diagrams: []

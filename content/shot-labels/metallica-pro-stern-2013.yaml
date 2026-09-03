@@ -1,0 +1,29 @@
+game_id: metallica-pro-stern-2013
+image: images/metallica-pro-stern-2013.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 7da6984e9f22fb57f8cd6dffd2be79b232cd464af2856ff65bcffcf041808b47
+shots_sha256: 9a4cf16497c18dbc3f097612d524b1f48022c0f62d6ec8403ff85e35c0f2bc76
+coordinates:
+- diagram: 1
+  x: 117
+  y: 948
+- diagram: 2
+  x: 237
+  y: 421
+- diagram: 3
+  x: 526
+  y: 218
+- diagram: 4
+  x: 362
+  y: 325
+- diagram: 4
+  x: 886
+  y: 538
+- diagram: 5
+  x: 596
+  y: 679
+- diagram: 6
+  x: 727
+  y: 665
+skipped_diagrams: []

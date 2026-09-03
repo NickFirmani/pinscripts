@@ -1,0 +1,32 @@
+game_id: grand-prix-williams-1976
+image: images/grand-prix-williams-1976.webp
+image_width: 1080
+image_height: 1984
+image_sha256: 562356cfccbde926535c520f24566dafdd3bdceea92623ff21a03d4b5c8b29c3
+shots_sha256: 5403b5424e176b2b1d5e544bf0f4127728f397b65f38b6ef1ef90a6886ac51da
+coordinates:
+- diagram: 1
+  x: 165
+  y: 549
+- diagram: 2
+  x: 508
+  y: 173
+- diagram: 3
+  x: 226
+  y: 368
+- diagram: 3
+  x: 795
+  y: 363
+- diagram: 4
+  x: 526
+  y: 832
+- diagram: 5
+  x: 877
+  y: 549
+- diagram: 6
+  x: 1000
+  y: 852
+- diagram: 6
+  x: 44
+  y: 869
+skipped_diagrams: []

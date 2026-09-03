@@ -1,0 +1,26 @@
+game_id: walking-dead-pro-stern-2014
+image: images/walking-dead-pro-stern-2014.webp
+image_width: 1080
+image_height: 1975
+image_sha256: c4a006e6ab3ea59ba413872eb60f2ba84060ecfffa27e363167740453ab0db7b
+shots_sha256: ea427ddb43e637ede0200ac4a9c85935b79671aca4121f0d4ac35aa9a1a58302
+coordinates:
+- diagram: 1
+  x: 322
+  y: 637
+- diagram: 2
+  x: 143
+  y: 959
+- diagram: 3
+  x: 374
+  y: 357
+- diagram: 4
+  x: 503
+  y: 331
+- diagram: 5
+  x: 628
+  y: 768
+- diagram: 6
+  x: 786
+  y: 891
+skipped_diagrams: []

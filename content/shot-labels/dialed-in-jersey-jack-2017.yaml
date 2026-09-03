@@ -1,0 +1,18 @@
+game_id: dialed-in-jersey-jack-2017
+image: images/dialed-in-jersey-jack-2017.webp
+image_width: 1080
+image_height: 1918
+image_sha256: 872eb74af803de0ed26529b282e6187e3bee8081dcf9ff43e1a36d0db056c09c
+shots_sha256: 9c358b7fe5d734fed6248e3c6ea5f53181659fc65b83bf92f6aacafb8187b41f
+coordinates:
+- diagram: 1
+  x: 461
+  y: 791
+- diagram: 2
+  x: 742
+  y: 589
+skipped_diagrams:
+- 3
+- 4
+- 5
+- 6

@@ -1,0 +1,29 @@
+game_id: eight-ball-bally-1977
+image: images/eight-ball-bally-1977.webp
+image_width: 1080
+image_height: 1446
+image_sha256: 2983fad435b16103860f9ce42e43f7f006f19dd9507217bca3194670e3cd120f
+shots_sha256: 2b1b16260f8421a404a84367e041b60d1350937dbe3f66cf007942d62ab1ea2f
+coordinates:
+- diagram: 1
+  x: 764
+  y: 307
+- diagram: 2
+  x: 229
+  y: 488
+- diagram: 3
+  x: 802
+  y: 500
+- diagram: 4
+  x: 513
+  y: 178
+- diagram: 5
+  x: 85
+  y: 607
+- diagram: 5
+  x: 914
+  y: 597
+- diagram: 6
+  x: 869
+  y: 1015
+skipped_diagrams: []

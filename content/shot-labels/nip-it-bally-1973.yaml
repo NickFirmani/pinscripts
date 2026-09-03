@@ -1,0 +1,29 @@
+game_id: nip-it-bally-1973
+image: images/nip-it-bally-1973.webp
+image_width: 1080
+image_height: 1985
+image_sha256: bfedc958ca5dd3054697a5e95e7d86600ea3cbe971d51913e9c72ba8d5e2dc67
+shots_sha256: b34e4eb000f642027bcb245a8a1bdf14bd88060b40111b57f0e5c5ae93cff349
+coordinates:
+- diagram: 1
+  x: 543
+  y: 1020
+- diagram: 2
+  x: 747
+  y: 353
+- diagram: 3
+  x: 877
+  y: 964
+- diagram: 4
+  x: 138
+  y: 494
+- diagram: 4
+  x: 863
+  y: 576
+- diagram: 5
+  x: 24
+  y: 1012
+- diagram: 6
+  x: 58
+  y: 1071
+skipped_diagrams: []

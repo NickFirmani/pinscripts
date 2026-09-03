@@ -1,0 +1,26 @@
+game_id: paragon-bally-1979
+image: images/paragon-bally-1979.webp
+image_width: 1080
+image_height: 1444
+image_sha256: 2ac4db118863863bb32c884b381eaed75b917cdc5659b7d22796abddf34b13fe
+shots_sha256: e3ad5cf61eca812018b3db547a9e406c48ed784825df328f6361fc3ed3328a5f
+coordinates:
+- diagram: 1
+  x: 150
+  y: 418
+- diagram: 2
+  x: 150
+  y: 226
+- diagram: 3
+  x: 435
+  y: 145
+- diagram: 4
+  x: 262
+  y: 276
+- diagram: 5
+  x: 669
+  y: 188
+- diagram: 6
+  x: 985
+  y: 421
+skipped_diagrams: []

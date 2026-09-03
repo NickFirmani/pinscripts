@@ -1,0 +1,29 @@
+game_id: congo-williams-1995
+image: images/congo-williams-1995.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 973e166f9486a14c118541ea3955957e242a7c97bf6031d1154ca9cfb22dfc92
+shots_sha256: 73f03df76d10bc4692d17abac0e36adfeb9785745ed449f7834f48881dc410b0
+coordinates:
+- diagram: 1
+  x: 367
+  y: 449
+- diagram: 2
+  x: 239
+  y: 584
+- diagram: 3
+  x: 133
+  y: 633
+- diagram: 3
+  x: 713
+  y: 636
+- diagram: 4
+  x: 654
+  y: 536
+- diagram: 5
+  x: 858
+  y: 731
+- diagram: 6
+  x: 659
+  y: 873
+skipped_diagrams: []

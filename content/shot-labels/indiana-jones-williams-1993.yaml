@@ -1,0 +1,23 @@
+game_id: indiana-jones-williams-1993
+image: images/indiana-jones-williams-1993.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 2af966d4ed031f57cf2672bef44a04bbe0f835ed6695c259b85fa0bc080b57cb
+shots_sha256: a806d37d331d9c9b031b3dc7958b51056f77e998266912fb5a28b16bef2045d5
+coordinates:
+- diagram: 1
+  x: 249
+  y: 737
+- diagram: 2
+  x: 362
+  y: 656
+- diagram: 3
+  x: 543
+  y: 707
+- diagram: 4
+  x: 784
+  y: 409
+- diagram: 5
+  x: 857
+  y: 659
+skipped_diagrams: []

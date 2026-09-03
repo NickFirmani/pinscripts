@@ -1,0 +1,26 @@
+game_id: game-of-thrones-pro-stern-2015
+image: images/game-of-thrones-pro-stern-2015.webp
+image_width: 1080
+image_height: 1987
+image_sha256: 7b4ba52128120f99a99fe29dc734f2b5884095f696d4ac25d94abe79c8cf5cf7
+shots_sha256: d7b061029d79f084116c5a24dece7725c8dd08980f408e5be6d7318678e37464
+coordinates:
+- diagram: 1
+  x: 79
+  y: 1100
+- diagram: 2
+  x: 197
+  y: 807
+- diagram: 3
+  x: 357
+  y: 818
+- diagram: 4
+  x: 486
+  y: 712
+- diagram: 5
+  x: 645
+  y: 698
+- diagram: 6
+  x: 1026
+  y: 1042
+skipped_diagrams: []

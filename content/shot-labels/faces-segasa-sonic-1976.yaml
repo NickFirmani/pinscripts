@@ -1,0 +1,26 @@
+game_id: faces-segasa-sonic-1976
+image: images/faces-segasa-sonic-1976.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 163bae1944d054621797af0426c417573c6d2fec498529a690228bd3e00eddfa
+shots_sha256: 694b15c0b53dadec9d3bb72a2518bf653f96b4bb6ed3a951ab585d3dc35202da
+coordinates:
+- diagram: 1
+  x: 376
+  y: 170
+- diagram: 2
+  x: 543
+  y: 87
+- diagram: 3
+  x: 543
+  y: 497
+- diagram: 4
+  x: 1008
+  y: 718
+- diagram: 5
+  x: 719
+  y: 167
+- diagram: 6
+  x: 922
+  y: 427
+skipped_diagrams: []

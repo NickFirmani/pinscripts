@@ -1,0 +1,26 @@
+game_id: old-chicago-bally-1976
+image: images/old-chicago-bally-1976.webp
+image_width: 1080
+image_height: 1987
+image_sha256: 19e7d18b3e17e5cd685c5b8c5dfb70974a66c5ac17d9caedbd3fdfaac17e3638
+shots_sha256: f189ad6b0e59afcd4da92404c843f4742522e5c358fac4c739aeac196e814d50
+coordinates:
+- diagram: 1
+  x: 144
+  y: 522
+- diagram: 2
+  x: 59
+  y: 734
+- diagram: 3
+  x: 504
+  y: 602
+- diagram: 4
+  x: 919
+  y: 660
+- diagram: 5
+  x: 876
+  y: 243
+- diagram: 6
+  x: 413
+  y: 42
+skipped_diagrams: []

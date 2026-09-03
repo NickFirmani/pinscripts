@@ -1,0 +1,24 @@
+game_id: tron-legacy-pro-stern-2011
+image: images/tron-legacy-pro-stern-2011.webp
+image_width: 1080
+image_height: 1918
+image_sha256: d61c7767d00d92f45431345b231b834be11be6905f50039b081bc2fe3b411c19
+shots_sha256: bfbe18444e0ad1f81ca8c55d9527e2486285c5ea7cadeb7cf20e052082f9112c
+coordinates:
+- diagram: 1
+  x: 376
+  y: 353
+- diagram: 2
+  x: 474
+  y: 332
+- diagram: 3
+  x: 668
+  y: 435
+- diagram: 4
+  x: 786
+  y: 798
+- diagram: 5
+  x: 588
+  y: 254
+skipped_diagrams:
+- 6

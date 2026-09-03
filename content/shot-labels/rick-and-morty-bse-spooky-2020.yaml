@@ -1,0 +1,27 @@
+game_id: rick-and-morty-bse-spooky-2020
+image: images/rick-and-morty-bse-spooky-2020.webp
+image_width: 1080
+image_height: 1989
+image_sha256: a3ece18b0f8a2401d2f68ebce2f5796b7d6d093c4f5e6669d70ad7e00a94fa5d
+shots_sha256: 9d1a1d7130d27a11c3d18dc7aa37d09ef2fc8739e1722339d529f99d797e205f
+coordinates:
+- diagram: 1
+  x: 715
+  y: 487
+- diagram: 2
+  x: 548
+  y: 388
+- diagram: 3
+  x: 308
+  y: 681
+- diagram: 3
+  x: 789
+  y: 353
+- diagram: 4
+  x: 381
+  y: 572
+- diagram: 5
+  x: 308
+  y: 313
+skipped_diagrams:
+- 6

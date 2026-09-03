@@ -1,0 +1,35 @@
+game_id: dealers-choice-williams-1974
+image: images/dealers-choice-williams-1974.webp
+image_width: 1080
+image_height: 1986
+image_sha256: c21a6d302904855389239b36023b033dc353408b533970b51acf5b80bb0d6e65
+shots_sha256: da85b5d025374de998267acc08a4adb30987e6a3cd6c96b52d878a673ee9ff98
+coordinates:
+- diagram: 1
+  x: 76
+  y: 704
+- diagram: 2
+  x: 358
+  y: 172
+- diagram: 2
+  x: 715
+  y: 173
+- diagram: 3
+  x: 529
+  y: 728
+- diagram: 4
+  x: 59
+  y: 1076
+- diagram: 4
+  x: 191
+  y: 306
+- diagram: 4
+  x: 832
+  y: 285
+- diagram: 5
+  x: 1008
+  y: 1294
+- diagram: 6
+  x: 919
+  y: 898
+skipped_diagrams: []

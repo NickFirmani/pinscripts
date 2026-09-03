@@ -1,0 +1,22 @@
+game_id: dungeons-and-dragons-premium-stern-2025
+image: images/dungeons-and-dragons-premium-stern-2025.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 090745fb3c7c57a16b7cbcae53d2dd4073bd8385bfc211de57a8fe5eadf5867b
+shots_sha256: d6ce631a55be4923eacc74ea363dcdd21f70c3a27b3f33714c611cc79a5f551b
+coordinates:
+- diagram: 1
+  x: 228
+  y: 863
+- diagram: 3
+  x: 353
+  y: 753
+- diagram: 4
+  x: 633
+  y: 374
+- diagram: 5
+  x: 880
+  y: 726
+skipped_diagrams:
+- 2
+- 6

@@ -1,0 +1,23 @@
+game_id: spanish-eyes-williams-1972
+image: images/spanish-eyes-williams-1972.webp
+image_width: 1080
+image_height: 1728
+image_sha256: e449eb6f2753c456aa45f525ed1a7694e2d1e7f25fbb976bf9687fd16fb6def7
+shots_sha256: 5d27df132c99386c213837b44c2c848707daf1a7750ba27381e46e02ab975cb0
+coordinates:
+- diagram: 4
+  x: 489
+  y: 102
+- diagram: 5
+  x: 314
+  y: 765
+- diagram: 5
+  x: 664
+  y: 758
+- diagram: 6
+  x: 485
+  y: 772
+skipped_diagrams:
+- 1
+- 2
+- 3

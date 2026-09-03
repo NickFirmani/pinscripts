@@ -1,0 +1,26 @@
+game_id: james-bond-007-pro-stern-2022
+image: images/james-bond-007-pro-stern-2022.webp
+image_width: 1080
+image_height: 1726
+image_sha256: d94fa243f538455653d71f2f998d884f2c547fd444d6e950a08e8a45a6659fb9
+shots_sha256: b1ab1138c20000c12200e2825494730b782ba468bf18ae393b858ca216506f28
+coordinates:
+- diagram: 1
+  x: 263
+  y: 822
+- diagram: 2
+  x: 299
+  y: 507
+- diagram: 3
+  x: 524
+  y: 391
+- diagram: 4
+  x: 684
+  y: 522
+- diagram: 5
+  x: 758
+  y: 677
+- diagram: 6
+  x: 646
+  y: 591
+skipped_diagrams: []

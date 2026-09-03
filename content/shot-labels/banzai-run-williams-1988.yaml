@@ -1,0 +1,22 @@
+game_id: banzai-run-williams-1988
+image: images/banzai-run-williams-1988.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 1704f3c4ec0342fc65c5da8ccf610f6fd434a77ab331bca04b335f90d3d5d6f4
+shots_sha256: 841528250b6a4759d18de2723035cfda40fdb7289bc46be92313f1f23a36ee3e
+coordinates:
+- diagram: 1
+  x: 341
+  y: 1022
+- diagram: 2
+  x: 535
+  y: 570
+- diagram: 5
+  x: 676
+  y: 375
+- diagram: 6
+  x: 803
+  y: 1333
+skipped_diagrams:
+- 3
+- 4

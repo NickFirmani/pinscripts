@@ -1,0 +1,27 @@
+game_id: cirqus-voltaire-bally-1997
+image: images/cirqus-voltaire-bally-1997.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 366f44650df361b5a661f974d06e9c080bf78dd402ec28b5c44ee0e2f9292839
+shots_sha256: df49481a8f1f1cc34184a6f5c5466cf7c4c663de41bd35c95e6dd9ae7b5765b2
+coordinates:
+- diagram: 1
+  x: 183
+  y: 874
+- diagram: 2
+  x: 299
+  y: 825
+- diagram: 3
+  x: 695
+  y: 521
+- diagram: 4
+  x: 489
+  y: 572
+- diagram: 4
+  x: 851
+  y: 627
+- diagram: 5
+  x: 900
+  y: 767
+skipped_diagrams:
+- 6

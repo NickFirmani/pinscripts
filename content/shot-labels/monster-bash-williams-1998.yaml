@@ -1,0 +1,32 @@
+game_id: monster-bash-williams-1998
+image: images/monster-bash-williams-1998.webp
+image_width: 1080
+image_height: 1986
+image_sha256: fdf7c85fbc2a4f42172c3b4d8414c8693626ed2e273c7f6e1c87d6cbea8eadc8
+shots_sha256: 35b8ee41f1c2f7dbc5423c0d157caa2a516d96c6a6d9852a0cb99192a8356bb3
+coordinates:
+- diagram: 1
+  x: 171
+  y: 862
+- diagram: 2
+  x: 331
+  y: 630
+- diagram: 2
+  x: 750
+  y: 641
+- diagram: 3
+  x: 432
+  y: 492
+- diagram: 4
+  x: 555
+  y: 481
+- diagram: 5
+  x: 228
+  y: 701
+- diagram: 5
+  x: 845
+  y: 676
+- diagram: 6
+  x: 670
+  y: 563
+skipped_diagrams: []

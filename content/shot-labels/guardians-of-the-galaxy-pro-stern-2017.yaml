@@ -1,0 +1,26 @@
+game_id: guardians-of-the-galaxy-pro-stern-2017
+image: images/guardians-of-the-galaxy-pro-stern-2017.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 1b81c821e206ac69e28880b71106fba5f3f67de875ae044ce77f830fef0c09ea
+shots_sha256: 8c86c4e11283e2aa5cc24d80bb661c780bc161295336c334030b79be6cc5ae26
+coordinates:
+- diagram: 1
+  x: 169
+  y: 724
+- diagram: 2
+  x: 356
+  y: 490
+- diagram: 3
+  x: 534
+  y: 396
+- diagram: 4
+  x: 685
+  y: 778
+- diagram: 5
+  x: 253
+  y: 633
+- diagram: 6
+  x: 928
+  y: 1170
+skipped_diagrams: []

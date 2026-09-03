@@ -1,0 +1,13 @@
+game_id: captain-fantastic-bally-1977
+image: images/captain-fantastic-bally-1977.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 15ee9558677a860acdc82e11294c21b671ad2bff29543d04207e6b8be368f728
+shots_sha256: 74803f3e6ab0661826116d09f99618b8aea7710594b20959affe227a85e30ee3
+coordinates:
+- diagram: 1
+  x: 503
+  y: 42
+skipped_diagrams:
+- 2
+- 3

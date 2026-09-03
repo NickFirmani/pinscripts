@@ -1,0 +1,26 @@
+game_id: barracora-williams-1981
+image: images/barracora-williams-1981.webp
+image_width: 1080
+image_height: 1986
+image_sha256: da0559c81b61aae8bfdfe47035b338682399b84a5fb2aeb52194a9bd7083d658
+shots_sha256: 108022fc79fc1cd62548761bad79c47c6c54cdfb0b0b86e62b20a11666fe610b
+coordinates:
+- diagram: 1
+  x: 53
+  y: 930
+- diagram: 2
+  x: 120
+  y: 649
+- diagram: 3
+  x: 209
+  y: 324
+- diagram: 4
+  x: 849
+  y: 359
+- diagram: 5
+  x: 936
+  y: 961
+- diagram: 6
+  x: 1008
+  y: 529
+skipped_diagrams: []

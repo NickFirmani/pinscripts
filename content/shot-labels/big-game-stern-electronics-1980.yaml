@@ -1,0 +1,26 @@
+game_id: big-game-stern-electronics-1980
+image: images/big-game-stern-electronics-1980.webp
+image_width: 1080
+image_height: 1800
+image_sha256: cdeb4c97547b4af0c287b67e8afd4aafbb4f9ccf1149de3b397108d1ca5251da
+shots_sha256: 2b8a601d877583c964476de186e9474534a1e3178cf0e807dc06f5cce302458e
+coordinates:
+- diagram: 1
+  x: 83
+  y: 382
+- diagram: 2
+  x: 286
+  y: 387
+- diagram: 3
+  x: 396
+  y: 419
+- diagram: 4
+  x: 931
+  y: 469
+- diagram: 5
+  x: 1067
+  y: 868
+- diagram: 6
+  x: 673
+  y: 62
+skipped_diagrams: []

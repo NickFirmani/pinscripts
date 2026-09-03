@@ -1,0 +1,22 @@
+game_id: quick-draw-gottlieb-1975
+image: images/quick-draw-gottlieb-1975.webp
+image_width: 1080
+image_height: 1920
+image_sha256: ae6cee0116e75cfb8b00ef6ecca7ea9df66bf047649be6daab73be88a32113b9
+shots_sha256: f47351ba5c4e817236daacd7cb928f5a5c5c2bc41e82c9e79fab0cba8b60b791
+coordinates:
+- diagram: 1
+  x: 101
+  y: 895
+- diagram: 2
+  x: 74
+  y: 760
+- diagram: 5
+  x: 882
+  y: 813
+- diagram: 6
+  x: 881
+  y: 910
+skipped_diagrams:
+- 3
+- 4

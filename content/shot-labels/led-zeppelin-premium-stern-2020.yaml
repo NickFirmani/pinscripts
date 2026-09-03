@@ -1,0 +1,26 @@
+game_id: led-zeppelin-premium-stern-2020
+image: images/led-zeppelin-premium-stern-2020.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 43534d091a59a6f4554cfa14cd1749f3b411b9daeff4e6ca7481b366fcde0dfd
+shots_sha256: 61995eeac03dcef0a45803ef573b2802103635125b387bd30d33e009f1b6e83e
+coordinates:
+- diagram: 1
+  x: 120
+  y: 823
+- diagram: 2
+  x: 328
+  y: 580
+- diagram: 3
+  x: 583
+  y: 289
+- diagram: 4
+  x: 497
+  y: 271
+- diagram: 5
+  x: 600
+  y: 813
+- diagram: 6
+  x: 393
+  y: 392
+skipped_diagrams: []

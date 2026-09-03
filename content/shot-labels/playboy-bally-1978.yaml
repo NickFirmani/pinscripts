@@ -1,0 +1,26 @@
+game_id: playboy-bally-1978
+image: images/playboy-bally-1978.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 5840bcf8eef5fe51f43fca2101ef403cb8790bce6323cf9831ae19be8b768b1b
+shots_sha256: 11656cb44b060cb17bea15afe2be9309ef3d7224af31fe22e1caec295a7b8bd9
+coordinates:
+- diagram: 1
+  x: 45
+  y: 693
+- diagram: 2
+  x: 65
+  y: 1015
+- diagram: 3
+  x: 520
+  y: 28
+- diagram: 4
+  x: 509
+  y: 768
+- diagram: 5
+  x: 849
+  y: 720
+- diagram: 6
+  x: 948
+  y: 932
+skipped_diagrams: []

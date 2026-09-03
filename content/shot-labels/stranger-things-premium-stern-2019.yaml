@@ -1,0 +1,24 @@
+game_id: stranger-things-premium-stern-2019
+image: images/stranger-things-premium-stern-2019.webp
+image_width: 1080
+image_height: 1824
+image_sha256: d74db5f1fa4493fbbe8eb8ab5cd7c004c632c3cbf5b146a54b014896403930f5
+shots_sha256: fe1ececf97459426cb0af95bfd8210da78d89d72927de3719ec02373f1d64779
+coordinates:
+- diagram: 1
+  x: 372
+  y: 556
+- diagram: 2
+  x: 664
+  y: 547
+- diagram: 3
+  x: 567
+  y: 478
+- diagram: 4
+  x: 252
+  y: 768
+- diagram: 5
+  x: 791
+  y: 671
+skipped_diagrams:
+- 6

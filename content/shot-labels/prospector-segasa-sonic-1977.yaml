@@ -1,0 +1,26 @@
+game_id: prospector-segasa-sonic-1977
+image: images/prospector-segasa-sonic-1977.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 8a69ca8fe28d7521bb5e207b06bbe23244fe8628fcdd2ce7f16eaa736e73555c
+shots_sha256: fb5d88ad9bc29dbf152c54418cafac7abef0d1f8f20be9c9cf23fed4bacecf33
+coordinates:
+- diagram: 1
+  x: 46
+  y: 611
+- diagram: 2
+  x: 464
+  y: 883
+- diagram: 3
+  x: 537
+  y: 904
+- diagram: 4
+  x: 985
+  y: 1060
+- diagram: 5
+  x: 987
+  y: 1174
+- diagram: 6
+  x: 866
+  y: 317
+skipped_diagrams: []

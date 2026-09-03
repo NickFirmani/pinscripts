@@ -1,0 +1,26 @@
+game_id: avengers-infinity-quest-le-stern-2020
+image: images/avengers-infinity-quest-le-stern-2020.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 360d25f26061b75c61fb742858e1b24368eb9a1d4ca608f9cc0e43d66cdc0f8e
+shots_sha256: ae87ed537eb5c075b3ea7096065cc9ac32b06f96964ff3188fbad50b65d513ff
+coordinates:
+- diagram: 1
+  x: 514
+  y: 220
+- diagram: 2
+  x: 356
+  y: 651
+- diagram: 3
+  x: 203
+  y: 422
+- diagram: 4
+  x: 730
+  y: 220
+- diagram: 5
+  x: 834
+  y: 811
+- diagram: 6
+  x: 755
+  y: 730
+skipped_diagrams: []

@@ -1,0 +1,26 @@
+game_id: beatles-gold-stern-2018
+image: images/beatles-gold-stern-2018.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 3b022c9a5b21ae13b8f0fcca4097f163b3fb3cf3928dc2008b02698af2ef6b36
+shots_sha256: 81940f550cc80ff5dc9b6b220c6898cada35bb60201dbd2b1abad84a74704ebc
+coordinates:
+- diagram: 1
+  x: 154
+  y: 732
+- diagram: 2
+  x: 851
+  y: 535
+- diagram: 3
+  x: 148
+  y: 1122
+- diagram: 4
+  x: 546
+  y: 258
+- diagram: 5
+  x: 534
+  y: 831
+- diagram: 6
+  x: 922
+  y: 815
+skipped_diagrams: []

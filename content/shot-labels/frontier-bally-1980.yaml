@@ -1,0 +1,24 @@
+game_id: frontier-bally-1980
+image: images/frontier-bally-1980.webp
+image_width: 1080
+image_height: 1984
+image_sha256: 8cc6ed9bbb4c473762e278b90e2493def53c86b7b50f24305d6af8ae373b154b
+shots_sha256: 619f774870b5e3a6cc1d19a1b77ae5c7f959ef1e8ff92ce8320f845d62f6630d
+coordinates:
+- diagram: 1
+  x: 121
+  y: 379
+- diagram: 2
+  x: 517
+  y: 110
+- diagram: 4
+  x: 937
+  y: 453
+- diagram: 5
+  x: 1008
+  y: 728
+- diagram: 6
+  x: 762
+  y: 203
+skipped_diagrams:
+- 3

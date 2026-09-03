@@ -1,0 +1,23 @@
+game_id: genie-gottlieb-1979
+image: images/genie-gottlieb-1979.webp
+image_width: 1080
+image_height: 1923
+image_sha256: 1ccb7d25a78a329c43da0e4eb09cc98218775e3ad48494c05fe458bc163fffff
+shots_sha256: fdb2b9a0bdb576efed0fcd2615d29285080a81966da91c30efc67c6a2cdfdf7a
+coordinates:
+- diagram: 1
+  x: 269
+  y: 454
+- diagram: 2
+  x: 513
+  y: 694
+- diagram: 3
+  x: 660
+  y: 653
+- diagram: 4
+  x: 672
+  y: 157
+- diagram: 5
+  x: 884
+  y: 427
+skipped_diagrams: []

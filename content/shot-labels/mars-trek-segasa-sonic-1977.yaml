@@ -1,0 +1,26 @@
+game_id: mars-trek-segasa-sonic-1977
+image: images/mars-trek-segasa-sonic-1977.webp
+image_width: 1080
+image_height: 1987
+image_sha256: ceee9ccdc7b45d0aa3bd0152ca9c168807f54161796483d88fe00d771072607b
+shots_sha256: 0ea8d50cbdf4feb2c4edbfe14e52f339659b3aa2722a815a03c064d8e1d77b4b
+coordinates:
+- diagram: 1
+  x: 192
+  y: 384
+- diagram: 2
+  x: 40
+  y: 643
+- diagram: 3
+  x: 568
+  y: 522
+- diagram: 4
+  x: 549
+  y: 133
+- diagram: 5
+  x: 761
+  y: 595
+- diagram: 6
+  x: 848
+  y: 365
+skipped_diagrams: []

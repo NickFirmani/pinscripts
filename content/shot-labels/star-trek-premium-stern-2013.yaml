@@ -1,0 +1,26 @@
+game_id: star-trek-premium-stern-2013
+image: images/star-trek-premium-stern-2013.webp
+image_width: 1080
+image_height: 1924
+image_sha256: 949bd758ca55dc0608045da469528cda3a645792e224b2538e34ccd8124af3bd
+shots_sha256: d1a18cc0d36fa0359c1661438a8f4042986cff303a5e7fe0445f578f12595e0d
+coordinates:
+- diagram: 1
+  x: 175
+  y: 975
+- diagram: 2
+  x: 408
+  y: 514
+- diagram: 3
+  x: 558
+  y: 535
+- diagram: 4
+  x: 747
+  y: 663
+- diagram: 5
+  x: 260
+  y: 624
+- diagram: 6
+  x: 883
+  y: 999
+skipped_diagrams: []

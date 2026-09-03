@@ -1,0 +1,26 @@
+game_id: avengers-infinity-quest-pro-stern-2020
+image: images/avengers-infinity-quest-pro-stern-2020.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 315c78286f311da5d5ad440dea79be06e59910cfda00032606b18408478191e4
+shots_sha256: ab95ff82548fcf3a2bbe9848ce612f382210baca179af1584fbea45b567f0907
+coordinates:
+- diagram: 1
+  x: 509
+  y: 512
+- diagram: 2
+  x: 365
+  y: 683
+- diagram: 3
+  x: 684
+  y: 413
+- diagram: 4
+  x: 214
+  y: 472
+- diagram: 5
+  x: 705
+  y: 337
+- diagram: 6
+  x: 826
+  y: 805
+skipped_diagrams: []

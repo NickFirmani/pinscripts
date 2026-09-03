@@ -1,0 +1,24 @@
+game_id: fathom-bally-1981
+image: images/fathom-bally-1981.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 8675134e322e2bc3d4c90c55c90e3dffc66cb65009abf11dbdf05ddcf08beb7b
+shots_sha256: 25263f2138dc0d6980dac7100788b79e522a6047e152e1b42f5ebac5b2dccde2
+coordinates:
+- diagram: 1
+  x: 276
+  y: 254
+- diagram: 2
+  x: 126
+  y: 305
+- diagram: 3
+  x: 51
+  y: 704
+- diagram: 5
+  x: 877
+  y: 548
+- diagram: 6
+  x: 795
+  y: 571
+skipped_diagrams:
+- 4

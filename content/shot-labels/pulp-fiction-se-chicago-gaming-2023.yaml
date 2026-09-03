@@ -1,0 +1,32 @@
+game_id: pulp-fiction-se-chicago-gaming-2023
+image: images/pulp-fiction-se-chicago-gaming-2023.webp
+image_width: 1080
+image_height: 1714
+image_sha256: b742d8410afb3cf12fdddea528c960860fb4a8b665b7ed9e65cd3a43d324d444
+shots_sha256: 25aec25b50057e10fbf78d2bbe6d898c66180ba669d1448f47e4a1fd8a59a111
+coordinates:
+- diagram: 1
+  x: 325
+  y: 407
+- diagram: 2
+  x: 242
+  y: 468
+- diagram: 2
+  x: 800
+  y: 456
+- diagram: 3
+  x: 364
+  y: 265
+- diagram: 3
+  x: 707
+  y: 261
+- diagram: 4
+  x: 533
+  y: 558
+- diagram: 5
+  x: 826
+  y: 703
+- diagram: 6
+  x: 780
+  y: 314
+skipped_diagrams: []

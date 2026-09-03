@@ -1,0 +1,26 @@
+game_id: jaws-pro-stern-2024
+image: images/jaws-pro-stern-2024.webp
+image_width: 1080
+image_height: 1986
+image_sha256: 27b7c4c20578e4dc7baa740dd4d16c32becd9b35822bd1f7d874032205c5ad39
+shots_sha256: e4db02f13f28156cc30362ee1abe7a51af3805a00baad8582defcbbb8bacf024
+coordinates:
+- diagram: 1
+  x: 121
+  y: 946
+- diagram: 2
+  x: 130
+  y: 794
+- diagram: 3
+  x: 446
+  y: 477
+- diagram: 4
+  x: 678
+  y: 370
+- diagram: 5
+  x: 820
+  y: 628
+- diagram: 6
+  x: 1010
+  y: 424
+skipped_diagrams: []

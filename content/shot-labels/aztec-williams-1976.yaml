@@ -1,0 +1,26 @@
+game_id: aztec-williams-1976
+image: images/aztec-williams-1976.webp
+image_width: 1080
+image_height: 1986
+image_sha256: f67262bbbfcfcfda7d6719cdb3608ed795034e28807c9e93b347771ad6a31fbe
+shots_sha256: fd0d4007409f05fcdf8539e28a2733ae5e0b458a0b30e3dc8b0aa6ee986de154
+coordinates:
+- diagram: 1
+  x: 121
+  y: 867
+- diagram: 2
+  x: 36
+  y: 1085
+- diagram: 3
+  x: 515
+  y: 356
+- diagram: 4
+  x: 540
+  y: 1050
+- diagram: 5
+  x: 939
+  y: 1036
+- diagram: 6
+  x: 987
+  y: 440
+skipped_diagrams: []

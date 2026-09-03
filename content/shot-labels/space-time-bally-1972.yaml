@@ -1,0 +1,35 @@
+game_id: space-time-bally-1972
+image: images/space-time-bally-1972.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 6a6de6afade49caa41ac19138a23ecbf0d317830cf310d52bd768f9c8743b738
+shots_sha256: 71792c693c37a048f3d72725acc66b69bdb8545c066a92ef359a8eac58750acc
+coordinates:
+- diagram: 1
+  x: 49
+  y: 975
+- diagram: 2
+  x: 976
+  y: 545
+- diagram: 2
+  x: 990
+  y: 1052
+- diagram: 3
+  x: 529
+  y: 1145
+- diagram: 4
+  x: 424
+  y: 1092
+- diagram: 4
+  x: 625
+  y: 1078
+- diagram: 5
+  x: 531
+  y: 309
+- diagram: 6
+  x: 368
+  y: 424
+- diagram: 6
+  x: 725
+  y: 436
+skipped_diagrams: []

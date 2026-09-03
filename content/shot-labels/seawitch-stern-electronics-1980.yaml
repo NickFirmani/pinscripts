@@ -1,0 +1,24 @@
+game_id: seawitch-stern-electronics-1980
+image: images/seawitch-stern-electronics-1980.webp
+image_width: 800
+image_height: 1471
+image_sha256: ee08e61ea31de1cfb0e559ae78468b78421ac6271f1b0f9b11d7b79f5f712b0c
+shots_sha256: a92edcb9fc1470eb4f8c5558c4e002706d436e0465e86d5b6650ea3313fa89aa
+coordinates:
+- diagram: 1
+  x: 90
+  y: 506
+- diagram: 3
+  x: 90
+  y: 832
+- diagram: 4
+  x: 393
+  y: 557
+- diagram: 5
+  x: 676
+  y: 277
+- diagram: 6
+  x: 395
+  y: 119
+skipped_diagrams:
+- 2

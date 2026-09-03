@@ -1,0 +1,35 @@
+game_id: cover-girl-gottlieb-1962
+image: images/cover-girl-gottlieb-1962.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 6f2ef850c86bf839c81162933a8d33a18f8f3022a6dfb643cc0a16f46cfa1ca5
+shots_sha256: d5853cbf9d555075b3bab84858c99ab092ac500ac7a1213516c879a3ca02650c
+coordinates:
+- diagram: 1
+  x: 409
+  y: 190
+- diagram: 1
+  x: 815
+  y: 473
+- diagram: 2
+  x: 110
+  y: 947
+- diagram: 2
+  x: 970
+  y: 893
+- diagram: 3
+  x: 565
+  y: 206
+- diagram: 4
+  x: 532
+  y: 723
+- diagram: 5
+  x: 311
+  y: 430
+- diagram: 6
+  x: 729
+  y: 181
+- diagram: 6
+  x: 273
+  y: 560
+skipped_diagrams: []

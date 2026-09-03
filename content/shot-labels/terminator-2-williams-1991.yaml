@@ -1,0 +1,26 @@
+game_id: terminator-2-williams-1991
+image: images/terminator-2-williams-1991.webp
+image_width: 1080
+image_height: 1765
+image_sha256: 28c20632c3d75bbc26efe236009068255cb2237471ea1ab9552b644b115b7329
+shots_sha256: c8c4fbbb9deea8442da65a91b95aa1152d9a3e2475b84062dbc495203a3f69ea
+coordinates:
+- diagram: 1
+  x: 176
+  y: 528
+- diagram: 2
+  x: 232
+  y: 622
+- diagram: 3
+  x: 209
+  y: 220
+- diagram: 4
+  x: 378
+  y: 234
+- diagram: 5
+  x: 824
+  y: 349
+- diagram: 6
+  x: 907
+  y: 486
+skipped_diagrams: []

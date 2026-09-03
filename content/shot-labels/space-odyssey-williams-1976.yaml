@@ -1,0 +1,29 @@
+game_id: space-odyssey-williams-1976
+image: images/space-odyssey-williams-1976.webp
+image_width: 1080
+image_height: 1440
+image_sha256: fbde394fcfafec153e52c6fb2381d3792321373e04ea1f456ad1339ebfa80a47
+shots_sha256: aec6cb2043e61cd666d3ffc87ba3e70c7ae09eeb127ee0a05df9c0fb02f851e6
+coordinates:
+- diagram: 1
+  x: 240
+  y: 330
+- diagram: 2
+  x: 142
+  y: 617
+- diagram: 3
+  x: 503
+  y: 421
+- diagram: 4
+  x: 190
+  y: 1220
+- diagram: 4
+  x: 796
+  y: 1240
+- diagram: 5
+  x: 739
+  y: 248
+- diagram: 6
+  x: 518
+  y: 92
+skipped_diagrams: []

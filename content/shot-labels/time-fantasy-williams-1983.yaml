@@ -1,0 +1,27 @@
+game_id: time-fantasy-williams-1983
+image: images/time-fantasy-williams-1983.webp
+image_width: 1080
+image_height: 1920
+image_sha256: 5034cbe0dde43f8248829ff07b72705d59cbf92cc80c6309e94251a928852d2d
+shots_sha256: 8eed32a510852d2eb49544d2abd7ecdd4a352726df22d9291a9c434123d7cd2d
+coordinates:
+- diagram: 1
+  x: 210
+  y: 501
+- diagram: 2
+  x: 530
+  y: 223
+- diagram: 4
+  x: 151
+  y: 774
+- diagram: 5
+  x: 842
+  y: 859
+- diagram: 6
+  x: 75
+  y: 908
+- diagram: 6
+  x: 510
+  y: 780
+skipped_diagrams:
+- 3

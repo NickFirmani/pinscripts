@@ -1,0 +1,25 @@
+game_id: solar-fire-williams-1981
+image: images/solar-fire-williams-1981.webp
+image_width: 1080
+image_height: 1731
+image_sha256: 20940cd39b089c6977817fcf7ceafaffae5cc857cf9b58aa6aeb7c3f2bf9e52f
+shots_sha256: 4089d83d5f028b34bd203ebbaad96e5c4eb45781b08f56cd1ffcbd0fd874b91c
+coordinates:
+- diagram: 2
+  x: 172
+  y: 130
+- diagram: 3
+  x: 63
+  y: 892
+- diagram: 3
+  x: 459
+  y: 766
+- diagram: 4
+  x: 584
+  y: 764
+- diagram: 5
+  x: 644
+  y: 89
+skipped_diagrams:
+- 1
+- 6

@@ -1,0 +1,26 @@
+game_id: black-knight-williams-1980
+image: images/black-knight-williams-1980.webp
+image_width: 1080
+image_height: 1986
+image_sha256: ac835aca987a6b50549ffbf81f125d64c807fbf6f35501ccc73fec53f384cf82
+shots_sha256: b03e9d47ae588d7450416c3ff12713f15c6981c3a19e88a1e08f1945f80b6f17
+coordinates:
+- diagram: 1
+  x: 188
+  y: 615
+- diagram: 2
+  x: 896
+  y: 257
+- diagram: 3
+  x: 639
+  y: 772
+- diagram: 4
+  x: 240
+  y: 780
+- diagram: 5
+  x: 770
+  y: 885
+- diagram: 6
+  x: 398
+  y: 601
+skipped_diagrams: []

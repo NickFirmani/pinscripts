@@ -1,0 +1,26 @@
+game_id: john-wick-pro-stern-2024
+image: images/john-wick-pro-stern-2024.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 3aad8c472c52137f4e6b0d87f477ef93c2b197ad305f77f0ef95b6722ad82d17
+shots_sha256: d0efd3528060cedcbccd5b5ff5fee29eb79e3200e370547ad104f41528c48604
+coordinates:
+- diagram: 1
+  x: 112
+  y: 891
+- diagram: 2
+  x: 161
+  y: 552
+- diagram: 3
+  x: 888
+  y: 1134
+- diagram: 4
+  x: 498
+  y: 501
+- diagram: 5
+  x: 616
+  y: 396
+- diagram: 6
+  x: 401
+  y: 220
+skipped_diagrams: []

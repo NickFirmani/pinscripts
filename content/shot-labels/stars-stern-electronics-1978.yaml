@@ -1,0 +1,22 @@
+game_id: stars-stern-electronics-1978
+image: images/stars-stern-electronics-1978.webp
+image_width: 1080
+image_height: 1987
+image_sha256: 6606d6b0d9248ea8e33ed50c7873d33922795e8107360a3b2452c130b3a8a0eb
+shots_sha256: a7bbd4767f9a0c7489ea4af5a540c648e81e1da837c5e41bb02ca22807ecd21c
+coordinates:
+- diagram: 1
+  x: 282
+  y: 245
+- diagram: 2
+  x: 163
+  y: 595
+- diagram: 5
+  x: 415
+  y: 414
+- diagram: 6
+  x: 933
+  y: 601
+skipped_diagrams:
+- 3
+- 4

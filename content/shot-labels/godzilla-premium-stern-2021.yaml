@@ -1,0 +1,26 @@
+game_id: godzilla-premium-stern-2021
+image: images/godzilla-premium-stern-2021.webp
+image_width: 1080
+image_height: 1985
+image_sha256: abe297274162bfd72955aaee8858b406a38574f24fd77711e4cc54359111c231
+shots_sha256: 847e2739f3065115364e098f6b8d47215295241d3619a3341931f41c66ca1cd3
+coordinates:
+- diagram: 1
+  x: 248
+  y: 667
+- diagram: 2
+  x: 453
+  y: 619
+- diagram: 3
+  x: 888
+  y: 990
+- diagram: 4
+  x: 622
+  y: 413
+- diagram: 5
+  x: 804
+  y: 863
+- diagram: 6
+  x: 792
+  y: 733
+skipped_diagrams: []

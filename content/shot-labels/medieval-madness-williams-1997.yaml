@@ -1,0 +1,26 @@
+game_id: medieval-madness-williams-1997
+image: images/medieval-madness-williams-1997.webp
+image_width: 1080
+image_height: 1728
+image_sha256: c94439fc690fb97de946c667b57ef05ad6b255f3a96fd4a880fb53bce4489dd3
+shots_sha256: ae56f71d8170ebe9a3d8e488b557ee03fdd432ffd64a3692838bfc238bb706ea
+coordinates:
+- diagram: 1
+  x: 72
+  y: 1001
+- diagram: 2
+  x: 249
+  y: 656
+- diagram: 3
+  x: 326
+  y: 489
+- diagram: 4
+  x: 436
+  y: 457
+- diagram: 5
+  x: 749
+  y: 711
+- diagram: 6
+  x: 650
+  y: 547
+skipped_diagrams: []

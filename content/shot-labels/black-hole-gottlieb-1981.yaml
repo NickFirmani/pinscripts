@@ -1,0 +1,26 @@
+game_id: black-hole-gottlieb-1981
+image: images/black-hole-gottlieb-1981.webp
+image_width: 1080
+image_height: 1987
+image_sha256: e45ca3846f79639fd397662b8f607bbd177deee23c4803104f2a74c625846895
+shots_sha256: 00f9283b0f220baa51a52f94ed760da853bee78e1bcd8ddeced29b05fce7454d
+coordinates:
+- diagram: 1
+  x: 351
+  y: 401
+- diagram: 2
+  x: 44
+  y: 486
+- diagram: 3
+  x: 25
+  y: 894
+- diagram: 4
+  x: 958
+  y: 585
+- diagram: 5
+  x: 503
+  y: 1259
+- diagram: 6
+  x: 342
+  y: 1244
+skipped_diagrams: []
