@@ -265,6 +265,11 @@ def markup(text):
     return escape(safe(text))
 
 
+def display_risk(text):
+    value = safe(text)
+    return "Med/High" if value == "Medium-High" else value
+
+
 def section(title):
     return Paragraph(markup(title).upper(), SECTION)
 
@@ -379,13 +384,13 @@ def build_blocks(data, black_and_white=False):
                 Paragraph(markup(shot.get("diagram")), TABLE_BODY),
                 Paragraph(markup(shot.get("name")), TABLE_BODY),
                 Paragraph(markup(shot.get("value")), TABLE_BODY),
-                Paragraph(markup(shot.get("risk")), TABLE_BODY),
+                Paragraph(markup(display_risk(shot.get("risk"))), TABLE_BODY),
             ]
         )
 
     shots = Table(
         shot_rows,
-        colWidths=[0.24 * inch, 0.86 * inch, COL_W - 1.96 * inch, 0.86 * inch],
+        colWidths=[0.24 * inch, 0.86 * inch, COL_W - 1.78 * inch, 0.68 * inch],
         repeatRows=1,
         hAlign="LEFT",
     )
