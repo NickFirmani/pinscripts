@@ -429,10 +429,20 @@ def build_blocks(data, black_and_white=False):
     shots.setStyle(DATA_TABLE_STYLE)
     blocks.append([section("Important shots"), shots])
 
+    summary_box = Table(
+        [[Paragraph(markup(data.get("summary")), SUMMARY)]],
+        colWidths=[COL_W],
+        hAlign="LEFT",
+        spaceBefore=SPACE_LG,
+        spaceAfter=SPACE_LG,
+    )
+    summary_box.setStyle(SUMMARY_TABLE_STYLE)
+
     strategy = data.get("strategy", {})
     blocks.append(
         [
             section("Match strategy"),
+            summary_box,
             Paragraph(f"<b>Ahead:</b> {markup(strategy.get('ahead'))}", BODY),
             Paragraph(f"<b>Behind:</b> {markup(strategy.get('behind'))}", BODY),
             Paragraph(
@@ -456,17 +466,6 @@ def build_blocks(data, black_and_white=False):
     trivia_block = [section("Trivia / filler")]
     trivia_block.extend(bullet(item) for item in data.get("trivia", []))
     blocks.append(trivia_block)
-
-    summary_box = Table(
-        [[Paragraph(markup(data.get("summary")), SUMMARY)]],
-        colWidths=[COL_W],
-        hAlign="LEFT",
-        spaceBefore=SPACE_LG,
-        spaceAfter=SPACE_LG,
-    )
-    summary_box.setStyle(SUMMARY_TABLE_STYLE)
-    summary_box.is_summary_box = True
-    blocks.append([summary_box])
 
     notes = [item for item in data.get("venue_notes", []) if item]
     notes_block = [section("Venue notes")]
@@ -498,10 +497,6 @@ def _is_shots_block(block):
 def _is_section_block(block, title):
     first = block[0] if block else None
     return getattr(first, "section_title", None) == title.upper()
-
-
-def _is_summary_block(block):
-    return len(block) == 1 and getattr(block[0], "is_summary_box", False)
 
 
 def _partition_leading_story(blocks, capacities, canvas):
@@ -700,7 +695,6 @@ def render_game(
 
     blocks = build_blocks(data, black_and_white)
     shots_block = next(block for block in blocks if _is_shots_block(block))
-    summary_block = next(block for block in blocks if _is_summary_block(block))
     venue_notes_block = next(
         block for block in blocks if _is_section_block(block, "Venue notes")
     )
@@ -709,7 +703,6 @@ def render_game(
         block
         for block in blocks[2:]
         if block is not shots_block
-        and block is not summary_block
         and block is not venue_notes_block
     ]
 
@@ -724,8 +717,7 @@ def render_game(
 
     fixed_third_column_height = sum(
         _flowable_height(flowable, measuring_canvas)
-        for block in (summary_block, venue_notes_block)
-        for flowable in block
+        for flowable in venue_notes_block
     )
     leading_capacities = (
         COL_H,
@@ -733,7 +725,7 @@ def render_game(
         third_column_height - fixed_third_column_height,
     )
     if leading_capacities[2] <= 0:
-        raise ValueError("Summary and venue notes are too tall for column three")
+        raise ValueError("Venue notes are too tall for column three")
 
     text_columns = [
         Frame(
@@ -848,7 +840,6 @@ def render_game(
             leading_capacities,
             measuring_canvas,
         )
-        story.extend(summary_block)
         story.extend(venue_notes_block)
         story.append(HandwrittenNotes())
         story.extend([NextFrameFlowable("important-shots"), FrameBreak])
