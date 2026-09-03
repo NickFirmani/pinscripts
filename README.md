@@ -74,6 +74,10 @@ Build the individual PDFs and merge them into a printable binder:
 make binder
 ```
 
+The binder opens with a simple title page as leaf 1, without a printed number.
+Game pages are numbered continuously from 2. Every leaf footer includes its
+game name and the date when that game's content file was last updated in Git.
+
 Generated files are written to `output/`:
 
 ```text

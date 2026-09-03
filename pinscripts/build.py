@@ -45,13 +45,17 @@ def validate_all(paths):
     return valid
 
 
-def render(paths, black_and_white=False):
+def render(paths, black_and_white=False, binder=False):
     output_suffix = "-bw" if black_and_white else ""
-    for path in paths:
+    for index, path in enumerate(paths):
+        footer_options = {}
+        if binder:
+            footer_options["page_number_start"] = (index * 2) + 2
         render_game(
             path,
             OUTPUT / f"{path.stem}{output_suffix}.pdf",
             black_and_white,
+            **footer_options,
         )
 
 
@@ -59,7 +63,7 @@ def build_paths(paths, black_and_white=False, binder=False):
     if not validate_all(paths):
         return 1
 
-    render(paths, black_and_white)
+    render(paths, black_and_white, binder)
     if binder:
         output_suffix = "-bw" if black_and_white else ""
         pdfs = [OUTPUT / f"{path.stem}{output_suffix}.pdf" for path in paths]

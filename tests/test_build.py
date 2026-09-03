@@ -52,10 +52,38 @@ class BuildTests(unittest.TestCase):
             result = app.build_selected(True, binder=True)
 
         self.assertEqual(result, 0)
-        render.assert_called_once_with([content_path], True)
+        render.assert_called_once_with([content_path], True, True)
         merge_pdfs.assert_called_once_with(
             [output / "example-game-bw.pdf"],
             output / "binder-bw.pdf",
+        )
+
+    def test_binder_render_assigns_continuous_leaf_page_numbers(self):
+        paths = [Path("content/first.yaml"), Path("content/second.yaml")]
+        output = Path("/project/output")
+
+        with (
+            patch.object(app, "OUTPUT", output),
+            patch.object(app, "render_game") as render_game,
+        ):
+            app.render(paths, binder=True)
+
+        self.assertEqual(
+            render_game.call_args_list,
+            [
+                unittest.mock.call(
+                    paths[0],
+                    output / "first.pdf",
+                    False,
+                    page_number_start=2,
+                ),
+                unittest.mock.call(
+                    paths[1],
+                    output / "second.pdf",
+                    False,
+                    page_number_start=4,
+                ),
+            ],
         )
 
     def test_main_dispatches_binder_build(self):

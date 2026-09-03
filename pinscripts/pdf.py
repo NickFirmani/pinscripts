@@ -2,6 +2,7 @@
 
 from io import BytesIO
 from pathlib import Path
+import subprocess
 import tempfile
 from xml.sax.saxutils import escape
 
@@ -54,8 +55,8 @@ USABLE_W = PAGE_W - OUTER_MARGIN - INNER_MARGIN
 COL_W = (USABLE_W - GUTTER) / 2
 COL_H = PAGE_H - TOP_MARGIN - BOTTOM_MARGIN
 
-BODY_FONT_SIZE = 8.5
-BODY_LEADING = 10
+BODY_FONT_SIZE = 9
+BODY_LEADING = 11
 SMALL_FONT_SIZE = BODY_FONT_SIZE
 SMALL_LEADING = BODY_LEADING
 SECTION_FONT_SIZE = 10
@@ -249,6 +250,36 @@ def safe(text):
         .replace("\u2212", "-")
         .replace("->", "\u2192")
     )
+
+
+def git_updated_at(content_path: Path, repo_root=ROOT):
+    """Return the date of the most recent commit that changed a content file."""
+    try:
+        relative_path = content_path.resolve().relative_to(repo_root.resolve())
+    except ValueError:
+        return "UNKNOWN"
+
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "-C",
+                str(repo_root),
+                "log",
+                "-1",
+                "--format=%as",
+                "--follow",
+                "--",
+                relative_path.as_posix(),
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except OSError:
+        return "UNKNOWN"
+
+    return result.stdout.strip() or "UNCOMMITTED"
 
 
 def markup(text):
@@ -615,7 +646,12 @@ def _build_reference_story(blocks, image_path, canvas):
     return story
 
 
-def _draw_spread_chrome(canvas, title):
+def _draw_spread_chrome(
+    canvas,
+    title,
+    updated_at,
+    page_number_start=None,
+):
 
     canvas.saveState()
     canvas.setStrokeColor(RULE)
@@ -630,12 +666,20 @@ def _draw_spread_chrome(canvas, title):
     )
     canvas.setFont("Helvetica", 6.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(OUTER_MARGIN, footer_y - 9, "PINBALL COMMENTARY BINDER")
-    canvas.drawRightString(
-        (2 * PAGE_W) - OUTER_MARGIN,
-        footer_y - 9,
-        safe(title).upper(),
-    )
+    identity = f"{safe(title).upper()} | UPDATED AT {safe(updated_at)}"
+    canvas.drawString(OUTER_MARGIN, footer_y - 9, identity)
+    canvas.drawString(PAGE_W + INNER_MARGIN, footer_y - 9, identity)
+    if page_number_start is not None:
+        canvas.drawRightString(
+            PAGE_W - INNER_MARGIN,
+            footer_y - 9,
+            f"PAGE {page_number_start}",
+        )
+        canvas.drawRightString(
+            (2 * PAGE_W) - OUTER_MARGIN,
+            footer_y - 9,
+            f"PAGE {page_number_start + 1}",
+        )
 
     canvas.restoreState()
 
@@ -674,8 +718,10 @@ def render_game(
     black_and_white=False,
     asset_root=ROOT,
     prepend_blank_page=False,
+    page_number_start=None,
 ):
     data = load_yaml(content_path)
+    updated_at = git_updated_at(content_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     blocks = build_blocks(data, black_and_white)
@@ -813,6 +859,8 @@ def render_game(
                     onPage=lambda canvas, _doc: _draw_spread_chrome(
                         canvas,
                         data.get("name", ""),
+                        updated_at,
+                        page_number_start,
                     ),
                 )
             ]
@@ -848,6 +896,20 @@ def render_game(
 def merge_pdfs(paths, output_path: Path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     writer = PdfWriter()
+
+    title_page_stream = BytesIO()
+    title_page = Canvas(title_page_stream, pagesize=letter)
+    title_page.setTitle("Pinball Commentary Binder")
+    title_page.setFillColor(INK)
+    title_page.setFont("Helvetica-Bold", 24)
+    title_page.drawCentredString(
+        PAGE_W / 2,
+        PAGE_H / 2,
+        "PINBALL COMMENTARY BINDER",
+    )
+    title_page.save()
+    title_page_stream.seek(0)
+    writer.add_page(PdfReader(title_page_stream).pages[0])
 
     for path in paths:
         writer.append(str(path))
