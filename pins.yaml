@@ -1,6 +1,3 @@
 enabled: []
 
-disabled:
-  - attack-from-mars
-  - medieval-madness
-  - jaws
+disabled: []

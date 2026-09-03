@@ -67,6 +67,8 @@ class ShotLabelTests(unittest.TestCase):
         self.assertEqual(loaded["image_width"], 400)
         self.assertEqual(loaded["image_height"], 700)
         self.assertEqual(loaded["coordinates"], coordinates)
+        self.assertEqual(loaded["skipped_diagrams"], [])
+        self.assertNotIn("version", loaded)
         self.assertEqual(len(loaded["image_sha256"]), 64)
         self.assertEqual(len(loaded["shots_sha256"]), 64)
 
@@ -211,6 +213,40 @@ class ShotLabelTests(unittest.TestCase):
                 [1, 1, 2],
             )
 
+    def test_editor_can_skip_a_label_and_save_the_decision(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data, _content, image_path, labels = self.make_game(root)
+            session = app._LabelSession(data, image_path, labels)
+
+            session.skip_label()
+            self.assertEqual(session.state()["active_shot"]["diagram"], 2)
+            self.assertEqual(session.state()["skipped_label_count"], 1)
+            session.place(320, 260)
+            session.save()
+
+            loaded = app.load_shot_labels(data, root)
+
+        self.assertEqual(loaded["skipped_diagrams"], [1])
+        self.assertEqual(
+            loaded["coordinates"],
+            [{"diagram": 2, "x": 320, "y": 260}],
+        )
+
+    def test_back_undoes_a_skipped_label(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data, _content, image_path, labels = self.make_game(root)
+            session = app._LabelSession(data, image_path, labels)
+            session.skip_label()
+
+            session.back()
+
+            state = session.state()
+            self.assertEqual(state["active_shot"]["diagram"], 1)
+            self.assertEqual(state["shots_placed"], 0)
+            self.assertEqual(state["skipped_label_count"], 0)
+
     def test_save_loads_the_next_unlabelled_game(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -243,6 +279,60 @@ class ShotLabelTests(unittest.TestCase):
             self.assertEqual(state["shots_placed"], 0)
             self.assertIn("Loaded the next game", state["message"])
             self.assertTrue((labels / "test-game.yaml").is_file())
+
+    def test_skip_discards_placements_and_loads_the_next_game(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first, _content, first_image, labels = self.make_game(root)
+            second_image = root / "images" / "second-game.webp"
+            Image.new("RGB", (400, 700), "green").save(
+                second_image,
+                "WEBP",
+                lossless=True,
+            )
+            second = {
+                **first,
+                "id": "second-game",
+                "name": "Second Game",
+                "image": "images/second-game.webp",
+            }
+            pending = [(second, second_image, "labels missing")]
+            session = app._LabelSession(
+                first,
+                first_image,
+                labels,
+                next_game_loader=lambda: pending.pop(0) if pending else None,
+            )
+            session.place(75, 180)
+
+            session.skip()
+
+            state = session.state()
+            self.assertEqual(state["game"], "Second Game")
+            self.assertEqual(state["label_count"], 0)
+            self.assertIn("Skipped Test Game", state["message"])
+            self.assertFalse((labels / "test-game.yaml").exists())
+            self.assertEqual(session.skipped_games, ["Test Game"])
+
+    def test_skip_on_last_game_finishes_the_batch_without_saving(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data, _content, image_path, labels = self.make_game(root)
+            session = app._LabelSession(data, image_path, labels)
+
+            session.skip()
+
+            self.assertTrue(session.finished.is_set())
+            self.assertTrue(session.state()["batch_complete"])
+            self.assertFalse((labels / "test-game.yaml").exists())
+
+    def test_page_has_skip_and_closes_the_tab_when_stopped(self):
+        page = app._page_html("test-token")
+
+        self.assertIn('id="skip-label">Skip this label', page)
+        self.assertIn('id="skip">Skip game', page)
+        self.assertIn("window.close()", page)
+        self.assertIn("stopEditor", page)
 
     def test_remaining_loader_selects_the_next_unlabelled_game_in_order(self):
         with tempfile.TemporaryDirectory() as directory:

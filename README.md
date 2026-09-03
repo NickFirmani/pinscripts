@@ -138,9 +138,12 @@ Click the playfield once for each Important Shots entry. The editor immediately
 renders each numbered marker with the same image renderer used by the PDF and
 shows the shot description and difficulty while placing it. Use **Another #**
 to place the same number at multiple physical targets, **Back** to remove and
-reposition the previous marker, and **Start over** to clear the pass. After a
-save, the same editor loads the next selected game whose labels are missing or
-stale. Use **Stop without saving this game** when the batch should end.
+reposition the previous action, **Skip this label** when a numbered shot should
+not appear on the image, and **Start over** to clear the pass. After a save, the
+same editor loads the next selected game whose labels are missing or stale.
+**Skip game** discards the current game's unsaved placements and loads the next
+game. **Stop without saving this game** ends the batch and closes the editor tab
+(or shows a close-tab fallback if the browser blocks scripted tab closure).
 
 Placements are stored separately from researched content in
 `content/shot-labels/<id>.yaml`. Each file records absolute `x` and `y`

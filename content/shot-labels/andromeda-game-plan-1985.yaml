@@ -1,0 +1,29 @@
+game_id: andromeda-game-plan-1985
+image: images/andromeda-game-plan-1985.webp
+image_width: 1080
+image_height: 1984
+image_sha256: a992cfa8e9bd3250c5b6121c5e49838ae5f9f2f2e842c0f811b8898a921ad71e
+shots_sha256: 1ba049e4feb799aef9f54787036d60bea61640bfc439283989ef30bcac1c2df1
+coordinates:
+- diagram: 1
+  x: 219
+  y: 489
+- diagram: 2
+  x: 69
+  y: 622
+- diagram: 3
+  x: 302
+  y: 74
+- diagram: 4
+  x: 41
+  y: 928
+- diagram: 5
+  x: 617
+  y: 790
+- diagram: 5
+  x: 840
+  y: 948
+- diagram: 6
+  x: 801
+  y: 48
+skipped_diagrams: []

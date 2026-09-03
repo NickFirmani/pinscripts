@@ -1,0 +1,23 @@
+game_id: alien-star-gottlieb-1984
+image: images/alien-star-gottlieb-1984.webp
+image_width: 1080
+image_height: 1988
+image_sha256: cacc54ae06768c9d38e13b2be18085e1d008512dc0ee5c5279e75342d0031af3
+shots_sha256: bd6f09a8a2d6bf3dce475514b24d985ec8b90c8d2a527c3b2481fbefe906723b
+coordinates:
+- diagram: 1
+  x: 949
+  y: 705
+- diagram: 2
+  x: 248
+  y: 321
+- diagram: 3
+  x: 105
+  y: 477
+- diagram: 4
+  x: 924
+  y: 1071
+- diagram: 5
+  x: 608
+  y: 160
+skipped_diagrams: []

@@ -22,7 +22,6 @@ from .content import PinRegistryError, content_for_selected_pins, load_yaml
 from .paths import CONTENT, ROOT, SHOT_LABELS
 
 
-LABEL_VERSION = 1
 MARKER_RADIUS_RATIO = 0.042
 MARKER_FILL = "#176B75"
 MARKER_FILL_BW = "#142735"
@@ -134,7 +133,6 @@ def _validate_label_document(document, data, image_path):
         raise ShotLabelError("shot-label file must contain a mapping")
 
     required = {
-        "version",
         "game_id",
         "image",
         "image_width",
@@ -142,6 +140,7 @@ def _validate_label_document(document, data, image_path):
         "image_sha256",
         "shots_sha256",
         "coordinates",
+        "skipped_diagrams",
     }
     if set(document) != required:
         missing = sorted(required - set(document))
@@ -153,10 +152,6 @@ def _validate_label_document(document, data, image_path):
             details.append("unknown " + ", ".join(extra))
         raise ShotLabelError("invalid shot-label fields: " + "; ".join(details))
 
-    if document["version"] != LABEL_VERSION:
-        raise ShotLabelError(
-            f"unsupported shot-label version {document['version']!r}"
-        )
     if document["game_id"] != data.get("id"):
         raise ShotLabelError("shot labels belong to a different game")
     if document["image"] != data.get("image"):
@@ -184,6 +179,17 @@ def _validate_label_document(document, data, image_path):
     if not isinstance(coordinates, list):
         raise ShotLabelError("coordinates must be a list")
     expected = _expected_diagrams(data)
+    skipped = document["skipped_diagrams"]
+    if (
+        not isinstance(skipped, list)
+        or any(
+            not isinstance(diagram, int) or isinstance(diagram, bool)
+            for diagram in skipped
+        )
+        or len(skipped) != len(set(skipped))
+        or skipped != [diagram for diagram in expected if diagram in skipped]
+    ):
+        raise ShotLabelError("skipped_diagrams must be unique shot numbers in order")
     diagram_groups = []
     for index, point in enumerate(coordinates):
         if not isinstance(point, dict) or set(point) != {"diagram", "x", "y"}:
@@ -204,7 +210,12 @@ def _validate_label_document(document, data, image_path):
                     "labels for the same shot must be stored together"
                 )
             diagram_groups.append(diagram)
-    if diagram_groups != expected:
+    if set(diagram_groups) & set(skipped):
+        raise ShotLabelError("a shot cannot be both placed and skipped")
+    expected_with_coordinates = [
+        diagram for diagram in expected if diagram not in skipped
+    ]
+    if diagram_groups != expected_with_coordinates:
         raise ShotLabelError(
             "shot list or diagram numbering changed; redo shot labels"
         )
@@ -227,13 +238,18 @@ def load_shot_labels(data, root=ROOT, labels_directory=None):
     return _validate_label_document(document, data, image_path)
 
 
-def write_shot_labels(data, image_path, coordinates, labels_directory=None):
+def write_shot_labels(
+    data,
+    image_path,
+    coordinates,
+    labels_directory=None,
+    skipped_diagrams=None,
+):
     labels_directory = labels_directory or SHOT_LABELS
     labels_directory.mkdir(parents=True, exist_ok=True)
     with oriented_image(image_path) as image:
         width, height = image.size
     document = {
-        "version": LABEL_VERSION,
         "game_id": data["id"],
         "image": data["image"],
         "image_width": width,
@@ -241,6 +257,7 @@ def write_shot_labels(data, image_path, coordinates, labels_directory=None):
         "image_sha256": image_fingerprint(image_path),
         "shots_sha256": shot_fingerprint(data),
         "coordinates": coordinates,
+        "skipped_diagrams": list(skipped_diagrams or []),
     }
     _validate_label_document(document, data, image_path)
     destination = label_path_for_game(data["id"], labels_directory)
@@ -296,9 +313,11 @@ class _LabelSession:
         self.labels_directory = labels_directory
         self.next_game_loader = next_game_loader
         self.saved_paths = []
+        self.skipped_games = []
         self.finished = threading.Event()
         self.lock = threading.Lock()
         self.batch_complete = False
+        self.closing = False
         self.message = ""
         self.revision = 0
         self._load_game(data, image_path)
@@ -310,6 +329,8 @@ class _LabelSession:
             self.width, self.height = image.size
         self.shots = data["shots"]
         self.coordinates = []
+        self.skipped_diagrams = []
+        self.history = []
         self.current_index = 0
         self.extra_for_index = None
         self.revision += 1
@@ -334,19 +355,28 @@ class _LabelSession:
                 else self.current_index if not complete else None
             )
             previous_index = self.current_index - 1
+            previous_shot = self._shot_details(previous_index)
             return {
                 "game": self.data["name"],
                 "width": self.width,
                 "height": self.height,
                 "active_shot": self._shot_details(active_index),
-                "previous_shot": self._shot_details(previous_index),
+                "previous_shot": previous_shot,
                 "coordinates": list(self.coordinates),
                 "shots_placed": self.current_index,
                 "shot_count": len(self.shots),
                 "label_count": len(self.coordinates),
+                "skipped_label_count": len(self.skipped_diagrams),
+                "can_back": bool(self.history) or self.extra_for_index is not None,
+                "can_add_another": (
+                    previous_shot is not None
+                    and previous_shot["diagram"] not in self.skipped_diagrams
+                    and self.extra_for_index is None
+                ),
                 "placing_extra": self.extra_for_index is not None,
                 "complete": complete,
                 "batch_complete": self.batch_complete,
+                "closing": self.closing,
                 "message": self.message,
                 "revision": self.revision,
             }
@@ -358,9 +388,11 @@ class _LabelSession:
             if self.extra_for_index is not None:
                 shot_index = self.extra_for_index
                 self.extra_for_index = None
+                action = "extra"
             elif self.current_index < len(self.shots):
                 shot_index = self.current_index
                 self.current_index += 1
+                action = "primary"
             else:
                 return
             shot = self.shots[shot_index]
@@ -371,6 +403,7 @@ class _LabelSession:
                     "y": max(0, min(self.height - 1, round(float(y)))),
                 }
             )
+            self.history.append((action, shot["diagram"]))
             self.revision += 1
             self.message = ""
 
@@ -380,6 +413,8 @@ class _LabelSession:
                 self.batch_complete
                 or self.extra_for_index is not None
                 or self.current_index == 0
+                or self.shots[self.current_index - 1]["diagram"]
+                in self.skipped_diagrams
             ):
                 return
             self.extra_for_index = self.current_index - 1
@@ -392,46 +427,45 @@ class _LabelSession:
                 self.extra_for_index = None
                 self.revision += 1
                 return
-            if self.coordinates:
-                point = self.coordinates.pop()
-                diagram = point["diagram"]
-                if not any(item["diagram"] == diagram for item in self.coordinates):
-                    shot_index = next(
-                        index
-                        for index, shot in enumerate(self.shots)
-                        if shot["diagram"] == diagram
-                    )
-                    self.current_index = min(self.current_index, shot_index)
+            if self.history:
+                action, diagram = self.history.pop()
+                if action in {"primary", "extra"}:
+                    point = self.coordinates.pop()
+                    if point["diagram"] != diagram:
+                        raise ShotLabelError("shot-label edit history is inconsistent")
+                else:
+                    self.skipped_diagrams.pop()
+                if action in {"primary", "skip"}:
+                    self.current_index -= 1
                 self.revision += 1
                 self.message = ""
+
+    def skip_label(self):
+        with self.lock:
+            if (
+                self.batch_complete
+                or self.extra_for_index is not None
+                or self.current_index >= len(self.shots)
+            ):
+                return
+            diagram = self.shots[self.current_index]["diagram"]
+            self.skipped_diagrams.append(diagram)
+            self.history.append(("skip", diagram))
+            self.current_index += 1
+            self.revision += 1
+            self.message = ""
 
     def reset(self):
         with self.lock:
             self.coordinates.clear()
+            self.skipped_diagrams.clear()
+            self.history.clear()
             self.current_index = 0
             self.extra_for_index = None
             self.revision += 1
             self.message = ""
 
-    def save(self):
-        with self.lock:
-            if (
-                self.current_index != len(self.shots)
-                or self.extra_for_index is not None
-            ):
-                raise ShotLabelError("place every shot before saving")
-            coordinates = list(self.coordinates)
-            saved_game = self.data["name"]
-            data = self.data
-            image_path = self.image_path
-        destination = write_shot_labels(
-            data,
-            image_path,
-            coordinates,
-            self.labels_directory,
-        )
-        self.saved_paths.append(destination)
-
+    def _advance(self, message):
         try:
             next_game = self.next_game_loader() if self.next_game_loader else None
         except (
@@ -445,8 +479,7 @@ class _LabelSession:
             with self.lock:
                 self.batch_complete = True
                 self.message = (
-                    f"Saved {saved_game}, but could not load the next game: "
-                    f"{error}"
+                    f"{message} Could not load the next game: {error}"
                 )
                 self.revision += 1
             self.finished.set()
@@ -454,7 +487,14 @@ class _LabelSession:
         if next_game is None:
             with self.lock:
                 self.batch_complete = True
-                self.message = f"Saved {saved_game}. Every selected game is labeled."
+                if self.skipped_games:
+                    count = len(self.skipped_games)
+                    self.message = (
+                        f"{message} Reached the end with {count} skipped "
+                        f"game{'s' if count != 1 else ''} still unlabeled."
+                    )
+                else:
+                    self.message = f"{message} Every selected game is labeled."
                 self.revision += 1
             self.finished.set()
             return
@@ -462,9 +502,41 @@ class _LabelSession:
         data, image_path, issue = next_game
         with self.lock:
             self._load_game(data, image_path)
-            self.message = f"Saved {saved_game}. Loaded the next game: {issue}."
+            self.message = f"{message} Loaded the next game: {issue}."
+
+    def save(self):
+        with self.lock:
+            if (
+                self.current_index != len(self.shots)
+                or self.extra_for_index is not None
+            ):
+                raise ShotLabelError("place every shot before saving")
+            coordinates = list(self.coordinates)
+            saved_game = self.data["name"]
+            data = self.data
+            image_path = self.image_path
+            skipped_diagrams = list(self.skipped_diagrams)
+        destination = write_shot_labels(
+            data,
+            image_path,
+            coordinates,
+            self.labels_directory,
+            skipped_diagrams,
+        )
+        self.saved_paths.append(destination)
+        self._advance(f"Saved {saved_game}.")
+
+    def skip(self):
+        with self.lock:
+            if self.batch_complete:
+                return
+            skipped_game = self.data["name"]
+            self.skipped_games.append(skipped_game)
+        self._advance(f"Skipped {skipped_game}.")
 
     def cancel(self):
+        with self.lock:
+            self.closing = True
         self.finished.set()
 
     def preview(self):
@@ -503,6 +575,8 @@ h1 {{ font-size:23px; margin:6px 0 4px; }}
 button {{ appearance:none; border:1px solid #71828a; border-radius:8px; background:#203b4b; color:#fff; font:inherit; font-weight:650; padding:10px 13px; cursor:pointer; }}
 button:hover:not(:disabled) {{ background:#2b5062; }} button:disabled {{ opacity:.4; cursor:default; }}
 #save {{ width:100%; background:#176b75; border-color:#56aeb5; margin-top:10px; }}
+#skip {{ width:100%; margin-top:8px; }}
+#skip-label {{ width:100%; margin-top:8px; border-style:dashed; }}
 .row {{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }}
 #reset {{ width:100%; margin-top:8px; }}
 #cancel {{ width:100%; border:0; background:transparent; color:#aab8bd; margin-top:8px; }}
@@ -512,9 +586,10 @@ button:hover:not(:disabled) {{ background:#2b5062; }} button:disabled {{ opacity
 <aside><div class="eyebrow">Shot label editor</div><h1 id="game">Loading…</h1><div id="progress"></div>
 <div id="notice"></div><div id="instruction"></div>
 <div id="details"><div id="shot-name"></div><div id="description"></div><div id="difficulty"></div></div>
+<button id="skip-label">Skip this label</button>
 <div class="row"><button id="another">Add another</button><button id="back">Back</button></div><button id="reset">Start over</button>
-<button id="save">Save &amp; next game</button><button id="cancel">Stop without saving this game</button>
-<div class="hint">Each click advances to the next shot. Use Add another when one table entry has multiple physical targets. Back removes the most recent marker. Saving automatically loads the next unlabeled game.</div></aside>
+<button id="skip">Skip game</button><button id="save">Save &amp; next game</button><button id="cancel">Stop without saving this game</button>
+<div class="hint">Each click advances to the next shot. Skip this label records that the current number should not appear. Use Add another for multiple physical targets. Skip game discards this game's unsaved work. Stop ends the batch and closes this tab.</div></aside>
 </main><script>
 const base={json.dumps(base)}; let state=null;
 async function request(action, body={{}}) {{
@@ -525,7 +600,7 @@ async function request(action, body={{}}) {{
 async function load() {{ state=await (await fetch(`${{base}}/state`)).json(); render(); }}
 function render() {{
   document.querySelector('#game').textContent=state.game;
-  document.querySelector('#progress').textContent=`${{state.shots_placed}} of ${{state.shot_count}} shots · ${{state.label_count}} labels`;
+  document.querySelector('#progress').textContent=`${{state.shots_placed}} of ${{state.shot_count}} shots · ${{state.label_count}} labels · ${{state.skipped_label_count}} skipped`;
   document.querySelector('#notice').textContent=state.message;
   const instruction=document.querySelector('#instruction');
   if(state.batch_complete) instruction.textContent='All selected games are labeled.';
@@ -541,10 +616,12 @@ function render() {{
     difficulty.textContent=shot.difficulty ? `Difficulty: ${{shot.difficulty}}` : 'Difficulty: not specified';
   }}
   const another=document.querySelector('#another');
-  another.disabled=state.batch_complete || state.placing_extra || !state.previous_shot;
+  another.disabled=state.batch_complete || !state.can_add_another;
   another.textContent=state.previous_shot ? `Another #${{state.previous_shot.diagram}}` : 'Add another';
-  document.querySelector('#back').disabled=state.label_count===0 && !state.placing_extra;
-  document.querySelector('#reset').disabled=state.label_count===0;
+  document.querySelector('#skip-label').disabled=state.batch_complete || state.complete || state.placing_extra;
+  document.querySelector('#back').disabled=!state.can_back;
+  document.querySelector('#reset').disabled=!state.can_back;
+  document.querySelector('#skip').disabled=state.batch_complete;
   document.querySelector('#save').disabled=state.batch_complete || !state.complete || state.placing_extra;
   document.querySelector('#board').src=`${{base}}/preview.png?v=${{state.revision}}`;
 }}
@@ -553,8 +630,21 @@ document.querySelector('#board').addEventListener('click', event => {{
   const rect=event.currentTarget.getBoundingClientRect();
   request('place',{{x:(event.clientX-rect.left)*state.width/rect.width,y:(event.clientY-rect.top)*state.height/rect.height}});
 }});
-document.querySelector('#another').onclick=()=>request('add-another'); document.querySelector('#back').onclick=()=>request('back'); document.querySelector('#reset').onclick=()=>request('reset');
-document.querySelector('#save').onclick=()=>request('save'); document.querySelector('#cancel').onclick=()=>request('cancel');
+document.querySelector('#skip-label').onclick=()=>request('skip-label'); document.querySelector('#another').onclick=()=>request('add-another'); document.querySelector('#back').onclick=()=>request('back'); document.querySelector('#reset').onclick=()=>request('reset');
+document.querySelector('#skip').onclick=()=>request('skip'); document.querySelector('#save').onclick=()=>request('save');
+document.querySelector('#cancel').onclick=stopEditor;
+async function stopEditor() {{
+  try {{
+    await fetch(`${{base}}/cancel`,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:'{{}}'}});
+  }} finally {{
+    window.open('', '_self');
+    window.close();
+    setTimeout(() => {{
+      document.title='Shot label editor stopped';
+      document.body.innerHTML='<main style="display:grid;place-items:center"><p>Shot label editor stopped. You can close this tab.</p></main>';
+    }}, 150);
+  }}
+}}
 document.addEventListener('keydown',event=>{{ if(event.key==='Backspace'){{event.preventDefault();request('back');}} }}); load();
 </script></body></html>"""
 
@@ -607,10 +697,14 @@ def _handler_for(session, token):
                     session.place(body["x"], body["y"])
                 elif route == "/add-another":
                     session.add_another()
+                elif route == "/skip-label":
+                    session.skip_label()
                 elif route == "/back":
                     session.back()
                 elif route == "/reset":
                     session.reset()
+                elif route == "/skip":
+                    session.skip()
                 elif route == "/save":
                     session.save()
                 elif route == "/cancel":
@@ -736,4 +830,9 @@ def interactive_shot_labels(game):
             print(f"  {path}")
     else:
         print("Shot labels were not changed.")
+    if session.skipped_games:
+        print(
+            "Skipped without saving: "
+            + ", ".join(session.skipped_games)
+        )
     return 0

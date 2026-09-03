@@ -1,0 +1,29 @@
+game_id: ac-dc-pro-stern-2012
+image: images/ac-dc-pro-stern-2012.webp
+image_width: 1080
+image_height: 1985
+image_sha256: 16079123deff1e15ccc3a0fcc1e357ddd30568ee61db8bf28ae0a1190c0e2c05
+shots_sha256: f6e30e86966a7d9ec387ba6d26da62c15363ebc2495c4f95dc0334ea93a9d8c0
+coordinates:
+- diagram: 1
+  x: 186
+  y: 617
+- diagram: 2
+  x: 348
+  y: 555
+- diagram: 3
+  x: 477
+  y: 387
+- diagram: 4
+  x: 812
+  y: 582
+- diagram: 5
+  x: 945
+  y: 645
+- diagram: 6
+  x: 973
+  y: 1047
+- diagram: 6
+  x: 143
+  y: 1086
+skipped_diagrams: []
