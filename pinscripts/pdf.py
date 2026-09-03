@@ -61,8 +61,8 @@ SECTION_FONT_SIZE = 9.5
 SECTION_LEADING = 11
 TITLE_FONT_SIZE = 20
 TITLE_LEADING = 22
-SUMMARY_FONT_SIZE = 10
-SUMMARY_LEADING = 12
+SUMMARY_FONT_SIZE = BODY_FONT_SIZE
+SUMMARY_LEADING = BODY_LEADING
 
 SPACE_XS = 2
 SPACE_SM = 4
@@ -155,14 +155,27 @@ HOOK = ParagraphStyle(
     fontName="Helvetica-Bold",
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
-    borderWidth=0.75,
-    borderColor=RULE,
-    borderPadding=SPACE_MD,
-    leftIndent=SPACE_MD,
-    rightIndent=SPACE_MD,
-    backColor=PALE,
     textColor=INK,
-    spaceAfter=SPACE_SM,
+    spaceAfter=0,
+)
+
+HOOK_HEADING = ParagraphStyle(
+    "HookHeading",
+    parent=SECTION,
+    spaceBefore=0,
+    spaceAfter=SPACE_XS,
+)
+
+HOOK_TABLE_STYLE = TableStyle(
+    [
+        ("BOX", (0, 0), (-1, -1), 0.75, RULE),
+        ("BACKGROUND", (0, 0), (-1, -1), PALE),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_MD),
+    ]
 )
 
 SUMMARY = ParagraphStyle(
@@ -183,7 +196,7 @@ SUMMARY_TABLE_STYLE = TableStyle(
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
-        ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_LG),
         ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_MD),
     ]
 )
@@ -323,11 +336,27 @@ def build_blocks(data, black_and_white=False):
     )
     fact_table.setStyle(METADATA_TABLE_STYLE)
     blocks.append([fact_table])
-    blocks.append([Paragraph(markup(data.get("hook")), HOOK)])
+    hook_box = Table(
+        [
+            [
+                [
+                    Paragraph(
+                        "RULES SUMMARY (15-30 SECONDS)",
+                        HOOK_HEADING,
+                    ),
+                    Paragraph(markup(data.get("hook")), HOOK),
+                ]
+            ]
+        ],
+        colWidths=[COL_W],
+        hAlign="LEFT",
+        spaceAfter=SPACE_SM,
+    )
+    hook_box.setStyle(HOOK_TABLE_STYLE)
+    blocks.append([hook_box])
 
     rules = data.get("rules", {})
     rules_block = [
-        section("15-second rules"),
         Paragraph(f"<b>Primary:</b> {markup(rules.get('primary'))}", BODY),
     ]
     rules_block.extend(bullet(item) for item in rules.get("bullets", []))
