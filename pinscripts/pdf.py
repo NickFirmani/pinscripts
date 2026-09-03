@@ -10,7 +10,7 @@ from PIL import Image, ImageOps
 
 from pypdf import PdfReader, PdfWriter, Transformation
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_LEFT
+from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
@@ -19,7 +19,9 @@ from reportlab.platypus import (
     BaseDocTemplate,
     Frame,
     FrameBreak,
+    Image as PdfImage,
     KeepTogether,
+    NextFrameFlowable,
     PageTemplate,
     Paragraph,
     Spacer,
@@ -69,7 +71,7 @@ TITLE = ParagraphStyle(
     fontSize=20,
     leading=20.5,
     spaceAfter=3,
-    alignment=TA_LEFT,
+    alignment=TA_RIGHT,
     textColor=INK,
 )
 
@@ -240,8 +242,6 @@ def build_blocks(data, black_and_white=False):
                 ),
                 SUBTITLE,
             ),
-            Spacer(1, 4),
-            Paragraph(markup(data.get("hook")), HOOK),
         ]
     ]
 
@@ -275,6 +275,7 @@ def build_blocks(data, black_and_white=False):
         )
     )
     blocks.append([fact_table])
+    blocks.append([Paragraph(markup(data.get("hook")), HOOK)])
 
     rules = data.get("rules", {})
     rules_block = [
@@ -465,8 +466,48 @@ def _prepare_print_image(source, directory, dpi=220):
     return target
 
 
-def _draw_spread_chrome(canvas, image_path, title):
-    image_x = PAGE_W + INNER_MARGIN + COL_W + GUTTER
+def _build_reference_story(blocks, image_path, canvas):
+    story = [flowable for block in blocks for flowable in block]
+    if not image_path:
+        return story
+
+    image_gap = 8
+    content_height = sum(_flowable_height(item, canvas) for item in story)
+    available_height = COL_H - content_height - image_gap
+
+    with Image.open(image_path) as image:
+        image_width, image_height = image.size
+
+    scale = min(COL_W / image_width, available_height / image_height)
+    draw_width = image_width * scale
+    draw_height = image_height * scale
+    pdf_image = PdfImage(
+        str(image_path),
+        width=draw_width,
+        height=draw_height,
+    )
+    image_box = Table(
+        [[pdf_image]],
+        colWidths=[draw_width],
+        rowHeights=[draw_height],
+        hAlign="CENTER",
+    )
+    image_box.setStyle(
+        TableStyle(
+            [
+                ("BOX", (0, 0), (-1, -1), 0.5, RULE),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+            ]
+        )
+    )
+    story.extend([Spacer(1, image_gap), image_box])
+    return story
+
+
+def _draw_spread_chrome(canvas, title):
 
     canvas.saveState()
     canvas.setStrokeColor(RULE)
@@ -488,25 +529,6 @@ def _draw_spread_chrome(canvas, image_path, title):
         safe(title).upper(),
     )
 
-    if image_path:
-        with Image.open(image_path) as image:
-            image_width, image_height = image.size
-        scale = min(COL_W / image_width, COL_H / image_height)
-        draw_width = image_width * scale
-        draw_height = image_height * scale
-        draw_x = image_x + ((COL_W - draw_width) / 2)
-        draw_y = BOTTOM_MARGIN + COL_H - draw_height
-        canvas.setStrokeColor(RULE)
-        canvas.setLineWidth(0.5)
-        canvas.rect(draw_x, draw_y, draw_width, draw_height, stroke=1, fill=0)
-        canvas.drawImage(
-            str(image_path),
-            draw_x,
-            draw_y,
-            width=draw_width,
-            height=draw_height,
-            mask="auto",
-        )
     canvas.restoreState()
 
 
@@ -550,7 +572,12 @@ def render_game(
 
     blocks = build_blocks(data, black_and_white)
     shots_block = next(block for block in blocks if _is_shots_block(block))
-    text_blocks = [block for block in blocks if block is not shots_block]
+    reference_blocks = blocks[:2]
+    text_blocks = [
+        block
+        for block in blocks[2:]
+        if block is not shots_block
+    ]
 
     measuring_canvas = Canvas(BytesIO(), pagesize=SPREAD_SIZE)
     shots_height = sum(
@@ -606,6 +633,17 @@ def render_game(
             bottomPadding=0,
             id="important-shots",
         ),
+        Frame(
+            PAGE_W + INNER_MARGIN + COL_W + GUTTER,
+            BOTTOM_MARGIN,
+            COL_W,
+            COL_H,
+            leftPadding=0,
+            rightPadding=0,
+            topPadding=0,
+            bottomPadding=0,
+            id="reference",
+        ),
     ]
 
     configured_image = data.get("image")
@@ -640,7 +678,6 @@ def render_game(
                     frames=text_columns,
                     onPage=lambda canvas, _doc: _draw_spread_chrome(
                         canvas,
-                        print_image,
                         data.get("name", ""),
                     ),
                 )
@@ -651,8 +688,16 @@ def render_game(
             for block in text_blocks
             for flowable in block
         ]
-        story.append(FrameBreak)
+        story.extend([NextFrameFlowable("important-shots"), FrameBreak])
         story.extend(shots_block)
+        story.extend([NextFrameFlowable("reference"), FrameBreak])
+        story.extend(
+            _build_reference_story(
+                reference_blocks,
+                print_image,
+                measuring_canvas,
+            )
+        )
         doc.build(story)
         _split_spread(
             spread_path,
