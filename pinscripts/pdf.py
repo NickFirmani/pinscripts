@@ -17,6 +17,7 @@ from reportlab.lib.units import inch
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import (
     BaseDocTemplate,
+    Flowable,
     Frame,
     FrameBreak,
     Image as PdfImage,
@@ -70,6 +71,8 @@ SPACE_MD = 6
 SPACE_LG = 8
 TABLE_CELL_PADDING = SPACE_XS
 SHOTS_GAP = SPACE_LG + SPACE_SM
+HANDWRITING_LINE_SPACING = 0.3 * inch
+MIN_HANDWRITING_LINES = 2
 
 INK = colors.HexColor("#142735")
 ACCENT = colors.HexColor("#176B75")
@@ -176,7 +179,8 @@ SUMMARY = ParagraphStyle(
     borderPadding=SPACE_MD,
     backColor=PALE,
     textColor=INK,
-    spaceBefore=SPACE_SM,
+    spaceBefore=0,
+    spaceAfter=SPACE_LG,
 )
 
 DATA_TABLE_STYLE = TableStyle(
@@ -185,13 +189,36 @@ DATA_TABLE_STYLE = TableStyle(
         ("BOX", (0, 0), (-1, -1), 0.5, RULE),
         ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PAPER_TINT]),
-        ("VALIGN", (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
-        ("RIGHTPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
-        ("TOPPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), TABLE_CELL_PADDING),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), SPACE_SM),
+        ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_SM),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_SM),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_SM),
     ]
 )
+
+
+class HandwrittenNotes(Flowable):
+    """Fill the available frame height with evenly spaced writing lines."""
+
+    def __init__(self, line_spacing=HANDWRITING_LINE_SPACING):
+        super().__init__()
+        self.line_spacing = line_spacing
+
+    def wrap(self, available_width, available_height):
+        self.width = available_width
+        self.height = max(0, available_height)
+        return self.width, self.height
+
+    def draw(self):
+        self.canv.saveState()
+        self.canv.setStrokeColor(RULE)
+        self.canv.setLineWidth(0.35)
+        line_y = self.height - self.line_spacing
+        while line_y >= 0:
+            self.canv.line(0, line_y, self.width, line_y)
+            line_y -= self.line_spacing
+        self.canv.restoreState()
 
 METADATA_TABLE_STYLE = TableStyle(
     [
@@ -281,7 +308,7 @@ def build_blocks(data, black_and_white=False):
     ]
     fact_table = Table(
         fact_rows,
-        colWidths=[0.78 * inch, COL_W - 0.78 * inch],
+        colWidths=[0.94 * inch, COL_W - 0.94 * inch],
         hAlign="LEFT",
     )
     fact_table.setStyle(METADATA_TABLE_STYLE)
@@ -353,7 +380,7 @@ def build_blocks(data, black_and_white=False):
 
     shots = Table(
         shot_rows,
-        colWidths=[0.18 * inch, 0.72 * inch, COL_W - 1.58 * inch, 0.68 * inch],
+        colWidths=[0.24 * inch, 0.86 * inch, COL_W - 1.96 * inch, 0.86 * inch],
         repeatRows=1,
         hAlign="LEFT",
     )
@@ -388,29 +415,20 @@ def build_blocks(data, black_and_white=False):
     trivia_block.extend(bullet(item) for item in data.get("trivia", []))
     blocks.append(trivia_block)
 
-    notes = [item for item in data.get("venue_notes", []) if item]
-    notes_block = [section("Venue notes")]
-    if notes:
-        notes_block.extend(bullet(item) for item in notes)
-    else:
-        notes_block.extend(
-            [
-                Paragraph("________________________________________", SMALL),
-                Paragraph("________________________________________", SMALL),
-            ]
-        )
-    blocks.append(notes_block)
-
     blocks.append(
         [
             KeepTogether(
                 [
-                    Spacer(1, SPACE_SM),
                     Paragraph(markup(data.get("summary")), SUMMARY),
                 ]
             )
         ]
     )
+
+    notes = [item for item in data.get("venue_notes", []) if item]
+    notes_block = [section("Venue notes")]
+    notes_block.extend(bullet(item) for item in notes)
+    blocks.append(notes_block)
 
     return blocks
 
@@ -441,6 +459,70 @@ def _is_shots_block(block):
         isinstance(first, Paragraph)
         and first.getPlainText() == "IMPORTANT SHOTS"
     )
+
+
+def _is_section_block(block, title):
+    first = block[0] if block else None
+    return (
+        isinstance(first, Paragraph)
+        and first.getPlainText() == title.upper()
+    )
+
+
+def _is_summary_block(block):
+    if len(block) != 1 or not isinstance(block[0], KeepTogether):
+        return False
+    return any(
+        isinstance(flowable, Paragraph) and flowable.style is SUMMARY
+        for flowable in block[0]._content
+    )
+
+
+def _partition_leading_story(blocks, capacities, canvas):
+    """Lay out ordered blocks before the fixed tail of column three."""
+    heights = [
+        sum(_flowable_height(flowable, canvas) for flowable in block)
+        for block in blocks
+    ]
+    best = None
+    for first_break in range(1, len(blocks) + 1):
+        for second_break in range(first_break, len(blocks) + 1):
+            column_heights = (
+                sum(heights[:first_break]),
+                sum(heights[first_break:second_break]),
+                sum(heights[second_break:]),
+            )
+            overflow = sum(
+                max(0, height - capacity) ** 2
+                for height, capacity in zip(column_heights, capacities)
+            )
+            score = (
+                overflow > 0,
+                overflow,
+                column_heights[2],
+                abs(column_heights[0] - column_heights[1]),
+            )
+            if best is None or score < best[0]:
+                best = (score, first_break, second_break)
+
+    if best is None or best[0][0]:
+        raise ValueError("content cannot fit before the fixed column-three notes")
+
+    _, first_break, second_break = best
+    story = [flowable for block in blocks[:first_break] for flowable in block]
+    story.append(FrameBreak)
+    story.extend(
+        flowable
+        for block in blocks[first_break:second_break]
+        for flowable in block
+    )
+    story.append(FrameBreak)
+    story.extend(
+        flowable
+        for block in blocks[second_break:]
+        for flowable in block
+    )
+    return story
 
 
 def _prepare_print_image(
@@ -591,11 +673,17 @@ def render_game(
 
     blocks = build_blocks(data, black_and_white)
     shots_block = next(block for block in blocks if _is_shots_block(block))
+    summary_block = next(block for block in blocks if _is_summary_block(block))
+    venue_notes_block = next(
+        block for block in blocks if _is_section_block(block, "Venue notes")
+    )
     reference_blocks = blocks[:2]
-    text_blocks = [
+    leading_blocks = [
         block
         for block in blocks[2:]
         if block is not shots_block
+        and block is not summary_block
+        and block is not venue_notes_block
     ]
 
     measuring_canvas = Canvas(BytesIO(), pagesize=SPREAD_SIZE)
@@ -606,6 +694,22 @@ def render_game(
     third_column_height = COL_H - shots_height - SHOTS_GAP
     if third_column_height <= 0:
         raise ValueError("Important Shots is too tall for column three")
+
+    notes_heading = [section("Notes")]
+    fixed_third_column_height = sum(
+        _flowable_height(flowable, measuring_canvas)
+        for block in (summary_block, venue_notes_block, notes_heading)
+        for flowable in block
+    )
+    leading_capacities = (
+        COL_H,
+        COL_H,
+        third_column_height
+        - fixed_third_column_height
+        - (HANDWRITING_LINE_SPACING * MIN_HANDWRITING_LINES),
+    )
+    if leading_capacities[2] <= 0:
+        raise ValueError("Summary and venue notes are too tall for column three")
 
     text_columns = [
         Frame(
@@ -715,11 +819,15 @@ def render_game(
                 )
             ]
         )
-        story = [
-            flowable
-            for block in text_blocks
-            for flowable in block
-        ]
+        story = _partition_leading_story(
+            leading_blocks,
+            leading_capacities,
+            measuring_canvas,
+        )
+        story.extend(summary_block)
+        story.extend(venue_notes_block)
+        story.extend(notes_heading)
+        story.append(HandwrittenNotes())
         story.extend([NextFrameFlowable("important-shots"), FrameBreak])
         story.extend(shots_block)
         story.extend([NextFrameFlowable("reference"), FrameBreak])
