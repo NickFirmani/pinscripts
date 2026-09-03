@@ -445,55 +445,6 @@ def _is_shots_block(block):
     )
 
 
-def _partition_story(blocks, capacities):
-    """Partition ordered semantic blocks across the available text frames."""
-    measuring_canvas = Canvas(BytesIO(), pagesize=SPREAD_SIZE)
-    heights = [
-        sum(_flowable_height(flowable, measuring_canvas) for flowable in block)
-        for block in blocks
-    ]
-
-    best = None
-    for first_break in range(1, len(blocks) - 1):
-        for second_break in range(first_break + 1, len(blocks)):
-            column_heights = (
-                sum(heights[:first_break]),
-                sum(heights[first_break:second_break]),
-                sum(heights[second_break:]),
-            )
-            overflow = sum(
-                max(0, value - capacity) ** 2
-                for value, capacity in zip(column_heights, capacities)
-            )
-            utilization = tuple(
-                value / capacity
-                for value, capacity in zip(column_heights, capacities)
-            )
-            target = sum(utilization) / 3
-            imbalance = sum((value - target) ** 2 for value in utilization)
-            score = (overflow > 0, overflow, imbalance, max(utilization))
-            if best is None or score < best[0]:
-                best = (score, first_break, second_break, column_heights)
-
-    if best is None:
-        raise ValueError("content cannot be partitioned across the spread text frames")
-
-    if best[0][0]:
-        heights_text = ", ".join(f"{value:.1f}" for value in best[3])
-        print(
-            "WARNING: too much information for the spread text frames; "
-            f"allowing overflow: {heights_text}"
-        )
-
-    _, first_break, second_break, _ = best
-    story = []
-    for index, block in enumerate(blocks):
-        if index in (first_break, second_break):
-            story.append(FrameBreak)
-        story.extend(block)
-    return story
-
-
 def _prepare_print_image(source, directory, dpi=220):
     """Create a bounded JPEG derivative without changing the canonical WebP."""
     target = directory / f"{source.stem}-print.jpg"
@@ -695,10 +646,11 @@ def render_game(
                 )
             ]
         )
-        story = _partition_story(
-            text_blocks,
-            (COL_H, COL_H, third_column_height),
-        )
+        story = [
+            flowable
+            for block in text_blocks
+            for flowable in block
+        ]
         story.append(FrameBreak)
         story.extend(shots_block)
         doc.build(story)
