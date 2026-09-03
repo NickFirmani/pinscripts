@@ -57,8 +57,8 @@ BODY_FONT_SIZE = 8.5
 BODY_LEADING = 10
 SMALL_FONT_SIZE = BODY_FONT_SIZE
 SMALL_LEADING = BODY_LEADING
-SECTION_FONT_SIZE = 9.5
-SECTION_LEADING = 11
+SECTION_FONT_SIZE = 10
+SECTION_LEADING = 12
 TITLE_FONT_SIZE = 20
 TITLE_LEADING = 22
 SUMMARY_FONT_SIZE = BODY_FONT_SIZE
@@ -78,6 +78,7 @@ MUTED = colors.HexColor("#53636C")
 PALE = colors.HexColor("#EAF2F3")
 RULE = colors.HexColor("#AAB8BD")
 PAPER_TINT = colors.HexColor("#F7F9F8")
+SECTION_STRIPE = colors.HexColor("#E3E6E7")
 
 
 styles = getSampleStyleSheet()
@@ -99,10 +100,18 @@ SECTION = ParagraphStyle(
     fontName="Helvetica-Bold",
     fontSize=SECTION_FONT_SIZE,
     leading=SECTION_LEADING,
-    spaceBefore=SPACE_MD,
-    spaceAfter=SPACE_XS,
-    keepWithNext=True,
-    textColor=ACCENT,
+    spaceAfter=0,
+    textColor=INK,
+)
+
+SECTION_TABLE_STYLE = TableStyle(
+    [
+        ("BACKGROUND", (0, 0), (-1, -1), SECTION_STRIPE),
+        ("LEFTPADDING", (0, 0), (-1, -1), SPACE_XS),
+        ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_XS),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_XS),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
+    ]
 )
 
 BODY = ParagraphStyle(
@@ -277,7 +286,18 @@ def display_risk(text):
 
 
 def section(title):
-    return Paragraph(markup(title).upper(), SECTION)
+    heading = Table(
+        [[Paragraph(markup(title).upper(), SECTION)]],
+        colWidths=[COL_W],
+        hAlign="LEFT",
+        spaceBefore=SPACE_LG,
+        spaceAfter=1,
+    )
+    heading.setStyle(SECTION_TABLE_STYLE)
+    heading.keepWithNext = True
+    heading.is_section_heading = True
+    heading.section_title = safe(title).upper()
+    return heading
 
 
 def bullet(text):
@@ -472,18 +492,12 @@ def _flowable_height(flowable, canvas):
 
 def _is_shots_block(block):
     first = block[0] if block else None
-    return (
-        isinstance(first, Paragraph)
-        and first.getPlainText() == "IMPORTANT SHOTS"
-    )
+    return getattr(first, "section_title", None) == "IMPORTANT SHOTS"
 
 
 def _is_section_block(block, title):
     first = block[0] if block else None
-    return (
-        isinstance(first, Paragraph)
-        and first.getPlainText() == title.upper()
-    )
+    return getattr(first, "section_title", None) == title.upper()
 
 
 def _is_summary_block(block):
@@ -501,10 +515,7 @@ def _partition_leading_story(blocks, capacities, canvas):
         index
         for index in range(1, len(flowables) + 1)
         if index == len(flowables)
-        or not (
-            isinstance(flowables[index - 1], Paragraph)
-            and flowables[index - 1].style is SECTION
-        )
+        or not getattr(flowables[index - 1], "is_section_heading", False)
     ]
     best = None
     for first_break in valid_breaks:
