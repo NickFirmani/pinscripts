@@ -72,7 +72,6 @@ SPACE_LG = 8
 TABLE_CELL_PADDING = SPACE_XS
 SHOTS_GAP = SPACE_LG + SPACE_SM
 HANDWRITING_LINE_SPACING = 0.3 * inch
-MIN_HANDWRITING_LINES = 2
 
 INK = colors.HexColor("#142735")
 ACCENT = colors.HexColor("#176B75")
@@ -207,15 +206,15 @@ class HandwrittenNotes(Flowable):
 
     def wrap(self, available_width, available_height):
         self.width = available_width
-        self.height = max(0, available_height)
-        return self.width, self.height
+        self.available_height = max(0, available_height)
+        return self.width, 0
 
     def draw(self):
         self.canv.saveState()
         self.canv.setStrokeColor(RULE)
         self.canv.setLineWidth(0.35)
-        line_y = self.height - self.line_spacing
-        while line_y >= 0:
+        line_y = -self.line_spacing
+        while line_y >= -self.available_height:
             self.canv.line(0, line_y, self.width, line_y)
             line_y -= self.line_spacing
         self.canv.restoreState()
@@ -252,7 +251,7 @@ def safe(text):
         .replace("\u2013", "-")
         .replace("\u2014", "-")
         .replace("\u2212", "-")
-        .replace("\u2192", "->")
+        .replace("->", "\u2192")
     )
 
 
@@ -479,14 +478,26 @@ def _is_summary_block(block):
 
 
 def _partition_leading_story(blocks, capacities, canvas):
-    """Lay out ordered blocks before the fixed tail of column three."""
+    """Lay out ordered paragraphs before the fixed tail of column three."""
+    flowables = [flowable for block in blocks for flowable in block]
     heights = [
-        sum(_flowable_height(flowable, canvas) for flowable in block)
-        for block in blocks
+        _flowable_height(flowable, canvas)
+        for flowable in flowables
+    ]
+    valid_breaks = [
+        index
+        for index in range(1, len(flowables) + 1)
+        if index == len(flowables)
+        or not (
+            isinstance(flowables[index - 1], Paragraph)
+            and flowables[index - 1].style is SECTION
+        )
     ]
     best = None
-    for first_break in range(1, len(blocks) + 1):
-        for second_break in range(first_break, len(blocks) + 1):
+    for first_break in valid_breaks:
+        for second_break in (
+            index for index in valid_breaks if index >= first_break
+        ):
             column_heights = (
                 sum(heights[:first_break]),
                 sum(heights[first_break:second_break]),
@@ -509,19 +520,11 @@ def _partition_leading_story(blocks, capacities, canvas):
         raise ValueError("content cannot fit before the fixed column-three notes")
 
     _, first_break, second_break = best
-    story = [flowable for block in blocks[:first_break] for flowable in block]
+    story = list(flowables[:first_break])
     story.append(FrameBreak)
-    story.extend(
-        flowable
-        for block in blocks[first_break:second_break]
-        for flowable in block
-    )
+    story.extend(flowables[first_break:second_break])
     story.append(FrameBreak)
-    story.extend(
-        flowable
-        for block in blocks[second_break:]
-        for flowable in block
-    )
+    story.extend(flowables[second_break:])
     return story
 
 
@@ -704,9 +707,7 @@ def render_game(
     leading_capacities = (
         COL_H,
         COL_H,
-        third_column_height
-        - fixed_third_column_height
-        - (HANDWRITING_LINE_SPACING * MIN_HANDWRITING_LINES),
+        third_column_height - fixed_third_column_height,
     )
     if leading_capacities[2] <= 0:
         raise ValueError("Summary and venue notes are too tall for column three")
