@@ -21,7 +21,6 @@ from reportlab.platypus import (
     Frame,
     FrameBreak,
     Image as PdfImage,
-    KeepTogether,
     NextFrameFlowable,
     PageTemplate,
     Paragraph,
@@ -173,13 +172,20 @@ SUMMARY = ParagraphStyle(
     fontSize=SUMMARY_FONT_SIZE,
     leading=SUMMARY_LEADING,
     alignment=TA_CENTER,
-    borderWidth=0.8,
-    borderColor=ACCENT,
-    borderPadding=SPACE_MD,
-    backColor=PALE,
     textColor=INK,
-    spaceBefore=0,
-    spaceAfter=SPACE_LG,
+    spaceAfter=0,
+)
+
+SUMMARY_TABLE_STYLE = TableStyle(
+    [
+        ("BOX", (0, 0), (-1, -1), 0.8, ACCENT),
+        ("BACKGROUND", (0, 0), (-1, -1), PALE),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_MD),
+    ]
 )
 
 DATA_TABLE_STYLE = TableStyle(
@@ -414,15 +420,15 @@ def build_blocks(data, black_and_white=False):
     trivia_block.extend(bullet(item) for item in data.get("trivia", []))
     blocks.append(trivia_block)
 
-    blocks.append(
-        [
-            KeepTogether(
-                [
-                    Paragraph(markup(data.get("summary")), SUMMARY),
-                ]
-            )
-        ]
+    summary_box = Table(
+        [[Paragraph(markup(data.get("summary")), SUMMARY)]],
+        colWidths=[COL_W],
+        hAlign="LEFT",
+        spaceAfter=SPACE_LG,
     )
+    summary_box.setStyle(SUMMARY_TABLE_STYLE)
+    summary_box.is_summary_box = True
+    blocks.append([summary_box])
 
     notes = [item for item in data.get("venue_notes", []) if item]
     notes_block = [section("Venue notes")]
@@ -442,12 +448,6 @@ def build_story(data, black_and_white=False):
 
 
 def _flowable_height(flowable, canvas):
-    if isinstance(flowable, KeepTogether):
-        return sum(
-            _flowable_height(item, canvas)
-            for item in flowable._content
-        )
-
     _, height = flowable.wrapOn(canvas, COL_W, COL_H)
     return flowable.getSpaceBefore() + height + flowable.getSpaceAfter()
 
@@ -469,12 +469,7 @@ def _is_section_block(block, title):
 
 
 def _is_summary_block(block):
-    if len(block) != 1 or not isinstance(block[0], KeepTogether):
-        return False
-    return any(
-        isinstance(flowable, Paragraph) and flowable.style is SUMMARY
-        for flowable in block[0]._content
-    )
+    return len(block) == 1 and getattr(block[0], "is_summary_box", False)
 
 
 def _partition_leading_story(blocks, capacities, canvas):
@@ -698,10 +693,9 @@ def render_game(
     if third_column_height <= 0:
         raise ValueError("Important Shots is too tall for column three")
 
-    notes_heading = [section("Notes")]
     fixed_third_column_height = sum(
         _flowable_height(flowable, measuring_canvas)
-        for block in (summary_block, venue_notes_block, notes_heading)
+        for block in (summary_block, venue_notes_block)
         for flowable in block
     )
     leading_capacities = (
@@ -827,7 +821,6 @@ def render_game(
         )
         story.extend(summary_block)
         story.extend(venue_notes_block)
-        story.extend(notes_heading)
         story.append(HandwrittenNotes())
         story.extend([NextFrameFlowable("important-shots"), FrameBreak])
         story.extend(shots_block)
