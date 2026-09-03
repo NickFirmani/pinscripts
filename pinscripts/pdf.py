@@ -433,7 +433,7 @@ def build_blocks(data, black_and_white=False):
         [[Paragraph(markup(data.get("summary")), SUMMARY)]],
         colWidths=[COL_W],
         hAlign="LEFT",
-        spaceBefore=SPACE_LG,
+        spaceBefore=0,
         spaceAfter=SPACE_LG,
     )
     summary_box.setStyle(SUMMARY_TABLE_STYLE)
