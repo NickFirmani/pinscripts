@@ -10,7 +10,7 @@ from PIL import Image, ImageOps
 
 from pypdf import PdfReader, PdfWriter, Transformation
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_RIGHT
+from reportlab.lib.enums import TA_RIGHT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
@@ -62,8 +62,6 @@ SECTION_FONT_SIZE = 10
 SECTION_LEADING = 12
 TITLE_FONT_SIZE = 20
 TITLE_LEADING = 22
-SUMMARY_FONT_SIZE = BODY_FONT_SIZE
-SUMMARY_LEADING = BODY_LEADING
 
 SPACE_XS = 2
 SPACE_SM = 4
@@ -160,8 +158,8 @@ METADATA_LABEL = ParagraphStyle(
     textColor=ACCENT,
 )
 
-HOOK = ParagraphStyle(
-    "Hook",
+CALLOUT_TEXT = ParagraphStyle(
+    "CalloutText",
     parent=BODY,
     fontName="Helvetica-Bold",
     fontSize=BODY_FONT_SIZE,
@@ -170,34 +168,11 @@ HOOK = ParagraphStyle(
     spaceAfter=0,
 )
 
-HOOK_TABLE_STYLE = TableStyle(
+CALLOUT_TABLE_STYLE = TableStyle(
     [
         ("BOX", (0, 0), (-1, -1), 0.75, RULE),
         ("BACKGROUND", (0, 0), (-1, -1), PALE),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
-        ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
-        ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_MD),
-    ]
-)
-
-SUMMARY = ParagraphStyle(
-    "Summary",
-    parent=BODY,
-    fontName="Helvetica-Bold",
-    fontSize=SUMMARY_FONT_SIZE,
-    leading=SUMMARY_LEADING,
-    alignment=TA_CENTER,
-    textColor=INK,
-    spaceAfter=0,
-)
-
-SUMMARY_TABLE_STYLE = TableStyle(
-    [
-        ("BOX", (0, 0), (-1, -1), 0.8, ACCENT),
-        ("BACKGROUND", (0, 0), (-1, -1), PALE),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
@@ -352,12 +327,13 @@ def build_blocks(data, black_and_white=False):
     fact_table.setStyle(METADATA_TABLE_STYLE)
     blocks.append([fact_table])
     hook_box = Table(
-        [[Paragraph(markup(data.get("hook")), HOOK)]],
+        [[Paragraph(markup(data.get("hook")), CALLOUT_TEXT)]],
         colWidths=[COL_W],
         hAlign="LEFT",
+        spaceBefore=0,
         spaceAfter=SPACE_SM,
     )
-    hook_box.setStyle(HOOK_TABLE_STYLE)
+    hook_box.setStyle(CALLOUT_TABLE_STYLE)
     blocks.append([section("Rules Summary (15-30 seconds)"), hook_box])
 
     rules = data.get("rules", {})
@@ -432,13 +408,13 @@ def build_blocks(data, black_and_white=False):
     blocks.append([section("Important shots"), shots])
 
     summary_box = Table(
-        [[Paragraph(markup(data.get("summary")), SUMMARY)]],
+        [[Paragraph(markup(data.get("summary")), CALLOUT_TEXT)]],
         colWidths=[COL_W],
         hAlign="LEFT",
         spaceBefore=0,
-        spaceAfter=SPACE_LG,
+        spaceAfter=SPACE_SM,
     )
-    summary_box.setStyle(SUMMARY_TABLE_STYLE)
+    summary_box.setStyle(CALLOUT_TABLE_STYLE)
 
     strategy = data.get("strategy", {})
     blocks.append(
