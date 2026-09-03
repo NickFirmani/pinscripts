@@ -55,8 +55,8 @@ COL_H = PAGE_H - TOP_MARGIN - BOTTOM_MARGIN
 
 BODY_FONT_SIZE = 8.5
 BODY_LEADING = 10
-SMALL_FONT_SIZE = 7.5
-SMALL_LEADING = 8.5
+SMALL_FONT_SIZE = BODY_FONT_SIZE
+SMALL_LEADING = BODY_LEADING
 SECTION_FONT_SIZE = 9.5
 SECTION_LEADING = 11
 TITLE_FONT_SIZE = 20
@@ -121,6 +121,12 @@ SMALL = ParagraphStyle(
     leading=SMALL_LEADING,
 )
 
+BULLET = ParagraphStyle(
+    "Bullet",
+    parent=BODY,
+    spaceAfter=0,
+)
+
 TABLE_HEADER = ParagraphStyle(
     "TableHeader",
     parent=SMALL,
@@ -151,6 +157,8 @@ HOOK = ParagraphStyle(
     borderWidth=0.75,
     borderColor=RULE,
     borderPadding=SPACE_MD,
+    leftIndent=SPACE_MD,
+    rightIndent=SPACE_MD,
     backColor=PALE,
     textColor=INK,
     spaceAfter=SPACE_SM,
@@ -229,8 +237,8 @@ def section(title):
     return Paragraph(markup(title).upper(), SECTION)
 
 
-def bullet(text, style=BODY):
-    return Paragraph(f"&bull;&nbsp; {markup(text)}", style)
+def bullet(text):
+    return Paragraph(f"&bull;&nbsp; {markup(text)}", BULLET)
 
 
 def resolve_image_path(image_path, black_and_white=False, root=ROOT):
@@ -377,13 +385,13 @@ def build_blocks(data, black_and_white=False):
     blocks.append(commentary_block)
 
     trivia_block = [section("Trivia / filler")]
-    trivia_block.extend(bullet(item, SMALL) for item in data.get("trivia", []))
+    trivia_block.extend(bullet(item) for item in data.get("trivia", []))
     blocks.append(trivia_block)
 
     notes = [item for item in data.get("venue_notes", []) if item]
     notes_block = [section("Venue notes")]
     if notes:
-        notes_block.extend(bullet(item, SMALL) for item in notes)
+        notes_block.extend(bullet(item) for item in notes)
     else:
         notes_block.extend(
             [
