@@ -1,4 +1,8 @@
 id: venom-pro-stern-2023
+rules_basis:
+  kind: code
+  version: '1.06.0'
+  release_date: '2025-05-06'
 name: Venom (Pro)
 metadata:
   manufacturer: Stern Pinball

@@ -1,4 +1,8 @@
 id: mars-trek-segasa-sonic-1977
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Mars Trek
 metadata:
   manufacturer: Sonic / Segasa

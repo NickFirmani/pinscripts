@@ -8,6 +8,7 @@
     "id",
     "name",
     "metadata",
+    "rules_basis",
     "hook",
     "rules",
     "watch",
@@ -70,6 +71,40 @@
         "multiball": {
           "type": "string",
           "minLength": 1
+        }
+      }
+    },
+    "rules_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "version",
+        "release_date"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "code",
+            "rom",
+            "fixed"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "release_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         }
       }
     },

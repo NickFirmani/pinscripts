@@ -1,4 +1,8 @@
 id: doodle-bug-williams-1971
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Doodle Bug
 metadata:
   manufacturer: Williams Electronics

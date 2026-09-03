@@ -1,4 +1,8 @@
 id: time-machine-data-east-1988
+rules_basis:
+  kind: rom
+  version: '2.4'
+  release_date: null
 name: Time Machine
 metadata:
   manufacturer: Data East

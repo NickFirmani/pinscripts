@@ -1,4 +1,8 @@
 id: white-water-williams-1993
+rules_basis:
+  kind: rom
+  version: 'L-5'
+  release_date: null
 name: White Water
 metadata:
   manufacturer: Williams Electronic Games

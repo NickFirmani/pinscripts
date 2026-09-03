@@ -1,4 +1,8 @@
 id: ac-dc-pro-stern-2012
+rules_basis:
+  kind: code
+  version: '1.70'
+  release_date: '2018-02-12'
 name: AC/DC (Pro)
 metadata:
   manufacturer: Stern Pinball

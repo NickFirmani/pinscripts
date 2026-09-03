@@ -1,4 +1,8 @@
 id: mandalorian-pro-stern-2021
+rules_basis:
+  kind: code
+  version: '1.45'
+  release_date: '2026-07-01'
 name: The Mandalorian (Pro)
 metadata:
   manufacturer: Stern Pinball

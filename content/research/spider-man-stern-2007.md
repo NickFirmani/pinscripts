@@ -3,7 +3,7 @@
 * **Spider-Man** — Stern Pinball, **June 2007**, Stern **SAM** system. Design by **Steve Ritchie**, software/rules by **Lyman F. Sheats Jr.**, mechanics led by **John Rotharmel**, art by **Kevin O’Connor, Margaret Hudson and Mark Galvez**, sound/music by **David Thiel**. Standard production is listed as **3,760**. [S1][S4]
 * The **Black Spider-Man** edition (2007, 500 produced) is mechanically/rules-wise the same game with alternate cosmetics. [S4]
 * **Spider-Man Vault Edition (2016)** retains the original gameplay/layout but replaces the Raimi-film presentation with *Ultimate Spider-Man* comic art, renamed modes, new audio/animation and durability improvements. [S5]
-* Latest verified original-game software is **2.61**. Pinside dates it August 19, 2011, while the maintained code ledger dates it December 20, 2012; version number agrees, date does not. [S4][S6]
+* Latest verified original-game software is **2.61**. This brief uses Pinside's software-release date, **August 19, 2011**; the maintained code ledger instead dates the same version December 20, 2012, so the sources agree on the version but not the date. [S4][S6]
 * Major multiballs: **Black Suit Multiball**, three escalating **Doc Ock multiballs**, **Battle Royale**, and deep wizard **Super Hero**. [S2][S3]
 * Scope follows the supplied commentator-reference specification.
 

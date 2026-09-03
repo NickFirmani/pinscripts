@@ -19,8 +19,8 @@ respect all array, string, pattern, numeric, and enum constraints.
 
 Formatting rules:
 
-- Map the game name to the top-level `name` field and all other identity facts
-  to `metadata`; the
+- Map the game name to the top-level `name` field, identity facts to `metadata`,
+  and the researched rules revision to `rules_basis`; the
   thirty-second overview to `hook` and `summary`; core rules to `rules`; skill
   shots to `skill_shots`; secondary features to `features`; and the remaining
   named brief sections to their corresponding schema properties.
@@ -29,6 +29,16 @@ Formatting rules:
 - Do not wrap the YAML in a Markdown code fence or add text before or after it.
 - Exclude unresolved claims from `Uncertainties and conflicts`; retain only
   verified edition or revision distinctions as concise caveats.
+- Set `rules_basis.kind` to `code` only for gameplay code distributed as an
+  internet download, `rom` only when multiple materially different gameplay-ROM
+  revisions exist, and `fixed` when no meaningful alternate rules revision
+  applies.
+- For `code`, preserve the exact version and its `YYYY-MM-DD` release date. For
+  `rom`, preserve the gameplay-ROM revision and set `release_date` to null. For
+  `fixed`, set both `version` and `release_date` to null. Never use a sound,
+  display, or diagnostic ROM unless it changes gameplay rules. Preserve
+  `Factory stock` as the ROM version when the research establishes a material
+  stock-versus-custom distinction but no numbered factory identifier.
 - Omit unsupported optional content. Use an empty string or array only where
   the schema permits it; never fabricate content just to fill a field.
 - Always emit both `skill_shots` and `features`. Use an empty array when the

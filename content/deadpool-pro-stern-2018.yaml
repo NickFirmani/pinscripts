@@ -1,4 +1,8 @@
 id: deadpool-pro-stern-2018
+rules_basis:
+  kind: code
+  version: '1.14.0'
+  release_date: '2025-10-10'
 name: Deadpool (Pro)
 metadata:
   manufacturer: Stern Pinball

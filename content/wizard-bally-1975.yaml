@@ -1,4 +1,8 @@
 id: wizard-bally-1975
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Wizard!
 metadata:
   manufacturer: Bally Manufacturing

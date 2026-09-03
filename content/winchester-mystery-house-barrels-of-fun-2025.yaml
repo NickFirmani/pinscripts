@@ -1,4 +1,8 @@
 id: winchester-mystery-house-barrels-of-fun-2025
+rules_basis:
+  kind: code
+  version: '2026.08.20'
+  release_date: '2026-08-20'
 name: Winchester Mystery House
 metadata:
   manufacturer: Barrels of Fun

@@ -1,4 +1,8 @@
 id: jurassic-park-premium-stern-2019
+rules_basis:
+  kind: code
+  version: '1.16.0'
+  release_date: '2026-07-01'
 name: Jurassic Park (Premium)
 metadata:
   manufacturer: Stern Pinball

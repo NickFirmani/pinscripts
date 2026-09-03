@@ -1,4 +1,8 @@
 id: captain-fantastic-bally-1977
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Captain Fantastic and the Brown Dirt Cowboy — Home Model
 metadata:
   manufacturer: Bally/Midway

@@ -1,4 +1,8 @@
 id: banzai-run-williams-1988
+rules_basis:
+  kind: rom
+  version: 'L-3'
+  release_date: null
 name: Banzai Run
 metadata:
   manufacturer: Williams Electronic Games

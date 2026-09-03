@@ -1,4 +1,8 @@
 id: spider-man-stern-2007
+rules_basis:
+  kind: code
+  version: '2.61'
+  release_date: '2011-08-19'
 name: Spider-Man
 metadata:
   manufacturer: Stern Pinball

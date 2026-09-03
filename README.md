@@ -75,8 +75,11 @@ make binder
 ```
 
 The binder opens with a simple title page as leaf 1, without a printed number.
-Game pages are numbered continuously from 2. Every leaf footer includes its
-game name and the date when that game's content file was last updated in Git.
+Game pages are numbered continuously from 2. Games with internet-downloadable
+code show the code version, its release date, and the date when the content file
+was last updated in Git. Games with materially different gameplay ROMs show the
+ROM revision and Git update date. Fixed-rule games omit that footer copy. Binder
+page numbers are still shown for every game.
 
 Generated files are written to `output/`:
 
@@ -108,6 +111,14 @@ text, or `q` to save completed decisions for the current game and stop. Only the
 ## Adding a game
 
 1. Create `content/<id>.yaml`, following `schema/game.schema.json` and an existing content file. Its `id` must match the filename stem.
+   Every game must include `rules_basis`. Use `kind: code` with an exact version
+   and `YYYY-MM-DD` release date for gameplay code distributed as an internet
+   download; use `kind: rom` with a gameplay-ROM revision when materially
+   different ROM versions exist; otherwise use `kind: fixed` with null version
+   and release-date fields. Sound and display ROMs do not count unless they
+   change gameplay rules. Use `Factory stock` as the ROM version only when a
+   stock-versus-custom distinction matters and no numbered factory identifier
+   can be established.
    Every game must include `skill_shots` and `features`, using an empty array
    when the research audit confirms that the game has none. Skill shots use
    the dedicated `skill_shots` field; ball saves, video modes, extra balls,
@@ -337,6 +348,13 @@ Invalid YAML syntax and schema violations stop the build with a non-zero exit st
 ```text
 ERROR: validation failed: content/example-game-1999.yaml
   - $.shots[0].risk: 'Very High' is not one of ['Low', 'Medium', 'Medium-High', 'High']
+```
+
+Audit the rules-basis classification, code release dates, and ROM versions for
+every content file without rendering PDFs:
+
+```sh
+make audit-rules-basis
 ```
 
 ## Code organization

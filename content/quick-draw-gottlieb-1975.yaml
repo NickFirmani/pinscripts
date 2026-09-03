@@ -1,4 +1,8 @@
 id: quick-draw-gottlieb-1975
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Quick Draw
 metadata:
   manufacturer: D. Gottlieb & Co.

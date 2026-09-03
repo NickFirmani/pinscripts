@@ -1,4 +1,8 @@
 id: transformers-pro-stern-2026
+rules_basis:
+  kind: code
+  version: '0.89.0'
+  release_date: '2026-08-12'
 name: 'TRANSFORMERS: More Than Meets the Eye — Pro'
 metadata:
   manufacturer: Stern Pinball

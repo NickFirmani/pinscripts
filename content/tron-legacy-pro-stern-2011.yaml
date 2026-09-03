@@ -1,4 +1,8 @@
 id: tron-legacy-pro-stern-2011
+rules_basis:
+  kind: code
+  version: '1.74'
+  release_date: '2013-02-11'
 name: 'TRON: Legacy (Pro)'
 metadata:
   manufacturer: Stern Pinball

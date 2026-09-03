@@ -1,4 +1,8 @@
 id: attack-from-mars-bally-1995
+rules_basis:
+  kind: rom
+  version: 'V1.1'
+  release_date: null
 name: Attack From Mars
 metadata:
   manufacturer: Bally/Midway

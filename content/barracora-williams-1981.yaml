@@ -1,4 +1,8 @@
 id: barracora-williams-1981
+rules_basis:
+  kind: rom
+  version: 'Factory stock'
+  release_date: null
 name: Barracora
 metadata:
   manufacturer: Williams Electronics

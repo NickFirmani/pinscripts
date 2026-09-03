@@ -1,4 +1,8 @@
 id: rick-and-morty-bse-spooky-2020
+rules_basis:
+  kind: code
+  version: '2023.03.22'
+  release_date: '2023-03-22'
 name: Rick and Morty — Blood Sucker Edition
 metadata:
   manufacturer: Spooky Pinball

@@ -1,4 +1,8 @@
 id: radical-bally-1990
+rules_basis:
+  kind: rom
+  version: 'L-1'
+  release_date: null
 name: Radical!
 metadata:
   manufacturer: Bally/Midway

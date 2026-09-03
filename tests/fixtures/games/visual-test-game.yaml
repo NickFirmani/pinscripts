@@ -8,6 +8,10 @@ metadata:
   production: 1 prototype unit
   era: Modern solid-state tournament prototype with deliberately long metadata
   multiball: Three distinct multiballs plus a stacked wizard-mode finale
+rules_basis:
+  kind: code
+  version: 1.17.0
+  release_date: '2026-08-14'
 hook: >-
   Build the three colored lanes, choose a scoring route, and cash out at the
   center lock. This deliberately dense fixture checks wrapping, hierarchy, and

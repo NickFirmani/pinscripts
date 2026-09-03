@@ -1,4 +1,8 @@
 id: volcano-gottlieb-1981
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Volcano
 metadata:
   manufacturer: D. Gottlieb & Co.

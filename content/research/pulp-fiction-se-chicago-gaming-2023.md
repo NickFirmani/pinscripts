@@ -4,7 +4,7 @@
 
 SE and **Bad Mother Flipper LE** have the **same gameplay mechanisms and rules**. LE adds a topper, shaker, mirror blades, wallet plaque, chrome speaker grille and cosmetics; 1,000 LEs were specified. [S1]
 
-Latest software verified: **v1.0.2**, current on CGC's official update page; Pinside dates it to **November 2024**. v1.01 materially rebalanced several scoring features; v1.02 mainly fixes drop-target, spinner and *The Shot* behavior. [S2][S3]
+Latest software verified: **v1.0.2, September 5, 2024**, current on CGC's official update page. The dated release announcement reproduces CGC's v1.0.2 notes. v1.01 materially rebalanced several scoring features; v1.02 mainly fixes drop-target, spinner and *The Shot* behavior. [S2][S3]
 
 Major multiballs/objectives: **Briefcase Boogie, Pawn Shop Panic, Cast Chaos, Pulp Fiction Frenzy, The Shot**, then wizard mode **Divine Intervention**. [S1][S4]
 
@@ -206,8 +206,9 @@ No additional verified secret skill shot was found.
 **[S1] — Chicago Gaming Company, *Pulp Fiction Pinball*.** Manufacturer source; model differences, hardware, credits, Tarantino involvement, music/dialogue, multiballs and wizard modes.
 [Chicago Gaming — Pulp Fiction Pinball](https://www.chicago-gaming.com/coinop/pulp-fiction?utm_source=chatgpt.com)
 
-**[S2] — Chicago Gaming Company, *Pulp Fiction Pinball Update*; Pinside SE archive.** Manufacturer/update and archival sources; current v1.0.2 release plus November 2024 dating and v1.01 scoring-change history.
+**[S2] — Chicago Gaming Company, *Pulp Fiction Pinball Update*; Tilt Forums dated release announcement; Pinside SE archive.** Manufacturer/update and archival sources; current v1.0.2 release, September 5, 2024 announcement date, and v1.01 scoring-change history.
 [Chicago Gaming — current software update](https://www.chicago-gaming.com/coinop/pulp-fiction/update?utm_source=chatgpt.com)
+[Tilt Forums — v1.0.2 release announcement](https://tiltforums.com/t/pulp-fiction-rulesheet/8471/24)
 [Pinside — Pulp Fiction SE details/changelog](https://pinside.com/pinball/machine/cgc-pulp-fiction-se/details?utm_source=chatgpt.com)
 
 **[S3] — Kineticist, *Pulp Fiction Pinball Deep Dive*.** Secondary overview; development credits, SE/LE presentation differences and basic rules architecture.

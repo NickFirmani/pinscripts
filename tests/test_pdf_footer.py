@@ -14,6 +14,7 @@ from pinscripts.pdf import (
     _draw_spread_chrome,
     git_updated_at,
     merge_pdfs,
+    rules_footer_text,
 )
 
 
@@ -33,35 +34,81 @@ class PdfFooterTests(unittest.TestCase):
             reader = PdfReader(output_pdf)
             self.assertEqual(len(reader.pages), 2)
             self.assertIn(
-                "PINBALL COMMENTARY BINDER",
+                "Pinball Commentary Quick Reference",
                 reader.pages[0].extract_text(),
             )
             self.assertNotIn("PAGE", reader.pages[0].extract_text())
 
-    def test_footer_identifies_both_leaves_and_numbers_binder_pages(self):
+    def test_code_footer_identifies_both_leaves_and_numbers_binder_pages(self):
         canvas = MagicMock()
+        rules_basis = {
+            "kind": "code",
+            "version": "1.17.0",
+            "release_date": "2026-08-14",
+        }
 
-        _draw_spread_chrome(canvas, "Example Game", "2026-09-03", 7)
+        _draw_spread_chrome(
+            canvas,
+            "Example Game",
+            "2026-09-03",
+            7,
+            rules_basis,
+        )
 
-        identity = "EXAMPLE GAME | UPDATED AT 2026-09-03"
+        footer = (
+            "EXAMPLE GAME • CODE 1.17.0 • RELEASED 2026-08-14 • "
+            "UPDATED AT 2026-09-03"
+        )
         canvas.drawString.assert_any_call(
             OUTER_MARGIN,
-            FOOTER_Y - 9,
-            identity,
+            FOOTER_Y - 8,
+            footer,
         )
         canvas.drawString.assert_any_call(
             PAGE_W + INNER_MARGIN,
-            FOOTER_Y - 9,
-            identity,
+            FOOTER_Y - 8,
+            footer,
         )
         canvas.drawRightString.assert_any_call(
             PAGE_W - INNER_MARGIN,
-            FOOTER_Y - 9,
+            FOOTER_Y - 8,
             "PAGE 7",
         )
         canvas.drawRightString.assert_any_call(
             (2 * PAGE_W) - OUTER_MARGIN,
-            FOOTER_Y - 9,
+            FOOTER_Y - 8,
+            "PAGE 8",
+        )
+
+    def test_rom_footer_uses_git_date_without_release_date(self):
+        text = rules_footer_text(
+            {"kind": "rom", "version": "L-7", "release_date": None},
+            "2026-09-03",
+        )
+
+        self.assertEqual(text, "ROM L-7 • UPDATED AT 2026-09-03")
+
+    def test_fixed_rules_have_no_footer_copy_or_separator(self):
+        canvas = MagicMock()
+
+        _draw_spread_chrome(
+            canvas,
+            "Fixed Game",
+            None,
+            7,
+            {"kind": "fixed", "version": None, "release_date": None},
+        )
+
+        canvas.line.assert_not_called()
+        canvas.drawString.assert_not_called()
+        canvas.drawRightString.assert_any_call(
+            PAGE_W - INNER_MARGIN,
+            FOOTER_Y - 17,
+            "PAGE 7",
+        )
+        canvas.drawRightString.assert_any_call(
+            (2 * PAGE_W) - OUTER_MARGIN,
+            FOOTER_Y - 17,
             "PAGE 8",
         )
 

@@ -1,4 +1,8 @@
 id: led-zeppelin-premium-stern-2020
+rules_basis:
+  kind: code
+  version: '1.20'
+  release_date: '2023-11-13'
 name: Led Zeppelin (Premium)
 metadata:
   manufacturer: Stern Pinball

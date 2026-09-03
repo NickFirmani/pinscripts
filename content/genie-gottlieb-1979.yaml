@@ -1,4 +1,8 @@
 id: genie-gottlieb-1979
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Genie
 metadata:
   manufacturer: D. Gottlieb & Co.

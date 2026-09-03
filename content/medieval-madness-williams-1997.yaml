@@ -1,4 +1,8 @@
 id: medieval-madness-williams-1997
+rules_basis:
+  kind: rom
+  version: 'V1.0'
+  release_date: null
 name: Medieval Madness
 metadata:
   manufacturer: Williams Electronic Games

@@ -1,4 +1,8 @@
 id: james-bond-007-pro-stern-2022
+rules_basis:
+  kind: code
+  version: '1.06'
+  release_date: '2026-07-01'
 name: James Bond 007 (Pro)
 metadata:
   manufacturer: Stern Pinball

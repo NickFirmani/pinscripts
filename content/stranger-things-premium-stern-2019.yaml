@@ -1,4 +1,8 @@
 id: stranger-things-premium-stern-2019
+rules_basis:
+  kind: code
+  version: '1.12.0'
+  release_date: '2024-11-26'
 name: Stranger Things — Premium
 metadata:
   manufacturer: Stern Pinball

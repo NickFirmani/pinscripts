@@ -4,6 +4,7 @@ import difflib
 import json
 import re
 import unicodedata
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -169,7 +170,50 @@ def validation_errors(data, validator):
         validator.iter_errors(data),
         key=lambda error: [str(part) for part in error.absolute_path],
     )
-    return [f"{error_path(error)}: {error.message}" for error in errors]
+    messages = [f"{error_path(error)}: {error.message}" for error in errors]
+    messages.extend(rules_basis_errors(data))
+    return messages
+
+
+def rules_basis_errors(data):
+    """Validate relationships intentionally kept out of the strict JSON schema."""
+    if not isinstance(data, dict):
+        return []
+
+    basis = data.get("rules_basis")
+    if not isinstance(basis, dict):
+        return []
+
+    kind = basis.get("kind")
+    version = basis.get("version")
+    release_date = basis.get("release_date")
+    errors = []
+
+    if kind in {"code", "rom"} and not (
+        isinstance(version, str) and version.strip()
+    ):
+        errors.append(
+            f"$.rules_basis.version: {kind} rules require a non-empty version"
+        )
+    if kind == "fixed" and version is not None:
+        errors.append("$.rules_basis.version: fixed rules require null")
+
+    if kind == "code":
+        if not isinstance(release_date, str):
+            errors.append(
+                "$.rules_basis.release_date: downloadable code requires a release date"
+            )
+        else:
+            try:
+                date.fromisoformat(release_date)
+            except ValueError:
+                errors.append(
+                    "$.rules_basis.release_date: must be a valid YYYY-MM-DD date"
+                )
+    elif kind in {"rom", "fixed"} and release_date is not None:
+        errors.append(f"$.rules_basis.release_date: {kind} rules require null")
+
+    return errors
 
 
 def validate_content(path: Path, validator):

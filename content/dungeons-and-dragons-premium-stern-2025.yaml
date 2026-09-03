@@ -1,4 +1,8 @@
 id: dungeons-and-dragons-premium-stern-2025
+rules_basis:
+  kind: code
+  version: '1.01'
+  release_date: '2026-07-01'
 name: 'Dungeons & Dragons: The Tyrant’s Eye (Premium)'
 metadata:
   manufacturer: Stern Pinball

@@ -1,4 +1,8 @@
 id: twilight-zone-bally-1993
+rules_basis:
+  kind: rom
+  version: '9.4'
+  release_date: null
 name: Twilight Zone
 metadata:
   manufacturer: Bally

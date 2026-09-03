@@ -1,4 +1,8 @@
 id: team-one-gottlieb-1977
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Team One
 metadata:
   manufacturer: D. Gottlieb & Co.

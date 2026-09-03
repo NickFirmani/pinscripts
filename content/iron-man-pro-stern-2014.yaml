@@ -1,4 +1,8 @@
 id: iron-man-pro-stern-2014
+rules_basis:
+  kind: code
+  version: '1.86.0'
+  release_date: '2020-04-28'
 name: Iron Man (Pro Vault Edition)
 metadata:
   manufacturer: Stern Pinball

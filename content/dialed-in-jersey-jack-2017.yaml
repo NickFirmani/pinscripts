@@ -1,4 +1,8 @@
 id: dialed-in-jersey-jack-2017
+rules_basis:
+  kind: code
+  version: '2.02'
+  release_date: '2025-03-25'
 name: Dialed In!
 metadata:
   manufacturer: Jersey Jack Pinball

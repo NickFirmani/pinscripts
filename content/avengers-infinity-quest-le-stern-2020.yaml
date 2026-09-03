@@ -1,4 +1,8 @@
 id: avengers-infinity-quest-le-stern-2020
+rules_basis:
+  kind: code
+  version: '1.10.0'
+  release_date: '2026-07-01'
 name: 'Avengers: Infinity Quest (Limited Edition)'
 metadata:
   manufacturer: Stern Pinball

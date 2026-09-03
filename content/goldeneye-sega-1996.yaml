@@ -1,4 +1,8 @@
 id: goldeneye-sega-1996
+rules_basis:
+  kind: rom
+  version: 'CPU 4.04'
+  release_date: null
 name: GoldenEye
 metadata:
   manufacturer: Sega Pinball

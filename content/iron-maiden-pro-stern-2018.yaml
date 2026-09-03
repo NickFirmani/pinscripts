@@ -1,4 +1,8 @@
 id: iron-maiden-pro-stern-2018
+rules_basis:
+  kind: code
+  version: '1.16.0'
+  release_date: '2024-11-26'
 name: 'Iron Maiden: Legacy of the Beast — Pro'
 metadata:
   manufacturer: Stern Pinball

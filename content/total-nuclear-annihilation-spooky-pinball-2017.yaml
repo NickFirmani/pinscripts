@@ -1,4 +1,8 @@
 id: total-nuclear-annihilation-spooky-pinball-2017
+rules_basis:
+  kind: code
+  version: '1.6.0'
+  release_date: '2025-12-13'
 name: Total Nuclear Annihilation
 metadata:
   manufacturer: Spooky Pinball

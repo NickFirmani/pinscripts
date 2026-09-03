@@ -1,4 +1,8 @@
 id: john-wick-pro-stern-2024
+rules_basis:
+  kind: code
+  version: '1.02.0'
+  release_date: '2026-07-01'
 name: John Wick — Pro
 metadata:
   manufacturer: Stern Pinball

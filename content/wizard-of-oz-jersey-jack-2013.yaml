@@ -1,4 +1,8 @@
 id: wizard-of-oz-jersey-jack-2013
+rules_basis:
+  kind: code
+  version: '8.02'
+  release_date: '2025-03-25'
 name: The Wizard of Oz
 metadata:
   manufacturer: Jersey Jack Pinball

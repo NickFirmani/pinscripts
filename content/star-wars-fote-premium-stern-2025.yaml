@@ -1,4 +1,8 @@
 id: star-wars-fote-premium-stern-2025
+rules_basis:
+  kind: code
+  version: '0.97.0'
+  release_date: '2026-07-01'
 name: 'Star Wars: Fall of the Empire (Premium)'
 metadata:
   manufacturer: Stern Pinball

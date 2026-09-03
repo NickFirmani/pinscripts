@@ -1,4 +1,8 @@
 id: prospector-segasa-sonic-1977
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Prospector
 metadata:
   manufacturer: Segasa (Sonic)

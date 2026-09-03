@@ -1,4 +1,8 @@
 id: guns-n-roses-se-jersey-jack-2020
+rules_basis:
+  kind: code
+  version: '3.03'
+  release_date: '2025-03-25'
 name: Guns N' Roses (Standard Edition / SE)
 metadata:
   manufacturer: Jersey Jack Pinball

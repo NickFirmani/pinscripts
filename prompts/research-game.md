@@ -80,7 +80,20 @@ Be particularly careful about:
 * manufacturer, year, designer, programmer, artist, and production facts
 * similarly named or remade games
 
-For modern software-driven games, state the latest rules/code version you were able to verify and the date or source of that information when possible.
+Classify the rules basis explicitly:
+
+* **code** — gameplay code is distributed as an internet download; report the
+  exact version and its release date in `YYYY-MM-DD` form
+* **rom** — multiple materially different gameplay-ROM revisions exist; report
+  the exact ROM revision covered by the brief
+* **fixed** — no meaningful alternate rules revision applies
+
+Only classify a game as `code` when its gameplay update is distributed over the
+internet. For `rom`, identify the gameplay ROM rather than sound, display, or
+diagnostic ROMs unless one of those changes the rules. Do not invent a version
+or release date. Use the latest applicable release supported by the sources. If
+the factory ROM has no verifiable identifier but the stock-versus-custom-ROM
+distinction materially changes the rules, report the basis as `Factory stock`.
 
 Do not catalog every possible operator adjustment. Mention an adjustment only if changing it would materially alter tournament strategy or what a commentator should say.
 
@@ -102,7 +115,9 @@ Include:
 * hardware/platform/era when useful
 * relevant models or editions
 * important edition differences
-* latest rules/code revision actually verified, when applicable
+* rules-basis classification: `code`, `rom`, or `fixed`
+* latest applicable downloadable-code version and exact release date for `code`
+* gameplay-ROM revision covered by the research for `rom`
 * number and names of major multiballs only when useful for commentary
 
 Do not turn this into a complete credits list.

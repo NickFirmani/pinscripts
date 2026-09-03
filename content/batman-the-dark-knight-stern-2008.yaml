@@ -1,4 +1,8 @@
 id: batman-the-dark-knight-stern-2008
+rules_basis:
+  kind: code
+  version: '2.94'
+  release_date: '2010-05-06'
 name: Batman — The Dark Knight
 metadata:
   manufacturer: Stern Pinball

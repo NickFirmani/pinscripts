@@ -1,4 +1,8 @@
 id: family-guy-stern-2007
+rules_basis:
+  kind: code
+  version: '12.0'
+  release_date: '2008-01-29'
 name: Family Guy
 metadata:
   manufacturer: Stern Pinball

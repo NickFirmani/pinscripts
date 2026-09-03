@@ -1,4 +1,8 @@
 id: eight-ball-bally-1977
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Eight Ball
 metadata:
   manufacturer: Bally Manufacturing

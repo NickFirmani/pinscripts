@@ -1,4 +1,8 @@
 id: andromeda-game-plan-1985
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Andromeda
 metadata:
   manufacturer: Game Plan

@@ -80,6 +80,21 @@ class PromptTests(unittest.TestCase):
         self.assertIn("video or display-controlled modes", template)
         self.assertIn("Write `None found`", template)
 
+    def test_research_template_requires_rules_basis_and_code_release_date(self):
+        template = RESEARCH_PROMPT_TEMPLATE.read_text(encoding="utf-8")
+
+        self.assertIn("rules-basis classification", template)
+        self.assertIn("exact version and its release date", template)
+        self.assertIn("gameplay ROM", template)
+
+    def test_format_template_maps_all_rules_basis_variants(self):
+        template = FORMAT_PROMPT_TEMPLATE.read_text(encoding="utf-8")
+        compact = " ".join(template.split())
+
+        self.assertIn("to `rules_basis`", template)
+        self.assertIn("`code` only for gameplay code", template)
+        self.assertIn("For `fixed`, set both", compact)
+
     def test_format_template_separates_skill_shots_from_features(self):
         template = FORMAT_PROMPT_TEMPLATE.read_text(encoding="utf-8")
         compact = " ".join(template.split())

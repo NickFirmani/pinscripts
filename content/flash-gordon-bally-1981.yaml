@@ -1,4 +1,8 @@
 id: flash-gordon-bally-1981
+rules_basis:
+  kind: rom
+  version: 'Factory stock'
+  release_date: null
 name: Flash Gordon
 metadata:
   manufacturer: Bally Manufacturing

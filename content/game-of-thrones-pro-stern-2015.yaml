@@ -1,4 +1,8 @@
 id: game-of-thrones-pro-stern-2015
+rules_basis:
+  kind: code
+  version: '1.37'
+  release_date: '2019-07-29'
 name: Game of Thrones (Pro)
 metadata:
   manufacturer: Stern Pinball

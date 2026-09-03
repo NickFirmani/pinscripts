@@ -17,6 +17,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib.utils import ImageReader
+from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import (
     BaseDocTemplate,
@@ -665,37 +666,78 @@ def _draw_spread_chrome(
     title,
     updated_at,
     page_number_start=None,
+    rules_basis=None,
 ):
-
     canvas.saveState()
-    canvas.setStrokeColor(RULE)
-    canvas.setLineWidth(0.45)
     footer_y = FOOTER_Y
-    canvas.line(OUTER_MARGIN, footer_y, PAGE_W - INNER_MARGIN, footer_y)
-    canvas.line(
-        PAGE_W + INNER_MARGIN,
-        footer_y,
-        (2 * PAGE_W) - OUTER_MARGIN,
-        footer_y,
-    )
-    canvas.setFont("Helvetica", 6.5)
     canvas.setFillColor(MUTED)
-    identity = f"{safe(title).upper()} | UPDATED AT {safe(updated_at)}"
-    canvas.drawString(OUTER_MARGIN, footer_y - 9, identity)
-    canvas.drawString(PAGE_W + INNER_MARGIN, footer_y - 9, identity)
+    footer_text = rules_footer_text(rules_basis, updated_at)
+    title_y = footer_y - 8
+    detail_y = footer_y - 17
+
+    if footer_text:
+        canvas.setStrokeColor(RULE)
+        canvas.setLineWidth(0.45)
+        canvas.line(OUTER_MARGIN, footer_y, PAGE_W - INNER_MARGIN, footer_y)
+        canvas.line(
+            PAGE_W + INNER_MARGIN,
+            footer_y,
+            (2 * PAGE_W) - OUTER_MARGIN,
+            footer_y,
+        )
+        page_label_width = (
+            pdfmetrics.stringWidth(
+                f"PAGE {page_number_start + 1}",
+                "Helvetica",
+                6.5,
+            )
+            if page_number_start is not None
+            else 0
+        )
+        footer_width = USABLE_W - page_label_width - SPACE_MD
+        footer_line = f"{safe(title).upper()} • {footer_text}"
+        footer_font_size = min(
+            6.5,
+            6.5 * footer_width
+            / max(pdfmetrics.stringWidth(footer_line, "Helvetica", 6.5), 1),
+        )
+        canvas.setFont("Helvetica", max(footer_font_size, 5.0))
+        canvas.drawString(OUTER_MARGIN, title_y, footer_line)
+        canvas.drawString(PAGE_W + INNER_MARGIN, title_y, footer_line)
+
     if page_number_start is not None:
+        canvas.setFont("Helvetica", 6.5)
+        page_y = title_y if footer_text else detail_y
         canvas.drawRightString(
             PAGE_W - INNER_MARGIN,
-            footer_y - 9,
+            page_y,
             f"PAGE {page_number_start}",
         )
         canvas.drawRightString(
             (2 * PAGE_W) - OUTER_MARGIN,
-            footer_y - 9,
+            page_y,
             f"PAGE {page_number_start + 1}",
         )
 
     canvas.restoreState()
+
+
+def rules_footer_text(rules_basis, updated_at):
+    """Return revision text for code/ROM games and none for fixed rules."""
+    if not isinstance(rules_basis, dict):
+        return None
+
+    kind = rules_basis.get("kind")
+    version = safe(rules_basis.get("version"))
+    if kind == "code":
+        release_date = safe(rules_basis.get("release_date"))
+        return (
+            f"CODE {version} • RELEASED {release_date} • "
+            f"UPDATED AT {safe(updated_at)}"
+        )
+    if kind == "rom":
+        return f"ROM {version} • UPDATED AT {safe(updated_at)}"
+    return None
 
 
 def _split_spread(spread_path, output_path, title, prepend_blank_page=False):
@@ -735,7 +777,13 @@ def render_game(
     page_number_start=None,
 ):
     data = load_yaml(content_path)
-    updated_at = git_updated_at(content_path)
+    rules_basis = data.get("rules_basis")
+    updated_at = (
+        git_updated_at(content_path)
+        if isinstance(rules_basis, dict)
+        and rules_basis.get("kind") in {"code", "rom"}
+        else None
+    )
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     blocks = build_blocks(data, black_and_white)
@@ -875,6 +923,7 @@ def render_game(
                         data.get("name", ""),
                         updated_at,
                         page_number_start,
+                        rules_basis,
                     ),
                 )
             ]

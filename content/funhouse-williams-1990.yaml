@@ -1,4 +1,8 @@
 id: funhouse-williams-1990
+rules_basis:
+  kind: rom
+  version: 'L-9'
+  release_date: null
 name: FunHouse
 metadata:
   manufacturer: Williams Electronic Games

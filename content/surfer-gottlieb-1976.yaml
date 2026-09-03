@@ -1,4 +1,8 @@
 id: surfer-gottlieb-1976
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Surfer
 metadata:
   manufacturer: D. Gottlieb & Co.

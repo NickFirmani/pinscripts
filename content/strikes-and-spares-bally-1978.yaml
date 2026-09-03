@@ -1,4 +1,8 @@
 id: strikes-and-spares-bally-1978
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Strikes and Spares
 metadata:
   manufacturer: Bally Manufacturing

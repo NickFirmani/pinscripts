@@ -1,4 +1,8 @@
 id: star-trek-premium-stern-2013
+rules_basis:
+  kind: code
+  version: '1.62.0'
+  release_date: '2018-06-05'
 name: Star Trek — Premium
 metadata:
   manufacturer: Stern Pinball

@@ -1,4 +1,8 @@
 id: batman-66-premium-stern-2016
+rules_basis:
+  kind: code
+  version: '1.14'
+  release_date: '2026-07-01'
 name: Batman ’66 (Premium)
 metadata:
   manufacturer: Stern Pinball

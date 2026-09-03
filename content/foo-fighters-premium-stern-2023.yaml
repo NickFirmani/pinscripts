@@ -1,4 +1,8 @@
 id: foo-fighters-premium-stern-2023
+rules_basis:
+  kind: code
+  version: '1.03.0'
+  release_date: '2024-11-14'
 name: Foo Fighters — Premium
 metadata:
   manufacturer: Stern Pinball

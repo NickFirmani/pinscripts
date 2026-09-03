@@ -14,7 +14,10 @@ VENUE_NOTES_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out review-venue-notes
 	@:
 endif
 
-.PHONY: all all-bw all-color binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes shot-labels test
+.PHONY: all all-bw all-color audit-rules-basis binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes shot-labels test
+
+audit-rules-basis:
+	$(PYTHON) scripts/audit_rules_basis.py
 
 install:
 	python3 -m venv .venv

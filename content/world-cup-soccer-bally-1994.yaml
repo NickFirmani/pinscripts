@@ -1,4 +1,8 @@
 id: world-cup-soccer-bally-1994
+rules_basis:
+  kind: rom
+  version: 'L-2'
+  release_date: null
 name: World Cup Soccer ’94
 metadata:
   manufacturer: Bally/Midway

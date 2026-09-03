@@ -1,4 +1,8 @@
 id: strato-flite-williams-1974
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
 name: Strato-Flite
 metadata:
   manufacturer: Williams Electronics

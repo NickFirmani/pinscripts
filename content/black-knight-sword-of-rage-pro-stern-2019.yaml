@@ -1,4 +1,8 @@
 id: black-knight-sword-of-rage-pro-stern-2019
+rules_basis:
+  kind: code
+  version: '1.18'
+  release_date: '2024-11-26'
 name: 'Black Knight: Sword of Rage — Pro'
 metadata:
   manufacturer: Stern Pinball

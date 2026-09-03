@@ -1,4 +1,8 @@
 id: king-kong-myth-of-terror-island-premium-stern-2025
+rules_basis:
+  kind: code
+  version: '0.97.0'
+  release_date: '2026-07-01'
 name: 'King Kong: Myth of Terror Island (Premium)'
 metadata:
   manufacturer: Stern Pinball

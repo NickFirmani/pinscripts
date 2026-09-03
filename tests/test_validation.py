@@ -109,6 +109,71 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(any("'skill_shots' is a required property" in e for e in errors))
         self.assertTrue(any("'features' is a required property" in e for e in errors))
 
+    def test_rules_basis_is_required(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        del data["rules_basis"]
+
+        errors = app.validation_errors(data, self.validator)
+
+        self.assertTrue(any("'rules_basis' is a required property" in e for e in errors))
+
+    def test_downloadable_code_requires_version_and_release_date(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["rules_basis"] = {
+            "kind": "code",
+            "version": "1.17.0",
+            "release_date": "2026-08-14",
+        }
+
+        self.assertEqual(app.validation_errors(data, self.validator), [])
+
+        data["rules_basis"]["release_date"] = None
+        errors = app.validation_errors(data, self.validator)
+        self.assertTrue(
+            any("downloadable code requires a release date" in error for error in errors),
+            errors,
+        )
+
+    def test_code_release_date_must_be_a_real_calendar_date(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["rules_basis"] = {
+            "kind": "code",
+            "version": "1.17.0",
+            "release_date": "2026-02-31",
+        }
+
+        errors = app.validation_errors(data, self.validator)
+
+        self.assertTrue(any("valid YYYY-MM-DD date" in error for error in errors), errors)
+
+    def test_rom_requires_version_and_no_release_date(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["rules_basis"] = {
+            "kind": "rom",
+            "version": "L-7",
+            "release_date": None,
+        }
+
+        self.assertEqual(app.validation_errors(data, self.validator), [])
+
+        data["rules_basis"]["release_date"] = "1992-01-01"
+        errors = app.validation_errors(data, self.validator)
+        self.assertTrue(any("rom rules require null" in error for error in errors), errors)
+
+    def test_fixed_rules_require_null_revision_fields(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["rules_basis"] = {
+            "kind": "fixed",
+            "version": None,
+            "release_date": None,
+        }
+
+        self.assertEqual(app.validation_errors(data, self.validator), [])
+
+        data["rules_basis"]["version"] = "Original"
+        errors = app.validation_errors(data, self.validator)
+        self.assertTrue(any("fixed rules require null" in error for error in errors), errors)
+
     def test_skill_shot_cannot_be_encoded_as_a_secondary_feature(self):
         data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
         data["features"] = [
