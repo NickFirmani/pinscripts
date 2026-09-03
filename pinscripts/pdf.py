@@ -486,9 +486,20 @@ def build_story(data, black_and_white=False):
     ]
 
 
-def _flowable_height(flowable, canvas):
-    _, height = flowable.wrapOn(canvas, COL_W, COL_H)
-    return flowable.getSpaceBefore() + height + flowable.getSpaceAfter()
+def _flowables_height(flowables, canvas):
+    """Measure a flow sequence using ReportLab's collapsed spacing rules."""
+    height = 0
+    previous_space_after = 0
+    for index, flowable in enumerate(flowables):
+        _, wrapped_height = flowable.wrapOn(canvas, COL_W, COL_H)
+        if index:
+            height += max(
+                flowable.getSpaceBefore() - previous_space_after,
+                0,
+            )
+        height += wrapped_height + flowable.getSpaceAfter()
+        previous_space_after = flowable.getSpaceAfter()
+    return height
 
 
 def _is_shots_block(block):
@@ -518,25 +529,26 @@ def _partition_leading_story(blocks, capacities, canvas):
         index += 1
 
     columns = [[], [], []]
-    used_heights = [0, 0, 0]
     column_index = 0
     for chunk in chunks:
-        chunk_height = sum(
-            _flowable_height(flowable, canvas)
-            for flowable in chunk
+        candidate_height = _flowables_height(
+            [*columns[column_index], *chunk],
+            canvas,
         )
         if (
             columns[column_index]
-            and used_heights[column_index] + chunk_height
-            > capacities[column_index]
+            and candidate_height > capacities[column_index]
         ):
             column_index += 1
         if column_index >= len(columns):
             raise ValueError("content cannot fit before the fixed column-three notes")
-        if used_heights[column_index] + chunk_height > capacities[column_index]:
+        candidate_height = _flowables_height(
+            [*columns[column_index], *chunk],
+            canvas,
+        )
+        if candidate_height > capacities[column_index]:
             raise ValueError("content cannot fit before the fixed column-three notes")
         columns[column_index].extend(chunk)
-        used_heights[column_index] += chunk_height
 
     story = list(columns[0])
     story.append(FrameBreak)
@@ -593,7 +605,7 @@ def _build_reference_story(blocks, image_path, canvas):
         return story
 
     image_gap = SPACE_LG
-    content_height = sum(_flowable_height(item, canvas) for item in story)
+    content_height = _flowables_height(story, canvas)
     available_height = COL_H - content_height - image_gap
 
     with Image.open(image_path) as image:
@@ -706,17 +718,14 @@ def render_game(
     ]
 
     measuring_canvas = Canvas(BytesIO(), pagesize=SPREAD_SIZE)
-    shots_height = sum(
-        _flowable_height(flowable, measuring_canvas)
-        for flowable in shots_block
-    ) + 2
+    shots_height = _flowables_height(shots_block, measuring_canvas) + 2
     third_column_height = COL_H - shots_height - SHOTS_GAP
     if third_column_height <= 0:
         raise ValueError("Important Shots is too tall for column three")
 
-    fixed_third_column_height = sum(
-        _flowable_height(flowable, measuring_canvas)
-        for flowable in venue_notes_block
+    fixed_third_column_height = _flowables_height(
+        venue_notes_block,
+        measuring_canvas,
     )
     leading_capacities = (
         COL_H,
