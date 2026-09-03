@@ -46,7 +46,8 @@ SPREAD_SIZE = (PAGE_W * 2, PAGE_H)
 OUTER_MARGIN = 0.38 * inch
 INNER_MARGIN = 0.75 * inch
 TOP_MARGIN = 0.42 * inch
-BOTTOM_MARGIN = 0.52 * inch
+BOTTOM_MARGIN = 0.44 * inch
+FOOTER_Y = 0.36 * inch
 GUTTER = 0.16 * inch
 
 USABLE_W = PAGE_W - OUTER_MARGIN - INNER_MARGIN
@@ -501,50 +502,47 @@ def _is_section_block(block, title):
 
 
 def _partition_leading_story(blocks, capacities, canvas):
-    """Lay out ordered paragraphs before the fixed tail of column three."""
+    """Fill each text column in order before advancing to the next."""
     flowables = [flowable for block in blocks for flowable in block]
-    heights = [
-        _flowable_height(flowable, canvas)
-        for flowable in flowables
-    ]
-    valid_breaks = [
-        index
-        for index in range(1, len(flowables) + 1)
-        if index == len(flowables)
-        or not getattr(flowables[index - 1], "is_section_heading", False)
-    ]
-    best = None
-    for first_break in valid_breaks:
-        for second_break in (
-            index for index in valid_breaks if index >= first_break
+    chunks = []
+    index = 0
+    while index < len(flowables):
+        chunk = [flowables[index]]
+        if (
+            getattr(flowables[index], "is_section_heading", False)
+            and index + 1 < len(flowables)
         ):
-            column_heights = (
-                sum(heights[:first_break]),
-                sum(heights[first_break:second_break]),
-                sum(heights[second_break:]),
-            )
-            overflow = sum(
-                max(0, height - capacity) ** 2
-                for height, capacity in zip(column_heights, capacities)
-            )
-            score = (
-                overflow > 0,
-                overflow,
-                column_heights[2],
-                abs(column_heights[0] - column_heights[1]),
-            )
-            if best is None or score < best[0]:
-                best = (score, first_break, second_break)
+            index += 1
+            chunk.append(flowables[index])
+        chunks.append(chunk)
+        index += 1
 
-    if best is None or best[0][0]:
-        raise ValueError("content cannot fit before the fixed column-three notes")
+    columns = [[], [], []]
+    used_heights = [0, 0, 0]
+    column_index = 0
+    for chunk in chunks:
+        chunk_height = sum(
+            _flowable_height(flowable, canvas)
+            for flowable in chunk
+        )
+        if (
+            columns[column_index]
+            and used_heights[column_index] + chunk_height
+            > capacities[column_index]
+        ):
+            column_index += 1
+        if column_index >= len(columns):
+            raise ValueError("content cannot fit before the fixed column-three notes")
+        if used_heights[column_index] + chunk_height > capacities[column_index]:
+            raise ValueError("content cannot fit before the fixed column-three notes")
+        columns[column_index].extend(chunk)
+        used_heights[column_index] += chunk_height
 
-    _, first_break, second_break = best
-    story = list(flowables[:first_break])
+    story = list(columns[0])
     story.append(FrameBreak)
-    story.extend(flowables[first_break:second_break])
+    story.extend(columns[1])
     story.append(FrameBreak)
-    story.extend(flowables[second_break:])
+    story.extend(columns[2])
     return story
 
 
@@ -636,7 +634,7 @@ def _draw_spread_chrome(canvas, title):
     canvas.saveState()
     canvas.setStrokeColor(RULE)
     canvas.setLineWidth(0.45)
-    footer_y = BOTTOM_MARGIN - 0.16 * inch
+    footer_y = FOOTER_Y
     canvas.line(OUTER_MARGIN, footer_y, PAGE_W - INNER_MARGIN, footer_y)
     canvas.line(
         PAGE_W + INNER_MARGIN,
