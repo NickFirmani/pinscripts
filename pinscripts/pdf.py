@@ -189,7 +189,7 @@ SUMMARY_TABLE_STYLE = TableStyle(
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
-        ("TOPPADDING", (0, 0), (-1, -1), SPACE_LG),
+        ("TOPPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("BOTTOMPADDING", (0, 0), (-1, -1), SPACE_MD),
     ]
 )
@@ -441,6 +441,7 @@ def build_blocks(data, black_and_white=False):
         [[Paragraph(markup(data.get("summary")), SUMMARY)]],
         colWidths=[COL_W],
         hAlign="LEFT",
+        spaceBefore=SPACE_LG,
         spaceAfter=SPACE_LG,
     )
     summary_box.setStyle(SUMMARY_TABLE_STYLE)
