@@ -291,7 +291,7 @@ def section(title):
         colWidths=[COL_W],
         hAlign="LEFT",
         spaceBefore=SPACE_LG,
-        spaceAfter=1,
+        spaceAfter=0,
     )
     heading.setStyle(SECTION_TABLE_STYLE)
     heading.keepWithNext = True
