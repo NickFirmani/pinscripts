@@ -74,7 +74,6 @@ HANDWRITING_LINE_SPACING = 0.3 * inch
 INK = colors.HexColor("#142735")
 ACCENT = colors.HexColor("#176B75")
 MUTED = colors.HexColor("#53636C")
-PALE = colors.HexColor("#EAF2F3")
 RULE = colors.HexColor("#AAB8BD")
 PAPER_TINT = colors.HexColor("#F7F9F8")
 SECTION_STRIPE = colors.HexColor("#E3E6E7")
@@ -142,7 +141,7 @@ TABLE_HEADER = ParagraphStyle(
     parent=SMALL,
     fontName="Helvetica-Bold",
     spaceAfter=0,
-    textColor=colors.white,
+    textColor=INK,
 )
 
 TABLE_BODY = ParagraphStyle(
@@ -170,8 +169,7 @@ CALLOUT_TEXT = ParagraphStyle(
 
 CALLOUT_TABLE_STYLE = TableStyle(
     [
-        ("BOX", (0, 0), (-1, -1), 0.75, RULE),
-        ("BACKGROUND", (0, 0), (-1, -1), PALE),
+        ("BACKGROUND", (0, 0), (-1, -1), SECTION_STRIPE),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("LEFTPADDING", (0, 0), (-1, -1), SPACE_MD),
         ("RIGHTPADDING", (0, 0), (-1, -1), SPACE_MD),
@@ -182,7 +180,7 @@ CALLOUT_TABLE_STYLE = TableStyle(
 
 DATA_TABLE_STYLE = TableStyle(
     [
-        ("BACKGROUND", (0, 0), (-1, 0), INK),
+        ("BACKGROUND", (0, 0), (-1, 0), SECTION_STRIPE),
         ("BOX", (0, 0), (-1, -1), 0.5, RULE),
         ("INNERGRID", (0, 0), (-1, -1), 0.25, RULE),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, PAPER_TINT]),
