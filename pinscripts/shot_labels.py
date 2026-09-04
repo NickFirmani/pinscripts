@@ -18,7 +18,8 @@ from urllib.parse import urlparse
 import yaml
 from PIL import Image, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
-from .content import PinRegistryError, content_for_selected_pins, load_yaml
+from .content import load_yaml
+from .manual import ManualError, content_paths_for_manual
 from .paths import CONTENT, ROOT, SHOT_LABELS
 
 
@@ -290,7 +291,7 @@ def shot_label_issue(data, root=ROOT, labels_directory=None):
 
 
 def first_game_needing_labels(paths=None, root=ROOT, labels_directory=None):
-    paths = paths if paths is not None else content_for_selected_pins()
+    paths = paths if paths is not None else content_paths_for_manual()
     for path in paths:
         data = load_yaml(path)
         image = data.get("image")
@@ -471,7 +472,7 @@ class _LabelSession:
         except (
             KeyError,
             OSError,
-            PinRegistryError,
+            ManualError,
             ShotLabelError,
             UnidentifiedImageError,
             yaml.YAMLError,
@@ -740,7 +741,7 @@ def _game_for_editor(content_path, issue="", root=ROOT):
 
 
 def _remaining_game_loader(current_path, root=ROOT, paths=None):
-    paths = list(paths) if paths is not None else content_for_selected_pins()
+    paths = list(paths) if paths is not None else content_paths_for_manual()
     resolved_current = current_path.resolve()
     current_index = next(
         (
@@ -768,7 +769,7 @@ def _remaining_game_loader(current_path, root=ROOT, paths=None):
     return load_next
 
 
-def interactive_shot_labels(game):
+def interactive_shot_labels(game, continue_batch=True):
     """Open the browser label editor for one game, or the next incomplete game."""
     game = game.strip()
     issue = None
@@ -780,7 +781,7 @@ def interactive_shot_labels(game):
     else:
         try:
             content_path, issue = first_game_needing_labels()
-        except (OSError, PinRegistryError, yaml.YAMLError) as error:
+        except (OSError, ManualError, yaml.YAMLError) as error:
             print(f"ERROR: could not select a game: {error}", file=sys.stderr)
             return 1
         if content_path is None:
@@ -793,7 +794,9 @@ def interactive_shot_labels(game):
             data,
             image_path,
             SHOT_LABELS,
-            next_game_loader=_remaining_game_loader(content_path),
+            next_game_loader=(
+                _remaining_game_loader(content_path) if continue_batch else None
+            ),
         )
         if issue:
             session.message = f"Selected {data['name']}: {issue}."

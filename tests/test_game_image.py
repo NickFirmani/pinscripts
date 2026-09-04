@@ -12,6 +12,59 @@ from PIL import Image
 
 
 class GameImageTests(unittest.TestCase):
+    def test_suggested_crop_size_is_the_largest_exact_ratio_that_fits(self):
+        self.assertEqual(app.suggested_crop_size(1600, 2400), (1292, 2375))
+
+    def test_aspect_check_allows_approximate_manual_crops(self):
+        self.assertTrue(app.has_playfield_aspect_ratio(1306, 2400))
+        self.assertTrue(app.has_playfield_aspect_ratio(483, 888))
+        self.assertFalse(app.has_playfield_aspect_ratio(490, 888))
+        self.assertFalse(app.has_playfield_aspect_ratio(1600, 2400))
+
+    def test_crop_opens_xnviewmp_when_available_and_verifies_saved_ratio(self):
+        image = Path("/downloads/game.jpg")
+        stdout = io.StringIO()
+        with (
+            patch.object(
+                app,
+                "image_dimensions",
+                side_effect=[(1600, 2400), (1292, 2375)],
+            ),
+            patch.object(app, "find_xnviewmp_application", return_value="XnViewMP"),
+            patch.object(app.subprocess, "run") as opened,
+            patch("builtins.input", return_value=""),
+            redirect_stdout(stdout),
+        ):
+            result = app.prepare_downloaded_image_for_crop(image)
+
+        self.assertTrue(result)
+        opened.assert_called_once_with(
+            ["open", "-a", "XnViewMP", str(image)],
+            check=True,
+        )
+        self.assertIn("fixed 408:750 aspect ratio", stdout.getvalue())
+        self.assertIn("Confirmed 408:750 crop", stdout.getvalue())
+
+    def test_crop_falls_back_to_preview_with_exact_selection_size(self):
+        image = Path("/downloads/game.jpg")
+        stdout = io.StringIO()
+        with (
+            patch.object(
+                app,
+                "image_dimensions",
+                side_effect=[(1600, 2400), (1292, 2375)],
+            ),
+            patch.object(app, "find_xnviewmp_application", return_value=None),
+            patch.object(app, "open_images_in_preview") as preview,
+            patch("builtins.input", return_value=""),
+            redirect_stdout(stdout),
+        ):
+            result = app.prepare_downloaded_image_for_crop(image)
+
+        self.assertTrue(result)
+        preview.assert_called_once_with([image])
+        self.assertIn("1292x2375 pixel selection", stdout.getvalue())
+
     def test_downloaded_images_are_written_as_canonical_webp(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -164,6 +217,11 @@ class GameImageTests(unittest.TestCase):
                     side_effect=download_image,
                 ) as opened,
                 patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ) as crop,
                 patch.object(app, "first_game_without_image", return_value=None),
                 patch.object(
                     app,
@@ -183,6 +241,7 @@ class GameImageTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         opened.assert_called_once_with("Jaws (Pro) Stern 2024")
+        crop.assert_called_once_with(downloaded)
         self.assertIn("research ID", stdout.getvalue())
         self.assertEqual(stderr.getvalue(), "")
 
@@ -210,6 +269,11 @@ class GameImageTests(unittest.TestCase):
                     side_effect=download_image,
                 ),
                 patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ),
                 patch.object(app, "first_game_without_image", return_value=None),
                 patch("builtins.input", return_value=""),
                 redirect_stdout(io.StringIO()),
@@ -257,6 +321,11 @@ class GameImageTests(unittest.TestCase):
                 patch.object(app, "image_dimensions", return_value=(1600, 2400)),
                 patch.object(
                     app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ),
+                patch.object(
+                    app,
                     "write_canonical_webp",
                     side_effect=lambda source, destination: destination.write_bytes(
                         source.read_bytes()
@@ -301,6 +370,11 @@ class GameImageTests(unittest.TestCase):
                     side_effect=download_image,
                 ),
                 patch.object(app, "image_dimensions", return_value=(500, 900)),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ),
                 patch("builtins.input", side_effect=["", ""]),
                 redirect_stdout(stdout),
                 redirect_stderr(stderr),
@@ -339,6 +413,11 @@ class GameImageTests(unittest.TestCase):
                 ),
                 patch.object(app, "image_dimensions", return_value=(500, 900)),
                 patch.object(app, "first_game_without_image", return_value=None),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ),
                 patch.object(
                     app,
                     "write_canonical_webp",
@@ -579,6 +658,11 @@ class GameImageTests(unittest.TestCase):
             patch.object(app, "confirm_image_resolution", return_value=True),
             patch.object(
                 app,
+                "prepare_downloaded_image_for_crop",
+                return_value=True,
+            ) as crop,
+            patch.object(
+                app,
                 "replace_canonical_image",
                 return_value=(backup, None),
             ) as replace,
@@ -590,6 +674,7 @@ class GameImageTests(unittest.TestCase):
             result = app.interactive_low_resolution_image_repair("")
 
         self.assertEqual(result, 0)
+        crop.assert_called_once_with(download)
         replace.assert_called_once_with(download, source)
         self.assertIn("400x700 -> 1400x2400", stdout.getvalue())
 

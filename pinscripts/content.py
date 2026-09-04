@@ -1,4 +1,4 @@
-"""Content loading, identifiers, registry selection, and schema validation."""
+"""Content loading, identifiers, and schema validation."""
 
 import difflib
 import json
@@ -10,78 +10,15 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 
-from .paths import CONTENT, MANIFEST, RESEARCH, SCHEMA
+from .paths import RESEARCH, SCHEMA
 
 
 PIN_ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
-class PinRegistryError(ValueError):
-    pass
-
-
 def load_yaml(path: Path):
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)
-
-
-def load_pin_registry():
-    try:
-        registry = load_yaml(MANIFEST)
-    except yaml.YAMLError as error:
-        raise PinRegistryError(f"invalid YAML: {error}") from error
-
-    if not isinstance(registry, dict):
-        raise PinRegistryError("the document must be a mapping")
-
-    expected_keys = {"enabled", "disabled"}
-    actual_keys = set(registry)
-    if actual_keys != expected_keys:
-        missing = sorted(expected_keys - actual_keys)
-        extra = sorted(actual_keys - expected_keys)
-        details = []
-        if missing:
-            details.append(f"missing keys: {', '.join(missing)}")
-        if extra:
-            details.append(f"unknown keys: {', '.join(extra)}")
-        raise PinRegistryError("; ".join(details))
-
-    for list_name in ("enabled", "disabled"):
-        pin_ids = registry[list_name]
-        if not isinstance(pin_ids, list):
-            raise PinRegistryError(f"{list_name} must be a list")
-
-        invalid_ids = [
-            pin_id
-            for pin_id in pin_ids
-            if not isinstance(pin_id, str)
-            or PIN_ID_PATTERN.fullmatch(pin_id) is None
-        ]
-        if invalid_ids:
-            raise PinRegistryError(
-                f"{list_name} contains invalid pin IDs: "
-                + ", ".join(repr(pin_id) for pin_id in invalid_ids)
-            )
-
-        duplicates = sorted({
-            pin_id
-            for pin_id in pin_ids
-            if pin_ids.count(pin_id) > 1
-        })
-        if duplicates:
-            raise PinRegistryError(
-                f"{list_name} contains duplicate pin IDs: "
-                + ", ".join(duplicates)
-            )
-
-    overlap = sorted(set(registry["enabled"]) & set(registry["disabled"]))
-    if overlap:
-        raise PinRegistryError(
-            "pin IDs cannot be both enabled and disabled: "
-            + ", ".join(overlap)
-        )
-
-    return registry
 
 
 def load_schema():
@@ -222,29 +159,3 @@ def validate_content(path: Path, validator):
     except yaml.YAMLError as error:
         return [f"invalid YAML: {error}"]
     return validation_errors(data, validator)
-
-
-def content_for_selected_pins():
-    registry = load_pin_registry()
-    enabled = registry["enabled"]
-    disabled = set(registry["disabled"])
-
-    if enabled:
-        missing = [
-            pin_id
-            for pin_id in enabled
-            if not (CONTENT / f"{pin_id}.yaml").is_file()
-        ]
-        if missing:
-            raise PinRegistryError(
-                "enabled pin IDs have no content file: " + ", ".join(missing)
-            )
-        selected = enabled
-    else:
-        selected = sorted(
-            path.stem
-            for path in CONTENT.glob("*.yaml")
-            if path.stem not in disabled
-        )
-
-    return [CONTENT / f"{pin_id}.yaml" for pin_id in selected]

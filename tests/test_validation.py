@@ -7,6 +7,8 @@ from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
 
+import yaml
+
 import main as cli
 import pinscripts.build as builder
 import pinscripts.content as app
@@ -26,6 +28,21 @@ class ValidationTests(unittest.TestCase):
         )
 
         self.assertEqual(errors, [])
+
+    def test_build_validation_rejects_an_id_that_does_not_match_the_filename(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "expected-id.yaml"
+            data = app.load_yaml(CONTENT / "playboy-bally-1978.yaml")
+            data["id"] = "different-id"
+            path.write_text(
+                yaml.safe_dump(data, sort_keys=False),
+                encoding="utf-8",
+            )
+            with redirect_stderr(io.StringIO()) as stderr:
+                valid = builder.validate_all([path])
+
+        self.assertFalse(valid)
+        self.assertIn("expected 'expected-id'", stderr.getvalue())
 
     def test_schema_is_openai_structured_outputs_compatible(self):
         forbidden_keywords = {

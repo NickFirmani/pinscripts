@@ -372,6 +372,18 @@ class PromptTests(unittest.TestCase):
 
         self.assertEqual(result, 1)
 
+    def test_guided_research_uses_the_locked_id_without_prompting_for_another(self):
+        with tempfile.TemporaryDirectory() as directory:
+            research_directory = Path(directory)
+            with (
+                patch.object(app, "RESEARCH", research_directory),
+                patch.object(app, "confirm_overwrite") as confirm,
+            ):
+                path = app.request_research_path("Display Name", "fixed-game-id")
+
+        self.assertEqual(path.name, "fixed-game-id.md")
+        confirm.assert_not_called()
+
     def test_interactive_research_prompt_copies_by_default(self):
         with (
             patch("builtins.input", return_value=""),

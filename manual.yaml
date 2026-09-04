@@ -1,0 +1,434 @@
+version: 1
+games:
+- id: ac-dc-pro-stern-2012
+  pages:
+  - '2'
+  - '3'
+- id: addams-family-bally-1992
+  pages:
+  - '4'
+  - '5'
+- id: alien-star-gottlieb-1984
+  pages:
+  - '6'
+  - '7'
+- id: andromeda-game-plan-1985
+  pages:
+  - '8'
+  - '9'
+- id: attack-from-mars-bally-1995
+  pages:
+  - '10'
+  - '11'
+- id: avengers-infinity-quest-le-stern-2020
+  pages:
+  - '12'
+  - '13'
+- id: avengers-infinity-quest-pro-stern-2020
+  pages:
+  - '14'
+  - '15'
+- id: aztec-williams-1976
+  pages:
+  - '16'
+  - '17'
+- id: banzai-run-williams-1988
+  pages:
+  - '18'
+  - '19'
+- id: barracora-williams-1981
+  pages:
+  - '20'
+  - '21'
+- id: batman-66-premium-stern-2016
+  pages:
+  - '22'
+  - '23'
+- id: batman-the-dark-knight-stern-2008
+  pages:
+  - '24'
+  - '25'
+- id: beatles-gold-stern-2018
+  pages:
+  - '26'
+  - '27'
+- id: big-game-stern-electronics-1980
+  pages:
+  - '28'
+  - '29'
+- id: black-hole-gottlieb-1981
+  pages:
+  - '30'
+  - '31'
+- id: black-knight-sword-of-rage-pro-stern-2019
+  pages:
+  - '32'
+  - '33'
+- id: black-knight-williams-1980
+  pages:
+  - '34'
+  - '35'
+- id: bram-stokers-dracula-1993
+  pages:
+  - '36'
+  - '37'
+- id: captain-fantastic-bally-1977
+  pages:
+  - '38'
+  - '39'
+- id: cirqus-voltaire-bally-1997
+  pages:
+  - '40'
+  - '41'
+- id: congo-williams-1995
+  pages:
+  - '42'
+  - '43'
+- id: cover-girl-gottlieb-1962
+  pages:
+  - '44'
+  - '45'
+- id: deadpool-pro-stern-2018
+  pages:
+  - '46'
+  - '47'
+- id: dealers-choice-williams-1974
+  pages:
+  - '48'
+  - '49'
+- id: dialed-in-jersey-jack-2017
+  pages:
+  - '50'
+  - '51'
+- id: doodle-bug-williams-1971
+  pages:
+  - '52'
+  - '53'
+- id: dungeons-and-dragons-premium-stern-2025
+  pages:
+  - '54'
+  - '55'
+- id: eight-ball-bally-1977
+  pages:
+  - '56'
+  - '57'
+- id: el-dorado-gottlieb-1976
+  pages:
+  - '58'
+  - '59'
+- id: faces-segasa-sonic-1976
+  pages:
+  - '60'
+  - '61'
+- id: family-guy-stern-2007
+  pages:
+  - '62'
+  - '63'
+- id: fathom-bally-1981
+  pages:
+  - '64'
+  - '65'
+- id: flash-gordon-bally-1981
+  pages:
+  - '66'
+  - '67'
+- id: foo-fighters-premium-stern-2023
+  pages:
+  - '68'
+  - '69'
+- id: foo-fighters-pro-stern-2023
+  pages:
+  - '70'
+  - '71'
+- id: frontier-bally-1980
+  pages:
+  - '72'
+  - '73'
+- id: funhouse-williams-1990
+  pages:
+  - '74'
+  - '75'
+- id: game-of-thrones-pro-stern-2015
+  pages:
+  - '76'
+  - '77'
+- id: genie-gottlieb-1979
+  pages:
+  - '78'
+  - '79'
+- id: godzilla-premium-stern-2021
+  pages:
+  - '80'
+  - '81'
+- id: goldeneye-sega-1996
+  pages:
+  - '82'
+  - '83'
+- id: grand-prix-williams-1976
+  pages:
+  - '84'
+  - '85'
+- id: guardians-of-the-galaxy-pro-stern-2017
+  pages:
+  - '86'
+  - '87'
+- id: guns-n-roses-se-jersey-jack-2020
+  pages:
+  - '88'
+  - '89'
+- id: harlem-globetrotters-bally-1979
+  pages:
+  - '90'
+  - '91'
+- id: haunted-house-gottlieb-1982
+  pages:
+  - '92'
+  - '93'
+- id: hercules-atari-1979
+  pages:
+  - '94'
+  - '95'
+- id: indiana-jones-williams-1993
+  pages:
+  - '96'
+  - '97'
+- id: iron-maiden-pro-stern-2018
+  pages:
+  - '98'
+  - '99'
+- id: iron-man-pro-stern-2014
+  pages:
+  - '100'
+  - '101'
+- id: james-bond-007-pro-stern-2022
+  pages:
+  - '102'
+  - '103'
+- id: jaws-pro-stern-2024
+  pages:
+  - '104'
+  - '105'
+- id: john-wick-pro-stern-2024
+  pages:
+  - '106'
+  - '107'
+- id: jurassic-park-premium-stern-2019
+  pages:
+  - '108'
+  - '109'
+- id: king-kong-myth-of-terror-island-premium-stern-2025
+  pages:
+  - '110'
+  - '111'
+- id: kismet-williams-1961
+  pages:
+  - '112'
+  - '113'
+- id: led-zeppelin-premium-stern-2020
+  pages:
+  - '114'
+  - '115'
+- id: mandalorian-pro-stern-2021
+  pages:
+  - '116'
+  - '117'
+- id: mars-trek-segasa-sonic-1977
+  pages:
+  - '118'
+  - '119'
+- id: medieval-madness-williams-1997
+  pages:
+  - '120'
+  - '121'
+- id: metallica-pro-stern-2013
+  pages:
+  - '122'
+  - '123'
+- id: meteor-stern-electronics-1979
+  pages:
+  - '124'
+  - '125'
+- id: monster-bash-williams-1998
+  pages:
+  - '126'
+  - '127'
+- id: nip-it-bally-1973
+  pages:
+  - '128'
+  - '129'
+- id: old-chicago-bally-1976
+  pages:
+  - '130'
+  - '131'
+- id: paragon-bally-1979
+  pages:
+  - '132'
+  - '133'
+- id: paul-bunyan-gottlieb-1968
+  pages:
+  - '134'
+  - '135'
+- id: playboy-bally-1978
+  pages:
+  - '136'
+  - '137'
+- id: prospector-segasa-sonic-1977
+  pages:
+  - '138'
+  - '139'
+- id: pulp-fiction-se-chicago-gaming-2023
+  pages:
+  - '140'
+  - '141'
+- id: quick-draw-gottlieb-1975
+  pages:
+  - '142'
+  - '143'
+- id: radical-bally-1990
+  pages:
+  - '144'
+  - '145'
+- id: rick-and-morty-bse-spooky-2020
+  pages:
+  - '146'
+  - '147'
+- id: rush-pro-stern-2022
+  pages:
+  - '148'
+  - '149'
+- id: scared-stiff-bally-1996
+  pages:
+  - '150'
+  - '151'
+- id: seawitch-stern-electronics-1980
+  pages:
+  - '152'
+  - '153'
+- id: sinbad-gottlieb-1978
+  pages:
+  - '154'
+  - '155'
+- id: solar-fire-williams-1981
+  pages:
+  - '156'
+  - '157'
+- id: space-odyssey-williams-1976
+  pages:
+  - '158'
+  - '159'
+- id: space-time-bally-1972
+  pages:
+  - '160'
+  - '161'
+- id: spanish-eyes-williams-1972
+  pages:
+  - '162'
+  - '163'
+- id: speakeasy-bally-1982
+  pages:
+  - '164'
+  - '165'
+- id: spider-man-stern-2007
+  pages:
+  - '166'
+  - '167'
+- id: star-trek-premium-stern-2013
+  pages:
+  - '168'
+  - '169'
+- id: star-wars-fote-premium-stern-2025
+  pages:
+  - '170'
+  - '171'
+- id: stars-stern-electronics-1978
+  pages:
+  - '172'
+  - '173'
+- id: stranger-things-premium-stern-2019
+  pages:
+  - '174'
+  - '175'
+- id: strato-flite-williams-1974
+  pages:
+  - '176'
+  - '177'
+- id: strikes-and-spares-bally-1978
+  pages:
+  - '178'
+  - '179'
+- id: surfer-gottlieb-1976
+  pages:
+  - '180'
+  - '181'
+- id: team-one-gottlieb-1977
+  pages:
+  - '182'
+  - '183'
+- id: terminator-2-williams-1991
+  pages:
+  - '184'
+  - '185'
+- id: time-fantasy-williams-1983
+  pages:
+  - '186'
+  - '187'
+- id: time-machine-data-east-1988
+  pages:
+  - '188'
+  - '189'
+- id: total-nuclear-annihilation-spooky-pinball-2017
+  pages:
+  - '190'
+  - '191'
+- id: transformers-pro-stern-2026
+  pages:
+  - '192'
+  - '193'
+- id: tron-legacy-pro-stern-2011
+  pages:
+  - '194'
+  - '195'
+- id: twilight-zone-bally-1993
+  pages:
+  - '196'
+  - '197'
+- id: uncanny-x-men-pro-stern-2024
+  pages:
+  - '198'
+  - '199'
+- id: venom-pro-stern-2023
+  pages:
+  - '200'
+  - '201'
+- id: volcano-gottlieb-1981
+  pages:
+  - '202'
+  - '203'
+- id: walking-dead-pro-stern-2014
+  pages:
+  - '204'
+  - '205'
+- id: white-water-williams-1993
+  pages:
+  - '206'
+  - '207'
+- id: wild-fyre-stern-electronics-1978
+  pages:
+  - '208'
+  - '209'
+- id: winchester-mystery-house-barrels-of-fun-2025
+  pages:
+  - '210'
+  - '211'
+- id: wizard-bally-1975
+  pages:
+  - '212'
+  - '213'
+- id: wizard-of-oz-jersey-jack-2013
+  pages:
+  - '214'
+  - '215'
+- id: world-cup-soccer-bally-1994
+  pages:
+  - '216'
+  - '217'

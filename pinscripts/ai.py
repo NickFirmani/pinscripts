@@ -34,8 +34,18 @@ def copy_to_clipboard(text):
     subprocess.run(["pbcopy"], input=text, text=True, check=True)
 
 
-def request_research_path(game):
-    suggestion = suggested_research_id(game)
+def request_research_path(game, suggested_id=None):
+    if suggested_id is not None:
+        if PIN_ID_PATTERN.fullmatch(suggested_id) is None:
+            print(f"ERROR: invalid research ID: {suggested_id!r}", file=sys.stderr)
+            return None
+        path = RESEARCH / f"{suggested_id}.md"
+        if not path.exists() or confirm_overwrite(path):
+            return path
+        print("Research response not saved.", file=sys.stderr)
+        return None
+
+    suggestion = suggested_id or suggested_research_id(game)
     while True:
         try:
             research_id = input(f"Research ID [{suggestion}]: ").strip() or suggestion
@@ -278,8 +288,8 @@ def print_format_prompt(source):
     return 0
 
 
-def format_research_interactively(research, research_id):
-    output_path = CONTENT / f"{research_id}.yaml"
+def format_research_interactively(research, research_id, output_path=None):
+    output_path = output_path or CONTENT / f"{research_id}.yaml"
     if not confirm_overwrite(output_path):
         print("Formatted YAML not saved.", file=sys.stderr)
         return 1
@@ -287,10 +297,10 @@ def format_research_interactively(research, research_id):
     prompt = structured_formatting_prompt(research, expected_id=research_id)
     print("\n" + prompt)
     try:
-        answer = input("\nCopy formatting prompt to clipboard? [y/N] ")
+        answer = input("\nCopy formatting prompt to clipboard? Paste it into ChatGPT or another AI interface. Can use instant/low reasoning for cost/speed. [Y/n] ")
     except EOFError:
         answer = ""
-    if answer.strip().lower() not in {"y", "yes"}:
+    if answer.strip().lower() in {"n", "no"}:
         print("Formatting prompt not copied.", file=sys.stderr)
         return 0
 
@@ -341,7 +351,7 @@ def format_research_interactively(research, research_id):
     return 0
 
 
-def interactive_research_prompt(game):
+def interactive_research_prompt(game, research_id=None, formatted_output_path=None):
     game = game.strip()
     if not game:
         try:
@@ -357,7 +367,7 @@ def interactive_research_prompt(game):
     prompt = research_prompt(game)
     print(prompt)
     try:
-        answer = input("\nCopy prompt to clipboard? [Y/n] ")
+        answer = input("\nCopy prompt to clipboard? Paste it into your favorite research AI (ChatGPT web) [Y/n] ")
     except EOFError:
         answer = "n"
     if answer.strip().lower() not in {"", "y", "yes"}:
@@ -371,7 +381,7 @@ def interactive_research_prompt(game):
         return 1
 
     print("Prompt copied to clipboard.", file=sys.stderr)
-    path = request_research_path(game)
+    path = request_research_path(game, research_id)
     if path is None:
         return 1
 
@@ -391,7 +401,11 @@ def interactive_research_prompt(game):
     response = ensure_human_resolutions(response, path)
     if response is None:
         return 1
-    return format_research_interactively(response, path.stem)
+    return format_research_interactively(
+        response,
+        path.stem,
+        output_path=formatted_output_path,
+    )
 
 
 def interactive_game_format(research_id):

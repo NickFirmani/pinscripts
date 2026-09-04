@@ -23,6 +23,12 @@ DOWNLOAD_IMAGE_SUFFIXES = {
 CANONICAL_IMAGE_SUFFIX = ".webp"
 MIN_IMAGE_LONG_EDGE = 1000
 BLACK_AND_WHITE_PREFETCH = 2
+PLAYFIELD_ASPECT_WIDTH = 408
+PLAYFIELD_ASPECT_HEIGHT = 750
+PLAYFIELD_ASPECT_TOLERANCE = 0.01
+SIMPLIFIED_ASPECT_WIDTH = 68
+SIMPLIFIED_ASPECT_HEIGHT = 125
+XNVIEWMP_APPLICATION_NAMES = ("XnViewMP", "XnView MP")
 
 
 def image_id_for_game(game, research_directory=None):
@@ -96,6 +102,117 @@ def open_images_in_preview(paths):
         ["open", "-a", "Preview", *(str(path) for path in paths)],
         check=True,
     )
+
+
+def find_xnviewmp_application():
+    """Return the macOS application name when XnView MP is installed."""
+    for application in XNVIEWMP_APPLICATION_NAMES:
+        try:
+            result = subprocess.run(
+                ["open", "-Ra", application],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                check=False,
+            )
+        except OSError:
+            return None
+        if result.returncode == 0:
+            return application
+    return None
+
+
+def suggested_crop_size(width, height):
+    """Return the largest exact 408:750 crop that fits the image."""
+    scale = min(
+        width // SIMPLIFIED_ASPECT_WIDTH,
+        height // SIMPLIFIED_ASPECT_HEIGHT,
+    )
+    if scale < 1:
+        raise ValueError(
+            "image is too small for an exact 408:750 integer-pixel crop"
+        )
+    return SIMPLIFIED_ASPECT_WIDTH * scale, SIMPLIFIED_ASPECT_HEIGHT * scale
+
+
+def has_playfield_aspect_ratio(width, height):
+    if width <= 0 or height <= 0:
+        return False
+    target_ratio = PLAYFIELD_ASPECT_WIDTH / PLAYFIELD_ASPECT_HEIGHT
+    actual_ratio = width / height
+    relative_error = abs(actual_ratio - target_ratio) / target_ratio
+    return relative_error <= PLAYFIELD_ASPECT_TOLERANCE
+
+
+def prepare_downloaded_image_for_crop(path):
+    """Open a crop editor and verify that the saved image is exactly 408:750."""
+    try:
+        width, height = image_dimensions(path)
+        crop_width, crop_height = suggested_crop_size(width, height)
+    except (OSError, UnidentifiedImageError, ValueError) as error:
+        print(f"ERROR: could not prepare {path.name} for cropping: {error}", file=sys.stderr)
+        return False
+
+    if has_playfield_aspect_ratio(width, height):
+        print(f"Image already has the required 408:750 aspect ratio ({width}x{height}).")
+        return True
+
+    application = find_xnviewmp_application()
+    try:
+        if application:
+            subprocess.run(["open", "-a", application, str(path)], check=True)
+            print(
+                f"Opened {path.name} in {application}. Crop it to a fixed "
+                "408:750 aspect ratio and save the file in place."
+            )
+        else:
+            open_images_in_preview([path])
+            print(
+                f"XnView MP was not found, so {path.name} was opened in Preview."
+            )
+            print(
+                f"For this {width}x{height} image, use a centered "
+                f"{crop_width}x{crop_height} pixel selection, then crop and save."
+            )
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"ERROR: could not open an image crop editor: {error}", file=sys.stderr)
+        return False
+
+    while True:
+        try:
+            answer = input(
+                "After cropping and saving the downloaded image, press Enter "
+                "to verify it (or enter q to cancel): "
+            )
+        except EOFError:
+            answer = "q"
+        if answer.strip().lower() in {"q", "quit"}:
+            print("Image crop cancelled.", file=sys.stderr)
+            return False
+        try:
+            cropped_width, cropped_height = image_dimensions(path)
+        except (OSError, UnidentifiedImageError) as error:
+            print(f"ERROR: could not inspect the cropped image: {error}", file=sys.stderr)
+            return False
+        if has_playfield_aspect_ratio(cropped_width, cropped_height):
+            print(
+                "Confirmed 408:750 crop: "
+                f"{cropped_width}x{cropped_height}."
+            )
+            return True
+        try:
+            next_width, next_height = suggested_crop_size(
+                cropped_width,
+                cropped_height,
+            )
+        except ValueError as error:
+            print(f"ERROR: {error}", file=sys.stderr)
+            return False
+        print(
+            f"The saved image is {cropped_width}x{cropped_height}, which is not "
+            "408:750. Crop again using a centered "
+            f"{next_width}x{next_height} pixel selection.",
+            file=sys.stderr,
+        )
 
 
 def request_black_and_white_variant(variant_paths):
@@ -510,6 +627,13 @@ def interactive_low_resolution_image_repair(game):
                 )
                 before = download_snapshot()
                 continue
+            if not prepare_downloaded_image_for_crop(download):
+                print(
+                    "Replacement rejected because its crop was not completed.",
+                    file=sys.stderr,
+                )
+                before = download_snapshot()
+                continue
             try:
                 backup, black_and_white_backup = replace_canonical_image(
                     download,
@@ -545,7 +669,7 @@ def open_google_image_search(game):
     )
 
 
-def interactive_game_image(game):
+def interactive_game_image(game, continue_batch=True):
     game = game.strip()
     if not game:
         try:
@@ -578,7 +702,7 @@ def interactive_game_image(game):
         return 1
     try:
         answer = input(
-            "Download the desired image in Chrome, then press Enter to copy it "
+            "Download the desired image in Chrome to your Downloads folder, then press Enter to copy it "
             "(or enter q to cancel): "
         )
     except EOFError:
@@ -608,6 +732,9 @@ def interactive_game_image(game):
             file=sys.stderr,
         )
         return 1
+    if not prepare_downloaded_image_for_crop(source):
+        print("Image not copied.", file=sys.stderr)
+        return 0
     destination = IMAGES / f"{image_id}{CANONICAL_IMAGE_SUFFIX}"
     if not confirm_overwrite(destination):
         print("Image not copied.", file=sys.stderr)
@@ -622,6 +749,7 @@ def interactive_game_image(game):
         return 1
     id_source = "research" if research_id else "game name"
     print(f"Copied {source} to {destination.relative_to(ROOT)} ({id_source} ID).")
-    print("Continuing to fetch images...")
-    interactive_game_image("")
+    if continue_batch:
+        print("Continuing to fetch images...")
+        interactive_game_image("")
     return 0

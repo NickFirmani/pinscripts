@@ -11,12 +11,13 @@ from pinscripts.ai import (
     interactive_research_prompt,
     print_format_prompt,
 )
-from pinscripts.build import BuildInputError, build_game, build_selected
+from pinscripts.build import BuildInputError, build_all, build_game
 from pinscripts.images import (
     interactive_black_and_white_images,
     interactive_game_image,
     interactive_low_resolution_image_repair,
 )
+from pinscripts.game_workflows import interactive_add_game, interactive_update_game
 from pinscripts.shot_labels import interactive_shot_labels
 from pinscripts.venue_notes import interactive_review_venue_notes
 from scripts.process_images import process_images
@@ -35,12 +36,21 @@ def build_parser():
     actions.add_argument(
         "--all",
         action="store_true",
-        help="Validate and render the pins selected by pins.yaml",
+        help="Render every game in manual.yaml and create binder.pdf",
     )
     actions.add_argument(
-        "--binder",
-        action="store_true",
-        help="Render the pins selected by pins.yaml, then create binder.pdf",
+        "--add",
+        nargs="?",
+        const="",
+        metavar="DESCRIPTION",
+        help="Interactively add a game to the printed manual",
+    )
+    actions.add_argument(
+        "--update",
+        nargs="?",
+        const="",
+        metavar="GAME",
+        help="Interactively update a game and build a replacement packet",
     )
     actions.add_argument(
         "--game-research",
@@ -130,6 +140,10 @@ def main(argv=None):
     parser = build_parser()
     args = parser.parse_args(argv)
 
+    if args.add is not None:
+        return interactive_add_game(args.add)
+    if args.update is not None:
+        return interactive_update_game(args.update)
     if args.game_research is not None:
         return interactive_research_prompt(args.game_research)
     if args.game_format is not None:
@@ -159,8 +173,8 @@ def main(argv=None):
             return build_game(args.game, args.black_and_white)
         except BuildInputError as error:
             parser.error(str(error))
-    if args.all or args.binder:
-        return build_selected(args.black_and_white, binder=args.binder)
+    if args.all:
+        return build_all(args.black_and_white)
 
     parser.print_help()
     return 0

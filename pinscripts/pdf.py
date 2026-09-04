@@ -1,5 +1,6 @@
 """Game-sheet rendering and binder PDF assembly."""
 
+from datetime import date
 from io import BytesIO
 from pathlib import Path
 import subprocess
@@ -282,7 +283,7 @@ def git_updated_at(content_path: Path, repo_root=ROOT):
     except OSError:
         return "UNKNOWN"
 
-    return result.stdout.strip() or "UNCOMMITTED"
+    return result.stdout.strip() or date.today().isoformat()
 
 
 def markup(text):
@@ -667,7 +668,15 @@ def _draw_spread_chrome(
     updated_at,
     page_number_start=None,
     rules_basis=None,
+    page_labels=None,
 ):
+    if page_labels is None and page_number_start is not None:
+        page_labels = (str(page_number_start), str(page_number_start + 1))
+    if page_labels is not None:
+        if len(page_labels) != 2:
+            raise ValueError("page_labels must contain exactly two labels")
+        page_labels = tuple(str(label) for label in page_labels)
+
     canvas.saveState()
     footer_y = FOOTER_Y
     canvas.setFillColor(MUTED)
@@ -687,11 +696,11 @@ def _draw_spread_chrome(
         )
         page_label_width = (
             pdfmetrics.stringWidth(
-                f"PAGE {page_number_start + 1}",
+                f"PAGE {page_labels[1]}",
                 "Helvetica",
                 6.5,
             )
-            if page_number_start is not None
+            if page_labels is not None
             else 0
         )
         footer_width = USABLE_W - page_label_width - SPACE_MD
@@ -705,18 +714,18 @@ def _draw_spread_chrome(
         canvas.drawString(OUTER_MARGIN, title_y, footer_line)
         canvas.drawString(PAGE_W + INNER_MARGIN, title_y, footer_line)
 
-    if page_number_start is not None:
+    if page_labels is not None:
         canvas.setFont("Helvetica", 6.5)
         page_y = title_y if footer_text else detail_y
         canvas.drawRightString(
             PAGE_W - INNER_MARGIN,
             page_y,
-            f"PAGE {page_number_start}",
+            f"PAGE {page_labels[0]}",
         )
         canvas.drawRightString(
             (2 * PAGE_W) - OUTER_MARGIN,
             page_y,
-            f"PAGE {page_number_start + 1}",
+            f"PAGE {page_labels[1]}",
         )
 
     canvas.restoreState()
@@ -775,6 +784,7 @@ def render_game(
     asset_root=ROOT,
     prepend_blank_page=False,
     page_number_start=None,
+    page_labels=None,
 ):
     data = load_yaml(content_path)
     rules_basis = data.get("rules_basis")
@@ -924,6 +934,7 @@ def render_game(
                         updated_at,
                         page_number_start,
                         rules_basis,
+                        page_labels,
                     ),
                 )
             ]
@@ -956,10 +967,7 @@ def render_game(
     print(f"Wrote {output_path}")
 
 
-def merge_pdfs(paths, output_path: Path):
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    writer = PdfWriter()
-
+def _title_page():
     title_page_stream = BytesIO()
     title_page = Canvas(title_page_stream, pagesize=letter)
     title_page.setTitle("Pinball Commentary Quickstart")
@@ -1033,7 +1041,13 @@ def merge_pdfs(paths, output_path: Path):
 
     title_page.save()
     title_page_stream.seek(0)
-    writer.add_page(PdfReader(title_page_stream).pages[0])
+    return PdfReader(title_page_stream).pages[0]
+
+
+def merge_pdfs(paths, output_path: Path):
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    writer = PdfWriter()
+    writer.add_page(_title_page())
 
     for path in paths:
         writer.append(str(path))
@@ -1042,6 +1056,53 @@ def merge_pdfs(paths, output_path: Path):
         writer.write(stream)
 
     print(f"Wrote {output_path} ({len(paths)} games)")
+
+
+def merge_print_packet(
+    target_path: Path,
+    output_path: Path,
+    preceding_path=None,
+    following_path=None,
+):
+    """Create four pages ordered for two-sheet, long-edge duplex printing."""
+    target = PdfReader(str(target_path))
+    if len(target.pages) != 2:
+        raise ValueError(f"print-packet target must have two pages: {target_path}")
+
+    writer = PdfWriter()
+    if preceding_path is None:
+        writer.add_page(_title_page())
+    else:
+        preceding = PdfReader(str(preceding_path))
+        if len(preceding.pages) != 2:
+            raise ValueError(
+                f"preceding print-packet game must have two pages: {preceding_path}"
+            )
+        writer.add_page(preceding.pages[1])
+
+    writer.add_page(target.pages[0])
+    writer.add_page(target.pages[1])
+
+    if following_path is None:
+        writer.add_blank_page(width=PAGE_W, height=PAGE_H)
+    else:
+        following = PdfReader(str(following_path))
+        if len(following.pages) != 2:
+            raise ValueError(
+                f"following print-packet game must have two pages: {following_path}"
+            )
+        writer.add_page(following.pages[0])
+
+    writer.add_metadata(
+        {
+            "/Title": f"Binder print packet - {target_path.stem}",
+            "/Author": "Pinball Commentary Binder",
+        }
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("wb") as stream:
+        writer.write(stream)
+    print(f"Wrote {output_path} (4 pages; print duplex, flip on long edge)")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,9 @@
 PYTHON := .venv/bin/python
+.DEFAULT_GOAL := all
 
-ifneq ($(filter game-research game-format game-image game-image-bw game-image-low-res shot-labels review-venue-notes,$(MAKECMDGOALS)),)
+ifneq ($(filter add update game-research game-format game-image game-image-bw game-image-low-res shot-labels review-venue-notes,$(MAKECMDGOALS)),)
+ADD_INPUT = $(strip $(GAME))
+UPDATE_INPUT = $(strip $(GAME))
 GAME_RESEARCH_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-research,$(MAKECMDGOALS))))
 GAME_FORMAT_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-format,$(MAKECMDGOALS))))
 GAME_IMAGE_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out game-image,$(MAKECMDGOALS))))
@@ -14,7 +17,13 @@ VENUE_NOTES_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out review-venue-notes
 	@:
 endif
 
-.PHONY: all all-bw all-color audit-rules-basis binder binder-bw binder-color clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes shot-labels test
+.PHONY: add all all-bw all-color audit-rules-basis clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content review-venue-notes shot-labels test update
+
+add:
+	@$(PYTHON) main.py --add "$(ADD_INPUT)"
+
+update:
+	@$(PYTHON) main.py --update "$(UPDATE_INPUT)"
 
 audit-rules-basis:
 	$(PYTHON) scripts/audit_rules_basis.py
@@ -31,15 +40,6 @@ all-color:
 
 all-bw:
 	$(PYTHON) main.py --all --black-and-white
-
-binder:
-	$(PYTHON) main.py --binder
-
-binder-color:
-	$(PYTHON) main.py --binder --color
-
-binder-bw:
-	$(PYTHON) main.py --binder --black-and-white
 
 clean:
 	rm -rf output

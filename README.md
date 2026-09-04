@@ -2,7 +2,8 @@
 
 Generate compact, two-column PDF quick references for live pinball commentary. Each game is described in YAML and rendered as a letter-sized sheet covering core rules, important shots, match strategy, danger zones, commentary cues, trivia, and venue notes.
 
-`pins.yaml` controls which game files are included in bulk builds.
+`manual.yaml` is the single manifest for included games, binder order, and
+permanent printed page labels.
 
 ## Requirements
 
@@ -45,11 +46,11 @@ make game-playboy-bally-1978
 ```
 
 Every render command validates the selected YAML against
-`schema/game.schema.json` before writing any PDFs. Bulk and binder builds
-validate all available content first, so validation errors do not produce a
-partially rebuilt set of files.
+`schema/game.schema.json` before writing any PDFs. Full builds validate every
+manifest entry first, so validation errors do not produce a partially rebuilt
+set of files.
 
-Render the games selected by `pins.yaml`:
+Render every game in `manual.yaml` and merge `output/binder.pdf`:
 
 ```sh
 make all
@@ -61,25 +62,65 @@ the `-bw` targets:
 ```sh
 make game-bw-playboy-bally-1978
 make all-bw
-make binder-bw
 ```
 
 The equivalent command-line options are `--color` and
 `--black-and-white` (or `--bw`). Black-and-white PDFs are written with a
 `-bw` suffix, so they can coexist with the color output.
 
-Build the individual PDFs and merge them into a printable binder:
-
-```sh
-make binder
-```
-
 The binder opens with a simple title page as leaf 1, without a printed number.
-Game pages are numbered continuously from 2. Games with internet-downloadable
+Its order and permanent page labels come from `manual.yaml`. The initial printed
+edition has 108 games on pages 2 through 217. New games use decimal page labels,
+so adding one never renumbers an already-printed page. Games with internet-downloadable
 code show the code version, its release date, and the date when the content file
 was last updated in Git. Games with materially different gameplay ROMs show the
 ROM revision and Git update date. Fixed-rule games omit that footer copy. Binder
 page numbers are still shown for every game.
+
+### Maintaining an already-printed manual
+
+Use the guided add workflow for a new game:
+
+```sh
+make add
+make add GAME="Jaws Premium Stern 2024"
+```
+
+The wizard confirms the game ID and its suggested alphabetical location, reserves
+two decimal page labels, and walks through research, YAML formatting, image setup,
+shot labels, black-and-white image generation, validation, and PDF rendering.
+Existing artifacts are detected so an
+interrupted add can be resumed by running the same command again. `manual.yaml` is
+changed only after the new game validates and you explicitly confirm its page
+assignment. Packet generation is a separate confirmation: declining or cancelling
+that step leaves the new manifest entry saved. You can generate its replacement
+packet later with `make update GAME="<game-id>"`.
+
+For example, a game inserted between printed pages 19 and 20 receives pages 19.1
+and 19.2. A later insertion can use 19.01 and 19.02; previously assigned labels
+remain unchanged.
+
+Use the update workflow for an existing game:
+
+```sh
+make update
+make update GAME="jaws-pro-stern-2024"
+```
+
+You can refresh researched content, replace the image, redo shot labels, review
+venue notes, or build a packet from edits already made. Refreshed YAML is staged
+and displayed as a diff before it replaces the current content. Updates retain the
+game's existing page labels.
+
+Both workflows can create a four-page file under `output/print/`. The packet
+contains the preceding binder leaf, both leaves of the added or updated game, and
+the following binder leaf. Print it at actual size, double-sided, flipping on the
+long edge. At the beginning of the binder the title page is used as the preceding
+leaf; at the end a blank final leaf is added.
+
+The `add` and `update` workflows ask whether the packet should be color or
+black-and-white only when you move to the PDF-generation step. Full builds use
+`make all` or `make all-bw`. No color choice is stored in `manual.yaml`.
 
 Generated files are written to `output/`:
 
@@ -164,25 +205,25 @@ placements stale and stops the build with an instruction to redo them. Games
 without a shot-label file continue to render with an unannotated image, which
 allows the collection to be labeled incrementally.
 
-## Selecting games
+## Manual order and page labels
 
-`pins.yaml` contains only ordered lists of pin IDs:
+`manual.yaml` contains the complete ordered set of games included in the binder:
 
 ```yaml
-enabled: []
-
-disabled:
-  - example-game-1999
+version: 1
+games:
+- id: ac-dc-pro-stern-2012
+  pages: ["2", "3"]
+- id: example-added-game-2026
+  pages: ["3.1", "3.2"]
+- id: addams-family-bally-1992
+  pages: ["4", "5"]
 ```
 
-When `enabled` is empty, bulk and binder builds include every YAML file directly
-under `content/`, sorted by ID, except IDs in `disabled`. This default makes a
-new content file eligible automatically.
-
-When `enabled` is non-empty, it is an explicit allowlist and its order becomes
-the binder order. Every explicitly enabled ID must have a matching
-`content/<id>.yaml` file. Disabled IDs do not require content files. IDs must be
-unique kebab-case strings, and the same ID cannot appear in both lists.
+Each entry must have a matching `content/<id>.yaml` file, two unique increasing
+page labels, and a unique kebab-case ID. Adding or removing an entry controls
+whether it is part of full builds. Prefer `make add` for insertions so decimal
+labels and printable packets are assigned safely.
 
 ### Generating a content draft
 
@@ -263,13 +304,26 @@ make game-image
 
 The command opens the search in Google Chrome. Download the desired image,
 return to the terminal, and press Enter. The newest completed file added to
-`~/Downloads` after the search opened is copied into `images/`. A matching
+`~/Downloads` after the search opened is prepared and copied into `images/`. A matching
 `content/research/<id>.md` supplies the destination basename when available;
-otherwise, the basename is derived from the entered game name. The downloaded
-file's extension is preserved. Before copying, the command reports the image's
-pixel dimensions. Images with a long edge below 1000 pixels are treated as
-low resolution and are rejected by default; confirm the override only when a
-better source is unavailable.
+otherwise, the basename is derived from the entered game name. Before copying,
+the command reports the image's pixel dimensions. Images with a long edge below
+1000 pixels are treated as low resolution and are rejected by default; confirm
+the override only when a better source is unavailable.
+
+Every accepted download is opened for cropping before it is converted to the
+canonical WebP. If XnView MP is installed, the image opens there with instructions
+to use a fixed 408:750 crop. Otherwise it opens in Preview and the workflow prints
+the largest exact pixel selection for the downloaded dimensions, such as
+`1292x2375` for a `1600x2400` image. Save the crop in place and return to the
+terminal; the workflow verifies the ratio before copying the image. Low-resolution
+replacement downloads use the same crop step. A 1% aspect-ratio tolerance allows
+the small pixel differences produced by manual crop tools.
+
+In the add and update workflows, a newly downloaded and cropped image proceeds to
+shot-label placement and then black-and-white variant generation. The selected
+black-and-white companion is created even when the immediate print packet will be
+in color, so either format is ready later.
 
 For a one-off pass over existing low-resolution images, search for replacement
 playfield images in Chrome:
