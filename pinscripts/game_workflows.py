@@ -270,7 +270,7 @@ def interactive_add_game(description=""):
         if not content_path.is_file():
             print("Add paused before formatted content was created; run it again to resume.")
             return 1
-    if not interactive_review_venue_notes(game_id):
+    if interactive_review_venue_notes(game_id) != 0:
         return 1
 
     if not _ensure_game_assets(

@@ -1,0 +1,152 @@
+id: pokemon-pro-stern-2026
+name: Pokémon by Stern Pinball — Pro
+metadata:
+  manufacturer: Stern Pinball
+  year: 2026
+  designer: George Gomez and Jack Danger
+  artist: ''
+  production: ''
+  era: SPIKE 3
+  multiball: Pikachu vs. Raichu; Team Rocket Multiball 1/2; deep progression includes
+    Pikachu vs. Lucario and Pikachu vs. Charizard
+rules_basis:
+  kind: code
+  version: Pro v0.85.0
+  release_date: '2026-08-07'
+hook: Build Pikachu vs. Raichu with three right ramps, then work toward Team Rocket.
+  During multiball, complete BATTLE for a green-button add-a-ball. The big scoring
+  leverage comes from permanent-for-the-ball shot X combined with 20-second 2× Playfield.
+rules:
+  primary: 'Three shots to a character lane start its story: left orbit Bulbasaur,
+    left ramp Squirtle, right ramp Pikachu, right orbit Charmander. Story completions
+    qualify shot X; the next major shot made receives 2× all scoring from that shot
+    for the rest of the ball. Berry targets start 20 seconds of 2× Playfield.'
+  bullets:
+  - Three right ramps qualify Pikachu vs. Raichu, the most accessible early multiball
+    route.
+  - 'Team Rocket: complete BATTLE, hit the lowered Meowth balloon three times, then
+    shoot the center lane.'
+  - 'Team Rocket MB1: six jackpots light the center Super; collecting it qualifies
+    shot X and starts a 15-second unlimited-Super window on the outside major shots.'
+  - Discover Pokémon, scan the Pokédex, complete the CATCH hurry-up at the left ramp,
+    then use the Town scoop for Rival Battles.
+  - Playing all four character stories qualifies the Lucario/Charizard choice at the
+    right ramp.
+watch:
+- title: Pikachu cheeks glowing
+  text: 2× Playfield is running. It lasts 20 seconds and can compound with an individual
+    shot multiplier.
+- title: Action Button
+  text: Green means multiball add-a-ball is ready. Red means a stored Pokédex Assist
+    can spot an eligible CATCH or Rival-Battle shot.
+- title: Meowth lowered
+  text: Team Rocket qualification is underway; three balloon hits lead to the center-lane
+    multiball start.
+- title: X insert
+  text: That major shot has persistent-for-this-ball multiplied scoring. Watch where
+    the player chooses to place the next qualified multiplier.
+skill_shots:
+- name: Standard skill shot
+  how: Full plunge through the flashing top lane.
+  value: Starts at 500K and increases Bonus X by 2×, then +1× on later successes.
+    Usually preferred because bumper action also advances Pokémon discovery.
+- name: Super skill shot
+  how: Hold the left flipper during a full plunge, then shoot a flashing playfield
+    shot.
+  value: Starts at 1M / 2× normal value. Center lane completes BATTLE; Town scoop
+    lights Mystery. Can immediately start a lit Team Rocket Multiball and light add-a-ball.
+features:
+- type: player-control
+  name: Pokédex Assist
+  text: Captive-ball hits earn up to three assists. A red Action Button spots an eligible
+    CATCH or Rival-Battle shot, but not the final Catch or Victory Bonus.
+- type: player-control
+  name: Multiball add-a-ball
+  text: Complete BATTLE during Pikachu vs. Raichu or Team Rocket Multiball, then press
+    the Action Button while green.
+- type: ball-save
+  name: Scan ball save
+  text: Scanning a discovered Pokémon starts a short, operator-adjustable ball save.
+- type: ball-save
+  name: Outlane save
+  text: Complete Town targets to light an outlane save that can normally be moved
+    with the flippers; qualification gets harder after each use.
+- type: extra-ball
+  name: Extra balls
+  text: Qualifications include three stories, 50 Poké Balls, 25 captive-ball hits,
+    or rare Mystery; unavailable or maxed extra balls award 2.5M.
+shots:
+- name: Left ramp / Poké Ball
+  value: Advances Squirtle, final Catch, Victory Bonus and Team Rocket jackpots. Strong
+    first destination for shot X.
+  risk: Medium-High
+  diagram: 1
+- name: BATTLE / Meowth / center lane
+  value: Builds Team Rocket Multiball, add-a-ball and Super Jackpot progression.
+  risk: Medium-High
+  diagram: 2
+- name: Pokédex captive ball
+  value: Handles scanning/CATCH progression, story finishes, assists and Super Jackpots.
+  risk: Medium-High
+  diagram: 3
+- name: Right ramp
+  value: Three hits reach Pikachu vs. Raichu; also advances TEAM features and mini-wizard
+    progression.
+  risk: Medium
+  diagram: 4
+- name: Right orbit / spinner
+  value: Advances Charmander and discovery/bumpers; strong spinner scoring and a useful
+    later shot-X destination.
+  risk: Medium
+  diagram: 5
+- name: Town scoop
+  value: Starts Rival Battles and Travel and can award Mystery or extra-ball progression.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor reachable Pikachu and Team Rocket multiballs, cash Super Jackpots,
+    and preserve the green-button add-a-ball as a survival resource rather than forcing
+    risky setup solely for a giant multiplier stack.
+  behind: Build 2× Playfield plus shot X, stack Squirtle or another story with Team
+    Rocket, attack the Super and unlimited-Super window, or pursue deeper Lucario/Charizard
+    progression for greater ceiling and variance.
+  key_decision: 'Setup versus immediate scoring: spend control on berries, BATTLE,
+    captive-ball progress and strategically placed shot X, or start and cash the scoring
+    feature already available.'
+danger:
+- Pokédex captive-ball rebounds can head toward the right-orbit guide, right sling
+  and outlane.
+- Town-scoop eject is a fast, awkward feed toward the left flipper; be ready for a
+  reflex flip.
+- Right-ramp returns arrive quickly at the right flipper with little automatic settling
+  time.
+- Left-orbit returns tend toward the tip of the left flipper and require attention
+  to feed speed and angle.
+- Repeated center BATTLE shots can produce uncontrolled lateral rebounds around the
+  open lower playfield.
+commentary:
+- Three right ramps gets Pikachu vs. Raichu going—that's the early multiball route.
+- 'The Action Button is green: add-a-ball is ready, so they can wait for a drain before
+  spending it.'
+- That Team Rocket Super also qualified shot X; watch where they place the multiplier.
+- Pikachu's cheeks are glowing—that's 2× playfield, and it can stack with the individual
+  shot multiplier.
+- They brought Squirtle into Team Rocket Multiball—that's the documented high-value
+  stack.
+- The captive ball is valuable but dangerous; that rebound toward the right sling
+  is what they're managing.
+trivia:
+- This is the first physical Pokémon pinball machine, released during Pokémon's 30th-anniversary
+  year.
+- George Gomez and Jack Danger co-designed the game.
+- Pokémon is among Stern's first SPIKE 3 games, using an 18.5-inch full-HD display.
+- The Pro removes the Premium/LE arena magnet and Squirtle whirlpool but retains the
+  central story, catch, battle and Team Rocket framework.
+- The optional Magikarp topper adds its own multiball and can carry qualification
+  letters between players and games.
+summary: Right ramp ×3 → Pikachu MB → BATTLE/add-a-ball → Team Rocket → shot X + 2×
+  Playfield → Supers
+venue_notes:
+- Extra balls are converted to points or disabled.
+- Current v0.85 documentation gives Team Rocket's unlimited-Super window as 15 seconds.
+image: images/pokemon-pro-stern-2026.webp

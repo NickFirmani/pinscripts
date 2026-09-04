@@ -1,0 +1,26 @@
+game_id: pokemon-pro-stern-2026
+image: images/pokemon-pro-stern-2026.webp
+image_width: 727
+image_height: 1335
+image_sha256: 6c5256b6c10126a80efb1251d0220d29e98414af4d538b9c5a7f5af102dca5a5
+shots_sha256: b2273e5e6327da27e720c6c15c18ab804426b62eb9bec9b9d138ca5d910acb65
+coordinates:
+- diagram: 1
+  x: 141
+  y: 350
+- diagram: 2
+  x: 365
+  y: 280
+- diagram: 3
+  x: 505
+  y: 394
+- diagram: 4
+  x: 570
+  y: 397
+- diagram: 5
+  x: 649
+  y: 428
+- diagram: 6
+  x: 663
+  y: 670
+skipped_diagrams: []

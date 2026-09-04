@@ -272,163 +272,167 @@ games:
   pages:
   - '136'
   - '137'
-- id: prospector-segasa-sonic-1977
+- id: pokemon-pro-stern-2026
   pages:
   - '138'
   - '139'
-- id: pulp-fiction-se-chicago-gaming-2023
+- id: prospector-segasa-sonic-1977
   pages:
   - '140'
   - '141'
-- id: quick-draw-gottlieb-1975
+- id: pulp-fiction-se-chicago-gaming-2023
   pages:
   - '142'
   - '143'
-- id: radical-bally-1990
+- id: quick-draw-gottlieb-1975
   pages:
   - '144'
   - '145'
-- id: rick-and-morty-bse-spooky-2020
+- id: radical-bally-1990
   pages:
   - '146'
   - '147'
-- id: rush-pro-stern-2022
+- id: rick-and-morty-bse-spooky-2020
   pages:
   - '148'
   - '149'
-- id: scared-stiff-bally-1996
+- id: rush-pro-stern-2022
   pages:
   - '150'
   - '151'
-- id: seawitch-stern-electronics-1980
+- id: scared-stiff-bally-1996
   pages:
   - '152'
   - '153'
-- id: sinbad-gottlieb-1978
+- id: seawitch-stern-electronics-1980
   pages:
   - '154'
   - '155'
-- id: solar-fire-williams-1981
+- id: sinbad-gottlieb-1978
   pages:
   - '156'
   - '157'
-- id: space-odyssey-williams-1976
+- id: solar-fire-williams-1981
   pages:
   - '158'
   - '159'
-- id: space-time-bally-1972
+- id: space-odyssey-williams-1976
   pages:
   - '160'
   - '161'
-- id: spanish-eyes-williams-1972
+- id: space-time-bally-1972
   pages:
   - '162'
   - '163'
-- id: speakeasy-bally-1982
+- id: spanish-eyes-williams-1972
   pages:
   - '164'
   - '165'
-- id: spider-man-stern-2007
+- id: speakeasy-bally-1982
   pages:
   - '166'
   - '167'
-- id: star-trek-premium-stern-2013
+- id: spider-man-stern-2007
   pages:
   - '168'
   - '169'
-- id: star-wars-fote-premium-stern-2025
+- id: star-trek-premium-stern-2013
   pages:
   - '170'
   - '171'
-- id: stars-stern-electronics-1978
+- id: star-wars-fote-premium-stern-2025
   pages:
   - '172'
   - '173'
-- id: stranger-things-premium-stern-2019
+- id: stars-stern-electronics-1978
   pages:
   - '174'
   - '175'
-- id: strato-flite-williams-1974
+- id: stranger-things-premium-stern-2019
   pages:
   - '176'
   - '177'
-- id: strikes-and-spares-bally-1978
+- id: strato-flite-williams-1974
   pages:
   - '178'
   - '179'
-- id: surfer-gottlieb-1976
+- id: strikes-and-spares-bally-1978
   pages:
   - '180'
   - '181'
-- id: team-one-gottlieb-1977
+- id: surfer-gottlieb-1976
   pages:
   - '182'
   - '183'
-- id: terminator-2-williams-1991
+- id: team-one-gottlieb-1977
   pages:
   - '184'
   - '185'
-- id: time-fantasy-williams-1983
+- id: terminator-2-williams-1991
   pages:
   - '186'
   - '187'
-- id: time-machine-data-east-1988
+- id: time-fantasy-williams-1983
   pages:
   - '188'
   - '189'
-- id: total-nuclear-annihilation-spooky-pinball-2017
+- id: time-machine-data-east-1988
   pages:
   - '190'
   - '191'
-- id: transformers-pro-stern-2026
+- id: total-nuclear-annihilation-spooky-pinball-2017
   pages:
   - '192'
   - '193'
-- id: tron-legacy-pro-stern-2011
+- id: transformers-pro-stern-2026
   pages:
   - '194'
   - '195'
-- id: twilight-zone-bally-1993
+- id: tron-legacy-pro-stern-2011
   pages:
   - '196'
   - '197'
-- id: uncanny-x-men-pro-stern-2024
+- id: twilight-zone-bally-1993
   pages:
   - '198'
   - '199'
-- id: venom-pro-stern-2023
+- id: uncanny-x-men-pro-stern-2024
   pages:
   - '200'
   - '201'
-- id: volcano-gottlieb-1981
+- id: venom-pro-stern-2023
   pages:
   - '202'
   - '203'
-- id: walking-dead-pro-stern-2014
+- id: volcano-gottlieb-1981
   pages:
   - '204'
   - '205'
-- id: white-water-williams-1993
+- id: walking-dead-pro-stern-2014
   pages:
   - '206'
   - '207'
-- id: wild-fyre-stern-electronics-1978
+- id: white-water-williams-1993
   pages:
   - '208'
   - '209'
-- id: winchester-mystery-house-barrels-of-fun-2025
+- id: wild-fyre-stern-electronics-1978
   pages:
   - '210'
   - '211'
-- id: wizard-bally-1975
+- id: winchester-mystery-house-barrels-of-fun-2025
   pages:
   - '212'
   - '213'
-- id: wizard-of-oz-jersey-jack-2013
+- id: wizard-bally-1975
   pages:
   - '214'
   - '215'
-- id: world-cup-soccer-bally-1994
+- id: wizard-of-oz-jersey-jack-2013
   pages:
   - '216'
   - '217'
+- id: world-cup-soccer-bally-1994
+  pages:
+    - '216'
+    - '217'
