@@ -738,15 +738,17 @@ def rules_footer_text(rules_basis, updated_at):
 
     kind = rules_basis.get("kind")
     version = safe(rules_basis.get("version"))
+    updated_at_text = f"CONTENT LAST UPDATED ON {safe(updated_at)}"
     if kind == "code":
         release_date = safe(rules_basis.get("release_date"))
         return (
             f"CODE {version} • RELEASED {release_date} • "
-            f"UPDATED AT {safe(updated_at)}"
+            f"{updated_at_text}"
         )
     if kind == "rom":
-        return f"ROM {version} • UPDATED AT {safe(updated_at)}"
-    return None
+        return f"ROM {version} • {updated_at_text}"
+    else:
+        return updated_at_text
 
 
 def _split_spread(spread_path, output_path, title, prepend_blank_page=False):
@@ -788,12 +790,7 @@ def render_game(
 ):
     data = load_yaml(content_path)
     rules_basis = data.get("rules_basis")
-    updated_at = (
-        git_updated_at(content_path)
-        if isinstance(rules_basis, dict)
-        and rules_basis.get("kind") in {"code", "rom"}
-        else None
-    )
+    updated_at = git_updated_at(content_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     blocks = build_blocks(data, black_and_white)
