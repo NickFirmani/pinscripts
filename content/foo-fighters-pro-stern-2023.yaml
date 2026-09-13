@@ -146,8 +146,4 @@ trivia:
 - V1.03.0 buffed Combotron Multiball and changed Bot Frenzy's unique-bot spinner multiplier
   to 1×/2×/4×/8×.
 summary: VAN Mode → Overlord stack → Playfield X → Area 51 → Super Jackpot
-venue_notes:
-- Extra balls are disabled in software; earned extra balls award the normal 10M consolation.
-- Tournament configuration is Competition Install or Competition gameplay mode; Competition
-  Install tightens Overlord qualification and Playfield-X and Van Mode timing.
 image: images/foo-fighters-pro-stern-2023.webp

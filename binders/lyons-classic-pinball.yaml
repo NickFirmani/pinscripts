@@ -1,0 +1,1083 @@
+version: 1
+id: lyons-classic-pinball
+title: Lyons Classic Pinball
+status: printed
+printed_at: null
+source:
+  kind: manual
+  location_id: null
+  url: null
+  retrieved_at: null
+  notes: Manually curated physical binder; external listings are advisory only.
+games:
+- id: ac-dc-pro-stern-2012
+  pages:
+  - '2'
+  - '3'
+  present: true
+  venue_notes:
+  - Tournament configuration converts extra-ball collection to 2.5M points.
+- id: addams-family-bally-1992
+  pages:
+  - '4'
+  - '5'
+  present: true
+  venue_notes:
+  - This is a standard 1992 TAF; do not apply Gold/Special Collector’s Edition rules
+    such as Cousin It’s Hideout, Super Seance, altered multiball rules, or buy-in.
+  - Extra balls are disabled at this venue.
+- id: alien-star-gottlieb-1984
+  pages:
+  - '6'
+  - '7'
+  present: true
+  venue_notes:
+  - 'Configured for 3-ball play: ALIEN progress and a lit capture carry ball to ball;
+    upper award lamps do not.'
+  - Machine is stock/original-compatible 689 or 689A rules.
+- id: andromeda-game-plan-1985
+  pages:
+  - '8'
+  - '9'
+  present: true
+  venue_notes:
+  - Tournament setup is 3 balls.
+  - Extra Balls are disabled; any point conversion is not known.
+- id: attack-from-mars-bally-1995
+  pages:
+  - '10'
+  - '11'
+  present: true
+  venue_notes:
+  - Venue machine is the original Bally/Midway 1995 WPC-95 version, not the Chicago
+    Gaming remake.
+  - Tournament/competition mode is enabled.
+  - Game is configured for 3 balls.
+  - Ball-save durations can be operator-adjusted; only the relative behavior in the
+    brief is safe to describe.
+- id: avengers-infinity-quest-le-stern-2020
+  pages:
+  - '12'
+  - '13'
+  present: true
+  venue_notes:
+  - Standard single-ball save is approximately 5 seconds.
+- id: avengers-infinity-quest-pro-stern-2020
+  pages:
+  - '14'
+  - '15'
+  present: true
+  venue_notes:
+  - The machine is on latest code, but detailed rules support in the brief is based
+    on 1.08; do not assume every post-1.08 rule is unchanged.
+  - Tournament setup is either Competition Mode or Stern Competition Install. Competition
+    Mode removes randomness; Competition Install also changes settings, including
+    disabling extra balls and Gem Mania triggers.
+- id: aztec-williams-1976
+  pages:
+  - '16'
+  - '17'
+  present: true
+  venue_notes:
+  - This venue has the standard EM, score-reel production version.
+  - The machine is configured for 5 balls.
+  - The 50K base bonus becomes 100K only with Double Bonus active.
+- id: banzai-run-williams-1988
+  pages:
+  - '18'
+  - '19'
+  present: true
+  venue_notes:
+  - Stock L-3 ROM with normal escalating Cliff Jumps and a normal upper-playfield
+    center post.
+  - Extra balls are disabled at this venue.
+  - Ramp spotting, Time Lock duration, kickback behavior, and Instant Rematch timing
+    are operator-adjustable.
+- id: barracora-williams-1981
+  pages:
+  - '20'
+  - '21'
+  present: true
+  venue_notes:
+  - 'Stock Williams ROM installed: multiball scoring is limited to three specified
+    switches, not a universal playfield multiplier.'
+  - Extra Balls are disabled.
+  - Factory end-of-game Bonus Ball is disabled.
+- id: batman-66-premium-stern-2016
+  pages:
+  - '22'
+  - '23'
+  present: true
+  venue_notes:
+  - Competition Mode or custom tournament adjustments are active; exact award normalization
+    should be checked.
+  - Extra balls are disabled.
+  - Standard ball save is approximately five seconds.
+  - Premium, LE, and Super LE share core layout and rules; trim, art, audio, and collector
+    hardware differ.
+- id: batman-the-dark-knight-stern-2008
+  pages:
+  - '24'
+  - '25'
+  present: true
+  venue_notes:
+  - Competition Mode is active.
+  - Extra balls are disabled.
+  - Ball save is approximately the factory five seconds.
+- id: beatles-gold-stern-2018
+  pages:
+  - '26'
+  - '27'
+  present: true
+  venue_notes:
+  - Competition Install disables extra balls and player game-mode selection, and requires
+    Level 3 on all five songs for Beatlemania.
+  - 'Taxman qualification is venue-adjustable: HARD uses Level 5 songs and three All
+    My Loving jackpots; EASY uses Level 3 on other songs and one All My Loving jackpot.'
+  - Do not state a Beatlemania ball count without confirming this machine’s setting.
+  - Gold, Platinum, and Diamond editions are cosmetic distinctions; no rules or playfield
+    differences were found.
+- id: big-game-stern-electronics-1980
+  pages:
+  - '28'
+  - '29'
+  present: true
+  venue_notes:
+  - Factory adjustment allows one or two bingo cards to be active simultaneously.
+  - Factory Extra Ball bypass is on; Extra Balls are disabled.
+  - Metal guides beneath and between the paired flippers are installed; scissors drains
+    are not expected.
+- id: black-hole-gottlieb-1981
+  pages:
+  - '30'
+  - '31'
+  present: true
+  venue_notes:
+  - This machine uses original Gottlieb System 80 software and is configured for 3
+    balls.
+  - The upper-left captive-hole saucer is usually controllable but imperfect; treat
+    the 5K grind as situational.
+- id: black-knight-sword-of-rage-pro-stern-2019
+  pages:
+  - '32'
+  - '33'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled under the venue’s Stern Competition Install setting.
+- id: black-knight-williams-1980
+  pages:
+  - '34'
+  - '35'
+  present: true
+  venue_notes:
+  - Upper LOCK qualification is typically hard and requires the U-turn route.
+  - Lit LOCK progress remembers across balls on this machine.
+  - 'Extra Balls are disabled: maximum EBs = 0.'
+  - Multiplayer Bonus Ball is disabled.
+- id: bram-stokers-dracula-1993
+  pages:
+  - '36'
+  - '37'
+  present: true
+  venue_notes:
+  - Extra balls are disabled for this event.
+  - Love Never Dies is configured stock/very short, about 2 seconds.
+  - On L-1, Mystery remains random even with Tournament Play.
+- id: captain-fantastic-bally-1977
+  pages:
+  - '38'
+  - '39'
+  present: true
+  venue_notes: []
+- id: cirqus-voltaire-bally-1997
+  pages:
+  - '40'
+  - '41'
+  present: true
+  venue_notes:
+  - Tournament/Competition Mode is active; Ringmaster Battle scoring is reduced in
+    this mode.
+  - Extra balls are disabled.
+- id: congo-williams-1995
+  pages:
+  - '42'
+  - '43'
+  present: true
+  venue_notes:
+  - 'Factory Medium difficulty is in use: Volcano Multiball begins with one lock available
+    at a time.'
+  - Tournament Mode is enabled; Mystery random awards follow a fixed sequence.
+  - Extra balls are disabled.
+- id: cover-girl-gottlieb-1962
+  pages:
+  - '44'
+  - '45'
+  present: true
+  venue_notes:
+  - This machine is configured for 5 balls.
+- id: deadpool-pro-stern-2018
+  pages:
+  - '46'
+  - '47'
+  present: true
+  venue_notes:
+  - Competition Install/game mode or Competition Mode is active.
+  - Extra Balls are converted to points or disabled by tournament setup.
+  - Standard ball save is close to the factory 5 seconds.
+  - Pro uses Disco Multiball; Premium and LE use Disco Loops instead.
+- id: dealers-choice-williams-1974
+  pages:
+  - '48'
+  - '49'
+  present: true
+  venue_notes:
+  - Tournament is set to five balls.
+  - Extra Ball is not played; the event treatment is disabled or converted to points.
+- id: dialed-in-jersey-jack-2017
+  pages:
+  - '50'
+  - '51'
+  present: true
+  venue_notes:
+  - This machine is running software v2.02 with Competition/League Mode enabled.
+  - The left kickback is typically unlit at game start and must be earned through
+    B-O-B.
+  - Extra Balls are disabled for this event.
+  - Standard, Limited, and Collector’s editions share the same core gameplay; differences
+    are primarily cosmetic and collectible upgrades.
+  - The smartphone-control app is no longer supported from v1.75 onward; do not describe
+    remote Big Bang activation as a current feature.
+- id: doodle-bug-williams-1971
+  pages:
+  - '52'
+  - '53'
+  present: true
+  venue_notes:
+  - Configured as an add-a-ball / Love Bug-style setup with five balls.
+  - The lit center-target feature awards a live extra ball.
+  - Early-production Doodle Bugs may have a higher display range; common games top
+    normal display at 199,990 before OVER THE TOP lights.
+- id: dungeons-and-dragons-premium-stern-2025
+  pages:
+  - '54'
+  - '55'
+  present: true
+  venue_notes:
+  - 'Competition mode is in use: saved campaign progress, legendary equipment, and
+    campaign-unlocked characters are excluded; randomness uses a constant seed.'
+  - Extra Balls are disabled for this Competition setup.
+- id: eight-ball-bally-1977
+  pages:
+  - '56'
+  - '57'
+  present: true
+  venue_notes:
+  - Configured for 3 balls per game.
+  - The Bank Shot X-ball award is 15,000 points when Extra Balls are turned off.
+- id: el-dorado-gottlieb-1976
+  pages:
+  - '58'
+  - '59'
+  present: true
+  venue_notes:
+  - 'The venue machine is configured for 5 balls: both target banks must be completed
+    for the 5K award, reset, and Special.'
+- id: faces-segasa-sonic-1976
+  pages:
+  - '60'
+  - '61'
+  present: true
+  venue_notes:
+  - This venue uses 5 balls.
+- id: family-guy-stern-2007
+  pages:
+  - '62'
+  - '63'
+  present: true
+  venue_notes:
+  - Competitive configuration is Stern Tournament Game/tournament rules or Competition
+    Mode.
+  - Under Stern Tournament Game defaults, Extra Balls, Specials, and bonus credits
+    are disabled.
+  - The secret Evil Monkey-lane Skill Shot is also commonly called the super skill
+    shot.
+- id: fathom-bally-1981
+  pages:
+  - '64'
+  - '65'
+  present: true
+  venue_notes:
+  - Bonus, A-B-C, and inline-progress recall settings are unknown and may affect ball-to-ball
+    persistence.
+- id: flash-gordon-bally-1981
+  pages:
+  - '66'
+  - '67'
+  present: true
+  venue_notes:
+  - This event is set for 3 balls.
+  - Bonus X uses conservative memory and does not carry between balls.
+  - Mini Bonus and Super Bonus target progress carry between balls.
+  - Extra Balls are disabled.
+  - The manufacturer-specified combined 5× playfield-scoring timer is 15 seconds.
+- id: foo-fighters-premium-stern-2023
+  pages:
+  - '68'
+  - '69'
+  present: true
+  venue_notes:
+  - Multiplayer Overlord locks are virtualized between players.
+  - Extra Balls are disabled; their award is a 10M consolation value.
+- id: foo-fighters-pro-stern-2023
+  pages:
+  - '70'
+  - '71'
+  present: true
+  venue_notes:
+  - Extra balls are disabled in software; earned extra balls award the normal 10M
+    consolation.
+  - Tournament configuration is Competition Install or Competition gameplay mode;
+    Competition Install tightens Overlord qualification and Playfield-X and Van Mode
+    timing.
+- id: frontier-bally-1980
+  pages:
+  - '72'
+  - '73'
+  present: true
+  venue_notes:
+  - Three-ball game.
+  - Extra Balls are disabled.
+  - Frontier Bonus maximum is unknown; standard documentation gives 60K, while a liberal
+    adjustment permits 110K.
+- id: funhouse-williams-1990
+  pages:
+  - '74'
+  - '75'
+  present: true
+  venue_notes:
+  - Tournament Mode is enabled.
+  - A fresh game starts at 8:00.
+  - Extra Balls are disabled or ignored at this venue.
+- id: game-of-thrones-pro-stern-2015
+  pages:
+  - '76'
+  - '77'
+  present: true
+  venue_notes:
+  - Competition Install disables the Lord of Light drop-bank award, changes ball-save
+    settings, and restricts some House powers.
+- id: genie-gottlieb-1979
+  pages:
+  - '78'
+  - '79'
+  present: true
+  venue_notes:
+  - This machine is set for 3-ball play.
+  - Extra Balls are disabled at this venue.
+  - Rules are original System 1 or rule-equivalent.
+  - Flippers are normal for Genie.
+  - Watch the left A-B-C-D/bumper exit and Score Bonus saucer return especially closely.
+  - In 3-ball play, completed red or white banks and the lit kickout add 10K rather
+    than the 5K 5-ball values.
+- id: godzilla-premium-stern-2021
+  pages:
+  - '80'
+  - '81'
+  present: true
+  venue_notes:
+  - Code is v1.16.0.
+  - Competition Install is in use, so Extra Balls are disabled.
+  - Premium-specific physical locks, collapsing bridge, and rotating Mechagodzilla
+    geometry differ from Pro.
+- id: goldeneye-sega-1996
+  pages:
+  - '82'
+  - '83'
+  present: true
+  venue_notes:
+  - CPU is reported as probably 4.04; the detailed rules documentation is based on
+    CPU 4.02, so exact revision differences are not established.
+  - Sega Tournament Mode is enabled.
+  - Extra Ball handling is unknown.
+  - Satellite and Eject-or-Die magnet reliability is unknown.
+  - Q-target rebounds are the notably dangerous feed on this machine.
+- id: grand-prix-williams-1976
+  pages:
+  - '84'
+  - '85'
+  present: true
+  venue_notes:
+  - This venue is set for 5-ball play.
+  - Extra Balls are disabled.
+  - Side-saucer behavior, spinner returns, and return-lane danger can vary with mechanical
+    setup and post settings.
+- id: guardians-of-the-galaxy-pro-stern-2017
+  pages:
+  - '86'
+  - '87'
+  present: true
+  venue_notes:
+  - Groot locks are configured as physical locks.
+  - Extra Balls are disabled under the venue's Competition Install.
+- id: guns-n-roses-se-jersey-jack-2020
+  pages:
+  - '88'
+  - '89'
+  present: true
+  venue_notes:
+  - Competition Mode is enabled; random awards and carry-over features are disabled.
+  - Extra Balls are disabled and provide no benefit.
+  - 'Ball saves are factory-like: approximately six-second normal save with normal
+    Song saves.'
+  - The full normal/adult song set is enabled.
+  - 'This is Standard Edition: three flippers, left-ramp virtual locks, and no Power
+    Chord or physical guitar lock.'
+  - No notable physical feed issue has been identified on this copy.
+- id: harlem-globetrotters-bally-1979
+  pages:
+  - '90'
+  - '91'
+  present: true
+  venue_notes:
+  - 'Super Bonus memory is enabled: 20K, 30K, and 40K thresholds hold between balls.'
+  - GLOBE is set to sequential, one-letter-at-a-time selection.
+  - After the first Free Throw saucer collect, the inline drops stay down.
+  - Extra Balls are disabled.
+  - The game is configured for 3-ball play.
+- id: haunted-house-gottlieb-1982
+  pages:
+  - '92'
+  - '93'
+  present: true
+  venue_notes:
+  - Configured for 3-ball play; pop bumpers score 1,000 points.
+  - Extra Balls are disabled at this venue.
+  - Novelty Mode setting is unknown; only describe the 50,000-point conversion conditionally.
+  - The plunge is a level choice, not a formal scored Skill Shot award.
+- id: hercules-atari-1979
+  pages:
+  - '94'
+  - '95'
+  present: true
+  venue_notes:
+  - Configured for 3-ball play.
+  - Extra Ball handling is unknown.
+  - Special's tournament relevance is unknown.
+  - Extra Ball and Special progression enablement is unknown.
+  - Path of Victory reliability is unknown; oversized flipper condition strongly affects
+    control and orbit completion.
+- id: indiana-jones-williams-1993
+  pages:
+  - '96'
+  - '97'
+  present: true
+  venue_notes:
+  - Tournament Play is enabled, equalizing multiplayer multiball and Jackpot state.
+  - Extra Balls are disabled.
+  - Eternal Life ball save is set to factory/normal.
+  - The optional outlane save is disabled.
+  - Idol Jackpot multiplier duration is operator-adjustable; factory-medium documentation
+    shows 15 seconds.
+  - Right-ramp rejects are notably dangerous on this copy.
+- id: iron-maiden-pro-stern-2018
+  pages:
+  - '98'
+  - '99'
+  present: true
+  venue_notes:
+  - Competition Install is enabled.
+  - Secret Skill Shots are off under the Competition default.
+  - Competition Install has no extra balls.
+  - 'Revive uses the factory/easier setting: left and right rescues are consumed independently.'
+  - Super Skill Shot base value is 10M on current code.
+- id: iron-man-pro-stern-2014
+  pages:
+  - '100'
+  - '101'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled and provide no benefit.
+  - Competition Mode is enabled.
+  - The left-orbit up-post status is unknown, so normal versus alternate skill-shot
+    behavior may differ.
+  - Jericho carryover is operator-adjustable.
+- id: james-bond-007-pro-stern-2022
+  pages:
+  - '102'
+  - '103'
+  present: true
+  venue_notes:
+  - Event configuration is Competition Install or Competition Mode only.
+  - Extra Balls are disabled; the stock 25M compensation applies.
+  - Normal ball-save timer is set to normal/default.
+  - 'This is the Pro model: Bird One locks are virtual, there is no moving magnetic
+    Jetpack, and there is no Swipe-a-Ball.'
+  - Do not confuse this machine with James Bond 007 60th Anniversary.
+- id: jaws-pro-stern-2024
+  pages:
+  - '104'
+  - '105'
+  present: true
+  venue_notes:
+  - Extra balls are disabled and convert to 15M.
+  - Life Ring uses normal/default difficulty.
+  - 'This is the Pro layout: no Orca upper playfield or motorized shark bash toy.'
+- id: john-wick-pro-stern-2024
+  pages:
+  - '106'
+  - '107'
+  present: true
+  venue_notes:
+  - Tournament configuration is reported as either full Stern Competition Install
+    or Competition Mode only.
+  - Extra Balls are disabled; their milestone compensation is 10M, or 20M during Lights
+    Out.
+  - The Pro has virtual Deconsecrated locks, a static car, static Blood Oath Marker,
+    and standup-target Weapons Crate; it does not have the Premium/LE car skill shot.
+- id: jurassic-park-premium-stern-2019
+  pages:
+  - '108'
+  - '109'
+  present: true
+  venue_notes:
+  - The venue uses either Competition Install or Competition gameplay mode; these
+    are distinct configurations.
+  - Extra balls are set to 15M points and may be doubled.
+  - T-Rex and Raptor gate/lock mechanisms are operating normally.
+  - Premium and LE share the T-Rex and motorized Raptor Pen mechanisms; Pro lacks
+    them.
+- id: king-kong-myth-of-terror-island-premium-stern-2025
+  pages:
+  - '110'
+  - '111'
+  present: true
+  venue_notes:
+  - Competition Mode is enabled.
+  - Extra Balls are disabled with stock 15M compensation.
+  - Premium uses physical train locks and animated train destruction; Pro uses virtual
+    locks.
+- id: kismet-williams-1961
+  pages:
+  - '112'
+  - '113'
+  present: true
+  venue_notes:
+  - This venue game is configured for 5-ball play.
+- id: led-zeppelin-premium-stern-2020
+  pages:
+  - '114'
+  - '115'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled under the Competition Install and instead award 10M,
+    multiplied by Icarus X.
+  - The tournament setup is either the current Competition Install or Competition
+    Mode only.
+  - Premium-only Electric Magic and the upper-flipper side ramp distinguish this edition
+    from Pro.
+- id: mandalorian-pro-stern-2021
+  pages:
+  - '116'
+  - '117'
+  present: true
+  venue_notes:
+  - This Pro is on code 1.45; the detailed maintained rulesheet is based on 1.42,
+    so minor post-1.42 changes may apply.
+  - 'Competition Mode or a competition install is in use: Extra Balls and Child Mystery
+    are disabled.'
+  - Ball saves, Razor Crest hit requirements, and difficulty can be operator-adjusted.
+- id: mars-trek-segasa-sonic-1977
+  pages:
+  - '118'
+  - '119'
+  present: true
+  venue_notes:
+  - Configured for 5-ball play.
+  - Extra Balls are disabled/ignored for this event.
+- id: medieval-madness-williams-1997
+  pages:
+  - '120'
+  - '121'
+  present: true
+  venue_notes:
+  - Tournament bank machine is the original Williams 1997 edition, not the Chicago
+    Gaming remake.
+  - Tournament Play is enabled.
+  - Extra balls are not played normally; venue configuration may disable them outright
+    or convert them to points.
+- id: metallica-pro-stern-2013
+  pages:
+  - '122'
+  - '123'
+  present: true
+  venue_notes:
+  - Competition preset is active; the Super Skill Shot Coffin Hurry-Up is deterministically
+    the left orbit.
+  - Coffin locks cannot be collected during other multiballs under the stock/default
+    behavior.
+  - Extra Balls use competition-default handling.
+  - This is the original 2013 Pro, not Metallica Remastered; Pro uses virtual Coffin
+    locks and lacks the Premium/LE hammer and physical three-ball lock.
+- id: meteor-stern-electronics-1979
+  pages:
+  - '124'
+  - '125'
+  present: true
+  venue_notes:
+  - This reference covers original Stern rules, not modern replacement code.
+  - Configured for 3 balls.
+- id: monster-bash-williams-1998
+  pages:
+  - '126'
+  - '127'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled or ignored for this event.
+  - Do not confuse this machine with the 2018 Chicago Gaming Monster Bash Remake.
+  - Frankenstein body-part counts vary by documentation; avoid stating a count in
+    commentary.
+- id: nip-it-bally-1973
+  pages:
+  - '128'
+  - '129'
+  present: true
+  venue_notes:
+  - This machine is configured for 5-ball play.
+  - Stock physical lock stealing is allowed between players.
+  - Both zipper-flipper positions are functioning reliably.
+  - Balligator is fully operational with a reliable, controllable right-flipper feed.
+  - The right-outlane Free Ball Gate is functional.
+- id: old-chicago-bally-1976
+  pages:
+  - '130'
+  - '131'
+  present: true
+  venue_notes:
+  - Configured for five balls; the three-ball three-step top-rollover bonus advance
+    does not apply.
+  - Extra Balls are disabled and worth nothing at this venue.
+  - Spinner value is unknown; it may be set to 10 or 100 points per spin.
+- id: paragon-bally-1979
+  pages:
+  - '132'
+  - '133'
+  present: true
+  venue_notes:
+  - This is a 3-ball tournament game.
+  - PARAGON letters are sequential.
+  - 'All noted physical feeds are especially dangerous on this copy: Valley rejects,
+    Treasure Chamber rejects, Waterfall exit, Beast''s Lair, and the right scissor-flipper
+    area.'
+  - Standard domestic Paragon has four flippers; rarer European export games used
+    three flippers.
+- id: paul-bunyan-gottlieb-1968
+  pages:
+  - '134'
+  - '135'
+  present: true
+  venue_notes: []
+- id: playboy-bally-1978
+  pages:
+  - '136'
+  - '137'
+  present: true
+  venue_notes:
+  - This machine is configured for 3-ball play.
+  - Collected Key lamps are held between balls on this machine.
+  - The top Key lanes are not paired; lanes 1-4 must be collected individually.
+  - The behavior of the 25K outlane lamps after drop-bank completion is currently
+    unknown.
+- id: pokemon-pro-stern-2026
+  pages:
+  - '138'
+  - '139'
+  present: true
+  venue_notes:
+  - Extra balls are converted to points or disabled.
+  - Current v0.85 documentation gives Team Rocket's unlimited-Super window as 15 seconds.
+- id: prospector-segasa-sonic-1977
+  pages:
+  - '140'
+  - '141'
+  present: true
+  venue_notes:
+  - Configured for 5 balls.
+  - Gold Bonus and Double Gold Bonus reset between balls on this copy.
+- id: pulp-fiction-se-chicago-gaming-2023
+  pages:
+  - '142'
+  - '143'
+  present: true
+  venue_notes:
+  - 'Competition Mode is enabled: virtual locks are active, and Extra Balls are disabled.'
+  - No notable venue-specific feed was reported.
+- id: quick-draw-gottlieb-1975
+  pages:
+  - '144'
+  - '145'
+  present: true
+  venue_notes:
+  - This venue is configured for five-ball play.
+- id: radical-bally-1990
+  pages:
+  - '146'
+  - '147'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled.
+  - Mega-Million grace period, base-bonus persistence, and some letter and Extra-Ball
+    behavior can be operator-adjustable.
+- id: rick-and-morty-bse-spooky-2020
+  pages:
+  - '148'
+  - '149'
+  present: true
+  venue_notes:
+  - Tournament Rules is enabled; it alters variable gameplay elements.
+  - Physical lock-stealing is stock.
+  - Extra Balls are disabled or ignored.
+  - Feature ball-save timers are factory, approximately 10 seconds.
+  - The Slam bumper to left-outlane feed is notably dangerous on this machine.
+- id: rush-pro-stern-2022
+  pages:
+  - '150'
+  - '151'
+  present: true
+  venue_notes:
+  - The venue uses either Competition Install or Competition Mode; Competition Install
+    disables extra balls.
+  - Competition Install uses Freewill MB Easy, Freewill Add-A-Ball Hard, and at most
+    two wildcard records.
+  - 'This is the Pro: Time Machine entrance is stationary, Dead End is a standup,
+    and Freewill uses software/add-a-ball behavior rather than the Premium/LE physical
+    lock.'
+- id: scared-stiff-bally-1996
+  pages:
+  - '152'
+  - '153'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled for this event.
+- id: seawitch-stern-electronics-1980
+  pages:
+  - '154'
+  - '155'
+  present: true
+  venue_notes:
+  - This venue is set for 3 balls; pop bumpers score 1K.
+  - The Bonus-X reset threshold is unknown; reaching its configured 6X or 7X threshold
+    resets the next ball to 3X.
+  - Extra Ball is disabled at this venue.
+- id: sinbad-gottlieb-1978
+  pages:
+  - '156'
+  - '157'
+  present: true
+  venue_notes:
+  - Venue game is the solid-state System 1 version with digital displays, not the
+    similar four-player EM version.
+  - This game is configured for 3 balls.
+  - Purple-lane Extra Ball is disabled and provides no benefit.
+- id: solar-fire-williams-1981
+  pages:
+  - '158'
+  - '159'
+  present: true
+  venue_notes:
+  - SOLAR/Bonus-X and FIRE letters remember between balls at factory settings.
+  - Extra Balls and Specials are disabled or converted to points.
+  - Stock multiplayer soft lock stealing is in effect; another player's Multiball
+    can clear a physically held ball while earned lock state remains to be re-established.
+  - Drop-bank timing, Mystery timing, and SOLAR timing are operator-adjustable.
+- id: space-odyssey-williams-1976
+  pages:
+  - '160'
+  - '161'
+  present: true
+  venue_notes:
+  - This machine is configured for 5-ball play.
+  - Extra Balls are disabled and provide no benefit.
+  - Spinner/Extra-Ball difficulty setting is unknown; describe the spinner opportunity
+    only when it is visibly lit.
+- id: space-time-bally-1972
+  pages:
+  - '162'
+  - '163'
+  present: true
+  venue_notes:
+  - Tournament setting is 5 balls.
+  - Extra Ball is disabled.
+  - Time Zone is the two-player 1973 production version with essentially the same
+    rules and playfield; the Time Tunnel prototype lacks Space Time's center up-post
+    and has fewer bumpers.
+- id: spanish-eyes-williams-1972
+  pages:
+  - '164'
+  - '165'
+  present: true
+  venue_notes:
+  - The venue configuration is five-ball.
+- id: speakeasy-bally-1982
+  pages:
+  - '166'
+  - '167'
+  present: true
+  venue_notes:
+  - The machine is confirmed as the standard two-player Speakeasy, not Speakeasy 4.
+  - Roulette operation is confirmed reliable.
+  - The installed ROM revision is unknown; two-player revisions are E877-2 Version
+    1 and E877-3 Version 2.
+- id: spider-man-stern-2007
+  pages:
+  - '168'
+  - '169'
+  present: true
+  venue_notes:
+  - Competition configuration is enabled; Extra Balls are disabled.
+  - For 3× selection, use the live flashing-arrow state as the authority.
+- id: star-trek-premium-stern-2013
+  pages:
+  - '170'
+  - '171'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled for this venue.
+- id: star-wars-fote-premium-stern-2025
+  pages:
+  - '172'
+  - '173'
+  present: true
+  venue_notes:
+  - 'Competition Install is active: it raises Hoth difficulty, sets Jedi Save difficulty
+    to Medium, and disables Extra Balls.'
+  - Premium magnet behavior and moving-ramp, Vader, and Sarlacc feeds remain physical-copy
+    dependent.
+- id: stars-stern-electronics-1978
+  pages:
+  - '174'
+  - '175'
+  present: true
+  venue_notes:
+  - Special awards 100,000 points and Star Specials are open-ended on this setup.
+  - WOW / Extra Ball is disabled.
+  - This venue is set for three balls.
+- id: stranger-things-premium-stern-2019
+  pages:
+  - '176'
+  - '177'
+  present: true
+  venue_notes: []
+- id: strato-flite-williams-1974
+  pages:
+  - '178'
+  - '179'
+  present: true
+  venue_notes:
+  - Configured for 5-ball play.
+  - Two-star Extra Balls are disabled and provide no benefit.
+- id: strikes-and-spares-bally-1978
+  pages:
+  - '180'
+  - '181'
+  present: true
+  venue_notes:
+  - Three-ball game.
+- id: surfer-gottlieb-1976
+  pages:
+  - '182'
+  - '183'
+  present: true
+  venue_notes:
+  - 'Configured for 5-ball play: pop bumpers score 100.'
+  - Lit left-outlane Extra Ball is ignored at this venue.
+  - The final ball correctly begins with Double Bonus active.
+- id: team-one-gottlieb-1977
+  pages:
+  - '184'
+  - '185'
+  present: true
+  venue_notes:
+  - 'This game is set to Novelty: WOW awards are 50K points.'
+  - This game is set for 5-ball play.
+- id: terminator-2-williams-1991
+  pages:
+  - '186'
+  - '187'
+  present: true
+  venue_notes:
+  - Extra Balls are set to No Extra Ball.
+- id: time-fantasy-williams-1983
+  pages:
+  - '188'
+  - '189'
+  present: true
+  venue_notes:
+  - Venue machine is the standard four-player production version.
+  - TIME progress carries between balls; the playfield multiplier resets each ball.
+- id: time-machine-data-east-1988
+  pages:
+  - '190'
+  - '191'
+  present: true
+  venue_notes:
+  - 'Novelty mode is enabled: Extra Balls and free-play awards are disabled, and Special
+    converts to score.'
+- id: total-nuclear-annihilation-spooky-pinball-2017
+  pages:
+  - '192'
+  - '193'
+  present: true
+  venue_notes:
+  - Extra Balls are disabled by event ruling, even though Tournament Mode itself does
+    not remove them.
+  - Reactor Difficulty is set to default.
+  - Stock shared physical locks are in use; lock stealing is allowed.
+  - Original and Collector's Edition rules are nearly identical, though physical upgrades
+    can affect feeds and shot behavior.
+- id: transformers-pro-stern-2026
+  pages:
+  - '194'
+  - '195'
+  present: true
+  venue_notes:
+  - Tournament is using either Full Stern Competition Install or Competition Mode
+    only.
+  - Extra Balls are disabled.
+  - The once-per-game multiball Add-A-Ball is at stock behavior.
+  - 'This is the Pro: static Megatron and simpler lock/feed hardware differ from Premium
+    and LE.'
+  - v0.89 substantially reworked Tech Spec Mania and Combiner scoring; older scoring
+    strategy may not apply.
+- id: tron-legacy-pro-stern-2011
+  pages:
+  - '196'
+  - '197'
+  present: true
+  venue_notes:
+  - Competition Install / Competition Mode is active.
+  - Extra Balls are disabled and converted to 3M points.
+  - The Pro has a fixed Recognizer and standup TRON targets; it does not have the
+    LE-only End of Line/Daft Punk Multiball.
+- id: twilight-zone-bally-1993
+  pages:
+  - '198'
+  - '199'
+  present: true
+  venue_notes:
+  - Tournament Mode is enabled.
+  - Extra Balls are disabled; the Lite Extra Ball Door Panel is automatically considered
+    complete.
+  - Physical ceramic Powerball is in use with the stock six-ball setup.
+  - Ball saver is set to the machine default; confirm the active setting before calling
+    it out.
+  - The physical Powerball is shared machine state between players.
+- id: uncanny-x-men-pro-stern-2024
+  pages:
+  - '200'
+  - '201'
+  present: true
+  venue_notes:
+  - Competition Install or Competition Mode is in use; Extra Balls are disabled.
+  - The Sentinel mouth/head is operating reliably.
+  - Premium/LE have a rising Sentinel body, attacking hands, and an elevated Beast's
+    Lab captive-ball vari-target; Pro uses simpler hardware.
+  - Master Mold remains a placeholder in v0.98, so later code may change deep-game
+    strategy.
+- id: venom-pro-stern-2023
+  pages:
+  - '202'
+  - '203'
+  present: true
+  venue_notes:
+  - Competition Install or Competition Mode is active; persistent Insider Connected
+    progress is not loaded.
+  - 'Use the four default hosts only: Eddie Brock, Flash Thompson, Gwen Stacy, and
+    Peter Parker.'
+  - Extra Balls are disabled.
+  - Premium/LE have transforming geometry and additional mechanisms; this reference
+    is for fixed-geometry Pro.
+- id: volcano-gottlieb-1981
+  pages:
+  - '204'
+  - '205'
+  present: true
+  venue_notes:
+  - Extra Balls convert to 50K, and the Fire Pit remains lit after collection.
+  - The game is configured for 3-ball play; Eruption multiball awards 2× playfield
+    scoring.
+  - Both cabinet-button mechanisms are reliable.
+  - The shaft eject is fast but controllable.
+  - Captured balls remain physically locked between players.
+  - Right-outlane switch 31 status is unknown; do not assume its one-shot Fire Pit
+    light is available.
+- id: walking-dead-pro-stern-2014
+  pages:
+  - '206'
+  - '207'
+  present: true
+  venue_notes:
+  - Competition Install prevents lighting new modes during multiball and converts
+    Extra Ball awards to points.
+- id: white-water-williams-1993
+  pages:
+  - '208'
+  - '209'
+  present: true
+  venue_notes:
+  - Tournament Play / Tournament Mode is enabled; Mystery Canyon awards a fixed 5M.
+  - Extra Balls are disabled in software.
+  - Physical locks are shared between players. Another player's multiball can empty
+    them, requiring a previously qualified player to shoot No Way Out again.
+- id: wild-fyre-stern-electronics-1978
+  pages:
+  - '210'
+  - '211'
+  present: true
+  venue_notes:
+  - Stock Stern Wild Fyre rules are installed; do not apply Reignyted rules.
+  - This game is set for 3-ball play; pop bumpers score 1K.
+  - The Extra Ball feature is software-disabled.
+- id: winchester-mystery-house-barrels-of-fun-2025
+  pages:
+  - '212'
+  - '213'
+  present: true
+  venue_notes:
+  - Extra balls are disabled.
+  - Competition Mode is enabled; its treatment of Mystery and Wildcard-Memento randomness
+    is unclear.
+  - 'Wheelbarrow Ghost Multiball uses the default setting: the first successful qualification
+    starts multiball.'
+  - Ball-save and Run settings are at current defaults.
+- id: wizard-bally-1975
+  pages:
+  - '214'
+  - '215'
+  present: true
+  venue_notes:
+  - This machine is configured for 5 balls.
+  - Machine-awarded Extra Balls are ignored at this venue.
+- id: wizard-of-oz-jersey-jack-2013
+  pages:
+  - '216'
+  - '217'
+  present: true
+  venue_notes:
+  - Competition Mode is enabled; major random sequences are deterministic.
+  - Extra Balls are disabled or converted to score.
+  - Standard, Emerald City LE, 75th Anniversary, and Yellow Brick Road LE have substantially
+    the same core rules; differences are primarily cosmetics, trim, toys, and included
+    hardware.
+- id: world-cup-soccer-bally-1994
+  pages:
+  - '218'
+  - '219'
+  present: true
+  venue_notes:
+  - 'Tournament Play is enabled: it equalizes Multiball and Jackpot state among players.'
+  - Extra Balls are disabled; TV-round and Washington D.C. Extra Ball awards substitute
+    50M.
+  - Starting Multiball rank is unknown.
+  - Magna-Goal is enabled.
+  - Built-in Tournament Play does not itself disable Extra Balls or set Striker Award
+    order.

@@ -132,11 +132,4 @@ trivia:
 - 'Destroying all nine reactors wins the game: the flippers shut off and play ends.'
 summary: Keypad → reactor scoop → upper heating → Critical kill shots → Multiball
   jackpots → nine-reactor endgame
-venue_notes:
-- Extra Balls are disabled by event ruling, even though Tournament Mode itself does not remove
-  them.
-- Reactor Difficulty is set to default.
-- Stock shared physical locks are in use; lock stealing is allowed.
-- Original and Collector's Edition rules are nearly identical, though physical upgrades can
-  affect feeds and shot behavior.
 image: images/total-nuclear-annihilation-spooky-pinball-2017.webp

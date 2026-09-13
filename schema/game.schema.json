@@ -20,7 +20,6 @@
     "commentary",
     "trivia",
     "summary",
-    "venue_notes",
     "image"
   ],
   "properties": {
@@ -329,14 +328,6 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 200
-    },
-    "venue_notes": {
-      "type": "array",
-      "maxItems": 10,
-      "items": {
-        "type": "string",
-        "maxLength": 300
-      }
     },
     "image": {
       "type": "string",

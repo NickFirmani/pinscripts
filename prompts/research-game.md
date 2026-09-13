@@ -294,22 +294,21 @@ Do not include folklore unless clearly identified as such.
 
 Only include questions whose answers could materially change the final commentator page.
 
-Prefer multiple-choice questions so venue staff can answer quickly.
+Prefer multiple-choice questions so a human editor can answer quickly.
 Number every question with a top-level Markdown ordered list (`1.`, `2.`, etc.).
 Use indented lettered choices (`A.`, `B.`, etc.) for multiple-choice answers.
 
-### Tournament and venue checks
+### Edition and configuration checks
 
-Ask about unresolved physical-game or event configuration issues such as:
+Ask about unresolved identity or broadly applicable configuration issues such as:
 
 * exact edition/model
 * installed software revision
-* competition mode
-* extra-ball behavior
-* significant operator adjustments
-* unusually short or long ball save
-* tilt sensitivity when unusually relevant
-* known setup-specific feeds or rejects
+* whether a rule is adjustment-dependent
+
+Do not encode the settings, condition, feeds, or tournament policy of one
+physical machine. Those facts are maintained separately in binder-specific
+venue notes.
 
 Do not ask about a setting merely because it exists.
 

@@ -400,7 +400,7 @@ class ShotLabelTests(unittest.TestCase):
 
     def test_cli_dispatches_shot_label_editor(self):
         with patch.object(cli, "interactive_shot_labels", return_value=0) as editor:
-            result = cli.main(["--shot-labels", "test-game"])
+            result = cli.main(["shot-labels", "test-game"])
 
         self.assertEqual(result, 0)
         editor.assert_called_once_with("test-game")

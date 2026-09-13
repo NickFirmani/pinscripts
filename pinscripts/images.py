@@ -12,9 +12,10 @@ from PIL import Image, UnidentifiedImageError
 
 from scripts.process_images import VARIANTS, process_images, require_imagemagick
 
+from .catalog import load_catalog
 from .content import matching_research_id, suggested_research_id
 from .interaction import confirm_overwrite
-from .paths import DOWNLOADS, GAME_LIST, IMAGES, RESEARCH, ROOT
+from .paths import DOWNLOADS, IMAGES, RESEARCH, ROOT
 
 
 DOWNLOAD_IMAGE_SUFFIXES = {
@@ -41,13 +42,12 @@ def first_game_without_image(
     images_directory=None,
     research_directory=None,
 ):
-    game_list = game_list or GAME_LIST
     images_directory = images_directory or IMAGES
-    games = [
-        line.strip()
-        for line in game_list.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
+    games = (
+        [line.strip() for line in game_list.read_text(encoding="utf-8").splitlines() if line.strip()]
+        if game_list is not None
+        else [game.name for game in load_catalog()]
+    )
     for game in games:
         image_id = image_id_for_game(game, research_directory)
         has_image = (images_directory / f"{image_id}{CANONICAL_IMAGE_SUFFIX}").is_file()
@@ -477,15 +477,13 @@ def low_resolution_color_images(
 
 
 def game_name_for_image(source, game_list=None, research_directory=None):
-    game_list = game_list or GAME_LIST
-    try:
-        games = [
-            line.strip()
-            for line in game_list.read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
-    except OSError:
-        games = []
+    if game_list is not None:
+        try:
+            games = [line.strip() for line in game_list.read_text(encoding="utf-8").splitlines() if line.strip()]
+        except OSError:
+            games = []
+    else:
+        games = [game.name for game in load_catalog()]
     for game in games:
         if image_id_for_game(game, research_directory) == source.stem:
             return game
@@ -675,13 +673,10 @@ def interactive_game_image(game, continue_batch=True):
         try:
             game = first_game_without_image()
         except OSError as error:
-            print(
-                f"ERROR: could not read game list {GAME_LIST}: {error}",
-                file=sys.stderr,
-            )
+            print(f"ERROR: could not read the game catalog: {error}", file=sys.stderr)
             return 1
         if game is None:
-            print(f"Every game in {GAME_LIST} already has an image.")
+            print("Every catalog game already has an image.")
             return 0
         print(f"Selected first game without an image: {game}")
     if not game:

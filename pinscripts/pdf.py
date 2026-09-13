@@ -738,7 +738,7 @@ def rules_footer_text(rules_basis, updated_at):
 
     kind = rules_basis.get("kind")
     version = safe(rules_basis.get("version"))
-    updated_at_text = f"CONTENT LAST UPDATED ON {safe(updated_at)}"
+    updated_at_text = f"UPDATED AT {safe(updated_at)}"
     if kind == "code":
         release_date = safe(rules_basis.get("release_date"))
         return (
@@ -747,8 +747,7 @@ def rules_footer_text(rules_basis, updated_at):
         )
     if kind == "rom":
         return f"ROM {version} • {updated_at_text}"
-    else:
-        return updated_at_text
+    return None
 
 
 def _split_spread(spread_path, output_path, title, prepend_blank_page=False):
@@ -787,8 +786,11 @@ def render_game(
     prepend_blank_page=False,
     page_number_start=None,
     page_labels=None,
+    venue_notes=None,
 ):
     data = load_yaml(content_path)
+    # Venue facts belong to a binder, never to reusable catalog content.
+    data["venue_notes"] = list(venue_notes or ())
     rules_basis = data.get("rules_basis")
     updated_at = git_updated_at(content_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -964,7 +966,7 @@ def render_game(
     print(f"Wrote {output_path}")
 
 
-def _title_page():
+def _title_page(title=None, source_credit=None):
     title_page_stream = BytesIO()
     title_page = Canvas(title_page_stream, pagesize=letter)
     title_page.setTitle("Pinball Commentary Quickstart")
@@ -977,6 +979,9 @@ def _title_page():
         PAGE_H / 2 + 144,
         "Pinball Commentary Quick Reference",
     )
+    if title:
+        title_page.setFont("Helvetica-Bold", 16)
+        title_page.drawCentredString(PAGE_W / 2, PAGE_H / 2 + 112, safe(title))
     subtitle = """A collection of quick informational sheets for pinball commentary.
     
     Disclaimer: The content was researched by LLMs (from official sources), and may contain inaccuracies. 
@@ -1035,16 +1040,20 @@ def _title_page():
         width=100,
         height=100,
     )
+    if source_credit:
+        title_page.setFont("Helvetica", 7.5)
+        title_page.setFillColor(MUTED)
+        title_page.drawCentredString(PAGE_W / 2, 36, safe(source_credit))
 
     title_page.save()
     title_page_stream.seek(0)
     return PdfReader(title_page_stream).pages[0]
 
 
-def merge_pdfs(paths, output_path: Path):
+def merge_pdfs(paths, output_path: Path, title=None, source_credit=None):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     writer = PdfWriter()
-    writer.add_page(_title_page())
+    writer.add_page(_title_page(title, source_credit))
 
     for path in paths:
         writer.append(str(path))

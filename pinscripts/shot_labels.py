@@ -18,8 +18,8 @@ from urllib.parse import urlparse
 import yaml
 from PIL import Image, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
+from .catalog import CatalogError, content_paths
 from .content import load_yaml
-from .manual import ManualError, content_paths_for_manual
 from .paths import CONTENT, ROOT, SHOT_LABELS
 
 
@@ -291,7 +291,7 @@ def shot_label_issue(data, root=ROOT, labels_directory=None):
 
 
 def first_game_needing_labels(paths=None, root=ROOT, labels_directory=None):
-    paths = paths if paths is not None else content_paths_for_manual()
+    paths = paths if paths is not None else content_paths()
     for path in paths:
         data = load_yaml(path)
         image = data.get("image")
@@ -472,7 +472,7 @@ class _LabelSession:
         except (
             KeyError,
             OSError,
-            ManualError,
+            CatalogError,
             ShotLabelError,
             UnidentifiedImageError,
             yaml.YAMLError,
@@ -741,7 +741,7 @@ def _game_for_editor(content_path, issue="", root=ROOT):
 
 
 def _remaining_game_loader(current_path, root=ROOT, paths=None):
-    paths = list(paths) if paths is not None else content_paths_for_manual()
+    paths = list(paths) if paths is not None else content_paths()
     resolved_current = current_path.resolve()
     current_index = next(
         (
@@ -781,7 +781,7 @@ def interactive_shot_labels(game, continue_batch=True):
     else:
         try:
             content_path, issue = first_game_needing_labels()
-        except (OSError, ManualError, yaml.YAMLError) as error:
+        except (OSError, CatalogError, yaml.YAMLError) as error:
             print(f"ERROR: could not select a game: {error}", file=sys.stderr)
             return 1
         if content_path is None:

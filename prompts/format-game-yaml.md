@@ -48,14 +48,15 @@ Formatting rules:
   video modes, extra balls, player controls, mystery awards, and other unusual
   utilities.
 - Condense each skill shot's execution into `how` and its award plus strategic
-  purpose into `value`. Put configuration-sensitive caveats in `venue_notes`
-  when they affect what a commentator should say.
+  purpose into `value`. Keep catalog content location-neutral. Express material
+  adjustment sensitivity generically, without recording one venue's settings.
 - Turn the canonical game name and year into a lowercase, hyphenated `id`, and
   set `image` to `images/<id>.webp`.
 - Keep the most useful, best-supported facts when the schema's item or length
   limits require selection.
-- Preserve edition, revision, and tournament caveats in `venue_notes` when
-  they materially affect interpretation.
+- Preserve edition and revision caveats in the most relevant catalog field when
+  they materially affect interpretation. Omit location-specific settings,
+  feeds, conditions, and tournament policy; those belong to binder overlays.
 - Treat answers in `Human resolutions` as authoritative human-provided context
   for the corresponding questions. Do not treat unresolved questions as facts.
 - `summary` should be approximately 3-7 concepts joined by arrows.

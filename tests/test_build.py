@@ -5,88 +5,78 @@ from unittest.mock import patch
 
 import main as cli
 import pinscripts.build as app
-from pinscripts.manual import Manual, ManualEntry
+from pinscripts.binder import Binder, BinderEntry, BinderSource
 
 
 class BuildTests(unittest.TestCase):
-    def test_render_names_bw_output_and_passes_mode_to_renderer(self):
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory)
-            content_path = Path("content/example-game.yaml")
-
-            with (
-                patch.object(app, "OUTPUT", output),
-                patch.object(app, "render_game") as render_game,
-            ):
-                app.render([content_path], black_and_white=True)
-
-        render_game.assert_called_once_with(
-            content_path,
-            output / "example-game-bw.pdf",
-            True,
-        )
-
-    def test_parser_defaults_to_color_and_accepts_both_modes(self):
-        parser = cli.build_parser()
-
-        self.assertFalse(parser.parse_args(["example-game"]).black_and_white)
-        self.assertFalse(
-            parser.parse_args(["example-game", "--color"]).black_and_white
-        )
-        self.assertTrue(parser.parse_args(["example-game", "--bw"]).black_and_white)
-
-    def test_all_bw_uses_manual_order_and_builds_the_binder(self):
-        content_path = app.CONTENT / "example-game.yaml"
+    def test_catalog_build_discovers_content_without_a_manifest(self):
+        paths = [Path("content/alpha.yaml"), Path("content/bravo.yaml")]
         output = Path("/project/output")
-        manual = Manual(
-            1,
-            (ManualEntry("example-game", ("2", "3")),),
-        )
-
         with (
             patch.object(app, "OUTPUT", output),
-            patch.object(app, "load_manual", return_value=manual),
+            patch.object(app, "content_paths", return_value=paths),
             patch.object(app, "validate_all", return_value=True),
             patch.object(app, "render") as render,
-            patch.object(app, "merge_pdfs") as merge_pdfs,
+            patch.object(app, "merge_pdfs") as merge,
         ):
-            result = app.build_all(True)
+            result = app.build_catalog(True)
+
+        self.assertEqual(result, 0)
+        render.assert_called_once_with(paths, True, None, None)
+        merge.assert_called_once_with(
+            [output / "alpha-bw.pdf", output / "bravo-bw.pdf"],
+            output / "catalog-bw.pdf",
+            "Master Catalog",
+            None,
+        )
+
+    def test_binder_build_applies_pages_and_venue_notes(self):
+        binder = Binder(
+            1,
+            "test-binder",
+            "Test Binder",
+            "printed",
+            None,
+            BinderSource("manual"),
+            (BinderEntry("alpha", ("19.1", "19.2"), True, ("Local setup.",)),),
+        )
+        output = Path("/project/output")
+        path = app.CONTENT / "alpha.yaml"
+        with (
+            patch.object(app, "OUTPUT", output),
+            patch.object(app, "load_binder", return_value=binder),
+            patch.object(app, "validate_all", return_value=True),
+            patch.object(app, "render") as render,
+            patch.object(app, "merge_pdfs") as merge,
+        ):
+            result = app.build_binder("test-binder")
 
         self.assertEqual(result, 0)
         render.assert_called_once_with(
-            [content_path],
-            True,
-            True,
-            {"example-game": ("2", "3")},
+            [path],
+            False,
+            {"alpha": ("19.1", "19.2")},
+            {"alpha": ("Local setup.",)},
         )
-        merge_pdfs.assert_called_once_with(
-            [output / "example-game-bw.pdf"],
-            output / "binder-bw.pdf",
+        merge.assert_called_once_with(
+            [output / "alpha.pdf"],
+            output / "binders" / "test-binder.pdf",
+            "Test Binder",
+            None,
         )
 
-    def test_main_dispatches_full_build(self):
-        with patch.object(cli, "build_all", return_value=0) as build:
-            result = cli.main(["--all", "--bw"])
-
-        self.assertEqual(result, 0)
-        build.assert_called_once_with(True)
-
-    def test_main_dispatches_add_and_update_workflows(self):
-        with patch.object(cli, "interactive_add_game", return_value=0) as add:
-            self.assertEqual(cli.main(["--add", "New Game 2026"]), 0)
-        add.assert_called_once_with("New Game 2026")
-
-        with patch.object(cli, "interactive_update_game", return_value=0) as update:
-            self.assertEqual(cli.main(["--update", "example-game", "--bw"]), 0)
-        update.assert_called_once_with("example-game")
-
-    def test_print_packet_renders_every_game_with_its_permanent_labels(self):
-        manual = Manual(
+    def test_packet_uses_selected_binder_context(self):
+        binder = Binder(
             1,
+            "test-binder",
+            "Test Binder",
+            "printed",
+            None,
+            BinderSource("manual"),
             (
-                ManualEntry("alpha", ("18", "19")),
-                ManualEntry("bravo", ("19.1", "19.2")),
-                ManualEntry("charlie", ("20", "21")),
+                BinderEntry("alpha", ("18", "19")),
+                BinderEntry("bravo", ("19.1", "19.2"), True, ("Venue note.",)),
+                BinderEntry("charlie", ("20", "21")),
             ),
         )
         with tempfile.TemporaryDirectory() as directory:
@@ -95,16 +85,25 @@ class BuildTests(unittest.TestCase):
                 patch.object(app, "OUTPUT", output),
                 patch.object(app, "validate_all", return_value=True),
                 patch.object(app, "render_game") as render_game,
-                patch.object(app, "merge_print_packet") as merge_packet,
+                patch.object(app, "merge_print_packet"),
             ):
-                result = app.build_print_packet("bravo", "add", manual)
+                packet = app.build_print_packet("bravo", "update", binder)
 
-        self.assertEqual(result, output / "print" / "add-bravo.pdf")
+        self.assertEqual(packet, output / "print/test-binder/update-bravo.pdf")
         self.assertEqual(
             [call.kwargs["page_labels"] for call in render_game.call_args_list],
             [("18", "19"), ("19.1", "19.2"), ("20", "21")],
         )
-        merge_packet.assert_called_once()
+        self.assertEqual(render_game.call_args_list[1].kwargs["venue_notes"], ("Venue note.",))
+
+    def test_cli_dispatches_catalog_and_binder_builds(self):
+        with patch.object(cli, "build_catalog", return_value=0) as catalog:
+            self.assertEqual(cli.main(["catalog", "build", "--bw"]), 0)
+        catalog.assert_called_once_with(True)
+
+        with patch.object(cli, "build_binder", return_value=0) as binder:
+            self.assertEqual(cli.main(["binder", "build", "lyons-classic-pinball"]), 0)
+        binder.assert_called_once_with("lyons-classic-pinball", False)
 
 
 if __name__ == "__main__":

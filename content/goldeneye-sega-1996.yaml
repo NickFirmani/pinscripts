@@ -138,11 +138,4 @@ trivia:
 - There is no mechanical knocker; an electronic “BLOP” announces a replay.
 summary: Build locks → raise satellite ramp → collect four jackpots → 200M satellite
   release → moving Super Jackpot
-venue_notes:
-- CPU is reported as probably 4.04; the detailed rules documentation is based on CPU
-  4.02, so exact revision differences are not established.
-- Sega Tournament Mode is enabled.
-- Extra Ball handling is unknown.
-- Satellite and Eject-or-Die magnet reliability is unknown.
-- Q-target rebounds are the notably dangerous feed on this machine.
 image: images/goldeneye-sega-1996.webp

@@ -128,10 +128,4 @@ trivia:
   rules architecture.
 summary: Jobs → multiball stack → blue-enemy multipliers → Lights Out cash-out → Battle
   decisions
-venue_notes:
-- Tournament configuration is reported as either full Stern Competition Install or Competition
-  Mode only.
-- Extra Balls are disabled; their milestone compensation is 10M, or 20M during Lights Out.
-- The Pro has virtual Deconsecrated locks, a static car, static Blood Oath Marker, and standup-target
-  Weapons Crate; it does not have the Premium/LE car skill shot.
 image: images/john-wick-pro-stern-2024.webp

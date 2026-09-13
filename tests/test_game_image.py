@@ -312,7 +312,11 @@ class GameImageTests(unittest.TestCase):
                 patch.object(app, "DOWNLOADS", downloads),
                 patch.object(app, "IMAGES", images),
                 patch.object(app, "RESEARCH", research),
-                patch.object(app, "GAME_LIST", game_list),
+                patch.object(
+                    app,
+                    "first_game_without_image",
+                    side_effect=["Missing Game 2026", None],
+                ),
                 patch.object(
                     app,
                     "open_google_image_search",
@@ -570,7 +574,7 @@ class GameImageTests(unittest.TestCase):
             ) as flow,
             patch(
                 "sys.argv",
-                ["main.py", "--game-image-bw", "Jaws (Pro) Stern 2024"],
+                ["main.py", "game", "image-bw", "Jaws (Pro) Stern 2024"],
             ),
         ):
             result = cli.main()
@@ -736,7 +740,7 @@ class GameImageTests(unittest.TestCase):
             ) as flow,
             patch(
                 "sys.argv",
-                ["main.py", "--game-image-low-res", "Jaws (Pro) Stern 2024"],
+                ["main.py", "game", "image-low-res", "Jaws (Pro) Stern 2024"],
             ),
         ):
             result = cli.main()

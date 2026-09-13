@@ -236,7 +236,7 @@ shots:
             with (
                 patch.object(builder, "CONTENT", content),
                 patch.object(builder, "render") as render,
-                patch.object(sys, "argv", ["main.py", "broken"]),
+                patch.object(sys, "argv", ["main.py", "game", "build", "broken"]),
                 redirect_stderr(io.StringIO()),
             ):
                 result = cli.main()

@@ -116,8 +116,4 @@ trivia:
 - Licensed 2020 Rev 3 software was written to improve tournament fairness.
 summary: RADICAL letters → locks → 2-ball Multiball → left-ramp Mega-Million → relight
   jackpot
-venue_notes:
-- Extra Balls are disabled.
-- Mega-Million grace period, base-bonus persistence, and some letter and Extra-Ball behavior
-  can be operator-adjustable.
 image: images/radical-bally-1990.webp

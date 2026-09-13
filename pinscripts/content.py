@@ -14,6 +14,10 @@ from .paths import RESEARCH, SCHEMA
 
 
 PIN_ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+LOCATION_SPECIFIC_PATTERN = re.compile(
+    r"\b(?:this venue|at this venue|on this venue|venue game|venue machine)\b",
+    re.IGNORECASE,
+)
 
 
 def load_yaml(path: Path):
@@ -109,7 +113,29 @@ def validation_errors(data, validator):
     )
     messages = [f"{error_path(error)}: {error.message}" for error in errors]
     messages.extend(rules_basis_errors(data))
+    messages.extend(location_specific_errors(data))
     return messages
+
+
+def location_specific_errors(data):
+    """Reject physical-location claims from reusable catalog content."""
+    errors = []
+
+    def walk(value, path="$", key=None):
+        if isinstance(value, dict):
+            for child_key, child in value.items():
+                walk(child, f"{path}.{child_key}", child_key)
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                walk(child, f"{path}[{index}]", key)
+        elif isinstance(value, str) and LOCATION_SPECIFIC_PATTERN.search(value):
+            errors.append(
+                f"{path}: catalog content must be location-neutral; "
+                "put physical-machine facts in binder venue_notes"
+            )
+
+    walk(data)
+    return errors
 
 
 def rules_basis_errors(data):

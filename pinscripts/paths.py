@@ -13,8 +13,7 @@ class ProjectPaths:
     images: Path
     shot_labels: Path
     downloads: Path
-    game_list: Path
-    manual: Path
+    binders: Path
     schema: Path
     research_prompt_template: Path
     format_prompt_template: Path
@@ -30,8 +29,7 @@ class ProjectPaths:
             images=root / "images",
             shot_labels=content / "shot-labels",
             downloads=Path.home() / "Downloads",
-            game_list=content / "list_of_games.txt",
-            manual=root / "manual.yaml",
+            binders=root / "binders",
             schema=root / "schema" / "game.schema.json",
             research_prompt_template=root / "prompts" / "research-game.md",
             format_prompt_template=root / "prompts" / "format-game-yaml.md",
@@ -47,8 +45,7 @@ OUTPUT = PATHS.output
 IMAGES = PATHS.images
 SHOT_LABELS = PATHS.shot_labels
 DOWNLOADS = PATHS.downloads
-GAME_LIST = PATHS.game_list
-MANUAL = PATHS.manual
+BINDERS = PATHS.binders
 SCHEMA = PATHS.schema
 RESEARCH_PROMPT_TEMPLATE = PATHS.research_prompt_template
 FORMAT_PROMPT_TEMPLATE = PATHS.format_prompt_template

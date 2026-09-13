@@ -107,9 +107,9 @@ class ProcessImagesTests(unittest.TestCase):
                 "sys.argv",
                 [
                     "main.py",
-                    "--process-images",
+                    "process-images",
                     "playfield.jpg",
-                    "--image-output-dir",
+                    "--output-dir",
                     "variants",
                 ],
             ),

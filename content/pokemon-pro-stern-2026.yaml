@@ -146,7 +146,4 @@ trivia:
   letters between players and games.
 summary: Right ramp ×3 → Pikachu MB → BATTLE/add-a-ball → Team Rocket → shot X + 2×
   Playfield → Supers
-venue_notes:
-- Extra balls are converted to points or disabled.
-- Current v0.85 documentation gives Team Rocket's unlimited-Super window as 15 seconds.
 image: images/pokemon-pro-stern-2026.webp

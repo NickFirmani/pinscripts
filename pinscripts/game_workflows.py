@@ -1,4 +1,4 @@
-"""Guided workflows for adding and updating games in a printed binder."""
+"""Guided workflows for reusable, location-neutral catalog games."""
 
 import difflib
 import sys
@@ -8,19 +8,13 @@ from pathlib import Path
 import yaml
 
 from .ai import interactive_game_format, interactive_research_prompt
-from .build import BuildInputError, build_print_packet, validate_all
+from .binder import BinderError, binders_containing
+from .build import BuildInputError, build_print_packet, validate_all, validate_game_contexts
+from .catalog import resolve_game
 from .content import PIN_ID_PATTERN, load_yaml, suggested_research_id
 from .images import interactive_black_and_white_images, interactive_game_image
-from .manual import (
-    ManualError,
-    insert_game,
-    load_manual,
-    suggested_insertion_index,
-    write_manual,
-)
 from .paths import CONTENT, RESEARCH, ROOT
 from .shot_labels import interactive_shot_labels
-from .venue_notes import interactive_review_venue_notes
 
 
 def ask_yes_no(prompt, default=True):
@@ -56,14 +50,6 @@ def request_print_mode():
         print("Enter 'c' for color or 'b' for black-and-white.", file=sys.stderr)
 
 
-def _load_manual_or_report():
-    try:
-        return load_manual()
-    except ManualError as error:
-        print(f"ERROR: invalid printed-manual manifest: {error}", file=sys.stderr)
-        return None
-
-
 def _game_name(game_id):
     path = CONTENT / f"{game_id}.yaml"
     try:
@@ -73,45 +59,7 @@ def _game_name(game_id):
     return data.get("name", game_id) if isinstance(data, dict) else game_id
 
 
-def _describe_location(manual, index):
-    if index:
-        previous = manual.games[index - 1]
-        left = f"{_game_name(previous.game_id)} (page {previous.pages[1]})"
-    else:
-        left = "the title page (page 1)"
-    if index < len(manual.games):
-        following = manual.games[index]
-        right = f"{_game_name(following.game_id)} (page {following.pages[0]})"
-    else:
-        right = "the end of the manual"
-    return left, right
-
-
-def _resolve_game(manual, query):
-    query = query.strip().lower()
-    if not query:
-        return None
-    exact = [entry.game_id for entry in manual.games if entry.game_id == query]
-    if exact:
-        return exact[0]
-    matches = []
-    for entry in manual.games:
-        name = _game_name(entry.game_id).lower()
-        if query in entry.game_id or query in name:
-            matches.append(entry.game_id)
-    if len(matches) == 1:
-        return matches[0]
-    if matches:
-        print("Matches:")
-        for game_id in matches[:20]:
-            entry = manual.entry(game_id)
-            print(f"  {game_id:55} pages {entry.pages[0]}-{entry.pages[1]}")
-        if len(matches) > 20:
-            print(f"  ...and {len(matches) - 20} more")
-    return None
-
-
-def _request_game_id(manual, supplied):
+def _request_game_id(supplied):
     query = supplied.strip()
     while True:
         if not query:
@@ -119,9 +67,9 @@ def _request_game_id(manual, supplied):
                 query = input("Game ID or part of its name: ").strip()
             except EOFError:
                 return None
-        game_id = _resolve_game(manual, query)
-        if game_id:
-            return game_id
+        game = resolve_game(query)
+        if game:
+            return game.game_id
         if query:
             print(f"No unique game matched {query!r}.", file=sys.stderr)
         query = ""
@@ -151,28 +99,6 @@ def _request_new_identity(description):
         )
         return None, None
     return description, game_id
-
-
-def _choose_insertion_index(manual, game_id):
-    proposed = suggested_insertion_index(manual, game_id)
-    left, right = _describe_location(manual, proposed)
-    print(f"\nSuggested binder location: after {left}, before {right}.")
-    if ask_yes_no("Use this location?"):
-        return proposed
-
-    while True:
-        try:
-            answer = input(
-                "Insert after which game ID? Enter 'title' for the beginning: "
-            ).strip()
-        except EOFError:
-            return None
-        if answer.lower() == "title":
-            return 0
-        anchor = _resolve_game(manual, answer)
-        if anchor:
-            return manual.index(anchor) + 1
-        print("Enter one unambiguous game ID or name.", file=sys.stderr)
 
 
 def _ensure_game_assets(
@@ -228,26 +154,15 @@ def _ensure_game_assets(
 
 
 def interactive_add_game(description=""):
-    manual = _load_manual_or_report()
-    if manual is None:
-        return 1
     description, game_id = _request_new_identity(description)
     if not game_id:
         return 2
-    if any(entry.game_id == game_id for entry in manual.games):
+    if (CONTENT / f"{game_id}.yaml").is_file():
         print(
-            f"ERROR: {game_id} is already in the manual; use make update instead.",
+            f"ERROR: {game_id} is already in the catalog; use game update instead.",
             file=sys.stderr,
         )
         return 1
-
-    insertion_index = _choose_insertion_index(manual, game_id)
-    if insertion_index is None:
-        print("Add cancelled.")
-        return 1
-    proposed = insert_game(manual, game_id, insertion_index)
-    pages = proposed.entry(game_id).pages
-    print(f"Reserved page labels {pages[0]} and {pages[1]} (not saved yet).")
 
     content_path = CONTENT / f"{game_id}.yaml"
     if content_path.is_file():
@@ -270,8 +185,6 @@ def interactive_add_game(description=""):
         if not content_path.is_file():
             print("Add paused before formatted content was created; run it again to resume.")
             return 1
-    if interactive_review_venue_notes(game_id) != 0:
-        return 1
 
     if not _ensure_game_assets(
         description,
@@ -282,40 +195,7 @@ def interactive_add_game(description=""):
         return 1
     if not validate_all([content_path]):
         return 1
-
-    print(
-        f"\nReady to add {_game_name(game_id)} on pages {pages[0]}-{pages[1]}."
-    )
-    if not ask_yes_no("Add this game and its page labels to manual.yaml?"):
-        print("Add cancelled; manual.yaml was not changed.")
-        return 1
-    try:
-        write_manual(proposed)
-    except (ManualError, OSError, ValueError) as error:
-        print(f"ERROR: could not update manual.yaml: {error}", file=sys.stderr)
-        return 1
-    print(f"\nAdded {game_id} to manual.yaml on pages {pages[0]}-{pages[1]}.")
-
-    if not ask_yes_no("Generate the four-page add packet now?"):
-        print(
-            "manual.yaml is saved; no print packet was generated. "
-            f"Use make update GAME=\"{game_id}\" when you are ready to print."
-        )
-        return 0
-    black_and_white = request_print_mode()
-    if black_and_white is None:
-        print("manual.yaml is saved; print packet generation was cancelled.")
-        return 0
-    try:
-        packet = build_print_packet(game_id, "add", proposed, black_and_white)
-    except (BuildInputError, OSError, ValueError) as error:
-        print(
-            "ERROR: manual.yaml was saved, but the add packet could not be "
-            f"generated: {error}",
-            file=sys.stderr,
-        )
-        return 1
-    print(f"Print {packet.relative_to(ROOT)} double-sided, flipping on the long edge.")
+    print(f"Added {_game_name(game_id)} to the catalog as {game_id}.")
     return 0
 
 
@@ -360,6 +240,9 @@ def _refresh_content_with_review(game_id, description):
         )
         print("\nContent changes:\n")
         print(diff or "(No textual changes.)")
+        if not validate_game_contexts(candidate, game_id):
+            print("Candidate discarded because one or more render contexts failed.")
+            return False
         if not ask_yes_no("Replace the current content with this candidate?"):
             print("Candidate discarded; the original YAML is unchanged.")
             return False
@@ -369,26 +252,21 @@ def _refresh_content_with_review(game_id, description):
 
 
 def interactive_update_game(game=""):
-    manual = _load_manual_or_report()
-    if manual is None:
-        return 1
-    game_id = _request_game_id(manual, game)
+    game_id = _request_game_id(game)
     if not game_id:
         return 2
-    entry = manual.entry(game_id)
-    print(f"\nUpdating {_game_name(game_id)} (pages {entry.pages[0]}-{entry.pages[1]}).")
+    print(f"\nUpdating catalog game {_game_name(game_id)}.")
     print("  1. Refresh researched content")
     print("  2. Replace the playfield image")
     print("  3. Redo shot labels")
-    print("  4. Review venue notes")
-    print("  5. Build a packet from changes already made")
+    print("  4. Validate and build affected binder packets")
     try:
-        actions = input("Choose steps (comma-separated) [5]: ").strip() or "5"
+        actions = input("Choose steps (comma-separated) [4]: ").strip() or "4"
     except EOFError:
-        actions = "5"
+        actions = "4"
     requested = {part.strip() for part in actions.split(",") if part.strip()}
-    if not requested <= {"1", "2", "3", "4", "5"}:
-        print("ERROR: choose one or more numbers from 1 through 5.", file=sys.stderr)
+    if not requested <= {"1", "2", "3", "4"}:
+        print("ERROR: choose one or more numbers from 1 through 4.", file=sys.stderr)
         return 2
 
     try:
@@ -416,14 +294,22 @@ def interactive_update_game(game=""):
         rebuild_black_and_white=True,
     ):
         return 1
-    if "4" in requested and interactive_review_venue_notes(game_id):
-        return 1
-
     content_path = CONTENT / f"{game_id}.yaml"
-    if not validate_all([content_path]):
+    if not validate_game_contexts(content_path, game_id):
         return 1
-    if not ask_yes_no("Build the four-page update packet?"):
-        print("Update packet cancelled.")
+    try:
+        affected = binders_containing(game_id)
+    except BinderError as error:
+        print(f"ERROR: could not validate affected binders: {error}", file=sys.stderr)
+        return 1
+    printed = [binder for binder in affected if binder.status == "printed"]
+    print(
+        f"Validated the catalog game against {len(affected)} binder(s); "
+        f"{len(printed)} printed binder(s) need replacement packets."
+    )
+    if "4" not in requested or not printed:
+        return 0
+    if not ask_yes_no(f"Build {len(printed)} four-page update packet(s)?"):
         return 0
     black_and_white = request_print_mode()
     if black_and_white is None:
@@ -437,9 +323,13 @@ def interactive_update_game(game=""):
     ):
         return 1
     try:
-        packet = build_print_packet(game_id, "update", manual, black_and_white)
+        packets = [
+            build_print_packet(game_id, "update", binder, black_and_white)
+            for binder in printed
+        ]
     except (BuildInputError, OSError, ValueError) as error:
         print(f"ERROR: could not build update packet: {error}", file=sys.stderr)
         return 1
-    print(f"Print {packet.relative_to(ROOT)} double-sided, flipping on the long edge.")
+    for packet in packets:
+        print(f"Print {packet.relative_to(ROOT)} double-sided, flipping on the long edge.")
     return 0

@@ -6,178 +6,190 @@ import argparse
 import sys
 from pathlib import Path
 
-from pinscripts.ai import (
-    interactive_game_format,
-    interactive_research_prompt,
-    print_format_prompt,
+from pinscripts.ai import interactive_game_format, interactive_research_prompt, print_format_prompt
+from pinscripts.binder_workflows import (
+    add_binder_game,
+    create_binder_interactive,
+    edit_venue_notes,
+    mark_binder_printed,
+    remove_binder_game,
+    sync_binder_interactive,
 )
-from pinscripts.build import BuildInputError, build_all, build_game
+from pinscripts.build import (
+    BuildInputError,
+    build_binder,
+    build_catalog,
+    build_game,
+    build_print_packet,
+    validate_project,
+)
+from pinscripts.game_workflows import interactive_add_game, interactive_update_game
 from pinscripts.images import (
     interactive_black_and_white_images,
     interactive_game_image,
     interactive_low_resolution_image_repair,
 )
-from pinscripts.game_workflows import interactive_add_game, interactive_update_game
 from pinscripts.shot_labels import interactive_shot_labels
-from pinscripts.venue_notes import interactive_review_venue_notes
 from scripts.process_images import process_images
+
+
+def _add_color_mode(parser):
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--color", dest="black_and_white", action="store_false")
+    modes.add_argument("--black-and-white", "--bw", dest="black_and_white", action="store_true")
+    parser.set_defaults(black_and_white=False)
 
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description="Validate and render pinball commentary sheets.",
+        description="Manage a location-neutral pinball catalog and physical binder manifests."
     )
-    actions = parser.add_mutually_exclusive_group()
-    actions.add_argument(
-        "game",
-        nargs="?",
-        help="Game ID, e.g. playboy-bally-1978",
-    )
-    actions.add_argument(
-        "--all",
-        action="store_true",
-        help="Render every game in manual.yaml and create binder.pdf",
-    )
-    actions.add_argument(
-        "--add",
-        nargs="?",
-        const="",
-        metavar="DESCRIPTION",
-        help="Interactively add a game to the printed manual",
-    )
-    actions.add_argument(
-        "--update",
-        nargs="?",
-        const="",
-        metavar="GAME",
-        help="Interactively update a game and build a replacement packet",
-    )
-    actions.add_argument(
-        "--game-research",
-        nargs="?",
-        const="",
-        metavar="DESCRIPTION",
-        help="Print a research prompt, prompting for the description if omitted",
-    )
-    actions.add_argument(
-        "--game-format",
-        nargs="?",
-        const="",
-        metavar="RESEARCH_ID",
-        help="Format an existing content/research/<id>.md brief",
-    )
-    actions.add_argument(
-        "--game-image",
-        nargs="?",
-        const="",
-        metavar="NAME",
-        help="Open a Google Image search and copy the newest download",
-    )
-    actions.add_argument(
-        "--game-image-bw",
-        nargs="?",
-        const="",
-        metavar="NAME",
-        help="Generate and choose a black-and-white image variant",
-    )
-    actions.add_argument(
-        "--game-image-low-res",
-        nargs="?",
-        const="",
-        metavar="NAME",
-        help="Replace low-resolution images using Google Image search",
-    )
-    actions.add_argument(
-        "--shot-labels",
-        nargs="?",
-        const="",
-        metavar="GAME",
-        help="Place numbered shot markers on a game's playfield image",
-    )
-    actions.add_argument(
-        "--review-venue-notes",
-        nargs="?",
-        const="",
-        metavar="GAME",
-        help="Accept, remove, or edit Venue Notes one at a time",
-    )
-    actions.add_argument(
-        "--format-prompt",
-        metavar="RESEARCH",
-        help="Print the phase-two YAML prompt using a research file, or - for stdin",
-    )
-    actions.add_argument(
-        "--process-images",
-        metavar="SOURCE",
-        type=Path,
-        help="Generate print variants of a playfield image",
-    )
-    parser.add_argument(
-        "--image-output-dir",
-        metavar="DIRECTORY",
-        type=Path,
-        help="Output directory for --process-images",
-    )
-    image_modes = parser.add_mutually_exclusive_group()
-    image_modes.add_argument(
-        "--color",
-        dest="black_and_white",
-        action="store_false",
-        help="Use the image named in the game YAML (default)",
-    )
-    image_modes.add_argument(
-        "--black-and-white",
-        "--bw",
-        dest="black_and_white",
-        action="store_true",
-        help="Use the image with -bw appended before its extension",
-    )
-    parser.set_defaults(black_and_white=False)
+    commands = parser.add_subparsers(dest="command", required=True)
+
+    catalog = commands.add_parser("catalog", help="Build the master catalog PDF")
+    catalog_commands = catalog.add_subparsers(dest="catalog_command", required=True)
+    catalog_build = catalog_commands.add_parser("build")
+    _add_color_mode(catalog_build)
+
+    game = commands.add_parser("game", help="Create, update, or render catalog content")
+    game_commands = game.add_subparsers(dest="game_command", required=True)
+    game_build = game_commands.add_parser("build")
+    game_build.add_argument("game_id")
+    game_build.add_argument("--binder", dest="binder_id")
+    _add_color_mode(game_build)
+    game_add = game_commands.add_parser("add")
+    game_add.add_argument("description", nargs="?", default="")
+    game_update = game_commands.add_parser("update")
+    game_update.add_argument("game", nargs="?", default="")
+    game_research = game_commands.add_parser("research")
+    game_research.add_argument("description", nargs="?", default="")
+    game_format = game_commands.add_parser("format")
+    game_format.add_argument("research_id", nargs="?", default="")
+    game_image = game_commands.add_parser("image")
+    game_image.add_argument("game", nargs="?", default="")
+    game_image_bw = game_commands.add_parser("image-bw")
+    game_image_bw.add_argument("game", nargs="?", default="")
+    game_image_low = game_commands.add_parser("image-low-res")
+    game_image_low.add_argument("game", nargs="?", default="")
+
+    binder = commands.add_parser("binder", help="Manage physical binder manifests")
+    binder_commands = binder.add_subparsers(dest="binder_command", required=True)
+    binder_create = binder_commands.add_parser("create")
+    binder_create.add_argument("binder_id")
+    binder_create.add_argument("--title")
+    create_source = binder_create.add_mutually_exclusive_group(required=True)
+    create_source.add_argument("--games-file", type=Path)
+    create_source.add_argument("--pinball-map")
+    create_source.add_argument("--paste", action="store_true")
+    binder_sync = binder_commands.add_parser("sync")
+    binder_sync.add_argument("binder_id")
+    sync_source = binder_sync.add_mutually_exclusive_group()
+    sync_source.add_argument("--pinball-map")
+    sync_source.add_argument("--paste", action="store_true")
+    binder_build = binder_commands.add_parser("build")
+    binder_build.add_argument("binder_id")
+    _add_color_mode(binder_build)
+    binder_add = binder_commands.add_parser("add-game")
+    binder_add.add_argument("binder_id")
+    binder_add.add_argument("game")
+    binder_remove = binder_commands.add_parser("remove-game")
+    binder_remove.add_argument("binder_id")
+    binder_remove.add_argument("game")
+    binder_notes = binder_commands.add_parser("notes")
+    binder_notes.add_argument("binder_id")
+    binder_notes.add_argument("game")
+    binder_printed = binder_commands.add_parser("mark-printed")
+    binder_printed.add_argument("binder_id")
+    binder_printed.add_argument("--date", dest="printed_at")
+    binder_packet = binder_commands.add_parser("packet")
+    binder_packet.add_argument("binder_id")
+    binder_packet.add_argument("game_id")
+    binder_packet.add_argument("--operation", choices=("add", "update"), default="update")
+    _add_color_mode(binder_packet)
+
+    shot_labels = commands.add_parser("shot-labels")
+    shot_labels.add_argument("game", nargs="?", default="")
+
+    validation = commands.add_parser("validate")
+
+    image_process = commands.add_parser("process-images")
+    image_process.add_argument("source", type=Path)
+    image_process.add_argument("--output-dir", type=Path)
+
+    format_prompt = commands.add_parser("format-prompt")
+    format_prompt.add_argument("research")
     return parser
 
 
 def main(argv=None):
     parser = build_parser()
     args = parser.parse_args(argv)
-
-    if args.add is not None:
-        return interactive_add_game(args.add)
-    if args.update is not None:
-        return interactive_update_game(args.update)
-    if args.game_research is not None:
-        return interactive_research_prompt(args.game_research)
-    if args.game_format is not None:
-        return interactive_game_format(args.game_format)
-    if args.game_image is not None:
-        return interactive_game_image(args.game_image)
-    if args.game_image_bw is not None:
-        return interactive_black_and_white_images(args.game_image_bw)
-    if args.game_image_low_res is not None:
-        return interactive_low_resolution_image_repair(args.game_image_low_res)
-    if args.shot_labels is not None:
-        return interactive_shot_labels(args.shot_labels)
-    if args.review_venue_notes is not None:
-        return interactive_review_venue_notes(args.review_venue_notes)
-    if args.format_prompt:
-        try:
-            return print_format_prompt(args.format_prompt)
-        except OSError as error:
-            parser.error(f"could not read research brief: {error}")
-    if args.process_images:
-        process_images(args.process_images, args.image_output_dir)
-        return 0
-    if args.image_output_dir:
-        parser.error("--image-output-dir requires --process-images")
-    if args.game:
-        try:
-            return build_game(args.game, args.black_and_white)
-        except BuildInputError as error:
-            parser.error(str(error))
-    if args.all:
-        return build_all(args.black_and_white)
-
-    parser.print_help()
-    return 0
+    try:
+        if args.command == "catalog":
+            return build_catalog(args.black_and_white)
+        if args.command == "validate":
+            return validate_project()
+        if args.command == "shot-labels":
+            return interactive_shot_labels(args.game)
+        if args.command == "process-images":
+            process_images(args.source, args.output_dir)
+            return 0
+        if args.command == "format-prompt":
+            return print_format_prompt(args.research)
+        if args.command == "game":
+            if args.game_command == "build":
+                return build_game(args.game_id, args.black_and_white, args.binder_id)
+            if args.game_command == "add":
+                return interactive_add_game(args.description)
+            if args.game_command == "update":
+                return interactive_update_game(args.game)
+            if args.game_command == "research":
+                return interactive_research_prompt(args.description)
+            if args.game_command == "format":
+                return interactive_game_format(args.research_id)
+            if args.game_command == "image":
+                return interactive_game_image(args.game)
+            if args.game_command == "image-bw":
+                return interactive_black_and_white_images(args.game)
+            if args.game_command == "image-low-res":
+                return interactive_low_resolution_image_repair(args.game)
+        if args.command == "binder":
+            if args.binder_command == "create":
+                return create_binder_interactive(
+                    args.binder_id,
+                    args.title,
+                    games_file=args.games_file,
+                    pinball_map=args.pinball_map,
+                    paste=args.paste,
+                )
+            if args.binder_command == "sync":
+                return sync_binder_interactive(
+                    args.binder_id,
+                    pinball_map=args.pinball_map,
+                    paste=args.paste,
+                )
+            if args.binder_command == "build":
+                return build_binder(args.binder_id, args.black_and_white)
+            if args.binder_command == "add-game":
+                return add_binder_game(args.binder_id, args.game)
+            if args.binder_command == "remove-game":
+                return remove_binder_game(args.binder_id, args.game)
+            if args.binder_command == "notes":
+                return edit_venue_notes(args.binder_id, args.game)
+            if args.binder_command == "mark-printed":
+                return mark_binder_printed(args.binder_id, args.printed_at)
+            if args.binder_command == "packet":
+                packet = build_print_packet(
+                    args.game_id,
+                    args.operation,
+                    args.binder_id,
+                    args.black_and_white,
+                )
+                print(f"Wrote {packet}")
+                return 0
+    except (BuildInputError, OSError, ValueError) as error:
+        parser.error(str(error))
+    parser.error("unknown command")
 
 
 if __name__ == "__main__":

@@ -140,12 +140,4 @@ trivia:
 - Version 1.22 added Classic Mode, with Seawitch-like scoring and no multiballs, magnets,
   or center-disc action.
 summary: Songs → Song Super Jackpot → Beatlemania → loop/spinner multipliers → Taxman
-venue_notes:
-- Competition Install disables extra balls and player game-mode selection, and requires Level
-  3 on all five songs for Beatlemania.
-- 'Taxman qualification is venue-adjustable: HARD uses Level 5 songs and three All My Loving
-  jackpots; EASY uses Level 3 on other songs and one All My Loving jackpot.'
-- Do not state a Beatlemania ball count without confirming this machine’s setting.
-- Gold, Platinum, and Diamond editions are cosmetic distinctions; no rules or playfield differences
-  were found.
 image: images/beatles-gold-stern-2018.webp
