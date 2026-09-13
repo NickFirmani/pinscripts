@@ -1,6 +1,8 @@
 """Guided workflows for reusable, location-neutral catalog games."""
 
+from contextlib import contextmanager
 import difflib
+import fcntl
 import sys
 import tempfile
 from pathlib import Path
@@ -13,8 +15,26 @@ from .build import BuildInputError, build_print_packet, validate_all, validate_g
 from .catalog import resolve_game
 from .content import PIN_ID_PATTERN, load_yaml, suggested_research_id
 from .images import interactive_black_and_white_images, interactive_game_image
-from .paths import CONTENT, RESEARCH, ROOT
-from .shot_labels import interactive_shot_labels
+from .paths import CONTENT, OUTPUT, RESEARCH, ROOT
+from .shot_labels import interactive_shot_labels, shot_label_issue
+
+
+@contextmanager
+def _claim_add_game(game_id, lock_directory=None):
+    """Claim one game for ``make add`` without blocking another terminal."""
+    lock_directory = lock_directory or OUTPUT / ".locks"
+    lock_directory.mkdir(parents=True, exist_ok=True)
+    lock_path = lock_directory / f"add-{game_id}.lock"
+    with lock_path.open("a+") as lock:
+        try:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            yield False
+            return
+        try:
+            yield True
+        finally:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
 
 
 def ask_yes_no(prompt, default=True):
@@ -131,9 +151,15 @@ def _ensure_game_assets(
         print(f"ERROR: the image is still missing: {image}", file=sys.stderr)
         return False
 
-    if offer_shot_labels and ask_yes_no("Open the shot-label editor for this game?"):
-        if interactive_shot_labels(game_id, continue_batch=False):
-            return False
+    if offer_shot_labels:
+        issue = shot_label_issue(data)
+        if issue:
+            print(f"\nShot labels need attention: {issue}.")
+            if ask_yes_no("Open the shot-label editor for this game?"):
+                if interactive_shot_labels(game_id, continue_batch=False):
+                    return False
+        else:
+            print("Shot labels are already current.")
 
     if black_and_white:
         bw_image = image.with_name(f"{image.stem}-bw{image.suffix}")
@@ -153,17 +179,7 @@ def _ensure_game_assets(
     return True
 
 
-def interactive_add_game(description=""):
-    description, game_id = _request_new_identity(description)
-    if not game_id:
-        return 2
-    if (CONTENT / f"{game_id}.yaml").is_file():
-        print(
-            f"ERROR: {game_id} is already in the catalog; use game update instead.",
-            file=sys.stderr,
-        )
-        return 1
-
+def _resume_add_game(description, game_id):
     content_path = CONTENT / f"{game_id}.yaml"
     if content_path.is_file():
         print(f"Resuming from existing content: {content_path.relative_to(ROOT)}")
@@ -195,8 +211,22 @@ def interactive_add_game(description=""):
         return 1
     if not validate_all([content_path]):
         return 1
-    print(f"Added {_game_name(game_id)} to the catalog as {game_id}.")
+    print(f"Catalog game {_game_name(game_id)} is ready as {game_id}.")
     return 0
+
+
+def interactive_add_game(description=""):
+    description, game_id = _request_new_identity(description)
+    if not game_id:
+        return 2
+    with _claim_add_game(game_id) as claimed:
+        if not claimed:
+            print(
+                f"Another make add process is already working on {game_id}; "
+                "this invocation made no changes."
+            )
+            return 0
+        return _resume_add_game(description, game_id)
 
 
 def _update_description(game_id):

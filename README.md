@@ -162,6 +162,12 @@ Add a reusable game without assigning it to any binder:
 make add GAME="Jaws Premium Stern 2024"
 ```
 
+`make add` is resumable and safe to run in several terminals. Completed
+research, content, image, black-and-white image, and shot-label stages are
+reused. A per-game lock prevents two terminals from changing the same game at
+once: the first continues, while a duplicate invocation exits successfully
+without making changes. Different game IDs can proceed concurrently.
+
 Update one game:
 
 ```sh
