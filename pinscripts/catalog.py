@@ -22,6 +22,36 @@ class CatalogGame:
     path: Path
 
 
+def _manufacturer_key(value):
+    value = normalized_game_id(value)
+    aliases = {
+        "stern-electronics": "stern",
+        "stern-pinball": "stern",
+        "bally-midway": "bally",
+        "williams-electronic-games": "williams",
+        "chicago-gaming-company": "chicago-gaming",
+        "chicago-gaming-co": "chicago-gaming",
+        "jersey-jack-pinball": "jersey-jack",
+        "spooky-pinball": "spooky",
+        "dutch-pinball": "dutch",
+    }
+    return aliases.get(value, value)
+
+
+def match_imported_game(imported, catalog):
+    """Return one conservative catalog match; never conflate editions."""
+    name_key = normalized_game_id(imported.name)
+    manufacturer_key = _manufacturer_key(imported.manufacturer)
+    candidates = [
+        game
+        for game in catalog.values()
+        if normalized_game_id(game.name) == name_key
+        and game.year == imported.year
+        and _manufacturer_key(game.manufacturer) == manufacturer_key
+    ]
+    return candidates[0] if len(candidates) == 1 else None
+
+
 def content_paths(content_directory=CONTENT):
     """Return catalog content sorted by display name, then ID."""
     games = load_catalog(content_directory)

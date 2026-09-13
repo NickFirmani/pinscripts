@@ -11,7 +11,7 @@ from pinscripts.catalog import CatalogGame
 class VenueNotesTests(unittest.TestCase):
     def test_notes_are_saved_on_one_binder_entry_and_mark_source_manual(self):
         binder = Binder(
-            1,
+            2,
             "test-binder",
             "Test Binder",
             "printed",

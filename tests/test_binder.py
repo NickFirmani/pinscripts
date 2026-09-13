@@ -7,8 +7,11 @@ from pinscripts.binder import (
     BinderEntry,
     BinderError,
     BinderSource,
+    PendingGame,
+    SourceOverride,
     add_game,
     allocate_page_labels,
+    binder_data,
     binder_from_data,
     create_binder,
     load_binder,
@@ -52,7 +55,7 @@ class BinderTests(unittest.TestCase):
 
     def test_source_supports_manual_curation_with_an_advisory_url(self):
         data = {
-            "version": 1,
+            "version": 2,
             "id": "test-binder",
             "title": "Test Binder",
             "status": "printed",
@@ -64,6 +67,8 @@ class BinderTests(unittest.TestCase):
                 "retrieved_at": "2026-09-13",
                 "notes": "Manually corrected after checking the venue.",
             },
+            "pending_games": [],
+            "source_overrides": [],
             "games": [],
         }
 
@@ -73,13 +78,22 @@ class BinderTests(unittest.TestCase):
 
     def test_write_and_load_round_trip(self):
         binder = Binder(
-            1,
+            2,
             "test-binder",
             "Test Binder",
             "printed",
             None,
             BinderSource("manual"),
             (BinderEntry("alpha", ("2", "3"), True, ("Local note.",)),),
+            (PendingGame("Bravo", "Bally", 1981),),
+            (
+                SourceOverride(
+                    PendingGame("Charlie LE", "Bally", 1982),
+                    "replace",
+                    "charlie",
+                    "Venue has the standard edition.",
+                ),
+            ),
         )
         with tempfile.TemporaryDirectory() as directory:
             directory = Path(directory)
@@ -91,6 +105,30 @@ class BinderTests(unittest.TestCase):
             loaded = load_binder(path, content_directory=content)
 
         self.assertEqual(loaded, binder)
+
+    def test_pending_imports_prevent_marking_a_binder_printed(self):
+        binder = create_binder(
+            "test-binder",
+            "Test Binder",
+            ["alpha"],
+            pending_games=(PendingGame("Bravo", "Bally", 1981),),
+        )
+
+        with self.assertRaisesRegex(BinderError, "1 pending game"):
+            mark_printed(binder)
+
+    def test_pending_game_and_override_cannot_share_an_import_identity(self):
+        pending = PendingGame("Bravo", "Bally", 1981)
+        binder = create_binder(
+            "test-binder",
+            "Test Binder",
+            [],
+            pending_games=(pending,),
+            source_overrides=(SourceOverride(pending, "ignore"),),
+        )
+
+        with self.assertRaisesRegex(BinderError, "both pending and overridden"):
+            binder_from_data(binder_data(binder), require_content=False)
 
     def test_page_allocator_supports_repeated_insertions(self):
         self.assertEqual(allocate_page_labels("3", "4"), ("3.1", "3.2"))

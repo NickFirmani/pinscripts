@@ -1,8 +1,9 @@
 """Guided workflows for reusable, location-neutral catalog games."""
 
 from contextlib import contextmanager
+from dataclasses import replace
 import difflib
-import fcntl
+import hashlib
 import sys
 import tempfile
 from pathlib import Path
@@ -10,11 +11,21 @@ from pathlib import Path
 import yaml
 
 from .ai import interactive_game_format, interactive_research_prompt
-from .binder import BinderError, binders_containing
+from .binder import (
+    BinderError,
+    SourceOverride,
+    add_game,
+    binders_containing,
+    load_binder,
+    mark_manually_curated,
+    mutate_binder,
+    replace_entry,
+)
 from .build import BuildInputError, build_print_packet, validate_all, validate_game_contexts
-from .catalog import resolve_game
+from .catalog import catalog_by_id, match_imported_game, resolve_game
 from .content import PIN_ID_PATTERN, load_yaml, suggested_research_id
 from .images import interactive_black_and_white_images, interactive_game_image
+from .locks import claim_lock
 from .paths import CONTENT, OUTPUT, RESEARCH, ROOT
 from .shot_labels import interactive_shot_labels, shot_label_issue
 
@@ -22,19 +33,41 @@ from .shot_labels import interactive_shot_labels, shot_label_issue
 @contextmanager
 def _claim_add_game(game_id, lock_directory=None):
     """Claim one game for ``make add`` without blocking another terminal."""
-    lock_directory = lock_directory or OUTPUT / ".locks"
-    lock_directory.mkdir(parents=True, exist_ok=True)
-    lock_path = lock_directory / f"add-{game_id}.lock"
-    with lock_path.open("a+") as lock:
-        try:
-            fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            yield False
+    with claim_lock(
+        f"add-{game_id}",
+        blocking=False,
+        lock_directory=lock_directory,
+    ) as claimed:
+        yield claimed
+
+
+def _pending_lock_name(binder_id, pending):
+    digest = hashlib.sha256(pending.key.encode("utf-8")).hexdigest()[:16]
+    return f"pending-{binder_id}-{digest}"
+
+
+@contextmanager
+def _claim_next_pending_game(binder_id, lock_directory=None):
+    """Claim the first currently pending game not owned by another worker."""
+    binder = load_binder(binder_id)
+    for candidate in binder.pending_games:
+        with claim_lock(
+            _pending_lock_name(binder_id, candidate),
+            blocking=False,
+            lock_directory=lock_directory,
+        ) as claimed:
+            if not claimed:
+                continue
+            latest = load_binder(binder_id)
+            pending = next(
+                (item for item in latest.pending_games if item.key == candidate.key),
+                None,
+            )
+            if pending is None:
+                continue
+            yield pending
             return
-        try:
-            yield True
-        finally:
-            fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
+    yield None
 
 
 def ask_yes_no(prompt, default=True):
@@ -215,7 +248,178 @@ def _resume_add_game(description, game_id):
     return 0
 
 
-def interactive_add_game(description=""):
+def _override_pending(binder, pending, action, catalog_id=None, reason=None):
+    override = SourceOverride(pending, action, catalog_id, reason or None)
+    overrides = [
+        item for item in binder.source_overrides if item.imported.key != pending.key
+    ]
+    overrides.append(override)
+    return mark_manually_curated(
+        replace(binder, source_overrides=tuple(overrides))
+    )
+
+
+def _finish_pending_game(
+    binder_id,
+    pending,
+    *,
+    catalog_id=None,
+    override_action=None,
+    reason=None,
+):
+    """Commit one queue result against the latest binder under its write lock."""
+    catalog = catalog_by_id()
+
+    def finish(binder):
+        if not any(item.key == pending.key for item in binder.pending_games):
+            return binder
+        updated = replace(
+            binder,
+            pending_games=tuple(
+                item for item in binder.pending_games if item.key != pending.key
+            ),
+        )
+        if catalog_id is not None:
+            try:
+                existing = updated.entry(catalog_id)
+            except BinderError:
+                updated = add_game(updated, catalog_id, catalog)
+            else:
+                if not existing.present:
+                    updated = replace_entry(updated, replace(existing, present=True))
+        if override_action is not None:
+            updated = _override_pending(
+                updated,
+                pending,
+                override_action,
+                catalog_id,
+                reason,
+            )
+        return updated
+
+    return mutate_binder(binder_id, finish)
+
+
+def _optional_reason(prompt):
+    try:
+        return input(prompt).strip() or None
+    except EOFError:
+        return None
+
+
+def _process_pending_game(binder_id, pending):
+    print(f"\nClaimed from {binder_id}: {pending.description}")
+    catalog = catalog_by_id()
+    exact = match_imported_game(pending, catalog)
+    if exact is not None:
+        _finish_pending_game(binder_id, pending, catalog_id=exact.game_id)
+        print(f"Attached existing catalog game {exact.game_id}.")
+        return 0, True
+
+    while True:
+        try:
+            answer = input(
+                "[a]dd a new catalog game, [m]atch an existing game, "
+                "[i]gnore this listing, or [r]elease it: "
+            ).strip().lower()
+        except EOFError:
+            answer = "r"
+        if answer in {"r", "release", "q", "quit"}:
+            print("Released the game back to the pending queue.")
+            return 0, False
+        if answer in {"i", "ignore"}:
+            reason = _optional_reason("Reason for ignoring it (optional): ")
+            _finish_pending_game(
+                binder_id,
+                pending,
+                override_action="ignore",
+                reason=reason,
+            )
+            print("Saved an ignore override; future syncs will not requeue it.")
+            return 0, True
+        if answer in {"m", "match"}:
+            try:
+                query = input("Catalog game ID or unambiguous name: ").strip()
+            except EOFError:
+                query = ""
+            game = resolve_game(query)
+            if game is None:
+                print(f"No unique catalog game matched {query!r}.", file=sys.stderr)
+                continue
+            reason = _optional_reason("Reason for this correction (optional): ")
+            _finish_pending_game(
+                binder_id,
+                pending,
+                catalog_id=game.game_id,
+                override_action="replace",
+                reason=reason,
+            )
+            print(f"Mapped the imported listing to {game.game_id}.")
+            return 0, True
+        if answer not in {"a", "add", ""}:
+            print("Choose add, match, ignore, or release.", file=sys.stderr)
+            continue
+
+        description, game_id = _request_new_identity(pending.description)
+        if not game_id:
+            return 2, False
+        with _claim_add_game(game_id) as claimed:
+            if not claimed:
+                print(
+                    f"Another make add process is already working on {game_id}; "
+                    "released this listing back to the queue."
+                )
+                return 0, False
+            result = _resume_add_game(description, game_id)
+        if result:
+            return result, False
+        exact = match_imported_game(pending, catalog_by_id())
+        needs_override = exact is None or exact.game_id != game_id
+        _finish_pending_game(
+            binder_id,
+            pending,
+            catalog_id=game_id,
+            override_action="replace" if needs_override else None,
+            reason=(
+                "Catalog identity selected while resolving the imported listing."
+                if needs_override
+                else None
+            ),
+        )
+        print(f"Added {game_id} to {binder_id}.")
+        return 0, True
+
+
+def _add_pending_games(binder_id):
+    while True:
+        try:
+            with _claim_next_pending_game(binder_id) as pending:
+                if pending is None:
+                    remaining = len(load_binder(binder_id).pending_games)
+                    if remaining:
+                        print(
+                            f"No unclaimed work is available; {remaining} pending "
+                            "game(s) are active in other terminals."
+                        )
+                    else:
+                        print(f"No pending games remain in {binder_id}.")
+                    return 0
+                result, completed = _process_pending_game(binder_id, pending)
+        except (BinderError, OSError) as error:
+            print(f"ERROR: could not process pending binder game: {error}", file=sys.stderr)
+            return 1
+        if result:
+            return result
+        if not completed:
+            return 0
+
+
+def interactive_add_game(description="", binder_id=None):
+    if binder_id is not None:
+        if description.strip():
+            print("ERROR: use either a game description or --binder, not both.", file=sys.stderr)
+            return 2
+        return _add_pending_games(binder_id)
     description, game_id = _request_new_identity(description)
     if not game_id:
         return 2

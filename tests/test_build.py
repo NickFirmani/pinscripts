@@ -32,7 +32,7 @@ class BuildTests(unittest.TestCase):
 
     def test_binder_build_applies_pages_and_venue_notes(self):
         binder = Binder(
-            1,
+            2,
             "test-binder",
             "Test Binder",
             "printed",
@@ -67,7 +67,7 @@ class BuildTests(unittest.TestCase):
 
     def test_packet_uses_selected_binder_context(self):
         binder = Binder(
-            1,
+            2,
             "test-binder",
             "Test Binder",
             "printed",

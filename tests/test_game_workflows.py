@@ -4,7 +4,8 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pinscripts.game_workflows as app
-from pinscripts.binder import Binder, BinderEntry, BinderSource
+from pinscripts.binder import Binder, BinderEntry, BinderSource, PendingGame
+from pinscripts.catalog import CatalogGame
 
 
 class GameWorkflowTests(unittest.TestCase):
@@ -15,6 +16,98 @@ class GameWorkflowTests(unittest.TestCase):
                 with app._claim_add_game("alpha", locks) as second:
                     self.assertTrue(first)
                     self.assertFalse(second)
+
+    def test_parallel_workers_claim_different_pending_games(self):
+        pending = tuple(
+            PendingGame(name, "Bally", year)
+            for name, year in (("Alpha", 1980), ("Bravo", 1981), ("Charlie", 1982))
+        )
+        binder = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "draft",
+            None,
+            BinderSource("manual"),
+            (),
+            pending,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            with (
+                patch.object(app, "load_binder", return_value=binder),
+                app._claim_next_pending_game("test-binder", directory) as first,
+                app._claim_next_pending_game("test-binder", directory) as second,
+                app._claim_next_pending_game("test-binder", directory) as third,
+            ):
+                claimed = {first.key, second.key, third.key}
+
+        self.assertEqual(claimed, {item.key for item in pending})
+
+    def test_pending_completions_merge_into_the_latest_binder(self):
+        alpha = PendingGame("Alpha", "Bally", 1980)
+        bravo = PendingGame("Bravo", "Bally", 1981)
+        current = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "draft",
+            None,
+            BinderSource("pinball-map", "123"),
+            (),
+            (alpha, bravo),
+        )
+        catalog = {
+            "alpha": CatalogGame("alpha", "Alpha", "Bally", 1980, Path("alpha.yaml")),
+            "bravo": CatalogGame("bravo", "Bravo", "Bally", 1981, Path("bravo.yaml")),
+        }
+
+        def mutate(_binder_id, mutator):
+            nonlocal current
+            current = mutator(current)
+            return current
+
+        with (
+            patch.object(app, "catalog_by_id", return_value=catalog),
+            patch.object(app, "mutate_binder", side_effect=mutate),
+        ):
+            app._finish_pending_game("test-binder", alpha, catalog_id="alpha")
+            app._finish_pending_game("test-binder", bravo, catalog_id="bravo")
+
+        self.assertEqual({entry.game_id for entry in current.games}, {"alpha", "bravo"})
+        self.assertEqual(current.pending_games, ())
+
+    def test_ignoring_pending_game_saves_a_manual_source_override(self):
+        pending = PendingGame("Wrong Game", "Bally", 1980)
+        current = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "draft",
+            None,
+            BinderSource("pinball-map", "123"),
+            (),
+            (pending,),
+        )
+
+        def mutate(_binder_id, mutator):
+            nonlocal current
+            current = mutator(current)
+            return current
+
+        with (
+            patch.object(app, "catalog_by_id", return_value={}),
+            patch.object(app, "mutate_binder", side_effect=mutate),
+        ):
+            app._finish_pending_game(
+                "test-binder",
+                pending,
+                override_action="ignore",
+                reason="Not actually at the venue.",
+            )
+
+        self.assertEqual(current.pending_games, ())
+        self.assertEqual(current.source.kind, "manual")
+        self.assertEqual(current.source_overrides[0].action, "ignore")
 
     def test_print_mode_defaults_to_color(self):
         with patch("builtins.input", return_value=""):
@@ -105,7 +198,7 @@ class GameWorkflowTests(unittest.TestCase):
 
     def test_update_builds_a_packet_for_every_printed_binder(self):
         printed = Binder(
-            1,
+            2,
             "printed",
             "Printed",
             "printed",
@@ -114,7 +207,7 @@ class GameWorkflowTests(unittest.TestCase):
             (BinderEntry("alpha", ("2", "3")),),
         )
         draft = Binder(
-            1,
+            2,
             "draft",
             "Draft",
             "draft",

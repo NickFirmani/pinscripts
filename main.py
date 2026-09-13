@@ -13,6 +13,7 @@ from pinscripts.binder_workflows import (
     edit_venue_notes,
     mark_binder_printed,
     remove_binder_game,
+    show_binder_status,
     sync_binder_interactive,
 )
 from pinscripts.build import (
@@ -59,6 +60,7 @@ def build_parser():
     _add_color_mode(game_build)
     game_add = game_commands.add_parser("add")
     game_add.add_argument("description", nargs="?", default="")
+    game_add.add_argument("--binder", dest="binder_id")
     game_update = game_commands.add_parser("update")
     game_update.add_argument("game", nargs="?", default="")
     game_research = game_commands.add_parser("research")
@@ -106,6 +108,7 @@ def build_parser():
     binder_packet.add_argument("game_id")
     binder_packet.add_argument("--operation", choices=("add", "update"), default="update")
     _add_color_mode(binder_packet)
+    binder_commands.add_parser("status").add_argument("binder_id")
 
     shot_labels = commands.add_parser("shot-labels")
     shot_labels.add_argument("game", nargs="?", default="")
@@ -140,7 +143,7 @@ def main(argv=None):
             if args.game_command == "build":
                 return build_game(args.game_id, args.black_and_white, args.binder_id)
             if args.game_command == "add":
-                return interactive_add_game(args.description)
+                return interactive_add_game(args.description, args.binder_id)
             if args.game_command == "update":
                 return interactive_update_game(args.game)
             if args.game_command == "research":
@@ -187,6 +190,8 @@ def main(argv=None):
                 )
                 print(f"Wrote {packet}")
                 return 0
+            if args.binder_command == "status":
+                return show_binder_status(args.binder_id)
     except (BuildInputError, OSError, ValueError) as error:
         parser.error(str(error))
     parser.error("unknown command")

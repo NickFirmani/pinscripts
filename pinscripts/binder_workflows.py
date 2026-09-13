@@ -7,68 +7,25 @@ import sys
 from .binder import (
     BinderError,
     BinderSource,
+    PendingGame,
     add_game,
     binder_path,
     create_binder,
     load_binder,
+    mark_manually_curated,
     mark_printed,
     remove_game,
     replace_entry,
     write_binder,
 )
-from .catalog import CatalogError, catalog_by_id, load_catalog, resolve_game
-from .content import normalized_game_id
-from .game_workflows import ask_yes_no, interactive_add_game
+from .catalog import CatalogError, catalog_by_id, match_imported_game, resolve_game
+from .game_workflows import ask_yes_no
 from .pinball_map import (
     ImportedLocation,
     PinballMapError,
     fetch_location,
     pasted_location,
 )
-
-
-MANUAL_SOURCE_NOTE = (
-    "Manually curated; any retained Pinball Map URL is an advisory reference only."
-)
-
-
-def _mark_manually_curated(binder):
-    notes = binder.source.notes
-    if notes is None or "manually" not in notes.casefold():
-        notes = MANUAL_SOURCE_NOTE
-    return replace(binder, source=replace(binder.source, kind="manual", notes=notes))
-
-
-def _manufacturer_key(value):
-    value = normalized_game_id(value)
-    aliases = {
-        "stern-electronics": "stern",
-        "stern-pinball": "stern",
-        "bally-midway": "bally",
-        "williams-electronic-games": "williams",
-        "chicago-gaming-company": "chicago-gaming",
-        "chicago-gaming-co": "chicago-gaming",
-        "jersey-jack-pinball": "jersey-jack",
-        "spooky-pinball": "spooky",
-        "dutch-pinball": "dutch",
-        "segasa-sonic": "segasa-sonic",
-    }
-    return aliases.get(value, value)
-
-
-def match_imported_game(imported, catalog):
-    """Return one conservative catalog match or None; never conflate editions."""
-    name_key = normalized_game_id(imported.name)
-    manufacturer_key = _manufacturer_key(imported.manufacturer)
-    candidates = [
-        game for game in catalog.values()
-        if normalized_game_id(game.name) == name_key
-        and game.year == imported.year
-        and _manufacturer_key(game.manufacturer) == manufacturer_key
-    ]
-    if len(candidates) == 1:
-        return candidates[0]
-    return None
 
 
 def _read_pasted_listing():
@@ -96,43 +53,35 @@ def _load_import(pinball_map=None, paste=False, title=None, fetcher=fetch_locati
     raise BinderError("choose a Pinball Map location or pasted listing")
 
 
-def _resolve_imported(imported_location, create_missing=True):
+def _pending_game(imported):
+    return PendingGame(imported.name, imported.manufacturer, imported.year)
+
+
+def classify_imported(imported_location, binder=None):
+    """Resolve imports using saved overrides, exact matches, or the pending queue."""
     catalog = catalog_by_id()
     resolved = []
-    skipped = []
+    pending = []
+    ignored = []
+    overrides = {
+        override.imported.key: override
+        for override in (binder.source_overrides if binder is not None else ())
+    }
     for imported in imported_location.games:
+        candidate = _pending_game(imported)
+        override = overrides.get(candidate.key)
+        if override is not None:
+            if override.action == "ignore":
+                ignored.append(candidate)
+            else:
+                resolved.append((candidate, override.catalog_id, True))
+            continue
         match = match_imported_game(imported, catalog)
-        while match is None:
-            print(f"\nNo exact catalog match: {imported.description}")
-            try:
-                answer = input(
-                    "Enter a catalog game ID, [a]dd it, [s]kip it, or [q]uit: "
-                ).strip()
-            except EOFError:
-                answer = "q"
-            if answer.lower() in {"q", "quit"}:
-                raise BinderError("binder import cancelled")
-            if answer.lower() in {"s", "skip"}:
-                skipped.append(imported)
-                break
-            if answer.lower() in {"a", "add"}:
-                if not create_missing:
-                    print("Adding catalog content is disabled for this operation.")
-                    continue
-                if interactive_add_game(imported.description):
-                    print("Catalog add did not complete; the imported game remains unresolved.")
-                    continue
-                catalog = catalog_by_id()
-                match = match_imported_game(imported, catalog)
-                continue
-            game = catalog.get(answer) or resolve_game(answer)
-            if game is None:
-                print(f"No unique catalog game matched {answer!r}.", file=sys.stderr)
-                continue
-            match = game
-        if match is not None and match.game_id not in resolved:
-            resolved.append(match.game_id)
-    return resolved, skipped
+        if match is None:
+            pending.append(candidate)
+        else:
+            resolved.append((candidate, match.game_id, False))
+    return resolved, pending, ignored
 
 
 def create_binder_interactive(
@@ -165,9 +114,8 @@ def create_binder_interactive(
             resolved_title = title or binder_id.replace("-", " ").title()
         else:
             imported = _load_import(pinball_map, paste, title)
-            game_ids, skipped = _resolve_imported(imported)
-            if skipped:
-                print(f"Skipped {len(skipped)} unresolved game(s).")
+            resolved, pending_games, _ignored = classify_imported(imported)
+            game_ids = list(dict.fromkeys(game_id for _item, game_id, _override in resolved))
             resolved_title = title or imported.name or binder_id.replace("-", " ").title()
             source = BinderSource(
                 "pinball-map" if imported.location_id else "manual",
@@ -179,12 +127,21 @@ def create_binder_interactive(
             )
         catalog = catalog_by_id()
         game_ids.sort(key=lambda game_id: (catalog[game_id].name.casefold(), game_id))
-        binder = create_binder(binder_id, resolved_title, game_ids, source)
+        binder = create_binder(
+            binder_id,
+            resolved_title,
+            game_ids,
+            source,
+            pending_games=pending_games if not games_file else (),
+        )
         destination = write_binder(binder)
     except (BinderError, CatalogError, PinballMapError, OSError) as error:
         print(f"ERROR: could not create binder: {error}", file=sys.stderr)
         return 1
-    print(f"Created draft binder {destination} with {len(binder.games)} game(s).")
+    print(
+        f"Created draft binder {destination} with {len(binder.games)} ready game(s) "
+        f"and {len(binder.pending_games)} pending game(s)."
+    )
     return 0
 
 
@@ -193,33 +150,57 @@ def sync_binder_interactive(binder_id, *, pinball_map=None, paste=False):
         binder = load_binder(binder_id)
         source_value = None if paste else (pinball_map or binder.source.location_id)
         imported = _load_import(source_value, paste, binder.title)
-        imported_ids, skipped = _resolve_imported(imported)
+        resolved, unresolved, ignored = classify_imported(imported, binder)
+        imported_ids = [game_id for _item, game_id, _override in resolved]
         current = {entry.game_id for entry in binder.active_games}
         imported_set = set(imported_ids)
-        additions = [game_id for game_id in imported_ids if game_id not in current]
+        additions = [item for item in resolved if item[1] not in current]
         only_in_binder = [entry.game_id for entry in binder.active_games if entry.game_id not in imported_set]
         print(f"\nSync preview for {binder.title}:")
         print(f"  {len(current & imported_set)} matched")
         print(f"  {len(additions)} only on the imported listing")
         print(f"  {len(only_in_binder)} only in the binder (kept)")
-        print(f"  {len(skipped)} unresolved imported game(s)")
+        print(f"  {len(unresolved)} unresolved imported game(s) queued")
+        print(f"  {len(ignored)} ignored by saved overrides")
         catalog = catalog_by_id()
         updated = binder
-        for game_id in additions:
+        pending_by_key = {pending.key: pending for pending in binder.pending_games}
+        ignored_keys = {pending.key for pending in ignored}
+        pending_by_key = {
+            key: pending for key, pending in pending_by_key.items() if key not in ignored_keys
+        }
+        for pending in unresolved:
+            pending_by_key.setdefault(pending.key, pending)
+        for pending, game_id, overridden in additions:
+            if pending.key in pending_by_key and not overridden:
+                continue
             if ask_yes_no(f"Add {catalog[game_id].name} to the binder?", default=False):
                 updated = add_game(updated, game_id, catalog)
+                pending_by_key.pop(pending.key, None)
+        for pending, game_id, _overridden in resolved:
+            if game_id in current:
+                pending_by_key.pop(pending.key, None)
         updated_source = replace(
             updated.source,
             location_id=imported.location_id or updated.source.location_id,
             url=imported.url or updated.source.url,
             retrieved_at=imported.retrieved_at,
         )
-        updated = replace(updated, source=updated_source)
+        updated = replace(
+            updated,
+            source=updated_source,
+            pending_games=tuple(
+                sorted(pending_by_key.values(), key=lambda item: item.description.casefold())
+            ),
+        )
         write_binder(updated)
     except (BinderError, CatalogError, PinballMapError, OSError) as error:
         print(f"ERROR: could not sync binder: {error}", file=sys.stderr)
         return 1
-    print("Saved binder. Games absent from the advisory listing were not removed.")
+    print(
+        "Saved binder. Games absent from the advisory listing were not removed; "
+        f"{len(updated.pending_games)} game(s) remain pending."
+    )
     return 0
 
 
@@ -229,7 +210,7 @@ def add_binder_game(binder_id, game_query):
         game = resolve_game(game_query)
         if game is None:
             raise BinderError(f"no unique catalog game matched {game_query!r}")
-        updated = _mark_manually_curated(
+        updated = mark_manually_curated(
             add_game(binder, game.game_id, catalog_by_id())
         )
         write_binder(updated)
@@ -246,7 +227,7 @@ def remove_binder_game(binder_id, game_query):
         game = resolve_game(game_query)
         if game is None:
             raise BinderError(f"no unique catalog game matched {game_query!r}")
-        updated = _mark_manually_curated(
+        updated = mark_manually_curated(
             remove_game(binder, game.game_id, catalog_by_id())
         )
         write_binder(updated)
@@ -266,6 +247,27 @@ def mark_binder_printed(binder_id, printed_at=None):
         print(f"ERROR: could not mark binder printed: {error}", file=sys.stderr)
         return 1
     print(f"Marked {binder_id} as printed.")
+    return 0
+
+
+def show_binder_status(binder_id):
+    try:
+        binder = load_binder(binder_id)
+    except (BinderError, OSError) as error:
+        print(f"ERROR: could not read binder status: {error}", file=sys.stderr)
+        return 1
+    ignored = sum(
+        override.action == "ignore" for override in binder.source_overrides
+    )
+    corrected = sum(
+        override.action == "replace" for override in binder.source_overrides
+    )
+    print(f"{binder.title} ({binder.binder_id})")
+    print(f"  state: {binder.status}")
+    print(f"  ready games: {len(binder.active_games)}")
+    print(f"  pending games: {len(binder.pending_games)}")
+    print(f"  ignored imports: {ignored}")
+    print(f"  corrected imports: {corrected}")
     return 0
 
 
@@ -293,7 +295,7 @@ def edit_venue_notes(binder_id, game_query):
                 break
             if note:
                 notes.append(note)
-        updated = _mark_manually_curated(
+        updated = mark_manually_curated(
             replace_entry(binder, replace(entry, venue_notes=tuple(notes)))
         )
         write_binder(updated)

@@ -9,7 +9,8 @@ import tempfile
 
 import yaml
 
-from .content import PIN_ID_PATTERN
+from .content import PIN_ID_PATTERN, normalized_game_id
+from .locks import claim_lock
 from .paths import BINDERS, CONTENT
 
 
@@ -17,6 +18,10 @@ PAGE_LABEL_PATTERN = re.compile(r"(?:0|[1-9][0-9]*)(?:\.[0-9]+)?")
 BINDER_ID_PATTERN = PIN_ID_PATTERN
 SOURCE_KINDS = {"manual", "pinball-map"}
 BINDER_STATUSES = {"draft", "printed"}
+OVERRIDE_ACTIONS = {"ignore", "replace"}
+MANUAL_SOURCE_NOTE = (
+    "Manually curated; any retained Pinball Map URL is an advisory reference only."
+)
 
 
 class BinderError(ValueError):
@@ -41,6 +46,35 @@ class BinderEntry:
 
 
 @dataclass(frozen=True)
+class PendingGame:
+    name: str
+    manufacturer: str
+    year: int
+
+    @property
+    def description(self):
+        return f"{self.name} ({self.manufacturer}, {self.year})"
+
+    @property
+    def key(self):
+        return "|".join(
+            (
+                normalized_game_id(self.name),
+                normalized_game_id(self.manufacturer),
+                str(self.year),
+            )
+        )
+
+
+@dataclass(frozen=True)
+class SourceOverride:
+    imported: PendingGame
+    action: str
+    catalog_id: str | None = None
+    reason: str | None = None
+
+
+@dataclass(frozen=True)
 class Binder:
     version: int
     binder_id: str
@@ -49,6 +83,8 @@ class Binder:
     printed_at: str | None
     source: BinderSource
     games: tuple[BinderEntry, ...]
+    pending_games: tuple[PendingGame, ...] = ()
+    source_overrides: tuple[SourceOverride, ...] = ()
 
     def index(self, game_id, include_removed=True):
         for index, entry in enumerate(self.games):
@@ -94,10 +130,43 @@ def _date_or_none(value, field):
     return value
 
 
+def _pending_from_data(data, field):
+    if not isinstance(data, dict) or set(data) != {"name", "manufacturer", "year"}:
+        raise BinderError(f"{field} must contain exactly name, manufacturer, and year")
+    name = data["name"]
+    manufacturer = data["manufacturer"]
+    year = data["year"]
+    if not isinstance(name, str) or not name.strip():
+        raise BinderError(f"{field}.name must be a non-empty string")
+    if not isinstance(manufacturer, str) or not manufacturer.strip():
+        raise BinderError(f"{field}.manufacturer must be a non-empty string")
+    if not isinstance(year, int) or isinstance(year, bool) or not 1930 <= year <= 2100:
+        raise BinderError(f"{field}.year must be an integer from 1930 through 2100")
+    return PendingGame(name.strip(), manufacturer.strip(), year)
+
+
+def _pending_data(pending):
+    return {
+        "name": pending.name,
+        "manufacturer": pending.manufacturer,
+        "year": pending.year,
+    }
+
+
 def binder_from_data(data, *, path=None, content_directory=CONTENT, require_content=True):
     if not isinstance(data, dict):
         raise BinderError("binder manifest must contain a mapping")
-    expected = {"version", "id", "title", "status", "printed_at", "source", "games"}
+    expected = {
+        "version",
+        "id",
+        "title",
+        "status",
+        "printed_at",
+        "source",
+        "pending_games",
+        "source_overrides",
+        "games",
+    }
     if set(data) != expected:
         missing = sorted(expected - set(data))
         extra = sorted(set(data) - expected)
@@ -107,8 +176,8 @@ def binder_from_data(data, *, path=None, content_directory=CONTENT, require_cont
         if extra:
             details.append("unknown keys: " + ", ".join(extra))
         raise BinderError("; ".join(details))
-    if data["version"] != 1:
-        raise BinderError("binder version must be 1")
+    if data["version"] != 2:
+        raise BinderError("binder version must be 2")
     binder_id = data["id"]
     if not isinstance(binder_id, str) or BINDER_ID_PATTERN.fullmatch(binder_id) is None:
         raise BinderError(f"invalid binder id: {binder_id!r}")
@@ -148,6 +217,53 @@ def binder_from_data(data, *, path=None, content_directory=CONTENT, require_cont
     if kind == "pinball-map" and not location_id:
         raise BinderError("a pinball-map source requires location_id")
     source = BinderSource(kind, location_id, url, retrieved_at, notes)
+
+    if not isinstance(data["pending_games"], list):
+        raise BinderError("pending_games must be a list")
+    pending_games = tuple(
+        _pending_from_data(item, f"pending_games entry {position}")
+        for position, item in enumerate(data["pending_games"], start=1)
+    )
+    pending_keys = [pending.key for pending in pending_games]
+    if len(pending_keys) != len(set(pending_keys)):
+        raise BinderError("pending_games contains a duplicate imported game")
+
+    if not isinstance(data["source_overrides"], list):
+        raise BinderError("source_overrides must be a list")
+    source_overrides = []
+    override_keys = set()
+    for position, item in enumerate(data["source_overrides"], start=1):
+        field = f"source_overrides entry {position}"
+        if not isinstance(item, dict) or set(item) != {
+            "imported", "action", "catalog_id", "reason"
+        }:
+            raise BinderError(
+                f"{field} must contain exactly imported, action, catalog_id, and reason"
+            )
+        imported = _pending_from_data(item["imported"], f"{field}.imported")
+        if imported.key in override_keys:
+            raise BinderError("source_overrides contains a duplicate imported game")
+        override_keys.add(imported.key)
+        action = item["action"]
+        if action not in OVERRIDE_ACTIONS:
+            raise BinderError(f"{field}.action must be ignore or replace")
+        catalog_id = item["catalog_id"]
+        if action == "replace":
+            if not isinstance(catalog_id, str) or PIN_ID_PATTERN.fullmatch(catalog_id) is None:
+                raise BinderError(f"{field}.catalog_id must be a game ID for replace")
+            if require_content and not (content_directory / f"{catalog_id}.yaml").is_file():
+                raise BinderError(f"source override has no catalog content: {catalog_id}")
+        elif catalog_id is not None:
+            raise BinderError(f"{field}.catalog_id must be null for ignore")
+        reason = item["reason"]
+        if reason is not None and (
+            not isinstance(reason, str) or not reason.strip() or len(reason) > 300
+        ):
+            raise BinderError(f"{field}.reason must be null or 1-300 characters")
+        source_overrides.append(SourceOverride(imported, action, catalog_id, reason))
+    overlap = set(pending_keys) & override_keys
+    if overlap:
+        raise BinderError("an imported game cannot be both pending and overridden")
 
     if not isinstance(data["games"], list):
         raise BinderError("games must be a list")
@@ -196,7 +312,17 @@ def binder_from_data(data, *, path=None, content_directory=CONTENT, require_cont
         entries.append(
             BinderEntry(game_id, (pages[0], pages[1]), item["present"], tuple(venue_notes))
         )
-    return Binder(1, binder_id, title, status, printed_at, source, tuple(entries))
+    return Binder(
+        2,
+        binder_id,
+        title,
+        status,
+        printed_at,
+        source,
+        tuple(entries),
+        pending_games,
+        tuple(source_overrides),
+    )
 
 
 def binder_data(binder):
@@ -213,6 +339,16 @@ def binder_data(binder):
             "retrieved_at": binder.source.retrieved_at,
             "notes": binder.source.notes,
         },
+        "pending_games": [_pending_data(pending) for pending in binder.pending_games],
+        "source_overrides": [
+            {
+                "imported": _pending_data(override.imported),
+                "action": override.action,
+                "catalog_id": override.catalog_id,
+                "reason": override.reason,
+            }
+            for override in binder.source_overrides
+        ],
         "games": [
             {
                 "id": entry.game_id,
@@ -249,6 +385,43 @@ def write_binder(binder, *, path=None, binders_directory=BINDERS):
         temporary_path = Path(temporary.name)
     temporary_path.replace(destination)
     return destination
+
+
+def mutate_binder(
+    binder_id,
+    mutator,
+    *,
+    binders_directory=BINDERS,
+    content_directory=CONTENT,
+    lock_directory=None,
+):
+    """Reload, mutate, and atomically write one binder under a short lock."""
+    with claim_lock(
+        f"binder-{binder_id}",
+        blocking=True,
+        lock_directory=lock_directory,
+    ) as claimed:
+        if not claimed:  # Blocking acquisition always claims; defensive only.
+            raise BinderError(f"could not lock binder: {binder_id}")
+        binder = load_binder(
+            binder_id,
+            binders_directory=binders_directory,
+            content_directory=content_directory,
+        )
+        updated = mutator(binder)
+        write_binder(
+            updated,
+            path=binder_path(binder_id, binders_directory),
+            binders_directory=binders_directory,
+        )
+        return updated
+
+
+def mark_manually_curated(binder):
+    notes = binder.source.notes
+    if notes is None or "manually" not in notes.casefold():
+        notes = MANUAL_SOURCE_NOTE
+    return replace(binder, source=replace(binder.source, kind="manual", notes=notes))
 
 
 def load_binders(binders_directory=BINDERS, content_directory=CONTENT):
@@ -293,13 +466,31 @@ def allocate_page_labels(left_label, right_label=None):
     raise BinderError("page labels are too densely allocated; manual intervention is required")
 
 
-def create_binder(binder_id, title, game_ids, source=None):
+def create_binder(
+    binder_id,
+    title,
+    game_ids,
+    source=None,
+    *,
+    pending_games=(),
+    source_overrides=(),
+):
     source = source or BinderSource("manual")
     entries = tuple(
         BinderEntry(game_id, (str(index * 2 + 2), str(index * 2 + 3)))
         for index, game_id in enumerate(game_ids)
     )
-    return Binder(1, binder_id, title, "draft", None, source, entries)
+    return Binder(
+        2,
+        binder_id,
+        title,
+        "draft",
+        None,
+        source,
+        entries,
+        tuple(pending_games),
+        tuple(source_overrides),
+    )
 
 
 def _entry_sort_key(entry, catalog):
@@ -348,6 +539,10 @@ def remove_game(binder, game_id, catalog):
 
 
 def mark_printed(binder, printed_at=None):
+    if binder.pending_games:
+        raise BinderError(
+            f"cannot mark binder printed with {len(binder.pending_games)} pending game(s)"
+        )
     return replace(binder, status="printed", printed_at=printed_at or date.today().isoformat())
 
 

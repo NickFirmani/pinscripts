@@ -1,4 +1,4 @@
-version: 1
+version: 2
 id: lyons-classic-pinball
 title: Lyons Classic Pinball
 status: printed
@@ -9,6 +9,8 @@ source:
   url: null
   retrieved_at: null
   notes: Manually curated physical binder; external listings are advisory only.
+pending_games: []
+source_overrides: []
 games:
 - id: ac-dc-pro-stern-2012
   pages:

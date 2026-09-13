@@ -16,10 +16,11 @@ SHOT_LABELS_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out shot-labels,$(MAKE
 	@:
 endif
 
-.PHONY: add all all-bw all-color audit-rules-basis binder binder-add binder-create binder-mark-printed binder-notes binder-remove binder-sync clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content shot-labels test update validate
+.PHONY: add all all-bw all-color audit-rules-basis binder binder-add binder-create binder-mark-printed binder-notes binder-remove binder-status binder-sync clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content shot-labels test update validate
 
 add:
-	@$(PYTHON) main.py game add "$(ADD_INPUT)"
+	@test -z "$(BINDER)" -o -z "$(ADD_INPUT)" || (echo 'Usage: make add GAME="description" or make add BINDER="binder-id"' >&2; exit 2)
+	@$(PYTHON) main.py game add $(if $(BINDER),--binder "$(BINDER)","$(ADD_INPUT)")
 
 update:
 	@$(PYTHON) main.py game update "$(UPDATE_INPUT)"
@@ -67,6 +68,10 @@ binder-notes:
 binder-mark-printed:
 	@test -n "$(BINDER)" || (echo 'Usage: make binder-mark-printed BINDER="binder-id" [DATE="YYYY-MM-DD"]' >&2; exit 2)
 	$(PYTHON) main.py binder mark-printed "$(BINDER)" $(if $(DATE),--date "$(DATE)")
+
+binder-status:
+	@test -n "$(BINDER)" || (echo 'Usage: make binder-status BINDER="binder-id"' >&2; exit 2)
+	$(PYTHON) main.py binder status "$(BINDER)"
 
 validate:
 	$(PYTHON) main.py validate
