@@ -979,9 +979,10 @@ def _title_page(title=None, source_credit=None):
         PAGE_H / 2 + 144,
         "Pinball Commentary Quick Reference",
     )
+    location_y = (PAGE_H / 2) + 112
     if title:
         title_page.setFont("Helvetica-Bold", 16)
-        title_page.drawCentredString(PAGE_W / 2, PAGE_H / 2 + 112, safe(title))
+        title_page.drawCentredString(PAGE_W / 2, location_y, safe(title))
     subtitle = """A collection of quick informational sheets for pinball commentary.
     
     Disclaimer: The content was researched by LLMs (from official sources), and may contain inaccuracies. 
@@ -1003,18 +1004,23 @@ def _title_page(title=None, source_credit=None):
 
     w, h = subtitle_paragraph.wrap(subtitle_width, PAGE_H)
 
+    # Position the body from its top edge. Paragraph.drawOn() takes the bottom
+    # edge, which previously let a tall body grow upward into the binder title.
+    subtitle_top = location_y - 34 if title else (PAGE_H / 2) + 100
+    subtitle_bottom = subtitle_top - h
     subtitle_paragraph.drawOn(
         title_page,
         (PAGE_W - subtitle_width) / 2,
-        (PAGE_H / 2) - 25,
+        subtitle_bottom,
     )
 
     # Add a link and QR code to the GitHub repository
     url = "https://github.com/NickFirmani/pinscripts"
     title_page.setFont("Helvetica", 10)
+    repository_y = subtitle_bottom - 22
     title_page.drawCentredString(
         PAGE_W / 2,
-        (PAGE_H / 2) - 50,
+        repository_y,
         f"GitHub Repository: {url}"
     )
     # Generate and add a QR code to the GitHub repository
@@ -1036,7 +1042,7 @@ def _title_page(title=None, source_credit=None):
     title_page.drawImage(
         ImageReader(img_stream),
         (PAGE_W / 2) - 50,
-        (PAGE_H / 2) - 160,
+        repository_y - 122,
         width=100,
         height=100,
     )

@@ -14,6 +14,7 @@ from pinscripts.pdf import (
     OUTER_MARGIN,
     PAGE_W,
     _draw_spread_chrome,
+    _title_page,
     git_updated_at,
     merge_pdfs,
     merge_print_packet,
@@ -22,6 +23,17 @@ from pinscripts.pdf import (
 
 
 class PdfFooterTests(unittest.TestCase):
+    @patch("pinscripts.pdf.Paragraph")
+    def test_title_page_body_is_positioned_below_binder_title(self, paragraph):
+        paragraph.return_value.wrap.return_value = (440, 144)
+
+        _title_page("Lyons Classic Pinball")
+
+        body_bottom = paragraph.return_value.drawOn.call_args.args[2]
+        body_top = body_bottom + 144
+        binder_title_y = (792 / 2) + 112
+        self.assertLessEqual(body_top, binder_title_y - 34)
+
     def test_merged_binder_starts_with_an_unnumbered_title_page(self):
         with tempfile.TemporaryDirectory() as directory:
             directory = Path(directory)
