@@ -101,19 +101,19 @@ class PdfFooterTests(unittest.TestCase):
         _draw_spread_chrome(
             canvas,
             "Inserted Game",
-            None,
+            "2026-09-03",
             rules_basis={"kind": "fixed", "version": None, "release_date": None},
             page_labels=("19.1", "19.2"),
         )
 
         canvas.drawRightString.assert_any_call(
             PAGE_W - INNER_MARGIN,
-            FOOTER_Y - 17,
+            FOOTER_Y - 8,
             "PAGE 19.1",
         )
         canvas.drawRightString.assert_any_call(
             (2 * PAGE_W) - OUTER_MARGIN,
-            FOOTER_Y - 17,
+            FOOTER_Y - 8,
             "PAGE 19.2",
         )
 
@@ -172,29 +172,46 @@ class PdfFooterTests(unittest.TestCase):
 
         self.assertEqual(text, "ROM L-7 • UPDATED AT 2026-09-03")
 
-    def test_fixed_rules_have_no_footer_copy_or_separator(self):
+    def test_fixed_rules_footer_identifies_both_leaves_and_update_date(self):
         canvas = MagicMock()
 
         _draw_spread_chrome(
             canvas,
             "Fixed Game",
-            None,
+            "2026-09-03",
             7,
             {"kind": "fixed", "version": None, "release_date": None},
         )
 
-        canvas.line.assert_not_called()
-        canvas.drawString.assert_not_called()
+        footer = "FIXED GAME • UPDATED AT 2026-09-03"
+        canvas.drawString.assert_any_call(
+            OUTER_MARGIN,
+            FOOTER_Y - 8,
+            footer,
+        )
+        canvas.drawString.assert_any_call(
+            PAGE_W + INNER_MARGIN,
+            FOOTER_Y - 8,
+            footer,
+        )
         canvas.drawRightString.assert_any_call(
             PAGE_W - INNER_MARGIN,
-            FOOTER_Y - 17,
+            FOOTER_Y - 8,
             "PAGE 7",
         )
         canvas.drawRightString.assert_any_call(
             (2 * PAGE_W) - OUTER_MARGIN,
-            FOOTER_Y - 17,
+            FOOTER_Y - 8,
             "PAGE 8",
         )
+
+    def test_fixed_rules_footer_uses_git_date_without_version(self):
+        text = rules_footer_text(
+            {"kind": "fixed", "version": None, "release_date": None},
+            "2026-09-03",
+        )
+
+        self.assertEqual(text, "UPDATED AT 2026-09-03")
 
     @patch("pinscripts.pdf.subprocess.run")
     def test_updated_at_comes_from_content_file_git_history(self, run):

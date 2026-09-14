@@ -733,7 +733,7 @@ def _draw_spread_chrome(
 
 
 def rules_footer_text(rules_basis, updated_at):
-    """Return revision text for code/ROM games and none for fixed rules."""
+    """Return the rules revision and content update text for a game."""
     if not isinstance(rules_basis, dict):
         return None
 
@@ -748,6 +748,8 @@ def rules_footer_text(rules_basis, updated_at):
         )
     if kind == "rom":
         return f"ROM {version} • {updated_at_text}"
+    if kind == "fixed":
+        return updated_at_text
     return None
 
 
