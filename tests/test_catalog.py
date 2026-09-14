@@ -71,6 +71,29 @@ class CatalogTests(unittest.TestCase):
             with self.assertRaisesRegex(CatalogError, "must be deduplicated"):
                 load_catalog(content)
 
+    def test_catalog_rejects_batman_catwoman_signature_duplicate(self):
+        with tempfile.TemporaryDirectory() as directory:
+            content = Path(directory)
+            (content / "batman-prem-le.yaml").write_text(
+                "id: batman-prem-le\n"
+                "name: Batman 66 (Prem/LE)\n"
+                "metadata:\n"
+                "  manufacturer: Stern Pinball\n"
+                "  year: 2016\n",
+                encoding="utf-8",
+            )
+            (content / "batman-catwoman.yaml").write_text(
+                "id: batman-catwoman\n"
+                "name: Batman 66 (Catwoman Signature Edition)\n"
+                "metadata:\n"
+                "  manufacturer: Stern\n"
+                "  year: 2019\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(CatalogError, "must be deduplicated"):
+                load_catalog(content)
+
 
 if __name__ == "__main__":
     unittest.main()

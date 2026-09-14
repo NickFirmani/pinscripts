@@ -63,6 +63,28 @@ class BinderWorkflowTests(unittest.TestCase):
                     "jaws-prem-le-stern-2024",
                 )
 
+    def test_matching_deduplicates_batman_catwoman_signature_edition(self):
+        catalog = {
+            "batman-66-prem-le-stern-2016": CatalogGame(
+                "batman-66-prem-le-stern-2016",
+                "Batman ’66 (Prem/LE)",
+                "Stern Pinball",
+                2016,
+                Path("content/batman-66-prem-le-stern-2016.yaml"),
+            )
+        }
+
+        match = match_imported_game(
+            ImportedGame(
+                "Batman 66 (Catwoman Signature Edition)",
+                "Stern",
+                2019,
+            ),
+            catalog,
+        )
+
+        self.assertEqual(match.game_id, "batman-66-prem-le-stern-2016")
+
     def test_matching_deduplicates_jersey_jack_le_and_ce_but_not_se(self):
         catalog = {
             "avatar-le-ce-jersey-jack-2024": CatalogGame(

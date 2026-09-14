@@ -57,7 +57,14 @@ def _edition_identity(name, manufacturer):
 
 def canonical_game_key(name, manufacturer, year):
     title, trim = _edition_identity(name, manufacturer)
-    return title, trim, _manufacturer_key(manufacturer), year
+    manufacturer = _manufacturer_key(manufacturer)
+    if (
+        manufacturer == "stern"
+        and title == "batman-66-catwoman-signature-edition"
+        and year == 2019
+    ):
+        title, trim, year = "batman-66", "prem-le", 2016
+    return title, trim, manufacturer, year
 
 
 def match_imported_game(imported, catalog):
