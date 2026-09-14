@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .binder import BinderError, binders_containing, load_binder, load_binders, neighboring_entries
 from .catalog import CatalogError, content_paths
+from .cover import ask_spine_width, parse_spine_width, render_binder_inserts, spine_width_label
 from .content import load_yaml, schema_validator, validate_content
 from .paths import CONTENT, OUTPUT
 from .pdf import merge_pdfs, merge_print_packet, render_game
@@ -187,6 +188,27 @@ def build_binder(binder_id, black_and_white=False):
         binder.title,
         source_credit,
     )
+
+
+def build_binder_cover(binder_id, spine_width=None):
+    """Generate printable front-cover and spine inserts for a saved binder."""
+    try:
+        binder = load_binder(binder_id)
+    except BinderError as error:
+        raise BuildInputError(str(error)) from error
+    width = ask_spine_width() if spine_width is None else parse_spine_width(spine_width)
+    output_path = (
+        OUTPUT
+        / "binders"
+        / f"{binder.binder_id}-inserts-{spine_width_label(width)}.pdf"
+    )
+    render_binder_inserts(
+        binder.title,
+        width,
+        output_path,
+    )
+    print(f"Wrote {output_path}")
+    return output_path
 
 
 def build_print_packet(game_id, operation, binder_id_or_object, black_and_white=False):

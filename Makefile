@@ -16,7 +16,7 @@ SHOT_LABELS_INPUT = $(strip $(if $(GAME),$(GAME),$(filter-out shot-labels,$(MAKE
 	@:
 endif
 
-.PHONY: add all all-bw all-color audit-rules-basis binder binder-add binder-create binder-mark-printed binder-notes binder-remove binder-status binder-sync clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content shot-labels test update validate
+.PHONY: add all all-bw all-color audit-rules-basis binder binder-add binder-cover binder-create binder-mark-printed binder-notes binder-remove binder-status binder-sync clean format-benchmark format-codex-batch format-prompt game-format game-image game-image-bw game-image-low-res game-research install process-images proofread-content shot-labels test update validate
 
 add:
 	@test -z "$(BINDER)" -o -z "$(ADD_INPUT)" || (echo 'Usage: make add GAME="description" or make add BINDER="binder-id"' >&2; exit 2)
@@ -44,6 +44,10 @@ all-bw:
 binder:
 	@test -n "$(BINDER)" || (echo 'Usage: make binder BINDER="binder-id" [BW="1"]' >&2; exit 2)
 	$(PYTHON) main.py binder build "$(BINDER)" $(if $(filter 1 true yes,$(BW)),--bw)
+
+binder-cover:
+	@test -n "$(BINDER)" || (echo 'Usage: make binder-cover BINDER="binder-id" [SIZE="spine-width-in-inches"]' >&2; exit 2)
+	@$(PYTHON) main.py binder cover "$(BINDER)" $(if $(SIZE),--size "$(SIZE)")
 
 binder-create:
 	@test -n "$(BINDER)" || (echo 'Usage: make binder-create BINDER="binder-id" [TITLE="..."] [MAP="url-or-id" | GAMES_FILE="path"], or omit both to paste' >&2; exit 2)

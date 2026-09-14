@@ -19,6 +19,7 @@ from pinscripts.binder_workflows import (
 from pinscripts.build import (
     BuildInputError,
     build_binder,
+    build_binder_cover,
     build_catalog,
     build_game,
     build_print_packet,
@@ -91,6 +92,16 @@ def build_parser():
     binder_build = binder_commands.add_parser("build")
     binder_build.add_argument("binder_id")
     _add_color_mode(binder_build)
+    binder_cover = binder_commands.add_parser(
+        "cover",
+        help="Generate a front-cover and spine-insert PDF",
+    )
+    binder_cover.add_argument("binder_id")
+    binder_cover.add_argument(
+        "--size",
+        dest="spine_width",
+        help="spine pocket width in inches; prompts when omitted",
+    )
     binder_add = binder_commands.add_parser("add-game")
     binder_add.add_argument("binder_id")
     binder_add.add_argument("game")
@@ -173,6 +184,9 @@ def main(argv=None):
                 )
             if args.binder_command == "build":
                 return build_binder(args.binder_id, args.black_and_white)
+            if args.binder_command == "cover":
+                build_binder_cover(args.binder_id, args.spine_width)
+                return 0
             if args.binder_command == "add-game":
                 return add_binder_game(args.binder_id, args.game)
             if args.binder_command == "remove-game":

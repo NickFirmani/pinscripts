@@ -68,6 +68,25 @@ make binder BINDER=lyons-classic-pinball BW=1
 
 Outputs are written under `output/binders/`.
 
+### Create the front and spine inserts
+
+Generate a printable front cover and a spine insert for a saved binder:
+
+```sh
+make binder-cover BINDER=lyons-classic-pinball
+```
+
+The command asks for the binder's spine-pocket width in inches (for example,
+`1`, `1.5`, or `2`). It writes a two-page letter PDF under `output/binders/`:
+the front insert is page 1 and the correctly sized, centered spine strip with
+cut guides is page 2. Print at actual size (100%, with no page scaling).
+
+For non-interactive use, pass the size directly:
+
+```sh
+make binder-cover BINDER=lyons-classic-pinball SIZE=1.5
+```
+
 ### Create a binder from a text file
 
 The file contains one catalog ID or unambiguous game name per line:
