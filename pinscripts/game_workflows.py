@@ -29,7 +29,11 @@ from .catalog import (
     similar_catalog_games,
 )
 from .content import PIN_ID_PATTERN, image_reference, load_yaml, suggested_research_id
-from .images import interactive_black_and_white_images, interactive_game_image
+from .images import (
+    interactive_black_and_white_images,
+    interactive_game_image,
+    interactive_recrop_game_image,
+)
 from .locks import claim_lock
 from .paths import CONTENT, OUTPUT, RESEARCH, ROOT
 from .shot_labels import interactive_shot_labels, shot_label_issue
@@ -545,7 +549,7 @@ def interactive_update_game(game=""):
         return 2
     print(f"\nUpdating catalog game {_game_name(game_id)}.")
     print("  1. Refresh researched content")
-    print("  2. Replace the playfield image")
+    print("  2. Recrop or replace the playfield image")
     print("  3. Redo shot labels")
     print("  4. Validate and build affected binder packets")
     try:
@@ -566,10 +570,26 @@ def interactive_update_game(game=""):
         return 1
     image_replaced = False
     if "2" in requested:
-        if interactive_game_image(description, continue_batch=False):
-            return 1
-        image_replaced = True
-        if "3" not in requested and ask_yes_no(
+        print("\nPlayfield image source:")
+        print("  1. Recrop the current image")
+        print("  2. Download a replacement image")
+        try:
+            image_action = input("Choose source [1]: ").strip() or "1"
+        except EOFError:
+            image_action = "1"
+        if image_action == "1":
+            recrop_result = interactive_recrop_game_image(game_id)
+            if recrop_result == "error":
+                return 1
+            image_replaced = recrop_result == "updated"
+        elif image_action == "2":
+            if interactive_game_image(description, continue_batch=False):
+                return 1
+            image_replaced = True
+        else:
+            print("ERROR: choose 1 or 2.", file=sys.stderr)
+            return 2
+        if image_replaced and "3" not in requested and ask_yes_no(
             "The image changed. Redo its shot labels now?"
         ):
             requested.add("3")

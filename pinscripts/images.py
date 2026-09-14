@@ -143,7 +143,7 @@ def has_playfield_aspect_ratio(width, height):
     return relative_error <= PLAYFIELD_ASPECT_TOLERANCE
 
 
-def prepare_downloaded_image_for_crop(path):
+def prepare_downloaded_image_for_crop(path, *, force=False):
     """Open a crop editor and verify that the saved image is exactly 408:750."""
     try:
         width, height = image_dimensions(path)
@@ -152,9 +152,20 @@ def prepare_downloaded_image_for_crop(path):
         print(f"ERROR: could not prepare {path.name} for cropping: {error}", file=sys.stderr)
         return False
 
-    if has_playfield_aspect_ratio(width, height):
+    already_cropped = has_playfield_aspect_ratio(width, height)
+    if already_cropped and not force:
         print(f"Image already has the required 408:750 aspect ratio ({width}x{height}).")
         return True
+    if already_cropped:
+        scale = min(width // SIMPLIFIED_ASPECT_WIDTH, height // SIMPLIFIED_ASPECT_HEIGHT)
+        if scale <= 1:
+            print(
+                "ERROR: image is too small to crop further at the required ratio.",
+                file=sys.stderr,
+            )
+            return False
+        crop_width = SIMPLIFIED_ASPECT_WIDTH * (scale - 1)
+        crop_height = SIMPLIFIED_ASPECT_HEIGHT * (scale - 1)
 
     application = find_xnviewmp_application()
     try:
@@ -169,9 +180,10 @@ def prepare_downloaded_image_for_crop(path):
             print(
                 f"XnView MP was not found, so {path.name} was opened in Preview."
             )
+            placement = "positioned around the desired framing" if force else "centered"
             print(
-                f"For this {width}x{height} image, use a centered "
-                f"{crop_width}x{crop_height} pixel selection, then crop and save."
+                f"For this {width}x{height} image, use a {crop_width}x{crop_height} "
+                f"pixel selection {placement}, then crop and save."
             )
     except (OSError, subprocess.CalledProcessError) as error:
         print(f"ERROR: could not open an image crop editor: {error}", file=sys.stderr)
@@ -180,7 +192,7 @@ def prepare_downloaded_image_for_crop(path):
     while True:
         try:
             answer = input(
-                "After cropping and saving the downloaded image, press Enter "
+                "After cropping and saving the image, press Enter "
                 "to verify it (or enter q to cancel): "
             )
         except EOFError:
@@ -213,6 +225,52 @@ def prepare_downloaded_image_for_crop(path):
             f"{next_width}x{next_height} pixel selection.",
             file=sys.stderr,
         )
+
+
+def interactive_recrop_game_image(game):
+    """Recrop a working copy; return updated, unchanged, or error."""
+    source = find_color_image(game)
+    if source is None:
+        print(f"ERROR: no color image found for {game!r}.", file=sys.stderr)
+        return "error"
+    try:
+        original_size = image_dimensions(source)
+    except (OSError, UnidentifiedImageError) as error:
+        print(f"ERROR: could not inspect {source}: {error}", file=sys.stderr)
+        return "error"
+
+    with tempfile.TemporaryDirectory(
+        prefix=f".{source.stem}-recrop-",
+        dir=source.parent,
+    ) as directory:
+        working_copy = Path(directory) / source.name
+        try:
+            shutil.copy2(source, working_copy)
+        except OSError as error:
+            print(f"ERROR: could not prepare a recrop copy: {error}", file=sys.stderr)
+            return "error"
+        if not prepare_downloaded_image_for_crop(working_copy, force=True):
+            return "unchanged"
+        try:
+            if working_copy.read_bytes() == source.read_bytes():
+                print("The crop was unchanged; the canonical image was not replaced.")
+                return "unchanged"
+            backup, black_and_white_backup = replace_canonical_image(
+                working_copy,
+                source,
+            )
+            new_size = image_dimensions(source)
+        except (OSError, UnidentifiedImageError, ValueError, SystemExit) as error:
+            print(f"ERROR: could not save the recropped image: {error}", file=sys.stderr)
+            return "error"
+
+    print(
+        f"Recropped {source.name}: {original_size[0]}x{original_size[1]} -> "
+        f"{new_size[0]}x{new_size[1]}; backup: {backup}"
+    )
+    if black_and_white_backup is not None:
+        print(f"Moved the stale B&W image to {black_and_white_backup}.")
+    return "updated"
 
 
 def request_black_and_white_variant(variant_paths):

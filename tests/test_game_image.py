@@ -65,6 +65,27 @@ class GameImageTests(unittest.TestCase):
         preview.assert_called_once_with([image])
         self.assertIn("1292x2375 pixel selection", stdout.getvalue())
 
+    def test_forced_crop_opens_an_already_cropped_image(self):
+        image = Path("/downloads/game.webp")
+        stdout = io.StringIO()
+        with (
+            patch.object(
+                app,
+                "image_dimensions",
+                side_effect=[(1360, 2500), (1292, 2375)],
+            ),
+            patch.object(app, "find_xnviewmp_application", return_value=None),
+            patch.object(app, "open_images_in_preview") as preview,
+            patch("builtins.input", return_value=""),
+            redirect_stdout(stdout),
+        ):
+            result = app.prepare_downloaded_image_for_crop(image, force=True)
+
+        self.assertTrue(result)
+        preview.assert_called_once_with([image])
+        self.assertIn("1292x2375 pixel selection", stdout.getvalue())
+        self.assertIn("desired framing", stdout.getvalue())
+
     def test_downloaded_images_are_written_as_canonical_webp(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -77,6 +98,56 @@ class GameImageTests(unittest.TestCase):
             with Image.open(destination) as image:
                 self.assertEqual(image.format, "WEBP")
                 self.assertEqual(image.size, (40, 60))
+
+    def test_recrop_uses_a_working_copy_and_preserves_dependent_backups(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            images = root / "images"
+            research = root / "content" / "research"
+            images.mkdir()
+            research.mkdir(parents=True)
+            source = images / "test-game.webp"
+            black_and_white = images / "test-game-bw.webp"
+            Image.new("RGB", (816, 1500), "navy").save(source, "WEBP", lossless=True)
+            Image.new("L", (408, 750), 128).save(
+                black_and_white,
+                "WEBP",
+                lossless=True,
+            )
+
+            def recrop(path, *, force=False):
+                self.assertTrue(force)
+                self.assertNotEqual(path, source)
+                Image.new("RGB", (748, 1375), "maroon").save(
+                    path,
+                    "WEBP",
+                    lossless=True,
+                )
+                return True
+
+            with (
+                patch.object(app, "ROOT", root),
+                patch.object(app, "IMAGES", images),
+                patch.object(app, "RESEARCH", research),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    side_effect=recrop,
+                ),
+                redirect_stdout(io.StringIO()),
+            ):
+                result = app.interactive_recrop_game_image("test-game")
+
+            with Image.open(source) as image:
+                self.assertEqual(image.size, (748, 1375))
+            with Image.open(images / "low-res-backup" / "test-game.webp") as image:
+                self.assertEqual(image.size, (816, 1500))
+            self.assertFalse(black_and_white.exists())
+            self.assertTrue(
+                (images / "low-res-backup" / "test-game-bw.webp").is_file()
+            )
+
+        self.assertEqual(result, "updated")
 
     def test_matching_research_id_prefers_exact_id(self):
         with tempfile.TemporaryDirectory() as directory:

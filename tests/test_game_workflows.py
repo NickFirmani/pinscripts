@@ -270,6 +270,34 @@ class GameWorkflowTests(unittest.TestCase):
         self.assertEqual(result, 0)
         packet.assert_called_once_with("alpha", "update", printed, False)
 
+    def test_update_can_recrop_the_current_image_without_a_download(self):
+        with tempfile.TemporaryDirectory() as directory:
+            content = Path(directory)
+            (content / "alpha.yaml").write_text(
+                "id: alpha\nname: Alpha\nmetadata: {}\n",
+                encoding="utf-8",
+            )
+            with (
+                patch.object(app, "CONTENT", content),
+                patch.object(app, "_request_game_id", return_value="alpha"),
+                patch("builtins.input", side_effect=["2", ""]),
+                patch.object(
+                    app,
+                    "interactive_recrop_game_image",
+                    return_value="updated",
+                ) as recrop,
+                patch.object(app, "interactive_game_image") as download,
+                patch.object(app, "ask_yes_no", return_value=False),
+                patch.object(app, "_ensure_game_assets", return_value=True),
+                patch.object(app, "validate_game_contexts", return_value=True),
+                patch.object(app, "binders_containing", return_value=[]),
+            ):
+                result = app.interactive_update_game("alpha")
+
+        self.assertEqual(result, 0)
+        recrop.assert_called_once_with("alpha")
+        download.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

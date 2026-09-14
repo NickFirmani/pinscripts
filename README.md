@@ -232,6 +232,14 @@ Update one game:
 make game-update GAME=jaws-pro-stern-2024
 ```
 
+Choose image step `2` to recrop or replace the playfield. Recropping is the
+default and does not require a new download: the current canonical image is
+copied to a temporary working file and opened in XnView MP. Crop that copy to a
+fixed 408:750 ratio, save it in place, and return to the terminal to verify it.
+The previous color image is retained under `images/low-res-backup/`, the stale
+B&W derivative is moved there too, and the update flow offers to redo shot
+labels and regenerate the B&W image before validation.
+
 Updates validate every binder containing the game. When requested, one
 replacement packet is generated for each affected printed binder, using that
 binder's permanent pages and venue notes.
