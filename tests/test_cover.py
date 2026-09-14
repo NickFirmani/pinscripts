@@ -37,7 +37,7 @@ class BinderCoverTests(unittest.TestCase):
 
             text = "\n".join(page.extract_text() for page in reader.pages)
             self.assertIn("PINBALL COMMENTARY", text)
-            self.assertIn("A GUIDE TO THE GAMES", text)
+            self.assertIn("GUIDES TO THE RULES, STRATEGY, AND TRIVIA FOR THE GAMES", text)
             self.assertNotRegex(text, r"\b\d+ GAMES\b")
 
         self.assertEqual(len(reader.pages), 2)
