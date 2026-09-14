@@ -1,0 +1,25 @@
+game_id: rush-pro-stern-2022
+image_width: 1080
+image_height: 1950
+image_sha256: 2f3b08f6ca099cfc1bbc7fccf398155b1e46f42a5dcab87fa8f38bc4f7a9e866
+shots_sha256: 8c0a13e48e99e64550b5d17c029775e1db5ee341d53c5be181f3ee8ae4917b93
+coordinates:
+- diagram: 1
+  x: 343
+  y: 727
+- diagram: 2
+  x: 437
+  y: 705
+- diagram: 3
+  x: 440
+  y: 471
+- diagram: 4
+  x: 583
+  y: 421
+- diagram: 5
+  x: 684
+  y: 462
+- diagram: 6
+  x: 745
+  y: 520
+skipped_diagrams: []

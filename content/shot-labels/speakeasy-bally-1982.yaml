@@ -1,0 +1,25 @@
+game_id: speakeasy-bally-1982
+image_width: 1080
+image_height: 1920
+image_sha256: 0b6dc04359b992c912f762811915ab7f4dc90a6acf9ebb36bc05dc6054ed862c
+shots_sha256: c5c4b8eabd7ecbadcaedb465efe223d218a06401cbc8029b9ec4a6be4f7d8029
+coordinates:
+- diagram: 1
+  x: 93
+  y: 618
+- diagram: 2
+  x: 24
+  y: 814
+- diagram: 3
+  x: 497
+  y: 154
+- diagram: 4
+  x: 498
+  y: 685
+- diagram: 5
+  x: 963
+  y: 811
+- diagram: 6
+  x: 905
+  y: 617
+skipped_diagrams: []

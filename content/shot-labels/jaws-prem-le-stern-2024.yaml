@@ -1,0 +1,25 @@
+game_id: jaws-prem-le-stern-2024
+image_width: 677
+image_height: 1244
+image_sha256: 7c82420bb6f4bc0e56f5ddcd4203af0c46f90e366543e269abd7fbf2bdc3c3f1
+shots_sha256: f2e30f6c6dd4fe5e054074a121433e00c3ca2a67696f32b4c152e4985ab82d89
+coordinates:
+- diagram: 1
+  x: 219
+  y: 373
+- diagram: 2
+  x: 267
+  y: 331
+- diagram: 3
+  x: 487
+  y: 525
+- diagram: 4
+  x: 550
+  y: 231
+- diagram: 5
+  x: 178
+  y: 160
+- diagram: 6
+  x: 651
+  y: 309
+skipped_diagrams: []

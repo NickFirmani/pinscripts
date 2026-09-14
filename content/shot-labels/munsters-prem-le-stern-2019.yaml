@@ -1,0 +1,25 @@
+game_id: munsters-prem-le-stern-2019
+image_width: 1080
+image_height: 1984
+image_sha256: d100571ec7c22feb7a0ef51169d3b8daacc6bd29dc2fc94c9cad6d48c648a699
+shots_sha256: f6aaee32553d335513528a5d658dd0d08694bef6d81dd6ba73617155f5070d4a
+coordinates:
+- diagram: 1
+  x: 132
+  y: 894
+- diagram: 2
+  x: 273
+  y: 470
+- diagram: 3
+  x: 430
+  y: 329
+- diagram: 4
+  x: 614
+  y: 354
+- diagram: 5
+  x: 668
+  y: 561
+- diagram: 6
+  x: 844
+  y: 598
+skipped_diagrams: []

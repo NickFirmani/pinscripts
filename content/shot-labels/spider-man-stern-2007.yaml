@@ -1,0 +1,25 @@
+game_id: spider-man-stern-2007
+image_width: 1080
+image_height: 1603
+image_sha256: 95cc5a6db24a3a0645235a5fe68841546150b53cfa831c774562b313bb3bf115
+shots_sha256: df81485fe63c516e5c2c3818e9b02d1b26029d22b8e289179c35ea5297ff1611
+coordinates:
+- diagram: 1
+  x: 298
+  y: 507
+- diagram: 2
+  x: 378
+  y: 532
+- diagram: 3
+  x: 355
+  y: 426
+- diagram: 4
+  x: 546
+  y: 429
+- diagram: 5
+  x: 731
+  y: 469
+- diagram: 6
+  x: 640
+  y: 442
+skipped_diagrams: []

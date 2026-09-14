@@ -1,0 +1,25 @@
+game_id: goldeneye-sega-1996
+image_width: 1080
+image_height: 1985
+image_sha256: 3b958ed496273bb13d72a481da02e864206732205dabe88e3391b3f0088de4a7
+shots_sha256: b59906a7f561e6e633d1c0c36f69141bbbc19f745ac2e956007fe1b617438335
+coordinates:
+- diagram: 1
+  x: 140
+  y: 772
+- diagram: 2
+  x: 284
+  y: 716
+- diagram: 3
+  x: 506
+  y: 588
+- diagram: 4
+  x: 398
+  y: 523
+- diagram: 5
+  x: 678
+  y: 1143
+- diagram: 6
+  x: 948
+  y: 939
+skipped_diagrams: []

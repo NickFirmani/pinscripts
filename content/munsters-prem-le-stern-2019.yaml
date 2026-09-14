@@ -1,0 +1,155 @@
+id: munsters-prem-le-stern-2019
+name: The Munsters (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2019
+  designer: John Borg
+  artist: Christopher Franchi
+  production: Premium and LE are gameplay-equivalent; LE limited to 600 games
+  era: SPIKE 2
+  multiball: Herman, Raven, Grandpa, and Munster Madness
+rules_basis:
+  kind: code
+  version: v1.28
+  release_date: '2026-07-01'
+hook: Start all five family members to reach Munster Madness while repeatedly collecting
+  Kitty to build 2x → 3x → 6x playfield. Stack Super Jackpots at Dragula, deliberately
+  cancel early collections, then cash the built stack under 6x for the biggest scoring
+  leverage.
+rules:
+  primary: Start Spot, Herman, Lily, Grandpa, and Raven to qualify Munster Madness
+    at the scoop. Each family-member start lights Kitty, whose collects advance timed
+    playfield scoring from 2x to 3x to 6x. Lily can stack with other features, making
+    multiball an efficient time to progress it.
+  bullets:
+  - Herman Multiball starts with three balls if the trapped-ball shot is made, or
+    two if missed. Four jackpots qualify Herman's Super Jackpot.
+  - Three left-ramp Raven advances start 3-ball Raven Multiball. Four different jackpots
+    qualify its Super; an early drain can offer a timed left-ramp restart.
+  - 'Grandpa''s Laboratory uses the lower playfield: complete both outer orbits, then
+    the Machine to start Grandpa Multiball and build toward its Super Jackpot.'
+  - Up to 11 different Premium/LE Super Jackpots can be stacked at Dragula. Hold the
+    action button during collection to cancel it and preserve the stack for a later
+    multiplier.
+  - Munster Madness is a 4-ball wizard multiball with an additional ball active in
+    Grandpa's Laboratory on Premium/LE.
+watch:
+- title: Kitty flashing
+  text: Kitty advances the timed playfield multiplier from 2x to 3x to the critical
+    6x state. Another Kitty collect while active resets the timer.
+- title: Supers at Dragula
+  text: Multiple Super Jackpots may be intentionally left uncollected. The player
+    can cancel a Dragula collection with the action button and preserve the growing
+    stack for later.
+- title: Spot raised
+  text: The exposed Spot target is dangerous. A player avoiding it may deliberately
+    be surviving until the mode times out rather than attacking the objective.
+- title: Grandpa's Laboratory
+  text: On Premium/LE, play shifts to the miniature lower playfield. Grandpa progression
+    also contributes to qualifying all five family members for Munster Madness.
+skill_shots:
+- name: Normal Skill Shot
+  how: Plunge into the fixed right top lane, or short-plunge to the right flipper
+    and shoot the left ramp.
+  value: Awards 250K, +1 Bonus X, and remaining-time value. The short plunge also
+    provides immediate flipper control.
+- name: Super Skill Shot
+  how: Hold the left flipper during the plunge, then shoot the right ramp.
+  value: Awards 500K.
+- name: Double Super Skill Shot
+  how: Hold both left-side flipper buttons, shoot the scoop into Grandpa's Laboratory,
+    then make the lower-playfield saucer.
+  value: Awards 1M and collects Mystery if it is lit.
+features:
+- type: player-control
+  name: Zap Button
+  text: After a standup or purple target, press the flashing action button to charge
+    Zap. Zap Jackpots then accompany qualifying jackpots and can eventually light
+    another Super Jackpot.
+- type: player-control
+  name: Super-Jackpot Cancel
+  text: Hold the action button while Dragula begins collecting stacked Supers to abort
+    the collection and preserve the stack for a later scoring window.
+- type: ball-save
+  name: Add-A-Ball
+  text: Spelling DRAGULA during multiball lights Dragula for an add-a-ball plus a
+    short ball save; Raven Multiball lights it immediately.
+- type: mystery-award
+  name: Mystery
+  text: Under Competition Mode, Mystery is deterministic and awards Light Kitty; related
+    Dragula and Kitty randomness is also normalized.
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit through family-level progress, 110 chattering teeth, or Mystery.
+shots:
+- name: Dragula Lane
+  value: Collects stacked Super Jackpots, add-a-ball, and related boosts; the player
+    can deliberately cancel a Super collection to preserve the stack.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp / Spot
+  value: Advances Spot and Raven, making it central to two family-member paths and
+    eventual Munster Madness qualification.
+  risk: High
+  diagram: 2
+- name: Herman
+  value: Advances the Herman hurry-up and magnet sequence into a fast multiball opportunity.
+  risk: High
+  diagram: 3
+- name: Kitty
+  value: Advances timed playfield scoring from 2x to 3x to 6x, multiplying major Raven,
+    wizard-mode, and Super-Jackpot scoring.
+  risk: Medium-High
+  diagram: 4
+- name: Grandpa Scoop
+  value: Starts Grandpa's Laboratory and qualified Munster Madness, advancing both
+    family progression and the wizard route.
+  risk: Medium-High
+  diagram: 5
+- name: Right Ramp
+  value: Advances Spot and Marilyn and serves as the Super Skill Shot, with completed
+    shots feeding back toward the right flipper.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Prioritize control and family starts over risky Super-Jackpot qualification.
+    Spot can be started and simply survived. Once a strong 6x Super stack is available,
+    taking the guaranteed cashout is safer than repeatedly refusing Dragula for a
+    larger stack.
+  behind: Build multiple Super Jackpots, advance Kitty to 6x, then cash the stack
+    during a major Raven or Munster Madness window. Use multiball protection to attack
+    Lily, chattering teeth, and Zap progress simultaneously.
+  key_decision: Cash Dragula now or preserve the Super-Jackpot stack? Holding the
+    action button gives up a guaranteed award to keep building Supers or wait for
+    6x playfield, creating the game's central risk-versus-reward decision.
+danger:
+- Spot is a major drain threat; many players start the mode and avoid attacking the
+  raised target.
+- Herman's magnet and bash-target sequence can create unpredictable rebounds, especially
+  when the magnet releases the ball.
+- The left ramp becomes a direct bash-target attempt when Spot rises, turning a normally
+  flowing shot into a dangerous return.
+- Dragula uses a dedicated kicker that fires the ball forcefully back into play rather
+  than providing a gentle return.
+commentary:
+- Kitty is lit—that's the path from two-times to three-times and eventually six-times
+  playfield.
+- They're letting Spot time out rather than attacking that nasty center-drain feed.
+- Lily stacks, so multiball is the perfect time to finish those switch hits.
+- There are multiple Supers sitting at Dragula, but they can cancel the collect and
+  keep building.
+- That's six-times Raven Multiball—this is one of the game's straightforward tournament
+  scoring windows.
+- All five family members have been played; the scoop is now the route to Munster
+  Madness.
+trivia:
+- The Munsters was Stern's first new title announced in 2019.
+- Premium and LE contain a complete secondary lower playfield with two miniature pinballs
+  and two mini-flippers.
+- The Premium's black-and-white presentation references the original television show's
+  monochrome look.
+- Only 600 Limited Editions were produced worldwide.
+- 'Herman''s sculpt is functional: a magnet physically captures the ball during the
+  setup for Herman Multiball.'
+summary: Start five family members → build Kitty to 6x → qualify Supers → preserve
+  Dragula stack → cash big → reach Munster Madness

@@ -1,0 +1,22 @@
+game_id: funhouse-williams-1990
+image_width: 1080
+image_height: 1985
+image_sha256: 550a1142e218b89cee6ea0983ddb52a04fad72b4ddf55114aa029be61c2a8635
+shots_sha256: 3aeb7a1bdee7ccf0667fbc09e8db3c51a37936e5c182f69bf4d08bc27c5f8d79
+coordinates:
+- diagram: 1
+  x: 797
+  y: 750
+- diagram: 2
+  x: 545
+  y: 450
+- diagram: 3
+  x: 328
+  y: 718
+- diagram: 4
+  x: 701
+  y: 614
+- diagram: 5
+  x: 449
+  y: 613
+skipped_diagrams: []

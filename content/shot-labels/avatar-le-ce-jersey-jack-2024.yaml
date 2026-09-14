@@ -1,0 +1,25 @@
+game_id: avatar-le-ce-jersey-jack-2024
+image_width: 988
+image_height: 1816
+image_sha256: 9f868e1a75bbf37e231a3dd64c8e9f9ba87b06807ce51bbdeaf8cfc134ae0139
+shots_sha256: 6b360ffb51bcccf6d4b9070581f8c50aae375535cf828bac1c56f062f2510c6e
+coordinates:
+- diagram: 1
+  x: 143
+  y: 1060
+- diagram: 2
+  x: 124
+  y: 364
+- diagram: 3
+  x: 227
+  y: 1008
+- diagram: 4
+  x: 347
+  y: 183
+- diagram: 5
+  x: 682
+  y: 512
+- diagram: 6
+  x: 792
+  y: 487
+skipped_diagrams: []

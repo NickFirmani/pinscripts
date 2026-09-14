@@ -1,0 +1,25 @@
+game_id: king-kong-myth-of-terror-island-prem-le-stern-2025
+image_width: 1080
+image_height: 1985
+image_sha256: 0558dd079a7910c8c1c8a554c4e644f904d645cc24bd26f5b5c59f76463a8ccf
+shots_sha256: 2b277dc3075c1fb71df3966e3ad3c256c84e85ff5dd5975b9d55382b916a1001
+coordinates:
+- diagram: 1
+  x: 305
+  y: 1204
+- diagram: 2
+  x: 389
+  y: 658
+- diagram: 3
+  x: 256
+  y: 503
+- diagram: 4
+  x: 557
+  y: 347
+- diagram: 5
+  x: 820
+  y: 591
+- diagram: 6
+  x: 469
+  y: 659
+skipped_diagrams: []
