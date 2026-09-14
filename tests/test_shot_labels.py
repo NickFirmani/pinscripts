@@ -23,7 +23,6 @@ class ShotLabelTests(unittest.TestCase):
         data = {
             "id": "test-game",
             "name": "Test Game",
-            "image": "images/test-game.webp",
             "shots": [
                 {
                     "diagram": 1,
@@ -68,6 +67,7 @@ class ShotLabelTests(unittest.TestCase):
         self.assertEqual(loaded["image_height"], 700)
         self.assertEqual(loaded["coordinates"], coordinates)
         self.assertEqual(loaded["skipped_diagrams"], [])
+        self.assertNotIn("image", loaded)
         self.assertNotIn("version", loaded)
         self.assertEqual(len(loaded["image_sha256"]), 64)
         self.assertEqual(len(loaded["shots_sha256"]), 64)
@@ -261,7 +261,6 @@ class ShotLabelTests(unittest.TestCase):
                 **first,
                 "id": "second-game",
                 "name": "Second Game",
-                "image": "images/second-game.webp",
             }
             session = app._LabelSession(
                 first,
@@ -294,7 +293,6 @@ class ShotLabelTests(unittest.TestCase):
                 **first,
                 "id": "second-game",
                 "name": "Second Game",
-                "image": "images/second-game.webp",
             }
             pending = [(second, second_image, "labels missing")]
             session = app._LabelSession(
@@ -347,7 +345,6 @@ class ShotLabelTests(unittest.TestCase):
             second = {
                 "id": "second-game",
                 "name": "Second Game",
-                "image": "images/second-game.webp",
                 "shots": [
                     {
                         "diagram": 1,

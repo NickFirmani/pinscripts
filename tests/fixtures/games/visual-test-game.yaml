@@ -151,4 +151,3 @@ venue_notes:
   - Mode timers continue during normal ball saves but pause during the special
     late-mode rescue, which is intentionally different for regression testing.
   - Verify the center-target sensitivity before commentary begins.
-image: images/visual-test-game.webp

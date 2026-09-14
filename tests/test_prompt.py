@@ -159,7 +159,6 @@ class PromptTests(unittest.TestCase):
             {
                 "id": "jaws-2024",
                 "name": "JAWS",
-                "image": "images/jaws-2024.webp",
             }
         )
         formatted["metadata"].update(
@@ -204,6 +203,7 @@ class PromptTests(unittest.TestCase):
         formatting_copy = copy.call_args_list[1].args[0]
         self.assertIn("Return ONLY a JSON object", formatting_copy)
         self.assertIn("Set `id` exactly to `jaws-2024`", formatting_copy)
+        self.assertNotIn("Set `image`", formatting_copy)
         self.assertIn("## Human resolutions", formatting_copy)
         self.assertIn("Premium model", formatting_copy)
         self.assertIn("Formatted YAML saved", stdout.getvalue())
@@ -275,7 +275,6 @@ class PromptTests(unittest.TestCase):
             {
                 "id": "jaws-2024",
                 "name": "JAWS",
-                "image": "images/jaws-2024.webp",
             }
         )
         formatted["metadata"].update(

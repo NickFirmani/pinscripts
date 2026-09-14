@@ -50,8 +50,8 @@ Formatting rules:
 - Condense each skill shot's execution into `how` and its award plus strategic
   purpose into `value`. Keep catalog content location-neutral. Express material
   adjustment sensitivity generically, without recording one venue's settings.
-- Turn the canonical game name and year into a lowercase, hyphenated `id`, and
-  set `image` to `images/<id>.webp`.
+- Turn the canonical game name and year into a lowercase, hyphenated `id`.
+  Do not emit an image path; image filenames are derived automatically from the ID.
 - Treat modern Stern Premium and Limited Edition as one gameplay-equivalent
   catalog entry: suffix the name with `(Prem/LE)` and use the ID segment
   `prem-le-stern`. Keep Pro separate. Treat Jersey Jack Limited and Collector's

@@ -19,8 +19,7 @@
     "danger",
     "commentary",
     "trivia",
-    "summary",
-    "image"
+    "summary"
   ],
   "properties": {
     "id": {
@@ -328,10 +327,6 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 200
-    },
-    "image": {
-      "type": "string",
-      "pattern": "^images/[a-z0-9]+(?:-[a-z0-9]+)*\\.webp$"
     }
   }
 }

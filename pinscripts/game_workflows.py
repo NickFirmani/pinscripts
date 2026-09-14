@@ -28,7 +28,7 @@ from .catalog import (
     resolve_game,
     similar_catalog_games,
 )
-from .content import PIN_ID_PATTERN, load_yaml, suggested_research_id
+from .content import PIN_ID_PATTERN, image_reference, load_yaml, suggested_research_id
 from .images import interactive_black_and_white_images, interactive_game_image
 from .locks import claim_lock
 from .paths import CONTENT, OUTPUT, RESEARCH, ROOT
@@ -206,11 +206,7 @@ def _ensure_game_assets(
     except (OSError, yaml.YAMLError) as error:
         print(f"ERROR: could not read {content_path}: {error}", file=sys.stderr)
         return False
-    configured_image = data.get("image") if isinstance(data, dict) else None
-    if not isinstance(configured_image, str) or not configured_image:
-        print(f"ERROR: {content_path} has no valid image path.", file=sys.stderr)
-        return False
-    image = ROOT / configured_image
+    image = ROOT / image_reference(game_id)
     if not image.is_file():
         print(f"\nThe required playfield image is missing: {image}")
         if not ask_yes_no("Open the guided image finder now?"):

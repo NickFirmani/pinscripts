@@ -19,7 +19,7 @@ import yaml
 from PIL import Image, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
 from .catalog import CatalogError, content_paths
-from .content import load_yaml
+from .content import image_reference, load_yaml
 from .paths import CONTENT, ROOT, SHOT_LABELS
 
 
@@ -135,7 +135,6 @@ def _validate_label_document(document, data, image_path):
 
     required = {
         "game_id",
-        "image",
         "image_width",
         "image_height",
         "image_sha256",
@@ -155,8 +154,6 @@ def _validate_label_document(document, data, image_path):
 
     if document["game_id"] != data.get("id"):
         raise ShotLabelError("shot labels belong to a different game")
-    if document["image"] != data.get("image"):
-        raise ShotLabelError("the configured image changed; redo shot labels")
 
     try:
         with oriented_image(image_path) as image:
@@ -235,7 +232,7 @@ def load_shot_labels(data, root=ROOT, labels_directory=None):
         document = load_yaml(path)
     except (OSError, yaml.YAMLError) as error:
         raise ShotLabelError(f"could not read {path}: {error}") from error
-    image_path = root / data.get("image", "")
+    image_path = root / image_reference(data["id"])
     return _validate_label_document(document, data, image_path)
 
 
@@ -252,7 +249,6 @@ def write_shot_labels(
         width, height = image.size
     document = {
         "game_id": data["id"],
-        "image": data["image"],
         "image_width": width,
         "image_height": height,
         "image_sha256": image_fingerprint(image_path),
@@ -294,8 +290,8 @@ def first_game_needing_labels(paths=None, root=ROOT, labels_directory=None):
     paths = paths if paths is not None else content_paths()
     for path in paths:
         data = load_yaml(path)
-        image = data.get("image")
-        if not image or not (root / image).is_file():
+        image = image_reference(data["id"])
+        if not (root / image).is_file():
             continue
         issue = shot_label_issue(data, root, labels_directory)
         if issue:
@@ -733,7 +729,7 @@ def _content_path_for_game(game):
 
 def _game_for_editor(content_path, issue="", root=ROOT):
     data = load_yaml(content_path)
-    image_path = root / data["image"]
+    image_path = root / image_reference(data["id"])
     if not image_path.is_file():
         raise ShotLabelError(f"missing image: {image_path}")
     _expected_diagrams(data)
@@ -758,8 +754,8 @@ def _remaining_game_loader(current_path, root=ROOT, paths=None):
         while paths:
             path = paths.pop(0)
             data = load_yaml(path)
-            image = data.get("image")
-            if not image or not (root / image).is_file():
+            image = image_reference(data["id"])
+            if not (root / image).is_file():
                 continue
             issue = shot_label_issue(data, root)
             if issue:

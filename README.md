@@ -8,6 +8,8 @@ master catalog PDF, and separate PDFs for real physical binders.
 `content/*.yaml` is the master game catalog. Each file contains reusable rules,
 strategy, and commentary material for one gameplay-distinct edition. The catalog
 is discovered directly from these files; there is no second master list.
+Playfield image paths are derived from each game ID as `images/<id>.webp` and
+`images/<id>-bw.webp`; they are not repeated in YAML.
 
 Equivalent cosmetic trims share one catalog entry. Modern Stern Premium and LE
 machines use the display suffix `Prem/LE` and ID segment `prem-le`; Pro remains a

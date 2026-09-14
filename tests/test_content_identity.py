@@ -1,9 +1,19 @@
 import unittest
 
-from pinscripts.content import suggested_research_id
+from pinscripts.content import image_reference, suggested_research_id
 
 
 class ContentIdentityTests(unittest.TestCase):
+    def test_image_paths_are_derived_from_the_game_id(self):
+        self.assertEqual(
+            image_reference("jaws-prem-le-stern-2024"),
+            "images/jaws-prem-le-stern-2024.webp",
+        )
+        self.assertEqual(
+            image_reference("jaws-prem-le-stern-2024", black_and_white=True),
+            "images/jaws-prem-le-stern-2024-bw.webp",
+        )
+
     def test_stern_premium_and_le_share_a_canonical_id(self):
         self.assertEqual(
             suggested_research_id("JAWS (LE) Stern 2024"),

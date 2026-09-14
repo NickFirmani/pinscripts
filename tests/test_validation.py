@@ -29,6 +29,14 @@ class ValidationTests(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
+    def test_image_field_is_rejected_because_the_path_is_derived(self):
+        data = deepcopy(app.load_yaml(CONTENT / "playboy-bally-1978.yaml"))
+        data["image"] = "images/playboy-bally-1978.webp"
+
+        errors = app.validation_errors(data, self.validator)
+
+        self.assertTrue(any("Additional properties" in error for error in errors))
+
     def test_build_validation_rejects_an_id_that_does_not_match_the_filename(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "expected-id.yaml"

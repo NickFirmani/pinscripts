@@ -173,7 +173,7 @@ class GameWorkflowTests(unittest.TestCase):
             content = root / "content"
             content.mkdir()
             (content / "bravo.yaml").write_text(
-                "id: bravo\nname: Bravo\nimage: images/bravo.webp\n",
+                "id: bravo\nname: Bravo\n",
                 encoding="utf-8",
             )
             with (
@@ -203,7 +203,7 @@ class GameWorkflowTests(unittest.TestCase):
             content.mkdir()
             images.mkdir()
             (content / "alpha.yaml").write_text(
-                "id: alpha\nimage: images/alpha.webp\n",
+                "id: alpha\n",
                 encoding="utf-8",
             )
             (images / "alpha.webp").touch()
@@ -247,7 +247,7 @@ class GameWorkflowTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             content = Path(directory)
             (content / "alpha.yaml").write_text(
-                "id: alpha\nname: Alpha\nmetadata: {}\nimage: images/alpha.webp\n",
+                "id: alpha\nname: Alpha\nmetadata: {}\n",
                 encoding="utf-8",
             )
             with (

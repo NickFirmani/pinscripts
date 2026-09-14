@@ -20,6 +20,12 @@ LOCATION_SPECIFIC_PATTERN = re.compile(
 )
 
 
+def image_reference(game_id, black_and_white=False):
+    """Return the canonical image path derived from a catalog game ID."""
+    suffix = "-bw" if black_and_white else ""
+    return f"images/{game_id}{suffix}.webp"
+
+
 def load_yaml(path: Path):
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)

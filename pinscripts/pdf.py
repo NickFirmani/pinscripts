@@ -34,6 +34,7 @@ from reportlab.platypus import (
     TableStyle,
 )
 
+from .content import image_reference
 from .shot_labels import ShotLabelError, draw_shot_labels, load_shot_labels
 
 
@@ -884,14 +885,13 @@ def render_game(
         ),
     ]
 
-    configured_image = data.get("image")
-    image_path = (
-        resolve_image_path(configured_image, black_and_white, asset_root)
-        if configured_image
-        else None
+    image_path = resolve_image_path(
+        image_reference(data["id"]),
+        black_and_white,
+        asset_root,
     )
     try:
-        shot_labels = load_shot_labels(data, asset_root) if image_path else None
+        shot_labels = load_shot_labels(data, asset_root)
     except ShotLabelError as error:
         game_id = data.get("id", content_path.stem)
         raise PdfAssetError(
@@ -902,15 +902,11 @@ def render_game(
     with tempfile.TemporaryDirectory(dir=output_path.parent) as directory:
         temporary_directory = Path(directory)
         spread_path = temporary_directory / f"{output_path.stem}-spread.pdf"
-        print_image = (
-            _prepare_print_image(
-                image_path,
-                temporary_directory,
-                shot_labels=shot_labels,
-                black_and_white=black_and_white,
-            )
-            if image_path
-            else None
+        print_image = _prepare_print_image(
+            image_path,
+            temporary_directory,
+            shot_labels=shot_labels,
+            black_and_white=black_and_white,
         )
         doc = BaseDocTemplate(
             str(spread_path),
