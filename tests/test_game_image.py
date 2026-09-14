@@ -312,7 +312,7 @@ class GameImageTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         opened.assert_called_once_with("Jaws (Pro) Stern 2024")
-        crop.assert_called_once_with(downloaded)
+        crop.assert_called_once_with(downloaded, force=True)
         self.assertIn("research ID", stdout.getvalue())
         self.assertEqual(stderr.getvalue(), "")
 
@@ -749,7 +749,7 @@ class GameImageTests(unittest.TestCase):
             result = app.interactive_low_resolution_image_repair("")
 
         self.assertEqual(result, 0)
-        crop.assert_called_once_with(download)
+        crop.assert_called_once_with(download, force=True)
         replace.assert_called_once_with(download, source)
         self.assertIn("400x700 -> 1400x2400", stdout.getvalue())
 

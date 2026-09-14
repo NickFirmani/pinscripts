@@ -255,6 +255,10 @@ make game-image GAME=jaws-prem-le-stern-2024 ACTION=upgrade
 make game-labels GAME=jaws-prem-le-stern-2024
 ```
 
+Every newly downloaded color image goes through the crop editor before it is
+accepted, even when the source already has a 408:750 aspect ratio. This keeps
+framing review as a required part of adding or replacing a game image.
+
 Catalog content must remain location-neutral. Validation rejects phrases such
 as “this venue”; physical settings, feeds, machine condition, and tournament
 policy belong in binder venue notes.

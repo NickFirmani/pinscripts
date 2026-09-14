@@ -683,7 +683,7 @@ def interactive_low_resolution_image_repair(game):
                 )
                 before = download_snapshot()
                 continue
-            if not prepare_downloaded_image_for_crop(download):
+            if not prepare_downloaded_image_for_crop(download, force=True):
                 print(
                     "Replacement rejected because its crop was not completed.",
                     file=sys.stderr,
@@ -785,7 +785,7 @@ def interactive_game_image(game, continue_batch=True):
             file=sys.stderr,
         )
         return 1
-    if not prepare_downloaded_image_for_crop(source):
+    if not prepare_downloaded_image_for_crop(source, force=True):
         print("Image not copied.", file=sys.stderr)
         return 0
     destination = IMAGES / f"{image_id}{CANONICAL_IMAGE_SUFFIX}"
