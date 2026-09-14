@@ -1,0 +1,25 @@
+game_id: venom-pro-stern-2023
+image_width: 691
+image_height: 1270
+image_sha256: c293ae0ad2ecb12f5d83ac007923698bf5274f97849e8f0dcc1f6af2a00a14fd
+shots_sha256: ecd7c0c069b09e6d8b66341479369388a4ff43871112b533b6854b0a860dfdf1
+coordinates:
+- diagram: 1
+  x: 130
+  y: 450
+- diagram: 2
+  x: 180
+  y: 351
+- diagram: 3
+  x: 233
+  y: 329
+- diagram: 4
+  x: 297
+  y: 302
+- diagram: 5
+  x: 360
+  y: 265
+- diagram: 6
+  x: 508
+  y: 209
+skipped_diagrams: []

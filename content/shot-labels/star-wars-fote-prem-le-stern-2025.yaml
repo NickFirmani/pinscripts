@@ -1,25 +1,25 @@
 game_id: star-wars-fote-prem-le-stern-2025
-image_width: 1080
-image_height: 2213
-image_sha256: 6bc940f939ea461c055705106f0d0e5a035407291e75afe153055c92927958d5
+image_width: 887
+image_height: 1631
+image_sha256: fd5c972416959f3d18017cb58cc00797982c296e568e78f0816dc515d52a4ad6
 shots_sha256: 68dc637b070694d37180c7d8fb9b19bcef92103b240b89d93cb8ffce2ef5a9e4
 coordinates:
 - diagram: 1
-  x: 182
-  y: 1006
+  x: 141
+  y: 932
 - diagram: 2
-  x: 273
-  y: 693
+  x: 209
+  y: 587
 - diagram: 3
-  x: 359
-  y: 657
+  x: 294
+  y: 540
 - diagram: 4
-  x: 426
-  y: 497
+  x: 360
+  y: 342
 - diagram: 5
-  x: 549
-  y: 455
+  x: 485
+  y: 356
 - diagram: 6
-  x: 717
-  y: 524
+  x: 672
+  y: 423
 skipped_diagrams: []

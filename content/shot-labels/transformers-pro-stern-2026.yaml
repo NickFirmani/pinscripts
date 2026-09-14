@@ -1,0 +1,21 @@
+game_id: transformers-pro-stern-2026
+image_width: 731
+image_height: 1344
+image_sha256: fbb1edd42e01003c99b08ba9dcbef0950f9d3ec5b80183df3bdf6582728b8b6a
+shots_sha256: 543acca7921360a0387282751190825f74b3aa060acd1ba2fc96928b1b088637
+coordinates:
+- diagram: 2
+  x: 187
+  y: 106
+- diagram: 3
+  x: 291
+  y: 100
+- diagram: 4
+  x: 379
+  y: 137
+- diagram: 5
+  x: 489
+  y: 263
+skipped_diagrams:
+- 1
+- 6

@@ -1,25 +1,25 @@
 game_id: walking-dead-pro-stern-2014
-image_width: 1080
-image_height: 1975
-image_sha256: c4a006e6ab3ea59ba413872eb60f2ba84060ecfffa27e363167740453ab0db7b
+image_width: 893
+image_height: 1642
+image_sha256: 9daeb3ed5892f06cd03fbc7965e34061b3733ed6c06104f8e2ec1bfff0e32af2
 shots_sha256: ea427ddb43e637ede0200ac4a9c85935b79671aca4121f0d4ac35aa9a1a58302
 coordinates:
 - diagram: 1
-  x: 322
-  y: 637
+  x: 224
+  y: 538
 - diagram: 2
-  x: 143
-  y: 959
+  x: 80
+  y: 919
 - diagram: 3
-  x: 374
-  y: 357
+  x: 293
+  y: 315
 - diagram: 4
-  x: 503
-  y: 331
+  x: 421
+  y: 317
 - diagram: 5
-  x: 628
-  y: 768
+  x: 526
+  y: 709
 - diagram: 6
-  x: 786
-  y: 891
+  x: 706
+  y: 832
 skipped_diagrams: []
