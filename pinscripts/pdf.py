@@ -896,7 +896,7 @@ def render_game(
         game_id = data.get("id", content_path.stem)
         raise PdfAssetError(
             f"invalid shot labels for {game_id}: {error}; "
-            f"run make shot-labels GAME=\"{game_id}\""
+            f"run make game-labels GAME=\"{game_id}\""
         ) from error
 
     with tempfile.TemporaryDirectory(dir=output_path.parent) as directory:

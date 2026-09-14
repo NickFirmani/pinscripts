@@ -25,6 +25,7 @@ from pinscripts.build import (
     build_print_packet,
     validate_project,
 )
+from pinscripts.doctor import run_doctor
 from pinscripts.game_workflows import interactive_add_game, interactive_update_game
 from pinscripts.images import (
     interactive_black_and_white_images,
@@ -126,6 +127,12 @@ def build_parser():
 
     validation = commands.add_parser("validate")
 
+    doctor = commands.add_parser("doctor", help="Diagnose project health and offer repairs")
+    scope = doctor.add_mutually_exclusive_group()
+    scope.add_argument("--game")
+    scope.add_argument("--binder")
+    doctor.add_argument("--check", action="store_true")
+
     image_process = commands.add_parser("process-images")
     image_process.add_argument("source", type=Path)
     image_process.add_argument("--output-dir", type=Path)
@@ -143,6 +150,8 @@ def main(argv=None):
             return build_catalog(args.black_and_white)
         if args.command == "validate":
             return validate_project()
+        if args.command == "doctor":
+            return run_doctor(args.game, args.binder, check=args.check)
         if args.command == "shot-labels":
             return interactive_shot_labels(args.game)
         if args.command == "process-images":

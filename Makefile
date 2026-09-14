@@ -6,7 +6,7 @@ OPERATION ?= update
 .DEFAULT_GOAL := help
 
 .PHONY: \
-	help setup validate test check clean \
+	help setup doctor validate test check clean \
 	catalog-build game-add game-update game-build game-research game-format \
 	game-image game-labels binder-create binder-sync binder-populate binder-status \
 	binder-add binder-remove binder-notes binder-mark-printed binder-build \
@@ -25,6 +25,7 @@ help:
 		'' \
 		'Getting started and repository health:' \
 		'  make setup' \
+		'  make doctor [GAME=id | BINDER=id] [CHECK=1]' \
 		'  make validate' \
 		'  make test' \
 		'  make check' \
@@ -65,6 +66,10 @@ setup:
 	python3 -m venv .venv
 	.venv/bin/pip install -r requirements.txt
 
+doctor:
+	@test -z "$(GAME)" -o -z "$(BINDER)" || (echo 'Use either GAME or BINDER, not both' >&2; exit 2)
+	@$(PYTHON) main.py doctor $(if $(GAME),--game "$(GAME)") $(if $(BINDER),--binder "$(BINDER)") $(if $(filter 1 true yes,$(CHECK)),--check)
+
 validate:
 	$(PYTHON) main.py validate
 
@@ -72,6 +77,7 @@ test:
 	$(PYTHON) -m unittest discover -s tests
 
 check: test validate
+	$(PYTHON) main.py doctor --check
 
 clean:
 	rm -rf output

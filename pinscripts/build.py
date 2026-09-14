@@ -36,7 +36,7 @@ def validate_all(paths):
             except ShotLabelError as error:
                 game_id = data.get("id", path.stem) if isinstance(data, dict) else path.stem
                 errors.append(
-                    f"shot labels: {error}; run make shot-labels GAME=\"{game_id}\""
+                    f"shot labels: {error}; run make game-labels GAME=\"{game_id}\""
                 )
             except (OSError, AttributeError) as error:
                 errors.append(str(error))

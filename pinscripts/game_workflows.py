@@ -37,7 +37,7 @@ from .shot_labels import interactive_shot_labels, shot_label_issue
 
 @contextmanager
 def _claim_add_game(game_id, lock_directory=None):
-    """Claim one game for ``make add`` without blocking another terminal."""
+    """Claim one game workflow without blocking another terminal."""
     with claim_lock(
         f"add-{game_id}",
         blocking=False,
@@ -255,13 +255,13 @@ def _resume_add_game(description, game_id):
         if research_path.is_file():
             print(f"Resuming from existing research: {research_path.relative_to(ROOT)}")
             if not ask_yes_no("Format this existing research brief now?"):
-                print("Add paused before content creation; run make add again to resume.")
+                print("Add paused before content creation; rerun this command to resume.")
                 return 1
             if interactive_game_format(game_id):
                 return 1
         else:
             if not ask_yes_no("Start the guided AI research flow now?"):
-                print("Add paused before content creation; run make add again to resume.")
+                print("Add paused before content creation; rerun this command to resume.")
                 return 1
             if interactive_research_prompt(description, research_id=game_id):
                 return 1
@@ -420,7 +420,7 @@ def _process_pending_game(binder_id, pending):
         with _claim_add_game(game_id) as claimed:
             if not claimed:
                 print(
-                    f"Another make add process is already working on {game_id}; "
+                    f"Another game workflow is already working on {game_id}; "
                     "released this listing back to the queue."
                 )
                 return 0, False
@@ -480,7 +480,7 @@ def interactive_add_game(description="", binder_id=None):
     with _claim_add_game(game_id) as claimed:
         if not claimed:
             print(
-                f"Another make add process is already working on {game_id}; "
+                f"Another game workflow is already working on {game_id}; "
                 "this invocation made no changes."
             )
             return 0
