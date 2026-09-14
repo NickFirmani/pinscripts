@@ -1,7 +1,6 @@
 PYTHON := .venv/bin/python
 MODE ?= color
 ACTION ?= color
-OPERATION ?= update
 
 .DEFAULT_GOAL := help
 
@@ -10,57 +9,57 @@ OPERATION ?= update
 	catalog-build game-add game-update game-build game-research game-format \
 	game-image game-labels binder-create binder-sync binder-populate binder-status \
 	binder-add binder-remove binder-notes binder-mark-printed binder-build \
-	binder-cover binder-packet dev-content-audit dev-content-proofread \
+	binder-cover binder-update dev-content-audit dev-content-proofread \
 	dev-image-variants dev-format-prompt dev-benchmark-format dev-benchmark-codex \
 	_require-game _require-binder _require-mode _require-image-action \
 	_catalog-build-color _catalog-build-bw _catalog-build-both \
 	_game-build-color _game-build-bw _game-build-both \
 	_game-image-color _game-image-bw _game-image-upgrade \
-	_binder-build-color _binder-build-bw _binder-build-both \
-	_binder-packet-color _binder-packet-bw _binder-packet-both
+	_binder-build-color _binder-build-bw _binder-build-both
 
 help:
 	@printf '%s\n' \
 		'PinScripts commands' \
 		'' \
 		'Getting started and repository health:' \
-		'  make setup' \
-		'  make doctor [GAME=id | BINDER=id] [CHECK=1]' \
-		'  make validate' \
-		'  make test' \
-		'  make check' \
-		'  make clean' \
+		'  make check                                      Run tests, validation, and the read-only doctor.' \
+		'  make clean                                      Remove generated output files.' \
+		'  make doctor [GAME=id | BINDER=id] [CHECK=1]     Diagnose project health and optionally offer repairs.' \
+		'  make help                                       Show this command reference.' \
+		'  make setup                                      Create the virtual environment and install dependencies.' \
+		'  make test                                       Run the automated test suite.' \
+		'  make validate                                   Validate all catalog and binder data.' \
 		'' \
 		'Catalog and game workflows:' \
-		'  make catalog-build [MODE=color|bw|both]' \
-		'  make game-add GAME="description"' \
-		'  make game-update GAME=id' \
-		'  make game-build GAME=id [MODE=color|bw|both] [BINDER=id]' \
-		'  make game-research GAME="description"' \
-		'  make game-format GAME=id' \
-		'  make game-image GAME=id [ACTION=color|bw|upgrade]' \
-		'  make game-labels GAME=id' \
+		'  make catalog-build [MODE=color|bw|both]          Build the location-neutral master catalog PDF.' \
+		'  make game-add GAME="description"                 Add a new game through the complete guided workflow.' \
+		'  make game-build GAME=id [MODE=...] [BINDER=id]  Build one game, optionally with binder context.' \
+		'  make game-format GAME=id                        Format researched material into catalog YAML.' \
+		'  make game-image GAME=id [ACTION=...]             Add, regenerate, or upgrade a playfield image.' \
+		'  make game-labels GAME=id                       Create or revise playfield shot labels.' \
+		'  make game-research GAME="description"            Research a game and save the source notes.' \
+		'  make game-update GAME=id                        Update an existing game and its affected binders.' \
 		'' \
 		'Binder workflows:' \
-		'  make binder-create BINDER=id [TITLE="..."] [MAP=id-or-url | GAMES_FILE=path]' \
-		'  make binder-sync BINDER=id [MAP=id-or-url | PASTE=1]' \
-		'  make binder-populate BINDER=id' \
-		'  make binder-status BINDER=id' \
-		'  make binder-add BINDER=id GAME=id' \
-		'  make binder-remove BINDER=id GAME=id' \
-		'  make binder-notes BINDER=id GAME=id' \
-		'  make binder-mark-printed BINDER=id [DATE=YYYY-MM-DD]' \
-		'  make binder-build BINDER=id [MODE=color|bw|both]' \
-		'  make binder-cover BINDER=id [SIZE=inches]' \
-		'  make binder-packet BINDER=id GAME=id [OPERATION=add|update] [MODE=color|bw|both]' \
+		'  make binder-add BINDER=id GAME=id [MODE=...]     Add a game and create an insert packet when printed.' \
+		'  make binder-build BINDER=id [MODE=...]           Build the complete binder PDF.' \
+		'  make binder-cover BINDER=id [SIZE=inches]        Build printable front-cover and spine inserts.' \
+		'  make binder-create BINDER=id [...]               Create a draft binder from a list or Pinball Map.' \
+		'  make binder-mark-printed BINDER=id [DATE=...]    Make the physical page numbering permanent.' \
+		'  make binder-notes BINDER=id GAME=id              Edit venue-specific notes for one game.' \
+		'  make binder-populate BINDER=id                   Resolve pending imported games safely in parallel.' \
+		'  make binder-remove BINDER=id GAME=id             Remove a game while preserving printed page labels.' \
+		'  make binder-status BINDER=id                     Show binder state and unresolved game counts.' \
+		'  make binder-sync BINDER=id [MAP=... | PASTE=1]   Compare an advisory listing with the saved binder.' \
+		'  make binder-update BINDER=id GAME=id [MODE=...]  Build a replacement packet for an existing game.' \
 		'' \
 		'Maintainer tools:' \
-		'  make dev-content-audit' \
-		'  make dev-content-proofread MODEL=name [APPLY=1] [LIMIT=25] [START_SERVER=1]' \
-		'  make dev-image-variants IMAGE=path [OUTPUT_DIR=path]' \
-		'  make dev-format-prompt RESEARCH=path' \
-		'  make dev-benchmark-format MODEL=name [...]' \
-		'  make dev-benchmark-codex [MODEL=name] [EFFORT=level] [WORKERS=count]'
+		'  make dev-benchmark-codex [...]                   Benchmark Codex formatting and promote the winner.' \
+		'  make dev-benchmark-format MODEL=name [...]       Benchmark local-model YAML formatting.' \
+		'  make dev-content-audit                           Audit rules-basis metadata across the catalog.' \
+		'  make dev-content-proofread MODEL=name [...]      Proofread catalog content with a local model.' \
+		'  make dev-format-prompt RESEARCH=path             Print a fully expanded formatting prompt.' \
+		'  make dev-image-variants IMAGE=path [...]         Generate processed image variants for inspection.'
 
 setup:
 	python3 -m venv .venv
@@ -144,8 +143,8 @@ binder-populate: _require-binder
 binder-status: _require-binder
 	$(PYTHON) main.py binder status "$(BINDER)"
 
-binder-add: _require-binder _require-game
-	$(PYTHON) main.py binder add-game "$(BINDER)" "$(GAME)"
+binder-add: _require-binder _require-game _require-mode
+	$(PYTHON) main.py binder add-game "$(BINDER)" "$(GAME)" --mode "$(MODE)"
 
 binder-remove: _require-binder _require-game
 	$(PYTHON) main.py binder remove-game "$(BINDER)" "$(GAME)"
@@ -170,17 +169,8 @@ _binder-build-both: _binder-build-color _binder-build-bw
 binder-cover: _require-binder
 	@$(PYTHON) main.py binder cover "$(BINDER)" $(if $(SIZE),--size "$(SIZE)")
 
-binder-packet: _require-binder _require-game _require-mode
-	@test -n "$(filter $(OPERATION),add update)" || (echo 'OPERATION must be add or update' >&2; exit 2)
-	@$(MAKE) --no-print-directory _binder-packet-$(MODE) BINDER="$(BINDER)" GAME="$(GAME)" OPERATION="$(OPERATION)"
-
-_binder-packet-color:
-	$(PYTHON) main.py binder packet "$(BINDER)" "$(GAME)" --operation "$(OPERATION)" --color
-
-_binder-packet-bw:
-	$(PYTHON) main.py binder packet "$(BINDER)" "$(GAME)" --operation "$(OPERATION)" --black-and-white
-
-_binder-packet-both: _binder-packet-color _binder-packet-bw
+binder-update: _require-binder _require-game _require-mode
+	$(PYTHON) main.py binder update-game "$(BINDER)" "$(GAME)" --mode "$(MODE)"
 
 dev-content-audit:
 	$(PYTHON) scripts/audit_rules_basis.py

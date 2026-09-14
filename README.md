@@ -164,10 +164,21 @@ source:
 
 ```sh
 make binder-add BINDER=my-binder GAME=jaws-pro-stern-2024
+make binder-update BINDER=my-binder GAME=jaws-pro-stern-2024
 make binder-remove BINDER=my-binder GAME=jaws-pro-stern-2024
 make binder-notes BINDER=my-binder GAME=jaws-pro-stern-2024
 make binder-mark-printed BINDER=my-binder
 ```
+
+`binder-add` is the complete insertion flow. In a draft binder it adds the game
+and renumbers the draft; in a printed binder it assigns permanent decimal page
+labels and writes the four-page insertion packet. Re-running it for a game that
+is already present regenerates the packet without duplicating the manifest
+entry. Use `MODE=bw` or `MODE=both` when needed.
+
+`binder-update` writes the four-page replacement packet for a game already in a
+printed binder, without changing the manifest. Packet construction is an
+internal detail; there is no separate human-facing `binder-packet` command.
 
 ### Resolve a venue's pending games in parallel
 
@@ -200,15 +211,6 @@ marked printed, existing page labels never change:
 - additions receive decimal labels between their neighbors
 - removals become `present: false` tombstones and reserve their old labels
 - venue notes live only in that binder entry
-
-Generate a four-page replacement packet directly:
-
-```sh
-make binder-packet \
-  BINDER=lyons-classic-pinball \
-  GAME=jaws-pro-stern-2024 \
-  OPERATION=update
-```
 
 Print packets double-sided at actual size, flipping on the long edge.
 

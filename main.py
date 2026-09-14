@@ -15,6 +15,7 @@ from pinscripts.binder_workflows import (
     remove_binder_game,
     show_binder_status,
     sync_binder_interactive,
+    update_binder_game,
 )
 from pinscripts.build import (
     BuildInputError,
@@ -22,7 +23,6 @@ from pinscripts.build import (
     build_binder_cover,
     build_catalog,
     build_game,
-    build_print_packet,
     validate_project,
 )
 from pinscripts.doctor import run_doctor
@@ -106,6 +106,11 @@ def build_parser():
     binder_add = binder_commands.add_parser("add-game")
     binder_add.add_argument("binder_id")
     binder_add.add_argument("game")
+    binder_add.add_argument("--mode", choices=("color", "bw", "both"), default="color")
+    binder_update = binder_commands.add_parser("update-game")
+    binder_update.add_argument("binder_id")
+    binder_update.add_argument("game")
+    binder_update.add_argument("--mode", choices=("color", "bw", "both"), default="color")
     binder_remove = binder_commands.add_parser("remove-game")
     binder_remove.add_argument("binder_id")
     binder_remove.add_argument("game")
@@ -115,11 +120,6 @@ def build_parser():
     binder_printed = binder_commands.add_parser("mark-printed")
     binder_printed.add_argument("binder_id")
     binder_printed.add_argument("--date", dest="printed_at")
-    binder_packet = binder_commands.add_parser("packet")
-    binder_packet.add_argument("binder_id")
-    binder_packet.add_argument("game_id")
-    binder_packet.add_argument("--operation", choices=("add", "update"), default="update")
-    _add_color_mode(binder_packet)
     binder_commands.add_parser("status").add_argument("binder_id")
 
     shot_labels = commands.add_parser("shot-labels")
@@ -197,22 +197,15 @@ def main(argv=None):
                 build_binder_cover(args.binder_id, args.spine_width)
                 return 0
             if args.binder_command == "add-game":
-                return add_binder_game(args.binder_id, args.game)
+                return add_binder_game(args.binder_id, args.game, args.mode)
+            if args.binder_command == "update-game":
+                return update_binder_game(args.binder_id, args.game, args.mode)
             if args.binder_command == "remove-game":
                 return remove_binder_game(args.binder_id, args.game)
             if args.binder_command == "notes":
                 return edit_venue_notes(args.binder_id, args.game)
             if args.binder_command == "mark-printed":
                 return mark_binder_printed(args.binder_id, args.printed_at)
-            if args.binder_command == "packet":
-                packet = build_print_packet(
-                    args.game_id,
-                    args.operation,
-                    args.binder_id,
-                    args.black_and_white,
-                )
-                print(f"Wrote {packet}")
-                return 0
             if args.binder_command == "status":
                 return show_binder_status(args.binder_id)
     except (BuildInputError, OSError, ValueError) as error:

@@ -4,12 +4,89 @@ from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 import pinscripts.binder_workflows as app
-from pinscripts.binder import Binder, BinderSource, PendingGame, SourceOverride
+from pinscripts.binder import Binder, BinderEntry, BinderSource, PendingGame, SourceOverride
 from pinscripts.catalog import CatalogGame, match_imported_game
 from pinscripts.pinball_map import ImportedGame, ImportedLocation
 
 
 class BinderWorkflowTests(unittest.TestCase):
+    def test_add_to_printed_binder_writes_manifest_and_insert_packets(self):
+        binder = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "printed",
+            "2026-09-01",
+            BinderSource("manual"),
+            (BinderEntry("alpha", ("2", "3")),),
+        )
+        alpha = CatalogGame("alpha", "Alpha", "Bally", 1980, Path("alpha.yaml"))
+        game = CatalogGame("bravo", "Bravo", "Bally", 1981, Path("bravo.yaml"))
+        with (
+            patch.object(app, "load_binder", return_value=binder),
+            patch.object(app, "resolve_game", return_value=game),
+            patch.object(app, "catalog_by_id", return_value={"alpha": alpha, "bravo": game}),
+            patch.object(app, "write_binder") as write,
+            patch.object(app, "build_print_packet", return_value=Path("packet.pdf")) as packet,
+        ):
+            result = app.add_binder_game("test-binder", "bravo", "both")
+
+        updated = write.call_args.args[0]
+        self.assertEqual(result, 0)
+        self.assertEqual(updated.entry("bravo").pages, ("3.1", "3.2"))
+        self.assertEqual(
+            [call.args[3] for call in packet.call_args_list],
+            [False, True],
+        )
+        self.assertTrue(all(call.args[1] == "add" for call in packet.call_args_list))
+
+    def test_readding_existing_printed_game_only_regenerates_insert_packet(self):
+        entry = BinderEntry("alpha", ("2", "3"))
+        binder = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "printed",
+            "2026-09-01",
+            BinderSource("manual"),
+            (entry,),
+        )
+        game = CatalogGame("alpha", "Alpha", "Bally", 1980, Path("alpha.yaml"))
+        with (
+            patch.object(app, "load_binder", return_value=binder),
+            patch.object(app, "resolve_game", return_value=game),
+            patch.object(app, "write_binder") as write,
+            patch.object(app, "build_print_packet", return_value=Path("packet.pdf")) as packet,
+        ):
+            result = app.add_binder_game("test-binder", "alpha")
+
+        self.assertEqual(result, 0)
+        write.assert_not_called()
+        packet.assert_called_once_with("alpha", "add", binder, False)
+
+    def test_update_printed_binder_writes_replacement_packet_without_mutation(self):
+        binder = Binder(
+            2,
+            "test-binder",
+            "Test Binder",
+            "printed",
+            "2026-09-01",
+            BinderSource("manual"),
+            (BinderEntry("alpha", ("2", "3")),),
+        )
+        game = CatalogGame("alpha", "Alpha", "Bally", 1980, Path("alpha.yaml"))
+        with (
+            patch.object(app, "load_binder", return_value=binder),
+            patch.object(app, "resolve_game", return_value=game),
+            patch.object(app, "write_binder") as write,
+            patch.object(app, "build_print_packet", return_value=Path("packet.pdf")) as packet,
+        ):
+            result = app.update_binder_game("test-binder", "alpha", "bw")
+
+        self.assertEqual(result, 0)
+        write.assert_not_called()
+        packet.assert_called_once_with("alpha", "update", binder, True)
+
     def test_matching_normalizes_manufacturer_legal_names(self):
         catalog = {
             "addams-family-bally-1992": CatalogGame(

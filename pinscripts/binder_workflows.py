@@ -18,6 +18,7 @@ from .binder import (
     replace_entry,
     write_binder,
 )
+from .build import BuildInputError, build_print_packet
 from .catalog import CatalogError, catalog_by_id, match_imported_game, resolve_game
 from .game_workflows import ask_yes_no
 from .pinball_map import (
@@ -204,20 +205,87 @@ def sync_binder_interactive(binder_id, *, pinball_map=None, paste=False):
     return 0
 
 
-def add_binder_game(binder_id, game_query):
+def _packet_variants(output_mode):
+    modes = {
+        "color": (False,),
+        "bw": (True,),
+        "both": (False, True),
+    }
+    try:
+        return modes[output_mode]
+    except KeyError as error:
+        raise BinderError("output mode must be color, bw, or both") from error
+
+
+def _build_binder_packets(binder, game_id, operation, output_mode):
+    packets = []
+    for black_and_white in _packet_variants(output_mode):
+        packet = build_print_packet(
+            game_id,
+            operation,
+            binder,
+            black_and_white,
+        )
+        packets.append(packet)
+        print(f"Wrote {packet}")
+    return packets
+
+
+def add_binder_game(binder_id, game_query, output_mode="color"):
     try:
         binder = load_binder(binder_id)
         game = resolve_game(game_query)
         if game is None:
             raise BinderError(f"no unique catalog game matched {game_query!r}")
-        updated = mark_manually_curated(
-            add_game(binder, game.game_id, catalog_by_id())
+        existing = next(
+            (entry for entry in binder.games if entry.game_id == game.game_id),
+            None,
         )
-        write_binder(updated)
-    except (BinderError, CatalogError, OSError) as error:
+        if existing is not None and not existing.present:
+            raise BinderError(
+                f"game is recorded as removed in binder {binder.binder_id}: "
+                f"{game.game_id}"
+            )
+        if existing is None:
+            updated = mark_manually_curated(
+                add_game(binder, game.game_id, catalog_by_id())
+            )
+            write_binder(updated)
+            print(
+                f"Added {game.name} on pages "
+                f"{'-'.join(updated.entry(game.game_id).pages)}."
+            )
+        else:
+            updated = binder
+            print(
+                f"{game.name} is already present on pages "
+                f"{'-'.join(existing.pages)}."
+            )
+        if updated.status == "printed":
+            _build_binder_packets(updated, game.game_id, "add", output_mode)
+        else:
+            print("Binder is still a draft; no insertion packet is needed.")
+    except (BinderError, BuildInputError, CatalogError, OSError) as error:
         print(f"ERROR: could not add binder game: {error}", file=sys.stderr)
         return 1
-    print(f"Added {game.name} on pages {'-'.join(updated.entry(game.game_id).pages)}.")
+    return 0
+
+
+def update_binder_game(binder_id, game_query, output_mode="color"):
+    try:
+        binder = load_binder(binder_id)
+        if binder.status != "printed":
+            raise BinderError(
+                f"binder {binder.binder_id} is still a draft; use binder-build instead"
+            )
+        game = resolve_game(game_query)
+        if game is None:
+            raise BinderError(f"no unique catalog game matched {game_query!r}")
+        binder.entry(game.game_id, include_removed=False)
+        _build_binder_packets(binder, game.game_id, "update", output_mode)
+    except (BinderError, BuildInputError, CatalogError, OSError) as error:
+        print(f"ERROR: could not update binder game: {error}", file=sys.stderr)
+        return 1
     return 0
 
 
