@@ -1,0 +1,132 @@
+id: eight-ball-deluxe-bally-1981
+name: Eight Ball Deluxe
+metadata:
+  manufacturer: Bally
+  year: 1981
+  designer: George Christian
+  artist: Margaret Hudson
+  production: Approximately 8,250
+  era: Bally AS-2518-35
+  multiball: None
+rules_basis:
+  kind: rom
+  version: Factory Set C — U2 E838-15 + U6 E720-52
+  release_date: null
+hook: Clear the seven pool-ball drops and make the lit 8-ball to build persistent
+  Super Bonus. Early, prioritize racks; once the bonus is large, attack the inline
+  drops for 2×–5× bonus. The defining decision is whether to build more bonus or multiply
+  and protect what is already banked.
+rules:
+  primary: Each of the seven right-side pool-ball targets adds 7K to bonus. Clear
+    all seven, then make the lit 8-ball to complete the rack and establish 56K Super
+    Bonus. Rack development persists across balls, and two completed racks can build
+    Super Bonus to 112K.
+  bullets:
+  - The four inline drops set bonus multiplier to 2×, 3×, 4×, then 5×, making them
+    increasingly valuable after substantial bonus has been built.
+  - Current-rack target bonus is added to persistent Super Bonus before the end-of-ball
+    multiplier; a large late-game drain bonus can therefore dominate the displayed
+    score.
+  - Corner Pocket collects accumulated bonus during play, but whether its collect
+    also receives the 2×–5× multiplier is adjustment-dependent.
+  - Completing the lit 8-ball lights the six DELUXE standups; whether completing DELUXE
+    immediately resets the seven-bank is adjustment-dependent.
+  - Tilting forfeits the entire pending end-of-ball bonus, making tilt avoidance critical
+    when a large Super Bonus is banked.
+watch:
+- title: 8-ball lit
+  text: All seven pool-ball drops are down. Completing the rack with the 8-ball is
+    now the overwhelming priority because it secures the persistent Super Bonus.
+- title: 56K or 112K Super Bonus
+  text: This is the hidden match position. A player who trails on the displayed score
+    may already have a huge end-of-ball bonus waiting.
+- title: 2×–5× multiplier lamps
+  text: With a large Super Bonus, each additional inline drop can represent a major
+    scoring swing by multiplying the accumulated bonus again.
+- title: DELUXE lit
+  text: The 8-ball has been completed and the six DELUXE targets are available; completing
+    them may enable another rack depending on adjustment.
+skill_shots: []
+features:
+- type: extra-ball
+  name: Left Lane Extra Ball
+  text: The far-left lane advances through 10K, 30K, 50K, Extra Ball, and 70K; later
+    Special behavior is adjustment-dependent.
+- type: other
+  name: A-B-C-D
+  text: Completing the four lanes spots pool-ball progress and advances Corner Pocket/8-ball
+    value; the number of pool balls spotted is adjustment-dependent.
+shots:
+- name: Left Lane
+  value: Advances through 10K, 30K, 50K, Extra Ball, and 70K and provides a repeatable
+    alternate scoring route.
+  risk: Medium
+  diagram: 1
+- name: Inline Drops
+  value: Set the end-of-ball bonus multiplier from 2× through 5×; highest leverage
+    once substantial persistent bonus has been built.
+  risk: High
+  diagram: 2
+- name: Pool-Ball Bank
+  value: Each of the seven drops adds 7K bonus; clearing the bank lights the 8-ball
+    and is the primary early-game objective.
+  risk: Medium-High
+  diagram: 3
+- name: DELUXE Targets
+  value: Become active after the lit 8-ball is made and can lead to another rack cycle
+    depending on adjustment.
+  risk: Medium-High
+  diagram: 4
+- name: 8-ball
+  value: Completes a cleared rack, establishes its persistent Super Bonus value, and
+    lights DELUXE; absolute priority once lit.
+  risk: High
+  diagram: 5
+- name: Corner Pocket
+  value: Collects accumulated bonus during play; whether the bonus multiplier applies
+    to this collect is adjustment-dependent.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor control and low-variance scoring. If the displayed score plus pending
+    bonus already covers the opponent, avoid unnecessary right-bank risk and, above
+    all, do not tilt and forfeit the accumulated bonus.
+  behind: With substantial bonus already built, attack the inline multiplier drops
+    for comeback leverage. Corner Pocket can also become a jackpot-like route if configured
+    to apply the bonus multiplier, but that behavior must be verified.
+  key_decision: Build more persistent bonus or multiply and collect what already exists?
+    Early racks pay across future balls, while late in the game each multiplier target
+    can immediately be worth more than another risky rack attempt.
+danger:
+- Right-bank hits create dangerous side-to-side motion and can quickly send the ball
+  toward an outlane.
+- Inline multiplier drops are valuable but difficult to shoot safely; greed for 4×
+  or 5× regularly ends balls.
+- Slings and outlanes punish horizontal rebounds, especially after target-bank hits.
+- The left loop returns through the pop bumpers, so its safety depends on regaining
+  control from the resulting feed.
+- Aggressive nudging with a large pending bonus is especially costly because a tilt
+  forfeits the entire end-of-ball bonus.
+commentary:
+- Seven balls are down—the 8-ball is now the only shot that really matters.
+- That 56K Super Bonus carries; completing this rack now pays again on later balls.
+- They’ve switched from building the bonus to multiplying it—every inline drop is
+  now worth another copy of that bonus.
+- Watch the drain bonus here; the display score is not the whole match position.
+- DELUXE is lit—whether finishing it immediately reopens the rack depends on the game’s
+  adjustment.
+- If that Corner Pocket is set to use the multiplier, this is effectively the jackpot
+  shot.
+trivia:
+- Eight Ball Deluxe followed Bally’s successful Eight Ball from 1977 and was later
+  produced again in alternate cabinet versions.
+- Bally produced approximately 8,250 original 1981 games.
+- The machine uses three flippers, including an upper flipper that provides another
+  attack on the crucial 8-ball.
+- Bally promoted the game around persistent score-building, speech, and its seven-ball
+  to 8-ball to DELUXE progression.
+- Factory software has a reported player-position Super Bonus quirk; modern custom
+  ROMs can alter or correct factory behavior.
+summary: Clear pool balls → make 8-ball → bank Super Bonus → build 2×–5× → protect
+  or collect bonus
+image: images/eight-ball-deluxe-bally-1981.webp

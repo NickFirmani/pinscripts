@@ -1,0 +1,159 @@
+id: big-lebowski-dutch-2016
+name: The Big Lebowski
+metadata:
+  manufacturer: Dutch Pinball
+  year: 2016
+  designer: Barry Driessen and Koen Heltzel
+  artist: Freek van Haagen and Jean-Paul de Win
+  production: Original Dutch Pinball production game
+  era: P3-ROC
+  multiball: Character Multiball, regular three-lock Multiball, Nihilist Showdown,
+    and The Dude Abides
+rules_basis:
+  kind: code
+  version: v1.15
+  release_date: '2024-11-01'
+hook: 'Qualify several characters before starting Character Multiball, add matching
+  bowling balls and a White Russian, then shoot the upper mini-playfield ramp during
+  multiball for up to 5x playfield scoring. The safer alternative is regular three-lock
+  Multiball: six jackpots, then Super Jackpot.'
+rules:
+  primary: Spell character names to qualify them for Character Multiball, then start
+    it at the saucer. Starting balls equal one plus the number of qualified characters,
+    up to five. Characters active at the start participate in the important jackpot
+    cross-multiplication, making the decision to start now or continue building central
+    to tournament strategy.
+  bullets:
+  - Regular Multiball starts after qualifying and making three locks at the left ramp;
+    six main jackpots qualify the Super Jackpot.
+  - During multiballs, the upper mini-playfield ramp awards a rapidly decaying 1.5x–5x
+    playfield multiplier.
+  - Character-specific bowling balls persist until The Dude Abides; matching balls
+    double that character’s Character Multiball jackpots and provide a perk.
+  - White Russian assigns multiplied uses to a selected character shot and persists
+    across balls until consumed; multiple White Russians do not stack.
+  - Six broad accomplishments lead to The Dude Abides; its first phase is single-ball
+    and can continue after a drain, followed by a multiball phase.
+watch:
+- title: Multiple characters ready
+  text: A player may deliberately leave Character Multiball waiting because bringing
+    more characters into it at the start increases both the ball count and scoring
+    potential.
+- title: Bowling balls
+  text: Collected bowling-ball indicators show enhanced characters and persistent
+    perks. A matching ball is especially important because it doubles that character’s
+    Character Multiball jackpots.
+- title: Upstairs during multiball
+  text: 'The upper mini-playfield ramp is a leverage shot, not a detour: it can raise
+    the entire playfield as high as 5x, but the multiplier decays rapidly.'
+- title: Rug opens
+  text: When the Rug rolls back and exposes its hidden hole, a Rug mode or Rug double-jackpot
+    opportunity is ready.
+skill_shots:
+- name: MAUDE Skill Shot
+  how: Normal plunge through the flashing top lane; use the flippers to lane-change
+    the lit lane.
+  value: Advances MAUDE and top-lane progress and is the lowest-commitment opening
+    plunge.
+- name: Rug Mode Skill Shot
+  how: Hold the left flipper while launching, then hit the Rug within about five seconds.
+  value: Immediately opens the Rug hole, leaving the first Rug mode one shot away.
+- name: Let’s Go Bowling Skill Shot
+  how: Hold the right flipper while launching to the upper playfield, then make its
+    ramp.
+  value: Immediately lights Let’s Go Bowling; useful when pursuing a bowling-ball
+    multiplier and perk.
+features:
+- type: ball-save
+  name: Kickback
+  text: A lit kickback protects the left outlane. After use, the Trampoline target
+    can relight it; current rules also provide a short saver after a failed kickback.
+- type: ball-save
+  name: ZERO Outlane Save
+  text: If an outlane switch completes ZERO and would otherwise drain, current code
+    can return the ball unless the kickback already handles it.
+- type: mystery-award
+  name: Mystery
+  text: Spinner progress lights Mystery at the scoop. Normal awards vary; Tournament
+    Game uses a fixed award sequence by level.
+- type: extra-ball
+  name: Extra Ball
+  text: Rug-mode and Mark-It-Zero milestones can light extra balls. Thresholds are
+    adjustable, and tournament configuration may disable or convert them.
+- type: player-control
+  name: Player Controls
+  text: Flippers lane-change MAUDE and ZERO and select bowling choices; Launch controls
+    bowling-ball release and can help choose among simultaneous saucer awards.
+shots:
+- name: Left Saucer
+  value: Starts Character Multiball, Mark It Zero, and other lit opportunities, converting
+    accumulated setup into scoring.
+  risk: Medium
+  diagram: 1
+- name: Donny Orbit
+  value: Advances DONNY and serves as a character jackpot shot during Character Multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Dude / Left Ramp
+  value: Advances DUDE, collects regular Multiball locks, and later serves as the
+    regular Multiball Super Jackpot shot.
+  risk: Medium-High
+  diagram: 3
+- name: Rug
+  value: Advances Rug modes and the Rug Multiball jackpot; opening it exposes the
+    hidden mode-start hole.
+  risk: High
+  diagram: 4
+- name: Mini-Playfield Ramp
+  value: Advances BOWLING and, during multiball, awards a rapidly decaying 1.5x–5x
+    playfield multiplier.
+  risk: Medium-High
+  diagram: 5
+- name: White Russian Bank
+  value: Prepares limited multiplied uses on a selected character shot for a later
+    scoring window.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Cash a reasonably prepared Character Multiball instead of stretching for
+    every character. Use existing bowling balls and White Russian value, protect the
+    kickback, and pursue the mini-playfield multiplier only when the upstairs return
+    is comfortable.
+  behind: Delay Character Multiball for more simultaneous characters and matching
+    bowling balls, prepare a White Russian, then attack the mini-playfield for a high
+    playfield multiplier before collecting jackpots. A developed Nihilist Showdown
+    offers another high-variance route.
+  key_decision: Start Character Multiball now or continue setup? More characters dramatically
+    increase its ceiling, but every additional prerequisite risks draining before
+    any of that investment is realized.
+danger:
+- The Donny left-orbit return can feed dangerously near the center on some setups;
+  its behavior is highly sensitive to leveling and guides.
+- A weak or partial Dude/lock ramp shot can roll back unexpectedly fast.
+- Direct strikes into the central moving Rug can produce awkward rebounds instead
+  of controlled returns.
+- The upper-playfield multiplier decays quickly, so a failed attempt upstairs can
+  consume much of its value before any jackpot is collected.
+commentary:
+- They’re intentionally leaving Character Multiball ready—the more characters they
+  bring in at the start, the bigger that multiball gets.
+- That bowling ball isn’t just a collectible; it boosts this character and doubles
+  the matching Character Multiball jackpot.
+- They’ve gone upstairs for the playfield multiplier—this can reach five-times, but
+  it starts bleeding away immediately.
+- The White Russian is loaded on that character shot, so they’ve got a limited number
+  of multiplied cash-outs there.
+- 'Three locks is the simpler route: six jackpots, then the regular Multiball Super.'
+- The Rug is open now—that hidden hole is the mode start they’ve been setting up.
+trivia:
+- The game incorporates a physical Brunswick-style 10-pin bowling alley into the lower
+  playfield.
+- The center Rug physically rolls away to expose a hidden hole.
+- Dutch Pinball says the game contains more than 200 movie quotes and clips.
+- Initial production code dates to 2016, while the fully implemented The Dude Abides
+  wizard mode arrived with v1.00 in October 2022.
+- Code v1.10 added Tournament Game, where Mystery awards follow fixed sequences instead
+  of randomness.
+summary: Qualify characters → collect matching bowling balls → prepare White Russian
+  → start Character MB → take up to 5x PF → cash jackpots
+image: images/big-lebowski-dutch-2016.webp

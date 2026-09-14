@@ -1,0 +1,158 @@
+id: iron-maiden-prem-le-stern-2018
+name: 'Iron Maiden: Legacy of the Beast (Prem/LE)'
+metadata:
+  manufacturer: Stern Pinball
+  year: 2018
+  designer: Keith Elwin
+  artist: Jeremy Packer / Zombie Yeti
+  production: Premium and Limited Edition trims
+  era: SPIKE 2
+  multiball: Trooper, Mummy, Cyborg, Aces High, Rime of the Ancient Mariner, Can I
+    Play With Madness, Number of the Beast, and Run to the Hills
+rules_basis:
+  kind: code
+  version: v1.18.0
+  release_date: '2026-07-07'
+hook: Spell E-D-D-I-E to start battles, win them for Soul Shards, and progress Mummy
+  and Trooper alongside them. Prepare 2× or 3× playfield scoring, then spend it on
+  a battle, multiball, Power Jackpot, Tomb Treasure, or escalating Loop Jackpot sequence.
+rules:
+  primary: White-arrow shots spell E-D-D-I-E and light an Eddie Battle at the Underworld
+    shot. Winning the five standard battles awards Soul Shards, with each unique shard
+    also advancing Tomb Treasure. Most single-ball battles can continue into Mummy
+    or Trooper Multiball, creating valuable scoring stacks.
+  bullets:
+  - Complete the orange X targets to light 2× playfield scoring at an inlane; complete
+    them again to qualify 3×. Orange targets add time while the multiplier runs.
+  - Trooper Multiball uses three virtual orbit locks. Blue shots score jackpots and
+    three jackpots light the bullseye Super Jackpot; jackpot levels carry between
+    Trooper multiballs.
+  - On Premium, spell MUMMY to light the Sarcophagus lock, lock at the Left Ramp,
+    then spell MUMMY again. The final captive-ball hit physically releases the locked
+    ball to start multiball.
+  - Completed Power Features build a Power Jackpot. Uncollected Power Jackpots stack
+    their multiplier up to 5× and are collected at the Orb.
+  - Repeated inner loops qualify a timed escalating Loop Jackpot sequence, one of
+    the game's strongest repeatable scoring opportunities under playfield multiplier.
+watch:
+- title: Playfield X ready
+  text: Orange X inserts and the flashing inlane show that 2× or 3× is prepared. Delaying
+    the lit inlane usually means the player is saving the multiplier for a larger
+    scoring window.
+- title: Soul Shards
+  text: Soul Shard icons show which Eddie Battles have actually been won. Each unique
+    shard also advances Tomb Treasure progression.
+- title: Yellow Mummy shots
+  text: During Mummy Multiball, completing the current yellow shot set earns an add-a-ball;
+    up to three add-a-balls are available during one multiball.
+- title: Loop Jackpot
+  text: A running inner-loop sequence escalates rapidly with consecutive loops and
+    can become the dominant scoring opportunity when combined with playfield multiplier.
+skill_shots:
+- name: Standard Skill Shot
+  how: Soft-plunge into the lit X target beneath the upper-left flipper.
+  value: Awards 1M, one E-D-D-I-E letter, and 5 additional seconds of ball save.
+- name: Super Skill Shot
+  how: Hold the left flipper, plunge through the inner orbit, then use the upper-left
+    flipper to hit the bullseye target.
+  value: Awards 5M, lights Playfield X, and adds 10 seconds of ball save, shortcutting
+    valuable multiplier setup.
+- name: Left-Outlane Skill Shot
+  how: Use a controlled plunge to send the ball directly through the left outlane.
+  value: A secret skill-shot route whose availability is adjustment-sensitive.
+features:
+- type: ball-save
+  name: Revive
+  text: Spell R-E-V-I-V-E at the lower-left spinner to light outlane saves. The first
+    completion lights both sides, each can save independently, and lit Revives carry
+    between balls.
+- type: mystery-award
+  name: Orb
+  text: Complete the drop bank when Light Orb is available to qualify the Orb. Re-qualifying
+    before collection raises its award level, up to level 3.
+- type: other
+  name: Can I Play With Madness
+  text: Premium-specific third Tomb Treasure starts a 2-ball multiball in which the
+    flippers move the lit shot; progress qualifies more green shots and additional
+    balls.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through Power Features, loop progression, or Tomb Treasure progression
+    and are collected at the center X target.
+shots:
+- name: REVIVE Spinner
+  value: Spells R-E-V-I-V-E to earn persistent outlane saves and also contributes
+    to Fear of the Dark scoring.
+  risk: High
+  diagram: 1
+- name: Left Ramp / Tomb
+  value: Advances battles, Mummy locks, and Tomb Treasure, making it one of the most
+    important Premium progression shots.
+  risk: Medium-High
+  diagram: 2
+- name: Inner / Side Loop
+  value: Builds Loop Jackpot and serves battle objectives; repeated loops can become
+    extremely valuable under playfield multiplier.
+  risk: High
+  diagram: 3
+- name: Drop Bank
+  value: Qualifies Trooper locks, Orb awards, and Bonus X while supporting several
+    important progression routes.
+  risk: Medium-High
+  diagram: 4
+- name: Orb / Bullseye
+  value: Collects Power Jackpot, scores Trooper Super Jackpot, and serves the Super
+    Skill Shot payoff.
+  risk: High
+  diagram: 5
+- name: Captive Ball / Mummy
+  value: Spells MUMMY, advances Mummy Multiball qualification, and serves Mummy jackpot
+    progression.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor battle progression, available multiballs, and Revive qualification
+    rather than forcing a perfect stack. Take strong scoring opportunities when they
+    are ready instead of risking extra setup shots for an ideal multiplier package.
+  behind: Prepare 3× playfield scoring, then expose it to a valuable battle, stacked
+    battle and multiball, accumulated Power Jackpot, Tomb Treasure, or Loop Jackpot
+    sequence. Loops provide especially high comeback potential when the shot is reliable.
+  key_decision: Spend the prepared playfield multiplier now, or preserve the lit inlane
+    until a larger battle or multiball payoff is ready? Waiting raises the ceiling
+    but adds meaningful drain risk through additional setup shots.
+danger:
+- A missed inner side loop can feed rapidly toward the right outlane, making repeated
+  Loop Jackpot attempts a major risk-reward decision.
+- The REVIVE spinner earns outlane protection but a missed attempt can itself threaten
+  the left outlane.
+- Drop-bank rebounds can produce fast center returns and immediate drain danger.
+- Left Ramp rejects are especially costly because so many Premium progression features
+  depend on that shot.
+- Repeatedly hunting orange X targets for a perfect multiplier stack can be more dangerous
+  than starting an already-qualified scoring feature.
+commentary:
+- They’ve got playfield X ready, but they’re holding the inlane until there’s something
+  worth multiplying.
+- That battle win gives them a Soul Shard—and every unique shard also advances the
+  Tomb.
+- 'This is the nice stack: the battle keeps running underneath Mummy Multiball.'
+- Those yellow shots in Mummy aren’t just jackpots—they’re working toward another
+  add-a-ball.
+- Loop Jackpot is running; if they keep feeding that inner loop, the value climbs
+  very quickly.
+- That REVIVE spinner is dangerous, but completing it can effectively buy them another
+  ball through the outlane save.
+trivia:
+- Iron Maiden was Keith Elwin’s first commercial Stern design, with a layout evolved
+  from his earlier Archer homebrew machine.
+- The Premium Sarcophagus uses a hit-detecting captive ball to physically release
+  the locked Mummy ball.
+- All models use four flippers, including two upper flippers that create the game’s
+  distinctive looping geometry.
+- The game includes 12 selectable Iron Maiden songs; song choice does not alter the
+  rules.
+- Premium adds the motorized Sarcophagus lock and actuating center ramp that reveals
+  the Underworld scoop.
+summary: Spell EDDIE → win battles → collect Soul Shards → prepare PF-X → stack multiball
+  → cash loops or jackpots
+image: images/iron-maiden-prem-le-stern-2018.webp

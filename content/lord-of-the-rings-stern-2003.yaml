@@ -1,0 +1,151 @@
+id: lord-of-the-rings-stern-2003
+name: The Lord of the Rings
+metadata:
+  manufacturer: Stern Pinball
+  year: 2003
+  designer: George Gomez
+  artist: Kevin O’Connor
+  production: Standard 2003 game; separate 500-unit Limited Edition followed in 2009
+  era: Whitestar / DMD
+  multiball: Fellowship of the Ring, The Two Towers, Return of the King, Gollum, Ring,
+    and Valinor
+rules_basis:
+  kind: rom
+  version: CPU 10.00
+  release_date: null
+hook: Collect 3 Elf Rings for War of the Ents, then use its Orthanc shots to build
+  Souls toward Return of the King. Add Gollum for Sméagol 2×, collect the 2× Scoring
+  Elf Gift, then bring in Two Towers for the game's explosive stacked-jackpot route.
+rules:
+  primary: Three Elf Rings light a Ring Mode, seven Dwarf Rings light Mystery, and
+    nine Man Rings light Gollum Multiball. Ring Modes are mutually exclusive, but
+    Gollum can run with a mode and a movie multiball, making layered scoring the core
+    strategy.
+  bullets:
+  - War of the Ents repeatedly feeds Orthanc and Paths of the Dead, advancing both
+    the mode and Souls toward Return of the King Multiball.
+  - Gollum Multiball alternates every seven seconds between Gollum at 0.5× scoring
+    and Sméagol at 2× scoring, multiplying other active scoring.
+  - Two Towers uses three physical Sword-ramp locks. Its jackpot multiplier grows
+    with balls remaining and rapid consecutive jackpots.
+  - Completing a mode or multiball earns an Elf Gift. The 2× Scoring Gift is collected
+    at Barad-dûr and doubles scoring for 60 seconds.
+  - Playing Fellowship, Two Towers, and Return of the King advances Destroy the Ring
+    qualification even if their internal objectives were not completed.
+watch:
+- title: Gollum pulsing
+  text: A pulsing Gollum Multiball insert means Sméagol and 2× scoring; solid means
+    Gollum and 0.5×. Large jackpots should ideally be collected during the pulse.
+- title: 2× Scoring active
+  text: A pulsing 2× Scoring Gift means the major scoring timer is running, so expect
+    the player to abandon setup and attack jackpots immediately.
+- title: KEEP / Sword locks
+  text: KEEP complete and balls parked on Narsil indicate Two Towers is prepared.
+    Avoiding the right ramp may mean the player is waiting to build the rest of the
+    stack first.
+- title: Souls / Paths of the Dead
+  text: Green Paths-of-the-Dead lamps and the Soul total show progress toward 5,000
+    Souls and Return of the King; War of the Ents accelerates this naturally.
+skill_shots:
+- name: Lane Skill Shot
+  how: Soft-plunge into the flashing O-R-C top lane; use the flippers to move the
+    lit lane.
+  value: Awards +5× bonus multiplier and provides the safest conventional skill-shot
+    route.
+- name: Tower Skill Shot
+  how: Medium-plunge directly into Orthanc.
+  value: Awards 250K plus 50K per prior successful Tower skill shot, a free Paths-of-the-Dead
+    trip, and Souls.
+- name: Flipper Skill Shot
+  how: Full-plunge around the Left Orbit, then immediately shoot the Right Orbit.
+  value: Starts at 1.25M and awards one Ring of each type, providing the strongest
+    strategic opening when reliable.
+features:
+- type: mystery-award
+  name: Palantir
+  text: Light through Barad-dûr and collect at the white standup. Useful awards include
+    Add-A-Ball during multiball and extensions to 2× scoring, modes, or ball save.
+- type: mystery-award
+  name: Mystery
+  text: Seven Dwarf Rings light Mystery at the Shire; its award categories include
+    multiball advancement, ring completion, points, and bonus awards.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through Elf Gifts, Barad-dûr, and other progression; treatment
+    when extra balls are disabled is configuration-dependent.
+shots:
+- name: Left Orbit / Barad-dûr
+  value: Collects Elf Gifts such as 2× Scoring and lights Palantir, making it a major
+    setup and multiplier shot.
+  risk: Medium-High
+  diagram: 1
+- name: Orthanc
+  value: Builds Souls, War of the Ents, and Paths of the Dead toward Return of the
+    King Multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Center Ring
+  value: Starts Ring Modes and serves the critical late-game Destroy the Ring objective.
+  risk: High
+  diagram: 3
+- name: Palantir Target
+  value: Collects state-aware awards such as Add-A-Ball and timer extensions that
+    can preserve a high-value scoring stack.
+  risk: High
+  diagram: 4
+- name: Gollum’s Cave
+  value: Starts Gollum Multiball and brings its alternating 0.5× and 2× scoring phases
+    into the active stack.
+  risk: Medium-High
+  diagram: 5
+- name: Sword / Right Ramp
+  value: Builds physical locks and scores jackpots for Two Towers, the primary explosive
+    multiball scoring route.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take a prepared movie multiball rather than greedily assembling the full
+    Gollum and 2× package. Use Palantir to extend survival or an existing scoring
+    window, and avoid unnecessary dangerous Ring or Palantir shots once enough value
+    is secured.
+  behind: Build the classic mode plus Gollum plus 2× Scoring plus Two Towers stack.
+    Four-ball Two Towers during Sméagol combines its ball-count and consecutive-jackpot
+    multipliers with the broader scoring multipliers for enormous comeback potential.
+  key_decision: Cash a qualified multiball now or preserve it until a Ring Mode, Gollum,
+    and 2× Scoring are prepared? Layering systems creates the largest scores, but
+    every additional setup step exposes the player to dangerous center and Palantir
+    shots.
+danger:
+- Weak Center Ring attempts can fall back into central traffic or drain; Destroy the
+  Ring makes this shot especially consequential.
+- Palantir attempts can produce dangerous straight-down-the-middle rebounds; exact
+  behavior is machine-sensitive.
+- Inner and right-orbit returns can reach the flippers unexpectedly fast.
+- Sword-lock releases can suddenly add another ball to play when physical balls are
+  parked on the ramp.
+- Glancing Balrog hits may reject dangerously without moving the toy far enough to
+  receive rule credit.
+commentary:
+- Ents is doing double duty here—every Orthanc shot is mode progress and more Souls
+  toward Return of the King.
+- Gollum’s pulsing—that’s Sméagol, so scoring is doubled right now.
+- They’ve selected the two-times Elf Gift; one Barad-dûr collect turns this into the
+  big scoring window.
+- They’re deliberately leaving Two Towers ready until the rest of the stack is in
+  place.
+- Palantir during multiball can give them the add-a-ball they need to keep this multiplier
+  package alive.
+- That Ring shot is not benign—missing short there can end the ball immediately.
+trivia:
+- The Lord of the Rings was designed by George Gomez, with rules and software by Keith
+  P. Johnson and Dwight Sullivan.
+- Elijah Wood and John Rhys-Davies recorded original speech for the machine.
+- The physical One Ring contains an electromagnet that catches the ball in midair
+  after the center jump ramp.
+- A separate 500-unit Limited Edition followed in 2009 and supports CPU 10.02; the
+  standard game’s latest factory gameplay ROM is CPU 10.00.
+- Valinor requires completion of all three movie multiballs, all six Elf Gifts, There
+  and Back Again, and successful destruction of the Ring.
+summary: Start Ents → build Souls → add Gollum → collect 2× Scoring → start Two Towers
+  → cash during Sméagol
+image: images/lord-of-the-rings-stern-2003.webp

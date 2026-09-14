@@ -1,0 +1,26 @@
+game_id: deadpool-prem-le-stern-2018
+image: images/deadpool-prem-le-stern-2018.webp
+image_width: 820
+image_height: 1507
+image_sha256: ee7cb43490239e7ed2ca3584a8842931f8fd30cd78630bd45d32ab3689ef894d
+shots_sha256: 90bcfd760ac67a44fbe990c652b0e0f257c993712d34e6c3372da1068a5487a8
+coordinates:
+- diagram: 1
+  x: 110
+  y: 627
+- diagram: 2
+  x: 170
+  y: 568
+- diagram: 3
+  x: 362
+  y: 288
+- diagram: 4
+  x: 503
+  y: 592
+- diagram: 5
+  x: 425
+  y: 337
+- diagram: 6
+  x: 271
+  y: 398
+skipped_diagrams: []

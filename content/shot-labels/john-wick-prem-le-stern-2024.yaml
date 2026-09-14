@@ -1,0 +1,26 @@
+game_id: john-wick-prem-le-stern-2024
+image: images/john-wick-prem-le-stern-2024.webp
+image_width: 1356
+image_height: 2493
+image_sha256: 7633274dabbf98c8affafae99ae5bc54824cc9c07bacc7673b0133f484e5e722
+shots_sha256: 41d1da775bd029d25519bf0869a3f6b1d864c231bf6ae18eb19b76763fd8d080
+coordinates:
+- diagram: 1
+  x: 82
+  y: 1228
+- diagram: 2
+  x: 179
+  y: 937
+- diagram: 3
+  x: 472
+  y: 340
+- diagram: 4
+  x: 599
+  y: 728
+- diagram: 5
+  x: 739
+  y: 616
+- diagram: 6
+  x: 1087
+  y: 1526
+skipped_diagrams: []

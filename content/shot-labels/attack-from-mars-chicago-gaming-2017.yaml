@@ -1,0 +1,26 @@
+game_id: attack-from-mars-chicago-gaming-2017
+image: images/attack-from-mars-chicago-gaming-2017.webp
+image_width: 521
+image_height: 958
+image_sha256: 8891cb13617deaee9930902cd78866a67bf1c15463dd34217c0fa1cf55f1cf57
+shots_sha256: 24d9133f859dc3a1dec79d10e222d6c602583d5f829e2c0829e38c12553f0f42
+coordinates:
+- diagram: 1
+  x: 48
+  y: 322
+- diagram: 2
+  x: 105
+  y: 281
+- diagram: 3
+  x: 160
+  y: 244
+- diagram: 4
+  x: 272
+  y: 188
+- diagram: 5
+  x: 416
+  y: 286
+- diagram: 6
+  x: 471
+  y: 315
+skipped_diagrams: []

@@ -1,0 +1,26 @@
+game_id: simpsons-pinball-party-stern-2003
+image: images/simpsons-pinball-party-stern-2003.webp
+image_width: 855
+image_height: 1572
+image_sha256: d82fecfb2dc764b233793cc5726ab5cffe306d83fee895d5d97f3253bfe960b5
+shots_sha256: 78823fdc2fe1b31255490b8a42817e9d80c10ba67798f7582ac5f6df43f4d74f
+coordinates:
+- diagram: 1
+  x: 397
+  y: 300
+- diagram: 2
+  x: 323
+  y: 128
+- diagram: 3
+  x: 174
+  y: 71
+- diagram: 4
+  x: 508
+  y: 333
+- diagram: 5
+  x: 809
+  y: 872
+- diagram: 6
+  x: 788
+  y: 599
+skipped_diagrams: []

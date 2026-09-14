@@ -1,0 +1,27 @@
+game_id: labyrinth-barrels-of-fun-2023
+image: images/labyrinth-barrels-of-fun-2023.webp
+image_width: 777
+image_height: 1428
+image_sha256: b0c621f9822e948aeff9a430ef855079731db3372c3d2dbbd844a5031f4fee61
+shots_sha256: c5f84ac83f42ace7a3d757b8c434f82a89d3d05e9894c0cfcff945453e267aaf
+coordinates:
+- diagram: 1
+  x: 153
+  y: 629
+- diagram: 2
+  x: 106
+  y: 761
+- diagram: 3
+  x: 232
+  y: 539
+- diagram: 4
+  x: 449
+  y: 245
+- diagram: 4
+  x: 607
+  y: 283
+- diagram: 5
+  x: 519
+  y: 302
+skipped_diagrams:
+- 6

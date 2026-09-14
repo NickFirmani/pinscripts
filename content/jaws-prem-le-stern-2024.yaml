@@ -1,0 +1,156 @@
+id: jaws-prem-le-stern-2024
+name: JAWS (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2024
+  designer: Keith Elwin
+  artist: Michael Barnard
+  production: Premium and Limited Edition trims
+  era: SPIKE 2
+  multiball: Jaws, Bounty Hunt, Celebration, Rescue/Search, Night Search, and wizard
+    multiballs
+rules_basis:
+  kind: code
+  version: v1.02.0
+  release_date: '2026-07-01'
+hook: Get Binoculars early to accelerate beach rescues, complete Shark Encounters
+  to raise base Machete, and use Jaws Multiball 1 as protection for difficult scoring
+  objectives. Time Machete for a major jackpot, hurry-up, or cash-out; bounties provide
+  a persistent alternate route.
+rules:
+  primary: Complete Shark Encounters for Soul-style progression and permanent Machete
+    improvement, rescue beachgoers toward Beach Closed hurry-ups and Rescue/Search
+    Multiball, and build Jaws Multiball through chum, red chum-line shots, barrels,
+    and the yellow start shot. Competition Install is assumed.
+  bullets:
+  - Completing a Shark Encounter at the fin awards its full Encounter Jackpot and
+    permanently adds +1× to base Machete; a backup collect does not.
+  - Complete the left target bank and cross the lit return lane to arm Machete, which
+    multiplies the next made shot. Completed encounters and other progression can
+    permanently raise its base multiplier.
+  - Three rescued beachgoers at one major shot start Beach Closed. Collected hurry-ups
+    permanently increase that beach's value until Rescue/Search Multiball resets it.
+  - Bounty Hunt objectives persist ball-to-ball, but task progress advances only during
+    single-ball play. Completing the objective starts Bounty Hunt Multiball at the
+    reel.
+  - Jaws Multiball requires chum, red chum-line shots, a barrel at the fin, then a
+    yellow start shot. Jaws MB1 and MB2 can support other scoring objectives; MB3
+    is mutually exclusive.
+watch:
+- title: Machete armed
+  text: A lit Machete return-lane insert means the next made shot can be multiplied.
+    Watch for the player to steer the lane and deliberately cash a jackpot, hurry-up,
+    or other large award.
+- title: Encounter Boost
+  text: Repeated shark hits before an Encounter can build boosts, including 2× Encounter
+    scoring, so those shark hits may be setup rather than immediate cash-out attempts.
+- title: Beach Closed
+  text: Orange beachgoer progress leads to Beach Closed hurry-ups. The fifth closure
+    forces Rescue or Search Multiball and cannot stack with another encounter or multiball.
+- title: Jaws Multiball ready
+  text: Red chum-line shots build toward the barrel; once the barrel is attached at
+    the raised fin, a yellow shot starts Jaws Multiball.
+skill_shots:
+- name: Level 1 Skill Shot
+  how: Plunge into the pop bumper.
+  value: Awards 5M and adds 5 seconds of ball save; the simplest opening skill shot.
+- name: Level 2 Skill Shot
+  how: Plunge through the lane above the mini-flipper without hitting the bumper.
+  value: Awards 10M, lights Gear, and adds 5 seconds of ball save, making it a valuable
+    early setup choice.
+- name: Level 3 Skill Shot
+  how: Clean-plunge to the flippers, then hit the flashing left-bank target before
+    another switch.
+  value: Awards 15M, lights Gear, and adds 5 seconds of ball save.
+features:
+- type: ball-save
+  name: Life Ring
+  text: Two target hits qualify a manually activated left-outlane save. Press the
+    action button shortly before the ball reaches the outlane to deploy it.
+- type: player-control
+  name: Flip-Lock
+  text: During multiball, hold a ball on the mini-flipper and hold the action button
+    to trap it temporarily, reducing the number of balls in active play.
+- type: other
+  name: Orca Wheel
+  text: Premium/LE upper-playfield wheel awards include Light Gear and a temporary
+    +3× Machete boost; use the action button to select the lit award.
+- type: video-mode
+  name: Fish Finder
+  text: Can light a video recreation of the film's shark arcade game and may contain
+    an extra ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Qualified at milestones including beachgoers and Quickshots; when disabled,
+    the documented compensation is 15M and can itself be multiplied by Machete.
+shots:
+- name: Wave Ramp
+  value: Advances Beach Panic, ORCA, and beachgoer progression while feeding the upper
+    playfield.
+  risk: Medium-High
+  diagram: 1
+- name: Chum Bucket
+  value: Builds the red chum line for Jaws Multiball and can contribute to add-a-ball
+    progression.
+  risk: Medium-High
+  diagram: 2
+- name: Shark / Fin
+  value: Collects Encounter Jackpots, attaches barrels for Jaws Multiball, and damages
+    bounty sharks.
+  risk: High
+  diagram: 3
+- name: Fishing Reel
+  value: Qualifies and starts Bounty Hunts, converting persistent bounty objectives
+    into their multiball payoff.
+  risk: High
+  diagram: 4
+- name: Lookout Tower / Orca
+  value: Premium/LE upper-playfield route to Orca Wheel awards including Gear and
+    temporary Machete boosts.
+  risk: Medium-High
+  diagram: 5
+- name: Right Ramp / Quint's Shack
+  value: Advances bounties, Gear, Raft Attack, and other utility progression.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor structured progression such as Binoculars into beach closures and Rescue
+    Multiball, easier encounters, and Jaws MB1 as protection. Cash Machete on a known
+    valuable shot rather than risking extra setup for an elaborate stack.
+  behind: Build 2× Encounter scoring and a high Machete multiplier, then expose them
+    to an Encounter Jackpot or heavily built Beach Closed hurry-up. Quickshots provide
+    another high-variance route when the player can repeatedly execute the harpoon
+    and fin sequence.
+  key_decision: Cash the current scoring opportunity or continue building Gear, Encounter
+    Boosts, Machete, and beach values? Preparation raises the ceiling, but every extra
+    captive-ball, reel, or tight ramp attempt creates meaningful drain risk.
+danger:
+- Fin and shark-area ricochets can return rapidly toward the flippers or center drain.
+- The mini-flipper lane normally returns toward the right inlane, but its exit can
+  threaten the right outlane on some setups.
+- Weak Wave Ramp attempts can reject quickly back into uncontrolled play.
+- The Fishing Reel is a tight precision shot, making repeated bounty attempts costly
+  when the player is missing it.
+- Life Ring can save a left-outlane drain, but only if the player remembers to activate
+  it at the correct moment.
+commentary:
+- They've got Machete armed—the next made shot is the one they want to multiply.
+- 'That shark hit is setup, not just points: they''re working toward the two-times
+  Encounter Boost.'
+- This first Jaws Multiball is really a utility multiball—they want to finish the
+  encounter while they've got extra balls.
+- Three beachgoers rescued; now this hurry-up both scores and increases the value
+  of that beach.
+- The barrel is on Bruce—one yellow shot now starts Jaws Multiball.
+- Life Ring is ready; if this goes left outlane, watch for the action-button save.
+trivia:
+- JAWS was Keith Elwin's sixth Stern design.
+- The game incorporates material from all four JAWS films.
+- Richard Dreyfuss recorded custom speech for the game alongside John Williams' score.
+- Premium and LE feature a shark that bursts upward through Ben Gardner's boat and
+  an upper Orca playfield with its own ramp and wheel spinner.
+- The completed final wizard mode, Smile, You Son of A…, culminates in Super Celebration
+  Multiball.
+summary: Get Binoculars → rescue beaches → complete Encounters → build Machete → protect
+  with Jaws MB → cash multiplied awards
+image: images/jaws-prem-le-stern-2024.webp

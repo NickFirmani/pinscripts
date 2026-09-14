@@ -1,0 +1,155 @@
+id: star-wars-pro-stern-2017
+name: Star Wars — Pro
+metadata:
+  manufacturer: Stern
+  year: 2017
+  designer: Steve Ritchie
+  artist: ''
+  production: Pro; Premium/LE share core rules but use different Death Star and Hyperdrive
+    hardware
+  era: SPIKE 2
+  multiball: Planet finals, Victory, TIE Fighter, Hyperspace, and Jedi
+rules_basis:
+  kind: code
+  version: v1.30.0
+  release_date: '2025-12-22'
+hook: Use Han for a fast planet route, build and position shot X before the valuable
+  shots arrive, then exploit a planet-final and Victory Multiball. Under Competition
+  settings missions do not stack, and the multiplier tops out at 20× with Double Multipliers.
+rules:
+  primary: 'Four major shots correspond to four planets. Planet progression leads
+    to a final multiball and then Victory Multiball. The defining scoring system is
+    shot X: center-bank hits raise it, the action button toggles it, and flippers
+    reposition the green multiplier arrows while they are off.'
+  bullets:
+  - Competition Mode disables mission stacking, so only one planet mission is played
+    at a time.
+  - Higher shot X values expire faster. Under the resolved Competition configuration,
+    the maximum multiplier is 20× with Double Multipliers.
+  - The fourth FORCE completion awards Double Multipliers, creating one of the game's
+    biggest scoring-leverage moments.
+  - A planet final leads directly into Victory Multiball; six major shots earn the
+    medal, with the multiplier on the final medal shot applying to its value.
+  - TIE Fighter and Hyperspace Multiballs can provide additional balls and protection
+    while a valuable planet-final stack is active.
+watch:
+- title: Green X arrows
+  text: Green arrows identify the currently multiplied shots. When the arrows are
+    off, the player can reposition them with the flippers before turning them back
+    on.
+- title: Multiplier value
+  text: A player abandoning planet progress for the center targets may be raising
+    or protecting shot X before its timer expires.
+- title: 'FORCE #4'
+  text: The fourth FORCE completion activates Double Multipliers, dramatically increasing
+    the value of a well-positioned shot X.
+- title: Multiball stacking
+  text: During a planet-final multiball, the player may delay its main objective to
+    prepare TIE Fighter or Hyperspace Multiball and gain more multiball protection.
+skill_shots:
+- name: 3-Bank Skill Shot
+  how: After launch, hit the flashing target in the center 3-bank; repeated successes
+    make the target move faster.
+  value: Awards Bonus X, with larger awards on repeated successes. The middle target
+    is worth the most.
+- name: FORCE Skill Shot
+  how: Hit the roving lit FORCE drop target before touching the wrong drop target.
+  value: Spots the next FORCE completion award, accelerating progress toward valuable
+    features including Double Multipliers.
+features:
+- type: ball-save
+  name: Escape
+  text: The second FORCE completion lights a right-outlane save. On Pro this is implemented
+    as a virtual ball save.
+- type: video-mode
+  name: Video Mode
+  text: The third FORCE completion lights the Millennium Falcon asteroid mode at the
+    right inner loop; that shot's multiplier applies to Video Mode scoring.
+- type: player-control
+  name: Action Button
+  text: Toggles the shot-X arrows so the flippers can reposition them, and is also
+    used during TIE Fighter Assault.
+- type: mystery-award
+  name: Mystery
+  text: The first FORCE completion lights three simultaneous awards at the right scoop.
+    Shot X multiplies point awards, and Bonus Hold can preserve a large end-of-ball
+    bonus.
+- type: extra-ball
+  name: Extra Balls
+  text: Several qualifications exist; under Competition Install actual extra balls
+    are disabled.
+shots:
+- name: Endor / Left Ramp
+  value: Advances Endor modes and serves as a common progression and multiball cash-out
+    shot.
+  risk: Medium-High
+  diagram: 1
+- name: Death Star / Left Inner Loop
+  value: Advances Death Star modes and Hyperspace Multiball on Pro, while also serving
+    as an important multiplied scoring shot.
+  risk: Medium-High
+  diagram: 2
+- name: TIE Fighter
+  value: Advances TIE Fighter hurry-up and Multiball, providing another multiball
+    to support a valuable planet-final stack.
+  risk: High
+  diagram: 3
+- name: Center 3-Bank
+  value: Raises and refreshes shot X, making it the central setup shot for the game's
+    largest scoring opportunities.
+  risk: High
+  diagram: 4
+- name: Hoth / Right Inner Loop
+  value: Advances Hoth modes and starts lit Video Mode, whose scoring can benefit
+    from the shot multiplier.
+  risk: Medium-High
+  diagram: 5
+- name: Tatooine Scoop
+  value: Advances the fast Tatooine progression route and collects Mystery when lit.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor the fast Han and Tatooine route, take an available planet multiball,
+    and preserve a useful multiplier rather than gambling on perfect repositioning.
+    Use additional multiball protection when it materially extends a valuable stack.
+  behind: Build shot X aggressively during ball save, position the multiplied shot
+    on the largest objective, and pursue Double Multipliers into planet-final and
+    Victory Multiball. Bonus Hold can also preserve a developed end-of-ball bonus
+    for comeback value.
+  key_decision: Progress the planet or spend time building and moving shot X? A heavily
+    multiplied ordinary jackpot can outweigh a nominally larger feature, but every
+    center-bank hit and repositioning cycle adds risk.
+danger:
+- The center 3-bank is essential for shot X, but direct standup rebounds can punish
+  multiplier greed.
+- Tatooine scoop ejects are machine-sensitive and can feed toward center or the left
+  outlane.
+- Left-side orbit and loop returns can be extremely fast and machine-sensitive.
+- Auto-plunge rebounds from the upper area can threaten the left outlane; physical
+  behavior varies by setup.
+- Weak inner-loop entries can reject dangerously, and Hoth behavior is sensitive to
+  physical setup.
+commentary:
+- They've shut the multiplier arrows off so they can slide them onto the shots they
+  actually want.
+- That center target isn't setup fluff—every hit is raising or protecting their shot
+  multiplier.
+- 'FORCE number four is the dangerous one: Double Multipliers is now live.'
+- They're using the planet multiball as cover to build X before worrying about the
+  jackpots.
+- TIE Fighter Multiball isn't the main score here—its value is adding protection to
+  this stack.
+- That green X is on the cash-out shot; this next make could be worth a huge multiple
+  of normal value.
+trivia:
+- Stern released Star Wars for the franchise's 40th anniversary in 2017.
+- Steve Ritchie designed the game, and Stern calls the Pro's inner loop the Super
+  Speed Loop.
+- The game uses footage from Episodes IV, V, and VI along with original John Williams
+  music.
+- The Pro has a static Death Star, while Premium and LE models add an exploding Death
+  Star and Hyperdrive accelerator.
+- Later Comic Art versions returned to substantially the same rules and layout package.
+summary: Choose Han → qualify a planet → build and position shot X → start planet
+  final → activate Double Multipliers → cash Victory
+image: images/star-wars-pro-stern-2017.webp

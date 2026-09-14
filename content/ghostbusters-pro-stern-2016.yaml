@@ -1,0 +1,155 @@
+id: ghostbusters-pro-stern-2016
+name: Ghostbusters (Pro)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2016
+  designer: John Trudeau
+  artist: Jeremy Packer / Zombie Yeti
+  production: Pro edition
+  era: SPIKE / DMD
+  multiball: Storage Facility, We Came We Saw, Mass Hysteria, and We’re Ready To Believe
+    You
+rules_basis:
+  kind: code
+  version: v1.17.0
+  release_date: '2019-10-08'
+hook: Use the skill shot to Start Scene at the Left Scoop or Left Ramp, finish one
+  scene ladder to light We Came We Saw, and build Gear Combos for 2× and 3× playfield
+  scoring. Running both gives the major 6× scoring window; alternatively, collect
+  ghosts toward Storage Facility and stack it with a scene.
+rules:
+  primary: Scenes form three ordered ladders at the Left Scoop, Left Ramp, and Right
+    Orbit. Complete an entire ladder to light We Came We Saw at the Left Ramp. The
+    shorter ladder reaches multiball faster but produces fewer balls. Current v1.17
+    scene-drain defaults are assumed.
+  bullets:
+  - If no scene is lit, hit GHOST to lower Slimer, then bash Slimer to relight scenes.
+    During a scene, GHOST can normally spot the next required shot but not the final
+    shot.
+  - On current defaults, draining during most scenes gives progression credit but
+    loses remaining scoring; the final scene in a ladder resumes on the next ball.
+  - Three virtual Storage Facility locks on the Pro start 3-ball multiball. Ghost
+    shots score jackpots, and clearing them lights three Super Jackpots.
+  - Gear Combos light 2× and then 3× playfield scoring. Activate both together for
+    6×; individual multipliers can be extended, but 6× cannot be extended on v1.17.
+  - Ghost-count milestones lead to Video Mode at 40, Loopin’ Supers at 60, PKE Frenzy
+    at 80, and Mass Hysteria at 100.
+watch:
+- title: Blue skill-shot arrow
+  text: Shows the selected opening award. Left Scoop or Left Ramp usually means the
+    player is taking Start Scene immediately and bypassing Slimer qualification.
+- title: 2× / 3× inserts
+  text: The multiplier inserts beside the Left Ramp show whether 2× or 3× is qualified
+    or active. Both running together create the crucial 6× scoring window.
+- title: Ghost-count ladder
+  text: Watch 40, 60, 80, and 100 ghosts for Video Mode, Loopin’ Supers, PKE Frenzy,
+    and Mass Hysteria.
+- title: WCWS at Left Ramp
+  text: A flashing We Came We Saw start means the player completed an entire scene
+    ladder and has reached the primary tournament cash-out.
+skill_shots:
+- name: Top-lane Skill Shot
+  how: Use the left flipper before plunging to select the P, K, or E top lane.
+  value: Scores 1M plus 5% of current score. P adds +3 Bonus X, K advances playfield-multiplier
+    qualification, and E adds +3M Super Jackpot.
+- name: Playfield Skill Shot
+  how: Use the right flipper before plunging to select a blue-arrow playfield shot,
+    then make that shot.
+  value: Scores 1M plus 5% of current score and grants the selected award; Left Scoop
+    or Left Ramp can Start Scene immediately.
+features:
+- type: ball-save
+  name: Start-of-Ball Save
+  text: The default start-of-ball save can rescue two consecutive drains within its
+    timer; the number of saves is operator-adjustable.
+- type: video-mode
+  name: Negative Reinforcement on ESP Ability
+  text: 'In Competition mode, the guessing sequence is deterministic: one guaranteed
+    correct guess per 10 collected ghosts, followed by a guaranteed wrong guess.'
+- type: video-mode
+  name: Don’t Cross the Streams
+  text: Use the flippers to steer two proton streams and catch 15 ghosts without crossing
+    the streams or allowing a ghost to escape.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can be lit through scene and ghost progression; when configured
+    for points instead, the documented award is 15M and is affected by playfield multiplier.
+- type: mystery-award
+  name: Tobin’s Spirit Guide / Picto-Pops
+  text: Can award variable features including locks, multipliers, Super Jackpots,
+    and points.
+shots:
+- name: Left Scoop
+  value: Runs the shortest two-scene ladder toward We Came We Saw and also serves
+    Tobin’s Spirit Guide.
+  risk: Medium-High
+  diagram: 1
+- name: Left Orbit / Spinner
+  value: Advances scenes and Super Jackpot value while providing a flowing alternative
+    to the more dangerous central targets.
+  risk: Medium
+  diagram: 2
+- name: Captive Ball / Gear Targets
+  value: Gear Combo progression qualifies the 2× and 3× playfield multipliers that
+    can combine for 6× scoring.
+  risk: High
+  diagram: 3
+- name: Left Ramp
+  value: Advances scenes, Gear Combos, Storage locks, We Came We Saw, and Super Jackpots,
+    making it the game's central setup and payoff shot.
+  risk: Medium-High
+  diagram: 4
+- name: GHOST / Slimer
+  value: Relights scene qualification and can spot required shots during active scenes,
+    except the final shot.
+  risk: High
+  diagram: 5
+- name: Right Ramp
+  value: Advances PKE Frenzy and serves as a required shot in scenes and other scoring
+    features.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Stay on the established scene and ramp route and take a qualified We Came
+    We Saw rather than adding unnecessary GHOST or multiplier-target risk. A controlled
+    multiball is preferable to draining while assembling 6×.
+  behind: Build 3× or 6× before starting We Came We Saw, Storage Facility, a strong
+    scene, Loopin’ Supers, or late PKE scoring. A multiplied feature provides the
+    game’s strongest comeback leverage.
+  key_decision: Cash the qualified mode or multiball now, or risk the Gear targets
+    to bring playfield multiplier into it? The multiplier can transform the scoring
+    opportunity, but its activation shots are among the game’s most dangerous.
+danger:
+- GHOST target misses can lose speed along the center guide and dribble straight down
+  the middle.
+- Partial Left Ramp shots can curl across the playfield and disappear down the right
+  outlane.
+- Multiplier and captive-ball standups near the flippers can produce violent airballs
+  and center returns.
+- Pop exits through the Slimer lane can send the ball backward into the center lane
+  for an immediate drain.
+- The wide flipper gap, double inlanes, and steep flipper geometry make ordinary-looking
+  feeds difficult to control.
+commentary:
+- They’re taking Start Scene off the skill shot—that saves them from having to fight
+  Slimer.
+- That finishes the ladder; We Came, We Saw is now lit at the Left Ramp.
+- The Gear Combo has qualified three-X; if they bring two-X in as well, that becomes
+  six-X playfield.
+- Six-X is running, and on 1.17 they cannot extend it—this is the scoring window.
+- That GHOST target can spot the next mode shot, but it can’t give them the last one.
+- Forty ghosts means video mode; in competition, Negative Reinforcement is deterministic,
+  not a real guess.
+trivia:
+- Ghostbusters was designed by John Trudeau and was one of Stern’s early SPIKE titles.
+- Original cast member Ernie Hudson recorded new speech guiding the player as a Ghostbusters
+  recruit.
+- All three editions feature hand-drawn artwork by Jeremy Packer, known as Zombie
+  Yeti.
+- Premium and LE use Ecto Goggles with a Pepper’s Ghost-style optical illusion; the
+  Pro omits that mechanism.
+- Versions 1.16 and 1.17 substantially revised the rules years after release, making
+  some early strategy guides obsolete.
+summary: Start Scene → finish ladder → light WCWS → build 2×/3× → run 6× → cash mode
+  or multiball
+image: images/ghostbusters-pro-stern-2016.webp

@@ -1,0 +1,155 @@
+id: harry-potter-le-ce-jersey-jack-2025
+name: Harry Potter (LE/CE)
+metadata:
+  manufacturer: Jersey Jack Pinball
+  year: 2025
+  designer: Eric Meunier
+  artist: MinaLima
+  production: Limited and Collector’s Edition trims
+  era: Modern JJP
+  multiball: Explore Hogwarts, Golden Trio, Death Eater, Quidditch World Cup, O.W.L.s,
+    and Battle of Hogwarts
+rules_basis:
+  kind: code
+  version: v1.26
+  release_date: '2026-04-14'
+hook: Take the Level-1 Quidditch skill shot to reach Seeker immediately, then pursue
+  the fast Explore Hogwarts Multiball. Build Wizard Travel toward Geminio and time
+  its 2×–4× playfield scoring around a valuable multiball; Golden Trio offers a harder,
+  higher-ceiling alternative.
+rules:
+  primary: 'Explore Hogwarts is the fast scoring route: lower all eight colored banners
+    with the center and Staircase/right ramps, then start multiball at the Staircase.
+    Green and yellow begin spotted, so the first qualification can take only two shots.
+    Four jackpots light a moving Super Jackpot for the Ring Horcrux.'
+  bullets:
+  - Quidditch position multiplies end-of-game Quidditch scoring from 100K at Beater
+    through 300K at Seeker. A Snitch is worth 150 Quidditch points, making Seeker
+    extremely valuable.
+  - 'Geminio provides 30 seconds of playfield multiplier: 2× initially, then 3× and
+    4× on later uses. Time it around major jackpots or cash-outs.'
+  - Golden Trio requires HARRY, RON, and HERMIONE locks. Ollivander’s can improve
+    ball save, jackpots, Wand Jackpot qualification, and multiplier combinations before
+    starting it.
+  - 'Death Eater Multiball is isolated: once it starts, all other game rules are disabled,
+    so it cannot be used as a normal scoring stack.'
+  - Playing four primary progression multiballs qualifies Battle of Hogwarts.
+watch:
+- title: Seeker position
+  text: Seeker gives the maximum 300K multiplier to every Quidditch point paid after
+    the game, so an early left-ramp skill shot can materially change the final score.
+- title: Hogwarts banners
+  text: The colored banners atop the display show Explore Hogwarts qualification.
+    Once all eight are gone, the Staircase/right ramp starts the multiball.
+- title: Geminio trophies
+  text: Trophies filling the display indicate Geminio is active and all playfield
+    scoring is multiplied during its 30-second timer.
+- title: Three Wand locks
+  text: Harry, Ron, and Hermione locks mean Golden Trio is close. A player delaying
+    the start may be improving the multiball through Ollivander’s first.
+skill_shots:
+- name: L1 Quidditch
+  how: Select Quidditch with the action button and shoot the Left Ramp.
+  value: Immediately advances to Seeker and starts a Quidditch match, maximizing the
+    value of Quidditch points paid after the game.
+- name: L2 Explore Hogwarts
+  how: At Level 2, select Explore Hogwarts and shoot the Staircase/right ramp.
+  value: Makes the next Explore Hogwarts Multiball score 2×, creating a strong fast-scoring
+    route.
+- name: L3 Horcrux
+  how: At Level 3, select the Horcrux choice and shoot the right spinner.
+  value: Spots a Horcrux, providing valuable deep-game progression.
+features:
+- type: ball-save
+  name: Fawkes
+  text: Repeated right orbits light the left-outlane save. After use, hit three unique
+    shots within 20 seconds to complete the save and open victory laps or Super Jackpot.
+- type: ball-save
+  name: Protego
+  text: Spelling HARRY lights the right-outlane gate. Existing ball-save activity
+    can sometimes trigger the gate without consuming the earned protection.
+- type: video-mode
+  name: Flourish & Blotts
+  text: Memorize and enter button sequences. Each completed spell adds +1× to all
+    O.W.L.s scoring, and completing the feature awards the Diary Horcrux.
+- type: mystery-award
+  name: Potions
+  text: Three visible awards are assigned to the Left Ramp, Center Ramp, and Right
+    Orbit; choose one by making that shot and then repeating it twice.
+- type: player-control
+  name: Action Button
+  text: Cycles selectable skill shots and Diagon Alley shops and spends Bombtastic
+    Bombs to finish lessons.
+shots:
+- name: Left / Quidditch Ramp
+  value: Advances Quidditch position, starts matches, catches Snitches, and progresses
+    toward Quidditch World Cup Multiball.
+  risk: Medium-High
+  diagram: 1
+- name: Death Eater
+  value: Advances battles and isolated Death Eater Multiball progression toward its
+    Horcrux.
+  risk: High
+  diagram: 2
+- name: Great Hall / Center Ramp
+  value: Advances Explore Hogwarts banners, lessons, and Potions, making it a major
+    general-purpose progression shot.
+  risk: Medium-High
+  diagram: 3
+- name: Grand Staircase / Right Ramp
+  value: Advances Explore Hogwarts banners and starts the multiball once qualified;
+    also serves the Level-2 2× Explore skill shot.
+  risk: Medium-High
+  diagram: 4
+- name: Scoop
+  value: Advances school terms, Wizard Travel, and Deathly Hallows and converts Wizard
+    Travel progression into Geminio opportunities.
+  risk: Medium
+  diagram: 5
+- name: Wand / Right Orbit
+  value: Locks prepared Golden Trio characters and advances Fawkes toward the left-outlane
+    save.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor the fast Explore Hogwarts route, collect an available Super Jackpot
+    rather than overbuilding, and preserve Fawkes and Protego protection. Once Seeker
+    is secured, later Quidditch scoring remains valuable without requiring an all-in
+    World Cup attempt.
+  behind: Push the multiplier ceiling by bringing Geminio into a developed Golden
+    Trio or Explore opportunity, or attack Quidditch aggressively. At Seeker, end-of-game
+    Quidditch scoring plus the enabled MVP award can overturn a displayed-score deficit
+    after the final drain.
+  key_decision: Take quick Explore Hogwarts value now, or invest in Seeker position,
+    Ollivander’s upgrades, spell multipliers, and Golden Trio locks for a substantially
+    higher scoring ceiling?
+danger:
+- Great Hall ramp rejects or airballs can turn a clean-looking center-ramp attempt
+  into a dangerous rollback on some setups.
+- Off-center Grand Staircase entries can reject toward the middle instead of entering
+  the mechanism.
+- Fast Quidditch upper-playfield returns can produce difficult or airborne feeds on
+  some setups.
+- Death Eater mechanism shots can produce airballs and unpredictable rebounds.
+commentary:
+- That left-ramp skill shot put them straight at Seeker—every Quidditch point is now
+  worth the maximum end-of-game rate.
+- Two banner shots can be enough for the first Explore Hogwarts; now the Staircase
+  is the multiball start.
+- Geminio is running—thirty seconds of playfield X, so this is the cash-out window.
+- They’re holding Golden Trio because Ollivander’s can make that multiball substantially
+  better.
+- Death Eater is an isolated multiball—once it starts, the other rules shut off.
+- 'Don’t forget the Quidditch bonus: this match can still change after the last ball
+  has already drained.'
+trivia:
+- The Grand Staircase has three entrances and thirteen exits, making it one of the
+  game’s defining physical mechanisms.
+- The game draws material from all eight Harry Potter films.
+- Harry Potter was Eric Meunier’s fourth Jersey Jack design.
+- Collector’s Edition artwork was created by MinaLima and uses metallic and gold treatments.
+- The interactive Collector’s Edition topper includes Harry, Hedwig, the Golden Snitch,
+  and a Dark Mark projection.
+summary: Take Seeker → qualify Explore → start multiball → build Geminio → multiply
+  cash-out → invest in Golden Trio
+image: images/harry-potter-le-ce-jersey-jack-2025.webp

@@ -1,0 +1,26 @@
+game_id: pokemon-prem-le-stern-2026
+image: images/pokemon-prem-le-stern-2026.webp
+image_width: 961
+image_height: 1767
+image_sha256: 720c0849656235a3112f7b125ad95878efbe0e2f43309da4e28b2a62fe982672
+shots_sha256: a278b06ef527773e3aa656263bb220f76f624dcdff26c0f118b3981d65ad6de4
+coordinates:
+- diagram: 1
+  x: 146
+  y: 778
+- diagram: 2
+  x: 214
+  y: 559
+- diagram: 3
+  x: 485
+  y: 258
+- diagram: 4
+  x: 665
+  y: 595
+- diagram: 5
+  x: 719
+  y: 660
+- diagram: 6
+  x: 832
+  y: 1012
+skipped_diagrams: []

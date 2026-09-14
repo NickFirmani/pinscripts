@@ -1,0 +1,158 @@
+id: deadpool-prem-le-stern-2018
+name: Deadpool (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2018
+  designer: George Gomez
+  artist: Jeremy Packer / Zombie Yeti
+  production: Premium and Limited Edition trims
+  era: SPIKE 2
+  multiball: Lil’ Deadpool, Ninja, Mechsuit, Sauron, and Disco Multiball
+rules_basis:
+  kind: code
+  version: v1.16.0
+  release_date: '2026-07-07'
+hook: Prime Lil’ Deadpool Multiball, start a Battle first, then release the multiball
+  for protection and stacking. Prepare Team-Ups such as Wolverine or Colossus, and
+  use SNIKT into the Katana ramp to raise temporary playfield scoring as high as 5×
+  before major cash-outs.
+rules:
+  primary: Battles start at the scoop and are requalified by completing DEAD. Flashing
+    shots damage the villain; defeating one lights a timed Final Shot at the scoop.
+    Battle progress survives drains, and draining with Final Shot lit still grants
+    completion credit unless the player tilts.
+  bullets:
+  - 'Prepare Team-Ups before Battles: Wolverine doubles damage, Colossus doubles Battle
+    scoring, Dazzler adds health/time, and Domino adds villain-specific scoring.'
+  - Lil’ Deadpool can be started during a Battle but not after another multiball begins;
+    Ninja Multiball can stack into an already-running Battle or Quest.
+  - SNIKT ricochets into the right Katana ramp raise temporary Playfield X up to 5×;
+    higher multipliers expire faster and additional SNIKT hits extend the timer.
+  - Ninja Multiball requires three locks; building Ninja Stars first increases its
+    value, and its Super Jackpot equals the jackpots already collected.
+  - 'Weapons persist: 45 advances toward Mechsuit Multiball, while each 100 Weapons
+    adds +1 base Playfield X for the rest of the game.'
+watch:
+- title: Lil’ Deadpool primed
+  text: A green insert or physically trapped ball means Lil’ Deadpool Multiball is
+    ready. If the player goes to the scoop instead, they may be setting up a Battle
+    before releasing it.
+- title: Green Team-Up icons
+  text: These show allies prepared for the next Battle. Wolverine’s double damage
+    and Colossus’s double Battle scoring are especially important.
+- title: SNIKT into Katana
+  text: A successful ricochet into the right ramp raises Playfield X. Expect the player
+    to shift quickly from setup to collecting valuable shots.
+- title: Ninja locks
+  text: Three locked balls mean Ninja Multiball is ready; watch whether the player
+    starts a Battle or Quest first to create a stack.
+skill_shots:
+- name: Lane Skill Shot
+  how: Plunge through the flashing BAM! lane, selecting the lane before launch.
+  value: Awards 2.5M plus 250K per prior skill shot and provides the safest opening
+    option.
+- name: Super Skill Shot
+  how: Hold the left flipper while plunging, then shoot the right ramp.
+  value: Awards 5M plus 500K per prior skill shot and collects anything already lit
+    on the right ramp.
+- name: Super Secret Skill Shot
+  how: Hold the left flipper while plunging, then make SNIKT into the right ramp.
+  value: Awards 15M plus 1M per prior skill shot and adds +1 Playfield X, making it
+    the highest-leverage option when reliable.
+features:
+- type: player-control
+  name: BOOM Button
+  text: Spell BOOM through the return lanes. Pressing the lit button spots the highest-valued
+    lit shot other than the scoop; banking four uses lights Big BOOM to collect all
+    lit shots.
+- type: ball-save
+  name: Regeneration
+  text: Every third completion of DEADPOOL lights the left-outlane ball save.
+- type: mystery-award
+  name: Mystery
+  text: Completing DEADPOOL lights Mystery at the scoop. During multiball it normally
+    prioritizes Add-A-Ball when available; Competition settings normalize awards.
+- type: extra-ball
+  name: Extra Balls
+  text: Under the current Stern Competition install assumed here, extra balls are
+    disabled.
+- type: other
+  name: Disco Loops
+  text: Premium-specific left-orbit progression uses the actuated ramp to feed the
+    right flipper and progresses toward Disco Multiball.
+shots:
+- name: Dazzler / Left Orbit
+  value: Qualifies Dazzler Team-Up and advances Premium Disco progression through
+    the actuated orbit ramp.
+  risk: Medium
+  diagram: 1
+- name: Left Ramp
+  value: Serves Battle shots, Katanarama, and Sauron jackpots; a common lane for scoring
+    and progression.
+  risk: Medium
+  diagram: 2
+- name: Wolverine Spinner
+  value: Qualifies Wolverine Team-Up for double Battle damage and advances Berserker
+    Rage.
+  risk: Medium-High
+  diagram: 3
+- name: Lil’ Deadpool
+  value: Advances Lil’ Deadpool modes and prepares the utility multiball commonly
+    held for protection during a dangerous Battle.
+  risk: High
+  diagram: 4
+- name: SNIKT → Katana
+  value: Raises temporary Playfield X through the SNIKT ricochet into the right ramp,
+    providing the game’s major recurring scoring leverage.
+  risk: High
+  diagram: 5
+- name: Scoop / Hellhouse
+  value: Starts Battles, Quests, Mechsuit, and wizard progression and serves as a
+    major mode cash-out shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take prepared Battle progress and Lil’ Deadpool stacks rather than repeatedly
+    forcing SNIKT. Cash Battle Final Shots promptly, use BOOM to avoid dangerous lit
+    shots, and start Ninja Multiball once qualified rather than over-building its
+    value.
+  behind: Attack SNIKT aggressively during multiball, bring Colossus into Battles,
+    and stack Battle plus Lil’ Deadpool or Battle/Quest plus Ninja Multiball. Colossus
+    combined with high Playfield X can turn a healthy Battle Final Shot into a match-swinging
+    collect.
+  key_decision: Start the multiball now, or preserve it as protection for a Battle
+    or Quest? Strong stacks come from getting the valuable mode running first and
+    only then releasing the prepared multiball.
+danger:
+- Lil’ Deadpool target hits and release feeds can head toward the middle, making direct
+  work especially dangerous during Juggernaut without multiball protection.
+- Weak Katana ramp attempts can reject abruptly toward the center and flippers.
+- SNIKT hits can fail to complete the intended ricochet into the ramp and return unpredictably.
+- Full-plunge and left-orbit returns can arrive at the lower flippers with substantial
+  speed.
+- Juggernaut requires dangerous DEAD and POOL target work, which is why Lil’ Deadpool
+  Multiball is valuable protection.
+commentary:
+- They’ve got Lil’ Deadpool ready, but they’re holding it—this is probably a Battle
+  stack.
+- Wolverine is qualified, so every Battle hit is doing double damage.
+- Colossus is in—that doubles the Battle scoring, including the potentially huge finish.
+- That SNIKT just raised the whole playfield multiplier; now every jackpot matters
+  more.
+- Ninja Multiball is ready, but they want the mode running first before they take
+  that third lock.
+- BOOM is lit—they can use the action button to spot the best lit shot rather than
+  risk shooting it.
+trivia:
+- Deadpool was designed by George Gomez with hand-drawn comic artwork by Zombie Yeti.
+- Nolan North voices Deadpool, and Stern created an original pinball story around
+  Marvel’s comic version of the character.
+- Premium and LE use an actuated left-orbit ramp that creates a repeatable right-flipper
+  feed for Disco Loops.
+- The angled SNIKT stand-up is designed to ricochet a clean hit onto the Katana ramp,
+  directly tying the physical shot to Playfield X.
+- A July 2024 update added Wolverine speech and Berserker BOOM while increasing Berserker
+  Rage scoring.
+summary: Prime Lil’ Deadpool → prepare Team-Ups → start Battle → stack multiball →
+  build SNIKT Playfield X → cash
+image: images/deadpool-prem-le-stern-2018.webp

@@ -1,0 +1,154 @@
+id: transformers-prem-le-stern-2026
+name: 'TRANSFORMERS: More Than Meets the Eye (Prem/LE)'
+metadata:
+  manufacturer: Stern
+  year: 2026
+  designer: Elliot Eismin
+  artist: ''
+  production: Limited Edition, 750 games; Premium/LE add Megatron cannon and physical
+    Soundwave locks
+  era: SPIKE 3
+  multiball: Transformers, Tech Spec Mania, Combiner, Dinobot Island, and One Shall
+    Fall
+rules_basis:
+  kind: code
+  version: v0.90
+  release_date: '2026-08-12'
+hook: Start a useful Mission while preparing Transformers Multiball, then finish BUMBLEBEE
+  for 30 seconds of 2× playfield. During multiball, light several jackpots before
+  collecting one, use Space Bridge for add-a-ball, and convert the held ball into
+  3× scoring.
+rules:
+  primary: Five timed Missions start at Megatron. Energon lets the player Energize
+    a Mission for easier but generally lower-value objectives; completing a normal
+    Mission instead Rusts the next one, making it harder and substantially more valuable.
+    Mission progress survives a failed attempt.
+  bullets:
+  - 'Transformers Multiball starts with three balls. Light several jackpots before
+    collecting one: the collected jackpot is multiplied by the number currently lit.'
+  - Three Transformers jackpots light the difficult side-ramp Super Jackpot.
+  - After normal multiball ball save expires, Space Bridge provides the add-a-ball.
+    Hitting the held ball with the captive ball creates 2× scoring, or 3× if Bumblebee
+    2× was already running.
+  - Completing BUMBLEBEE at the captive ball gives 30 seconds of 2× playfield, making
+    it the primary setup before starting a Mission and Transformers Multiball stack.
+  - Two Missions light One Shall Fall. Playing additional Missions before starting
+    it adds perks and value; all five Missions qualify Rescue Optimus.
+watch:
+- title: BUMBLEBEE ready
+  text: A flashing captive ball means 2× playfield is ready. Expect the player to
+    collect it immediately before starting the valuable Mission and multiball stack.
+- title: Space Bridge lit
+  text: During multiball this means add-a-ball is available. Once a ball is held there,
+    the captive-ball shot can convert the stack to 2× or 3× scoring.
+- title: Multiple jackpots lit
+  text: The player may deliberately avoid an available jackpot because the next collect
+    is multiplied by the number of jackpots currently lit.
+- title: Energon choice
+  text: Spending Energon makes the Mission easier but generally less valuable; refusing
+    it means accepting a harder, higher-value Rusted Mission.
+skill_shots:
+- name: Optimus Skill Shot
+  how: Soft-plunge to the upper flipper and shoot Optimus.
+  value: Awards 500K plus 5 seconds of ball save and is the easiest upper-flipper
+    skill-shot choice.
+- name: Side Ramp Skill Shot
+  how: Soft-plunge to the upper flipper and make the tight side ramp.
+  value: Awards 5M plus 8 seconds of ball save; substantially more valuable but more
+    difficult than Optimus.
+- name: Space Bridge Skill Shot
+  how: Soft-plunge to the upper flipper and shoot Space Bridge.
+  value: Awards 8M plus 10 seconds of ball save, the largest verified standard skill-shot
+    award.
+features:
+- type: player-control
+  name: Action Button
+  text: Activates 15 seconds of Tech Spec availability and 2× shot scoring after Cassette
+    combos, and controls Combiner selection.
+- type: ball-save
+  name: Left Outlane Save
+  text: Lit at the start of the game and can be relit by Mystery after use.
+- type: ball-save
+  name: Countdown to Extinction
+  text: On the final ball, a right-outlane drain gives 18 seconds to make the right
+    ramp and continue; Premium/LE then fires the ball from Megatron's cannon.
+- type: other
+  name: Cannon Jackpot
+  text: Once per ball outside other modes, load Megatron's cannon from the right ramp,
+    make the Cannon Combo, then hit Optimus from the cannon feed for 14M.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit by completing all five Missions or collecting 15 Tech Specs.
+shots:
+- name: Grimlock / Left Orbit
+  value: Advances Dinobot modes and feeds the upper flipper, including the secret
+    skill-shot route.
+  risk: High
+  diagram: 1
+- name: Left Ramp
+  value: Advances Missions and combos and provides a comparatively direct route through
+    common mode objectives.
+  risk: Medium-High
+  diagram: 2
+- name: BUMBLEBEE Captive Ball
+  value: Completing BUMBLEBEE provides 30 seconds of 2× playfield, the primary multiplier
+    setup for major stacks.
+  risk: High
+  diagram: 3
+- name: Megatron
+  value: Starts Missions and collects their optional Final Blow for additional value
+    and Tech Spec scoring benefits.
+  risk: High
+  diagram: 4
+- name: Lock VUK
+  value: Qualifies and starts Transformers Multiball; under the resolved Competition
+    configuration the locks are virtual.
+  risk: Medium
+  diagram: 5
+- name: Side Ramp / Space Bridge
+  value: Collects major Supers and Combiner progress and provides Mystery or add-a-ball
+    utility during multiball.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Use Energized Missions when the easier objective matters, prepare Bumblebee
+    2×, and take Transformers Multiball without excessive additional setup. Cash reasonable
+    multiplied jackpots rather than insisting on the dangerous side-ramp Super.
+  behind: Accept a valuable Rusted Mission, combine it with Transformers Multiball
+    and pre-started Bumblebee 2×, then use Space Bridge add-a-ball and the captive
+    ball to reach 3× scoring. Tech Spec Mania is another high-ceiling route.
+  key_decision: Energize the next Mission for safety or accept Cosmic Rust for value?
+    Once multiball is prepared, the second choice is whether to start immediately
+    or risk more single-ball setup to bring Mission and 2× playfield into the stack.
+danger:
+- Missing the tight side ramp can ricochet the ball through the dangerous bumper and
+  slingshot area.
+- Left-side misses frequently enter the unusually hazardous lower-left bumper and
+  slingshot cluster.
+- Megatron and its drop-bank traffic can create uncontrolled center rebounds during
+  necessary Mission work.
+- The Premium/LE cannon return is fast and demands an immediate left-flipper recovery.
+commentary:
+- They've got Bumblebee ready—that captive-ball collect is thirty seconds of two-times.
+- They're lighting several jackpots before cashing one; every lit jackpot increases
+  the multiplier.
+- Space Bridge is add-a-ball, but the real prize is hitting that held ball and turning
+  the stack into three-times.
+- 'They''re refusing the Energon, so the next Mission gets Rusted: harder, but worth
+  more.'
+- Two Missions have been played, so One Shall Fall is available; waiting makes that
+  mini-wizard stronger.
+- That upper side ramp is the Super shot, but missing it feeds the nastiest part of
+  this playfield.
+trivia:
+- This Transformers game uses the original Generation 1 cartoon, unlike Stern's 2011
+  machine based on the live-action films.
+- It is Elliot Eismin's second lead design after John Wick.
+- Peter Cullen reprises Optimus Prime, while Frank Welker voices Megatron and Soundwave.
+- The Limited Edition is restricted to 750 games and adds collector-focused presentation
+  treatments.
+- 'The game celebrates the 40th anniversary of The Transformers: The Movie and includes
+  The Touch by Stan Bush.'
+summary: Choose Mission → prepare Bumblebee 2× → start Transformers MB → light multiple
+  jackpots → add a ball → convert to 3× → cash Supers
+image: images/transformers-prem-le-stern-2026.webp

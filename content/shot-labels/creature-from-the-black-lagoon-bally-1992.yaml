@@ -1,0 +1,26 @@
+game_id: creature-from-the-black-lagoon-bally-1992
+image: images/creature-from-the-black-lagoon-bally-1992.webp
+image_width: 939
+image_height: 1726
+image_sha256: b6104bbc7ed773866a23cadd335f36c3d3b45b7473d94ab56a2c880fc739149a
+shots_sha256: aa00b1b1f9076cf746e0bdc3c9a6f9fc44f9101bd519094781461d5967e637fc
+coordinates:
+- diagram: 1
+  x: 149
+  y: 953
+- diagram: 2
+  x: 249
+  y: 624
+- diagram: 3
+  x: 379
+  y: 615
+- diagram: 4
+  x: 488
+  y: 687
+- diagram: 5
+  x: 673
+  y: 869
+- diagram: 6
+  x: 788
+  y: 922
+skipped_diagrams: []

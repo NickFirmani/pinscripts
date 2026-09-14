@@ -1,0 +1,155 @@
+id: john-wick-prem-le-stern-2024
+name: John Wick (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2024
+  designer: Elliot Eismin
+  artist: Randy Martinez
+  production: Premium and Limited Edition trims
+  era: SPIKE 2
+  multiball: Helipad Showdown, Taxicab Chase, Motorcycle Pursuit, Bagarre à L’Étoile,
+    Excommunicado, Deconsecrated, and Red Circle Reckoning
+rules_basis:
+  kind: code
+  version: LE v1.02
+  release_date: '2026-07-01'
+hook: Start a Job, position enemies on valuable shots for 2×–4× awards, and stack
+  the Job with a strong multiball. Cash completed Jobs for persistent faction perks,
+  then use Lights Out for global 2×; alternatively, build Adversary Battles and push
+  their scoring toward 4×.
+rules:
+  primary: Start Jobs at the Weapons Crate/right VUK, then complete their objectives
+    and cash out at the Left Eject for 20% of accumulated Job scoring plus a persistent
+    faction perk. Enemies on Job and main-multiball shots multiply awards, making
+    enemy placement and feature stacking central to scoring.
+  bullets:
+  - One, two, or three enemies on a relevant Job or main-multiball shot make its award
+    2×, 3×, or 4×. Enemy multipliers do not apply during Adversary Battles.
+  - Only enemies defeated during single-ball play count toward the ten needed to qualify
+    an Adversary Battle.
+  - Once an Adversary Battle's Escape Jackpot is available, the player can cash out
+    or continue to increase Battle scoring toward 4×.
+  - Lights Out lasts 30 seconds and globally doubles scoring. Its qualification carries
+    across balls if unused.
+  - Red Circle Reckoning requires a Job, an Adversary Battle, any Car Multiball, Deconsecrated,
+    and Excommunicado.
+watch:
+- title: Blue enemy circles
+  text: One, two, or three enemies on a shot mean the next relevant Job or multiball
+    award there is worth 2×, 3×, or 4×.
+- title: Left Eject lit
+  text: The player may be switching to the eject to finish a Job, collect its persistent
+    faction perk, or enter or cash an Adversary Battle.
+- title: Lights Out
+  text: When the playfield goes dark, global 2× scoring is active for 30 seconds while
+    much of the normal insert information is deliberately hidden.
+- title: Car selection
+  text: Hits to the Car after Car Multiball is qualified may be cycling which of the
+    four Car Chase multiballs will start.
+skill_shots:
+- name: Baba Yaga
+  how: Clean-plunge directly into the right VUK with no intervening switches.
+  value: Awards 1.5M and immediately starts the lit Job, bypassing remaining Job-start
+    progress.
+- name: Car Skill Shot
+  how: On Premium/LE, plunge behind the Car.
+  value: Starts at 850K and advances the next Car Multiball unless one is already
+    lit.
+- name: MXV Super Skill Shot
+  how: Full-plunge, then shoot Right Orbit, Right Ramp, and Left Eject in sequence.
+  value: Awards 10M and adds 10 enemies to the next spawn, creating substantial future
+    shot-multiplier potential.
+features:
+- type: ball-save
+  name: Marker Ball Save
+  text: Qualify with the left standups and use the flippers to move the flashing save
+    between outlanes. Later uses require more hits; Assassination can light both outlanes.
+- type: ball-save
+  name: Start-of-Ball Save
+  text: The normal start-of-ball save is operator-adjustable.
+- type: player-control
+  name: Action Button
+  text: Depending on earned perks, a short press can control Lights Out while a long
+    press can use Add-A-Ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can be qualified through progression; when actual extra balls
+    are disabled, current rules award 10M instead.
+- type: other
+  name: Faction Perks
+  text: Completed Jobs permanently grant perks including Multiball Extend, Add-A-Ball,
+    Lights Out improvements, Marker protection, longer ball saves, and increased starting
+    Bonus X.
+shots:
+- name: Left Eject
+  value: Cash completed Jobs for 20% of accumulated Job scoring plus the faction perk,
+    and enter or escape Adversary Battles.
+  risk: Medium
+  diagram: 1
+- name: Left Orbit
+  value: Starts a qualified Car Multiball, converting Car progression into a scoring
+    and utility stack.
+  risk: High
+  diagram: 2
+- name: Red Circle
+  value: Advances Excommunicado, enemy generation, and VIP-related progression toward
+    major multiball and wizard-mode goals.
+  risk: High
+  diagram: 3
+- name: WINSTON / Center Ramp
+  value: Qualifies Deconsecrated and advances its locks, providing a useful multiball
+    to stack with a Job.
+  risk: Medium-High
+  diagram: 4
+- name: Car
+  value: Builds and selects Car Chase multiballs and serves major scoring during their
+    associated features.
+  risk: High
+  diagram: 5
+- name: Weapons Crate / Right VUK
+  value: Qualifies, starts, and extends Jobs and serves the Baba Yaga skill shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor completed Job cashouts and persistent perks, preserve Marker Ball Save,
+    and take an available Battle Escape rather than unnecessarily pushing its multiplier.
+    A ready multiball can protect scoring progress without waiting for a perfect stack.
+  behind: Build a Job plus multiball stack, position enemies on valuable shots, then
+    activate Lights Out for global 2×. Strong Car multiballs provide substantial upside,
+    while continuing an Adversary Battle instead of escaping can push Battle scoring
+    toward 4×.
+  key_decision: Cash out now or improve the stack? Delaying a Job, Battle escape,
+    or multiball can create much larger multiplied scoring, but enemy kills needed
+    for Battle qualification must be completed before multiball because multiball
+    kills do not count.
+danger:
+- The Right Orbit returns very quickly and can demand an immediate controlled flipper
+  response.
+- Car hits can rebound violently like a kicker target, especially from awkward approaches.
+- The enclosed Red Circle area can produce unpredictable rebounds.
+- The Left Orbit is valuable but can be difficult to recover from cleanly.
+- The Center Ramp is steep, so rushed or uncontrolled attempts can quickly surrender
+  ball control.
+commentary:
+- Three enemies on that shot—that’s a 4× Job or multiball award.
+- They want that Job finished at the left eject; the cashout also earns the faction
+  perk.
+- Those enemy kills in multiball won’t count toward qualifying the Adversary Battle.
+- 'Lights Out is running: everything is 2×, but the game hides most of the normal
+  insert information.'
+- Escape is available—cash the Battle now, or stay in and push the Battle multiplier
+  toward 4×.
+- 'This is Bagarre: ramp jackpots set up the car, the orbits raise the multiplier,
+  and the car eventually becomes the big Super Jackpot shot.'
+trivia:
+- John Wick was Elliot Eismin’s first lead pinball design.
+- The game uses material from all four John Wick films and features custom narration
+  from Ian McShane.
+- Charlie Benante composed the original game score, while Randy Martinez created the
+  artwork.
+- Limited Edition machines contain pieces of John Wick suits used in film production.
+- Version 1.02 added the MXV Super Skill Shot and moved Tick Tock, Mr. Wick out of
+  ordinary main-game progression.
+summary: Start Job → position enemies → stack multiball → activate Lights Out → cash
+  Job or Battle
+image: images/john-wick-prem-le-stern-2024.webp

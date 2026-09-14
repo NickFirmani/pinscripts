@@ -1,0 +1,26 @@
+game_id: iron-maiden-prem-le-stern-2018
+image: images/iron-maiden-prem-le-stern-2018.webp
+image_width: 1420
+image_height: 2610
+image_sha256: db304613c4f6bf7bd4347ba8f2c60627ba2a2df8015f8239b792e6931ef13705
+shots_sha256: aa1f0c6ec04ae07b7f9e85fd38e68d91c5422d601f42c9eb7e7c220213a393fe
+coordinates:
+- diagram: 1
+  x: 193
+  y: 1359
+- diagram: 2
+  x: 304
+  y: 765
+- diagram: 3
+  x: 567
+  y: 914
+- diagram: 4
+  x: 1011
+  y: 832
+- diagram: 5
+  x: 314
+  y: 1283
+- diagram: 6
+  x: 697
+  y: 584
+skipped_diagrams: []

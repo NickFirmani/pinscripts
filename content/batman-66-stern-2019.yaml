@@ -1,0 +1,156 @@
+id: batman-66-stern-2019
+name: Batman ’66 — Catwoman Signature Edition
+metadata:
+  manufacturer: Stern
+  year: 2019
+  designer: George Gomez
+  artist: Christopher Franchi
+  production: Catwoman Signature Edition; Premium-based special edition
+  era: SPIKE-2
+  multiball: Villain Multiball; Shame is a two-ball minor-villain mode; wizard multiballs
+    include Batusi, Robin’s Holy, Gas Attack, and Villain Escape
+rules_basis:
+  kind: code
+  version: v1.14.0
+  release_date: '2026-07-01'
+hook: Build Bookworm → Freeze → repeated King Tut for persistent perks and Main Channel
+  X, then stack a major villain with Villain Multiball, playfield X, and a valuable
+  shot X. On a difficult game, Catwoman + Shame + Villain Multiball is a faster, safer
+  scoring route.
+rules:
+  primary: 'Qualify Catwoman with ramps, Joker with Villain-Vision targets, Penguin
+    at the scoop, or Riddler through the orbits. The Bat-Phone hurry-up then starts;
+    hit the phone to begin the selected villain. Villain phases build a Super Jackpot:
+    cash it at the Penguin scoop or continue instead to increase that villain’s scoring
+    multiplier for later phases.'
+  bullets:
+  - During a major villain, qualify three Villain Multiball locks at the right orbit;
+    qualification difficulty is adjustment-sensitive.
+  - Commissioner Gordon progression assigns shot multipliers from 2x up to 6x for
+    the ball.
+  - The Batmobile/Atomic Pile area lights timed 2x playfield scoring; repeating it
+    can produce 3x and reset the timer.
+  - Repeated King Tut completions raise scoring for the mode occupying the Main Channel
+    on the large TV.
+  - Only the large-TV mode receives the Main Channel multiplier; holding the action
+    button changes channels.
+watch:
+- title: Bat-Phone
+  text: An exposed Bat-Phone with its hurry-up running means a major villain has been
+    qualified and the player is trying to convert that setup into the mode.
+- title: Main Channel
+  text: The mode on the large TV is the Main Channel and receives the King Tut multiplier.
+    Other simultaneous modes can appear on smaller screens.
+- title: White multiplier inserts
+  text: Commissioner Gordon progression is assigning increasingly valuable shot multipliers;
+    a 5x or 6x multiplier on a key cash-out can dominate scoring.
+- title: Playfield X stack
+  text: When 2x or 3x playfield scoring overlaps a mode or multiball, a major scoring
+    stack is active. Completing Mr. Freeze can preserve normally timed opportunities.
+skill_shots:
+- name: Top Lane Skill Shot
+  how: Plunge through the lit shooter and top-lane arrows.
+  value: Awards points and +5x bonus multiplier; useful when building a large end-of-ball
+    bonus.
+- name: Penguin Skill Shot
+  how: Soft plunge directly into the Penguin scoop, or regain control and hit it quickly.
+  value: Awards points, +5x bonus, and advances the normal scoop award.
+- name: Super Skill Shot
+  how: Hold the left flipper while plunging, then hit one of the flashing major shots.
+  value: With no major villain active, immediately qualifies that villain. With a
+    villain active, awards a Gadget.
+features:
+- type: player-control
+  name: Gadgets / Action Button
+  text: Completing GADGET earns uses. Press to spot a lit mode shot; hold to switch
+    the Main Channel. Gadgets can also affect physical-lock access in appropriate
+    states.
+- type: other
+  name: Shame
+  text: First played as a two-ball mode. Completing Shame gives later multiballs +1
+    ball and +10 seconds of base multiball ball save.
+- type: other
+  name: Mr. Freeze
+  text: Completion freezes game timers, including minor-villain timers, Bat-Phone,
+    playfield X, and other timed opportunities.
+- type: mystery-award
+  name: Mystery
+  text: Context-sensitive awards include Add-A-Ball during multiball plus lock/progress,
+    multiplier, and time-related benefits in other states.
+- type: extra-ball
+  name: Extra Balls
+  text: Several qualifications exist. Competition install disables extra balls; no
+    universal fixed points conversion was established.
+shots:
+- name: Left Orbit / Upper Saucer
+  value: Starts minor villains and accesses Mystery and other saucer awards; important
+    for Bookworm, Freeze, and Tut progression.
+  risk: Medium
+  diagram: 1
+- name: Catwoman Ramps
+  value: Qualify Catwoman for a fast major-villain route and a practical short-game
+    strategy.
+  risk: Medium
+  diagram: 2
+- name: Commissioner Gordon Target
+  value: Builds shot X and Bat-Phone value; two hits before the first villain shot
+    add +1x to Villain Multiball scoring.
+  risk: Medium-High
+  diagram: 3
+- name: Bat-Phone / Turntable
+  value: Starts a qualified major villain, converting setup into the actual scoring
+    mode.
+  risk: Medium-High
+  diagram: 4
+- name: Penguin Scoop
+  value: Qualifies Penguin and collects the major-villain Super Jackpot; the primary
+    villain cash-out shot.
+  risk: Medium
+  diagram: 5
+- name: Right Orbit
+  value: Qualifies Riddler and collects Villain Multiball physical locks once lock
+    progression is prepared.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor completed villain cash-outs instead of repeatedly continuing for future
+    value, use Shame and Villain Multiball for protection, and avoid sacrificing control
+    merely to assemble an elaborate playfield-X, Main Channel-X, and shot-X stack.
+  behind: Build Bookworm, Freeze, and repeated Tut, then stack a major villain with
+    Villain Multiball, 2x/3x playfield scoring, and a strong shot multiplier. A developed
+    Egghead frenzy can also create an enormous end-of-ball bonus.
+  key_decision: Build the long-term perk and multiplier engine, or score immediately?
+    Friendly games reward investment in Bookworm, Freeze, and Tut; difficult games
+    favor practical Shame plus major-villain and multiball scoring.
+danger:
+- Bat-Phone and turntable rejects can rebound sharply or release awkwardly toward
+  center; behavior is machine-sensitive.
+- Right-orbit returns can feed the slings instead of providing an easy cradle on some
+  setups.
+- The Atomic Pile and Batmobile area can create slow dribbles or unpredictable rebounds
+  into the middle.
+- Rejected ramp shots can return much faster than the intended ramp feed.
+commentary:
+- They’ve got the villain ready—now the Bat-Phone converts that setup into the mode.
+- Before taking a mode shot, they want two Gordon hits; that puts another multiplier
+  on the coming Villain Multiball.
+- That big TV matters—that’s the Main Channel, so that’s where the King Tut multiplier
+  is being applied.
+- They can cash the villain Super Jackpot here, or continue and raise the multiplier
+  for a much bigger later payoff.
+- 'Bookworm plus Freeze is the long-game engine: keep the perks, then stop the timers.'
+- 'This is the scary Batman stack: shot multiplier, playfield multiplier, Main Channel
+  multiplier and multiball all working together.'
+trivia:
+- Batman ’66 marked Stern’s move into its SPIKE-2 and full-color HD LCD era and uses
+  clips from the original television series.
+- Adam West and Burt Ward supplied voice material for Batman and Robin.
+- George Gomez designed the game and Lyman F. Sheats Jr. programmed its unusually
+  deep rules.
+- The 2019 Catwoman Signature Edition included a Julie Newmar-autographed collectible
+  card.
+- Catwoman Signature Edition received Catwoman-focused artwork while retaining the
+  underlying Premium gameplay package.
+summary: Build perks → qualify villain → stack Villain MB → layer shot/PF/Main Channel
+  X → cash Super or continue
+image: images/batman-66-stern-2019.webp

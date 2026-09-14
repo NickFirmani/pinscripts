@@ -1,0 +1,26 @@
+game_id: harry-potter-le-ce-jersey-jack-2025
+image: images/harry-potter-le-ce-jersey-jack-2025.webp
+image_width: 834
+image_height: 1533
+image_sha256: 7b95978a8b072898ce3f67c4e2ee4f82b5385ddbc36117aae0748e10787535ee
+shots_sha256: 564f3924eaa6e348a16196090146810cd14fd525d5904b91dd0b173e372a2d1e
+coordinates:
+- diagram: 1
+  x: 145
+  y: 677
+- diagram: 2
+  x: 300
+  y: 466
+- diagram: 3
+  x: 367
+  y: 369
+- diagram: 4
+  x: 551
+  y: 453
+- diagram: 5
+  x: 691
+  y: 789
+- diagram: 6
+  x: 672
+  y: 438
+skipped_diagrams: []

@@ -1,0 +1,377 @@
+version: 2
+id: one-up-westminster
+title: The 1up Arcade Bar - Westminster
+status: draft
+printed_at: null
+source:
+  kind: manual
+  location_id: '25303'
+  url: https://pinballmap.com/map/?by_location_id=25303
+  retrieved_at: '2026-09-13'
+  notes: Pinball Map is an advisory reference; this manifest is manually curated.
+pending_games: []
+source_overrides:
+- imported:
+    name: 'Avatar: The Battle for Pandora (LE)'
+    manufacturer: Jersey Jack
+    year: 2024
+  action: replace
+  catalog_id: avatar-le-ce-jersey-jack-2024
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: 'Avengers: Infinity Quest (Premium)'
+    manufacturer: Stern
+    year: 2020
+  action: replace
+  catalog_id: avengers-infinity-quest-prem-le-stern-2020
+  reason: null
+- imported:
+    name: Elvira's House of Horrors (Blood Red Kiss)
+    manufacturer: Stern
+    year: 2023
+  action: replace
+  catalog_id: elvira-house-of-horrors-stern-2023
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Godzilla (70th Anniversary)
+    manufacturer: Stern
+    year: 2024
+  action: replace
+  catalog_id: godzilla-prem-le-stern-2021
+  reason: null
+- imported:
+    name: Harry Potter (CE)
+    manufacturer: Jersey Jack
+    year: 2025
+  action: replace
+  catalog_id: harry-potter-le-ce-jersey-jack-2025
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Jurassic Park (LE)
+    manufacturer: Stern
+    year: 2019
+  action: replace
+  catalog_id: jurassic-park-prem-le-stern-2019
+  reason: null
+- imported:
+    name: 'King Kong: Myth of Terror Island (LE)'
+    manufacturer: Stern
+    year: 2025
+  action: replace
+  catalog_id: king-kong-myth-of-terror-island-prem-le-stern-2025
+  reason: null
+- imported:
+    name: Metallica Remastered (LE)
+    manufacturer: Stern
+    year: 2024
+  action: replace
+  catalog_id: metallica-pro-stern-2013
+  reason: null
+- imported:
+    name: Pulp Fiction (LE)
+    manufacturer: Chicago Gaming
+    year: 2023
+  action: replace
+  catalog_id: pulp-fiction-se-chicago-gaming-2023
+  reason: null
+- imported:
+    name: Rick and Morty (SE)
+    manufacturer: Spooky
+    year: 2019
+  action: replace
+  catalog_id: rick-and-morty-bse-spooky-2020
+  reason: null
+- imported:
+    name: South Park
+    manufacturer: Sega
+    year: 1999
+  action: replace
+  catalog_id: south-park-sega-1999
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Sonic the Hedgehog (CE)
+    manufacturer: Jersey Jack
+    year: 2026
+  action: replace
+  catalog_id: sonic-the-hedgehog-le-ce-jersey-jack-2026
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: 'Star Wars: Fall of the Empire (LE)'
+    manufacturer: Stern
+    year: 2025
+  action: replace
+  catalog_id: star-wars-fote-prem-le-stern-2025
+  reason: null
+- imported:
+    name: Super Mario Bros.
+    manufacturer: Gottlieb
+    year: 1992
+  action: replace
+  catalog_id: super-mario-bros-gottlieb-1992
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Toy Story 4 (CE)
+    manufacturer: Jersey Jack
+    year: 2022
+  action: replace
+  catalog_id: toy-story-4-le-ce-jersey-jack-2022
+  reason: Catalog identity selected while resolving the imported listing.
+games:
+- id: attack-from-mars-chicago-gaming-2017
+  pages:
+  - '2'
+  - '3'
+  present: true
+  venue_notes: []
+- id: avatar-le-ce-jersey-jack-2024
+  pages:
+  - '4'
+  - '5'
+  present: true
+  venue_notes: []
+- id: avengers-infinity-quest-prem-le-stern-2020
+  pages:
+  - '6'
+  - '7'
+  present: true
+  venue_notes: []
+- id: batman-66-stern-2019
+  pages:
+  - '8'
+  - '9'
+  present: true
+  venue_notes: []
+- id: beetlejuice-spooky-2025
+  pages:
+  - '10'
+  - '11'
+  present: true
+  venue_notes: []
+- id: creature-from-the-black-lagoon-bally-1992
+  pages:
+  - '12'
+  - '13'
+  present: true
+  venue_notes: []
+- id: deadpool-prem-le-stern-2018
+  pages:
+  - '14'
+  - '15'
+  present: true
+  venue_notes: []
+- id: dungeons-and-dragons-prem-le-stern-2025
+  pages:
+  - '16'
+  - '17'
+  present: true
+  venue_notes: []
+- id: eight-ball-deluxe-bally-1981
+  pages:
+  - '18'
+  - '19'
+  present: true
+  venue_notes: []
+- id: elvira-house-of-horrors-stern-2023
+  pages:
+  - '20'
+  - '21'
+  present: true
+  venue_notes: []
+- id: evil-dead-spooky-2024
+  pages:
+  - '22'
+  - '23'
+  present: true
+  venue_notes: []
+- id: ghostbusters-pro-stern-2016
+  pages:
+  - '24'
+  - '25'
+  present: true
+  venue_notes: []
+- id: godzilla-prem-le-stern-2021
+  pages:
+  - '26'
+  - '27'
+  present: true
+  venue_notes: []
+- id: guardians-of-the-galaxy-pro-stern-2017
+  pages:
+  - '28'
+  - '29'
+  present: true
+  venue_notes: []
+- id: harry-potter-le-ce-jersey-jack-2025
+  pages:
+  - '30'
+  - '31'
+  present: true
+  venue_notes: []
+- id: iron-maiden-prem-le-stern-2018
+  pages:
+  - '32'
+  - '33'
+  present: true
+  venue_notes: []
+- id: jaws-prem-le-stern-2024
+  pages:
+  - '34'
+  - '35'
+  present: true
+  venue_notes: []
+- id: labyrinth-barrels-of-fun-2023
+  pages:
+  - '36'
+  - '37'
+  present: true
+  venue_notes: []
+- id: john-wick-prem-le-stern-2024
+  pages:
+  - '38'
+  - '39'
+  present: true
+  venue_notes: []
+- id: jurassic-park-prem-le-stern-2019
+  pages:
+  - '40'
+  - '41'
+  present: true
+  venue_notes: []
+- id: king-kong-myth-of-terror-island-prem-le-stern-2025
+  pages:
+  - '42'
+  - '43'
+  present: true
+  venue_notes: []
+- id: medieval-madness-williams-1997
+  pages:
+  - '44'
+  - '45'
+  present: true
+  venue_notes: []
+- id: metallica-pro-stern-2013
+  pages:
+  - '46'
+  - '47'
+  present: true
+  venue_notes: []
+- id: monster-bash-williams-1998
+  pages:
+  - '48'
+  - '49'
+  present: true
+  venue_notes: []
+- id: pokemon-prem-le-stern-2026
+  pages:
+  - '50'
+  - '51'
+  present: true
+  venue_notes: []
+- id: pulp-fiction-se-chicago-gaming-2023
+  pages:
+  - '52'
+  - '53'
+  present: true
+  venue_notes: []
+- id: rick-and-morty-bse-spooky-2020
+  pages:
+  - '54'
+  - '55'
+  present: true
+  venue_notes: []
+- id: sonic-the-hedgehog-le-ce-jersey-jack-2026
+  pages:
+  - '56'
+  - '57'
+  present: true
+  venue_notes: []
+- id: south-park-sega-1999
+  pages:
+  - '58'
+  - '59'
+  present: true
+  venue_notes: []
+- id: star-wars-pro-stern-2017
+  pages:
+  - '60'
+  - '61'
+  present: true
+  venue_notes: []
+- id: star-wars-fote-prem-le-stern-2025
+  pages:
+  - '62'
+  - '63'
+  present: true
+  venue_notes: []
+- id: stranger-things-prem-le-stern-2019
+  pages:
+  - '64'
+  - '65'
+  present: true
+  venue_notes: []
+- id: super-mario-bros-gottlieb-1992
+  pages:
+  - '66'
+  - '67'
+  present: true
+  venue_notes: []
+- id: teenage-mutant-ninja-turtles-pro-stern-2020
+  pages:
+  - '68'
+  - '69'
+  present: true
+  venue_notes: []
+- id: addams-family-bally-1992
+  pages:
+  - '70'
+  - '71'
+  present: true
+  venue_notes: []
+- id: big-lebowski-dutch-2016
+  pages:
+  - '72'
+  - '73'
+  present: true
+  venue_notes: []
+- id: lord-of-the-rings-stern-2003
+  pages:
+  - '74'
+  - '75'
+  present: true
+  venue_notes: []
+- id: simpsons-pinball-party-stern-2003
+  pages:
+  - '76'
+  - '77'
+  present: true
+  venue_notes: []
+- id: uncanny-x-men-prem-le-stern-2024
+  pages:
+  - '78'
+  - '79'
+  present: true
+  venue_notes: []
+- id: toy-story-4-le-ce-jersey-jack-2022
+  pages:
+  - '80'
+  - '81'
+  present: true
+  venue_notes: []
+- id: transformers-prem-le-stern-2026
+  pages:
+  - '82'
+  - '83'
+  present: true
+  venue_notes: []
+- id: venom-pro-stern-2023
+  pages:
+  - '84'
+  - '85'
+  present: true
+  venue_notes: []
+- id: winchester-mystery-house-barrels-of-fun-2025
+  pages:
+  - '86'
+  - '87'
+  present: true
+  venue_notes: []

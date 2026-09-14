@@ -1,0 +1,154 @@
+id: pokemon-prem-le-stern-2026
+name: Pokémon (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2026
+  designer: George Gomez and Jack Danger
+  artist: Jeremy Packer / Zombie Yeti
+  production: Premium and Limited Edition trims
+  era: SPIKE 3
+  multiball: Pikachu vs. Raichu, Team Rocket 1 & 2, Pikachu vs. Charizard, and Pikachu
+    vs. Lucario
+rules_basis:
+  kind: code
+  version: v0.85.0
+  release_date: '2026-08-07'
+hook: Use Pikachu's right ramp for a quick 2-ball multiball and permanent shot-X,
+  prepare 2× Playfield at the Berry targets, then stack a Story Mode such as Squirtle
+  with Team Rocket Multiball. Longer games can pursue Catch, Train, and Battle progression
+  through all four biomes toward Pokémon Arena.
+rules:
+  primary: 'Each starter owns a major shot: Bulbasaur left orbit, Squirtle left ramp,
+    Pikachu right ramp, and Charmander right orbit. Three single-ball hits start its
+    Story Mode. Completing a Story Mode awards a permanent-for-the-ball 2× shot multiplier
+    to the next major shot made.'
+  bullets:
+  - Hit both outer Berry targets twice, then the flashing center Berry for 20 seconds
+    of 2× Playfield. Center-Berry hits add 5 seconds, capped at 20.
+  - Spell BATTLE, hit lowered Meowth three times, then shoot the center lane for Team
+    Rocket Multiball. It can stack with single-ball Story Modes.
+  - Completing BATTLE during multiball lights an action-button add-a-ball.
+  - Discover Pokémon in the bumpers, scan at the Pokédex, complete purple CATCH shots,
+    then finish at the left ramp. Captures qualify Rival Battles at the town scoop.
+  - Complete Discover, Catch, Train, and Battle in all four biomes to qualify Pokémon
+    Arena.
+watch:
+- title: Pikachu's cheeks
+  text: Glowing cheeks indicate 2× Playfield is running, so expect immediate aggression
+    toward jackpots, Supers, and valuable mode shots.
+- title: Shot-X insert
+  text: An X on a major shot means that lane is multiplied for the rest of the ball,
+    often explaining why the player repeatedly returns to one ramp or orbit.
+- title: Meowth lowered
+  text: The player is progressing Team Rocket Multiball. During multiball, a green
+    action button means add-a-ball is ready.
+- title: Purple CATCH shots
+  text: Purple shots indicate capture progression. After the Pokémon is caught at
+    the left ramp, the town scoop can become the Rival Battle start.
+skill_shots:
+- name: Top-lane Skill Shot
+  how: Full-plunge through the flashing top lane.
+  value: Starts at 500K, advances Bonus X, and feeds the bumpers that advance Pokémon
+    discovery.
+- name: Super Skill Shot
+  how: Hold the left flipper, full-plunge, then hit a playfield shot.
+  value: Starts at 1M. The center lane completes BATTLE or can start a lit Team Rocket
+    Multiball with add-a-ball ready; the town scoop lights Mystery.
+- name: Super Secret Skill Shot
+  how: Hold the left flipper and bounce the plunge into the Psyduck Sneak-In.
+  value: Starts at 1.5M and provides a Premium/LE-specific alternate opening.
+features:
+- type: player-control
+  name: Pokédex Assist
+  text: Store up to three assists from captive-ball hits. The action button can spot
+    a CATCH shot or valuable Battle attack, but cannot collect the final Catch or
+    Victory Bonus.
+- type: ball-save
+  name: Outlane Save
+  text: Complete the town/Chansey targets to qualify a save; use the flippers to move
+    it between outlanes. Each subsequent save requires another completion.
+- type: ball-save
+  name: Psyduck Save
+  text: Premium/LE Psyduck Sneak-In starts a short ball saver when the scoop ejects,
+    with no grace period.
+- type: mystery-award
+  name: Mystery
+  text: TEAM lanes light Mystery at the town scoop. Awards include points, discovery
+    progress, Poké Balls, outlane-save progress, and possibly Extra Ball.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through Story Modes, Poké Ball or Pokédex milestones, and Mystery.
+    When unavailable or maxed, the award scores 2.5M.
+shots:
+- name: Bulbasaur Orbit
+  value: Advances Bulbasaur's Story Mode and feeds discovery progression through the
+    upper playfield.
+  risk: Medium-High
+  diagram: 1
+- name: Squirtle Ramp
+  value: Advances Squirtle's Story Mode, Catch progression, TEAM features, and multiball
+    jackpots; a strong candidate for permanent shot-X.
+  risk: Medium-High
+  diagram: 2
+- name: Battlefield / Center Lane
+  value: Advances BATTLE and Team Rocket Multiball and serves major Super and Pokémon
+    Arena scoring.
+  risk: High
+  diagram: 3
+- name: Pokédex Captive Ball
+  value: Builds Pokédex Assists, scans Pokémon, finishes modes, and serves important
+    combo and progression collects.
+  risk: High
+  diagram: 4
+- name: Pikachu Ramp
+  value: Three single-ball shots start Pikachu vs. Raichu, providing a fast 2-ball
+    multiball and eventual shot-X; also starts later Pikachu battles.
+  risk: Medium-High
+  diagram: 5
+- name: Town Scoop
+  value: Starts Rival Battles, advances Travel between biomes, collects Mystery, and
+    starts Pokémon Arena once qualified.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor Pikachu vs. Raichu and Team Rocket for ball protection, collect available
+    Supers, and place shot-X on comfortable high-utility lanes such as the left ramp
+    rather than repeatedly forcing the Pokédex.
+  behind: Combine 2× Playfield, permanent shot-X, a Story Mode such as Squirtle, and
+    Team Rocket Multiball, then chase repeated Supers. Developed Rival Battles provide
+    another high-ceiling route.
+  key_decision: Take an accessible multiball now or keep building multipliers and
+    another Story Mode first? Stacking raises the ceiling substantially, but every
+    extra Berry, captive-ball, or qualification shot risks losing the setup before
+    it pays.
+danger:
+- Strong Pokédex captive-ball hits can rebound toward the right-side sling or outlane.
+- The Town scoop eject is fast and awkward, requiring an immediate recovery rather
+  than an assumed dead bounce.
+- Bulbasaur orbit returns can arrive near the left-flipper tip and may produce dangerous
+  center feeds on some machines.
+- The Pikachu ramp returns quickly with little time to settle before the next decision.
+- Premium/LE Battlefield shots combine six standups with an electromagnet, creating
+  less-controlled center rebounds.
+commentary:
+- Pikachu is the quick multiball route—three right ramps and they're in.
+- Those glowing cheeks mean two-times playfield; this is the scoring window.
+- That completed Story Mode gave them shot-X, and they've parked it on the left ramp.
+- BATTLE is complete—three Meowth hits now gets them to Team Rocket Multiball.
+- Pokédex Assist can spot this purple Catch shot, but it cannot make the final left
+  ramp for them.
+- They've completed all four biome goals—Pokémon Arena is now waiting at the town
+  scoop.
+trivia:
+- Pokémon was Stern's first SPIKE 3 cornerstone release of 2026 and Nintendo's first
+  licensed physical pinball collaboration in more than three decades.
+- The design pairs longtime Stern designer George Gomez with Jack Danger.
+- Insider Connected can maintain a player's caught-Pokémon collection across machines
+  and locations.
+- Premium and LE machines use an electromagnet beneath the Meowth Battlefield to add
+  physical chaos during play.
+- The Limited Edition adds Expression Lighting, Master Ball plunger treatment, and
+  other presentation upgrades over the shared Premium gameplay package.
+summary: Start Pikachu MB → earn shot-X → build 2× Playfield → stack Story + Team
+  Rocket → cash Supers → pursue Arena
+image: images/pokemon-prem-le-stern-2026.webp

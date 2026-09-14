@@ -1,0 +1,26 @@
+game_id: elvira-house-of-horrors-stern-2023
+image: images/elvira-house-of-horrors-stern-2023.webp
+image_width: 816
+image_height: 1500
+image_sha256: 22869c1c7a37d60b8dfa623b06540a06d03e04c4a8c530a22b3a4d3fa981bcfe
+shots_sha256: 2c78b2dd9f073a47b59da6605db282cffe556f90a47ffaa791509b0f46e56679
+coordinates:
+- diagram: 1
+  x: 179
+  y: 474
+- diagram: 2
+  x: 260
+  y: 257
+- diagram: 3
+  x: 370
+  y: 277
+- diagram: 4
+  x: 557
+  y: 445
+- diagram: 5
+  x: 732
+  y: 916
+- diagram: 6
+  x: 674
+  y: 482
+skipped_diagrams: []

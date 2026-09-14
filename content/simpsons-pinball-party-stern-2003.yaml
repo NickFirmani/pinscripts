@@ -1,0 +1,161 @@
+id: simpsons-pinball-party-stern-2003
+name: The Simpsons Pinball Party
+metadata:
+  manufacturer: Stern Pinball
+  year: 2003
+  designer: Keith P. Johnson and Joe Balcer
+  artist: ''
+  production: ''
+  era: Whitestar / DMD
+  multiball: Couch, Itchy & Scratchy, Pretzel, Scratchy's Revenge, Springfield Mystery
+    Spot, and Alien Invasion
+rules_basis:
+  kind: rom
+  version: CPU ROM 5.00
+  release_date: null
+hook: Build a shared timed stack by starting TV modes, add Otto 2× to a valuable shot,
+  then bring Couch or Itchy & Scratchy Multiball underneath it. As completed TV modes
+  raise Victory Laps, decide when to stop building and repeatedly cash the safest
+  high-value shot.
+rules:
+  primary: Most ordinary timed features share one timer. Starting a TV mode, Otto
+    2×, D'Oh Frenzy, or a timed Treehouse mode resets that timer to at least 30 seconds
+    while existing timed features remain active. This makes stacking features more
+    valuable than playing them independently.
+  bullets:
+  - Light TV at the Krusty/right orbit, enter the upper playfield through the Garage,
+    then shoot the TV loop to start the selected mode.
+  - Completed TV modes increase Victory scoring. With no TV mode active, major shots
+    score Victory Laps; starting another mode suspends those laps until that mode
+    is completed.
+  - Otto provides shot-area 2× multipliers that double scoring attached to that area,
+    including TV-mode and multiball awards.
+  - Couch Multiball requires three upper-playfield locks. Under Competition Mode each
+    player must earn all three personally even when balls remain physically parked
+    in the Couch.
+  - Competition Mode makes Otto sequencing, Hurry-Ups, Treehouse awards, Mystery outcomes,
+    and other variable behavior deterministic.
+watch:
+- title: Shared timer
+  text: The TV-board timer changes from green to yellow to red as time runs down.
+    Starting another qualifying timed feature resets the same clock while keeping
+    the existing stack alive.
+- title: Flashing Otto 2×
+  text: A flashing red 2× insert means scoring at that shot area is currently doubled.
+    A solid red insert means that area's multiplier has already been used this cycle.
+- title: TV ready upstairs
+  text: With TV lit and the ball on the upper playfield, expect the player to prioritize
+    the TV loop for another mode and timer reset rather than automatically shooting
+    the Couch.
+- title: Couch locks
+  text: Visible balls in the Couch do not prove the current player owns those locks
+    in Competition Mode; every player must earn three locks personally.
+skill_shots:
+- name: Comic Book Guy
+  how: Plunge directly into Comic Book Guy.
+  value: Immediately starts two Hurry-Ups instead of one, creating useful early scoring
+    and progression.
+- name: Kwik-E-Mart
+  how: Plunge through the Kwik-E-Mart mini-loop.
+  value: Adds a large increasing bonus multiplier, making it useful when building
+    or protecting a substantial end-of-ball bonus.
+- name: Bully Skill Shot
+  how: Plunge through Kwik-E-Mart into the strobing Bully target.
+  value: Scores increasing points and immediately lights the next Daredevil Mode.
+features:
+- type: ball-save
+  name: Freeze Time
+  text: The standard start-of-ball saver is operator-adjustable; major multiballs
+    and modes can also provide their own ball-save periods.
+- type: mystery-award
+  name: Clean the Garage
+  text: Enter the Garage when lit. Competition Mode uses deterministic, state-aware
+    awards such as lighting useful features or adding time.
+- type: extra-ball
+  name: Extra Balls
+  text: Multiple features can light extra balls; treatment when actual extra balls
+    are disabled is configuration-dependent.
+- type: player-control
+  name: Right Flipper Selection
+  text: The right flipper selects the upcoming TV mode and other selectable features.
+- type: player-control
+  name: Mystery Spot Reversed Flippers
+  text: During Springfield Mystery Spot, the left and right flipper buttons are intentionally
+    reversed.
+shots:
+- name: Garage
+  value: Provides access to the upper playfield and Mystery, opening the route to
+    TV modes and Couch progression.
+  risk: Medium-High
+  diagram: 1
+- name: TV Loop
+  value: Starts the selected TV mode, adds another feature to the stack, and resets
+    the shared timer.
+  risk: Medium
+  diagram: 2
+- name: Couch Ramp
+  value: Builds Couch locks, starts Couch Multiball, and serves its major scoring
+    opportunities.
+  risk: Medium-High
+  diagram: 3
+- name: Springfield Elementary / Otto Loop
+  value: Starts a shot-specific Otto 2× multiplier while preserving the shared timed
+    stack.
+  risk: High
+  diagram: 4
+- name: Itchy & Scratchy Hole
+  value: Advances Itchy & Scratchy multiballs and Scratchy's Revenge, providing additional
+    balls and major late-game scoring.
+  risk: Medium-High
+  diagram: 5
+- name: Krusty / Right Orbit
+  value: Lights TV, preserving access to another TV mode and shared-timer reset.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Preserve control, take available Couch and TV scoring, and harvest strong
+    Victory Laps rather than interrupting them merely to build a larger stack. Avoid
+    forcing difficult shots for speculative future value when a reliable scoring route
+    is already available.
+  behind: Extend the shared timer, accumulate TV modes and useful Otto 2× shots, then
+    combine multiple major features. Springfield Mystery Spot is especially valuable
+    when brought into another multiball or scoring mode because its playfield double
+    multiplies the larger package.
+  key_decision: Start another feature or harvest the stack already built? Early mode
+    starts strengthen the stack and reset its timer, but once Victory Laps become
+    valuable, repeatedly shooting a safe doubled shot can outperform another TV mode
+    that temporarily suspends Victory scoring.
+danger:
+- Weak Garage shots can fall into the pop-bumper area without completing the intended
+  Garage entry.
+- The Left Treehouse Ramp is a difficult major shot, and rejects can be costly when
+  a mode requires it.
+- Springfield Elementary is nearly straight up the middle, making rejected Otto attempts
+  dangerous.
+- Missing a Couch or TV opportunity upstairs can eject the ball from the mini-playfield
+  and lose a carefully prepared setup.
+- A large accumulated end-of-ball bonus makes aggressive saves especially costly if
+  they result in a tilt.
+commentary:
+- TV is lit—Garage to the upper playfield, then the TV loop starts the next mode.
+- Everything is living on the same clock; starting another timed feature keeps the
+  whole stack alive.
+- That flashing red insert is the Otto 2×—all scoring on that area is doubled.
+- They've reached Victory Laps; another TV mode would suspend those laps until they
+  finish it.
+- Those balls in the Couch are misleading in Competition Mode—the player still has
+  to earn all three locks.
+- Mystery Spot reverses the flipper buttons and doubles the playfield; stack something
+  with it and the score can explode.
+trivia:
+- The game uses a two-level playfield, five flippers, a moving and talking Homer head,
+  Bart skateboard captive ball, miniature TV, and physical three-ball Couch lock.
+- Dan Castellaneta, Nancy Cartwright, and Hank Azaria recorded original dialogue specifically
+  for the machine.
+- Matt Groening and Bongo/Fox Studios participated in the artwork.
+- Keith P. Johnson described the design goal as giving expert players an unusually
+  large number of objectives to pursue.
+- CPU ROM 5.00 arrived more than four years after the game's 2003 release.
+summary: Light TV → start modes → add Otto 2× → stack multiball → build Victory Laps
+  → cash the best shot
+image: images/simpsons-pinball-party-stern-2003.webp

@@ -1,0 +1,136 @@
+id: south-park-sega-1999
+name: South Park
+metadata:
+  manufacturer: Sega Pinball
+  year: 1999
+  designer: Joe Kaminkow
+  artist: Dave Link and Kevin O’Connor
+  production: Approximately 2,200 machines
+  era: Whitestar / DMD
+  multiball: 5-ball Multiball, Stan, Spooky Vision, and Volcano
+rules_basis:
+  kind: rom
+  version: Factory A1.03 reference; installed ROM unknown
+  release_date: null
+hook: Play all five character modes but leave at least one incomplete to qualify Spooky
+  Vision, then cycle its repeatable jackpots. Meanwhile qualify 5-ball Multiball at
+  Mr. Hankey and use completed characters for double jackpots; completing all five
+  instead leads to Volcano.
+rules:
+  primary: Stan, Chef, Kenny, Kyle, and Cartman each have a character mode. Solid
+    character faces mean completed; flashing faces mean played but incomplete. Playing
+    all five with at least one incomplete qualifies Spooky Vision, while completing
+    all five qualifies Volcano.
+  bullets:
+  - Five Mr. Hankey/toilet hits qualify 5-ball Multiball at the Kyle ramp.
+  - During Multiball, completed-character shots score double jackpots. Five jackpots
+    light a timed Super Jackpot at the Kyle ramp.
+  - Collecting a Super raises the base jackpot by 1M and the next Super by 5M, rewarding
+    repeated successful Multiballs.
+  - A character mode running when Multiball starts pauses until single-ball play resumes,
+    so Multiball does not directly protect timed mode completion.
+  - Kenny and Cartman qualification counts carry across drains; Stan, Chef, and Kyle
+    qualification counts reset at the end of the ball.
+watch:
+- title: Flashing vs. solid faces
+  text: Flashing means a character mode was played but not completed; solid means
+    completed. Five played with at least one flashing sets up Spooky Vision.
+- title: Chef wizard start
+  text: 'After all five character modes have been played, Chef starts the qualified
+    wizard: Spooky Vision if at least one mode remains incomplete, or Volcano if all
+    five were completed.'
+- title: Multiball ready
+  text: Five Mr. Hankey hits qualify the 5-ball Multiball, with the Kyle ramp becoming
+    the start shot.
+- title: Kyle Super
+  text: After five Multiball jackpots, a flashing Kyle ramp indicates the timed Super
+    Jackpot and becomes the immediate cash-out priority.
+skill_shots:
+- name: Skill Shot
+  how: Plunge toward the flashing yellow townsperson standup; use the flipper buttons
+    to move the lit target.
+  value: Awards 5M plus 5M for each previous successful skill shot. A full plunge
+    can instead attack the toilet targets to advance Multiball.
+features:
+- type: ball-save
+  name: Ball Save
+  text: A short save protects the initial plunge and Kenny or Cartman cellar-hole
+    returns; the window can expire before a slow outlane drain.
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit at Chef through documented extra-ball and consolation behavior,
+    including a low-score ball-3 award.
+shots:
+- name: Stan Lane
+  value: Starts and advances Stan's character mode toward Spooky Vision or Volcano
+    qualification.
+  risk: High
+  diagram: 1
+- name: Chef Lane
+  value: Starts Chef's mode and converts five played character modes into Spooky Vision
+    or Volcano.
+  risk: Medium-High
+  diagram: 2
+- name: Mr. Hankey / Toilet
+  value: Five hits qualify normal Multiball; during Multiball it is also an important
+    jackpot target.
+  risk: High
+  diagram: 3
+- name: Kenny
+  value: Starts Kenny's mode and supports a simple repeatable tournament scoring route;
+    qualification progress carries across drains.
+  risk: Medium-High
+  diagram: 4
+- name: Kyle Ramp
+  value: Starts Kyle's mode, starts qualified Multiball, and collects its timed Super
+    Jackpot.
+  risk: Medium-High
+  diagram: 5
+- name: Cartman Hole
+  value: Starts Cartman's mode and provides relatively accessible wizard progression;
+    qualification progress carries across drains.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor accessible Kenny and Cartman value, start Multiball when ready, and
+    cash its Supers rather than taking difficult Stan shots solely to force wizard
+    progression. Completing easy characters also improves their Multiball jackpots.
+  behind: Play all five character modes while deliberately allowing one difficult
+    mode to time out, qualifying Spooky Vision and its repeatable escalating character
+    jackpots. If all five modes are already complete, pursue Volcano's large fixed
+    payoff.
+  key_decision: Complete the final character mode or intentionally fail it? Completion
+    leads to Volcano, while leaving at least one mode incomplete leads to Spooky Vision
+    and its repeatable escalating jackpots.
+danger:
+- Direct Mr. Hankey and toilet hits can rebound immediately toward the right outlane.
+- Stan's through-the-pops shot is inconsistent, and its upper return can scatter into
+  several dangerous feeds.
+- Weak Kyle ramp attempts reject into open play, while the timed Super must be made
+  during crowded 5-ball action.
+- Kenny and Cartman ejects return quickly toward the right-flipper side and demand
+  immediate action.
+- Uncontrolled rebounds frequently threaten the right outlane.
+commentary:
+- That face is flashing, not solid—they've played the mode but deliberately haven't
+  completed it.
+- All five modes have been seen; because one is incomplete, Chef is now the Spooky
+  Vision start.
+- Five Hankey hits have lit Multiball—now they need the Kyle ramp.
+- 'Completed character modes matter here: that character shot becomes a double jackpot
+  in Multiball.'
+- Five jackpots down—the Kyle ramp is the timed Super.
+- They could finish that last mode, but doing so trades the repeatable Spooky Vision
+  jackpots for Volcano.
+trivia:
+- South Park was one of the final games carrying the Sega Pinball name before the
+  Whitestar line continued under Stern Pinball.
+- Production is estimated at approximately 2,200 machines.
+- The game's signature mechanism is a toilet that physically opens and flushes the
+  ball to start Multiball.
+- Prototype ROMs contained substantially more profanity and an unfinished Cartman
+  video mode that was removed from production software.
+- Entering LLRRLLRR in attract mode displays the design-team credits.
+summary: Play five characters → leave one incomplete → start Spooky Vision → build
+  repeatable jackpots → use Multiball Supers
+image: images/south-park-sega-1999.webp

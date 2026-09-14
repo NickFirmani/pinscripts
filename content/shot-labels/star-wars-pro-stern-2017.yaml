@@ -1,0 +1,26 @@
+game_id: star-wars-pro-stern-2017
+image: images/star-wars-pro-stern-2017.webp
+image_width: 780
+image_height: 1434
+image_sha256: b5208173fb91747c92dadf5d08972ade6070b0972e9e0a284874277c2d3d9f6a
+shots_sha256: f3d57c18a4078fd9eb67d200e2cb89f72a2ac70b8b525add47b8c4f7a324cd26
+coordinates:
+- diagram: 1
+  x: 296
+  y: 403
+- diagram: 2
+  x: 207
+  y: 431
+- diagram: 3
+  x: 343
+  y: 422
+- diagram: 4
+  x: 489
+  y: 476
+- diagram: 5
+  x: 380
+  y: 351
+- diagram: 6
+  x: 707
+  y: 684
+skipped_diagrams: []

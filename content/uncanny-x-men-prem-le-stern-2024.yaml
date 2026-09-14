@@ -1,0 +1,157 @@
+id: uncanny-x-men-prem-le-stern-2024
+name: The Uncanny X-Men (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2024
+  designer: Jack Danger
+  artist: Jeremy Packer / Zombie Yeti
+  production: Limited Edition, 811 games; Premium/LE add the rising Sentinel and Beast's
+    Lab captive-ball mechanism
+  era: Stern 2024
+  multiball: Sentinel, To Me My X-Men, Save the City, and Berserker
+rules_basis:
+  kind: code
+  version: v0.98
+  release_date: '2026-07-01'
+hook: Train Danger Room for 2x on the next mission, start that mission before a compatible
+  multiball, then multiply the multiball itself. Sentinel is the early route; repeated
+  Sentinel kills build toward high-value Berserker, while Save the City is a standalone
+  wizard multiball.
+rules:
+  primary: Qualify Missions with white-arrow progress and start them at Midtown or
+    Subway. A Mission can stack with a regular multiball only if the Mission starts
+    first, and multiballs cannot stack with each other. Completed Missions lead to
+    The Future, where a successful escape earns a character perk.
+  bullets:
+  - Danger Room Level 1 doubles the next Mission; Level 2 reduces Future qualification;
+    Level 3 makes Future Sentinel kills count and score double. Training resets after
+    a Mission is played.
+  - In Sentinel Multiball, Danger Room exits raise jackpot waves from 1x to 2x and
+    then 3x. At the resolved Medium setting, five jackpots qualify the Super; hitting
+    the open Sentinel mouth doubles it.
+  - Gambit makes the next eligible mode or multiball award 2x after three bumper hits
+    or an alley pass; after earning Gambit's perk it becomes 3x.
+  - Bishop can store up to three uses. Press the flashing-red action button to spot
+    the highest-valued eligible shot currently lit.
+  - Save the City requires three completions of each of six city shots on its first
+    cycle and starts only in main play with nothing else running; later cycles require
+    four, then five.
+watch:
+- title: Danger Room color
+  text: Green, yellow, and red Danger Room progress represents increasingly powerful
+    setup for the next Mission, Future, or multiball rather than incidental scoring.
+- title: Sentinel jackpots
+  text: Orange and red jackpots mean the player has used the Danger Room exit to raise
+    the current Sentinel Multiball wave to 2x or 3x.
+- title: Action button
+  text: Green means Rogue's once-per-ball multiball add-a-ball is available; flashing
+    red means Bishop can spot the highest-valued eligible shot.
+- title: 35 Sentinels
+  text: As the Sentinel counter approaches 35, expect a pivot toward Uptown to start
+    Berserker Multiball and attack its large Super Jackpot.
+skill_shots:
+- name: Lane Skill Shot
+  how: Soft-plunge to the switch by the Highway entrance.
+  value: Awards 200K and +1 Bonus X; the safest low-risk plunge choice.
+- name: X-Jet Skill Shot
+  how: Plunge through X-Jet into the X-Mansion feed; continuing through Danger Room
+    and its exit completes the Super Skill Shot.
+  value: Awards +3 Bonus X and can flow directly into valuable Danger Room progress.
+- name: Cerebro Skill Shot
+  how: Shoot Uptown from the plunge.
+  value: Spots one Cerebro advance toward To Me, My X-Men Multiball and returns favorably
+    toward the left flipper.
+features:
+- type: ball-save
+  name: Danger Room Abort
+  text: Abort is lit from game start and can be requalified through X-Jet/Danger Room
+    entries. Collecting it activates a 5-second whole-playfield ball save.
+- type: ball-save
+  name: X-Mansion Ball Save
+  text: Four target hits light a right-outlane save; Jean Grey's perk expands its
+    usefulness during The Future.
+- type: player-control
+  name: Rogue Add-A-Ball
+  text: After earning Rogue's perk, hold the green action button during multiball
+    for an add-a-ball, once per ball.
+- type: player-control
+  name: Bishop
+  text: Bishop stores up to three uses. Press the flashing-red action button to spot
+    the highest-valued eligible shot.
+- type: mystery-award
+  name: Beast's Lab
+  text: Context-sensitive awards improve with combo level and can include Bonus X,
+    X-Mansion Ball Save, large points, or Beast qualification.
+- type: extra-ball
+  name: Extra Balls
+  text: Normally qualify through Mission and Beast's Lab progress; under the resolved
+    Competition Install they are disabled.
+shots:
+- name: X-Jet
+  value: Advances Danger Room and Sentinel scoring and provides the X-Jet skill-shot
+    route into the upper playfield.
+  risk: High
+  diagram: 1
+- name: Danger Room Exit
+  value: Advances training and Cerebro and raises Sentinel jackpots to 2x/3x while
+    doubling several major Super Jackpots.
+  risk: High
+  diagram: 2
+- name: Uptown Ramp
+  value: Advances Cerebro toward To Me, My X-Men and starts qualified Berserker Multiball.
+  risk: Medium-High
+  diagram: 3
+- name: Midtown Ramp
+  value: Starts and escapes Missions and advances Save the City qualification.
+  risk: High
+  diagram: 4
+- name: Sentinel Head / Mouth
+  value: Qualifies Sentinel Multiball and collects its Super Jackpot; making the open
+    mouth doubles the Super.
+  risk: High
+  diagram: 5
+- name: Subway
+  value: Provides an alternate Mission and Future start or escape shot when its feed
+    is preferable to Midtown.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor the efficient Cerebro skill shot, take a ready multiball instead of
+    over-training Danger Room, use Bishop to remove difficult shots, and escape The
+    Future once its requirement is satisfied. Avoid unnecessary setup on this drain-prone
+    layout.
+  behind: Invest in Danger Room multipliers, earn Rogue's add-a-ball, and push Sentinel
+    kills toward Berserker. During Sentinel or Berserker Multiball, use Danger Room
+    and Gambit aggressively to multiply already-large Super Jackpots.
+  key_decision: Cash a ready feature or keep improving the next scoring window? Danger
+    Room levels, character perks, Gambit, and additional Sentinel progress raise the
+    ceiling, but every extra setup shot increases exposure on an unusually dangerous
+    layout.
+danger:
+- A near-miss at the X-Jet standup can ricochet toward the center drain.
+- Short Midtown attempts can enter the pop bumpers and threaten the right outlane.
+- Subway rubber can send the ball into uncontrolled pop-bumper action.
+- Danger Room is valuable but high-risk; an unprepared entry or missed mini-flipper
+  shot can turn into an immediate drain.
+- Premium/LE Sentinel hands can interrupt an otherwise predictable ball path and relaunch
+  the ball unexpectedly.
+commentary:
+- Green Danger Room—that means the next mission is two-times.
+- They've taken Sentinel jackpots to red; those are now three-times before the Super.
+- Open mouth here is the big one—that doubles the Sentinel Super Jackpot.
+- Green button means Rogue's add-a-ball is ready; red button would be Bishop.
+- Thirty-five Sentinels gets Berserker, and its Super can be doubled immediately in
+  the Danger Room.
+- Save the City can't be stacked on current code—it has to start by itself.
+trivia:
+- The layout was Jack Danger's second Stern cornerstone design after Foo Fighters
+  and uses unusual crossing ramp trajectories.
+- The game draws principally from the Days of Future Past and Mind Out of Time comic
+  stories.
+- Limited Edition production is 811 games, referencing Marvel's Earth-811 future timeline.
+- Premium/LE Sentinel hands can physically block ramp access or intercept the ball.
+- Code remains pre-1.0 at v0.98, with Master Mold still represented as a placeholder
+  in the documented rules structure.
+summary: Train Danger Room → start Mission → stack regular multiball → multiply jackpots
+  → earn perks → reach Berserker
+image: images/uncanny-x-men-prem-le-stern-2024.webp

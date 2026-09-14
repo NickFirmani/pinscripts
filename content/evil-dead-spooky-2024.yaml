@@ -1,0 +1,162 @@
+id: evil-dead-spooky-2024
+name: Evil Dead
+metadata:
+  manufacturer: Spooky Pinball
+  year: 2024
+  designer: Corwin “Bug” Emery and Spooky Luke
+  artist: Christopher Franchi
+  production: Collector’s Edition, limited to 888 machines
+  era: Modern widebody
+  multiball: Cabin, Double Deadite, Double-Barrel Boomstick, Cheryl, and Henrietta
+rules_basis:
+  kind: code
+  version: v2026.07.15
+  release_date: '2026-07-15'
+hook: Complete GROOVY early for +20% scoring for the rest of the ball, qualify a story
+  mode, then stack a prepared Cabin or Double Deadite Multiball underneath it. Build
+  Blood Flood and Dagger multipliers before cashing the resulting mode and jackpot
+  shots.
+rules:
+  primary: Choose Movie 1 or Movie 2 at game start to determine the available story
+    modes. White-lit ramps qualify modes and the scoop beneath the right ramp starts
+    the selected mode. Strong scoring comes from preparing multiball and multipliers
+    before starting and stacking a story mode.
+  bullets:
+  - Complete the six GROOVY drops in order for +20% to all scoring for the remainder
+    of the ball.
+  - Blood Flood targets in the pop-bumper nest activate a playfield multiplier; the
+    exact current multiplier progression is not specified here.
+  - Inlanes light the opposite orbit for the Dagger multiplier; the Launch button
+    activates a brief timed multiplier build-up window.
+  - Cabin lock progress persists between most modes, balls, and players, so physical
+    locks can be stolen in multiplayer.
+  - Double Deadite Multiball stacks broadly with other features, while current code
+    prevents some otherwise illegal multiball combinations.
+watch:
+- title: GROOVY complete
+  text: The player now has +20% scoring for the rest of the ball, often signaling
+    a shift from setup toward cashing valuable modes and jackpots.
+- title: White ramps / lit scoop
+  text: White ramps indicate story-mode qualification progress; a lit scoop means
+    the player can start the selected mode and may be waiting to bring a prepared
+    multiball underneath it.
+- title: Cabin locks
+  text: Balls visibly parked in the Cabin represent persistent Multiball progress,
+    but the physical locks can be stolen by another player.
+- title: Deadites / Blood Flood
+  text: Rising Deadites indicate Double Deadite progression, while the separate three
+    targets in the pop cluster build the Blood Flood playfield multiplier.
+skill_shots:
+- name: Skill Shot
+  how: Time the auto-plunge into the roving flashing GROOVY target.
+  value: Awards 1M plus 500K per prior skill shot while advancing GROOVY toward the
+    ball-long +20% scoring boost.
+- name: Super Skill Shot
+  how: Hold the left flipper for a reduced-power feed, then hit the flashing major
+    playfield shot within the brief timed window.
+  value: Awards twice the normal skill-shot value and offers a higher-value controlled
+    opening.
+features:
+- type: mystery-award
+  name: Mystery
+  text: Completing GROOVY lights Mystery at the right orbit. Use the action control
+    to stop the moving award display; difficulty increases after each attempt.
+- type: other
+  name: Good Linda / Bad Linda
+  text: The right scoop rotates Linda. Good Linda makes modes easier for reduced scoring;
+    Bad Linda increases difficulty and reward.
+- type: other
+  name: Linda Tricks
+  text: Pop activity can trigger positive or negative effects, with current code distinguishing
+    direction-dependent good and bad awards.
+- type: video-mode
+  name: Video Mode
+  text: Hidden lost-tape progression can start a video mode; current code includes
+    revised scoring and brief respawn invincibility.
+- type: extra-ball
+  name: Extra Ball
+  text: The second Hand award lights Extra Ball under current code; maximum extra
+    balls are adjustment-sensitive.
+- type: player-control
+  name: Action Button
+  text: State-dependent uses include lowering the cellar door during single-ball play,
+    changing queued modes, activating Dagger scoring, and collecting Boomstick button
+    jackpots.
+shots:
+- name: Cabin Lock
+  value: Builds persistent Cabin Multiball progress and provides a strong multiball
+    resource to stack beneath a running story mode.
+  risk: High
+  diagram: 1
+- name: Deadites
+  value: Advances Double Deadite Multiball and Deadite Frenzy, providing a broadly
+    stackable scoring multiball.
+  risk: High
+  diagram: 2
+- name: GROOVY Drops
+  value: Completing the bank in order grants +20% scoring for the rest of the ball
+    and also lights Mystery.
+  risk: Medium-High
+  diagram: 3
+- name: Cellar / Lock & Load
+  value: Leads to the lower playfield and Double-Barrel Boomstick Multiball, a higher-risk
+    alternate scoring route.
+  risk: High
+  diagram: 4
+- name: Mode Ramps + Scoop
+  value: White-lit ramps qualify story modes and the scoop beneath the right ramp
+    starts the selected mode for stacking with prepared multiball.
+  risk: Medium-High
+  diagram: 5
+- name: Blood Flood Targets
+  value: Activate the playfield multiplier used to increase the value of mode shots
+    and multiball jackpots.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Secure GROOVY, take a prepared story-mode and multiball stack, and favor
+    the more straightforward Cabin or Deadite progression rather than repeatedly exposing
+    the ball to dangerous bash targets or the lower playfield.
+  behind: Build GROOVY, Blood Flood, and Dagger, then combine a story mode with stackable
+    multiballs before cashing the multiplied shots. Deadite Frenzy or Boomstick inside
+    that package provides substantially more variance than an isolated multiball.
+  key_decision: Start the available multiball now or preserve it until a story mode
+    and multipliers are ready? Stacking creates much greater scoring potential, but
+    every extra Cabin, Blood Flood, or bash-target setup shot risks draining before
+    the payoff.
+danger:
+- Cabin lock attempts and releases can produce dangerous center returns; the exact
+  feed is highly setup-sensitive.
+- The normal plunge into GROOVY can rebound from the drops toward the right outlane
+  on some setups.
+- Pop-up Deadite bash shots can create uncontrolled rebounds, especially when attacked
+  with speed.
+- Evil Ash Hand shots can produce unpredictable central rebounds rather than controlled
+  returns.
+- The fruit-cellar lower playfield gives a limited opportunity to find Lock & Load
+  before the Boomstick setup is lost.
+commentary:
+- GROOVY is complete—that’s twenty percent on everything for the rest of this ball.
+- The mode is ready, but they’re holding the start because they want the multiball
+  underneath it.
+- Those three Blood Flood targets are multiplier setup, not just pop-bumper value.
+- Cabin locks are physical and stealable here; that ball another player parked can
+  become yours.
+- The Deadites are up—knock one down and this can turn into the stackable Deadite
+  multiball.
+- They’re heading downstairs for Boomstick; now they have a limited window to find
+  Lock and Load.
+trivia:
+- Spooky limited Evil Dead to 888 Collector’s Edition machines.
+- The game combines the first two Evil Dead films and features new Bruce Campbell
+  recordings as Ash alongside original movie clips and audio.
+- Spooky described Evil Dead as its most mechanism-heavy game to that point, including
+  a moving Hand, rising Deadites, rotating Linda, lower playfield, and Cabin-ball
+  release.
+- Christopher Franchi created the complete hand-drawn art package, his first full-game
+  art package for Spooky.
+- The rules expanded substantially after release, adding features including Cheryl
+  Multiball, wizard modes, Video Mode, GROOVY scoring, and Dagger scoring.
+summary: Complete GROOVY → qualify story mode → prepare multiball → build multipliers
+  → stack mode + multiball → cash
+image: images/evil-dead-spooky-2024.webp

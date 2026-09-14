@@ -1,0 +1,151 @@
+id: attack-from-mars-chicago-gaming-2017
+name: Attack From Mars (Remake)
+metadata:
+  manufacturer: Chicago Gaming Company
+  year: 2017
+  designer: Brian Eddy
+  artist: Doug Watson
+  production: ''
+  era: Modern Bally/Williams remake
+  multiball: 3-ball Multiball, 2-ball Martian Attack Multiball, 4-ball Total Annihilation,
+    Strobe Multiball, and 5-ball Rule the Universe
+rules_basis:
+  kind: code
+  version: v1.0.0
+  release_date: '1900-01-01'
+hook: 'A common tournament route is Total Annihilation: complete both ramps and both
+  loops three times each, stack center hurry-ups from 100M to 300M to 500M, then finish
+  all four for an automatic 1B and Total Annihilation. The key tension is safe major-shot
+  progress versus dangerous, lucrative center saucer shots.'
+rules:
+  primary: Complete Capture, Big-O-Beam, Tractor Beam, and Atomic Blaster three times
+    each to start Total Annihilation. A natural third completion starts a 100M center
+    hurry-up; another third completion before timeout raises it to 300M, then 500M.
+    Completing all four automatically awards 1B and starts Total Annihilation.
+  bullets:
+  - A Super Skill Shot can spot all three TA inserts for one ramp or loop, but it
+    does not start that shot's 100M hurry-up.
+  - Attack Waves require lowering the forcefield, damaging the saucer, then shooting
+    its hole; five Earth waves lead to Conquer Mars.
+  - An Attack Wave already running can be attacked during multiball, but a new wave
+    normally cannot start until multiball ends.
+  - Regular locks are virtual. Five distinct regular-Multiball jackpots light a roaming
+    Super Jackpot starting at 250M.
+  - Bonus X can reach 250x, making a developed end-of-ball bonus worth billions.
+watch:
+- title: TA insert ladders
+  text: A third lamp on a ramp or orbit means a center hurry-up has started. Several
+    nearly complete ladders telegraph a possible 300M, 500M, and eventual automatic
+    1B sequence.
+- title: Forcefield down
+  text: The saucer is exposed. Expect aggressive center shots, especially when the
+    player can attack it with extra balls in play.
+- title: Roaming Super Jackpot
+  text: After five distinct regular-Multiball jackpots, the Super Jackpot starts roaming
+    among the five major shots and begins at 250M.
+- title: Six blue lamps
+  text: All Rule the Universe prerequisites are complete; the scoop becomes the wizard-mode
+    start.
+skill_shots:
+- name: Normal Skill Shot
+  how: Launch without holding the left flipper and use the flippers to steer the flashing
+    upper Bonus X lane.
+  value: Awards 10M + 5x Bonus, with the point award increasing on successive normal
+    skill shots. It preserves the opening ball save longer than the Super.
+- name: Super Skill Shot
+  how: Hold the left flipper while pressing Launch, then shoot a ramp, loop, or the
+    forcefield.
+  value: A ramp or loop scores 50M and spots all three TA inserts for that shot; the
+    forcefield scores 50M and lowers the shield. TA lanes spotted this way do not
+    start a hurry-up.
+features:
+- type: ball-save
+  name: Opening Ball Save
+  text: A brief save protects the opening. A Super Skill Shot, including a failed
+    Super attempt into a non-awarding shot, ends it early.
+- type: player-control
+  name: Martian Bombs
+  text: When Launch flashes during Martian Attack, pressing it kills one remaining
+    Martian. Bombs stack and carry between attacks.
+- type: mystery-award
+  name: Stroke of Luck
+  text: Normally awards items such as locks, multiball, Video Mode, or Strobe. On
+    stock-remake tournament mode it awards 50M every time.
+- type: video-mode
+  name: Video Mode
+  text: Available through Stroke of Luck; flippers aim and Launch fires one Smart
+    Bomb. Full completion is worth 635M.
+- type: extra-ball
+  name: Extra Balls
+  text: Multiple qualifications exist, including the second Attack Wave and rollover
+    progress. Tournament mode itself does not disable them.
+shots:
+- name: Capture — Left Loop
+  value: Advances Total Annihilation, jackpots, and combos. Three natural completions
+    qualify its TA hurry-up.
+  risk: Medium
+  diagram: 1
+- name: Big-O-Beam — Left Ramp
+  value: Controlled major shot for Total Annihilation progress and jackpots.
+  risk: Low
+  diagram: 2
+- name: Lock Ramp / Hole
+  value: Builds virtual locks and starts regular Multiball; also collects the accumulating
+    Annihilation Jackpot during TA.
+  risk: Medium-High
+  diagram: 3
+- name: Forcefield / Saucer
+  value: Advances Attack Waves and collects TA hurry-ups. Potentially enormous scoring,
+    but the primary center danger.
+  risk: High
+  diagram: 4
+- name: Tractor Beam — Right Ramp
+  value: Advances Total Annihilation and jackpots; useful for the controlled TA route
+    but tighter than the left ramp.
+  risk: Medium
+  diagram: 5
+- name: Atomic Blaster — Right Loop
+  value: Advances Total Annihilation, jackpots, and combos. Three natural completions
+    qualify its TA hurry-up.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Favor ramps and orbits, controlled returns, TA progress, and automatic TA
+    hurry-up cash-outs. Avoid repeated naked center bashes unless the available value
+    justifies the risk.
+  behind: 'Accept more center variance: stack TA hurry-ups toward 500M and 1B, attack
+    an exposed saucer during multiball, or pursue deep saucer and Rule the Universe
+    progress. A mature Bonus X can also make the eventual drain a major score swing.'
+  key_decision: Cash a live hurry-up at the dangerous center now, or complete another
+    TA lane to multiply it and potentially auto-cash it when Total Annihilation starts?
+danger:
+- Forcefield shots can rebound straight down the middle and are the game's signature
+  drain threat.
+- Direct hits on the T and I Martian standups can produce dangerous rebounds.
+- The narrow, steep lock ramp can reject weak shots toward the flippers.
+- The right ramp is smaller and tighter than the left ramp.
+- Balls can roll up the left inlane past its switch and migrate into the left outlane.
+commentary:
+- That third TA insert starts the 100-million hurry-up—now they're trying to stack
+  it rather than cash it.
+- One more third completion makes that center value 500 million.
+- Complete all four and the game gives them the billion automatically, then starts
+  Total Annihilation.
+- They started the saucer before multiball specifically so they can attack it with
+  extra balls in play.
+- That Super Skill Shot spotted the whole TA lane—but notice it doesn't give the hurry-up.
+- That flashing Launch button is a Martian Bomb; if it kills the final Martian, it
+  can turn a near-drain into multiball.
+trivia:
+- Attack From Mars Remake was Chicago Gaming and Planetary Pinball's second Bally/Williams
+  remake and was sold in Classic, Special, and Limited editions.
+- Original AFM artist Doug Watson also sculpted and designed the Limited Edition remake's
+  animated Martian topper.
+- The remake replaces the original WPC hardware with modern electronics while recreating
+  the original game's feel and rules presentation.
+- The same saucer-shooting Video Mode later appears in Junk Yard.
+- A cow-themed Video Mode Easter egg changes the targets to larger cows without special
+  scoring.
+summary: Safe ramps/loops → stack TA hurry-ups → automatic 1B → Total Annihilation
+  → risk center saucer when value or multiball protection justifies it
+image: images/attack-from-mars-chicago-gaming-2017.webp

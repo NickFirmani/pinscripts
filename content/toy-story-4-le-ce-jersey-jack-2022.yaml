@@ -1,0 +1,161 @@
+id: toy-story-4-le-ce-jersey-jack-2022
+name: Toy Story 4 (LE/CE)
+metadata:
+  manufacturer: Jersey Jack Pinball
+  year: 2022
+  designer: Pat Lawlor
+  artist: John Youssi
+  production: Limited and Collector’s Edition trims; no consequential CE-only gameplay
+    difference verified
+  era: JJP 10-inch playfield LCD
+  multiball: Road Trip, Buzz Quick, Carnival, Gabby Gabby, Tiki Party, and Take A
+    Chance
+rules_basis:
+  kind: code
+  version: v2.04
+  release_date: '2025-03-31'
+hook: Soft-plunge Woody for +5x Bonus X, then prioritize Road Trip Multiball. Add
+  balls before the first Mega Jackpot, freeze Shot X at the captive ball, and combine
+  Road Trip multipliers with Super X for the game's biggest scoring swings.
+rules:
+  primary: 'Start all seven Scenes to qualify Meet Me At The Carousel; each completed
+    Scene adds +1x to Carousel scoring, up to 7x. Road Trip is the primary tournament
+    route: hit the left drop target, lock three balls, then build jackpots toward
+    Super and Mega Jackpot.'
+  bullets:
+  - During Road Trip, the left ramp lights Shot X; hit the captive ball to freeze
+    a displayed 2x, 3x, or 4x multiplier for the next Jackpot, Super, or Mega within
+    15 seconds.
+  - Road Trip add-a-balls remain available at the lock until the first Mega Jackpot.
+    Extra balls in play also raise a temporary playfield multiplier that falls as
+    balls drain.
+  - Enough Road Trip jackpots light the drop target for Super Jackpot; collecting
+    Super lights the lock for a Mega starting at 1M plus prior jackpot value.
+  - Super X starts at 2x playfield for 30 seconds. Left inlanes plus Duke Caboom jumps
+    add 10 seconds and can raise it to 4x; it can be carried into another feature.
+  - 'Bonus X can become major scoring: skill shots add +5x, inlane completions and
+    Super Loops add +1x, and Hold Bonus X can preserve it into the next ball.'
+watch:
+- title: Scene inserts
+  text: Blinking center inserts mean a Scene has been played or is active; solid means
+    completed. Seven started Scenes qualify Carousel, while completions increase its
+    scoring multiplier.
+- title: Road Trip Shot X
+  text: The small playfield LCD shows the moving Shot X. A captive-ball hit freezes
+    that multiplier for the next major Road Trip award.
+- title: Super X
+  text: An active 2x–4x playfield multiplier can combine with Road Trip's own multipliers
+    and Shot X, creating the game's largest single-shot opportunities.
+- title: Bonus X
+  text: Repeated Woody skill shots and upper loops can build an enormous end-of-ball
+    multiplier, so apparently modest setup shots may be preparing a major bonus.
+skill_shots:
+- name: Woody Skill Shot
+  how: Soft-plunge directly into the Woody saucer; the player gets up to three attempts
+    before auto-launch.
+  value: Awards 50 tickets, 50K increasing by 10K per subsequent make, and +5x Bonus
+    X. Three successful skill shots light Extra Ball.
+- name: Super Skill Shot
+  how: After a successful Woody plunge, repeatedly shoot the upper loop with the upper
+    flipper.
+  value: Each loop scores 10K and adds +1x Bonus X, turning the controlled saucer
+    feed into additional long-term bonus value.
+- name: Tiki Party Lane Skill
+  how: When entering Tiki Party, complete all four top lanes; the number initially
+    spotted is adjustment-dependent.
+  value: Completing all four gives 2x scoring for the ensuing Tiki Party Multiball.
+features:
+- type: ball-save
+  name: Kickback
+  text: Completing FORKY and starting Rescue Forky enables the left-outlane save.
+    Under the Competition baseline, Unlimited Kickback from the wheel lasts 30 seconds.
+- type: video-mode
+  name: Tiki Party Pinball
+  text: A virtual pinball challenge started at the left ramp. Make 30 virtual switches
+    to reach Tiki Party Multiball; after the initial save expires, a drain causes
+    Sudden Death.
+- type: mystery-award
+  name: Take A Chance Wheel
+  text: Qualifies utilities including Super X, Super Loops, Tiki Party, Unlimited
+    Kickback, Hold Bonus X, and Extra Ball; the highlighted award must still be collected
+    at its designated shot.
+- type: mystery-award
+  name: Mystery
+  text: Provides state-sensitive utilities such as ball save, bonus holds, and Super
+    X help; the Competition preset uses a predetermined award table.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through three skill shots, Caboom-jump progress, or the Take A
+    Chance wheel.
+shots:
+- name: Road Trip Lock
+  value: Locks balls, starts Road Trip, provides add-a-balls before the first Mega,
+    and collects the lit Mega Jackpot.
+  risk: High
+  diagram: 1
+- name: Left Ramp
+  value: Starts Carnival modes, advances Forky, and lights Shot X during Road Trip,
+    making it a key setup shot for stacks.
+  risk: Medium-High
+  diagram: 2
+- name: Duke Caboom Ramp
+  value: Advances Caboom progression and adds time while raising Super X toward 4x.
+  risk: Medium-High
+  diagram: 3
+- name: Captive Ball
+  value: Manipulates the Take A Chance wheel and freezes Road Trip Shot X for the
+    next major jackpot.
+  risk: High
+  diagram: 4
+- name: Scoop
+  value: Advances Carnival locks and collects Mystery and qualified Meet Me At The
+    Carousel.
+  risk: High
+  diagram: 5
+- name: Upper Loop
+  value: Builds Bonus X through the Super Skill Shot, advances Bo Peep, and controls
+    Take A Chance wheel movement.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor a quick Road Trip start and take useful jackpot multipliers instead
+    of over-building Super X. Protect a large Bonus X, and avoid repeatedly forcing
+    the Road Trip lock if that shot is rejecting dangerously.
+  behind: Build two Road Trip locks, qualify Super X, raise it toward 4x with Caboom,
+    then start Road Trip. Add balls before Mega and combine the temporary playfield
+    multiplier, Super X, and Shot X for a high-variance cash-out.
+  key_decision: Take the first Road Trip Mega or keep building add-a-balls and multipliers?
+    Mega is immediately valuable, but collecting it closes the unlimited add-a-ball
+    phase; waiting raises the ceiling while exposing more balls and requiring more
+    setup shots.
+danger:
+- Misses at the narrow far-left Road Trip lock can return dangerously and are particularly
+  punishing.
+- Pop-bumper exits can turn an uncontrolled upper-playfield sequence directly into
+  a drain.
+- The left outlane is a major threat, making the game's kickback unusually valuable.
+- A missed or rejected scoop attempt can turn feature progression into immediate danger.
+- Missing the upper loop ends the controlled Woody-saucer feed and sacrifices the
+  Super Skill opportunity.
+commentary:
+- That skill shot is much bigger than 50,000—it just added five to the bonus multiplier.
+- Road Trip is ready; now the question is whether they start it immediately or build
+  the stack first.
+- Shot X is frozen at the captive ball—the next big Road Trip award gets that multiplier.
+- Super X is at four-times; combine that with Road Trip's multipliers and one shot
+  can move the entire match.
+- They haven't taken the Mega yet because the lock is still giving them add-a-balls.
+- Seven Scenes only have to be started for Carousel; completing them increases the
+  wizard-mode multiplier.
+trivia:
+- Toy Story 4 was Pat Lawlor's final pinball design before retirement.
+- The design revisits familiar Lawlor ideas with a spinning award wheel and a mechanically
+  raised stunt ramp.
+- The Collector's Edition was limited to 1,000 units.
+- The Collector's Edition adds a fiber-optic fireworks topper with a flying Duke Caboom
+  mechanism.
+- The physical machine contains a playable virtual pinball game, Tiki Party Pinball,
+  on its secondary LCD.
+summary: Soft-plunge Woody → build Bonus X → prepare Super X → start Road Trip → add
+  balls → freeze Shot X → cash Mega
+image: images/toy-story-4-le-ce-jersey-jack-2022.webp

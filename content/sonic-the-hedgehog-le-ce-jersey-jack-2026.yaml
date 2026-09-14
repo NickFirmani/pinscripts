@@ -1,0 +1,160 @@
+id: sonic-the-hedgehog-le-ce-jersey-jack-2026
+name: Sonic the Hedgehog (LE/CE)
+metadata:
+  manufacturer: Jersey Jack Pinball
+  year: 2026
+  designer: Steve Ritchie
+  artist: Darryl Young
+  production: Collector’s Edition; same gameplay hardware and code as Arcade and Special
+    Editions
+  era: Modern JJP
+  multiball: Chaos Emerald and Sonic Heroes
+rules_basis:
+  kind: code
+  version: '0.930'
+  release_date: '2026-08-12'
+hook: Progress Zones while collecting Chaos Emeralds, then build multiple HERO teams
+  before Sonic Heroes Multiball. Emeralds increase Bash Dash’s starting jackpot multiplier
+  and extend Chaos Control; combine those with multiplied Heroes Super Jackpots for
+  the major scoring blow-up.
+rules:
+  primary: Zone checkpoints offer 1×, 2×, or 3× routes, with most 3× expert shots
+    upstairs. Finishing a Zone at the Goal Ring starts an Eggman Boss Battle. Chaos
+    Emeralds and HERO teams build the multipliers that make Sonic Heroes Multiball
+    the central high-value scoring opportunity.
+  bullets:
+  - Each Chaos Emerald adds +1× to Bash Dash’s starting jackpot multiplier and 15
+    seconds to available Chaos Control.
+  - During either main multiball, Bash Dash captures a ball and starts jackpot X at
+    2× plus Emeralds held; further captive-ball hits add +1×.
+  - Each completed HERO team permanently gives its associated shot 1.25× and can multiply
+    Sonic Heroes Super Jackpots with other completed teams.
+  - Only one multiball can run at once. A Zone can continue during multiball, but
+    reaching the Goal Ring pauses it until single-ball play before Boss Battle starts.
+  - Rings contribute to Zone rank and bonus, charge the left-outlane kickback every
+    20, and light Extra Ball at 100; tilting removes half the Rings earned that ball.
+watch:
+- title: Checkpoint chevrons
+  text: Blue arrows with one to three chevrons show the available Zone routes and
+    whether the player is choosing safer progression or a higher-value expert shot.
+- title: Chaos Emeralds
+  text: Every Emerald means another +1× to Bash Dash’s starting jackpot multiplier
+    and another 15 seconds of Chaos Control.
+- title: HERO teams
+  text: Completed teams with BASH flashing mean Sonic Heroes is available. Passing
+    on it indicates the player is deliberately building another team for a larger
+    eventual Super.
+- title: Bash Dash capture
+  text: Once a ball is captured at Bash Dash, the major scoring window is active;
+    further captive-ball hits increase jackpot X before the player attacks Super Jackpots.
+skill_shots:
+- name: Ball-1 Eggman Skill Shot
+  how: Within 20 seconds, plunge to the center or left ramp, reach the Lab, then hit
+    Eggman.
+  value: Starts a 5M hurry-up and makes Ball-1 Boss Battles score 2×. Leaving the
+    upper playfield or letting the timer expire loses the opportunity.
+- name: Normal Skill Shot
+  how: On later or locked-ball plunges, select an award and hit its white right-side
+    shot.
+  value: Awards Chao, Bonus X, Checkpoint, HERO, or Rings progression; current 0.930
+    awards vary by selection and repeated use.
+- name: Super Skill Shot
+  how: Select the same award as the normal skill shot, then make its pink shot.
+  value: Provides a substantially stronger version of the selected Chao, Bonus X,
+    Checkpoint, HERO, or Rings award.
+features:
+- type: player-control
+  name: Chaos Control
+  text: With an Emerald, the action button freezes relevant timers for 15 seconds
+    per Emerald; press again to resume. It can freeze Zone, Boss, hurry-up, and Bash
+    Dash timers.
+- type: ball-save
+  name: Kickback
+  text: Rings charge the left-outlane kickback, which returns the ball toward the
+    Battle Zone targets.
+- type: mystery-award
+  name: Find Froggy
+  text: Each checkpoint lights the far-right target for an equipment-dependent award;
+    higher-tier rewards can include eight seconds of ball save.
+- type: player-control
+  name: Spin Dash
+  text: Qualify at the right ramp, use the flippers to build spin speed, then release
+    with the action button during the timed green window. Value depends on Rings.
+- type: extra-ball
+  name: Extra Balls
+  text: Three Bosses, 100 Rings, or catching Froggy can light Extra Ball at the center
+    ramp. When extra balls are disabled, the award is 10M.
+shots:
+- name: BASH / Bash Dash
+  value: Starts Sonic Heroes when qualified and captures a ball during multiball to
+    activate and increase the central jackpot multiplier.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp
+  value: Provides Lab access for Eggman, Zone work, and valuable 3× expert opportunities.
+  risk: Medium-High
+  diagram: 2
+- name: Center Ramp
+  value: Finishes Zones at the Goal Ring, provides Lab and Boss access, and collects
+    lit Extra Balls.
+  risk: High
+  diagram: 3
+- name: Inline Drops / Lockup
+  value: Advances Chaos Emerald Multiball, bringing Emerald utility and Bash Dash
+    multiplier growth online.
+  risk: Medium-High
+  diagram: 4
+- name: Right Ramp / Accelerator
+  value: Advances Spin Dash and other Emerald or HERO progression, making it a repeatedly
+    useful setup shot.
+  risk: High
+  diagram: 5
+- name: Lab Shots
+  value: Provide most 3× expert checkpoints, Emerald progression, and later Boss objectives
+    for the highest-value Zone route.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor safer 1× and 2× Zone progression, take Sonic Heroes once a team is
+    ready rather than forcing additional single-ball setup, preserve the kickback,
+    and avoid unnecessary exposure to the fast Lab playfield.
+  behind: Collect Chaos Emeralds first, then delay Sonic Heroes while completing multiple
+    HERO teams. Activate Bash Dash, use Chaos Control to preserve its timer, build
+    jackpot X with captive-ball hits, and cash multiplied Super Jackpots.
+  key_decision: Start Sonic Heroes now or defer it? One completed team offers immediate
+    multiball safety, while every additional team requires more single-ball risk but
+    multiplicatively increases the eventual Super Jackpot ceiling.
+danger:
+- The right-ramp return can produce immediate center-drain danger.
+- The Battle Zone magnet around the center ramp can create unpredictable straight-down-the-middle
+  action.
+- Spring and captive-ball targets can return the ball with significant pace.
+- The upper Lab playfield is fast and rebound-heavy, making control less predictable
+  than on the lower playfield.
+- Tilting also removes half of the Rings earned that ball, making aggressive saves
+  unusually expensive.
+commentary:
+- That Emerald isn’t just progression—it adds one to the starting Bash Dash multiplier.
+- They’re passing on Sonic Heroes; that means they’re trying to bank another team
+  and multiply the eventual Super.
+- Bash Dash is live—every hit on that captured ball pushes jackpot X another step.
+- Chaos Control freezes the Bash Dash clock, so those Emeralds are buying them scoring
+  time.
+- That’s the 3× expert checkpoint upstairs—same progression, much more value and much
+  more exposure.
+- The Goal Ring is reached, but Boss Battle has to wait until they’re back to single-ball
+  play.
+trivia:
+- Sonic the Hedgehog was revealed on June 23, 2026, Sonic’s 35th anniversary, as the
+  first commercially manufactured full-size Sonic pinball machine.
+- It is Steve Ritchie’s second Jersey Jack design after Elton John.
+- Arcade, Special, and Collector’s Editions share identical gameplay hardware and
+  code; the Collector’s Edition adds presentation upgrades including a mechanical
+  Sonic-versus-Eggman topper.
+- The soundtrack draws from Sonic Generations and includes new Slash guitar solos
+  on Open Your Heart and It Doesn’t Matter.
+- Jersey Jack advertises more than 5,000 character callouts from the official Sonic
+  voice cast.
+summary: Clear Zones → collect Emeralds → build HERO teams → start Sonic Heroes →
+  activate Bash Dash → freeze with Chaos Control → cash Supers
+image: images/sonic-the-hedgehog-le-ce-jersey-jack-2026.webp

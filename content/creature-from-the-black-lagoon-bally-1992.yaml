@@ -1,0 +1,154 @@
+id: creature-from-the-black-lagoon-bally-1992
+name: Creature from the Black Lagoon
+metadata:
+  manufacturer: Bally/Midway
+  year: 1992
+  designer: John Trudeau
+  artist: Kevin O’Connor
+  production: About 7,841
+  era: WPC Fliptronics II
+  multiball: 2-ball Multiball
+rules_basis:
+  kind: rom
+  version: Revision 5.0; factory L-4 also common
+  release_date: null
+hook: Spell F-I-L-M, start 2-ball Multiball at a saucer, find and rescue the Girl,
+  then build playfield multiplier through the Creature Ramp before cashing Jackpot
+  and Super Jackpot at the Snackbar. Center-shot Move Your Car is a simpler tournament
+  alternative.
+rules:
+  primary: 'Spell F-I-L-M to light Multiball: K-I-S-S gives F, Snackbar/Menu gives
+    I, P-A-I-D gives L, and the Right Saucer gives M. Lock at either saucer to start
+    2-ball Multiball. Search the Left Saucer, Snackbar, and Right Saucer for the Girl,
+    then Rescue and collect Jackpot at Snackbar, make the required Jet Bumpers, and
+    return to Snackbar for Super Jackpot.'
+  bullets:
+  - Super Jackpot is twice the base Jackpot and is multiplied by playfield-X; collecting
+    a Super doubles the base Jackpot for the rest of the game.
+  - During Multiball, repeated Creature Ramp shots spell CREATURE in the Whirlpool
+    and raise playfield-X; the maximum is adjustment-sensitive.
+  - Jet Bumpers increase the base Jackpot throughout the game, making a late multiplied
+    Super a major match-swinging opportunity.
+  - If one ball drains before Jackpot, a brief Multiball Restart may be available
+    at Snackbar when enabled; there is no restart after Jackpot.
+  - Factory L-4 uses a random Girl search. Revision 5.0 tournament mode makes search
+    placement deterministic and also fixes several scoring and multiplier bugs.
+watch:
+- title: F-I-L-M inserts
+  text: These show exactly how close the player is to Multiball and which qualification
+    letter they still need.
+- title: Saucer strobes
+  text: Heavy strobes at the saucers mean F-I-L-M is complete; a saucer lock will
+    start Multiball.
+- title: Creature Ramp during Multiball
+  text: The player is deliberately delaying the cash-out to build playfield multiplier
+    in the Whirlpool before taking Jackpot and Super Jackpot.
+- title: Snackbar marquee
+  text: Search, Rescue, Jackpot, Super Jackpot, or Restart on the Snackbar display
+    tells you the current Multiball objective.
+skill_shots:
+- name: P-A-I-D Skill Shot
+  how: Plunge into the flashing top rollover; flippers lane-change the lit rollover
+    in both directions.
+  value: Immediately completes P-A-I-D, advances Bonus X, and awards the L in F-I-L-M.
+- name: K-I-S-S Skill Shot
+  how: Plunge completely around the Back Orbit while timing the cycling K-I-S-S lamps.
+  value: Can spot multiple K-I-S-S letters early; completing K-I-S-S awards the F
+    in F-I-L-M.
+- name: Double Film Letter Combo
+  how: After a K-I-S-S skill shot completes F, immediately shoot the Right Saucer
+    for M.
+  value: Awards a 4M combo while quickly collecting two F-I-L-M letters.
+features:
+- type: ball-save
+  name: Free Pass
+  text: Timed start-of-ball save that returns an outlane or drain to the shooter lane
+    while lit. It does not operate during Multiball.
+- type: video-mode
+  name: Video Mode
+  text: Normally qualified after eight Right Ramps and started at the lit saucer;
+    use the flipper buttons to punch the Peeping Tom.
+- type: extra-ball
+  name: Extra Balls
+  text: Available from repeated K-I-S-S and other features. No universal built-in
+    tournament point conversion was established.
+- type: mystery-award
+  name: Snackbar and Playground Awards
+  text: Stock L-4 includes randomness. Revision 5.0 tournament play uses patterned
+    Snackbar awards and a fixed player-specific Playground sequence.
+- type: player-control
+  name: Flipper Controls
+  text: Flippers lane-change the P-A-I-D rollovers and can hurry the bonus countdown.
+shots:
+- name: K-I-S-S / Left Saucer
+  value: Builds F and serves as a Multiball start and search shot.
+  risk: Medium-High
+  diagram: 1
+- name: Left / Creature Ramp
+  value: Builds playfield multiplier during Multiball and supports Unlimited Millions;
+    the primary setup shot before a major cash-out.
+  risk: High
+  diagram: 2
+- name: Center / Move Your Car
+  value: Advances P-A-I-D and pops and starts Move Your Car, providing a comparatively
+    controllable repeat-scoring route.
+  risk: Medium
+  diagram: 3
+- name: Snackbar
+  value: Advances I and serves as Search, Rescue, Jackpot, Super Jackpot, and possible
+    Multiball Restart; the main Multiball cash-out shot.
+  risk: High
+  diagram: 4
+- name: Right Ramp
+  value: Advances Snack Attack, Video Mode, and Super Scoring while providing a repeatable
+    feature route.
+  risk: Medium
+  diagram: 5
+- name: Slide / Right Saucer
+  value: Awards M, starts Slide modes, and serves as a Multiball start and search
+    shot.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor F-I-L-M progress, controllable Center Shots, and a conservative Multiball.
+    Once a useful playfield multiplier is established, take the Jackpot rather than
+    risk losing the second ball while greedily circling the Whirlpool.
+  behind: Push playfield multiplier harder, build the base Jackpot with Jet Bumpers,
+    and pursue multiplied Super Jackpots. Unlimited Millions is another high-variance
+    route for a player who can confidently loop the Creature Ramp.
+  key_decision: During Multiball, cash Jackpot now or keep one ball controlled while
+    using the other to build more playfield multiplier? Delaying raises the ceiling,
+    but losing the second ball before Jackpot can throw away the opportunity.
+danger:
+- Weak Creature Ramp shots can reject sharply toward the center.
+- Snackbar misses are unforgiving and frequently demand an immediate save.
+- Direct Menu-target work is a poorly controlled way to obtain I compared with using
+  Snackbar spotting when available.
+- Bare metal outlane/inlane divider posts make balls wandering toward the sides difficult
+  to rescue.
+- The Right Ramp returns quickly to the left flipper, changing the timing of repeated
+  attempts.
+commentary:
+- They only need the I in F-I-L-M now, so all of this is about getting that Snackbar
+  open.
+- Multiball is running, but they’re not taking the Jackpot yet—they’re building playfield
+  multiplier in the Whirlpool.
+- That’s the Rescue; one more Snackbar shot is the Jackpot.
+- Now they need the pops. Once that requirement is met, Snackbar becomes Super Jackpot
+  for twice the base value.
+- They’ve lost the second ball before Jackpot, so Snackbar may be lit briefly for
+  the Multiball Restart.
+- That Center Shot has started Move Your Car—four clean repeats can turn this into
+  an 80-million-point mode.
+trivia:
+- The signature Creature is displayed as a backlit hologram.
+- The game is framed around watching Creature from the Black Lagoon at a 1950s drive-in
+  theater.
+- Five period songs rotate in the game, including Rock Around the Clock, Get a Job,
+  and Summertime Blues.
+- Completing P-A-I-D hides a small Williams cow in the DMD animation.
+- Revision 5.0 gave the previously decorative 10M, 20M, and 30M left-inlane lamps
+  a scoring purpose during Big Millions.
+summary: Spell F-I-L-M → start Multiball → find Girl → build playfield X → Rescue
+  → Jackpot → pops → Super Jackpot
+image: images/creature-from-the-black-lagoon-bally-1992.webp

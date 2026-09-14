@@ -1,0 +1,156 @@
+id: avatar-le-ce-jersey-jack-2024
+name: 'Avatar: The Battle for Pandora (LE/CE)'
+metadata:
+  manufacturer: Jersey Jack Pinball
+  year: 2024
+  designer: Mark Seiden
+  artist: Lea Faske
+  production: Limited and Collector’s Edition trims
+  era: Modern
+  multiball: Battle of the Hallelujah Mountains (A1), Battle of Awa’Atlu (A2), and
+    Eywa’Eveng mini-wizard multiball
+rules_basis:
+  kind: code
+  version: v1.02
+  release_date: '2025-07-08'
+hook: Prime A1 or A2 multiball while preparing a Sivako or Songcord, then stack them
+  for scoring leverage. Refill arrows with the action button to preserve up to 4x
+  scoring. If Eclipse joins the stack, everything feeds its jackpot—cash it at the
+  right ramp before time expires.
+rules:
+  primary: Hit any of eight major Sivako starters three times to begin that mode.
+    Sivako or Songcord can stack with a multiball, but A1 and A2 cannot stack together.
+    During events, every flip consumes arrows; replenish them after lit shots with
+    the action button to preserve the multiplier up to 4x.
+  bullets:
+  - Both main multiballs use award shots to qualify a moving jackpot; 10 award shots
+    arm an add-a-ball on the next jackpot.
+  - Five jackpots across multiball attempts qualify the RDA Super Jackpot, and each
+    main multiball progresses through three stages.
+  - Eclipse progress persists across balls. During Eclipse, other scoring feeds its
+    jackpot; collect at the right ramp before time expires or lose the uncollected
+    value.
+  - Meuia is ball-scoped and cashes at Home Tree; PANDORA is longer-term progression,
+    with completion lighting Eywa’Eveng at the scoop.
+  - Ten milestones lead toward the final wizard mode, Oel Ngati Kameie.
+watch:
+- title: Green button + yellow arrows
+  text: 'Rapid action-button presses are deliberate: the player is replenishing arrows
+    to protect the event multiplier, which can reach 4x.'
+- title: Eclipse
+  text: When the playfield suddenly darkens, Eclipse is running. Concurrent scoring
+    feeds its jackpot, and the right ramp collects the accumulated value before time
+    expires.
+- title: Red/green jackpot
+  text: Ten multiball award shots are complete; the next jackpot also adds a ball.
+- title: Infinity Mirror locks
+  text: Green orbit lock lights show A1 preparation. Three physical locks start Battle
+    of the Hallelujah Mountains.
+skill_shots:
+- name: Standard Skill Shot
+  how: Plunge into one of the available skill-shot targets without selecting the roving
+    Super Skill Shot.
+  value: Adds +1 meuia to that shot for the remainder of the ball.
+- name: Super Skill Shot
+  how: Use the action button to select the roving Super Skill Shot, then plunge into
+    the selected target.
+  value: Extends ball save and grants a target-specific bonus; the left-orbit lockup
+    can immediately lock an A1 ball.
+features:
+- type: ball-save
+  name: Ball Save and Skill Save
+  text: Super Skill Shots extend the ordinary ball save. When Skill Save is lit, the
+    player has 10 seconds to hit a randomly lit shot or the ball ends.
+- type: player-control
+  name: Action Button
+  text: Selects the Super Skill Shot, replenishes arrows after lit event shots, and
+    manages Songcord tokens.
+- type: other
+  name: Lane Awards
+  text: Awards include Max Toxin, which sets the next event to 4x, and Unlimited Arrows,
+    which prevents multiplier decay through the next event or stack.
+- type: extra-ball
+  name: Extra Balls
+  text: Home Tree can light an extra ball from 50 meuia, three PANDORA letters, Tulkun
+    progress, or mystery.
+- type: mystery-award
+  name: Mystery
+  text: Home Tree can light mystery, which draws from a broad random award pool including
+    multiball starts and PANDORA advancement.
+- type: other
+  name: Left Outlane Kickback
+  text: Kickback charges can stack, including through the left-outlane Super Skill
+    Shot.
+shots:
+- name: RDA Mini-Ramp
+  value: Advances RDA Sivako and provides a repeatable route toward starting a mode.
+  risk: Medium
+  diagram: 1
+- name: Infinity Mirror Lock
+  value: Advances A1 multiball; three physical locks start Battle of the Hallelujah
+    Mountains. A Super Skill Shot can steal a lock.
+  risk: Medium-High
+  diagram: 2
+- name: Scoop
+  value: Starts Songcords and Eywa’Eveng and serves as a major Bond Jackpot and progression
+    utility shot.
+  risk: Medium
+  diagram: 3
+- name: Home Tree VUK
+  value: Cashes meuia awards and advances mystery, extra-ball states, and multiball
+    jackpot opportunities.
+  risk: High
+  diagram: 4
+- name: Tulkun / Dive Assembly
+  value: Advances Tulkun Sivako and A2 qualification through the lower playfields;
+    a high-value but demanding precision route.
+  risk: High
+  diagram: 5
+- name: Hallelujah Mountains Ramp
+  value: Collects the accumulated Eclipse Jackpot. During a large stack, this can
+    become the critical timed cash-out.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor a reliable Sivako starter, bring in multiball when the complementary
+    mode is ready, maintain arrows rather than over-flipping, and collect Eclipse
+    instead of greedily building it. Safer lane awards can be preferable to forcing
+    difficult Tulkun/A2 progress.
+  behind: Seek the high-ceiling mode + multiball + Eclipse stack at 4x, push toward
+    multiball add-a-ball, and consider building the Eclipse pot before cashing the
+    right ramp. If PANDORA is close, Eywa’Eveng is another comeback route.
+  key_decision: When should the prepared multiball start? Taking it immediately provides
+    safety, but holding it while qualifying a favorable mode or waiting for Eclipse
+    creates much greater stacking leverage.
+danger:
+- Home Tree VUK ejects quickly toward the upper-right flipper; a missed transfer can
+  lead to a center drain.
+- The tight right orbit returns quickly toward the upper-left flipper and demands
+  immediate control.
+- Tulkun is an extremely precise upper-flipper shot surrounded by busy center traffic,
+  making misses high variance.
+- Before calling a left-outlane drain, check whether the player has stored kickback
+  charges.
+- Unusual device releases demand attention to the indicated flipper; mishandling them
+  can produce center drains.
+commentary:
+- They’ve primed the multiball—now they’re trying to put a Sivako or Songcord underneath
+  it.
+- 'That button-mashing is intentional: they’re refilling arrows to hold the event
+  multiplier, up to four-times.'
+- Eclipse is on; the right ramp is now the cash register, and this whole stack is
+  feeding that jackpot.
+- Red-green on the jackpot means this collect also adds a ball.
+- That Super Skill Shot stole them an Infinity Mirror lock before normal qualification.
+- PANDORA is complete—now the scoop can start Eywa’Eveng.
+trivia:
+- Avatar was Mark Seiden’s first solo pinball design and Jersey Jack Pinball’s tenth
+  title.
+- 'The game uses material from both Avatar and Avatar: The Way of Water.'
+- Stephen Lang recorded custom Colonel Quaritch voice work.
+- The game has dual lower playfields and six flippers across three playfield levels.
+- LE and CE differ visibly in topper, cabinet treatment, and UV presentation while
+  sharing the documented core playfield mechanisms.
+summary: Prime multiball → prepare Sivako/Songcord → stack modes → preserve arrows
+  for 4x → build Eclipse → cash right ramp
+image: images/avatar-le-ce-jersey-jack-2024.webp

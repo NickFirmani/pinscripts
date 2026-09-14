@@ -1,0 +1,26 @@
+game_id: ghostbusters-pro-stern-2016
+image: images/ghostbusters-pro-stern-2016.webp
+image_width: 729
+image_height: 1340
+image_sha256: 4aea6aa7a0c0e9e16f37d1115ac2e70a0b643bd5b8c0d49978411ab33d54c32e
+shots_sha256: d6eac5397768afc58419c7dc53cf826e78d905ae990d0c733e32adf4f0879108
+coordinates:
+- diagram: 1
+  x: 143
+  y: 616
+- diagram: 2
+  x: 163
+  y: 466
+- diagram: 3
+  x: 112
+  y: 704
+- diagram: 4
+  x: 216
+  y: 342
+- diagram: 5
+  x: 399
+  y: 425
+- diagram: 6
+  x: 607
+  y: 571
+skipped_diagrams: []

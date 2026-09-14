@@ -1,0 +1,24 @@
+game_id: eight-ball-deluxe-bally-1981
+image: images/eight-ball-deluxe-bally-1981.webp
+image_width: 931
+image_height: 1711
+image_sha256: 6e46f65890d8f0ac20a0c1b61281652fada0abcdb6a3ac39f682073459c0716c
+shots_sha256: ffe5b7ded82cdbfadcdbc5521f85a8f73232bad8d589423bb85c59147d2ecf95
+coordinates:
+- diagram: 1
+  x: 106
+  y: 423
+- diagram: 2
+  x: 212
+  y: 293
+- diagram: 3
+  x: 854
+  y: 658
+- diagram: 5
+  x: 821
+  y: 352
+- diagram: 6
+  x: 642
+  y: 160
+skipped_diagrams:
+- 4

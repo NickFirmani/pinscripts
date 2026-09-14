@@ -1,0 +1,144 @@
+id: super-mario-bros-gottlieb-1992
+name: Super Mario Bros.
+metadata:
+  manufacturer: Gottlieb / Premier Technology
+  year: 1992
+  designer: Jon Norris
+  artist: David Moore and Constantino Mitchell
+  production: Approximately 4,200 machines; separate from Super Mario Bros. Mushroom
+    World
+  era: System 3 / DMD
+  multiball: 2-ball Multiball; 3-ball when started while Super Mario
+rules_basis:
+  kind: rom
+  version: Game PROM revision 3 (gprom3)
+  release_date: null
+hook: Exploit the repeatable Quick Shot at the left ramp, while using the upper playfield
+  to build Super Mario. Super adds drain protection, doubles Rounds, and turns qualified
+  Multiball from two balls into three; castle jackpots then climb to 40M.
+rules:
+  primary: The right inlane lights an escalating Quick Shot at the left ramp, making
+    repeated ramp loops the straightforward scoring route. Completing S-U-P-E-R activates
+    Super Mario, adding drain protection and doubling any Round started while Super.
+  bullets:
+  - 'Qualify Multiball by completing 1-2-3-4 in order: left ramp, Yoshi target, right
+    lane/loop, then upper-playfield ramp. The left hole then starts it.'
+  - Multiball starts with two balls normally or three while Super. Castle jackpots
+    advance 5M → 10M → 20M → 40M and reset to 5M at the next Multiball.
+  - Three turtle shells light the Key hole; collect it and choose between two Rounds.
+    A Round started while Super scores double for its entire duration.
+  - Super activates the left kick save and center post. Using either generally consumes
+    Super status; the Feather target can restore Super once per ball.
+  - Tournament Mode fixes Bonus Chance at 1M, normalizes Mystery to add a shell, disables
+    Auto-Skill and Catchup, and makes each destroyed castle worth 10M without the
+    all-castles Special.
+watch:
+- title: Quick Shot flashing
+  text: A flashing Quick Shot at the left ramp explains repeated ramp shooting. Its
+    value escalates, with the maximum determined by adjustment.
+- title: SUPER status
+  text: Completing S-U-P-E-R activates the kick save and center post. Starting a Round
+    while Super doubles that Round, and starting Multiball while Super gives three
+    balls instead of two.
+- title: 1-2-3-4 lamps
+  text: These show sequential Multiball progress. Once all four are complete, the
+    left hole becomes the Multiball start.
+- title: Castle jackpot
+  text: During Multiball, castle jackpots climb from 5M to 10M to 20M to 40M, with
+    subsequent collects remaining at 40M for that Multiball.
+skill_shots: []
+features:
+- type: ball-save
+  name: Super Mario Protection
+  text: Super Mario activates the left kick save and center post. Using either generally
+    consumes Super status.
+- type: ball-save
+  name: Invincible
+  text: Continuously enables the kick save and center post while replacing right-outlane
+    drains with another ball; Tournament Mode's deterministic Mystery removes this
+    random award.
+- type: mystery-award
+  name: Mystery / Bonus Chance
+  text: Tournament Mode makes Mystery add a shell and fixes Bonus Chance at 1M, removing
+    the large random awards available in normal play.
+- type: video-mode
+  name: Video Mode
+  text: Complete the four Bullet lamps and enter the castle for a side-scrolling Mario
+    mode. Right flipper jumps; holding left makes Mario run, increasing the completion
+    award from 10M to 30M.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be earned through Quick Shot, Cave progression, and the Castle Extra Ball
+    Round.
+shots:
+- name: Left Hole
+  value: Starts qualified Multiball and collects Bonus Chance, converting completed
+    1-2-3-4 progression into the main multiball opportunity.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp
+  value: 'Collects escalating Quick Shots and serves as Multiball step #1, making
+    it the dominant repeatable scoring route.'
+  risk: Medium
+  diagram: 2
+- name: Yoshi Target
+  value: 'Serves as Multiball step #2 and advances Yoshi-related progression from
+    the upper playfield.'
+  risk: Medium-High
+  diagram: 3
+- name: Upper / Right Ramp
+  value: 'Builds S-U-P-E-R, completes Multiball step #4, and feeds the right inlane
+    that can relight Quick Shot.'
+  risk: High
+  diagram: 4
+- name: Castle
+  value: Collects escalating Multiball jackpots, advances castle destruction, and
+    starts lit Video Mode.
+  risk: Medium-High
+  diagram: 5
+- name: Right Loop / Lane
+  value: 'Completes Multiball step #3 and advances shell and Mystery progression.'
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Stay on the straightforward left-ramp and upper-ramp scoring loop rather
+    than chasing the entire ruleset. Repeated Quick Shots offer strong value without
+    requiring the varied shots needed for deeper progression.
+  behind: Build Super before starting Multiball for three balls, then attack escalating
+    castle jackpots up to 40M. Strong Rounds, particularly Luigi's Cave Count-Up,
+    provide another higher-variance scoring route.
+  key_decision: Keep collecting repeatable Quick Shots or invest in Super and Multiball?
+    Quick Shot is simpler and often sufficient, while deeper progression adds protection,
+    doubled Rounds, another multiball ball, and larger jackpot potential.
+danger:
+- Missing an upper-playfield shot with the small upper flipper immediately ends that
+  valuable setup opportunity.
+- The right loop intentionally sends the ball into the pop bumpers, trading progression
+  for loss of direct control.
+- The left-hole kickout returns the ball without the controlled feed of a successful
+  ramp.
+- Using the left kick save or center post can consume Super, losing the doubled-Round
+  and three-ball-Multiball setup.
+- Yoshi bonus carries between balls, so tilting can sacrifice substantial accumulated
+  bonus.
+commentary:
+- Quick Shot is lit again—that's why we're seeing the left ramp over and over.
+- 'They''re Super now: the kick save and center post are active, and the next Round
+  can start at double value.'
+- All four Multiball numbers are done; now it's the left hole to start it.
+- Starting Multiball while Super makes this three balls instead of two.
+- Castle jackpots step all the way to 40 million and stay there for subsequent collects
+  this Multiball.
+- Tournament Mode takes the lottery out of Bonus Chance—it's fixed at one million.
+trivia:
+- Super Mario Bros. was Gottlieb's first production DMD pinball machine.
+- Approximately 4,200 machines were produced.
+- Despite the title, much of the game's imagery draws from Super Mario World, including
+  Yoshi.
+- The rotating blue castle is primarily a visual toy; nearby playfield sensing registers
+  the castle scoring.
+- Super Mario Bros. Mushroom World followed separately in 1992 as a substantially
+  smaller and different machine.
+summary: Loop Quick Shots → build SUPER → complete 1-2-3-4 → start 3-ball Multiball
+  → cash 40M castle jackpots
+image: images/super-mario-bros-gottlieb-1992.webp

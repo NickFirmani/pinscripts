@@ -1,0 +1,159 @@
+id: elvira-house-of-horrors-stern-2023
+name: Elvira’s House of Horrors — Blood Red Kiss Edition
+metadata:
+  manufacturer: Stern
+  year: 2023
+  designer: Dennis Nordman
+  artist: Greg Freres
+  production: Blood Red Kiss Edition, limited to 500 games
+  era: SPIKE 2
+  multiball: Wild Women, Add-a-Zombie, Attic Attack, Trunk, House Party, and They
+    Came From Space
+rules_basis:
+  kind: code
+  version: v1.12.0
+  release_date: '2026-07-01'
+hook: Start a Haunt, then layer a prepared Garage or Trunk multiball underneath it.
+  Arm Double Trouble for 2× scoring, requalify it for 4×, complete the Haunt, shoot
+  both ramps to raise Trailer Trash to 100%, then cash it at the House while the multiplier
+  is running.
+rules:
+  primary: Repeated House shots qualify a Haunt; when the House flashes purple, shoot
+    it again to start one. Haunts normally begin with 45 seconds, and progress shots
+    below 15 seconds restore the timer to 15. Complete the Haunt to qualify Trailer
+    Trash and advance deeper progression.
+  bullets:
+  - Trailer Trash starts at 50% of the completed Haunt score; one ramp raises it to
+    75%, both ramps to 100%, then the House collects it. Playfield X multiplies the
+    collect.
+  - Complete both target banks, then take the lit inlane to start Double Trouble at
+    2× for 30 seconds. Requalifying and starting it while active raises scoring to
+    4×.
+  - Garage and Trunk multiballs can each stack with Haunts, but current code does
+    not allow Garage and Trunk multiballs to be started on top of one another.
+  - Atomic Rayguns spot a lit shot in the most recently started mode, making them
+    valuable for avoiding dangerous Haunt shots; they cannot directly collect Trailer
+    Trash.
+  - Four completed Haunts qualify Director’s Cut, which re-collects values derived
+    from those Haunts and awards 100M for completion.
+watch:
+- title: House flashing purple
+  text: A Haunt is qualified. The next House shot starts it, so a player with a prepared
+    multiball may deliberately begin the Haunt first.
+- title: Double Trouble
+  text: A lit inlane means the multiplier is armed. Once 2× or 4× starts running,
+    expect the player to immediately pursue the highest-value cash-out.
+- title: Trailer Trash
+  text: 'After a completed Haunt, watch the ramps: zero, one, or two ramp shots make
+    the House collect worth 50%, 75%, or 100% of the Haunt score.'
+- title: Multiball held ready
+  text: A player declining an available Garage or Trunk multiball may be waiting to
+    start a Haunt first and create the more valuable stack.
+skill_shots:
+- name: Dead End Skill Shot
+  how: Plunge into either lit Dead End top lane.
+  value: Awards 250K plus its increment and adds +5× bonus multiplier; the safer opening
+    option.
+- name: Back Door Skill Shot
+  how: Soft plunge so the ball enters behind the House.
+  value: Awards 1M plus its increment and immediately qualifies a Haunt, or starts
+    it if already qualified; during an active Haunt or Gappa Angry it spots mode progress.
+features:
+- type: player-control
+  name: Atomic Raygun
+  text: Collected through Junk in the Trunk. The action button spots a lit shot in
+    the most recently started mode and is especially useful for bypassing difficult
+    Haunt shots.
+- type: other
+  name: Pew Pew Pew
+  text: After collecting and using three Rayguns, shoot the lit left-ramp/trunk shot
+    to begin a timed switch-scoring frenzy.
+- type: ball-save
+  name: Return
+  text: Defeating a Deadhead lights a right-outlane save; Competition settings are
+    assumed.
+- type: player-control
+  name: Hand of Fate
+  text: Complete its target bank, then drain through the lit left outlane. Use the
+    lockdown-bar button to stop the displayed award wheel.
+- type: extra-ball
+  name: Extra Balls
+  text: Normal rules can light extra balls from Haunt or Deadhead milestones; under
+    the Competition install assumed here, extra balls are disabled.
+shots:
+- name: Left Ramp / Trunk
+  value: Builds Junk awards and Trunk locks and supplies one of the two ramp shots
+    needed to raise Trailer Trash toward 100%.
+  risk: Medium-High
+  diagram: 1
+- name: Garage
+  value: Advances the repeatable Wild Women, Add-a-Zombie, and Attic Attack multiball
+    progression used for scoring and Haunt protection.
+  risk: Medium-High
+  diagram: 2
+- name: House Entrance
+  value: Qualifies and starts Haunts, collects Trailer Trash, and serves as a central
+    progression and major cash-out shot.
+  risk: High
+  diagram: 3
+- name: Right Ramp
+  value: Serves Haunt shots and supplies the second ramp needed to raise Trailer Trash
+    to 100% of the completed Haunt score.
+  risk: Medium-High
+  diagram: 4
+- name: Hand-of-Fate Bank
+  value: Helps qualify Double Trouble and Hand of Fate, setting up the 2×–4× scoring
+    window and player-controlled award wheel.
+  risk: High
+  diagram: 5
+- name: Crypt
+  value: Advances Deadheads, lights the Return outlane save through Deadhead completion,
+    and contributes to Wild Market progression.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Cash Trailer Trash at 75%–100% rather than extending a scoring setup unnecessarily.
+    Use prepared multiball for protection, and favor the normal Dead End plunge over
+    a difficult Back Door attempt when reliability matters.
+  behind: Pursue the full Haunt plus multiball plus 4× Double Trouble stack, finish
+    the Haunt, shoot both ramps, and collect 100% Trailer Trash while the multiplier
+    remains active. This creates the highest-leverage documented scoring swing.
+  key_decision: Take the multiball now or save it for a Haunt? Immediate multiball
+    provides safety and jackpots, while delaying it allows the much larger but riskier
+    Haunt, multiball, multiplier, and Trailer Trash stack.
+danger:
+- Crypt VUK ejects vary by setup and can produce anything from a controlled return
+  to center or outlane danger.
+- Right-orbit feeds can be difficult to control on some setups and may head toward
+  the sling instead of a flipper.
+- Pop-bumper exits can unexpectedly send the ball straight toward the center after
+  an otherwise safe-looking House feed.
+- Garage and drop-target work can create lateral or center rebounds rather than controlled
+  returns.
+- Chasing the target-bank completions needed to requalify 4× Double Trouble can be
+  riskier than simply cashing an already-large value.
+commentary:
+- They’ve got the Haunt running—now they’re trying to bring the multiball underneath
+  it.
+- Double Trouble is armed; they’re waiting to roll that inlane until the scoring window
+  is ready.
+- One Trailer Trash ramp makes this 75 percent; both ramps makes the House worth the
+  full Haunt again.
+- That second Double Trouble activation is the big one—now the whole playfield is
+  four-times.
+- They’re saving the Raygun for the ugly mode shot rather than spending it on an easy
+  collect.
+- The multiball is available, but starting it now would give up the better Haunt stack.
+trivia:
+- House of Horrors is the third Elvira pinball following Elvira and the Party Monsters
+  and Scared Stiff.
+- Stern filmed new Cassandra Peterson as Elvira video specifically for the game.
+- Blood Red Kiss was limited to 500 games and features red-sparkle presentation and
+  Elvira’s tattoo motif.
+- The Blood Red Kiss launch coincided with substantial 2023 code additions including
+  Pew Pew Pew and additional Elvira speech.
+- Version 1.11 in December 2024 substantially expanded Wild Market Value into its
+  current six-stage wizard mode.
+summary: Start Haunt → stack multiball → arm 2×/4× → finish Haunt → build Trailer
+  Trash to 100% → cash at House
+image: images/elvira-house-of-horrors-stern-2023.webp

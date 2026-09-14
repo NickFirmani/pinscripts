@@ -1,0 +1,154 @@
+id: teenage-mutant-ninja-turtles-pro-stern-2020
+name: Teenage Mutant Ninja Turtles — Pro
+metadata:
+  manufacturer: Stern
+  year: 2020
+  designer: John Borg
+  artist: Jeremy Packer / Zombie Yeti
+  production: Pro; simpler staged Ninja Pizza locks than Premium/LE
+  era: SPIKE 2
+  multiball: Ninja Pizza, Turtle Power, Team-Up, Final Battle, and Cowabunga
+rules_basis:
+  kind: code
+  version: v1.58
+  release_date: '2024-11-26'
+hook: 'Prioritize Ninja Pizza Multiball: bank 2× Playfield, then use three Pizza Parlor
+  shots to start it. Defeat six Foot Soldiers, cash Mondo at the Krang loop, then
+  Jackpoto Grande at the LAIR. Episodes underneath multiball build toward Team-Up
+  and deeper scoring.'
+rules:
+  primary: Shoot both main ramps to light Start Episode at the Pizza Parlor. Three
+    Parlor shots start Ninja Pizza Multiball, the central scoring engine. Under the
+    resolved Competition setup, all turtles begin Training at level 1 and Ninja Pizza
+    uses deterministic Competition toppings.
+  bullets:
+  - In Ninja Pizza, defeat six Foot Soldiers to light Mondo at the upper Krang loop;
+    repeat for Double and Triple Mondo. The first Mondo also lights Jackpoto Grande
+    at the LAIR.
+  - Competition Pro starts Ninja Pizza toppings with Octopus + Fudge; stronger add-ball
+    and instant-jackpot toppings are removed from the Competition pool.
+  - Four right-ramp shots start Turtle Power Multiball unless Donatello's level-1
+    perk lights it immediately. Four green jackpots light Mondo, and Mondo lights
+    the LAIR Super.
+  - Odd LAIR completions light Training; even completions light 30 seconds of 2× Playfield.
+    Center-target hits extend the multiplier by 5 seconds.
+  - Each completed Training adds 10% to future scoring, up to +30%, and unlocks another
+    turtle perk. Four played Episodes qualify Team-Up; all eight qualify Final Battle.
+watch:
+- title: 2× banked
+  text: A lit center 2X target means the player has prepared Playfield X. Expect them
+    to preserve it for Ninja Pizza, Team-Up, or another major scoring opportunity.
+- title: Pizza toppings
+  text: Each Pizza Parlor lock freezes more toppings that modify Ninja Pizza Multiball.
+    Under Competition on Pro, the deterministic set begins with Octopus and Fudge.
+- title: Mondo colors
+  text: White, blue, then red upper-loop jackpot lighting tracks Mondo, Double Mondo,
+    and Triple Mondo. After the first Mondo, LAIR is lit for Jackpoto Grande.
+- title: Four Episodes
+  text: Four played Episodes qualify Team-Up Multiball, the mini-wizard that also
+    reopens the path toward the main multiballs.
+skill_shots:
+- name: Top-Lane Skill Shot
+  how: On Pro, plunge through the flashing top lane. Holding the left flipper lets
+    the ball bypass the pops toward the upper flipper.
+  value: Adds +1× Bonus multiplier and can preserve a more controlled route toward
+    the upper flipper.
+- name: Turtle Skill Shot
+  how: 'Quickly hit the selected turtle''s shot: Leonardo LAIR, Raphael left ramp,
+    Michelangelo Pizza Parlor, or Donatello center/side ramp.'
+  value: Starts at 250K, increases on successive skill shots, and lights an inlane
+    for Weapon Hurry-Up.
+features:
+- type: ball-save
+  name: Battle Again
+  text: Odd APRIL completions light an outlane save; slingshots normally move which
+    side is protected.
+- type: mystery-award
+  name: Pict-O-Pops
+  text: Matching bumper images awards utilities such as Add-A-Ball, timer extension,
+    Battle Again, Episode qualification, and Bonus X; Competition normalizes random
+    elements.
+- type: player-control
+  name: Pizza Eating Contest
+  text: Mash the action button during the contest to eat up to 40 pizza slices in
+    roughly six seconds.
+- type: extra-ball
+  name: Extra Balls
+  text: Can light from Episode, pizza-slice, or Pict-O-Pops progress. Under the resolved
+    Competition Install, actual extra balls are disabled.
+- type: ball-save
+  name: Neutrino Pizza Party
+  text: One-per-game 30-second single-ball scoring mode with a ball save; its blue
+    collect can build toward 5M.
+shots:
+- name: LAIR
+  value: Advances Training and collects major Super Jackpots, including Jackpoto Grande
+    after the first Mondo.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp
+  value: Advances Episode qualification and many mode shots, and serves as Raphael's
+    Turtle Skill Shot.
+  risk: High
+  diagram: 2
+- name: Pizza Parlor
+  value: Starts Episodes and progresses Ninja Pizza locks; three Parlor shots start
+    the game's central scoring multiball.
+  risk: High
+  diagram: 3
+- name: Krang Loop
+  value: Collects Mondo, Double Mondo, and Triple Mondo during Ninja Pizza and advances
+    Krang Kombo.
+  risk: Medium-High
+  diagram: 4
+- name: Center Ramp
+  value: Advances Training, combos, and hurry-ups through the upper-flipper area.
+  risk: Medium-High
+  diagram: 5
+- name: Right Ramp
+  value: Four shots start Turtle Power Multiball and the ramp also advances Episodes
+    and other utility progression.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take Ninja Pizza once reasonably prepared instead of adding unnecessary setup
+    risk. Cash the first Mondo and Jackpoto Grande cycle, use accessible Episodes
+    toward Team-Up, and avoid low-value hurry-ups unless they overlap needed progression.
+  behind: Bank 2× Playfield, bring it into Ninja Pizza, and chase repeated Mondo through
+    Triple Mondo plus Jackpoto Grande. Training can add permanent scoring strength,
+    while a multiplied Final Battle start can produce a major late-game swing.
+  key_decision: Start Ninja Pizza now or spend more single-ball time improving the
+    setup? Ninja Pizza is the central scoring engine, but every extra Training, multiplier,
+    Episode, or topping shot risks losing the opportunity before Multiball begins.
+danger:
+- The target guarding Pizza Parlor can reject a mistimed shot almost immediately toward
+  the drain.
+- The spinning pizza disc can throw otherwise controlled balls unpredictably.
+- Right-ramp forehand attempts can clip the nearby post and return dangerously.
+- The tight left ramp produces fast rejects when missed.
+- LAIR and ramp feeds are machine-sensitive, so exact return danger varies with physical
+  setup.
+commentary:
+- They've got two-times banked—this is probably being saved for Ninja Pizza.
+- 'That third Parlor shot starts the scoring engine: now they want six Foot kills,
+  then Mondo at the upper loop.'
+- Mondo is made, so the LAIR is now Jackpoto Grande—that's the real cash-out.
+- 'That Training completion is permanent value: another ten percent on future scoring
+  and the next turtle perk.'
+- Four Episodes gets them Team-Up and another trip through the main multiballs.
+- They're ignoring the hurry-up because the dangerous shot isn't worth the early-game
+  value.
+trivia:
+- The game uses the 1987 animated-series presentation rather than the 1990 movie used
+  by Data East's earlier TMNT pinball.
+- John Borg designed the layout, Dwight Sullivan led the rules, and Zombie Yeti provided
+  the hand-drawn artwork.
+- Every model has a magnetic spinning pizza disc capable of holding and throwing three
+  balls for Ninja Pizza Multiball.
+- Premium and LE use a physical four-ball Turtle Van, while the Pro uses a simpler
+  staged lock system.
+- TMNT includes Standard, Competition, Cooperative, Coop+Competition, Impossible,
+  Monster, and team-play formats.
+summary: Bank 2× → start Ninja Pizza → defeat six Foot → cash Mondo → collect Jackpoto
+  Grande → build Episodes toward Team-Up
+image: images/teenage-mutant-ninja-turtles-pro-stern-2020.webp

@@ -1,0 +1,146 @@
+id: labyrinth-barrels-of-fun-2023
+name: Jim Henson’s Labyrinth
+metadata:
+  manufacturer: Barrels of Fun
+  year: 2023
+  designer: David Van Es
+  artist: Jonathan Bergeron
+  production: Single model, maximum run of 1,100 machines
+  era: FAST Pinball
+  multiball: Brick Keeper, Friend, Tea Time, Wise Man, and Goblin City
+rules_basis:
+  kind: code
+  version: v2026.01.30
+  release_date: '2026-01-30'
+hook: Develop Ludo while qualifying a mode, start the mode before Brick Keeper Multiball,
+  then cash Brick Keeper jackpots and its left-orbit Super. Collect Orbs for permanent
+  shot multipliers, or delay Friend Multiball while leveling Friends for a larger
+  payoff.
+rules:
+  primary: 'Spell LABYRINTH at white-arrow shots to light a main mode at a U-turn
+    entrance. Develop Friends alongside mode and Brick Keeper progress: Ludo improves
+    mode and Brick Keeper scoring, while Orbs provide permanent shot multipliers.
+    Six played modes lead to Goblin City, while Battle Jareth requires all 13 Orbs.'
+  bullets:
+  - Brick Keeper Multiball uses green targets to light Lock 1 at the Left Orbit and
+    Lock 2 at the Center Ramp, then starts at the Right Orbit.
+  - Start a main mode before Brick Keeper Multiball; mode-start logic is disabled
+    during multiball, but an already-running mode can continue underneath Brick Keeper.
+  - Ludo Level 1 adds 50% to mode scoring and Level 2 doubles Brick Keeper jackpots.
+  - Collecting an Orb awards 10M, then the next rainbow shot receives +1 permanent
+    shot multiplier, up to 3× on one shot.
+  - Friends persist and improve throughout the game. Friend Multiball can be declined
+    and offered again later after further Friend development.
+watch:
+- title: Mode ready
+  text: White LABYRINTH arrows and flashing U-turn entrances indicate a main mode
+    is ready. If Brick Keeper is also close, expect the player to start the mode before
+    multiball.
+- title: Ludo level
+  text: Ludo Level 1 adds 50% to mode scoring; Level 2 doubles Brick Keeper jackpots,
+    making Friend development a major scoring breakpoint.
+- title: Orb collected
+  text: 'Immediately after an Orb collect, watch the rainbow shots: the next one made
+    receives a permanent +1 shot multiplier, up to 3×.'
+- title: Brick Keeper red arrows
+  text: Red arrows are Brick Keeper jackpots that build the Super Jackpot. Once ready,
+    the left-orbit captive-ball and spinner area becomes the major cash-out.
+skill_shots:
+- name: Wiseman Skill Shot
+  how: Plunge down the full shooter wireform into the scoop beneath the Right Ramp.
+  value: Scores the Wiseman skill shot and can form the first half of a Super Skill
+    Shot with the Bridge.
+- name: Target Skill Shot
+  how: Medium-plunge to the upper flipper, then hit the Change Mode target.
+  value: Awards 500K on ball 1, 1M on ball 2, and 1.5M on ball 3.
+- name: Ramp Skill Shot
+  how: Medium-plunge to the upper flipper, then shoot the Center Ramp.
+  value: Awards 350K on ball 1, 700K on ball 2, and 1.05M on ball 3.
+features:
+- type: ball-save
+  name: Sir Didymus Defense
+  text: Level-1 Didymus enables the post above the left outlane after spelling HELP.
+    Later levels add a once-per-multiball add-a-ball and extend major ball saves.
+- type: ball-save
+  name: U-turn / Eject Saves
+  text: Several short safety saves protect dangerous mechanism returns; their availability
+    and duration are adjustment-sensitive.
+- type: mystery-award
+  name: Tournament Mystery
+  text: With Tournament enabled on current code, Mystery deterministically alternates
+    between points and bonus multiplier.
+- type: extra-ball
+  name: Extra Balls
+  text: Can be lit through Friend items, Wise Man quests, or Mystery progression;
+    point conversion above the allowed extra-ball limit is adjustment-sensitive.
+shots:
+- name: Left Orbit / Brick Keeper
+  value: Collects the first Brick Keeper lock and later serves the captive-ball/spinner
+    Super Jackpot cash-out during multiball.
+  risk: Medium-High
+  diagram: 1
+- name: Helping Hands Scoop
+  value: Advances Friend jackpots, Friend Multiball, Friend development, and extra-ball
+    progression.
+  risk: Medium-High
+  diagram: 2
+- name: Center Ramp
+  value: Advances LABYRINTH and collects Brick Keeper's second lock, combining mode
+    and multiball progression.
+  risk: Medium-High
+  diagram: 3
+- name: U-turn / Horseshoe
+  value: Starts qualified main modes, converting LABYRINTH progress into scoring and
+    eventual Goblin City qualification.
+  risk: High
+  diagram: 4
+- name: Wiseman Scoop
+  value: Advances quests, mode progression, Bonus X, and eventual Wise Man Multiball.
+  risk: Medium-High
+  diagram: 5
+- name: Orb Collect
+  value: Collects an Orb and enables the next rainbow shot to receive a permanent
+    +1 shot multiplier, up to 3×.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Take a prepared Brick Keeper rather than overdeveloping Friends, place Orb
+    multipliers on shots you already make reliably, and use Sir Didymus protection.
+    A dependable multiplied shot is preferable to forcing a riskier maximum-value
+    placement.
+  behind: Develop Ludo, delay Friend Multiball for stronger jackpots, and concentrate
+    Orb multipliers on a valuable shot. Combining an active mode, Ludo bonuses, and
+    Brick Keeper provides substantially more ceiling than isolated multiball scoring.
+  key_decision: Cash the available multiball now, or keep investing in Friends, modes,
+    and permanent shot multipliers? Friend Multiball can be declined, while Brick
+    Keeper becomes substantially stronger after Ludo Level 2.
+danger:
+- U-turn and horseshoe returns can be dangerous toward the center; exact return behavior
+  and short-save protection are machine-sensitive.
+- Helping Hands and other eject returns can produce difficult center feeds; exact
+  behavior is machine-sensitive.
+- Center Ramp rejects can return quickly and make this important progression shot
+  difficult to repeat safely.
+- Wide outlanes and lateral sling action make uncontrolled side-to-side rebounds dangerous.
+- Draining after collecting an Orb but before assigning its shot multiplier loses
+  that permanent shot-X opportunity.
+commentary:
+- They want the mode started before Brick Keeper; once multiball is running, that
+  mode-start window is gone.
+- Ludo Level Two is the big Brick Keeper breakpoint—those jackpots are now doubled.
+- That Orb isn’t just wizard progress; the next rainbow shot gets a permanent multiplier.
+- They’re passing on Friend Multiball deliberately—the Friends can be leveled further
+  for bigger jackpots.
+- Red arrows are Brick Keeper jackpots; now watch the left orbit for the spinner Super.
+- That horseshoe return can be dangerous, and the short safety save there is machine-sensitive.
+trivia:
+- Labyrinth was Barrels of Fun’s first commercial pinball machine.
+- The game uses all five David Bowie songs from the film.
+- Rules co-designer Bowen Kerins is a five-time PAPA/IFPA world champion and presented
+  the manufacturer’s gameplay tutorial.
+- The game was announced with a maximum production run of 1,100 machines and one feature
+  level rather than multiple model tiers.
+- The 2026 code refreshed the audio package and added shaker-motor support.
+summary: Develop Ludo → start mode → start Brick Keeper → build Super → collect Orbs
+  → assign permanent shot-X
+image: images/labyrinth-barrels-of-fun-2023.webp

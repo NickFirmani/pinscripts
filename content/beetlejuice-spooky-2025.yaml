@@ -1,0 +1,154 @@
+id: beetlejuice-spooky-2025
+name: Beetlejuice
+metadata:
+  manufacturer: Spooky Pinball
+  year: 2025
+  designer: Luke “Spooky Luke” Peters and Corwin “Bug” Emery
+  artist: Christopher Franchi
+  production: 999-unit Collector’s Edition
+  era: Modern
+  multiball: Afterlife Couch / Now Serving, Strange & Unusual, It’s Showtime, Sandworm
+    Multiball, and Singing in the Stairwell
+rules_basis:
+  kind: code
+  version: v2026.07.20
+  release_date: '2026-07-20'
+hook: Favor the Left Ramp and Upper Knock Loop to build Wheel awards and Couch multiball.
+  Bank Returning Souls toward 5x playfield scoring, then activate it for a multiball
+  or Super Jackpot window, ideally paired with a matching 5x Wheel Super. A qualified
+  mode can also be deliberately delayed to spell SHOWTIME.
+rules:
+  primary: Three purple Beetlejuice shots qualify a story mode. Mode Change selects
+    it, Launch can lock the selection, and the Right Orbit starts it. While a mode
+    is qualified but not started, yellow shots spell SHOWTIME; completing SHOWTIME
+    qualifies It’s Showtime Multiball.
+  bullets:
+  - 'Returning Souls builds playfield multiplier up to 5x: spawn a Lost Soul in the
+    pops, make its lit shot, then bank progress at the front of the Center Scoop.'
+  - Start the Returning Souls multiplier through the back entrance beneath the upper
+    flipper; once active, its multiplier steps downward over time.
+  - For Afterlife Couch, Upper Loop Knocks light locks and three balls lock at the
+    raised Right Ramp; re-locking after jackpots lights Super Jackpot.
+  - Complete two Beetlejuice modes or start four to light Singing in the Stairwell,
+    which includes add-a-balls and a Super Jackpot at Juno.
+  - The newer v2026.09.10 beta adds Hungry Hungry Sandworms, but its detailed rules
+    are not included in this stable-code reference.
+watch:
+- title: Purple and white mode inserts
+  text: Three purple shots qualify a mode. White indicates the selected mode is locked
+    in; the Right Orbit is then the start.
+- title: Yellow SHOWTIME arrows
+  text: The player is deliberately leaving a mode qualified rather than starting it,
+    using the temporary yellow shots to spell SHOWTIME.
+- title: Returning Souls 1–5
+  text: The center inserts show prepared playfield multiplier. A high number signals
+    substantial scoring leverage for the next multiball or Super Jackpot window.
+- title: Couch locks
+  text: A raised Right Ramp and physical balls on the couch show Afterlife Couch Multiball
+    preparation; three locks start it.
+skill_shots:
+- name: Standard Skill Shot
+  how: Time Launch to the lit plunge value. A successful plunge feeds the right flipper.
+  value: Starts the ball with controlled scoring. A missed plunge intentionally exits
+    the right outlane and is automatically magnet-saved without consuming the normal
+    Magna-Save.
+- name: Super Skill Shot
+  how: After making the normal skill shot, immediately complete Left Ramp → Right
+    Ramp → Spinner.
+  value: Provides an additional opening scoring opportunity after the standard skill
+    shot.
+features:
+- type: player-control
+  name: Magna-Save
+  text: The Action Button fires the under-flipper magnet to rescue drains. It starts
+    qualified each ball and can be requalified through the Handbook/fly sequence.
+- type: other
+  name: Dante’s Inferno Wheel
+  text: Repeated Left Ramps qualify a spin; Action Button stops it. Variable awards
+    include 5x Supers, Extra Ball, points, and You Lose.
+- type: mystery-award
+  name: Mystery
+  text: Coffin progress lights the right Mystery Scoop. Variable awards include Lite
+    Lock, points, Advance Now Serving, ball save, and Shooting Gallery.
+- type: video-mode
+  name: Shooting Gallery
+  text: Available through Mystery. Flippers steer and the Action Button fires.
+- type: extra-ball
+  name: Extra Balls
+  text: Wheel and Sandworm progression can light extra balls; no universal stock tournament
+    point-conversion rule was established.
+shots:
+- name: Dante’s Inferno / Left Ramp
+  value: Advances the Wheel and Super Skill Shot; a repeatable route toward valuable
+    5x Super awards.
+  risk: Medium
+  diagram: 1
+- name: Upper Knock Loop
+  value: Builds Afterlife Couch locks and jackpot value; a core setup shot for Couch
+    Multiball.
+  risk: Medium
+  diagram: 2
+- name: Center Soul Scoop
+  value: Banks Returning Souls progress and accesses the playfield multiplier up to
+    5x before a major scoring window.
+  risk: High
+  diagram: 3
+- name: Right Ramp
+  value: Locks balls for Afterlife Couch and scores jackpots; its function changes
+    with the ramp’s physical state.
+  risk: Medium
+  diagram: 4
+- name: Right Orbit / Deadend
+  value: Starts qualified modes and advances Showtime and Strength Test Super opportunities.
+  risk: Medium-High
+  diagram: 5
+- name: Juno Scoop
+  value: Advances Juno and collects major Couch and Singing in the Stairwell Super
+    Jackpots.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor repeatable Left Ramp and Knock progress, Couch Multiball, and keeping
+    Magna-Save charged. Cash an already-developed Returning Souls multiplier rather
+    than taking several risky shots merely to maximize it.
+  behind: Build Returning Souls toward 5x, acquire a useful Dante 5x Super, then expose
+    both during a multiball or Super Jackpot window. It’s Showtime and Singing in
+    the Stairwell offer deeper, higher-variance comeback routes.
+  key_decision: Start the qualified Beetlejuice mode now, or leave it waiting so the
+    yellow SHOWTIME shots remain available? Delaying sacrifices immediate mode progress
+    in exchange for It’s Showtime Multiball qualification.
+danger:
+- The central Sandworm standup bank can return failed direct hits quickly toward the
+  middle.
+- The central Polaroid camera targets require surrendering some control while qualifying
+  Strange & Unusual.
+- The Spinner can rattle into the pops or upper playfield instead of completing cleanly,
+  abruptly removing control.
+- A Magna-Save means survival, not a cradle; the magnet throws the rescued ball back
+  into active play.
+- A missed skill-shot plunge intentionally exits the right outlane and is automatically
+  rescued, so do not prematurely call the ball over.
+commentary:
+- They’re leaving that mode qualified—those yellow shots are only available now for
+  SHOWTIME.
+- That’s another Lost Soul returned; they’re banking playfield multiplier rather than
+  spending it yet.
+- Five-X is prepared—now the question is whether they can bring a multiball Super
+  into it.
+- The couch has three balls coming; that’s Afterlife Couch Multiball ready to go.
+- Don’t call that a drain—the missed plunge intentionally goes out the right side
+  and the magnet resurrects it.
+- 'That green Action Button matters: their Magna-Save is available again.'
+trivia:
+- Spooky limited Beetlejuice to 999 Collector’s Edition games, originally priced at
+  $9,999.
+- The game uses footage and audio from the 1988 Tim Burton film, Danny Elfman’s theme,
+  and Harry Belafonte’s Day-O.
+- This was the fifth game designed together by Luke Peters and Corwin Emery.
+- 'The unusual right-outlane plunge is deliberate theme integration: the ball can
+  die through the outlane and be magnetically brought back.'
+- Singing in the Stairwell was added through downloadable code after launch, illustrating
+  how materially the rules have evolved.
+summary: Build Couch → bank Returning Souls → prepare 5x → start scoring window →
+  stack Super/MB → cash
+image: images/beetlejuice-spooky-2025.webp
