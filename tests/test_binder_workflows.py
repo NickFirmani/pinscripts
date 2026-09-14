@@ -27,7 +27,7 @@ class BinderWorkflowTests(unittest.TestCase):
             "addams-family-bally-1992",
         )
 
-    def test_matching_never_conflates_editions(self):
+    def test_matching_keeps_stern_pro_separate_from_premium_le(self):
         catalog = {
             "jaws-pro-stern-2024": CatalogGame(
                 "jaws-pro-stern-2024",
@@ -40,6 +40,51 @@ class BinderWorkflowTests(unittest.TestCase):
 
         self.assertIsNone(
             match_imported_game(ImportedGame("JAWS (LE)", "Stern", 2024), catalog)
+        )
+
+    def test_matching_deduplicates_stern_premium_and_le(self):
+        catalog = {
+            "jaws-prem-le-stern-2024": CatalogGame(
+                "jaws-prem-le-stern-2024",
+                "JAWS (Prem/LE)",
+                "Stern Pinball",
+                2024,
+                Path("content/jaws-prem-le-stern-2024.yaml"),
+            )
+        }
+
+        for imported_name in ("JAWS (Premium)", "JAWS (LE)"):
+            with self.subTest(imported_name=imported_name):
+                self.assertEqual(
+                    match_imported_game(
+                        ImportedGame(imported_name, "Stern", 2024),
+                        catalog,
+                    ).game_id,
+                    "jaws-prem-le-stern-2024",
+                )
+
+    def test_matching_deduplicates_jersey_jack_le_and_ce_but_not_se(self):
+        catalog = {
+            "avatar-le-ce-jersey-jack-2024": CatalogGame(
+                "avatar-le-ce-jersey-jack-2024",
+                "Avatar: The Battle for Pandora (LE/CE)",
+                "Jersey Jack Pinball",
+                2024,
+                Path("content/avatar-le-ce-jersey-jack-2024.yaml"),
+            )
+        }
+
+        self.assertIsNotNone(
+            match_imported_game(
+                ImportedGame("Avatar: The Battle for Pandora (CE)", "Jersey Jack", 2024),
+                catalog,
+            )
+        )
+        self.assertIsNone(
+            match_imported_game(
+                ImportedGame("Avatar: The Battle for Pandora (SE)", "Jersey Jack", 2024),
+                catalog,
+            )
         )
 
     def test_classification_honors_replace_and_ignore_overrides(self):

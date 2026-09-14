@@ -1,15 +1,15 @@
-id: jurassic-park-premium-stern-2019
+id: jurassic-park-prem-le-stern-2019
 rules_basis:
   kind: code
   version: 1.16.0
   release_date: '2026-07-01'
-name: Jurassic Park (Premium)
+name: Jurassic Park (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2019
   designer: Keith Elwin
   artist: Jonathan “Johnny Crap” Bergeron
-  production: Premium edition
+  production: Premium and Limited Edition trims
   era: SPIKE 2 LCD era
   multiball: T-Rex, Chaos, Raptor Tri-Ball, King of the Island, and later wizard multiballs
 hook: Advance paddocks through MAP shots and the left ramp, then stack Control Room or multiball
@@ -133,4 +133,4 @@ trivia:
 - The 2023 V1.10 update added over 100 speech callouts plus rule additions including Nedry
   Save and Trifecta.
 summary: Paddocks → Control Room → multiball → Supply Drop 2× → Visitor's Center
-image: images/jurassic-park-premium-stern-2019.webp
+image: images/jurassic-park-prem-le-stern-2019.webp

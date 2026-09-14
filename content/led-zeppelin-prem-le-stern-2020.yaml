@@ -1,15 +1,15 @@
-id: led-zeppelin-premium-stern-2020
+id: led-zeppelin-prem-le-stern-2020
 rules_basis:
   kind: code
   version: '1.20'
   release_date: '2023-11-13'
-name: Led Zeppelin (Premium)
+name: Led Zeppelin (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2020
   designer: Steve Ritchie
   artist: Greg Freres and Stephen Jensen
-  production: Premium edition; SPIKE 2, LCD, three flippers
+  production: Premium and Limited Edition trims; SPIKE 2, LCD, three flippers
   era: Modern Stern SPIKE 2
   multiball: Tour, Zeppelin, and Premium-exclusive Electric Magic Multiball/Frenzy
 hook: Build all four Icarus bank multipliers evenly, start the nearest multiball,
@@ -136,4 +136,4 @@ trivia:
   ramp.
 summary: Songs and Tours → balanced Icarus banks → multiball → Icarus X → Add-A-Balls
   and Supers
-image: images/led-zeppelin-premium-stern-2020.webp
+image: images/led-zeppelin-prem-le-stern-2020.webp

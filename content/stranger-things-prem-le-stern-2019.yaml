@@ -1,15 +1,15 @@
-id: stranger-things-premium-stern-2019
+id: stranger-things-prem-le-stern-2019
 rules_basis:
   kind: code
   version: '1.12.0'
   release_date: '2024-11-26'
-name: Stranger Things — Premium
+name: Stranger Things (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2019
   designer: Brian Eddy
   artist: Bob Stevlic
-  production: Premium edition
+  production: Premium and Limited Edition trims
   era: SPIKE 2 / LCD
   multiball: Telekinesis, Demogorgon Battle, Total Isolation, Send It Back, Light
     the Fire, and Final Showdown
@@ -140,4 +140,4 @@ trivia:
 - The main code is based on the show's first two seasons, with six Chapter modes for
   each season.
 summary: Chapters → Burn It Back → 2X → Telekinesis stack → giant bonus
-image: images/stranger-things-premium-stern-2019.webp
+image: images/stranger-things-prem-le-stern-2019.webp

@@ -1,15 +1,15 @@
-id: king-kong-myth-of-terror-island-premium-stern-2025
+id: king-kong-myth-of-terror-island-prem-le-stern-2025
 rules_basis:
   kind: code
   version: '0.97.0'
   release_date: '2026-07-01'
-name: 'King Kong: Myth of Terror Island (Premium)'
+name: 'King Kong: Myth of Terror Island (Prem/LE)'
 metadata:
   manufacturer: Stern Pinball
   year: 2025
   designer: Keith Elwin
   artist: Kevin O’Connor, Greg Freres, and Jeremy “Zombie Yeti” Packer
-  production: Premium edition
+  production: Premium and Limited Edition trims
   era: Modern SPIKE 2
   multiball: King Kong, Spider Pit, Island-Scene, and T-Rex multiballs
 hook: Build Island Scenes and Spider Pit utility multiballs, then load the train for
@@ -148,4 +148,4 @@ trivia:
   Bananas” insert.
 summary: Island Scenes → Spider Pit utility → Kong Multiball → 2× scoring → Crash
   the Gate cash-out
-image: images/king-kong-myth-of-terror-island-premium-stern-2025.webp
+image: images/king-kong-myth-of-terror-island-prem-le-stern-2025.webp

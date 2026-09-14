@@ -1,7 +1,9 @@
 """Discovery and lookup for the location-neutral game catalog."""
 
 from dataclasses import dataclass
+import difflib
 from pathlib import Path
+import re
 
 import yaml
 
@@ -38,18 +40,72 @@ def _manufacturer_key(value):
     return aliases.get(value, value)
 
 
+def _edition_identity(name, manufacturer):
+    """Return a title key and canonical equivalent-trim group."""
+    title = normalized_game_id(name)
+    manufacturer = _manufacturer_key(manufacturer)
+    if manufacturer == "stern":
+        match = re.fullmatch(r"(?P<title>.+?)-(?:prem-le|premium|prem|le)", title)
+        if match:
+            return match.group("title"), "prem-le"
+    if manufacturer == "jersey-jack":
+        match = re.fullmatch(r"(?P<title>.+?)-(?:le-ce|le|ce)", title)
+        if match:
+            return match.group("title"), "le-ce"
+    return title, None
+
+
+def canonical_game_key(name, manufacturer, year):
+    title, trim = _edition_identity(name, manufacturer)
+    return title, trim, _manufacturer_key(manufacturer), year
+
+
 def match_imported_game(imported, catalog):
-    """Return one conservative catalog match; never conflate editions."""
-    name_key = normalized_game_id(imported.name)
-    manufacturer_key = _manufacturer_key(imported.manufacturer)
+    """Return one conservative match, including equivalent modern trim groups."""
+    imported_key = canonical_game_key(
+        imported.name,
+        imported.manufacturer,
+        imported.year,
+    )
     candidates = [
         game
         for game in catalog.values()
-        if normalized_game_id(game.name) == name_key
-        and game.year == imported.year
-        and _manufacturer_key(game.manufacturer) == manufacturer_key
+        if canonical_game_key(game.name, game.manufacturer, game.year) == imported_key
     ]
     return candidates[0] if len(candidates) == 1 else None
+
+
+def similar_catalog_games(
+    query,
+    catalog=None,
+    *,
+    manufacturer=None,
+    year=None,
+    limit=8,
+    threshold=0.48,
+):
+    """Return likely related games for a human identity check before adding."""
+    catalog = catalog_by_id() if catalog is None else catalog
+    query_title, query_trim = _edition_identity(query, manufacturer or "")
+    query_tokens = set(query_title.split("-"))
+    candidates = []
+    for game in catalog.values():
+        game_title, game_trim = _edition_identity(game.name, game.manufacturer)
+        sequence = difflib.SequenceMatcher(None, query_title, game_title).ratio()
+        game_tokens = set(game_title.split("-"))
+        union = query_tokens | game_tokens
+        overlap = len(query_tokens & game_tokens) / len(union) if union else 0
+        score = max(sequence, overlap)
+        if manufacturer and _manufacturer_key(manufacturer) == _manufacturer_key(game.manufacturer):
+            score += 0.12
+        if year is not None and year == game.year:
+            score += 0.10
+        if query_trim is not None and query_trim == game_trim:
+            score += 0.10
+        if score >= threshold:
+            candidates.append((score, game.name.casefold(), game))
+    candidates.sort(key=lambda item: (-item[0], item[1], item[2].game_id))
+    return [item[2] for item in candidates[:limit]]
 
 
 def content_paths(content_directory=CONTENT):
@@ -77,6 +133,15 @@ def load_catalog(content_directory=CONTENT):
                 path=path,
             )
         )
+    identities = {}
+    for game in games:
+        key = canonical_game_key(game.name, game.manufacturer, game.year)
+        if key in identities:
+            raise CatalogError(
+                "equivalent catalog games must be deduplicated: "
+                f"{identities[key]} and {game.game_id}"
+            )
+        identities[key] = game.game_id
     return sorted(games, key=lambda game: (game.name.casefold(), game.game_id))
 
 

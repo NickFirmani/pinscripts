@@ -57,7 +57,7 @@ games:
   - Game is configured for 3 balls.
   - Ball-save durations can be operator-adjusted; only the relative behavior in the
     brief is safe to describe.
-- id: avengers-infinity-quest-le-stern-2020
+- id: avengers-infinity-quest-prem-le-stern-2020
   pages:
   - '12'
   - '13'
@@ -105,7 +105,7 @@ games:
     switches, not a universal playfield multiplier.'
   - Extra Balls are disabled.
   - Factory end-of-game Bonus Ball is disabled.
-- id: batman-66-premium-stern-2016
+- id: batman-66-prem-le-stern-2016
   pages:
   - '22'
   - '23'
@@ -259,7 +259,7 @@ games:
   - The lit center-target feature awards a live extra ball.
   - Early-production Doodle Bugs may have a higher display range; common games top
     normal display at 199,990 before OVER THE TOP lights.
-- id: dungeons-and-dragons-premium-stern-2025
+- id: dungeons-and-dragons-prem-le-stern-2025
   pages:
   - '54'
   - '55'
@@ -322,7 +322,7 @@ games:
   - Mini Bonus and Super Bonus target progress carry between balls.
   - Extra Balls are disabled.
   - The manufacturer-specified combined 5× playfield-scoring timer is 15 seconds.
-- id: foo-fighters-premium-stern-2023
+- id: foo-fighters-prem-le-stern-2023
   pages:
   - '68'
   - '69'
@@ -381,7 +381,7 @@ games:
   - Watch the left A-B-C-D/bumper exit and Score Bonus saucer return especially closely.
   - In 3-ball play, completed red or white banks and the lit kickout add 10K rather
     than the 5K 5-ball values.
-- id: godzilla-premium-stern-2021
+- id: godzilla-prem-le-stern-2021
   pages:
   - '80'
   - '81'
@@ -536,7 +536,7 @@ games:
     Out.
   - The Pro has virtual Deconsecrated locks, a static car, static Blood Oath Marker,
     and standup-target Weapons Crate; it does not have the Premium/LE car skill shot.
-- id: jurassic-park-premium-stern-2019
+- id: jurassic-park-prem-le-stern-2019
   pages:
   - '108'
   - '109'
@@ -548,7 +548,7 @@ games:
   - T-Rex and Raptor gate/lock mechanisms are operating normally.
   - Premium and LE share the T-Rex and motorized Raptor Pen mechanisms; Pro lacks
     them.
-- id: king-kong-myth-of-terror-island-premium-stern-2025
+- id: king-kong-myth-of-terror-island-prem-le-stern-2025
   pages:
   - '110'
   - '111'
@@ -565,7 +565,7 @@ games:
   present: true
   venue_notes:
   - This venue game is configured for 5-ball play.
-- id: led-zeppelin-premium-stern-2020
+- id: led-zeppelin-prem-le-stern-2020
   pages:
   - '114'
   - '115'
@@ -837,14 +837,14 @@ games:
   venue_notes:
   - Competition configuration is enabled; Extra Balls are disabled.
   - For 3× selection, use the live flashing-arrow state as the authority.
-- id: star-trek-premium-stern-2013
+- id: star-trek-prem-le-stern-2013
   pages:
   - '170'
   - '171'
   present: true
   venue_notes:
   - Extra Balls are disabled for this venue.
-- id: star-wars-fote-premium-stern-2025
+- id: star-wars-fote-prem-le-stern-2025
   pages:
   - '172'
   - '173'
@@ -863,7 +863,7 @@ games:
   - Special awards 100,000 points and Star Specials are open-ended on this setup.
   - WOW / Extra Ball is disabled.
   - This venue is set for three balls.
-- id: stranger-things-premium-stern-2019
+- id: stranger-things-prem-le-stern-2019
   pages:
   - '176'
   - '177'

@@ -1,15 +1,15 @@
-id: batman-66-premium-stern-2016
+id: batman-66-prem-le-stern-2016
 rules_basis:
   kind: code
   version: '1.14'
   release_date: '2026-07-01'
-name: Batman ’66 (Premium)
+name: Batman ’66 (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2016
   designer: George Gomez
   artist: Kevin O’Connor and Christopher Franchi
-  production: ''
+  production: Premium and Limited Edition trims
   era: SPIKE 2
   multiball: Villain Multiball
 hook: Qualify Catwoman with both ramps, start her at the Bat-Phone, double the mode
@@ -134,4 +134,4 @@ trivia:
 - The game was inspired by former Stern designer Joe Kaminkow, with Gomez and Sheats
   leading development.
 summary: Catwoman ramps → Batcave Combo → locks → Villain Multiball → stacked multipliers
-image: images/batman-66-premium-stern-2016.webp
+image: images/batman-66-prem-le-stern-2016.webp

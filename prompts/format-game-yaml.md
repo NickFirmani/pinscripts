@@ -52,6 +52,11 @@ Formatting rules:
   adjustment sensitivity generically, without recording one venue's settings.
 - Turn the canonical game name and year into a lowercase, hyphenated `id`, and
   set `image` to `images/<id>.webp`.
+- Treat modern Stern Premium and Limited Edition as one gameplay-equivalent
+  catalog entry: suffix the name with `(Prem/LE)` and use the ID segment
+  `prem-le-stern`. Keep Pro separate. Treat Jersey Jack Limited and Collector's
+  Editions as one entry: suffix the name with `(LE/CE)` and use `le-ce-jersey-jack`.
+  Keep Jersey Jack Standard Edition separate.
 - Keep the most useful, best-supported facts when the schema's item or length
   limits require selection.
 - Preserve edition and revision caveats in the most relevant catalog field when

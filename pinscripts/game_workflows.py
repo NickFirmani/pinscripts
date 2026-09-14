@@ -22,7 +22,12 @@ from .binder import (
     replace_entry,
 )
 from .build import BuildInputError, build_print_packet, validate_all, validate_game_contexts
-from .catalog import catalog_by_id, match_imported_game, resolve_game
+from .catalog import (
+    catalog_by_id,
+    match_imported_game,
+    resolve_game,
+    similar_catalog_games,
+)
 from .content import PIN_ID_PATTERN, load_yaml, suggested_research_id
 from .images import interactive_black_and_white_images, interactive_game_image
 from .locks import claim_lock
@@ -128,7 +133,35 @@ def _request_game_id(supplied):
         query = ""
 
 
-def _request_new_identity(description):
+def _select_similar_game(description, *, manufacturer=None, year=None):
+    candidates = similar_catalog_games(
+        description,
+        manufacturer=manufacturer,
+        year=year,
+    )
+    if not candidates:
+        return None
+    print("\nClosely named catalog games:")
+    for index, game in enumerate(candidates, start=1):
+        print(
+            f"  {index}. {game.name} — {game.manufacturer} {game.year or ''} "
+            f"[{game.game_id}]"
+        )
+    while True:
+        try:
+            answer = input(
+                "Select an existing game number, or press Enter to create a new one: "
+            ).strip()
+        except EOFError:
+            return None
+        if not answer:
+            return None
+        if answer.isdigit() and 1 <= int(answer) <= len(candidates):
+            return candidates[int(answer) - 1]
+        print(f"Enter a number from 1 through {len(candidates)}, or press Enter.")
+
+
+def _request_new_identity(description, *, check_similar=True):
     description = description.strip()
     if not description:
         try:
@@ -138,6 +171,11 @@ def _request_new_identity(description):
     if not description:
         print("ERROR: a game description is required.", file=sys.stderr)
         return None, None
+
+    if check_similar:
+        existing = _select_similar_game(description)
+        if existing is not None:
+            return description, existing.game_id
 
     suggestion = suggested_research_id(description)
     try:
@@ -316,6 +354,23 @@ def _process_pending_game(binder_id, pending):
         print(f"Attached existing catalog game {exact.game_id}.")
         return 0, True
 
+    similar = _select_similar_game(
+        pending.name,
+        manufacturer=pending.manufacturer,
+        year=pending.year,
+    )
+    if similar is not None:
+        reason = _optional_reason("Reason for this match (optional): ")
+        _finish_pending_game(
+            binder_id,
+            pending,
+            catalog_id=similar.game_id,
+            override_action="replace",
+            reason=reason,
+        )
+        print(f"Mapped the imported listing to {similar.game_id}.")
+        return 0, True
+
     while True:
         try:
             answer = input(
@@ -360,7 +415,10 @@ def _process_pending_game(binder_id, pending):
             print("Choose add, match, ignore, or release.", file=sys.stderr)
             continue
 
-        description, game_id = _request_new_identity(pending.description)
+        description, game_id = _request_new_identity(
+            pending.description,
+            check_similar=False,
+        )
         if not game_id:
             return 2, False
         with _claim_add_game(game_id) as claimed:

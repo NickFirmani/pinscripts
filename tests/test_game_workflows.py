@@ -113,6 +113,35 @@ class GameWorkflowTests(unittest.TestCase):
         with patch("builtins.input", return_value=""):
             self.assertFalse(app.request_print_mode())
 
+    def test_similar_games_are_shown_for_selection_before_add(self):
+        candidates = [
+            CatalogGame(
+                "jaws-pro-stern-2024",
+                "JAWS (Pro)",
+                "Stern Pinball",
+                2024,
+                Path("jaws-pro-stern-2024.yaml"),
+            ),
+            CatalogGame(
+                "jaws-prem-le-stern-2024",
+                "JAWS (Prem/LE)",
+                "Stern Pinball",
+                2024,
+                Path("jaws-prem-le-stern-2024.yaml"),
+            ),
+        ]
+        with (
+            patch.object(app, "similar_catalog_games", return_value=candidates),
+            patch("builtins.input", return_value="2"),
+        ):
+            selected = app._select_similar_game(
+                "JAWS (LE)",
+                manufacturer="Stern",
+                year=2024,
+            )
+
+        self.assertEqual(selected.game_id, "jaws-prem-le-stern-2024")
+
     def test_add_is_catalog_only(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

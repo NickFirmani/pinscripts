@@ -80,6 +80,12 @@ Be particularly careful about:
 * manufacturer, year, designer, programmer, artist, and production facts
 * similarly named or remade games
 
+For catalog identity, research gameplay-equivalent cosmetic trims together.
+Modern Stern Premium and Limited Edition are one `Prem/LE` entry; Pro is
+separate. Jersey Jack Limited and Collector's Editions are one `LE/CE` entry;
+Standard Edition is separate. Explicitly note any verified rules or physical
+difference that would make two nominally equivalent trims play differently.
+
 Classify the rules basis explicitly:
 
 * **code** — gameplay code is distributed as an internet download; report the

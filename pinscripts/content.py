@@ -37,7 +37,19 @@ def schema_validator():
 
 
 def suggested_research_id(game):
-    return re.sub(r"[^a-z0-9]+", "-", game.lower()).strip("-")
+    suggestion = re.sub(r"[^a-z0-9]+", "-", game.lower()).strip("-")
+    suggestion = re.sub(
+        r"-(?:premium|prem|limited-edition|le)-stern(?:-pinball)?-(\d{4})$",
+        r"-prem-le-stern-\1",
+        suggestion,
+    )
+    suggestion = re.sub(
+        r"-(?:collector-s-edition|collector-edition|ce|limited-edition|le)-"
+        r"jersey-jack(?:-pinball)?-(\d{4})$",
+        r"-le-ce-jersey-jack-\1",
+        suggestion,
+    )
+    return suggestion
 
 
 def normalized_game_id(game):
@@ -47,6 +59,7 @@ def normalized_game_id(game):
     normalized = normalized.replace("&", " and ")
     normalized = re.sub(r"['\u2019]", "", normalized)
     normalized = re.sub(r"\blimited edition\b", "le", normalized)
+    normalized = re.sub(r"\bcollectors? edition\b", "ce", normalized)
     normalized = re.sub(r"\bspecial edition\b", "se", normalized)
     normalized = re.sub(r"\bgold edition\b", "gold", normalized)
     normalized = re.sub(r"\bthe\b", " ", normalized)

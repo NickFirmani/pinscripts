@@ -1,15 +1,15 @@
-id: foo-fighters-premium-stern-2023
+id: foo-fighters-prem-le-stern-2023
 rules_basis:
   kind: code
   version: '1.03.0'
   release_date: '2024-11-14'
-name: Foo Fighters — Premium
+name: Foo Fighters (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2023
   designer: Jack Danger
   artist: Zombie Yeti
-  production: Premium edition
+  production: Premium and Limited Edition trims
   era: SPIKE 2
   multiball: All My Life, Monkey Wrench, The Pretender, Area 51, Combotron, and FooBot
     Multiball
@@ -137,4 +137,4 @@ trivia:
   more-than-two-year development.
 summary: Van Mods → city mode → playfield X → Ray Gun → multiball stack → Overlord
   cash-out
-image: images/foo-fighters-premium-stern-2023.webp
+image: images/foo-fighters-prem-le-stern-2023.webp

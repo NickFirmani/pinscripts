@@ -1,15 +1,15 @@
-id: avengers-infinity-quest-le-stern-2020
+id: avengers-infinity-quest-prem-le-stern-2020
 rules_basis:
   kind: code
   version: '1.10.0'
   release_date: '2026-07-01'
-name: 'Avengers: Infinity Quest (Limited Edition)'
+name: 'Avengers: Infinity Quest (Prem/LE)'
 metadata:
   manufacturer: Stern Pinball
   year: 2020
   designer: Keith Elwin
   artist: Jeremy Packer / Zombie Yeti
-  production: Limited to 500 machines worldwide
+  production: Premium and Limited Edition trims
   era: Modern Stern LCD-era pinball
   multiball: Thor Multiball and Iron Man Multiball; Portal Locks can make a Gem Quest
     multiball
@@ -141,4 +141,4 @@ trivia:
 - 'Gem placement is strategic: the same Gem can give different benefits depending
   on its Avenger placement and level.'
 summary: Portal Locks → Gem Quest → Multiball stack → Quest win → Victory Laps
-image: images/avengers-infinity-quest-le-stern-2020.webp
+image: images/avengers-infinity-quest-prem-le-stern-2020.webp

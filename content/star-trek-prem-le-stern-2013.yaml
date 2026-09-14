@@ -1,15 +1,15 @@
-id: star-trek-premium-stern-2013
+id: star-trek-prem-le-stern-2013
 rules_basis:
   kind: code
   version: '1.62.0'
   release_date: '2018-06-05'
-name: Star Trek — Premium
+name: Star Trek (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2013
   designer: Steve Ritchie
   artist: ''
-  production: Premium production began November 2013.
+  production: Premium and Limited Edition trims
   era: SAM/DMD generation
   multiball: Klingon Multiball, Vengeance Multiball, Kobayashi Maru, Enterprise Amok,
     Five Year Mission
@@ -143,4 +143,4 @@ trivia:
 - Karl Urban supplied game voice work, and Steve Ritchie also performs callouts.
 summary: Mission stack → combo doubles → Warp 2X → medal progress → Klingon jackpots
   → Vengeance cash-out
-image: images/star-trek-premium-stern-2013.webp
+image: images/star-trek-prem-le-stern-2013.webp

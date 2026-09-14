@@ -1,15 +1,15 @@
-id: godzilla-premium-stern-2021
+id: godzilla-prem-le-stern-2021
 rules_basis:
   kind: code
   version: 1.16.0
   release_date: '2026-08-26'
-name: Godzilla — Premium
+name: Godzilla (Prem/LE)
 metadata:
   manufacturer: Stern Pinball
   year: 2021
   designer: Keith Elwin
   artist: Jeremy Packer / Zombie Yeti
-  production: SPIKE 2
+  production: Premium and Limited Edition trims; SPIKE 2
   era: Modern
   multiball: Godzilla, Mechagodzilla, Bridge Attack, Tank Attack
 hook: Build through ramps and Kaiju Battles, destroy the Premium building for physical locks,
@@ -136,4 +136,4 @@ trivia:
 - The game uses footage and audio from ten Showa-era Toho films.
 summary: Ramps → Kaiju Battles → building locks → multiball Supers → Rodan/Heat Ray → Destruction
   Jackpot cash-out
-image: images/godzilla-premium-stern-2021.webp
+image: images/godzilla-prem-le-stern-2021.webp

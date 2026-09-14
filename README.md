@@ -6,8 +6,13 @@ master catalog PDF, and separate PDFs for real physical binders.
 ## Data model
 
 `content/*.yaml` is the master game catalog. Each file contains reusable rules,
-strategy, and commentary material for one exact game edition. The catalog is
-discovered directly from these files; there is no second master list.
+strategy, and commentary material for one gameplay-distinct edition. The catalog
+is discovered directly from these files; there is no second master list.
+
+Equivalent cosmetic trims share one catalog entry. Modern Stern Premium and LE
+machines use the display suffix `Prem/LE` and ID segment `prem-le`; Pro remains a
+separate entry. Jersey Jack Limited and Collector's Editions use `LE/CE` and
+`le-ce`; Standard Edition remains separate.
 
 `binders/*.yaml` records one printable or already-printed binder. A binder owns:
 
@@ -87,9 +92,9 @@ make binder-create \
 The importer reads the public HTML used by the Pinball Map website. It does not
 use an API token. It fetches only the selected location and its machine-list
 fragment. Imported names are matched conservatively using game name,
-manufacturer, year, and exact edition. Ambiguous or missing games require a
-human decision; the add option opens the existing catalog research and asset
-workflow.
+manufacturer, year, and gameplay-distinct edition. Missing or ambiguous games
+are saved to the binder's durable pending queue; binder creation does not stop
+for inline research.
 
 If fetching fails or you prefer to copy the visible lineup yourself:
 
@@ -112,9 +117,9 @@ make binder-sync BINDER=one-up-westminster
 make binder-sync BINDER=one-up-westminster PASTE=1
 ```
 
-Sync shows a preview. It can offer to add games found in the imported listing,
-but games found only in the binder are always retained. Pinball Map is not
-treated as authoritative.
+Sync shows a preview. New unresolved listings are added to the same pending
+queue, while games found only in the binder are always retained. Pinball Map is
+not treated as authoritative.
 
 The `source` object supports both `pinball-map` and `manual`. Manual add, remove,
 or venue-note commands automatically change `source.kind` to `manual` while
@@ -138,6 +143,31 @@ make binder-notes BINDER=my-binder GAME=jaws-pro-stern-2024
 make binder-mark-printed BINDER=my-binder
 ```
 
+### Resolve a venue's pending games in parallel
+
+After create or sync, open three terminals and run the same command in each:
+
+```sh
+make add BINDER=one-up-westminster
+```
+
+Each terminal atomically claims a different pending game. For every claim, the
+workflow first lists closely named catalog entries so you can select a match
+before adding anything. Otherwise choose to add a new catalog game, explicitly
+match an existing one, ignore a stale source listing, or release the claim back
+to the queue. Matches and ignores become durable source overrides, so later
+Pinball Map syncs preserve the human correction.
+
+Each successful resolution is merged into the latest binder file under a write
+lock. It is therefore safe for all three terminals to finish in any order.
+Inspect remaining work at any time with:
+
+```sh
+make binder-status BINDER=one-up-westminster
+```
+
+A draft binder cannot be marked printed while unresolved games remain.
+
 Draft additions and removals are alphabetized and renumbered. After a binder is
 marked printed, existing page labels never change:
 
@@ -159,7 +189,7 @@ Print packets double-sided at actual size, flipping on the long edge.
 Add a reusable game without assigning it to any binder:
 
 ```sh
-make add GAME="Jaws Premium Stern 2024"
+make add GAME="Jaws Prem/LE Stern 2024"
 ```
 
 `make add` is resumable and safe to run in several terminals. Completed
@@ -181,11 +211,11 @@ binder's permanent pages and venue notes.
 Other asset workflows:
 
 ```sh
-make game-research GAME="Jaws Premium Stern 2024"
-make game-format GAME=jaws-premium-stern-2024
-make game-image GAME=jaws-premium-stern-2024
-make game-image-bw GAME=jaws-premium-stern-2024
-make shot-labels GAME=jaws-premium-stern-2024
+make game-research GAME="Jaws Prem/LE Stern 2024"
+make game-format GAME=jaws-prem-le-stern-2024
+make game-image GAME=jaws-prem-le-stern-2024
+make game-image-bw GAME=jaws-prem-le-stern-2024
+make shot-labels GAME=jaws-prem-le-stern-2024
 ```
 
 Catalog content must remain location-neutral. Validation rejects phrases such

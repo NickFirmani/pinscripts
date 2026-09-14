@@ -1,15 +1,15 @@
-id: dungeons-and-dragons-premium-stern-2025
+id: dungeons-and-dragons-prem-le-stern-2025
 rules_basis:
   kind: code
   version: '1.01'
   release_date: '2026-07-01'
-name: 'Dungeons & Dragons: The Tyrant’s Eye (Premium)'
+name: 'Dungeons & Dragons: The Tyrant’s Eye (Prem/LE)'
 metadata:
   manufacturer: Stern Pinball
   year: 2025
   designer: Brian Eddy
   artist: Vince Proce
-  production: ''
+  production: Premium and Limited Edition trims
   era: SPIKE 2, 2025
   multiball: Dragon → Town Celebration, Gelatinous Cube, and Tavern Brawl
 hook: Build Dragon Multiball, Gelatinous Cube Multiball, and a Dungeon Crawl; then
@@ -139,4 +139,4 @@ trivia:
   Kevin Smith, Brendon Small, Gerard Way, and Luke Gygax.
 summary: Build Dragon + Cube + Dungeon Crawl → light Tavern Brawl → add Hidden Temple
   2× → cash Cube or Brawl
-image: images/dungeons-and-dragons-premium-stern-2025.webp
+image: images/dungeons-and-dragons-prem-le-stern-2025.webp

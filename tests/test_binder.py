@@ -100,6 +100,7 @@ class BinderTests(unittest.TestCase):
             content = directory / "content"
             content.mkdir()
             (content / "alpha.yaml").touch()
+            (content / "charlie.yaml").touch()
             path = directory / "test-binder.yaml"
             write_binder(binder, path=path)
             loaded = load_binder(path, content_directory=content)
