@@ -25,7 +25,7 @@ human resolutions and no existing canonical YAML, validate each result, and
 promote valid outputs to `content/`:
 
 ```sh
-make format-codex-batch \
+make dev-benchmark-codex \
   MODEL="gpt-5.6-terra" \
   EFFORT="medium" \
   WORKERS="3"
@@ -100,7 +100,7 @@ repeated run does not need to regenerate completed suggestions.
 Run a review-only pass first:
 
 ```sh
-make proofread-content MODEL="mistral:latest" START_SERVER="1"
+make dev-content-proofread MODEL="mistral:latest" START_SERVER="1"
 ```
 
 The run writes `review.jsonl`, a manifest, and schema-valid corrected copies
@@ -108,7 +108,7 @@ under `benchmarks/results/proofread/`; it does not modify `content/`. Inspect th
 proposals, then use `APPLY=1` to atomically apply safe changes:
 
 ```sh
-make proofread-content MODEL="mistral:latest" APPLY="1" START_SERVER="1"
+make dev-content-proofread MODEL="mistral:latest" APPLY="1" START_SERVER="1"
 ```
 
 Suggestions that alter numbers, symbols, protected capitalized terms, or text

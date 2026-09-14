@@ -32,17 +32,21 @@ contacts Pinball Map and never changes a lineup.
 Requirements are Python 3 and, for image processing only, ImageMagick.
 
 ```sh
-make install
+make setup
 make test
 ```
+
+Run `make` or `make help` at any time to see the supported commands, grouped by
+workflow.
 
 ## Master catalog
 
 Build all catalog content in alphabetical order:
 
 ```sh
-make all
-make all-bw
+make catalog-build
+make catalog-build MODE=bw
+make catalog-build MODE=both
 ```
 
 Outputs are `output/catalog.pdf` and `output/catalog-bw.pdf`. Catalog pages use
@@ -51,7 +55,7 @@ ordinary sequential numbering and contain no venue-specific notes.
 Build one location-neutral game:
 
 ```sh
-make game-playboy-bally-1978
+make game-build GAME=playboy-bally-1978
 ```
 
 ## Physical binders
@@ -62,8 +66,9 @@ The original printed collection is now recorded in
 Build it with its permanent page labels and venue notes:
 
 ```sh
-make binder BINDER=lyons-classic-pinball
-make binder BINDER=lyons-classic-pinball BW=1
+make binder-build BINDER=lyons-classic-pinball
+make binder-build BINDER=lyons-classic-pinball MODE=bw
+make binder-build BINDER=lyons-classic-pinball MODE=both
 ```
 
 Outputs are written under `output/binders/`.
@@ -169,7 +174,7 @@ make binder-mark-printed BINDER=my-binder
 After create or sync, open three terminals and run the same command in each:
 
 ```sh
-make add BINDER=one-up-westminster
+make binder-populate BINDER=one-up-westminster
 ```
 
 Each terminal atomically claims a different pending game. For every claim, the
@@ -199,8 +204,10 @@ marked printed, existing page labels never change:
 Generate a four-page replacement packet directly:
 
 ```sh
-.venv/bin/python main.py binder packet \
-  lyons-classic-pinball jaws-pro-stern-2024 --operation update
+make binder-packet \
+  BINDER=lyons-classic-pinball \
+  GAME=jaws-pro-stern-2024 \
+  OPERATION=update
 ```
 
 Print packets double-sided at actual size, flipping on the long edge.
@@ -210,10 +217,10 @@ Print packets double-sided at actual size, flipping on the long edge.
 Add a reusable game without assigning it to any binder:
 
 ```sh
-make add GAME="Jaws Prem/LE Stern 2024"
+make game-add GAME="Jaws Prem/LE Stern 2024"
 ```
 
-`make add` is resumable and safe to run in several terminals. Completed
+`make game-add` is resumable and safe to run in several terminals. Completed
 research, content, image, black-and-white image, and shot-label stages are
 reused. A per-game lock prevents two terminals from changing the same game at
 once: the first continues, while a duplicate invocation exits successfully
@@ -222,7 +229,7 @@ without making changes. Different game IDs can proceed concurrently.
 Update one game:
 
 ```sh
-make update GAME=jaws-pro-stern-2024
+make game-update GAME=jaws-pro-stern-2024
 ```
 
 Updates validate every binder containing the game. When requested, one
@@ -235,19 +242,50 @@ Other asset workflows:
 make game-research GAME="Jaws Prem/LE Stern 2024"
 make game-format GAME=jaws-prem-le-stern-2024
 make game-image GAME=jaws-prem-le-stern-2024
-make game-image-bw GAME=jaws-prem-le-stern-2024
-make shot-labels GAME=jaws-prem-le-stern-2024
+make game-image GAME=jaws-prem-le-stern-2024 ACTION=bw
+make game-image GAME=jaws-prem-le-stern-2024 ACTION=upgrade
+make game-labels GAME=jaws-prem-le-stern-2024
 ```
 
 Catalog content must remain location-neutral. Validation rejects phrases such
 as “this venue”; physical settings, feeds, machine condition, and tournament
 policy belong in binder venue notes.
 
-## Validation
+## Project health and validation
+
+Run the project doctor after cloning, before a large print, or whenever you want
+to work through incomplete assets:
+
+```sh
+make doctor
+make doctor GAME=jaws-prem-le-stern-2024
+make doctor BINDER=one-up-westminster
+```
+
+Doctor scans the requested scope before changing anything. It reports invalid
+catalog or binder data, missing or unreadable color and black-and-white images,
+color images below the 1000-pixel long-edge threshold, missing or stale shot
+labels, unresolved binder games, and orphaned image or label files. It then
+offers fixes in dependency order: color images, image upgrades, B&W images, shot
+labels, and binder population. Declining a fix leaves the item untouched and
+the report prints the exact Make command to run later.
+
+For a read-only health check suitable for scripts or CI:
+
+```sh
+make doctor CHECK=1
+```
+
+It exits nonzero while actionable work remains. Hygiene warnings are printed but
+do not fail the check.
+
+Validation and tests remain available separately. `make check` runs the tests,
+validation, and the read-only doctor in sequence:
 
 ```sh
 make validate
 make test
+make check
 ```
 
 Validation covers every catalog file and binder manifest, including content
@@ -256,3 +294,17 @@ unique increasing physical pages, draft/printed state, and venue-note limits.
 
 Pinball Map data is community maintained and may be stale. When used, preserve
 the attribution and advisory-source metadata in the binder manifest.
+
+## Maintainer tools
+
+Commands used for repository maintenance rather than normal game and binder
+work are grouped under the `dev-` prefix:
+
+```sh
+make dev-content-audit
+make dev-content-proofread MODEL="mistral:latest"
+make dev-image-variants IMAGE=images/example.jpg
+make dev-format-prompt RESEARCH=content/research/example.md
+make dev-benchmark-format MODEL="mistral:latest"
+make dev-benchmark-codex WORKERS=3
+```
