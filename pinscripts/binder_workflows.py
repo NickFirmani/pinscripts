@@ -20,7 +20,7 @@ from .binder import (
 )
 from .build import BuildInputError, build_print_packet
 from .catalog import CatalogError, catalog_by_id, match_imported_game, resolve_game
-from .game_workflows import ask_yes_no
+from .game_workflows import ask_yes_no, interactive_add_game
 from .pinball_map import (
     ImportedLocation,
     PinballMapError,
@@ -202,6 +202,10 @@ def sync_binder_interactive(binder_id, *, pinball_map=None, paste=False):
         "Saved binder. Games absent from the advisory listing were not removed; "
         f"{len(updated.pending_games)} game(s) remain pending."
     )
+    if updated.pending_games and ask_yes_no(
+        "Would you like to edit/populate the pending games now?", default=True
+    ):
+        return interactive_add_game(binder_id=binder_id)
     return 0
 
 

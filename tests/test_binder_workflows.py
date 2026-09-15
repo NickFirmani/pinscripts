@@ -10,6 +10,64 @@ from pinscripts.pinball_map import ImportedGame, ImportedLocation
 
 
 class BinderWorkflowTests(unittest.TestCase):
+    def test_sync_optionally_runs_the_existing_pending_game_workflow(self):
+        pending = PendingGame("Unknown", "Bally", 1981)
+        imported = ImportedLocation(
+            "123",
+            "Test Binder",
+            "https://pinballmap.com/map/?by_location_id=123",
+            "2026-09-15",
+            (),
+        )
+        for has_pending, accept, population_result in (
+            (True, True, 0),
+            (True, True, 1),
+            (True, False, 0),
+            (False, True, 0),
+        ):
+            with self.subTest(
+                has_pending=has_pending,
+                accept=accept,
+                population_result=population_result,
+            ):
+                binder = Binder(
+                    2,
+                    "test-binder",
+                    "Test Binder",
+                    "draft",
+                    None,
+                    BinderSource("manual", "123"),
+                    (),
+                    (pending,) if has_pending else (),
+                )
+                with (
+                    patch.object(app, "load_binder", return_value=binder),
+                    patch.object(app, "_load_import", return_value=imported),
+                    patch.object(app, "classify_imported", return_value=([], [], [])),
+                    patch.object(app, "catalog_by_id", return_value={}),
+                    patch.object(app, "write_binder") as write,
+                    patch.object(app, "ask_yes_no", return_value=accept) as ask,
+                    patch.object(
+                        app, "interactive_add_game", return_value=population_result
+                    ) as populate,
+                ):
+                    result = app.sync_binder_interactive("test-binder")
+
+                write.assert_called_once()
+                if has_pending:
+                    ask.assert_called_once_with(
+                        "Would you like to edit/populate the pending games now?",
+                        default=True,
+                    )
+                else:
+                    ask.assert_not_called()
+                if has_pending and accept:
+                    populate.assert_called_once_with(binder_id="test-binder")
+                    self.assertEqual(result, population_result)
+                else:
+                    populate.assert_not_called()
+                    self.assertEqual(result, 0)
+
     def test_add_to_printed_binder_writes_manifest_and_insert_packets(self):
         binder = Binder(
             2,
