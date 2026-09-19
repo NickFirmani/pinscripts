@@ -1,0 +1,19 @@
+game_id: fallout-pro-stern-2026
+image_width: 575
+image_height: 1057
+image_sha256: 2e52ce7894a70fa8b231ad66f75ce29aac5b2f56c462048b8dd7a32ab10368ab
+shots_sha256: a47c069dc13c69ed2085103cd9e932cc0667e71df93a982ed1ac8f10f95910ff
+coordinates:
+- diagram: 1
+  x: 135
+  y: 549
+- diagram: 3
+  x: 296
+  y: 253
+- diagram: 4
+  x: 449
+  y: 381
+skipped_diagrams:
+- 2
+- 5
+- 6

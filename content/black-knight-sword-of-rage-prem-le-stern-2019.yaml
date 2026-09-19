@@ -1,0 +1,149 @@
+id: black-knight-sword-of-rage-prem-le-stern-2019
+name: 'Black Knight: Sword of Rage (Prem/LE)'
+metadata:
+  manufacturer: Stern
+  year: 2019
+  designer: Steve Ritchie
+  artist: Kevin O'Connor and Joshua Clay
+  production: Premium and LE are gameplay-equivalent; LE limited to 600 games
+  era: SPIKE 2
+  multiball: Triple Knights Challenge, Catapult, KNIGHT, The King's Ransom, and RAGE
+rules_basis:
+  kind: code
+  version: v1.19.0
+  release_date: '2026-07-01'
+hook: 'Control is everything: backhand dangerous rubber-lined shots, qualify a Monster
+  Battle with Triple Knights, then use POWER for 2x battle scoring. Longer-term, build
+  Super Modes before KNIGHT Multiball and use Magna-Save to cash them under its up-to-3x
+  ball-count multiplier.'
+rules:
+  primary: Monster Battles carry between balls and can be paired efficiently with
+    Triple Knights Challenge. During a battle, fill POWER and hit the center target
+    to earn 2x battle scoring while simplifying that battle. Winning battles earns
+    KNIGHT letters and progresses toward Black Castle.
+  bullets:
+  - Triple Knights Challenge starts from three shield-scoop locks. Clear three shots,
+    make the ramp hurry-up, then clear jackpots to relight the ramp for a 3x Super
+    Jackpot and KNIGHT letter.
+  - Catapult Multiball locks three balls upstairs. Lower-playfield jackpots build
+    its Super, while the upper standup can raise the next Super multiplier as high
+    as 4x.
+  - Triple Knights and Catapult can progress and start during each other, allowing
+    a large Premium/LE multi-multiball stack.
+  - KNIGHT Multiball ends any running timed mode. Its playfield scoring is multiplied
+    by balls in play, up to 3x, making it a cash-out feature rather than a mode-stacking
+    feature.
+  - A successful Magna-Save collects all active Super Modes as a Super Jackpot, inheriting
+    KNIGHT Multiball's ball-count multiplier.
+watch:
+- title: POWER lit
+  text: The center target can now convert the active Monster Battle to 2x scoring
+    and make its rules easier, usually making POWER the immediate priority.
+- title: Super icons
+  text: Colored icons on the left display represent active Super Modes. Purple means
+    that Super has been boosted to its maximum.
+- title: Magna-Save ready
+  text: With active Supers, a successful right-outlane Magna-Save is both a rescue
+    and a major scoring cash-out.
+- title: Catapult balls
+  text: Physical balls upstairs show Catapult Multiball progress. Premium/LE uses
+    the upper playfield and physical Catapult lock.
+skill_shots:
+- name: Prem/LE Skill Shot
+  how: Plunge to the upper playfield and hit the Light Lock target beneath the Catapult.
+  value: Awards 1M plus 250K per successive skill shot and advances useful Catapult
+    setup.
+- name: Prem/LE Super Skill Shot
+  how: Full-plunge and directly lock the ball in the Catapult.
+  value: Awards 2M plus 500K per successive Super Skill Shot and materially advances
+    Catapult Multiball.
+features:
+- type: player-control
+  name: Magna-Save
+  text: The action button activates the magnet over the right outlane. A successful
+    save also cashes all running Super Modes; completing the right drops relights
+    it.
+- type: ball-save
+  name: Left-Outlane Save
+  text: Complete the left-side Add Time targets to qualify the left-outlane save;
+    requirements increase after use.
+- type: mystery-award
+  name: Mystery
+  text: Spell RAGE at the inlanes and outlanes. Awards can include Light Lock, a KNIGHT
+    letter, Magna-Save, Super progress, save progress, or Extra Ball.
+- type: extra-ball
+  name: Extra Ball
+  text: Winning a Monster Battle lights Extra Ball; Mystery can also award it.
+shots:
+- name: Left Spinner / Orbit
+  value: Boosts Super Modes and starts qualified KNIGHT Multiball, making it central
+    to the long-game Super cash-out strategy.
+  risk: Medium-High
+  diagram: 1
+- name: Flail / Ramp
+  value: Qualifies Monster Battles, raises the shield, and can boost the value of
+    the next battle before it starts.
+  risk: High
+  diagram: 2
+- name: Center POWER Target
+  value: When POWER is full, gives 2x scoring for the rest of the active Monster Battle
+    and simplifies its objectives.
+  risk: High
+  diagram: 3
+- name: Shield Scoop
+  value: Starts Monster Battles and locks balls for Triple Knights Challenge, making
+    it the central stacking and multiball-start shot.
+  risk: High
+  diagram: 4
+- name: Right Drops
+  value: Build POWER and relight Magna-Save, restoring both survival utility and the
+    potential Super-Mode cash-out.
+  risk: High
+  diagram: 5
+- name: Catapult
+  value: Locks balls and collects Catapult progress and Supers on the Premium/LE upper
+    playfield.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Prioritize control, combine a Monster Battle with Triple Knights, and take
+    POWER when available. Use Magna-Save primarily for survival instead of extending
+    setup for a huge Super cash-out. Catapult setup is less attractive when upper-playfield
+    accuracy is unreliable.
+  behind: Build and boost Super Modes before starting KNIGHT Multiball, then seek
+    a Magna-Save cash-out while three balls remain for the 3x multiplier. Catapult
+    and Triple Knights can also be combined for a higher-variance multi-multiball
+    stack.
+  key_decision: Take the safer Battle and Triple Knights scoring now, or survive long
+    enough to build KNIGHT plus multiple boosted Supers? The latter has a much larger
+    ceiling but demands more dangerous single-ball setup.
+danger:
+- Rubber-post shot entrances create lateral energy and dangerous center returns; controlled
+  backhands reduce exposure.
+- Direct flail hits can reject straight down the middle.
+- The center POWER target is strategically important but can produce a dangerous straight-on
+  rebound.
+- Shield geometry and kick behavior can create very fast, uncontrolled returns.
+- Missed Catapult or upper-playfield shots return the ball to the lower playfield
+  without guaranteed control.
+commentary:
+- They're backhanding everything—that's the survival strategy on Sword of Rage.
+- POWER is ready; one center hit makes this battle two-times and easier.
+- They've got the mode and Triple Knights lined up together—that's the clean scoring
+  stack.
+- Those Super icons are banked value; purple means they've boosted that feature to
+  maximum.
+- KNIGHT Multiball multiplies by balls in play, so three balls means three-times everything.
+- If Magna-Save catches this, it isn't just a save—it cashes all those Supers too.
+trivia:
+- Sword of Rage is the third Black Knight game, following Black Knight from 1980 and
+  Black Knight 2000 from 1989, all designed by Steve Ritchie.
+- Premium/LE revives the earlier Black Knight games' upper-playfield concept with
+  a full-size third flipper.
+- Stern produced 600 Limited Editions.
+- Scott Ian of Anthrax composed and performed major portions of the soundtrack, with
+  Brendon Small also involved.
+- The King's Ransom recreates Black Knight 2000's audiovisual style as a 60-second,
+  3-ball multiball with unlimited ball save.
+summary: Control with backhands → stack Battle + Triple Knights → use POWER → build
+  Supers → start KNIGHT → Magna-Save cash-out

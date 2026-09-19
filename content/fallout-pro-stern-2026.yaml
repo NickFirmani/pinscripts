@@ -1,0 +1,141 @@
+id: fallout-pro-stern-2026
+name: Fallout Pro
+metadata:
+  manufacturer: Stern
+  year: 2026
+  designer: Keith Elwin
+  artist: Sam Gilbey and Jeremy Packer / Zombie Yeti
+  production: Pro; materially different from Premium/LE, with no Magna-Flip Vault
+    lower playfield, Fat Man cannon, moving Vault door, or Deathclaw kickback coil
+  era: SPIKE 3
+  multiball: Deathclaw Multiball and The Kings Quest multiball
+rules_basis:
+  kind: code
+  version: v0.80
+  release_date: '2026-09-04'
+hook: Qualify a Quest but delay starting it until Deathclaw Multiball is close. Bank
+  Fusion Core charge, start the Quest, activate Power Armor for 2x playfield, then
+  start Deathclaw. During multiball, pursue Radroach add-a-ball and the Deathclaw
+  Super.
+rules:
+  primary: Food and water shots build HP; 50 HP qualifies a Quest at the upper-right
+    scoop, and additional HP provides more Quest time. The strongest established early
+    route is to combine a running Quest with Power Armor and Deathclaw Multiball.
+  bullets:
+  - Start Deathclaw Multiball by damaging both legs twice and then hitting Deathclaw
+    again.
+  - The first Deathclaw MB gives 20 seconds to build jackpot value, followed by 12
+    seconds to bash Deathclaw and cash it. Four bashes qualify the first Super at
+    the side loop.
+  - Fusion Cores are bought at Sundries or charged through pop-bumper targets. Long-press
+    Action to activate Power Armor for 2x playfield while charge remains.
+  - Weapon upgrades use junk and improve scoring potential while also adding Bonus
+    X; exact multiplier progression is not fully documented in v0.80.
+  - Launch code remains incomplete, so undocumented Quests, side quests, S.P.E.C.I.A.L.
+    details, and wizard modes are not treated as established rules.
+watch:
+- title: Power Armor ready
+  text: Fusion Core charge represents stored 2x playfield. A player may deliberately
+    save it until a Quest and Deathclaw Multiball are ready to overlap.
+- title: Quest qualified
+  text: At 50 HP the Quest scoop is ready. Continued food and water shots can still
+    be intentional because higher HP gives the player more Quest time.
+- title: Deathclaw nearly ready
+  text: Once both legs have been damaged twice, one more Deathclaw hit starts Multiball.
+- title: Radroach targets
+  text: During multiball, green Radroach targets are strategically important because
+    completing them can add a ball.
+skill_shots:
+- name: Cap Stash Skill Shot
+  how: Time the plunge so the ball crosses the flashing right inlane.
+  value: Scores 3M plus 1M per previous successful skill shot, adds 3 seconds of ball
+    save, and activates the Nuka-Cola Cap-Stash opportunity.
+features:
+- type: ball-save
+  name: Stimpak Outlane Save
+  text: Collect white-lit Stimpak shots to relight the outlane save. With sufficient
+    Perception, the right flipper can move the save between outlanes.
+- type: player-control
+  name: Power Armor
+  text: Long-press Action to spend Fusion Core charge on 2x playfield scoring. It
+    can be switched off early, but doing so consumes charge.
+- type: player-control
+  name: Companion Action
+  text: Short-press Action to use the active companion, whose utility can include
+    spotting Deathclaw progress or assisting other objectives.
+- type: other
+  name: Sundries
+  text: Spend bottle caps on items or attempt theft. A failed theft attempt requires
+    a timed right-ramp escape or the player loses caps and loot.
+- type: extra-ball
+  name: Extra Ball
+  text: Four Radroach targets can qualify Extra Ball, which is then collected at the
+    left Radroach target.
+shots:
+- name: Pip-Boy / Left Ramp
+  value: Advances companions, progression, and Pro substitute rules for mechanisms
+    absent from the Premium/LE.
+  risk: Medium-High
+  diagram: 1
+- name: Nuka-Cola Cap Spinner
+  value: Builds bottle caps and Cap-Stash opportunities, supplying currency for Sundries.
+  risk: Medium-High
+  diagram: 2
+- name: Center Jump / Vault Target
+  value: Advances Quest and Vault-related objectives on the Pro's main playfield.
+  risk: High
+  diagram: 3
+- name: Deathclaw
+  value: Qualifies and starts Deathclaw Multiball, then becomes its timed jackpot
+    cash-out target.
+  risk: High
+  diagram: 4
+- name: Quest / Sundries Scoop
+  value: Starts qualified Quests and provides access to Sundries, converting accumulated
+    HP or caps into scoring opportunities and utility.
+  risk: Medium-High
+  diagram: 5
+- name: Wasteland / Right Ramp
+  value: Advances Quests and general scoring and becomes mandatory during a Sundries
+    theft escape.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take a qualified Quest and Deathclaw Multiball without exhausting every possible
+    upgrade. Use Power Armor for the known high-value overlap, preserve Stimpak protection,
+    and avoid unnecessary Sundries theft.
+  behind: Build a high-HP Quest, save Fusion Core charge, activate Power Armor, then
+    start Deathclaw Multiball. Aggressively pursue Radroach add-a-ball and the Deathclaw
+    Super; weapon development can add further scoring leverage if time permits.
+  key_decision: Spend Fusion Core charge now or save it for a stronger stack? Power
+    Armor is finite, so ordinary 2x scoring can consume the multiplier window that
+    would otherwise overlap a Quest and Deathclaw Multiball.
+danger:
+- The left-side pop area can turn marginal catches into rapid left-outlane drains.
+- Direct Deathclaw bashes surrender control and can ricochet toward the center; the
+  Pro lacks the Premium/LE Deathclaw kickback coil.
+- The center Vault target can produce dangerous straight-line rebounds after partial
+  or missed shots.
+- The inverted upper flipper creates unusual redirect geometry and less predictable
+  lower-playfield returns.
+- Failing the timed right-ramp escape after a Sundries theft attempt loses accumulated
+  caps and loot.
+commentary:
+- They've got fifty HP—Quest is ready, but more health buys them more mode time.
+- They're holding Power Armor; that Fusion Core is basically stored two-times playfield.
+- Deathclaw is one shot from multiball—this is where they want the Quest already running.
+- That Radroach target is add-a-ball progress, so it suddenly matters a lot in multiball.
+- Short press is the companion; long press puts on Power Armor.
+- They're stealing from Sundries—now the right ramp is mandatory or they lose the
+  whole inventory.
+trivia:
+- Fallout is a Keith Elwin design combining material from the Prime Video series and
+  Bethesda's Fallout games.
+- Its die-cast Pip-Boy contains a working playfield LCD built with The Wand Company.
+- The Nuka-Cola target is a vertically moving spinner.
+- All editions use a Mutated inverted upper flipper, a layout device Stern says had
+  not appeared in pinball for more than 75 years.
+- 'The game includes assets from the television series and Fallout 3, Fallout 4, and
+  Fallout: New Vegas.'
+summary: Build HP → qualify Quest → ready Deathclaw → bank Fusion Core → start Quest
+  → activate 2x → start Deathclaw MB

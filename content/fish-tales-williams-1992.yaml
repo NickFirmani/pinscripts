@@ -1,0 +1,151 @@
+id: fish-tales-williams-1992
+name: Fish Tales
+metadata:
+  manufacturer: Williams
+  year: 1992
+  designer: Mark Ritchie
+  artist: Pat McMahon
+  production: 13,640 machines
+  era: WPC Fliptronics II
+  multiball: Caster's Club 3-ball Multiball
+rules_basis:
+  kind: rom
+  version: L-5
+  release_date: null
+hook: 'For safer scoring, alternate lit boat ramps to qualify Monster Fish, then cash
+  it at the left spinner. For ceiling, lock three balls at Caster''s Club: collect
+  20M, 30M, and 40M jackpots, then the captive ball becomes a repeatable 100M Super
+  Jackpot.'
+rules:
+  primary: Only lit ramp shots advance the six fish needed for Monster Fish, encouraging
+    alternating ramps. Monster Fish is collected at the left spinner as a hurry-up.
+    The higher-risk route is Caster's Club Multiball, whose persistent jackpot progression
+    eventually unlocks repeatable 100M captive-ball Supers.
+  bullets:
+  - 'During Multiball, shoot Caster''s Club to light the eject-hole jackpot: 20M,
+    then 30M, then 40M.'
+  - After all three jackpots, the captive ball scores a repeatable 100M Super Jackpot
+    for the rest of that multiball.
+  - Jackpot stage persists between multiballs. Completing a full sequence increases
+    later jackpot multipliers, eventually up to 6x.
+  - Rock the Boat can run with Multiball, making every boat ramp or captive-ball shot
+    worth 10M in addition to other scoring.
+  - Spell L-I-E to advance Bonus X up to 7x. Hold Bonus preserves bonus and multiplier
+    into the next ball.
+watch:
+- title: Monster Fish lit
+  text: Six lit ramp shots are complete. Expect an immediate left-spinner attempt
+    because the Monster Fish hurry-up is already counting down.
+- title: Jackpot progression
+  text: The tackle-box lamps show 20M, 30M, and 40M Multiball progress. Once all three
+    are banked, the captive ball becomes the repeatable Super Jackpot.
+- title: Captive-ball ladder
+  text: Long Cast and captive-ball progress builds toward major awards including Rock
+    the Boat and Instant Multiball.
+- title: Auto Cast flashing
+  text: Ball-save protection is active, so the player may intentionally take a normally
+    dangerous shot while a drain is protected.
+skill_shots:
+- name: Fast Cast
+  how: After a normal launch, quickly shoot Caster's Club. It can also be made after
+    a Long Cast and certain lock launches, but not after an Auto Cast save.
+  value: Starts at 2M and increases by 1M per success to 10M while also attacking
+    a strategically important shot.
+features:
+- type: ball-save
+  name: Auto Cast
+  text: Flashing Auto Cast indicates ball-save protection. It activates at ball start
+    and Multiball start; protection duration and outlane behavior are adjustment-sensitive.
+- type: video-mode
+  name: Video Mode
+  text: Use the fishing-rod CAST button to fire torpedoes at boats. A perfect 20-for-20
+    run earns a 20M completion bonus.
+- type: extra-ball
+  name: Extra Ball / Big Score
+  text: Extra Ball opportunities can come from captive-ball progress, Fish Finder,
+    or Video Mode. With Extra Balls disabled, use the 20M Big Score substitute.
+- type: mystery-award
+  name: Fish Finder
+  text: The right inlane lights a timed left-side award that can provide Extra Ball
+    Lit, Super Jets, Instant Multiball, captive-ball progress, Bonus X, or points.
+- type: player-control
+  name: Lane Change / CAST
+  text: Flippers lane-change L-I-E. The cabinet CAST button operates the torpedo control
+    during Video Mode.
+shots:
+- name: Left Orbit / Spinner
+  value: Collects Monster Fish, Fish Finder, and lit Multiball jackpots, making it
+    a major cash-out shot.
+  risk: Medium-High
+  diagram: 1
+- name: Port Ramp
+  value: Alternates with the opposite ramp to build Monster Fish and scores 10M during
+    Rock the Boat.
+  risk: Medium
+  diagram: 2
+- name: Captive Ball
+  value: Advances its award ladder and becomes the repeatable 100M Super Jackpot after
+    all three Multiball jackpots are complete.
+  risk: High
+  diagram: 3
+- name: Starboard Ramp
+  value: Alternates with Port Ramp for Monster Fish progress and scores 10M during
+    Rock the Boat.
+  risk: Medium
+  diagram: 4
+- name: Caster's Club
+  value: Handles ball locks and lights Multiball jackpots. Reaching its Multiball
+    sequence unlocks the game's enormous captive-ball Super Jackpot.
+  risk: High
+  diagram: 5
+- name: Long Cast
+  value: Advances the captive-ball award ladder toward major features such as Rock
+    the Boat and Instant Multiball.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor alternating ramps and Monster Fish, especially on a difficult setup.
+    The 20M-to-50M hurry-up offers substantial scoring without forcing the narrow
+    Caster's Club shot or risking a Multiball that produces no jackpot.
+  behind: Commit to Caster's Club Multiball. Once 20M, 30M, and 40M jackpots are banked,
+    the captive ball becomes a repeatable 100M Super, with later sequences capable
+    of higher multipliers. Stack Rock the Boat when available.
+  key_decision: Take reliable Monster Fish scoring or build Multiball? Ramps offer
+    controlled medium-value returns; Caster's Club is harder and can yield nothing,
+    but reaching repeatable Super Jackpots can swing a match in only a few shots.
+danger:
+- Caster's Club is narrow and difficult; misses and drop-target rebounds can quickly
+  surrender control.
+- The captive ball can produce a powerful center rebound and is substantially safer
+  to attack during Multiball or ball save.
+- Deliberately attacking the Stringer targets can produce drains; incidental progress
+  is usually preferable.
+- Upper L-I-E and pop-bumper play gives up controlled possession and can produce fast
+  exits.
+- Fish Tales uses short lightning flippers, creating a wider center gap and making
+  marginal saves less forgiving.
+commentary:
+- Six fish are done—Monster Fish is lit, and that value is already counting down.
+- They've banked the first two Multiball jackpots; one more gets them to the captive-ball
+  Super.
+- 'Now the whole game changes: that captive ball is 100 million every hit for the
+  rest of Multiball.'
+- Jackpot progress carries, so even though that Multiball ended, the setup wasn't
+  wasted.
+- Rock the Boat is stacked—both ramps are now ten million on top of the Multiball
+  scoring.
+- 'They''re ignoring Caster''s Club and staying on Monster Fish: lower ceiling, but
+  much less chance of coming away empty.'
+trivia:
+- Fish Tales sold 13,640 units, making it one of Williams' highest-production DMD-era
+  games.
+- The physical fishing reel is the three-ball lock mechanism, carrying balls across
+  the top of the game before releasing them.
+- The cabinet launcher resembles a fishing-rod handle, and its button doubles as the
+  Video Mode firing control.
+- 'Mark Ritchie later reused a Fish Tales reference as the Fish of Tales jackpot in
+  Indiana Jones: The Pinball Adventure.'
+- The animated fish topper's moving tail is one of the game's signature mechanical
+  presentation features.
+summary: Alternate ramps → light Monster Fish → cash spinner → build Caster's Club
+  MB → collect 3 jackpots → repeat 100M Supers

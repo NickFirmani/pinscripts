@@ -1,0 +1,25 @@
+game_id: baywatch-sega-1995
+image_width: 641
+image_height: 1178
+image_sha256: fd11004a4b27ec2015b145ecc4c25f09ad18a895f824798cbd22d28f300983ac
+shots_sha256: b2c757263272c2ab89cf5c309a8fbadbea66146353386c9ba87376fad9e290da
+coordinates:
+- diagram: 1
+  x: 178
+  y: 313
+- diagram: 2
+  x: 100
+  y: 513
+- diagram: 3
+  x: 253
+  y: 204
+- diagram: 4
+  x: 311
+  y: 207
+- diagram: 5
+  x: 473
+  y: 439
+- diagram: 6
+  x: 531
+  y: 478
+skipped_diagrams: []

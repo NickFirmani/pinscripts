@@ -1,0 +1,25 @@
+game_id: little-chief-williams-1975
+image_width: 635
+image_height: 1166
+image_sha256: 1a0881358307540a55e5ed6ebd16aa466ba25f6d9dce9dda393836036cb24e6b
+shots_sha256: ee6946b95396cec68650add6ef566ceaae7355df2012e4bbff6325e774059a88
+coordinates:
+- diagram: 1
+  x: 41
+  y: 365
+- diagram: 2
+  x: 243
+  y: 190
+- diagram: 3
+  x: 316
+  y: 63
+- diagram: 4
+  x: 309
+  y: 528
+- diagram: 5
+  x: 568
+  y: 275
+- diagram: 6
+  x: 612
+  y: 581
+skipped_diagrams: []

@@ -1,0 +1,131 @@
+id: cyclone-williams-1988
+name: Cyclone
+metadata:
+  manufacturer: Williams
+  year: 1988
+  designer: Barry Oursler
+  artist: Python Anghelo
+  production: Approximately 9,408 machines
+  era: System 11B
+  multiball: None
+rules_basis:
+  kind: rom
+  version: L-5
+  release_date: null
+hook: Hit the 100K skill shot, then grind five Comet ramps to reach the repeatable
+  Million. Completing 1-2-3 starts 20 seconds of Double Score, turning that Million
+  into 2M. Take Cyclone when its carried Gate Jackpot is attractive, but its timed
+  three-ramp sequence demands more control.
+rules:
+  primary: 'Comet is the primary repeatable scoring route: five qualifying center-ramp
+    shots reach the timed Million on factory settings. After collection or timeout,
+    complete the left Cat/Ball Toss targets to relight it. Cyclone offers a separate
+    progressive jackpot reached through three timed right-ramp shots.'
+  bullets:
+  - Cyclone scores 50K, then 100K, then the Gate Jackpot. The progressive starts at
+    500K and can carry across balls and games until collected.
+  - Completing 1-2-3 starts 20 seconds of Double Score. Completing them again while
+    active adds another 20 seconds.
+  - Double Score applies to Comet Million, Ferris Wheel, playfield scoring, and end-of-ball
+    bonus, but not the Cyclone Gate Jackpot.
+  - A lit Boomerang advances Bonus X. Factory settings retain Bonus Multiplier progress
+    between balls, making early Bonus X especially useful.
+  - Factory settings remember the lit state of Comet and Cyclone across balls.
+watch:
+- title: Comet Million lit
+  text: The next successful Comet ramp is the primary repeatable cash-out. With Double
+    Score active, the Million becomes 2M.
+- title: Double Score running
+  text: Completing 1-2-3 starts a 20-second 2x window. Another completion while active
+    adds 20 more seconds.
+- title: Cyclone lit
+  text: Three timed right-ramp shots lead to the carried Gate Jackpot. Its displayed
+    value may be substantially larger than the 500K starting value.
+- title: Advance X lit
+  text: A Boomerang collect advances Bonus X, which normally persists between balls
+    and can become especially valuable with Double Score.
+skill_shots:
+- name: Five-Hole Skill Shot
+  how: Soft-plunge into one of the five shooter-lane holes; target the center 100K
+    hole.
+  value: The center awards 100K multiplied by plunge count, up to 5x. Later plunges
+    can therefore score as much as 500K.
+features:
+- type: mystery-award
+  name: Mystery Wheel
+  text: Knock down the Spook House target and enter the scoop to spin the mechanical
+    backglass wheel for a random award from Zilch through 200K, Extra Ball, or Special.
+- type: extra-ball
+  name: Extra Ball
+  text: Repeated Duck-bank completions can light Extra Ball on alternating outlanes;
+    Mystery can also award one. Qualification is adjustment-sensitive.
+shots:
+- name: Boomerang
+  value: Advances Bonus X when lit, creating persistent bonus leverage that is especially
+    valuable on early balls.
+  risk: High
+  diagram: 1
+- name: Ferris Wheel
+  value: Collects accumulated Ferris Bonus and benefits from Double Score, though
+    it is usually secondary to ramp scoring.
+  risk: Medium
+  diagram: 2
+- name: Cat / Ball Toss Targets
+  value: Completing the left target bank relights Comet after its Million is collected
+    or expires.
+  risk: High
+  diagram: 3
+- name: Comet Ramp
+  value: Builds through 20K, 40K, 60K, 80K, 100K, then the Million. The Million scores
+    2M during Double Score.
+  risk: Medium
+  diagram: 4
+- name: Cyclone Ramp
+  value: Three timed makes score 50K, 100K, then the carried Gate Jackpot, starting
+    at 500K.
+  risk: Medium-High
+  diagram: 5
+- name: Duck / Shooting Gallery Targets
+  value: Relights Cyclone and advances Extra Ball progress.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Stay on repeatable Comet Millions, take a lit Cyclone opportunity when convenient,
+    and avoid deliberately shooting Spook House. The ramp game is comparatively controllable
+    and avoids relying on random Mystery awards.
+  behind: 'Create higher-ceiling combinations: pair Double Score with a Comet Million
+    for 2M, chase a large carried Gate Jackpot, or finish a strong ball with Double
+    Score active to double the entire end-of-ball bonus.'
+  key_decision: Keep grinding the safer, repeatable Comet or divert to Cyclone? The
+    progressive can be much larger, but its timer and right-side return force quicker
+    transfers before the jackpot opportunity expires.
+danger:
+- Spook House combines relatively low expected scoring with an uncontrolled Boomerang
+  kickout.
+- The Boomerang kickout can feed either flipper or occasionally send the ball straight
+  down the middle.
+- Duck targets sit directly above the right outlane, making Cyclone relights dangerous.
+- Cyclone returns toward the right side while the repeated ramp is naturally a left-flipper
+  shot, forcing a timed transfer.
+- Weak Comet attempts and top-lane play can surrender control to the central pop bumpers.
+commentary:
+- Comet is at Million—and with Double Score running, that's a two-million shot.
+- Three Cyclone ramps gets the Gate Jackpot; the hard part is transferring back to
+  the left flipper before the timer dies.
+- That 1-2-3 completion starts 20 seconds of double scoring, and another completion
+  actually adds more time.
+- The Cyclone jackpot is the exception—it does not get doubled.
+- They're building Bonus X early because the multiplier normally carries from ball
+  to ball.
+- Spook House is mostly variance—strong tournament play usually stays focused on the
+  ramps.
+trivia:
+- 'Cyclone is the middle game in Barry Oursler''s carnival trilogy: Comet, Cyclone,
+  and Hurricane.'
+- Its working Ferris wheel physically carries the ball before returning it to the
+  left side.
+- Williams promoted the rotating backglass Mystery Wheel as an industry first.
+- Cyclone has no multiball; all competitive scoring is single-ball play.
+- Approximately 9,408 machines were produced.
+summary: Hit 100K skill shot → grind Comet → light Million → add Double Score → cash
+  2M → take valuable Cyclone jackpots

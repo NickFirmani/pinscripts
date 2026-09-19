@@ -1,0 +1,134 @@
+id: rollergames-williams-1990
+name: Rollergames
+metadata:
+  manufacturer: Williams
+  year: 1990
+  designer: Steve Ritchie
+  artist: Pat McMahon and Linda Deal
+  production: Approximately 5,000
+  era: System 11C solid-state
+  multiball: 3-ball Multiball
+rules_basis:
+  kind: rom
+  version: L-2 / LA-2
+  release_date: null
+hook: Complete WAR to qualify locks, ideally all three before locking, then shoot
+  The Wall to start Multiball. During Multiball, keep shooting The Wall for 1.5M Jackpots.
+  Sudden Death makes every Wall shot worth 1M and resets its timer; WILLIAMS starts
+  a 4M-to-1M Pit hurry-up.
+rules:
+  primary: Complete WAR to qualify locks, then shoot The Wall to physically lock three
+    balls and start Multiball. In Multiball, The Wall scores repeatable 1.5M Jackpots
+    while at least two balls remain. Contest Mode fixes the Jackpot at 1.5M, makes
+    WILLIAMS progress player-specific and disables saved locks between games.
+  bullets:
+  - Factory physical locks are shared between players, so qualifying all three locks
+    before taking them reduces exposure to lock theft.
+  - Sudden Death can start pseudorandomly during single-ball play; each Wall shot
+    scores 1M and resets its timer.
+  - Completing WILLIAMS starts Scoring Cycle at 4M counting down to 1M; collect it
+    at The Pit.
+  - The Deep Freeze magnet can hold the Pit feed for a controlled upper-flipper Wall
+    attempt; wait for the Flip call before flipping.
+  - There is no Multiball restart.
+watch:
+- title: LOCK lit at The Wall
+  text: WAR progress has qualified a lock. Watch whether the player takes it immediately
+    or qualifies additional locks first.
+- title: Don't flip!
+  text: The Deep Freeze magnet has caught the ball. Wait through the countdown; the
+    Flip call sets up a controlled upper-flipper attempt at The Wall.
+- title: Sudden Death
+  text: 'The Wall immediately becomes the priority: every successful Wall shot scores
+    1M and resets the timer.'
+- title: Go for the Pit!
+  text: WILLIAMS is complete and Scoring Cycle is counting down from 4M toward 1M.
+    The Pit collects it.
+skill_shots: []
+features:
+- type: mystery-award
+  name: Roller Motion
+  text: Semi-random Pit award that can give Instant Lock, WILLIAMS progress, team
+    advance, Bonus X, Extra Ball, Special, points or little value.
+- type: ball-save
+  name: Atomic Whip kickback
+  text: Left-outlane save relit by completing ABC and available through some other
+    awards.
+- type: extra-ball
+  name: Jetway teams
+  text: Lit orbit and spinner shots collect six teams; completing all six lights Extra
+    Ball at the center turnaround lane.
+- type: extra-ball
+  name: Power Plays
+  text: Wall shots without another major Wall award lit build toward Extra Ball and
+    Special thresholds.
+- type: other
+  name: Bonus X
+  text: JET top lanes advance the bonus multiplier up to 7x; normal bonus and multiplier
+    reset each ball.
+shots:
+- name: Left Jetway
+  value: Collects teams and starts the signature orbit-to-upper-flipper Wall combo.
+  risk: Medium
+  diagram: 1
+- name: SKATE targets
+  value: Build WILLIAMS toward Scoring Cycle and restore the Deep Freeze magnet.
+  risk: Medium-High
+  diagram: 2
+- name: The Pit
+  value: Starts the magnet-controlled Wall setup, gives Roller Motion awards and collects
+    the 4M-to-1M Scoring Cycle.
+  risk: Medium
+  diagram: 3
+- name: WAR targets
+  value: Complete WAR to qualify locks before converting them into physical locks
+    at The Wall.
+  risk: Medium-High
+  diagram: 4
+- name: The Wall
+  value: 'Main scoring shot: takes locks, starts Multiball, scores repeatable Jackpots,
+    collects Sudden Death millions and advances Power Plays.'
+  risk: Medium-High
+  diagram: 5
+- name: ABC targets
+  value: Complete ABC to restore the Atomic Whip left-outlane kickback.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Qualify locks before taking them, then favor Multiball and controlled Pit-to-magnet
+    Wall feeds over deliberately hunting random Roller Motion. If Sudden Death appears,
+    capitalize on the available Wall millions.
+  behind: Use Multiball for repeatable 1.5M Wall Jackpots while two balls remain.
+    Sudden Death adds 1M Wall opportunities, while WILLIAMS offers a separate Scoring
+    Cycle worth up to 4M at The Pit.
+  key_decision: Lock now or qualify more locks first? Factory locks are physically
+    shared, so qualifying all three first minimizes valuable setup left available
+    for opponents to use.
+danger:
+- Multiball release sends all three balls toward the right inlane and right flipper
+  together, making immediate control difficult.
+- Weak Wall attempts can climb the steep ramp, stall and roll back unpredictably.
+- The central pops can release the ball directly down the middle beside WAR.
+- ABC progress sits beside the unprotected right outlane.
+- Flipping before the magnet's Flip call releases the ball early and sacrifices the
+  controlled Wall setup.
+commentary:
+- WAR is complete—that qualifies another lock at The Wall.
+- Don't flip yet; the magnet is setting up the upper flipper for the Wall.
+- Three locks starts Multiball, and now The Wall is the repeatable Jackpot.
+- It's Sudden Death—every Wall shot is a million and resets the clock.
+- WILLIAMS is complete; that's four million counting down, and The Pit is the cashout.
+- Those locks are physically shared on factory code, so qualifying all three before
+  locking reduces the risk of leaving setup for an opponent.
+trivia:
+- Rollergames was based on the short-lived 1989–90 syndicated RollerGames television
+  series, which mixed roller derby with pro-wrestling-style presentation.
+- The television show featured a Wall of Death and an alligator pit during Sudden
+  Death, concepts referenced by the pinball game.
+- The production game replaced prototype SKATE drop targets with standups, leaving
+  some original instruction-card language inaccurate.
+- Its signature Steve Ritchie flow is left orbit to upper-right flipper to the steep
+  Wall ramp.
+- Williams produced approximately 5,000 games.
+summary: Qualify WAR locks → lock at The Wall → start Multiball → repeat 1.5M Wall
+  Jackpots → exploit Sudden Death → cash WILLIAMS at The Pit

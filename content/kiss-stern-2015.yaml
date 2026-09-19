@@ -1,0 +1,144 @@
+id: kiss-stern-2015
+name: KISS (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2015
+  designer: John Borg
+  artist: Kevin O'Connor
+  production: Premium and LE are gameplay-equivalent; LE limited to 600 machines
+  era: SPIKE / DMD
+  multiball: Love Gun, Demon, Heaven's on Fire, KISS Army, and Rock City
+rules_basis:
+  kind: code
+  version: v1.41.0
+  release_date: '2018-12-11'
+hook: Finish an easy song quickly for 2x playfield for the rest of the ball, immediately
+  start another at Backstage Pass, then bring that song into multiball. Same-ball
+  song completions build 2x to 3x to 5x to 10x. Demon Multiball can add another timed
+  2x or 3x, while instruments build toward Heaven's on Fire.
+rules:
+  primary: 'Songs are untimed and their progress carries between balls, but the major
+    reward is completing them on one ball: successive same-ball completions award
+    2x, 3x, 5x, then 10x playfield for the remainder of that ball. Start the next
+    song before entering multiball because another song normally cannot be selected
+    during multiball.'
+  bullets:
+  - Completing and collecting both KISS and ARMY hurry-ups lights the major shots;
+    the next major shot made becomes 2x for the rest of the ball.
+  - Demon Multiball has two jackpots at each of six main shots, followed by a roving
+    Double Jackpot and Double Super at Gene.
+  - During Demon Multiball, virtual Demon locks can provide timed 2x then 3x Demon
+    playfield scoring. This adds to song X, so 10x song plus 3x Demon becomes 13x
+    playfield.
+  - Love Gun Multiball qualifies through STAR. Repeat each jackpot shot immediately
+    for its Double, then clear the set for the right-ramp Triple and 50M base Super
+    at STAR.
+  - 'Heaven''s on Fire requires the center grid: KISS, ARMY, four bumpers and four
+    instruments. Grid progress carries between balls, with instruments usually requiring
+    deliberate right-ramp work.'
+watch:
+- title: Playfield multiplier
+  text: 2x, 3x, 5x or 10x indicates how much same-ball song leverage is active. At
+    the upper levels, otherwise ordinary shots can become decisive.
+- title: Love Gun ready
+  text: Purple Love Gun or completed STAR progress means multiball is available. If
+    a song is close to completion, expect the player to delay multiball until the
+    multiplier is secured.
+- title: White Shot-X arrows
+  text: The next major shot made becomes permanently doubled for the remainder of
+    the ball.
+- title: Center grid
+  text: Missing instrument lights on the Heaven's on Fire grid explain repeated attempts
+    at the difficult right ramp.
+skill_shots: []
+features:
+- type: ball-save
+  name: Front Row
+  text: Repeated KISS completions can light a virtual save on the left outlane; qualification
+    becomes harder after each use.
+- type: mystery-award
+  name: Backstage Pass
+  text: Completing KISS and ARMY lights the scoop. Single-ball awards include Super
+    features, Shot X, Bonus X and Hold Bonus, with organized award behavior in competition
+    play.
+- type: other
+  name: Multiball Add-a-Ball
+  text: During multiball, Backstage Pass becomes add-a-ball after the ball saver expires.
+    If collected while the saver is active, it scores 2M and relights.
+- type: extra-ball
+  name: Extra Ball
+  text: Current code can qualify Extra Ball through City Combos or instrument progress;
+    treatment is adjustment-dependent.
+shots:
+- name: STAR / Starchild
+  value: Advances Love Gun Multiball and appears in song progression; Premium/LE uses
+    the Starchild drop target and levitating-ball mechanism.
+  risk: High
+  diagram: 1
+- name: Backstage Pass Scoop
+  value: Starts the next song after a completion and collects Mystery, add-a-ball,
+    and qualified wizard features.
+  risk: Medium-High
+  diagram: 2
+- name: Center Ramp
+  value: Advances songs and combos and provides a repeatable route for building mode
+    and multiplier scoring.
+  risk: Medium-High
+  diagram: 3
+- name: Demon / Gene
+  value: Handles Demon progression and virtual locks, then provides the additional
+    timed Demon playfield multiplier during Multiball.
+  risk: High
+  diagram: 4
+- name: Right Ramp
+  value: Starts Love Gun progression and collects instruments needed for the Heaven's
+    on Fire grid.
+  risk: High
+  diagram: 5
+- name: KISS / ARMY Banks
+  value: Qualify hurry-ups, Backstage Pass and the ball-long Shot X multiplier while
+    contributing to Heaven's on Fire.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Prioritize an easy song completion for stable 2x or 3x playfield, start the
+    next song before taking an accessible multiball, and avoid unnecessary KISS or
+    ARMY target risk merely to build another multiplier.
+  behind: Extend the ball and finish multiple songs for 5x or 10x, start another song
+    before multiball, then add Demon 2x or 3x scoring or pursue the deeper Love Gun
+    Super. Heaven's on Fire under a large playfield multiplier provides another high-value
+    route.
+  key_decision: Start the ready multiball now or risk finishing and starting another
+    song first? Another completion can transform the entire multiball through a larger
+    ball-long multiplier, but draining during setup loses that scoring window.
+danger:
+- Strong KISS and ARMY bank hits can arc toward the opposite outlane.
+- The Demon eject can return nearly straight down the middle; multiball ejects do
+  not receive the normal single-ball compensating save by default.
+- The difficult right ramp is required for instruments and Love Gun progression, so
+  repeated misses create substantial exposure.
+- The Premium/LE Starchild area adds chaotic drop-target and captive-ball action.
+- Weak center-ramp attempts can reject quickly back toward the middle.
+commentary:
+- The song is more important than the points—finishing it turns on two-times for the
+  rest of the ball.
+- They've finished one song and gone straight to Backstage Pass; they want another
+  mode before multiball.
+- Both hurry-ups are collected, so the next major shot they make becomes two-times
+  for this ball.
+- 'That Demon lock is doing two jobs: removing a ball from play and turning on another
+  scoring multiplier.'
+- Love Gun is ready, but they're delaying it to finish the song first.
+- They keep shooting the right ramp because instruments are the real bottleneck to
+  Heaven's on Fire.
+trivia:
+- KISS was one of Stern's earliest games on the SPIKE platform.
+- Kevin O'Connor also worked on Bally's original 1979 KISS, giving the two games a
+  visual connection.
+- Paul Stanley and Gene Simmons recorded custom speech for the machine.
+- The four pop bumpers and central progress grid deliberately echo the classic Bally
+  KISS.
+- The Limited Edition was restricted to 600 machines and shares its substantive gameplay
+  with the Premium.
+summary: Finish song → earn ball-long X → start next song → enter multiball → add
+  Demon X → pursue Heaven's on Fire

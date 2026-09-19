@@ -1,0 +1,25 @@
+game_id: black-knight-sword-of-rage-prem-le-stern-2019
+image_width: 2822
+image_height: 5188
+image_sha256: 9c74c01b3150f6d3266ae4032939c53aa5bec235128e0c6c1387c92ecc46754c
+shots_sha256: 024002295fc1287210e57284320fa34a65fe5f0411698d90ea220090e8c1ff46
+coordinates:
+- diagram: 1
+  x: 712
+  y: 1743
+- diagram: 2
+  x: 1157
+  y: 2046
+- diagram: 3
+  x: 1500
+  y: 2361
+- diagram: 4
+  x: 1948
+  y: 2192
+- diagram: 5
+  x: 2473
+  y: 3296
+- diagram: 6
+  x: 1035
+  y: 744
+skipped_diagrams: []

@@ -1,0 +1,128 @@
+id: little-chief-williams-1975
+name: Little Chief
+metadata:
+  manufacturer: Williams
+  year: 1975
+  designer: Steve Kordek
+  artist: Christian Marche
+  production: Approximately 6,300
+  era: Electro-mechanical
+  multiball: None
+rules_basis:
+  kind: fixed
+  version: null
+  release_date: null
+hook: Build bonus up top through A and B, which opens the collect gate and lights
+  the center rollover. Get Double from the center rollover or riskier saucer, then
+  shoot the right-side gate to collect the bonus without draining and start the cycle
+  again.
+rules:
+  primary: Build the base bonus from 1,000 toward 10,000. Complete A+B to open the
+    collect gate and light the top-center rollover. Make the lit center rollover or
+    center saucer for Double Bonus, then shoot the open right-side gate to collect
+    the accumulated bonus and return to the shooter lane.
+  bullets:
+  - Collecting through the gate resets bonus to 1,000, resets A/B and removes Double,
+    allowing multiple bonus cycles on one ball.
+  - A/B, bonus, Double and Eject Hole progress reset between balls, so long balls
+    are especially valuable.
+  - 'Advance Bonus is adjustment-sensitive: under conservative settings A and B qualify
+    their respective bonus targets; under liberal settings both targets are always
+    lit.'
+  - Center rollover or saucer advances the adjustment-sensitive Eject Hole progression.
+  - Extra Ball and Special awards are disabled here and have no value.
+watch:
+- title: A + B complete
+  text: The right-side collect gate opens and the top-center rollover lights. The
+    scoring loop is now set up for Double.
+- title: DOUBLE lit
+  text: 'Watch the bonus total: the central decision is whether to cash it now or
+    keep building toward the 10,000 base maximum.'
+- title: Open collect gate
+  text: This is not an outlane. The player deliberately shoots through it to collect
+    bonus and return to the shooter lane.
+- title: Bottom Special lane lit
+  text: The Eject Hole progression has reached an award threshold, but Extra Ball
+    and Special awards have no value here.
+skill_shots:
+- name: A-lane Skill Shot
+  how: Plunge for the A top lane.
+  value: Advances A toward opening the collect gate. Under conservative Advance Bonus
+    settings, A also lights the useful upper-right bonus target; under liberal settings
+    both bonus targets are always lit.
+features:
+- type: extra-ball
+  name: Eject Hole progression
+  text: Center rollover or saucer advances an adjustment-sensitive progression that
+    can qualify alternating bottom Extra Ball/Special lanes. Those awards have no
+    value here.
+shots:
+- name: Left orbit / up top
+  value: Default right-flipper route for rebuilding A/B and bonus and accessing the
+    center rollover.
+  risk: Medium
+  diagram: 1
+- name: A top lane
+  value: Preferred plunge lane; advances A and can qualify the upper-right bonus target
+    depending on adjustment.
+  risk: Low
+  diagram: 2
+- name: Top-center rollover
+  value: Turns on Double Bonus after A+B and advances the Eject Hole progression;
+    safer Double route than the saucer.
+  risk: Medium
+  diagram: 3
+- name: Center saucer
+  value: Directly turns on Double Bonus and advances the Eject Hole progression.
+  risk: High
+  diagram: 4
+- name: Upper-right bonus target
+  value: Advances bonus and is useful from the left flipper while the bonus is still
+    low.
+  risk: Medium
+  diagram: 5
+- name: Collect Bonus gate
+  value: Cashes the accumulated bonus without ending the ball, then relaunches and
+    resets the scoring cycle.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Cash a strong doubled bonus somewhat earlier rather than insisting on reaching
+    the full 10,000 base bonus. The gate locks in the value while keeping the ball
+    alive.
+  behind: Push the base bonus toward 10,000, double it, collect 20,000 through the
+    gate, then immediately rebuild and repeat.
+  key_decision: Cash the doubled bonus now, or risk continuing to build it toward
+    the 10,000 base maximum?
+danger:
+- Center saucer misses can rebound off the surrounding posts toward a side or center
+  drain.
+- A ball descending outside either lower saucer post can quickly become a side drain
+  or sling-to-outlane.
+- Saucer kickouts require immediate control and can vary by machine.
+- Left-to-right transfers are risky; use them when the desired shot genuinely requires
+  the left flipper.
+- Draining with a large doubled bonus uncollected wastes the game's biggest built-up
+  scoring opportunity.
+commentary:
+- A and B are complete—the gate is open, and now they need Double.
+- That center rollover is the safer Double; the saucer gets there faster but can be
+  lethal.
+- Bonus is near ten thousand and doubled—now the right-side gate is essentially a
+  twenty-thousand-point cash-out.
+- That gate doesn't end the ball; it pays the bonus and sends them back to the plunger
+  to build it again.
+- They're staying up top because almost everything valuable starts with A, B and bonus.
+- They could cash now, but they're gambling the ball to finish building the bonus
+  first.
+trivia:
+- Little Chief was released in September 1975, with approximately 6,300 produced.
+- Steve Kordek designed the game, with artwork by Christian Marche.
+- Its unusual return-to-shooter-lane gate lets the player collect bonus without draining,
+  forming the heart of the game's strategy.
+- Operators could choose among three Eject Hole difficulty thresholds using a physical
+  adjustment plug.
+- Little Chief followed Williams' Big Chief by about a decade but is a separate design
+  rather than a remake.
+summary: Build A+B and bonus → light Double → double the bonus → cash through the
+  gate → relaunch → repeat

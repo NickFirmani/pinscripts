@@ -1,0 +1,144 @@
+id: jack-bot-williams-1995
+name: Jack•Bot
+metadata:
+  manufacturer: Williams
+  year: 1995
+  designer: Barry Oursler and Larry DeMar
+  artist: John Youssi, Doug Watson, Greg Freres and Paul Barker
+  production: 2,428 machines
+  era: WPC-Security
+  multiball: Multiball with Jack•Bots, Super Jack•Bots and Mega Visor
+rules_basis:
+  kind: rom
+  version: 1.0R
+  release_date: null
+hook: Use the flashing Keno row or column for an easy first visor opening, lock two
+  balls in the Eyes, then exploit Eye-to-Eye Super Jack•Bots during Multiball. In
+  parallel, finish all four Casino Games for Casino Run, where the central decision
+  is whether to cash the bank or risk another spin.
+rules:
+  primary: Open the visor and lock two balls in the Eyes to start Multiball. Jack•Bots
+    begin at 50M and increase; an Eye Jack•Bot followed immediately by the opposite
+    Eye scores a 3x Super. Separately, complete Poker, Slot Machine, Roll the Dice
+    and Keno to qualify Casino Run.
+  bullets:
+  - The first Multiball is 2-ball; later Multiballs are normally 3-ball. Physical
+    Eye locks are shared, but each player's software lock credit is tracked separately.
+  - Eyes, Cashier and Hit Me score lit Jack•Bots; the Game Saucer relights them. Fifteen
+    Jack•Bots during Multiball enter Mega Visor.
+  - 'Many Casino Game awards can be risked through Double or Nothing: choose the gamble,
+    then hit Cashier before time expires or score zero.'
+  - Casino Run lasts 45 seconds and starts at 100M plus 4M per switch. Spins can grow
+    the bank or reveal a bomb; collecting ends the mode safely.
+  - During Casino Run, a drain relaunches the ball but costs 5 seconds, making late
+    drains especially important.
+watch:
+- title: Flashing Keno grid
+  text: 'The easy opening opportunity is still available: one accurate hit in the
+    flashing row or column can open the visor instead of requiring the full grid.'
+- title: Visor open / Eyes loaded
+  text: Multiball is being staged. Two software lock credits start it, and the Eyes
+    become especially important once Jack•Bots are lit.
+- title: Fourth Casino Game
+  text: Once all four Casino Games have been played, the Game Saucer qualifies Casino
+    Run.
+- title: Casino Run bank
+  text: A large bank creates the signature collect-versus-gamble decision. A No Bomb
+    substantially reduces the immediate risk of continuing.
+skill_shots:
+- name: Vortex Skill Shot
+  how: Plunge into one of the three Vortex holes; the middle hole is the most valuable.
+  value: Outer holes begin at 10M. The middle scores 3x, permanently adds 5M to future
+    base skill-shot value, and advances Bonus X.
+features:
+- type: player-control
+  name: Cheat Button
+  text: Press the flashing Extra Ball/Buy-In button during eligible casino awards.
+    In Tournament Mode, every fourth eligible cheat succeeds; Slot Machine is not
+    eligible.
+- type: ball-save
+  name: Ball Save
+  text: A short ball save applies on a normal plunge; its duration is adjustment-sensitive.
+- type: extra-ball
+  name: Extra Ball
+  text: Multiple features can light Extra Ball at the movable inlane/outlane lamps.
+    With Extra Balls disabled, Light Extra Ball scores 200M.
+- type: other
+  name: Special
+  text: With the established points conversion, Special scores 500M.
+shots:
+- name: Left Ramp
+  value: Relights the Game Saucer and supports Vortex and return-lane utility, keeping
+    casino progression moving.
+  risk: Medium-High
+  diagram: 1
+- name: Game Saucer
+  value: Starts Casino Games, relights Jack•Bots, and spins Casino Run, making it
+    the central casino-progression shot.
+  risk: Medium-High
+  diagram: 2
+- name: Cashier
+  value: Collects Double or Nothing, scores a lit Jack•Bot during Multiball, and handles
+    important bonus cash-outs.
+  risk: High
+  diagram: 3
+- name: Visor Targets
+  value: Build the Keno grid and open the visor. The initial flashing row or column
+    can make the first qualification dramatically faster.
+  risk: High
+  diagram: 4
+- name: Left / Right Eye
+  value: Lock balls and score Jack•Bots. An Eye Jack•Bot followed immediately by the
+    opposite Eye scores a 3x Super Jack•Bot.
+  risk: Medium-High
+  diagram: 5
+- name: Hit Me
+  value: Advances Blackjack-related play and serves as the fourth Jack•Bot location
+    when lit during Multiball.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor controlled Multiball execution, take available Eye-to-Eye Supers, and
+    cash Casino Run once a meaningful bank is established rather than exposing the
+    lead to another random bomb. Small Double-or-Nothing gambles are less attractive
+    when protecting position.
+  behind: 'Lean into volatility: Double or Nothing valuable Casino Game awards, press
+    Casino Run toward a larger bank, and chase repeated Eye-to-Eye Supers or the fifteen-Jack•Bot
+    Mega Visor.'
+  key_decision: Choose between deterministic Multiball execution and casino variance.
+    The easy first visor opening favors Multiball early; after that opportunity is
+    gone, Casino Games and Casino Run can become the lower-effort route while visor
+    progress rebuilds incidentally.
+danger:
+- Visor targets are central standups and can rebound immediately toward the drain.
+- Missing Cashier during Double or Nothing loses the entire Casino Game award being
+  gambled.
+- The Game Saucer kickout gives up control, so settling its eject before attacking
+  Cashier is important.
+- Eye eject feeds vary between machines and demand immediate control.
+- A Casino Run drain costs 5 seconds, which can turn a late relaunch into a forced
+  collect or complete loss.
+commentary:
+- The grid is still flashing—they can open the visor with one target instead of filling
+  all twenty-five.
+- They want one Eye and then the other—that quick second Eye is the three-times Super
+  Jack•Bot.
+- That's the fourth Casino Game, so Casino Run is now ready.
+- 'They''ve chosen Double or Nothing: Cashier is worth twice the award, and a miss
+  gets zero.'
+- Tournament cheating is deterministic—every fourth eligible cheat works—but Casino
+  Run itself stays random.
+- They've got a huge Casino Run bank; now the question is whether to take it or spin
+  into a possible bomb.
+trivia:
+- 'Jack•Bot is the third Pin•Bot game, following Pin•Bot and The Machine: Bride of
+  Pin•Bot.'
+- Its physical playfield is essentially the 1986 Pin•Bot layout reused with much deeper
+  software.
+- The Extra Ball button's cheating mechanic is intentional documented gameplay rather
+  than a secret exploit.
+- Holding both flippers during Casino Run can reveal a Mortal Kombat 3 hint worth
+  an Extra Ball.
+- The game includes a memorial for Williams mechanical designer Joe Joos Jr.
+summary: Open visor → lock two balls → score Eye-to-Eye Supers → finish Casino Games
+  → start Casino Run → cash or gamble

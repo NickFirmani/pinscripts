@@ -1,0 +1,25 @@
+game_id: fish-tales-williams-1992
+image_width: 1016
+image_height: 1868
+image_sha256: 92176b59f3b6ea534e62a3ea7d5f28ff391e4ee85527a4945e59c4c2fd9d7f6d
+shots_sha256: a1f833e3b57c2ecd617ba8b436340ad8eb71dd7def062709125be4a9ab93d55d
+coordinates:
+- diagram: 1
+  x: 195
+  y: 632
+- diagram: 2
+  x: 387
+  y: 876
+- diagram: 3
+  x: 501
+  y: 850
+- diagram: 4
+  x: 620
+  y: 850
+- diagram: 5
+  x: 909
+  y: 639
+- diagram: 6
+  x: 986
+  y: 737
+skipped_diagrams: []

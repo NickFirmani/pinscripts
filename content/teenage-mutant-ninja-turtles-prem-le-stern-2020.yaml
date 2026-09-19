@@ -1,0 +1,147 @@
+id: teenage-mutant-ninja-turtles-prem-le-stern-2020
+name: Teenage Mutant Ninja Turtles (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2020
+  designer: John Borg
+  artist: Jeremy Packer / Zombie Yeti
+  production: ''
+  era: SPIKE 2
+  multiball: Ninja Pizza and Turtle Power Multiballs; Team-Up Multiball mini-wizard
+rules_basis:
+  kind: code
+  version: v1.59.0
+  release_date: '2026-07-01'
+hook: Shoot Pizza Parlor three times for Ninja Pizza Multiball while using both outside
+  ramps to qualify an Episode, ideally starting the Episode first so they run together.
+  Build toward Mondo at the upper loop and Super at the LAIR; longer-term, Episodes
+  unlock Team-Up while Training and 2× playfield create scoring leverage.
+rules:
+  primary: Qualify Episodes with both outside ramps and start them at Pizza Parlor.
+    Three Parlor shots start Ninja Pizza Multiball; during it, make Foot-Soldier shots,
+    collect Mondo at the upper loop, then Super Jackpot at the LAIR. Four played Episodes
+    qualify Team-Up Multiball and restore access to the main multiballs; eight Episodes
+    lead toward Final Battle.
+  bullets:
+  - Completing Episodes is better than merely playing them because completed Episodes
+    improve Team-Up Multiball.
+  - LAIR progress accesses Training and 2× playfield; center-target hits during 2×
+    add time.
+  - Completed Training raises the chosen Turtle one level and permanently adds 10%
+    scoring, up to 30%.
+  - Raphael can upgrade 2× playfield to 3× and Episode scoring to 3×; Leonardo can
+    double Team-Up and Pizza Party scoring.
+  - Premium/LE's player-controlled Glider can route ramp returns toward a chosen flipper.
+watch:
+- title: Pizza Parlor locks
+  text: Three Pizza Parlor shots start Ninja Pizza Multiball; Premium/LE physically
+    stores the balls in the Van.
+- title: Mondo insert
+  text: White, blue and red mark Mondo, Double Mondo and Triple Mondo progression
+    at the upper loop. One Mondo also lights the LAIR Super.
+- title: 2× playfield ready
+  text: A flashing center 2× insert means the player can start a major scoring multiplier
+    and may delay a valuable mode until it is running.
+- title: Episode progress
+  text: Four played Episodes qualify Team-Up and restore the main multiballs. Completed
+    Episodes provide additional Team-Up benefits.
+skill_shots:
+- name: Leonardo
+  how: After launch, shoot the LAIR during the skill-shot window.
+  value: Scores the increasing skill-shot award and lights a Weapon return lane, advancing
+    toward Weapon Hurry-Up.
+- name: Raphael / Michelangelo
+  how: After launch, shoot the left ramp as Raphael or Pizza Parlor as Michelangelo.
+  value: Raphael overlaps Episode progression; Michelangelo overlaps the high-priority
+    Ninja Pizza route. Success also lights a Weapon return lane.
+- name: Donatello
+  how: After launch, shoot the center/side ramp during the skill-shot window.
+  value: Scores the increasing skill-shot award, lights a Weapon return lane and feeds
+    directly into upper-flipper play.
+features:
+- type: ball-save
+  name: Battle Again
+  text: Odd APRIL completions light an outlane rescue, normally movable by the slingshots.
+    Michelangelo begins with it lit.
+- type: player-control
+  name: Pizza Eating Contest
+  text: Seven pizza slices light the Pizza targets; hit one and rapidly press the
+    action button during the short eating contest for additional slices and scoring.
+- type: mystery-award
+  name: Pict-O-Pops
+  text: Pop-bumper matching awards can grant Add-A-Ball, feature lights, points, time,
+    ball save and bonus multipliers. Competition mode removes random behavior.
+- type: player-control
+  name: Glider
+  text: Premium/LE flipper buttons control the ramp diverter, letting the player influence
+    which flipper receives the return.
+shots:
+- name: LAIR
+  value: Accesses Training and collects the Ninja Pizza Super Jackpot when lit.
+  risk: High
+  diagram: 1
+- name: Left ramp
+  value: Qualifies Episodes and later starts Team-Up Multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Pizza Parlor
+  value: Primary early route for Ninja Pizza Multiball locks and the start shot for
+    qualified Episodes.
+  risk: High
+  diagram: 3
+- name: Upper / Krang loop
+  value: Collects Mondo jackpots during Ninja Pizza and advances Krang Kombo; Mondo
+    also lights the LAIR Super.
+  risk: Medium-High
+  diagram: 4
+- name: Center / side ramp
+  value: Common combo, mode and upper-flipper continuation shot.
+  risk: Medium-High
+  diagram: 5
+- name: Right ramp
+  value: Qualifies Episodes and advances Turtle Power Multiball; the backhand is often
+    the controlled approach.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor attainable cash-outs and control. Ninja Pizza provides ball-save-backed
+    Episode work plus concrete Mondo and Super opportunities without requiring dangerous
+    multiplier setup shots.
+  behind: Build leverage through Training and 2× or 3× playfield, pursue Neutrino
+    Pizza Party, or multiply Team-Up and Pizza Party. Ninja Pizza's Super Jackpot
+    also provides a substantial cash-out opportunity.
+  key_decision: 'Progress or leverage: take ramps and Pizza Parlor now to advance
+    Episodes and multiballs, or spend dangerous shots building Training and playfield
+    multipliers so the eventual scoring mode is worth much more?'
+danger:
+- Pizza Parlor rejects can ricochet sharply back toward the middle.
+- Both outside ramps are unusually tight, and rejects can create immediate scramble
+  situations.
+- The right-ramp backhand is often preferred because a forehand miss into the post
+  can be lethal.
+- The spinning pizza disc can turn an otherwise controlled ball into an unpredictable
+  feed.
+- The LAIR is lucrative but inherently dangerous because it is a difficult under-flipper
+  shot.
+commentary:
+- Both ramps are done—Pizza Parlor will start the Episode.
+- 'That''s the third Parlor shot: Ninja Pizza Multiball.'
+- Mondo is lit at the upper loop; making it will also light the LAIR Super.
+- Four Episodes played—Team-Up is now the gateway to getting those main multiballs
+  back.
+- Two-times playfield is ready at the center target; this is the setup before the
+  cash-out.
+- That right-ramp backhand is deliberate—the conventional forehand miss can be brutal
+  on Turtles.
+trivia:
+- John Borg designed the layout, Dwight Sullivan led the rules and code, and Jeremy
+  Packer supplied the hand-drawn Zombie Yeti art package.
+- Stern's game uses the classic animated TMNT incarnation rather than the 1990 film
+  used by Data East's earlier TMNT pinball machine.
+- Premium/LE's Van can physically hold four balls behind its opening side door.
+- The Premium/LE Glider is player-controlled and can direct ramp returns toward the
+  chosen flipper.
+- All editions use a magnetic spinning pizza disc capable of holding and releasing
+  three balls for Ninja Pizza Multiball.
+summary: Qualify Episode → start at Pizza Parlor → stack Ninja Pizza → Mondo at upper
+  loop → Super at LAIR → build Training and 2× PF → reach Team-Up

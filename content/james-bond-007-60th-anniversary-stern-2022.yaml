@@ -1,0 +1,147 @@
+id: james-bond-007-60th-anniversary-stern-2022
+name: James Bond 007 60th Anniversary Limited Edition
+metadata:
+  manufacturer: Stern
+  year: 2023
+  designer: Keith Elwin
+  artist: Kevin O'Connor
+  production: 500 machines
+  era: SPIKE 2
+  multiball: Mission, Villain, Gadget, Bond, and 007 Multiball
+rules_basis:
+  kind: code
+  version: v1.11.0
+  release_date: '2026-07-01'
+hook: 'Mission Multiball is the short-term focus: clear the three inline drops, shoot
+  the right scoop, then lock one ball in each scoop to reach three-ball play. Lock
+  again for the captive-ball Jackpot, then shoot M for the 1,500-point Super. The
+  longer route builds Villain, Gadget and Bond Multiballs toward 007 Mode.'
+rules:
+  primary: Mission Multiball starts as 2-ball after clearing the inline drops and
+    shooting the right scoop. Lock a ball in either scoop to start a 15-second window
+    for the opposite scoop; completing both launches Ball 3. In three-ball play, scoop
+    locks qualify the captive-ball Jackpot and Double Jackpot.
+  bullets:
+  - After the captive-ball Jackpot, shoot M for a 1,500-point Super Jackpot and restart
+    the Mission Multiball sequence.
+  - Complete all six Villains to qualify Villain Multiball. Completing MI6 during
+    a Villain mode doubles its scoring.
+  - BOND progress drives Gadgets and Bond collection. Completing all four Gadgets
+    starts Gadget Multiball; collecting all six Bond actors starts Bond Multiball.
+  - Starting Villain, Gadget and Bond Multiballs qualifies 007 Mode at the left scoop.
+    Clear the three inline drops and reach the right scoop before time expires to
+    start 007 Multiball.
+  - A-B-C completions advance Bonus X to 3x. M can collect the current bonus before
+    drain, and the Jetpack gadget holds bonus.
+watch:
+- title: Right scoop lit
+  text: The inline drops are complete, so the player is one right-scoop shot from
+    Mission Multiball.
+- title: Balls parked in scoops
+  text: During Mission Multiball, scoop locks convert two-ball play into three-ball
+    play and later qualify the captive-ball Jackpot or Double Jackpot.
+- title: Oddjob disc / MI6
+  text: MI6 controls the Villain side of progression, while BOND progress enables
+    Gadget Meter and Bond collection.
+- title: Category progress nearly complete
+  text: Completed Villain, Gadget and Bond Multiballs move the player toward 007 Mode,
+    the long-game route to 007 Multiball.
+skill_shots:
+- name: 007 Lane Skill Shot
+  how: Plunge through the flashing 0, 0, or 7 top lane; the selected lane cannot be
+    moved with the flippers.
+  value: Collects the currently indicated back-panel award and advances the top-lane
+    feature.
+- name: Mission Multiball Super Skill Shot
+  how: Hold the left flipper, plunge past the top lanes, then shoot through the inline-drop
+    lane.
+  value: Clears the inline bank and immediately lights the Mission Multiball lock.
+    Current default behavior allows one successful use per game.
+- name: Alternate Q / M Skill Shots
+  how: Short-plunge toward Q, or hold the left flipper and full-plunge toward M.
+  value: Verified alternate launch sequences; their specific awards are undocumented.
+features:
+- type: ball-save
+  name: Underwater Escape
+  text: The Gondola Hovercraft gadget lights the outlanes for rescue protection.
+- type: player-control
+  name: Spy Camera
+  text: After earning Spy Camera, the green action button can light the Mission Multiball
+    lock without re-completing the inline drops.
+- type: extra-ball
+  name: Extra Ball
+  text: The third 007-lane award lights Extra Ball at the captive ball. When Extra
+    Balls are disabled, the documented conversion is 500 points.
+- type: other
+  name: Spinner Boost
+  text: Either inlane lights the opposite-side spinner for 10 points per spin instead
+    of 1, making long spinner shots significant at the game's small scoring scale.
+shots:
+- name: Left Scoop
+  value: Collects Bonds, starts Villain Multiball when qualified, and starts 007 Mode
+    after the three category multiballs have been achieved.
+  risk: Medium-High
+  diagram: 1
+- name: BOND Bank
+  value: Advances Gadget Meter and Bond collection, building toward Gadget and Bond
+    Multiballs.
+  risk: High
+  diagram: 2
+- name: MI6 Bank
+  value: Qualifies and starts Villain play; completing MI6 during a Villain mode doubles
+    its scoring.
+  risk: High
+  diagram: 3
+- name: Oddjob Disc
+  value: Handles Villain selection and Gadget Meter progression.
+  risk: High
+  diagram: 4
+- name: Captive Ball / M
+  value: Collects the Mission Multiball Jackpot, followed by M for the 1,500-point
+    Super; also handles Extra Ball and bonus utility.
+  risk: High
+  diagram: 5
+- name: Inline Drops / Right Scoop
+  value: 'The primary Mission Multiball route: clear all three inline drops, then
+    shoot through to the scoop to start the mode.'
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Stay focused on Mission Multiball. Backhand the inline drops when possible,
+    convert two-ball play into three balls, and take the Jackpot and Super sequence
+    rather than deliberately exposing the ball to long-term category progression.
+  behind: Push broader progression through Villains, Bonds and Gadgets toward their
+    three multiballs and 007 Mode. Villain scoring with its MI6 multiplier offers
+    another higher-variance route when Mission Multiball alone is unlikely to close
+    the gap.
+  key_decision: Take repeatable Mission Multiball now or expose the ball to BOND and
+    MI6 progression? Mission is comparatively fast; category progress requires more
+    dangerous target work but ultimately qualifies Villain, Gadget, Bond and 007 Multiballs.
+danger:
+- The inline drop bank can brick hard shots and send dangerous rebounds back toward
+  the flippers.
+- The right scoop can reject or bounce out when the shot is not clean.
+- The left-scoop entry is machine-sensitive and can fail to settle into the saucer.
+- The central Oddjob disc produces inherently unpredictable exits.
+- The layout is fast and unforgiving, with narrow shots and few passive safe areas.
+commentary:
+- Three inline drops down—now that right scoop starts Mission Multiball.
+- They've parked one ball; they have fifteen seconds to lock the other one in the
+  opposite scoop.
+- Both locks are made—that turns Mission into the full three-ball phase.
+- Captive ball is lit for Jackpot; M afterward is the Super and resets the sequence.
+- BOND is about Gadgets and Bond collection; MI6 is the Villain side of the rules.
+- Villain, Gadget and Bond Multiballs are all done—that means 007 Mode is ready at
+  the left scoop.
+trivia:
+- Stern produced only 500 James Bond 007 60th Anniversary machines worldwide.
+- Keith Elwin's layout has no ramps, two flippers, four optical spinners and ten drop
+  targets, deliberately evoking older solid-state design.
+- Scores are intentionally small by modern standards and displayed on mechanical score
+  reels with rollover indicators for higher totals.
+- The game represents all six film Bonds and all 25 Bond films released through the
+  anniversary.
+- Later code added selectable historical chime and sound packages, including stripped-down
+  Vintage presentations.
+summary: Clear inline drops → start Mission MB → lock both scoops → cash Jackpot +
+  Super → build category MBs → reach 007 Mode

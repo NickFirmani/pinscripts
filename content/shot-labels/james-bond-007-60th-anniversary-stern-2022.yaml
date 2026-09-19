@@ -1,0 +1,25 @@
+game_id: james-bond-007-60th-anniversary-stern-2022
+image_width: 2160
+image_height: 3971
+image_sha256: 808f87e7fdeed1363f02aaec56e3cba6b4bdf7f0591f06d6f808fb9859c30ab4
+shots_sha256: 60b4d994dc07e84f25ba5b4baeb647164c08052d354c727e1cf0794c3f1c60c7
+coordinates:
+- diagram: 1
+  x: 505
+  y: 486
+- diagram: 2
+  x: 317
+  y: 1449
+- diagram: 3
+  x: 1244
+  y: 994
+- diagram: 4
+  x: 1092
+  y: 1634
+- diagram: 5
+  x: 1701
+  y: 436
+- diagram: 6
+  x: 1741
+  y: 1093
+skipped_diagrams: []

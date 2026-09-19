@@ -1,0 +1,25 @@
+game_id: teenage-mutant-ninja-turtles-prem-le-stern-2020
+image_width: 1199
+image_height: 2204
+image_sha256: ba6b8b9d21da0a02fa7dde0830b7755f1978317acfbe8de1b9a01a17546e0a56
+shots_sha256: a5df762b96cdae4e853ea66cb84b538c050449e2d7a6107d93555ff1440f0f2b
+coordinates:
+- diagram: 1
+  x: 172
+  y: 1074
+- diagram: 2
+  x: 342
+  y: 632
+- diagram: 3
+  x: 450
+  y: 381
+- diagram: 4
+  x: 805
+  y: 615
+- diagram: 5
+  x: 814
+  y: 764
+- diagram: 6
+  x: 900
+  y: 910
+skipped_diagrams: []

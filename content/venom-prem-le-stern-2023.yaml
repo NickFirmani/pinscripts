@@ -1,0 +1,159 @@
+id: venom-prem-le-stern-2023
+name: Venom (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2023
+  designer: Brian Eddy
+  artist: Jeremy Packer / Zombie Yeti
+  production: ''
+  era: SPIKE 2
+  multiball: Mayhem, Carnage and Quick Doppelganger Multiballs; Toxin Team-Up mini-wizard
+rules_basis:
+  kind: code
+  version: '1.0'
+  release_date: '2024-04-02'
+hook: Start with Eddie Brock, use his left-loop skill shot to spot a mini-mode, complete
+  his column and move to Flash Thompson. Build Mayhem through mini-modes and strategic
+  lock placement, raise playfield X with center ramps and Bell Tower, then combine
+  Mayhem, Carnage and Doppelganger progress to reach Toxin Team-Up.
+rules:
+  primary: Each host has three two-shot mini-modes. Completing one lights a Mayhem
+    lock; completing the host's column qualifies a host change and eventually that
+    host's Battle. Mayhem lock placement determines perks, while center-ramp loops
+    followed by Bell Tower build timed playfield X. Start Mayhem and Carnage and defeat
+    a Doppelganger to qualify Toxin Team-Up.
+  bullets:
+  - A lit Battle at the center ramp blocks Mayhem lock qualification and collection
+    and prevents Carnage modes from starting.
+  - Mayhem balls can be assigned between two containment vessels; lock positions grant
+    perks such as boss credit, 2× XP or +1× playfield.
+  - Mayhem starts with controlled Quick Jackpots, then normal jackpots; completing
+    all lit jackpots lights Super Jackpot.
+  - Center-ramp loops qualify Bell Tower, which adds +1× timed playfield scoring up
+    to 7× and can extend an active multiplier.
+  - Toxin requires Mayhem started, Carnage started and a Doppelganger defeated; six
+    jackpots light a 25M Super, with later Supers increasing by 25M.
+watch:
+- title: Host and physical layout
+  text: Eddie, Flash, Gwen or Peter changes the rules package and, on Premium/LE,
+    can physically alter shot geometry.
+- title: Grid progress
+  text: Colored inserts above the flippers show mini-mode progress. Completed four-insert
+    boxes activate powerful perks including +1× playfield and Extra Ball Save.
+- title: Bell Tower and PF X
+  text: Repeated center ramps followed by Bell Tower indicate the player is deliberately
+    building the game's major playfield multiplier.
+- title: Containment vessels
+  text: Mayhem lock placement is strategic. Watch which vessel receives each ball
+    because accumulating locks on one side determines important multiball perks.
+skill_shots:
+- name: Rollover Skill Shot
+  how: Use the right flipper to select a flashing top lane, then plunge through it.
+  value: Awards +2 Bonus X and provides the standard skill-shot option for every host.
+- name: Host Skill Shots
+  how: Choose a host-specific shot such as Eddie's left loop, Flash's right orbit,
+    Gwen's left loop or Peter's left loop.
+  value: Can spot a mini-mode or provide another host-specific benefit; mini-mode
+    spots accelerate competitive progression.
+- name: Secret Hideout
+  how: Plunge directly into the orbit-apex saucer, forfeiting the other skill-shot
+    opportunities.
+  value: Scores 3M plus 500K per prior skill shot and awards +4 Bonus X.
+features:
+- type: player-control
+  name: Spider-Sense
+  text: Once per ball during an active feature, hold Action to light a brief white
+    shot. Making it scores a 25M-starting hurry-up and makes major feature progress.
+- type: player-control
+  name: Sleeper Team-Up
+  text: Available immediately with Flash as the initial host and later through Infected
+    progress. It can add a ball during multiball or add time during Battles.
+- type: mystery-award
+  name: Mystery
+  text: Bottom-lane completions qualify Mystery for major progress awards. Competition
+    mode uses a fixed award order.
+- type: video-mode
+  name: Scream
+  text: Qualified through Infected progress; use the flipper buttons to defeat enemies
+    on the display. Starting it alone awards 10M.
+- type: extra-ball
+  name: Extra Ball
+  text: Infected progress or Mystery can light an Extra Ball at the scoop; availability
+    or conversion depends on configuration.
+- type: other
+  name: Million Plus Pops
+  text: 'Premium/LE Flash feature: eight qualifying target hits start a timed mode
+    where pop hits score 1M multiplied by current playfield X.'
+shots:
+- name: Left ramp
+  value: Core mini-mode progression and the shot used to change hosts once a host
+    column is complete.
+  risk: Medium
+  diagram: 1
+- name: Left loop / 180
+  value: Host-dependent skill and bonus shot that often accelerates mini-mode progress,
+    including the common Eddie opening.
+  risk: Medium-High
+  diagram: 2
+- name: Center ramp
+  value: Advances Battles and Carnage modes and repeatedly qualifies Bell Tower for
+    playfield-X building.
+  risk: Medium-High
+  diagram: 3
+- name: Bell Tower
+  value: Adds +1× timed playfield scoring and extends an active multiplier after sufficient
+    center-ramp progress.
+  risk: Medium-High
+  diagram: 4
+- name: Carnage captive ball
+  value: Advances Carnage modes and provides later Toxin scoring leverage.
+  risk: High
+  diagram: 5
+- name: Scoop
+  value: Frequent major start and cash-out shot for Mystery, Supers, Toxin Team-Up
+    and Host Hurry-Up.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Use Eddie to reach a straightforward Mayhem and Carnage route, converting
+    attainable mini-mode progress into protected multiball scoring. Take available
+    Supers rather than repeatedly risking center-ramp and Bell-Tower shots solely
+    to engineer a huge multiplier.
+  behind: Build playfield X aggressively and preserve Spider-Sense for the most valuable
+    stack. Repeated Toxin Supers and multiplied Host Hurry-Up offer very large scoring
+    potential; Million Plus Pops with Flash adds another Premium/LE leverage route
+    when PF X is high.
+  key_decision: Cash progress now or engineer the multiplier? Venom rewards arranging
+    host, grid perks, lock placement, Spider-Sense and playfield X before major scoring
+    starts, but straightforward Mayhem progress is safer.
+danger:
+- The left-loop return can require an immediate nudge and right-flipper live catch
+  to regain control.
+- Containment-vessel releases can send balls into play rapidly while another ball
+  is already active.
+- Building playfield X requires repeated center-ramp and Bell-Tower shots with dangerous
+  central rebounds.
+- Repeated Carnage captive-ball hits return energy directly toward the player.
+- Premium/LE's physical Doppelganger bank adds real target rebounds absent from the
+  Pro's virtual version.
+commentary:
+- That mini-mode finishes Eddie's column—now he can change hosts at the left ramp.
+- Watch where that lock goes; the containment vessel determines the Mayhem perk.
+- Center ramps are setting up the Bell Tower—this is about building playfield multiplier
+  before the scoring feature.
+- Spider-Sense is still available; one action-button shot can effectively skip a big
+  chunk of this mode.
+- Mayhem, Carnage and a Doppelganger are all done—that means Toxin Team-Up is available.
+- After Toxin, Host Hurry-Up is the monster score; a big playfield multiplier can
+  make those awards enormous.
+trivia:
+- Venom marked the return of Brian Eddy, designer of Attack from Mars and Medieval
+  Madness, to a highly experimental modern Stern design.
+- The rules draw heavily from Marvel's Absolute Carnage and King in Black storylines.
+- The two vertical containment vessels can collectively hold six balls for Mayhem
+  Multiball.
+- Premium/LE can physically alter portions of the shot layout according to the selected
+  host.
+- Mark Tremonti contributed music to the game.
+summary: Start Eddie → complete mini-modes → place Mayhem locks → build PF X → start
+  Mayhem + Carnage → defeat Doppelganger → cash Toxin

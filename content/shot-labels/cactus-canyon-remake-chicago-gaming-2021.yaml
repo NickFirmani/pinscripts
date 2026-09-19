@@ -1,0 +1,25 @@
+game_id: cactus-canyon-remake-chicago-gaming-2021
+image_width: 908
+image_height: 1671
+image_sha256: f30e3ea35fd8616ecac4d1d844b2c1dd7900dcd04a030bece37a65de31412eea
+shots_sha256: 2dc63d74439d68b6ea6b3541ec9858eee808b068b1c850bee7f4af3f49936766
+coordinates:
+- diagram: 1
+  x: 120
+  y: 741
+- diagram: 2
+  x: 224
+  y: 656
+- diagram: 3
+  x: 310
+  y: 607
+- diagram: 4
+  x: 459
+  y: 516
+- diagram: 5
+  x: 618
+  y: 511
+- diagram: 6
+  x: 730
+  y: 654
+skipped_diagrams: []

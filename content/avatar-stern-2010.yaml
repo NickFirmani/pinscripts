@@ -1,0 +1,145 @@
+id: avatar-stern-2010
+name: Avatar
+metadata:
+  manufacturer: Stern Pinball
+  year: 2010
+  designer: John Borg
+  artist: Kevin O'Connor
+  production: Standard model; separate 250-unit Limited Edition has material hardware
+    and rules differences
+  era: SAM / DMD
+  multiball: Link, AMP Suit, Na'vi, and Final Battle
+rules_basis:
+  kind: code
+  version: v1.10
+  release_date: '2011-11-10'
+hook: 'Complete R-D-A and put the first 2x shot multiplier on Link. Start Link Multiball,
+  collect 15 jackpots, then cash the Super and hit the trapped ball for Double Super.
+  Preserve control when stacking: AMP and timed modes can interfere with the Eywa
+  add-a-ball that keeps Link alive.'
+rules:
+  primary: Completing R-D-A lights 2x for the next unmultiplied major shot; repeat
+    until all seven are doubled for the ball, then R-D-A starts a roving 3x. Link
+    is the primary tournament scoring route. Shot multipliers reset on the next ball.
+  bullets:
+  - Link Multiball starts with two balls. Collect 15 alternating jackpots to light
+    a 3M Super at Link, then hit the trapped ball during the timer for Double Super.
+  - With Link at 2x, the Super and Double-Super sequence totals 18M; catching the
+    roving 3x can raise the pair to 27M.
+  - AMP Suit Multiball progresses through six jackpots, three double jackpots, then
+    AMP bullseye Supers; shot multipliers apply throughout.
+  - Eywa can add a ball during multiball, but timed modes can make Extend Time take
+    priority. Under tournament configuration, the first Eywa in Link MB is not add-a-ball,
+    while the first in AMP MB is.
+  - Final Battle can build Unobtanium to 30M by deliberately draining both lit outlanes;
+    shot multipliers apply, making a prepared 3x collect worth 90M.
+watch:
+- title: Shot multiplier
+  text: A flashing green X is ready to be assigned; solid means that shot has 2x for
+    the rest of the ball. After all seven shots are doubled, the flashing multiplier
+    roves at 3x.
+- title: Ball trapped in Link
+  text: The Link setup is banked. Hits to the trapped ball either start Link Multiball
+    or, after its Super, create the Double-Super opportunity.
+- title: AMP bank
+  text: Dropping the A-M-P bank exposes AMP Suit Battle progress. Once only the bullseye
+    remains, AMP Suit Multiball is close.
+- title: Feature ladder
+  text: A solid feature insert is temporary Final-Battle progress and disappears next
+    ball; flashing means the feature was completed and that progress persists.
+skill_shots:
+- name: R-D-A Skill Shot
+  how: Plunge through the flashing top lane; use the flippers to move which lane is
+    flashing.
+  value: Starts at 250K and increases 25K each subsequent ball. More importantly,
+    completing R-D-A advances the shot-multiplier system.
+features:
+- type: mystery-award
+  name: Eywa Mystery
+  text: Switch hits light the captive ball, and multiple awards can be banked. Awards
+    include points, Bonus X, timer extension, and strategically important multiball
+    add-a-ball.
+- type: ball-save
+  name: Eywa Add-A-Ball
+  text: Can extend multiball, but award priority depends on running features. Under
+    tournament configuration, Link and AMP Multiballs have different first-Eywa behavior.
+- type: extra-ball
+  name: Extra Ball
+  text: A rare Eywa award can light Extra Ball at the ramp; qualification is adjustment-sensitive.
+- type: other
+  name: Unobtanium Outlanes
+  text: Center-target progress lights and builds outlane awards; during multiball
+    ball-save time these can become relatively safe points.
+shots:
+- name: Left Orbit
+  value: Feeds R-D-A access and advances Bomber Battle, contributing to shot-multiplier
+    setup and Final-Battle progression.
+  risk: Medium-High
+  diagram: 1
+- name: Banshee Ramp
+  value: Advances Banshee and provides a strong looping alternative when multiplied.
+  risk: Medium-High
+  diagram: 2
+- name: Link
+  value: Starts Link Multiball and collects its Super and Double Super. It is the
+    primary tournament scoring engine and the preferred first 2x shot.
+  risk: Medium-High
+  diagram: 3
+- name: Unobtanium
+  value: Builds outlane awards and becomes Final Battle's major cash-out, reaching
+    30M before the applicable shot multiplier.
+  risk: High
+  diagram: 4
+- name: AMP Suit
+  value: Advances AMP Suit Battle and Multiball, providing a secondary multiball route
+    and a way to extend a fading Link stack.
+  risk: High
+  diagram: 5
+- name: Eywa Captive Ball
+  value: Collects Mystery and can provide the multiball add-a-ball needed to extend
+    a valuable scoring window.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Put 2x on Link early, grind toward Link Multiball, and take the Double Super
+    without unnecessary Seeds or deep Final-Battle work. Avoid stacking AMP merely
+    because it is ready if doing so makes Link scoring and Eywa priority harder to
+    control.
+  behind: Bring Banshee or Bomber into Link, chase the roving 3x on Link, or use AMP
+    after the Link Double Super to extend multiball. If Final Battle is already close,
+    multiplied 30M Unobtanium offers far more upside than ordinary scoring.
+  key_decision: Stack another feature or preserve control and Eywa priority? Avatar
+    can punish indiscriminate stacking because a running timed mode may turn a needed
+    multiball add-a-ball into Extend Time instead.
+danger:
+- The pop-bumper exit can send the ball directly toward the center drain; the exact
+  feed is machine-sensitive.
+- AMP Suit targets and magnet produce highly uncontrolled rebounds and are among the
+  game's most dangerous required shots.
+- Weak Banshee ramp attempts can reject quickly toward the center.
+- The left outlane is notably hungry and can punish otherwise controlled play.
+- Unobtanium is a direct center standup with huge potential value but substantial
+  drain risk.
+commentary:
+- First multiplier goes on Link—that's the tournament scoring engine.
+- Fifteen jackpots are done; now Link itself is the Super, and hitting the trapped
+  ball gets the Double Super.
+- They're deliberately not stacking AMP yet—they want to finish the Link sequence
+  cleanly.
+- 'That Eywa shot matters: with no timed mode stealing priority, it can put another
+  ball back into multiball.'
+- Solid feature light means they lose it next ball; flashing means that Final-Battle
+  progress is banked.
+- Final Battle is backwards pinball here—they actually want those balls into the lit
+  outlanes before cashing Unobtanium.
+trivia:
+- Stephen Lang recorded original Colonel Quaritch callouts for the game.
+- The backglass uses a distinctive 3-D lenticular design.
+- Link traps a ball between two rising posts, then requires the player to physically
+  strike the captive ball to release it.
+- The standard game has a sparse one-ramp layout, with major mechanisms including
+  the AMP Suit and magnet.
+- The separate 250-game Limited Edition adds a sensed white Powerball with double-scoring
+  rules and should not share this standard-game rules reference.
+summary: Complete R-D-A → put 2x on Link → start Link MB → 15 jackpots → Super → Double
+  Super → preserve Eywa priority

@@ -1,0 +1,25 @@
+game_id: rollergames-williams-1990
+image_width: 845
+image_height: 1554
+image_sha256: 3bd0a6239c8e128ee49bf17dd96ecff0d5001876de2be5665f57e07f847d70bf
+shots_sha256: c0b04dbf1e909661494a2ca83ec86cb55ed3a11f7577ca78b8b8d2f3aeb8678f
+coordinates:
+- diagram: 1
+  x: 181
+  y: 729
+- diagram: 2
+  x: 90
+  y: 923
+- diagram: 3
+  x: 276
+  y: 623
+- diagram: 4
+  x: 575
+  y: 503
+- diagram: 5
+  x: 204
+  y: 432
+- diagram: 6
+  x: 784
+  y: 913
+skipped_diagrams: []

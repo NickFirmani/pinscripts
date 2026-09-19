@@ -1,0 +1,132 @@
+id: cactus-canyon-remake-chicago-gaming-2021
+name: Cactus Canyon Remake
+metadata:
+  manufacturer: Chicago Gaming Company
+  year: 2021
+  designer: Matt Coriale and Tom Kopera
+  artist: John Youssi
+  production: Special Edition; same core playfield and rules as SE+ and LE. Optional
+    Lyman Sheats Complete Upgrade materially changes mechanics and rules.
+  era: Chicago Gaming remake
+  multiball: Gold Mine, Showdown, Stampede, and High Noon
+rules_basis:
+  kind: code
+  version: v1.1.5
+  release_date: '2025-12-22'
+hook: Attack Bart for the strongest immediate scoring, while preparing Gold Mine Multiball
+  and progressing Quick Draws toward Showdown. Gold Mine's Mother Lode rewards building
+  before cashing; longer play completes five badge requirements to qualify High Noon.
+rules:
+  primary: 'Extended rules center on Bart, Gold Mine, Showdown, Stampede, combos,
+    and High Noon. Five Sheriff''s Badge requirements qualify High Noon at the Mine:
+    defeat through Bionic Bart, start Showdown, collect Mother Lode, complete Stampede''s
+    required shots, and make 10 combos.'
+  bullets:
+  - Gold Mine Multiball starts after three Mine locks. Major-shot jackpots build Mother
+    Lode, and completing full jackpot sets raises its multiplier before collection.
+  - Win four Quick Draws to start Showdown Multiball. Quick Draw progress can be prepared
+    while developing Gold Mine.
+  - Bionic Bart follows the earlier Bart brothers. Other lit shots can build its eventual
+    Bart cash-out, but draining loses the uncollected built value.
+  - Rank increases Quick Draw and High Noon scoring; Bonus X can make end-of-ball
+    bonus a meaningful secondary source.
+  - High Noon starts at the Gold Mine after all five Sheriff's Badge requirements
+    are complete.
+watch:
+- title: Sheriff's Badge
+  text: Completed stars show which of the five High Noon requirements are already
+    banked and how close the player is to the wizard multiball.
+- title: Mother Lode lit
+  text: A major Gold Mine cash-out is ready. The player may deliberately keep completing
+    jackpot sets before collecting it to raise the multiplier.
+- title: Quick Draw progress
+  text: Four successful Quick Draws start Showdown. A player may deliberately leave
+    the final duel ready while preparing Gold Mine.
+- title: Bionic Bart running
+  text: If the player ignores Bart and keeps making other lit shots, they are building
+    the eventual Bart cash-out at the risk of losing it on a drain.
+skill_shots:
+- name: Normal Skill Shot
+  how: On the plunge, follow the display's indicated target or shot and make it to
+    collect the selected award.
+  value: Awards can include Lasso rank progress, Light Lock, Light Extra Ball, +3
+    Bonus X, or immediate major-shot objective progress.
+features:
+- type: mystery-award
+  name: Bounty Award
+  text: Qualified by Lasso Skill Shot or winning Quick Draw and collected at Bart.
+    Awards can include Lock, Extra Ball, Quick Draw, Gun Fight, rank, +5 Bonus X,
+    or points.
+- type: extra-ball
+  name: Extra Ball
+  text: Can be lit through Save Polly, Skill Shot, Showdown, Bounty, or Beer Mug progress,
+    then must be collected at the Gold Mine.
+- type: other
+  name: Wild West Shootout
+  text: Not standard on the base Special Edition. SE+ and LE include the interactive
+    topper version.
+shots:
+- name: Bronco / Left Orbit
+  value: Advances Stampede, Ride 'Em Cowboy, major-shot completion, and combo progress.
+  risk: Medium-High
+  diagram: 1
+- name: River Adventure Ramp
+  value: Advances Polly and Stampede while providing useful combo progression.
+  risk: Medium
+  diagram: 2
+- name: Gold Mine
+  value: Handles Multiball locks, Mother Lode, High Noon start, and Extra Ball collection,
+    making it the central progression and cash-out shot.
+  risk: Medium-High
+  diagram: 3
+- name: Train Ramp
+  value: Advances Polly and Stampede and bridges major-shot progression.
+  risk: Medium-High
+  diagram: 4
+- name: Bart / Saloon
+  value: Collects Bounty and advances the Bart brothers into Bionic Bart, the major
+    immediate scoring route in Extended rules.
+  risk: Medium-High
+  diagram: 5
+- name: Bank Ramp
+  value: Advances Polly and Stampede and supports repeated combo chains.
+  risk: Medium
+  diagram: 6
+strategy:
+  ahead: Cash Bionic Bart at a reasonable value instead of repeatedly risking the
+    built award. Take a prepared Gold Mine Multiball without insisting on elaborate
+    setup, and lean on controlled ramp, combo, rank, and Bonus X progress.
+  behind: Take a greedier Bionic Bart build or prepare Gold Mine and Showdown together
+    for a larger multiball opportunity. If most Sheriff's Badge requirements are already
+    complete, finishing the remaining objectives for High Noon becomes attractive.
+  key_decision: Cash now or keep building? Both Mother Lode and Bionic Bart reward
+    additional setup before collection, but Bionic Bart's uncollected built value
+    disappears on a drain.
+danger:
+- Bad Guy drop-target shots can rebound quickly into uncontrolled center play.
+- Bart hits and ejects can create unpredictable lateral or ramp deflections.
+- Strong Train Ramp attempts can reject or airball on some setups.
+- Orbit play feeds the pop-bumper area and temporarily gives up control.
+- Greedy Bionic Bart play risks losing all uncollected built value on a drain.
+commentary:
+- They're going straight after Bart—that's where the Extended remake can get disproportionately
+  valuable.
+- Mother Lode is ready, but they're still completing jackpot sets to raise the multiplier.
+- That's Quick Draw number three; one more successful duel starts Showdown.
+- They're preparing Gold Mine while keeping Showdown ready for a larger scoring opportunity.
+- They could cash Bionic Bart now, but every extra jackpot makes that Bart shot more
+  valuable.
+- All five badge stars are complete; the Gold Mine is now the start for High Noon.
+trivia:
+- The original 1998 Cactus Canyon was the last conventional Bally/Williams pinball
+  before Pinball 2000, with only 903 originals built.
+- The remake implemented Bionic Bart, one of the unfinished concepts from the original
+  development.
+- The remake uses a 19.4-inch color display while preserving the visual language of
+  the original animations.
+- Its clear RGB-lit Bad Guy drop targets realize a look the original team wanted but
+  could not manufacture reliably in 1998.
+- The optional Lyman Sheats Complete Upgrade became Lyman Sheats' final pinball software
+  project and was completed from his work and design documents after his death.
+summary: Attack Bart → prepare Gold Mine → build Mother Lode → progress Quick Draws
+  → complete badge stars → High Noon

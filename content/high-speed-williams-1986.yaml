@@ -1,0 +1,126 @@
+id: high-speed-williams-1986
+name: High Speed
+metadata:
+  manufacturer: Williams
+  year: 1986
+  designer: Steve Ritchie
+  artist: Python Anghelo and Mark Sprenger
+  production: 17,080 machines
+  era: System 11
+  multiball: 3-ball Multiball with one Hideout Jackpot per multiball
+rules_basis:
+  kind: rom
+  version: L-4
+  release_date: null
+hook: 'The side ramp is the game: use it to advance stoplights and Bonus X, start
+  Police Chase, reach Multiball, and collect the Hideout Jackpot. Complete red, shoot
+  the ramp to start the chase, then make it again for Getaway. If the ramp is unreliable,
+  switch to timed Freeway loops.'
+rules:
+  primary: Complete green, yellow, then red stoplights; factory L-4 allows the ramp
+    and upper-right eject to spot missing targets. After red, the ramp starts Police
+    Chase and another ramp scores Getaway toward 3-ball Multiball. During Multiball,
+    shoot the ramp for the single Hideout Jackpot.
+  bullets:
+  - The Hideout Jackpot starts at 250K, carries across games, increases by all scoring
+    before it is collected during Multiball, caps at 2M, then resets to 250K.
+  - Completing all nine stoplights during Police Chase lights Escape at the upper-right
+    eject as an alternate route into Multiball.
+  - Only one Hideout Jackpot is available per Multiball; after collection, completing
+    all nine stoplights can qualify an additional award.
+  - Ramp shots advance Bonus X to 5x; another ramp at 5x lights Hold Bonus. Three
+    Freeways in one ball can also qualify Hold Bonus.
+  - Freeways are timed opposite-orbit repeats that build through increasingly valuable
+    awards and can qualify Hold Bonus and Extra Ball.
+watch:
+- title: Red light complete
+  text: The next side ramp starts Police Chase, and another successful ramp during
+    the chase advances directly toward Multiball.
+- title: Police beacon
+  text: The chase is active, so a successful side ramp for Getaway is the immediate
+    high-value progression shot.
+- title: Hideout Jackpot value
+  text: The Jackpot is a machine-wide progressive carried across games. A value near
+    its 2M cap materially raises the value of reaching Multiball.
+- title: Freeway arrow flashing
+  text: A timed Freeway is available, giving the player a short window to repeat the
+    corresponding orbit and advance its award ladder.
+skill_shots: []
+features:
+- type: ball-save
+  name: Kickback
+  text: The left outlane has a one-use kickback. A lit 1-6 standup relights it, and
+    after one Freeway the lit inlanes can also relight it.
+- type: extra-ball
+  name: Extra Ball
+  text: Freeway progression can light Extra Ball at the upper-right eject. Additional
+    qualification can occur after the Multiball Jackpot; treatment is configuration-dependent.
+shots:
+- name: Left Orbit / Bayshore Freeway
+  value: Advances timed Freeway progression and provides the main controlled alternative
+    when the side ramp is unreliable.
+  risk: Medium-High
+  diagram: 1
+- name: Stoplight Banks
+  value: Complete green, yellow, and red to qualify Police Chase when progress is
+    not being spotted by the ramp or eject.
+  risk: High
+  diagram: 2
+- name: 1-6 Targets
+  value: Build Ramp Bonus and can relight the left-outlane kickback.
+  risk: High
+  diagram: 3
+- name: Upper-right Eject Hole
+  value: Spots stoplight progress, starts Escape when qualified, and collects a lit
+    Extra Ball while feeding the upper-flipper area.
+  risk: Medium-High
+  diagram: 4
+- name: Side Ramp
+  value: Advances stoplights and Bonus X, starts Police Chase and Multiball, and collects
+    the Hideout Jackpot. It is the game's central progression shot.
+  risk: High
+  diagram: 5
+- name: Right Orbit / Santa Monica Freeway
+  value: Advances timed Freeway progression and can support a repeatable orbit strategy
+    when the ramp is too dangerous.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: If the side ramp is behaving well, keep shooting it rather than introducing
+    target risk; it advances nearly every important objective. If ramp rejects are
+    dangerous, switch to Freeways and preserve the kickback.
+  behind: Push for Multiball and the Hideout Jackpot, especially when the inherited
+    progressive is already high. Scoring during Multiball raises the Jackpot before
+    collection, so surviving before finally making the ramp can increase the eventual
+    cash-out.
+  key_decision: Keep forcing the side ramp or abandon it for Freeways? The ramp has
+    overwhelmingly better progression and Jackpot upside, but weak upper-flipper strength
+    or dangerous rejects can make timed orbit play the more sustainable route.
+danger:
+- An early upper-flipper ramp attempt can fire the ball straight down the middle.
+- A weak side-ramp attempt can reject quickly toward the right outlane.
+- Direct stoplight-bank hits can redirect the ball toward the left outlane.
+- The 1-6 standups can relight protection but produce uncontrolled lateral rebounds.
+- Freeway play avoids some target risk but demands immediate control of very fast
+  orbit returns.
+commentary:
+- Red light is complete—one ramp starts the chase, and another ramp gets the Getaway.
+- That Jackpot carries across games, so this two-million setup may have been built
+  by somebody else.
+- 'Everything points back to the side ramp: qualification, Multiball, and eventually
+  the Jackpot.'
+- The upper flipper is struggling, so Freeways become the much more sensible route.
+- One Freeway lights the inlanes, and now those inlanes can keep relighting the kickback.
+- There's only one Jackpot per Multiball—once they cash it, the scoring priority changes.
+trivia:
+- High Speed's police-chase theme was inspired by Steve Ritchie's real-life high-speed
+  encounter with police.
+- The game is widely credited as the first pinball machine to use a Multiball Jackpot
+  in the modern sense.
+- High Speed was the first Williams production game using the company's System 11
+  architecture and new alphanumeric display style.
+- The backbox police beacon activates during the chase and Multiball presentation.
+- 'Williams followed High Speed in 1992 with The Getaway: High Speed II, another Steve
+  Ritchie design.'
+summary: Complete stoplights → start Police Chase → Getaway → Multiball → cash Hideout
+  Jackpot → use Freeways if ramp fails

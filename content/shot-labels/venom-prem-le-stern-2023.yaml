@@ -1,0 +1,25 @@
+game_id: venom-prem-le-stern-2023
+image_width: 757
+image_height: 1392
+image_sha256: ad08b9d91437d9289ca1acef183f3cb6a6bee439321559f1a239d539fa47159e
+shots_sha256: 1ceacca3d31f57fb7a3972922787b77c8e8e3653d57533158819675614613dbf
+coordinates:
+- diagram: 1
+  x: 199
+  y: 440
+- diagram: 2
+  x: 461
+  y: 321
+- diagram: 3
+  x: 324
+  y: 392
+- diagram: 4
+  x: 383
+  y: 335
+- diagram: 5
+  x: 259
+  y: 439
+- diagram: 6
+  x: 559
+  y: 296
+skipped_diagrams: []

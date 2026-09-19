@@ -1,0 +1,156 @@
+id: ghostbusters-prem-le-stern-2016
+name: Ghostbusters (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2016
+  designer: John Trudeau
+  artist: Jeremy Packer / Zombie Yeti
+  production: Premium and LE are gameplay-equivalent; LE limited to 500 games
+  era: SPIKE / DMD
+  multiball: Storage Facility, We Came We Saw We Kicked Its..., Mass Hysteria, and
+    We're Ready to Believe You
+rules_basis:
+  kind: code
+  version: v1.17
+  release_date: '2019-10-08'
+hook: Start a Scene from the skill shot and concentrate on one Scene ladder to qualify
+  We Came, We Saw. Loop the left ramp and cash Gear Combos at the captive balls to
+  qualify 2x and 3x playfield; overlap them for 6x, then bring that multiplier into
+  WCWS, Storage, or another major scoring feature.
+rules:
+  primary: Three Scene ladders contain 2, 3, and 4 modes. Completing any ladder lights
+    We Came, We Saw, with its ball count matching that ladder's number of modes. The
+    two-mode route is fastest; longer ladders produce larger multiballs.
+  bullets:
+  - Left-ramp Gear Combos build value; captive-ball or Proton Pack shots collect them
+    and advance qualification toward 2x and 3x playfield.
+  - 2x and 3x can overlap for 6x playfield. Individual multipliers can be extended,
+    but 6x cannot be extended on v1.17.
+  - Three left-ramp locks start 3-ball Storage Facility Multiball. Ghost shots become
+    jackpots; collecting all ghost jackpots lights three Super Jackpots.
+  - Scenes can run during Storage, and completing a Scene ladder can start We Came,
+    We Saw while Storage is still active.
+  - Most Scenes complete on a drain but lose their completion points; the final Scene
+    in each ladder instead resumes from its prior state.
+watch:
+- title: 2X and 3X flashing
+  text: Both multipliers are running for 6x playfield. This is the game's most important
+    scoring tell, so expect the player to prioritize immediate value over additional
+    setup.
+- title: Ghost ladder
+  text: Ghost milestones at 60, 80, and 100 bring Loopin' Supers, PKE Frenzy, and
+    Mass Hysteria into play.
+- title: Scene ladder complete
+  text: We Came, We Saw is qualified at the left ramp. If Storage is already running,
+    the player can turn that into a major multiball stack.
+- title: Mass Hysteria arrows
+  text: Blue arrows indicate reversed flipper controls during Mass Hysteria; purple
+    indicates normal orientation.
+skill_shots:
+- name: P-K-E Skill Shot
+  how: Use the left flipper to select a P-K-E top lane before the plunge.
+  value: Each successful component scores 1M plus 5% of current score. K is usually
+    preferred because it advances playfield-X qualification; P adds 3 Bonus X and
+    E adds 3M to Super Jackpot.
+- name: Playfield Skill Shot
+  how: Use the right flipper to select a major shot, then make it before hitting another
+    major shot.
+  value: Scores 1M plus 5% of current score and can immediately Start Scene at the
+    left scoop, left ramp, or right orbit when applicable.
+features:
+- type: ball-save
+  name: Opening Ball Save
+  text: Opening protection can save consecutive drains while its timer remains active;
+    the number of saves is adjustment-sensitive.
+- type: other
+  name: Add-a-Ball
+  text: Multiballs light an add-a-ball at start. During Storage, captive-ball progress
+    can light its collection at the left scoop.
+- type: video-mode
+  name: Video Mode
+  text: At 40 ghosts, choose Negative Reinforcement or Don't Cross the Streams. Competition
+    settings make Negative Reinforcement deterministic from ghost count.
+- type: mystery-award
+  name: Tobin's Spirit Guide / Slot Pops
+  text: Mystery-style awards can provide multiplier progress, locks, mode features,
+    and other utilities, with normalized behavior in competition play.
+- type: extra-ball
+  name: Extra Ball
+  text: When Extra Balls are configured as points, the documented award is 15M and
+    is multiplied by playfield X.
+- type: other
+  name: Magnetic Slings
+  text: Premium/LE electromagnets can unpredictably throw the ball or briefly catch
+    it before dropping it toward a flipper.
+shots:
+- name: Left Scoop
+  value: Starts the shortest Scene ladder and collects utilities including Tobin's
+    awards and add-a-ball.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp
+  value: The core progression shot for Scenes, Gear Combos, Storage locks, and We
+    Came, We Saw.
+  risk: Medium-High
+  diagram: 2
+- name: Left Captive Balls / Proton Pack
+  value: Collects Gear Combos and advances 2x and 3x playfield qualification; also
+    contributes to add-a-ball progress.
+  risk: High
+  diagram: 3
+- name: GHOST / Slimer
+  value: Relights Scenes and spots mode shots, providing recovery when the desired
+    Scene was not started directly.
+  risk: High
+  diagram: 4
+- name: Right Orbit
+  value: Advances the longest Scene ladder and River of Slime progression.
+  risk: Medium-High
+  diagram: 5
+- name: Right Ramp
+  value: Collects important mode objectives and PKE jackpots, but the Premium/LE U-turn
+    is especially demanding.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take the easiest available Scene ladder and cash We Came, We Saw without
+    insisting on perfect 6x setup. Once a comfortable multiplier is running, avoid
+    unnecessary GHOST, Scoleri, and captive-ball risk.
+  behind: Prepare both 2x and 3x for 6x, then bring that window into We Came, We Saw,
+    Storage plus a Scene, or a developed PKE Frenzy. Mass Hysteria offers additional
+    variance but requires the much longer climb to 100 ghosts.
+  key_decision: Start the valuable feature now or risk dangerous captive-ball and
+    standup shots to bring 2x, 3x, or 6x into it? Multiplier setup can transform a
+    scoring window, but the setup shots themselves are among the game's most dangerous.
+danger:
+- GHOST misses against the adjacent guide can lose momentum and fall almost straight
+  down the middle.
+- Scoleri Brothers target hits can return straight down the middle or produce severe
+  airballs.
+- A half-shot to the left ramp can curl back toward the right outlane.
+- The Premium/LE right-ramp U-turn is extremely steep; rejects and powerful airballs
+  are both significant hazards.
+- Magnetic sling behavior and double-inlane geometry can turn apparently safe returns
+  into outlane drains.
+commentary:
+- Both multiplier lamps are running—that's six-times playfield, so this is the scoring
+  window.
+- They're staying on one Scene ladder because finishing it lights We Came, We Saw.
+- Storage is running with the Scene—that stack can turn into We Came, We Saw without
+  returning to single-ball.
+- That captive-ball shot is multiplier setup, but it's one of the most dangerous shots
+  on the game.
+- One hundred ghosts means Mass Hysteria—and the flipper buttons are about to swap
+  sides.
+- They missed the Scene skill shot, so now they have to go through GHOST and Slimer
+  to relight it.
+trivia:
+- Ghostbusters was Stern's final cornerstone game released with a traditional DMD.
+- Ernie Hudson recorded custom speech as Winston Zeddemore.
+- Premium/LE Ecto Goggles use a Pepper's Ghost-style projection over the right orbit.
+- Premium/LE replace conventional sling coils with under-playfield electromagnets
+  capable of throwing or catching the ball.
+- Stern produced 500 Limited Editions, with Premium and LE sharing the same substantive
+  gameplay mechanisms and rules.
+summary: Start Scene → finish one ladder → build 2x + 3x → run 6x → start WCWS or
+  Storage → cash scoring window

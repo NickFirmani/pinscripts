@@ -1,0 +1,152 @@
+id: rush-prem-le-stern-2022
+name: Rush (Prem/LE)
+metadata:
+  manufacturer: Stern
+  year: 2022
+  designer: John Borg
+  artist: Michael Barnard
+  production: LE limited to 1,000; Premium production not specified
+  era: SPIKE 2
+  multiball: Six core multiballs; Headlong Flight can stack with another multiball
+rules_basis:
+  kind: code
+  version: v1.19.0
+  release_date: '2026-07-01'
+hook: Set Time Machine Multiball one shot away, qualify a song and ideally its matching
+  Album, then start the song and stack Multiball underneath it. Use The Weapon to
+  sweep song shots or add a ball. Completed songs leave permanent 2× shots and years
+  that upgrade later Time Machine Multiballs.
+rules:
+  primary: Collect Records to qualify songs at the Time Machine. Ideally pair a song
+    with its matching Album, then stack a Time Machine Multiball underneath it so
+    The Weapon can spot song shots or add a ball. Completed songs award years and
+    a permanent rainbow-record 2× shot; every ten years permanently reduces later
+    Time Machine Multiball requirements and increases jackpots.
+  bullets:
+  - Matching-colored record shots score 2× during a song; getting all six record shots
+    to one color makes all shots 3×.
+  - Albums come from unique 1-2-3 combos followed by a Combo Jackpot at the Time Machine
+    and arm The Weapon for the matching song or multiball.
+  - Most multiballs cannot stack with one another, but Headlong Flight can start during
+    another multiball.
+  - Red Barchetta, Subdivisions, Fly By Night, Far Cry, Freewill and Headlong Flight
+    are the six core multiballs needed for Cygnus X-1 Book 1.
+  - Competition Install makes Roll the Bones Mystery deterministic; disabled Extra
+    Balls score 10M.
+watch:
+- title: Time Machine color
+  text: Flashing red means a song is ready, green means a multiball is ready, and
+    yellow means a Combo Jackpot and Album are ready.
+- title: Blue or green Action button
+  text: Blue means the matching Album can spot all lit song shots; green means an
+    add-a-ball is available for the associated multiball.
+- title: Rainbow Record
+  text: A completed song permanently doubles one chosen shot until 2112, so repeated
+    targeting may be driven by that multiplier.
+- title: Drum Clock at midnight
+  text: Headlong Flight is ready at the right orbit and can be started on top of another
+    multiball.
+skill_shots:
+- name: Side Loop
+  how: Short plunge to the upper-right flipper, then shoot the Side Loop.
+  value: Scores 1× the current skill-shot value and extends ball-save time.
+- name: Side Ramp
+  how: Short plunge to the upper-right flipper, then shoot the Side Ramp.
+  value: Scores 2× the current skill-shot value and extends ball-save time.
+- name: Upper Scoop / Super
+  how: Shoot the Upper Scoop for 3×, or hit Side Loop first and then Side Ramp or
+    Upper Scoop for a Super Skill Shot.
+  value: Upper Scoop scores 3×; the Super Skill Shot doubles the second award. Successful
+    skill shots extend ball-save time.
+features:
+- type: player-control
+  name: The Weapon
+  text: Hold Action for three seconds when blue or green to spot all lit song shots
+    or add a ball to the matching multiball. Add-a-ball takes priority when both are
+    active.
+- type: mystery-award
+  name: Roll the Bones
+  text: Complete the three inlanes, then shoot the left scoop. Competition Mode uses
+    an ordered deterministic award list and can provide contextual awards such as
+    multiball add-a-ball.
+- type: ball-save
+  name: Outlane save
+  text: Two RUSH-bank completions light an outlane save; the flipper buttons move
+    the lit side.
+- type: extra-ball
+  name: Extra Balls
+  text: Ramp progress, five Albums or reaching 2062 can light an Extra Ball. Disabled
+    Extra Balls score 10M.
+shots:
+- name: Scoops / Dead End
+  value: Handles Far Cry locks, Mystery and important song jackpots; the Premium/LE
+    Dead End also feeds its VUK and wireform.
+  risk: Medium
+  diagram: 1
+- name: Side Loop
+  value: Upper-flipper utility shot for skill shots, combos, Headlong Flight jackpots
+    and Bonus X.
+  risk: Medium
+  diagram: 2
+- name: Side Ramp
+  value: Major upper-flipper shot for skill shots, Combo Super and Headlong Flight
+    jackpots.
+  risk: Medium-High
+  diagram: 3
+- name: Time Machine
+  value: Central start and cash-out shot for songs, Combo Jackpots and the three Time
+    Machine Multiballs.
+  risk: Medium-High
+  diagram: 4
+- name: Right ramp
+  value: Qualifies Far Cry, advances Bastille Day and participates in combos and mode
+    scoring.
+  risk: Medium-High
+  diagram: 5
+- name: Right orbit
+  value: Advances the Drum Clock and starts Headlong Flight once midnight is reached.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Take the straightforward song plus first Time Machine Multiball stack, use
+    The Weapon for protection and cash accessible Supers rather than deliberately
+    forcing dangerous bumper and right-orbit progress toward Headlong Flight.
+  behind: Improve the stack before starting it with a matching Album, stronger Records
+    and persistent shot multipliers. If midnight is close, add Headlong Flight on
+    top of another multiball; La Villa Strangiato also offers high stand-alone scoring
+    potential.
+  key_decision: Start the prepared multiball now for immediate safety, or keep setting
+    up its song and matching Album first so The Weapon and mode multipliers can greatly
+    increase the stack's value?
+danger:
+- A full plunge sends the ball into the dangerous pop bumpers; short plunge to the
+  upper-right flipper instead.
+- The right orbit feeds the same bumpers and is often avoided unless a rule specifically
+  requires it.
+- Weak attempts at the steep right ramp can reject rapidly.
+- Missed upper-flipper Side Loop, Side Ramp or Scoop shots surrender control into
+  upper-playfield traffic.
+- Inaccurate left-orbit attempts can enter chaotic bumper action.
+commentary:
+- They've left Time Machine Multiball one shot away so they can bring a song in with
+  it.
+- That blue Action button means they own the matching Album—the Weapon can sweep every
+  lit mode shot.
+- 'Green button here is even better: hold it and they get an add-a-ball.'
+- That rainbow record makes this shot two-times for the rest of the game until 2112.
+- The clock has reached midnight—Headlong Flight can now stack on top of another multiball.
+- They're short plunging on purpose; the full plunge puts Rush straight into its most
+  dangerous bumpers.
+trivia:
+- Rush was unveiled on January 4, 2022 with 16 Rush songs spanning much of the band's
+  career.
+- Geddy Lee and Alex Lifeson recorded custom callouts, along with fellow Canadian
+  musician Ed Robertson.
+- The Premium/LE Clockwork Angels Clock is modeled after Neil Peart's Time Machine
+  Tour bass drum; reaching midnight triggers Headlong Flight.
+- Premium/LE add the Far Cry subway, Dead End VUK and wireform, and physical Freewill
+  secret lock that are absent from Pro.
+- The LE was limited to 1,000 units and adds collector treatments and Expression Lighting
+  while sharing Premium's gameplay mechanisms.
+summary: Set up Time Machine MB → qualify song + Album → start song → stack Multiball
+  → use Weapon → build permanent 2× shots and years → repeat stronger

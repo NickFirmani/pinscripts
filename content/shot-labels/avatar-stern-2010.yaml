@@ -1,0 +1,25 @@
+game_id: avatar-stern-2010
+image_width: 977
+image_height: 1797
+image_sha256: 0a97c51ce46274c59c61e8796cdea44d923a1ac7234f03f7a43673983aa32b85
+shots_sha256: 766925ef940800c5f4fe0e133e11bac6aee5fb7f447f4794523a0dbfed984359
+coordinates:
+- diagram: 1
+  x: 135
+  y: 777
+- diagram: 2
+  x: 227
+  y: 654
+- diagram: 3
+  x: 344
+  y: 606
+- diagram: 4
+  x: 462
+  y: 580
+- diagram: 5
+  x: 682
+  y: 693
+- diagram: 6
+  x: 792
+  y: 811
+skipped_diagrams: []

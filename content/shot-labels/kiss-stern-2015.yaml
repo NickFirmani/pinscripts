@@ -1,0 +1,26 @@
+game_id: kiss-stern-2015
+image_width: 737
+image_height: 1355
+image_sha256: 8ea61d97a6b63d7d5676c3560a05a58500eb9112344265fd98658a1afcbea898
+shots_sha256: f8c5b5c7547d1998e5dcc4a21bb591efd08e843fefa654d952e0ae6a6af72636
+coordinates:
+- diagram: 2
+  x: 275
+  y: 611
+- diagram: 3
+  x: 394
+  y: 192
+- diagram: 4
+  x: 500
+  y: 387
+- diagram: 5
+  x: 622
+  y: 408
+- diagram: 6
+  x: 676
+  y: 807
+- diagram: 6
+  x: 72
+  y: 775
+skipped_diagrams:
+- 1

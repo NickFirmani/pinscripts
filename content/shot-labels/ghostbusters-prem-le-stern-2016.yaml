@@ -1,0 +1,25 @@
+game_id: ghostbusters-prem-le-stern-2016
+image_width: 889
+image_height: 1634
+image_sha256: 0c802f477b18eda3a7f59dfea97c8b35650a785208751bf78cd1fa5f0c32e07a
+shots_sha256: 046e337aa5e98a7ed049c5e5c94f18ba4833452ec6e9634dd4c0f19255d7e435
+coordinates:
+- diagram: 1
+  x: 175
+  y: 764
+- diagram: 2
+  x: 275
+  y: 444
+- diagram: 3
+  x: 167
+  y: 922
+- diagram: 4
+  x: 500
+  y: 545
+- diagram: 5
+  x: 673
+  y: 688
+- diagram: 6
+  x: 752
+  y: 750
+skipped_diagrams: []

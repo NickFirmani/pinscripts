@@ -1,0 +1,25 @@
+game_id: cyclone-williams-1988
+image_width: 554
+image_height: 1019
+image_sha256: feadcb16de468b6ba97f61d067255f726941122578b1b3015c403cddca6f9405
+shots_sha256: 2a6994faca79507f42d95619f165012b146e3d0ec45b8cd22e25090966482cad
+coordinates:
+- diagram: 1
+  x: 54
+  y: 550
+- diagram: 2
+  x: 79
+  y: 321
+- diagram: 3
+  x: 20
+  y: 401
+- diagram: 4
+  x: 192
+  y: 404
+- diagram: 5
+  x: 463
+  y: 323
+- diagram: 6
+  x: 510
+  y: 489
+skipped_diagrams: []

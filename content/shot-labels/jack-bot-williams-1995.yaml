@@ -1,0 +1,24 @@
+game_id: jack-bot-williams-1995
+image_width: 500
+image_height: 919
+image_sha256: f41b15420dcb2fdcfd4b284ebb5f56cbf0d5932e6ba24df0d853d7b90732db86
+shots_sha256: d6bec40e227b2318e22a6a912dff024df879e31380aa4f88b43924b8fb5a43af
+coordinates:
+- diagram: 1
+  x: 94
+  y: 279
+- diagram: 2
+  x: 143
+  y: 203
+- diagram: 4
+  x: 244
+  y: 200
+- diagram: 5
+  x: 190
+  y: 116
+- diagram: 5
+  x: 299
+  y: 114
+skipped_diagrams:
+- 3
+- 6

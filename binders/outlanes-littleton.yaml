@@ -1,0 +1,281 @@
+version: 2
+id: outlanes-littleton
+title: Outlanes Pinball Lounge
+status: draft
+printed_at: null
+source:
+  kind: manual
+  location_id: '26094'
+  url: https://pinballmap.com/map/?by_location_id=26094
+  retrieved_at: '2026-09-19'
+  notes: Pinball Map is an advisory reference; this manifest is manually curated.
+pending_games: []
+source_overrides:
+- imported:
+    name: Beatles (Gold)
+    manufacturer: Stern
+    year: 2018
+  action: replace
+  catalog_id: beatles-gold-stern-2018
+  reason: null
+- imported:
+    name: Baywatch
+    manufacturer: Sega
+    year: 1995
+  action: replace
+  catalog_id: baywatch-sega-1995
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Captain Fantastic and The Brown Dirt Cowboy
+    manufacturer: Bally
+    year: 1975
+  action: replace
+  catalog_id: captain-fantastic-bally-1977
+  reason: null
+- imported:
+    name: Cactus Canyon (Remake Special)
+    manufacturer: Chicago Gaming
+    year: 2021
+  action: replace
+  catalog_id: cactus-canyon-remake-chicago-gaming-2021
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Elvira's House of Horrors (40th Anniversary)
+    manufacturer: Stern
+    year: 2019
+  action: replace
+  catalog_id: elvira-house-of-horrors-stern-2023
+  reason: null
+- imported:
+    name: Jack-Bot
+    manufacturer: Williams
+    year: 1995
+  action: replace
+  catalog_id: jack-bot-williams-1995
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Jurassic Park (30th Anniversary)
+    manufacturer: Stern
+    year: 2023
+  action: replace
+  catalog_id: jurassic-park-prem-le-stern-2019
+  reason: null
+- imported:
+    name: James Bond 007 (60th Anniversary)
+    manufacturer: Stern
+    year: 2022
+  action: replace
+  catalog_id: james-bond-007-60th-anniversary-stern-2022
+  reason: Catalog identity selected while resolving the imported listing.
+- imported:
+    name: Kiss
+    manufacturer: Stern
+    year: 2015
+  action: replace
+  catalog_id: kiss-stern-2015
+  reason: Catalog identity selected while resolving the imported listing.
+games:
+- id: avatar-stern-2010
+  pages:
+  - '2'
+  - '3'
+  present: true
+  venue_notes: []
+- id: baywatch-sega-1995
+  pages:
+  - '4'
+  - '5'
+  present: true
+  venue_notes: []
+- id: black-knight-sword-of-rage-prem-le-stern-2019
+  pages:
+  - '6'
+  - '7'
+  present: true
+  venue_notes: []
+- id: cactus-canyon-remake-chicago-gaming-2021
+  pages:
+  - '8'
+  - '9'
+  present: true
+  venue_notes: []
+- id: captain-fantastic-bally-1977
+  pages:
+  - '10'
+  - '11'
+  present: true
+  venue_notes: []
+- id: cyclone-williams-1988
+  pages:
+  - '12'
+  - '13'
+  present: true
+  venue_notes: []
+- id: deadpool-pro-stern-2018
+  pages:
+  - '14'
+  - '15'
+  present: true
+  venue_notes: []
+- id: elvira-house-of-horrors-stern-2023
+  pages:
+  - '16'
+  - '17'
+  present: true
+  venue_notes: []
+- id: fallout-pro-stern-2026
+  pages:
+  - '18'
+  - '19'
+  present: true
+  venue_notes: []
+- id: fish-tales-williams-1992
+  pages:
+  - '20'
+  - '21'
+  present: true
+  venue_notes: []
+- id: foo-fighters-prem-le-stern-2023
+  pages:
+  - '22'
+  - '23'
+  present: true
+  venue_notes: []
+- id: ghostbusters-prem-le-stern-2016
+  pages:
+  - '24'
+  - '25'
+  present: true
+  venue_notes: []
+- id: godzilla-prem-le-stern-2021
+  pages:
+  - '26'
+  - '27'
+  present: true
+  venue_notes: []
+- id: high-speed-williams-1986
+  pages:
+  - '28'
+  - '29'
+  present: true
+  venue_notes: []
+- id: iron-maiden-pro-stern-2018
+  pages:
+  - '30'
+  - '31'
+  present: true
+  venue_notes: []
+- id: jack-bot-williams-1995
+  pages:
+  - '32'
+  - '33'
+  present: true
+  venue_notes: []
+- id: james-bond-007-60th-anniversary-stern-2022
+  pages:
+  - '34'
+  - '35'
+  present: true
+  venue_notes: []
+- id: jaws-prem-le-stern-2024
+  pages:
+  - '36'
+  - '37'
+  present: true
+  venue_notes: []
+- id: jurassic-park-prem-le-stern-2019
+  pages:
+  - '38'
+  - '39'
+  present: true
+  venue_notes: []
+- id: king-kong-myth-of-terror-island-prem-le-stern-2025
+  pages:
+  - '40'
+  - '41'
+  present: true
+  venue_notes: []
+- id: kiss-stern-2015
+  pages:
+  - '42'
+  - '43'
+  present: true
+  venue_notes: []
+- id: little-chief-williams-1975
+  pages:
+  - '44'
+  - '45'
+  present: true
+  venue_notes: []
+- id: metallica-pro-stern-2013
+  pages:
+  - '46'
+  - '47'
+  present: true
+  venue_notes: []
+- id: pokemon-prem-le-stern-2026
+  pages:
+  - '48'
+  - '49'
+  present: true
+  venue_notes: []
+- id: rollergames-williams-1990
+  pages:
+  - '50'
+  - '51'
+  present: true
+  venue_notes: []
+- id: rush-prem-le-stern-2022
+  pages:
+  - '52'
+  - '53'
+  present: true
+  venue_notes: []
+- id: star-wars-fote-prem-le-stern-2025
+  pages:
+  - '54'
+  - '55'
+  present: true
+  venue_notes: []
+- id: teenage-mutant-ninja-turtles-prem-le-stern-2020
+  pages:
+  - '56'
+  - '57'
+  present: true
+  venue_notes: []
+- id: beatles-gold-stern-2018
+  pages:
+  - '58'
+  - '59'
+  present: true
+  venue_notes: []
+- id: simpsons-pinball-party-stern-2003
+  pages:
+  - '60'
+  - '61'
+  present: true
+  venue_notes: []
+- id: walking-dead-pro-stern-2014
+  pages:
+  - '62'
+  - '63'
+  present: true
+  venue_notes: []
+- id: toy-story-4-le-ce-jersey-jack-2022
+  pages:
+  - '64'
+  - '65'
+  present: true
+  venue_notes: []
+- id: transformers-prem-le-stern-2026
+  pages:
+  - '66'
+  - '67'
+  present: true
+  venue_notes: []
+- id: venom-prem-le-stern-2023
+  pages:
+  - '68'
+  - '69'
+  present: true
+  venue_notes: []

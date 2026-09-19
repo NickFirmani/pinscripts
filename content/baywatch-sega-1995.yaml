@@ -1,0 +1,153 @@
+id: baywatch-sega-1995
+name: Baywatch
+metadata:
+  manufacturer: Sega Pinball
+  year: 1995
+  designer: Joe Balcer and Joe Kaminkow
+  artist: Jeff Busch and Markus Rothkranz
+  production: Single production model; approximately 2,000 machines
+  era: Data East/Sega Version 3b
+  multiball: 5-ball Multiball, Tourist Season, and Earthquake
+rules_basis:
+  kind: rom
+  version: CPU ROM v4.00 (BAYCPUA.400)
+  release_date: null
+hook: 'Prioritize the main 5-ball Multiball: lock three balls, collect all five major-shot
+  jackpots, then cash Shark Scoop Super, Side Ramp Double Super, and the roving 500M
+  Baywatch Jackpot. Outside multiball, build rescue modes but avoid unnecessary dangerous
+  standup work.'
+rules:
+  primary: 'Five major shots build cumulative GUARD progress and eventually start
+    their rescue modes. Main Multiball is the repeatable scoring engine: clear the
+    center 3-bank to light locks at the left ramp, lock three balls, then attack five
+    major jackpots during 5-ball play.'
+  bullets:
+  - Holding a ball in the Upper Ball Launch for roughly 10 seconds temporarily doubles
+    regular Multiball jackpots.
+  - Collect all five regular jackpots to light the Shark Scoop Super at 50M times
+    balls in play; the Side Ramp then offers a Double Super worth twice that.
+  - Completing Super and Double Super starts a roving 500M Baywatch Jackpot across
+    the five major shots, with a short last-chance opportunity possible after multiball
+    ends.
+  - SPF top-lane completions advance end-of-ball bonus through 2x, 4x, 6x, 8x, and
+    10x; the multiplier resets each ball.
+  - Earthquake is a 30-second all-balls wizard mode where major shots recollect accumulated
+    mode values; when time expires, the flippers shut off and the balls drain.
+watch:
+- title: Trap door open
+  text: A physical lock is lit at the left ramp, signaling that the player has shifted
+    toward the main 5-ball Multiball.
+- title: Five jackpot arrows
+  text: During Multiball, completing all five major-shot jackpots transitions scoring
+    to Shark Scoop Super and then Side Ramp Double Super.
+- title: Ball held upstairs
+  text: A ball parked in the Upper Ball Launch temporarily doubles regular Multiball
+    jackpots, so another lit jackpot becomes the immediate priority.
+- title: 500M roving jackpot
+  text: After Super and Double Super, the Baywatch Jackpot roves among the five major
+    shots for 500M.
+skill_shots:
+- name: SPF Skill Shot
+  how: Select with the flippers, then let the auto-launch feed the flashing SPF top
+    lane.
+  value: Starts at 10M and increases 10M after each success. It is the safest choice
+    and also advances SPF bonus.
+- name: Shark Scoop Skill Shot
+  how: Select Shark, then use the upper-right shark-fin sequence to reach the scoop.
+  value: Awards 20M on factory rules; harder and more volatile than the SPF shot.
+- name: Side Ramp Skill Shot
+  how: Select the ramp and make the Side Ramp with the upper-left flipper.
+  value: Awards 50M on factory rules, making it the hardest but largest immediate
+    skill-shot award.
+features:
+- type: ball-save
+  name: Laser Kick
+  text: The left-outlane kickback is lit at the start of each ball and can be relit
+    from the two standups near the Shark flipper.
+- type: mystery-award
+  name: Search & Rescue
+  text: Complete the five vehicle standups, then collect at the Spinner. Awards are
+    random in normal play and follow a fixed order in Tournament Mode.
+- type: other
+  name: Shark Flips
+  text: Completing SHARK enables the software-controlled shark-fin flipper to attempt
+    the Shark Scoop automatically.
+- type: video-mode
+  name: Video Modes
+  text: Factory rules include Waterskiing and Ironman video modes; they provide secondary
+    scoring rather than the primary tournament route.
+- type: extra-ball
+  name: Extra Balls
+  text: Extra balls can qualify through SPF, rescue modes, and Shark progression.
+shots:
+- name: Left Ramp / Lock Tower
+  value: Advances physical locks, CPR, and a major Multiball jackpot. It is the primary
+    route into the game's repeatable 5-ball scoring engine.
+  risk: Medium-High
+  diagram: 1
+- name: Shark Scoop
+  value: Advances Shark features and collects the Multiball Super Jackpot after all
+    five regular jackpots are complete.
+  risk: High
+  diagram: 2
+- name: Center Ramp
+  value: Advances Copter Rescue and serves as one of the five major Multiball jackpot
+    shots.
+  risk: Medium-High
+  diagram: 3
+- name: Upper VUK
+  value: Advances Diver Trapped, starts qualified Earthquake, and serves as a major
+    jackpot shot.
+  risk: Medium-High
+  diagram: 4
+- name: Right Ramp
+  value: Advances Shark Cove and major-shot progress while serving as another Multiball
+    jackpot.
+  risk: High
+  diagram: 5
+- name: Spinner Lane
+  value: Advances Tidal Wave and Search & Rescue, scores a Multiball jackpot, and
+    feeds the Upper Ball Launch for temporary 2x jackpots.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Favor the safe SPF skill shot, make controlled major-shot progress, and start
+    Multiball when available. Avoid deliberately attacking dangerous vehicle and SHARK
+    standups during Copter Rescue or Shark Cove when simply surviving the mode is
+    sufficient.
+  behind: Push main Multiball through all five jackpots, Shark Scoop Super, Side Ramp
+    Double Super, and the 500M Baywatch Jackpot. CPR provides a compact high-value
+    alternative, while Earthquake is worth pursuing when already close to qualification.
+  key_decision: Take mode progress or physical locks? The left ramp advances useful
+    single-ball progress but can also lock the ball and force a fresh auto-launch,
+    giving up settled control in exchange for moving toward the game's strongest multiball.
+danger:
+- Copter Rescue's vehicle standups can produce dangerous center rebounds, making survival
+  preferable to deliberately attacking them.
+- Shark Cove and the SHARK bank similarly demand exposed target work with substantial
+  drain risk.
+- The software-controlled shark-fin flipper can produce less predictable feeds than
+  allowing the ball to continue naturally.
+- A rejected Center Ramp attempt can return directly between the lower flippers.
+- Every physical lock gives up settled control and replaces it with an auto-launched
+  ball through the upper playfield.
+commentary:
+- Three locks gets the big five-ball Multiball—that's the main tournament scoring
+  plan.
+- That ball is parked upstairs, so the regular jackpots are double right now.
+- Five jackpots are done—now it's Shark Scoop for the Super.
+- Super collected; the Side Ramp is the Double Super, and after that the 500-million
+  Baywatch Jackpot becomes available.
+- They're letting Copter Rescue time out—the required standups are much more dangerous
+  than the points are worth.
+- Tournament Mode removes the randomness from Search & Rescue, so that award sequence
+  is predictable.
+trivia:
+- Baywatch uses Sega's oversized 192×64 DMD, substantially taller than the common
+  128×32 display.
+- Its shark-shaped upper-right flipper is software controlled.
+- Approximately 2,000 machines were produced.
+- Future Stern designer John Borg is credited for Baywatch's engineering and mechanics.
+- The machine supports up to six players.
+summary: Build locks → start 5-ball MB → five jackpots → Shark Super → Side Ramp Double
+  Super → 500M Baywatch Jackpot
