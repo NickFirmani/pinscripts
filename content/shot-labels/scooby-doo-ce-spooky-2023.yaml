@@ -1,0 +1,25 @@
+game_id: scooby-doo-ce-spooky-2023
+image_width: 893
+image_height: 1642
+image_sha256: 9c9b736adc923f526fd949cdd4e8d35ebcc7ee5b0e4ca4bb9e8b7a2574817531
+shots_sha256: 2f1d19dec796fb9b16aecd3e298f30220d72e37acbf4db980b451df1d7bd2014
+coordinates:
+- diagram: 1
+  x: 233
+  y: 627
+- diagram: 2
+  x: 174
+  y: 1012
+- diagram: 3
+  x: 123
+  y: 646
+- diagram: 4
+  x: 450
+  y: 517
+- diagram: 5
+  x: 646
+  y: 541
+- diagram: 6
+  x: 570
+  y: 498
+skipped_diagrams: []

@@ -358,6 +358,61 @@ class GameImageTests(unittest.TestCase):
 
         self.assertEqual(result, 0)
 
+    def test_interactive_game_image_prefers_explicit_catalog_id(self):
+        stdout = io.StringIO()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            downloads = root / "Downloads"
+            images = root / "images"
+            research = root / "research"
+            downloads.mkdir()
+            images.mkdir()
+            research.mkdir()
+            (research / "alice-s-adventures-in-wonderland-dutch-2025.md").touch()
+
+            def download_image(_game):
+                (downloads / "alice.jpg").write_bytes(b"image data")
+
+            with (
+                patch.object(app, "ROOT", root),
+                patch.object(app, "DOWNLOADS", downloads),
+                patch.object(app, "IMAGES", images),
+                patch.object(app, "RESEARCH", research),
+                patch.object(
+                    app,
+                    "open_google_image_search",
+                    side_effect=download_image,
+                ),
+                patch.object(app, "image_dimensions", return_value=(1600, 2400)),
+                patch.object(
+                    app,
+                    "prepare_downloaded_image_for_crop",
+                    return_value=True,
+                ),
+                patch.object(
+                    app,
+                    "write_canonical_webp",
+                    side_effect=lambda source, destination: destination.write_bytes(
+                        source.read_bytes()
+                    ),
+                ),
+                patch("builtins.input", return_value=""),
+                redirect_stdout(stdout),
+            ):
+                result = app.interactive_game_image(
+                    "Alice's Adventures in Wonderland (Dutch, 2025)",
+                    continue_batch=False,
+                    destination_id="alice-adventures-in-wonderland-dutch-2025",
+                )
+
+            expected = images / "alice-adventures-in-wonderland-dutch-2025.webp"
+            inferred = images / "alice-s-adventures-in-wonderland-dutch-2025.webp"
+            self.assertEqual(expected.read_bytes(), b"image data")
+            self.assertFalse(inferred.exists())
+
+        self.assertEqual(result, 0)
+        self.assertIn("catalog ID", stdout.getvalue())
+
     def test_interactive_game_image_selects_first_missing_game_when_omitted(self):
         stdout = io.StringIO()
         with tempfile.TemporaryDirectory() as directory:

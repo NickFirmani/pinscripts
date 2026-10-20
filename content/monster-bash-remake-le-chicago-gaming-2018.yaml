@@ -1,0 +1,153 @@
+id: monster-bash-remake-le-chicago-gaming-2018
+name: Monster Bash Remake (LE)
+metadata:
+  manufacturer: Chicago Gaming Company
+  year: 2018
+  designer: George Gomez
+  artist: Greg Freres and Kevin O'Connor
+  production: 1,250 Limited Edition machines; Classic and Special Editions also produced
+  era: Modern remake of 1998 Williams WPC game; color LCD
+  multiball: Frankenstein Multiball, Mosh Pit Multiball, Monster Bash, and Monsters
+    of Rock
+rules_basis:
+  kind: code
+  version: v1.0.3
+  release_date: '2000-01-01'
+hook: Start all six monster modes to qualify four-ball Monster Bash; complete all
+  six to collect their instruments and qualify the bigger Monsters of Rock wizard
+  multiball. Start several modes before finishing them, then use Frankenstein or Monster
+  Bash to freeze mode timers while completing difficult objectives. Monster Bombs
+  can spot troublesome shots.
+rules:
+  primary: Starting all six monster modes lights Monster Bash at the scoop; completing
+    all six awards their instruments and lights Monsters of Rock. Monster modes can
+    overlap. Frankenstein, Mosh Pit and Monster Bash multiballs freeze active mode
+    timers while two or more balls remain, but players can still complete those modes.
+    This makes stacking the central tournament strategy.
+  bullets:
+  - 'Monster Bash: four-ball multiball. Monster shots build the center Mosh Pit Bash
+    Jackpot, which increases with monsters hit since the last collection, up to 7.5M.'
+  - 'Monsters of Rock: four-ball wizard multiball after all six instruments. Its first
+    start awards at least 55M, then high-value monster shots and completed sets produce
+    additional jackpots.'
+  - Completing the final instruments during Monster Bash can immediately replace it
+    with Monsters of Rock and refresh multiball. Starting Monsters of Rock ends remaining
+    ordinary modes rather than completing them.
+  - Frankenstein Multiball is a valuable way to protect difficult monster objectives.
+    Mosh Pit Multiball requires six center-spinner shots and can score well, but deliberate
+    spinner shooting is dangerous.
+  - Monster Bombs are banked by monster. Press the launch button during the corresponding
+    mode to spot one required shot or hit.
+watch:
+- title: Monster Started vs. Instrument Collected
+  text: A lit monster portrait means its mode has started, counting toward Monster
+    Bash. A lit instrument means the mode was completed, counting toward Monsters
+    of Rock. These are separate milestones.
+- title: Instrument Count
+  text: Six instruments light Monsters of Rock at the scoop. Watch for players finishing
+    the last instruments during Monster Bash to transition directly into the deeper
+    wizard multiball.
+- title: Overlapping Modes During Multiball
+  text: 'Multiple flashing monster modes during Frankenstein, Mosh Pit or Monster
+    Bash are ideal: their timers stop while at least two balls remain, allowing safer
+    completion.'
+- title: Scoop Wizard Qualification
+  text: Six started modes qualify Monster Bash; six completed instruments qualify
+    Monsters of Rock. The latter is the larger scoring opportunity.
+skill_shots:
+- name: D-I-G Skill Shot
+  how: Use the flipper buttons before plunging to position the flashing D-I-G rollover
+    beneath the expected ball path.
+  value: Scores 100K plus 50K per previous successful skill shot and awards a Monster
+    Bomb. The Bomb is more strategically valuable than the points.
+features:
+- type: player-control
+  name: Monster Bombs
+  text: Each monster has its own bankable Bomb. Press the launch button during that
+    monster's active mode to spot one required shot, especially useful for difficult
+    instrument objectives.
+- type: extra-ball
+  name: Extra Ball
+  text: Multiple mode and progression routes can light Extra Ball at the scoop. Tournament
+    treatment varies.
+- type: mystery-award
+  name: Scoop Mystery
+  text: When not occupied by a higher-priority feature, the scoop can award miscellaneous
+    benefits. Do not assume a fixed award sequence.
+- type: ball-save
+  name: Start-of-Ball Ball Save
+  text: Operator-adjustable protection at the beginning of a ball. Remake software
+    also provides a right-popper adjustment intended to reduce center-drain ejects.
+shots:
+- name: Creature / Lagoon
+  value: Starts and advances Creature Feature, one of the more difficult monster modes
+    to complete for its instrument.
+  risk: Medium-High
+  diagram: 1
+- name: Bride Ramps
+  value: Left and right ramps start and advance Ball & Chain. Completing the mode
+    awards the Bride's instrument.
+  risk: Medium-High
+  diagram: 2
+- name: Mosh Pit Spinner
+  value: Six spinner-lane shots qualify Mosh Pit Multiball. During Monster Bash, the
+    center lane collects the Bash Jackpot.
+  risk: High
+  diagram: 3
+- name: Frankenstein
+  value: Advances Frankenstein and its keyboard instrument, and starts a multiball
+    that protects stacked monster-mode timers.
+  risk: High
+  diagram: 4
+- name: Scoop
+  value: Starts Dracula and Mummy features, Mosh Pit Multiball, Monster Bash and Monsters
+    of Rock once qualified.
+  risk: Medium-High
+  diagram: 5
+- name: Left / Right Loops
+  value: Advance Full Moon Fever, including Wolf Man qualification and timed hurry-ups.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Keep starting monster modes and take Monster Bash once qualified instead
+    of risking six deliberate Mosh Pit spinner shots. During multiball, finish instruments
+    already within reach, using Monster Bombs to avoid unnecessarily dangerous targets.
+  behind: Start several difficult modes, especially Bride, Creature and Dracula, then
+    carry them into Frankenstein or Monster Bash while their timers are frozen. Complete
+    all six instruments to turn Monster Bash into Monsters of Rock, the game's major
+    comeback opportunity.
+  key_decision: Finish the current monster mode immediately or start another first?
+    More overlapping modes, followed by multiball protection, usually provide a safer
+    route to collecting all six instruments than finishing each monster separately.
+danger:
+- The narrow Mosh Pit spinner lane is a major center-drain risk when deliberately
+  targeted.
+- Direct Frankenstein hits can rebound sharply toward the flippers or straight down
+  the middle.
+- Dracula's standups and toy require dangerous forward-facing shots.
+- The scoop's right-popper eject can send balls toward the center; remake software
+  includes an adjustment to mitigate this.
+- Weak Bride ramp attempts can reject quickly into the middle instead of producing
+  a controlled ramp return.
+commentary:
+- They've started that monster, but they still need the instrument for Monsters of
+  Rock.
+- That multiball freezes the timers—this is exactly when they want to finish Bride
+  and Creature.
+- Six monster modes started means Monster Bash is lit at the scoop.
+- All six instruments are collected—now the scoop starts Monsters of Rock.
+- They're only a couple spinner shots from Mosh Pit, but that center shot is one of
+  the nastiest risks on the game.
+- They've got a Monster Bomb banked; the launch button can spot one of those remaining
+  mode hits.
+trivia:
+- Chicago Gaming recreated George Gomez's original 1998 Williams layout rather than
+  designing a new playfield.
+- The original game's rules and software were developed by Lyman F. Sheats Jr., with
+  artwork by Greg Freres and Kevin O'Connor.
+- Classic, Special and Limited Editions launched in 2018 with the same core gameplay.
+- The Limited Edition's sculpted topper depicts Frankenstein, Dracula and the Bride
+  performing as a band.
+- The remake retains the hidden Lyman's Lament easter egg from the original.
+summary: Start six monster modes → qualify Monster Bash → stack modes under multiball
+  → collect six instruments → start Monsters of Rock

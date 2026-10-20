@@ -1,0 +1,25 @@
+game_id: sopranos-stern-2005
+image_width: 1726
+image_height: 3173
+image_sha256: 807ec82d576bfed28940f299e5cb4f4ec9139d953f0c09ad2d373df55af4d98c
+shots_sha256: 4021a0d838d255f6cdab391bdde3b93af6b4e6ade395b0e076c2e22af9f43efc
+coordinates:
+- diagram: 1
+  x: 117
+  y: 1620
+- diagram: 2
+  x: 376
+  y: 762
+- diagram: 3
+  x: 574
+  y: 690
+- diagram: 4
+  x: 826
+  y: 918
+- diagram: 5
+  x: 1438
+  y: 952
+- diagram: 6
+  x: 1115
+  y: 1125
+skipped_diagrams: []

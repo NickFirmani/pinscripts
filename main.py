@@ -65,6 +65,10 @@ def build_parser():
     game_add.add_argument("--binder", dest="binder_id")
     game_update = game_commands.add_parser("update")
     game_update.add_argument("game", nargs="?", default="")
+    game_commands.add_parser(
+        "code-updates",
+        help="Check Stern release notes against local game-code versions",
+    )
     game_research = game_commands.add_parser("research")
     game_research.add_argument("description", nargs="?", default="")
     game_format = game_commands.add_parser("format")
@@ -166,6 +170,10 @@ def main(argv=None):
                 return interactive_add_game(args.description, args.binder_id)
             if args.game_command == "update":
                 return interactive_update_game(args.game)
+            if args.game_command == "code-updates":
+                from pinscripts.stern_updates import check_stern_code_updates
+
+                return check_stern_code_updates()
             if args.game_command == "research":
                 return interactive_research_prompt(args.description)
             if args.game_command == "format":

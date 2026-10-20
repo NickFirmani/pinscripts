@@ -9,10 +9,14 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen.canvas import Canvas
 
 from pinscripts.pdf import (
+    BODY,
+    BULLET,
     FOOTER_Y,
     INNER_MARGIN,
     OUTER_MARGIN,
     PAGE_W,
+    SHOTS_GAP,
+    SPACE_SM,
     _draw_spread_chrome,
     _title_page,
     git_updated_at,
@@ -23,6 +27,11 @@ from pinscripts.pdf import (
 
 
 class PdfFooterTests(unittest.TestCase):
+    def test_dense_game_layout_uses_standard_compact_spacing(self):
+        self.assertEqual(BODY.spaceAfter, SPACE_SM)
+        self.assertEqual(BULLET.spaceAfter, SPACE_SM)
+        self.assertEqual(SHOTS_GAP, SPACE_SM)
+
     @patch("pinscripts.pdf.Paragraph")
     def test_title_page_body_is_positioned_below_binder_title(self, paragraph):
         paragraph.return_value.wrap.return_value = (440, 144)

@@ -1,0 +1,166 @@
+id: dune-barrels-of-fun-2025
+name: Dune
+metadata:
+  manufacturer: Barrels of Fun
+  year: 2025
+  designer: David Van Es and Travis Moseman
+  artist: Jonathan Bergeron
+  production: Single production configuration; limited to up to 1,000 machines
+  era: FAST Pinball / Dual LCD
+  multiball: Desert Power Multiball, Fedaykin Multiball, and multiball phases within
+    DUNE wizard modes
+rules_basis:
+  kind: code
+  version: v2026.05.13
+  release_date: '2026-05-13'
+hook: Collect Thumpers and save them for 2x–4x playfield scoring during a valuable
+  multiball. Build Desert Power, steer its jackpots outward for up to 5x, and collect
+  the Super. Daytime brings Harvester Battles; nighttime brings Prophecies with a
+  major cash-or-gamble decision. Fedaykin can stack with Harvester, while both multiballs
+  build value for Liberate Arrakis.
+rules:
+  primary: The game alternates between daytime Harvester Battles and nighttime Prophecies.
+    Water fuels Harvester Battles; Spice determines the Prophecy midpoint cashout.
+    Thumpers activate 2x, 3x or 4x playfield scoring. Desert Power and Fedaykin Multiballs
+    provide major scoring opportunities and establish values reused in Liberate Arrakis.
+  bullets:
+  - 'Desert Power: qualify two orbit locks, build Jackpot value in the Desert Power
+    Field, then start at the Worm. Move jackpots outward for up to 5x, collect three,
+    then shoot the captive ball and collect the Super; entering from the front doubles
+    it.'
+  - Fedaykin Multiball can stack with Harvester Battle. The Sand Trap handles locks
+    and add-a-balls, while the upper-right ramp collects jackpots.
+  - 'Prophecy offers a midpoint choice: collect accumulated Spice for 1M each, minimum
+    5M, or continue toward a 5x final payout and permanent perk. Prophecies cannot
+    run during multiball.'
+  - Four DUNE letters qualify a mini-wizard mode. In Tournament Mode, the first three
+    DUNE modes play in a fixed order. Liberate Arrakis reuses the best previously
+    established Desert Power and Fedaykin values.
+  - Water, Spice and unfinished Harvester Battle progress persist between balls. Tilting
+    destroys all stored Water and Spice. Day/night transitions during a ball increase
+    end-of-ball Bonus X by 50%, up to 5x.
+watch:
+- title: Orange / Blue Lighting
+  text: Orange means daytime and Harvester Battle progression; blue means nighttime
+    and Prophecy opportunities. The cycle normally advances through qualifying switch
+    hits.
+- title: Thumpers / Action Button
+  text: One, two or three Thumpers provide 2x, 3x or 4x playfield scoring. A player
+    holding three is likely waiting for a valuable multiball or other scoring window.
+- title: Desert Power Jackpot Arrows
+  text: Orange arrows moving outward indicate the player is positioning jackpots for
+    higher multipliers, reaching 5x at the outermost shots.
+- title: Sand Trap / Harvester Stack
+  text: A locked Sand Trap ball can signal preparation for Fedaykin Multiball during
+    Harvester Battle, combining two major scoring features.
+skill_shots:
+- name: Front / Rear Scoop
+  how: Select the front or rear scoop at launch. Avoid flipping before collection
+    to double the award.
+  value: Front awards 2.5M and 10 Water or Spice, doubled to 5M and 20. Rear awards
+    5M and 5 resources, doubled to 10M and 10.
+- name: Left Spinner
+  how: Select the left-spinner skill shot and plunge into it without flipping for
+    the doubled award.
+  value: Awards 7.5M, doubled to 15M, and lights all resource dots. Resource type
+    follows the current day/night state.
+- name: Secret Plunge Shots
+  how: Plunge directly into the Tunnel or left outlane.
+  value: Tunnel awards 10M and improves spinner resource generation for the ball.
+    Left outlane awards 5M, loads a Sand Snork save and autopl­unges another ball.
+features:
+- type: ball-save
+  name: Sand Snork
+  text: Earn through Fremkit drops and load at the yellow left ramp. Saves a left-outlane
+    drain; unused saves can be reloaded on later balls, with up to three stored by
+    default.
+- type: player-control
+  name: Pain Box
+  text: Can capture a left-outlane drain. Hold the action button continuously while
+    playing one-handed, then make the left ramp to recover the ball.
+- type: ball-save
+  name: The Voice
+  text: A right-outlane save available through Bene Gesserit and permanently from
+    completing Survive. Multiple saves can accumulate for later balls.
+- type: mystery-award
+  name: Bene Gesserit
+  text: Purple left-ramp awards become available at day/night transitions. Tournament
+    Mode removes the normal shuffle of common awards.
+- type: extra-ball
+  name: Extra Ball
+  text: Can qualify from the second Harvester victory or rare Bene Gesserit awards.
+    Additional Extra Balls beyond the configured limit score 25M.
+shots:
+- name: Fremkit Drops
+  value: Build Sand Snork protection, Lasgun and Thumper inventory. Thumpers provide
+    the crucial 2x–4x scoring multiplier.
+  risk: High
+  diagram: 1
+- name: Mode Scoop
+  value: Starts daytime Harvester Battles, nighttime Prophecies and qualified DUNE
+    modes.
+  risk: Medium-High
+  diagram: 2
+- name: Worm / Harvester
+  value: Starts Desert Power Multiball, finishes Harvester Battles and advances major
+    wizard progression.
+  risk: Medium-High
+  diagram: 3
+- name: Desert Power Field / Pit
+  value: Builds Desert Power Jackpot value and later provides the captive-ball and
+    Super Jackpot opportunities.
+  risk: High
+  diagram: 4
+- name: Sand Trap
+  value: Handles Fedaykin Multiball locks, start and add-a-ball. Fedaykin can stack
+    with Harvester Battle.
+  risk: High
+  diagram: 5
+- name: Side Ramp
+  value: Collects Fedaykin Jackpots and advances Sandwalk or Run From Shai-Hulud progression.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Prioritize Sand Snork and Pain Box protection, take an available Desert Power
+    Multiball, and cash out Prophecy at its midpoint rather than exposing accumulated
+    Spice to the final challenge. Avoid excessive single-ball setup when existing
+    multiball values are sufficient.
+  behind: Bank three Thumpers for 4x playfield and activate them during Desert Power
+    or Fedaykin. Steer Desert Power jackpots outward for 5x and pursue the doubled
+    Super. Continue Prophecy for its 5x finish and permanent perk. Strong earlier
+    multiball values make Liberate Arrakis especially valuable.
+  key_decision: At the Prophecy midpoint, bank accumulated Spice immediately or continue
+    and risk that guaranteed value for a 5x final payout plus a permanent perk? This
+    is the game's clearest recurring cash-versus-gamble decision.
+danger:
+- Sand Trap front-shot misses can rebound from adjacent targets straight down the
+  middle; the rear upper-flipper approach is harder but can be safer.
+- The left outlane is a major drain threat, making Sand Snork and Pain Box protection
+  particularly valuable.
+- Scoop ejects are setup-sensitive and can return toward the center instead of providing
+  a clean flipper feed.
+- Tilting with stored resources destroys all Water and Spice, not merely the normal
+  end-of-ball bonus.
+commentary:
+- Orange lighting means daytime—this is the Harvester half of the game.
+- 'Three Thumpers banked: that action button is four-times playfield, so they''re
+  waiting for something worth multiplying.'
+- They're walking that Desert Power jackpot outward—the edge shot is worth five-times.
+- 'Here''s the Prophecy decision: take the Spice now, or risk it for the five-times
+  finish and permanent perk.'
+- Fedaykin is stacked with the Harvester Battle, so they're scoring both features
+  at once.
+- Those early multiball values matter later—Liberate Arrakis actually uses the best
+  Desert Power and Fedaykin values they've built.
+trivia:
+- Dune was Barrels of Fun's second production title, following Jim Henson's Labyrinth.
+- The rising sandworm magnetically captures a ball and appears to eat it before releasing
+  it later.
+- The game has four magnets and four physical ball-lock locations, an unusually mechanism-heavy
+  layout.
+- Horizon Atmospheric Lighting turns the cabinet orange or blue to communicate the
+  day/night rules state.
+- Voice From the Outer World, the final DUNE wizard mode, arrived in the March 30,
+  2026 software update.
+summary: Bank Thumpers → build Desert Power/Fedaykin → activate 4x → cash multiplied
+  jackpots → choose Prophecy cashout or continue → reach Liberate Arrakis

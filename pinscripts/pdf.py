@@ -74,7 +74,9 @@ SPACE_SM = 4
 SPACE_MD = 6
 SPACE_LG = 8
 TABLE_CELL_PADDING = SPACE_XS
-SHOTS_GAP = SPACE_LG + SPACE_SM
+# Keep the fixed Important Shots panel visually separate without sacrificing a
+# full text line in the already constrained third column.
+SHOTS_GAP = SPACE_SM
 HANDWRITING_LINE_SPACING = 0.3 * inch
 
 INK = colors.HexColor("#142735")
@@ -125,7 +127,7 @@ BODY = ParagraphStyle(
     fontSize=BODY_FONT_SIZE,
     leading=BODY_LEADING,
     spaceBefore=2,
-    spaceAfter=6,
+    spaceAfter=SPACE_SM,
     textColor=INK,
 )
 
@@ -139,7 +141,7 @@ SMALL = ParagraphStyle(
 BULLET = ParagraphStyle(
     "Bullet",
     parent=BODY,
-    spaceAfter=5,
+    spaceAfter=SPACE_SM,
 )
 
 TABLE_HEADER = ParagraphStyle(
@@ -790,6 +792,7 @@ def render_game(
     page_number_start=None,
     page_labels=None,
     venue_notes=None,
+    load_labels=True,
 ):
     data = load_yaml(content_path)
     # Venue facts belong to a binder, never to reusable catalog content.
@@ -892,14 +895,16 @@ def render_game(
         black_and_white,
         asset_root,
     )
-    try:
-        shot_labels = load_shot_labels(data, asset_root)
-    except ShotLabelError as error:
-        game_id = data.get("id", content_path.stem)
-        raise PdfAssetError(
-            f"invalid shot labels for {game_id}: {error}; "
-            f"run make game-labels GAME=\"{game_id}\""
-        ) from error
+    shot_labels = None
+    if load_labels:
+        try:
+            shot_labels = load_shot_labels(data, asset_root)
+        except ShotLabelError as error:
+            game_id = data.get("id", content_path.stem)
+            raise PdfAssetError(
+                f"invalid shot labels for {game_id}: {error}; "
+                f"run make game-labels GAME=\"{game_id}\""
+            ) from error
 
     with tempfile.TemporaryDirectory(dir=output_path.parent) as directory:
         temporary_directory = Path(directory)

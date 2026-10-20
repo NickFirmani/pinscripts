@@ -1,0 +1,164 @@
+id: dungeons-and-dragons-pro-stern-2025
+name: 'Dungeons & Dragons: The Tyrant''s Eye (Pro)'
+metadata:
+  manufacturer: Stern
+  year: 2025
+  designer: Brian Eddy
+  artist: Vincent Proce
+  production: ''
+  era: SPIKE 2
+  multiball: 6-ball Dragon Multiball, Gelatinous Cube Multiball, Tavern Brawl, and
+    Town Celebration Multiball
+rules_basis:
+  kind: code
+  version: v1.10.0
+  release_date: '2026-09-22'
+hook: Prioritize Gelatinous Cube Multiball for escalating jackpots, use Dungeon Crawl
+  for persistent progression, and spell DRAGON to battle Rath. Starting both multiballs
+  and Dungeon Crawl qualifies Tavern Brawl. Hidden Temple doubles scoring for 20 seconds,
+  while the action-button shield and ranged attacks offer unusual control over difficult
+  shots.
+rules:
+  primary: Choose a character and starting town, then complete quests and battles
+    to advance the campaign. Gelatinous Cube Multiball offers jackpots increasing
+    by 3M to 25M and a 20M Super. Spell DRAGON and start Dragon Multiball at the right
+    orbit or side ramp; defeat Rath to launch Town Celebration. Starting both main
+    multiballs and Dungeon Crawl qualifies Tavern Brawl at the center spinner.
+  bullets:
+  - 'Dungeon Crawl: qualify through orange targets and the spinner, then shoot the
+    spinner again on Pro. Navigate battles, treasure, traps and stairs. Progress survives
+    drains; Competition mode allows one start per ball.'
+  - 'Dragon Multiball: lower Rath with target hits, then attack his head. Ball save
+    is unlimited, but a finite drain allowance ends the battle if Rath survives.'
+  - 'Gelatinous Cube: lower the left ramp through the orbit, then make the required
+    ramp shots for a magnet lock. More locks increase starting value. Completing a
+    map mode requalifies the feature after play.'
+  - 'Tavern Brawl: center-spinner progress lights left-ramp jackpots at 1x, 2x and
+    3x. Completing DRAGON enables an add-a-ball and Super Jackpot route.'
+  - 'Hidden Temple: complete Secret Door progression, then collect 20 seconds of 2x
+    scoring; further Temple hits extend it by five seconds. Competition mode disables
+    saved campaign advantages and standardizes randomness.'
+watch:
+- title: Character / Starting Town
+  text: Wizard Helenir offers a longer shield; Paladin Ardor makes Rath easier to
+    defeat. Arabel suggests a quick Retrieve a Potion for Nighdaar quest.
+- title: Orange Dungeon Spinner
+  text: Flashing orange indicates Dungeon Crawl is qualified. Orange movement shots
+    and purple intersection choices follow once the crawl begins.
+- title: Rath Lowering / Drain Counter
+  text: DRAGON progression has qualified the battle. A lowered dragon head is vulnerable;
+    the remaining-drains counter determines how much time the player has to win.
+- title: Teal Cube Jackpots / 2x
+  text: Escalating teal jackpots identify Gelatinous Cube scoring. An active Hidden
+    Temple multiplier can double these valuable collections.
+skill_shots:
+- name: Upper Loop / Cube Switch
+  how: Short-plunge and shoot the upper loop, or reach the switch near Gelatinous
+    Cube directly or through the shortcut loop.
+  value: Either standard skill shot scores 2M times the ball number; extra balls advance
+    the multiplier.
+- name: Super Skill Shot
+  how: Shoot the left eject, then the side ramp and right ramp in sequence.
+  value: Starts at 6M and increases on later balls. A more demanding route for a larger
+    launch award.
+- name: MXV Skill Shot
+  how: Reach the Hidden Temple lane behind the upper flipper.
+  value: Starts at 6M and increases on later balls, providing an alternate higher-value
+    skill shot.
+features:
+- type: player-control
+  name: Shield
+  text: Press the flashing action button to raise a physical bar between the flippers.
+    Return-lane completions recharge it, with increasing requirements. It can save
+    drains or deliberately stage a ball.
+- type: player-control
+  name: Ranged Attack / Critical Hit
+  text: Hold the action button during battle and release when the blue arrow reaches
+    the desired shot; reload through a lane or ramp. Two captive-ball hits within
+    15 seconds score a Critical Hit and spot progress.
+- type: other
+  name: Fizmo's Shop
+  text: Visit the left eject between modes to spend gold on progression, Dungeon Crawl,
+    2x scoring or other items. Stock changes weekly; Competition mode disables trinkets.
+- type: extra-ball
+  name: Extra Ball
+  text: Can qualify through map modes, Dungeon Crawl, repeated Dragon Multiballs,
+    gems or Fizmo purchases. Collection is at the right ramp; availability depends
+    on adjustments.
+- type: other
+  name: Mimic Hurry-Up
+  text: A treasure chest can reveal a Mimic, starting a 50M hurry-up. This is separate
+    from topper-dependent Mimic Mania.
+- type: other
+  name: Tiny's Dice Game
+  text: Start three location modes or buy access at Fizmo's Shop. Raise the die to
+    20 to make Pro spinner hits worth 500K each.
+shots:
+- name: Left Orbit / Cube Ramp
+  value: Lowers the Cube ramp and advances magnet locks for Gelatinous Cube Multiball,
+    the main escalating-jackpot opportunity.
+  risk: Medium-High
+  diagram: 1
+- name: Fizmo Eject
+  value: Opens the shop, collects treasure and purchases progression or scoring advantages
+    between modes.
+  risk: Medium-High
+  diagram: 2
+- name: Rath / DRAGON Bank
+  value: Spells DRAGON to qualify Dragon Multiball, then lowers Rath and enables attacks
+    against the dragon.
+  risk: High
+  diagram: 3
+- name: Tiny's Tavern Spinner
+  value: Starts Dungeon Crawl and Tavern Brawl, and provides major scoring through
+    Tiny's Dice Game.
+  risk: Medium-High
+  diagram: 4
+- name: Captive Ball
+  value: Two hits within 15 seconds score a Critical Hit, spotting battle damage or
+    other qualified progression without making the corresponding difficult shot.
+  risk: High
+  diagram: 5
+- name: Right Orbit / Ramp
+  value: Starts Dragon Multiball, advances campaign modes and collects qualified Extra
+    Balls.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor attainable Cube jackpots and controlled Dungeon Crawl progression.
+    Save shield uses for dangerous returns, and substitute Critical Hits or ranged
+    attacks for unnecessary high-risk battle shots. Avoid extending setup solely to
+    reach a distant Tavern Brawl.
+  behind: Pursue Tavern Brawl, repeated Cube jackpots, or a Hidden Temple 2x window
+    during multiball. Tiny's Dice Game can produce rapid spinner scoring; deep campaign
+    progress may also unlock Darkhold's extended ball-save battle.
+  key_decision: Take the immediate Cube or Dragon scoring opportunity, or invest in
+    all three Tavern Brawl prerequisites? Dragon is comparatively easy to qualify,
+    while Cube generally offers stronger repeatable jackpot potential.
+danger:
+- Rath's three-bank can produce abrupt rebounds toward the lower playfield.
+- The narrow left orbit and Cube ramp demand a controlled right-flipper shot.
+- Failed right-ramp attempts can reject sharply toward the flippers.
+- Fizmo's eject feeds toward the upper flipper; missing the catch can surrender control.
+- Shield activation has a delay, so a last-second button press may not save a center
+  drain.
+commentary:
+- They're taking the Cube route—those jackpots grow three million at a time.
+- That's a natural twenty at the captive ball; it spots the difficult shot without
+  needing to make it.
+- Rath is down! Now they've got a brief chance to damage the dragon.
+- They've completed all three prerequisites—Tavern Brawl is ready at the spinner.
+- Hidden Temple has doubled scoring; every jackpot becomes that much more valuable.
+- That shield isn't just a save—they're staging the ball to attack the left-side ramp.
+trivia:
+- The game commemorates the 50th anniversary of Dungeons & Dragons, first released
+  in 1974.
+- Michael Dorn voices Rath, alongside a cast including Matthew Mercer, Laura Bailey,
+  Marisha Ray and Luke Gygax.
+- Stern's PinSave system allows persistent character levels, inventory and campaign
+  progress across multiple sessions.
+- The Pro uses a vertically moving dragon head and spinner-based Dungeon Crawl entrance;
+  Premium/LE adds multi-axis dragon motion and a mechanical pop-up scoop.
+- Bally released an earlier Dungeons & Dragons pinball machine in 1987.
+summary: Choose character → build Cube jackpots → start Dungeon Crawl → defeat Rath
+  → qualify Tavern Brawl → multiply scoring with Hidden Temple

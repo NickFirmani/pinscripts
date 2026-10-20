@@ -725,7 +725,7 @@ def open_google_image_search(game):
     )
 
 
-def interactive_game_image(game, continue_batch=True):
+def interactive_game_image(game, continue_batch=True, destination_id=None):
     game = game.strip()
     if not game:
         try:
@@ -775,7 +775,7 @@ def interactive_game_image(game, continue_batch=True):
         print("Image not copied.", file=sys.stderr)
         return 0
     research_id = matching_research_id(game, RESEARCH)
-    image_id = image_id_for_game(game)
+    image_id = destination_id or image_id_for_game(game)
     if not image_id:
         print("ERROR: could not derive an image filename.", file=sys.stderr)
         return 1
@@ -800,7 +800,10 @@ def interactive_game_image(game, continue_batch=True):
             file=sys.stderr,
         )
         return 1
-    id_source = "research" if research_id else "game name"
+    if destination_id:
+        id_source = "catalog"
+    else:
+        id_source = "research" if research_id else "game name"
     print(f"Copied {source} to {destination.relative_to(ROOT)} ({id_source} ID).")
     if continue_batch:
         print("Continuing to fetch images...")

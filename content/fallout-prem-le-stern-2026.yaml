@@ -1,0 +1,162 @@
+id: fallout-prem-le-stern-2026
+name: Fallout (Prem/LE)
+metadata:
+  manufacturer: Stern Pinball
+  year: 2026
+  designer: Keith Elwin
+  artist: Sam Gilbey and Jeremy Packer (Zombie Yeti)
+  production: 770 Limited Editions; Premium production unspecified
+  era: SPIKE 3
+  multiball: Deathclaw Multiball (three variants), Wasteland Multiball, Vault Multiball,
+    Wedding Day and The Kings
+rules_basis:
+  kind: code
+  version: v0.81.0
+  release_date: '2026-10-12'
+hook: Build health to 50 HP and start quests at the right scoop. Disable four Deathclaw
+  limbs for Multiball, then build jackpots for 20 seconds and cash them during a 12-second
+  attack window. Upgrade weapons for permanent scoring boosts, and save Power Armor's
+  timed +1x for big jackpots. Alternative scoring routes include Fat Man-powered Wasteland
+  Multiball and Magna-Flip Vault Multiball.
+rules:
+  primary: Collect health through yellow shots; 50 HP qualifies quests at the right
+    scoop, with one second of mode time per HP, capped at 100. Hit four flashing Deathclaw
+    weak points to qualify Multiball. Its first version alternates a 20-second jackpot-building
+    phase with a 12-second Deathclaw collection phase. Weapon upgrades add +0.2x playfield
+    scoring each, while activated Power Armor adds a timed +1x.
+  bullets:
+  - 'Deathclaw MB1: jackpots start at 2M and grow during the build phase. Consecutive
+    Deathclaw hits multiply collections; four jackpots qualify a Super. Later Deathclaw
+    Multiballs require a weapon upgrade to qualify.'
+  - 'Wasteland MB: defeat all three upper-gallery enemy types with the Fat Man. Jackpots
+    start at 3M plus 500K per shot; Supers start at 15M times wave number, plus 2.5M
+    per collected jackpot.'
+  - 'Vault: spell VAULT, open the center door and complete a Magna-Flip experiment.
+    Odd-numbered lunchboxes start Vault Multiball; even-numbered ones award Legendary
+    Weapons.'
+  - Junk upgrades weapons for permanent scoring and bonus improvements. Pop bumpers
+    charge fusion cores; holding the action button spends charge on Power Armor. Weapon
+    and Power Armor scoring boosts are additive.
+  - Radiation reduces maximum health; Radaway restores it. Competition play uses fresh
+    progression without saved character advantages. Several late-game wizard modes
+    remain unavailable in v0.81.
+watch:
+- title: Deathclaw Weak Points / FIRE
+  text: Moving inserts identify the vulnerable limb. Four disabled limbs qualify Multiball.
+    On Prem/LE, striking an already-disabled limb can trigger a forceful mechanical
+    kickback.
+- title: Fusion Charge / Power Armor
+  text: The action button and fusion-core meter show whether the player can activate
+    +1x playfield scoring. Watch for activation immediately before valuable jackpot
+    collections.
+- title: Vault Door / Pip-Boy
+  text: Completing VAULT lights the physical door. Opening it sends the ball to the
+    lower Magna-Flip playfield for a timed experiment displayed on the Pip-Boy.
+- title: Fat Man / Shooting Gallery
+  text: The moving launcher signals upper-gallery combat. V.A.T.S. permits target
+    selection, and defeating all enemy types qualifies Wasteland Multiball.
+skill_shots:
+- name: Cap Stash Skill Shot
+  how: Time the plunge through the flashing right inlane to lower the Nuka-Cola spinner,
+    then immediately shoot the spinner with the right flipper.
+  value: Awards 3M plus 75K per spin and three seconds of ball save. Each successful
+    attempt adds 1M to the base and 50K per spin; also earns caps.
+features:
+- type: ball-save
+  name: Stimpak Outlane Save
+  text: Complete white Wasteland-item shots to light an outlane rescue. At Perception
+    level 2, the right flipper can move the lit Stimpak between outlanes.
+- type: player-control
+  name: Power Armor
+  text: Hold the action button to spend fusion-core charge on timed +1x playfield
+    scoring. Release to conserve charge. Maximus receives two additional seconds per
+    fusion-core level.
+- type: player-control
+  name: Fat Man / V.A.T.S.
+  text: Complete three mini-nuke targets and load the Fat Man through its ramp or
+    loop; fire with the action button. Build Action Points to unlock flipper-selected
+    automatic targeting.
+- type: other
+  name: Companions
+  text: Yellow Wasteland shots qualify companions. Mr. Handy spots Deathclaw progress,
+    Dogmeat collects lit junk, and Victor can activate Cap Stash.
+- type: mystery-award
+  name: Sundries / Hacking
+  text: Spend caps on healing, fusion cores, junk and equipment, or risk theft and
+    a timed escape challenge. The left-ramp hacking target can award points, XP or
+    other results; Competition mode modifies its sequence.
+- type: video-mode
+  name: Red Menace
+  text: Introduced in v0.81. A Holotape can start the two-level video version, converting
+    performance and remaining lives into pinball points.
+shots:
+- name: Upper-Flipper Outer Loop
+  value: Collects Wasteland items and supports repeated Radaway jackpots during their
+    timed scoring window.
+  risk: Medium-High
+  diagram: 1
+- name: Left Loop / Fat Man Feed
+  value: Loads the Fat Man for shooting-gallery enemies, advancing toward Wasteland
+    Multiball.
+  risk: Medium-High
+  diagram: 2
+- name: Vault Door / Center Ramp
+  value: Opens the Vault for Magna-Flip experiments and collects major Vault Multiball
+    scoring opportunities.
+  risk: High
+  diagram: 3
+- name: Deathclaw
+  value: Disables four weak points to qualify Deathclaw Multiball, then collects jackpots
+    and Supers during its attack windows.
+  risk: High
+  diagram: 4
+- name: Right Ramp / Food
+  value: Builds HP to qualify quests, extends their timers and advances quest scoring.
+  risk: Medium-High
+  diagram: 5
+- name: Right Scoop / Sundries
+  value: Starts quests once HP reaches 50 and provides shopping, loot and weapon-upgrade
+    opportunities.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Take attainable Deathclaw jackpots and complete accessible quests. Preserve
+    Stimpak protection and spend Power Armor charge when valuable scoring is already
+    available. Avoid unnecessary Sundries theft and prolonged setup for marginal multiplier
+    gains.
+  behind: Combine a quest with Deathclaw Multiball when available, activate Power
+    Armor for multiplied jackpots, and pursue repeated Supers. Wasteland's escalating
+    Super, Vault Multiball or rapid Radaway jackpot loops offer other comeback opportunities.
+  key_decision: Build resources or cash scoring now? Weapon upgrades permanently improve
+    playfield and bonus values, while Power Armor provides a temporary boost. Additional
+    preparation increases potential payout but risks losing the ball before collection.
+danger:
+- The Paragon-inspired left-outlane pop bumper can redirect otherwise manageable balls
+  directly into the outlane.
+- Striking an already-disabled Deathclaw limb can trigger a powerful kickback on Premium/LE.
+- The inverted upper flipper has unusual timing and return geometry, making conventional
+  catches less predictable.
+- Missed Vault-door shots can rebound dangerously from the central entrance.
+- Failed Sundries theft starts a timed escape challenge; missing it can cost valuable
+  resources even without a drain.
+commentary:
+- They're building health before starting the quest—every extra HP is another second
+  on the clock.
+- Four limbs disabled—Deathclaw Multiball is ready. Watch out for that kickback.
+- We're in the twelve-second collection phase. Every Deathclaw hit now is a jackpot
+  opportunity.
+- Power Armor activated! That extra playfield multiplier is exactly what they wanted
+  before the cash-out.
+- The Vault is open—the ball is heading down to Magna-Flip for a Vault experiment.
+- Wasteland's Super Jackpot keeps growing with each wave. This could swing the match.
+trivia:
+- Stern produced 770 Limited Editions, a reference to Fallout's Great War of 2077.
+- The functional playfield Pip-Boy was developed with The Wand Company.
+- The inverted Mutated Flipper revives a mechanical arrangement Stern describes as
+  absent from pinball for more than 75 years.
+- The magnetic lower Vault playfield recalls Twilight Zone's Powerfield, adding more
+  targets and an orbit.
+- Johnny Pemberton, who portrays Thaddeus in the Fallout television series, recorded
+  custom callouts.
+summary: Build 50 HP → start quests → qualify Deathclaw MB → build and collect jackpots
+  → upgrade weapons → activate Power Armor → pursue Wasteland / Vault MB

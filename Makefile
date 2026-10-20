@@ -8,6 +8,7 @@ ACTION ?= color
 	help setup doctor validate test check clean \
 	catalog-build game-add game-update game-build game-research game-format \
 	game-image game-labels binder-create binder-sync binder-populate binder-status \
+	game-code-updates \
 	binder-add binder-remove binder-notes binder-mark-printed binder-build \
 	binder-cover binder-update dev-content-audit dev-content-proofread \
 	dev-image-variants dev-format-prompt dev-benchmark-format dev-benchmark-codex \
@@ -34,6 +35,7 @@ help:
 		'  make catalog-build [MODE=color|bw|both]          Build the location-neutral master catalog PDF.' \
 		'  make game-add GAME="description"                 Add a new game through the complete guided workflow.' \
 		'  make game-build GAME=id [MODE=...] [BINDER=id]  Build one game, optionally with binder context.' \
+		'  make game-code-updates                            Check Stern code releases and update affected games.' \
 		'  make game-format GAME=id                        Format researched material into catalog YAML.' \
 		'  make game-image GAME=id [ACTION=...]             Add, regenerate, or upgrade a playfield image.' \
 		'  make game-labels GAME=id                       Create or revise playfield shot labels.' \
@@ -98,6 +100,9 @@ game-add: _require-game
 
 game-update: _require-game
 	@$(PYTHON) main.py game update "$(GAME)"
+
+game-code-updates:
+	@$(PYTHON) main.py game code-updates
 
 game-build: _require-game _require-mode
 	@$(MAKE) --no-print-directory _game-build-$(MODE) GAME="$(GAME)" BINDER="$(BINDER)"

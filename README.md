@@ -140,6 +140,20 @@ make binder-update BINDER=my-binder GAME=jaws-pro-stern-2024
 ```
 `binder-update` walks through the flow of updating the content or venue notes for a game already present in the binder. It generates a replacement packet with the same page labels as the original.
 
+### Checking Stern game-code updates
+
+```sh
+make game-code-updates
+```
+
+This compares Stern's official Game Code release notes with each local Stern
+game's `rules_basis.version`. Short fix-only releases are summarized for an
+accept/skip decision. A skipped version is saved under
+`content/state/stern-code-ignores.yaml`, so later checks suppress it while still
+detecting newer releases. Releases with new or changed gameplay, or long change
+sets, enter the full re-research and game-update workflow and offer replacement
+packets for every affected printed binder.
+
 ### Removing a game from a binder
 ```sh
 make binder-remove BINDER=my-binder GAME=jaws-pro-stern-2024

@@ -1,0 +1,164 @@
+id: elton-john-jersey-jack-2023
+name: Elton John (PE/CE)
+metadata:
+  manufacturer: Jersey Jack Pinball
+  year: 2023
+  designer: Steve Ritchie
+  artist: Christopher Franchi (Platinum Edition)
+  production: Collector's Edition limited to 1,000 machines; Platinum Edition production
+    unspecified
+  era: JJP LCD
+  multiball: Crocodile Rock, Rocket Man, four Signature Stage Multiballs, and Champ
+    Multiball
+rules_basis:
+  kind: code
+  version: v2.03
+  release_date: '2025-03-25'
+hook: 'Focus on the active song: collect notes and Wardrobe items for 2x song scoring,
+  accelerated progress and Victory Laps. Use Crocodile Rock Multiball to attack dangerous
+  album drops. Stack Croc with Rocket Man for doubled jackpots, or spell ELTON JOHN
+  to select a Signature Stage Multiball. Four Milestones qualify Final Tour; albums
+  and Encore Modes lead toward Champ Multiball.'
+rules:
+  primary: 'Each song has three note levels: yellow, orange and red. Completing each
+    level lights a Wardrobe item at Backstage. The first gives 30 seconds of doubled
+    song scoring, the second doubles five note advances, and the third starts lucrative
+    Victory Laps. Collecting all three quickly can carry the 2x multiplier into Victory
+    Laps.'
+  bullets:
+  - 'Crocodile Rock: complete Tiny Dancer to light locks; the first Multiball needs
+    two, later starts need three. Quickly locking another ball after a Super doubles
+    it. Two Supers or one doubled Super earns a Milestone.'
+  - 'Rocket Man: 500 fuel qualifies Multiball, but additional fuel upgrades ball save,
+    Super qualification, ball count and jackpots. Croc and Rocket can overlap, doubling
+    jackpots in both.'
+  - 'Signature Stage: spell ELTON JOHN and lock three balls at the piano. Choose 1970,
+    1975, 2009 or 2023. These cannot stack; later eras offer higher scoring with less
+    protection. Side-ramp loops multiply Supers.'
+  - Four of ten Milestones qualify Final Tour. More Milestones increase its city values
+    from a 4M base at four to 25M with all ten. Albums and Encore Modes also build
+    toward Champ Multiball.
+  - Competition Mode removes random awards and cross-game carry-over features, including
+    persistent SUPERSTAR progress.
+watch:
+- title: Wardrobe Items
+  text: One item means 30 seconds of Double Song, two provide accelerated note progress,
+    and three unlock Victory Laps. Completing the sequence quickly can multiply the
+    Victory Lap scoring window.
+- title: Rocket Fuel Meter
+  text: Rocket Man may already be qualified, but continued fueling adds major advantages.
+    A player delaying the start is likely strengthening the eventual Multiball.
+- title: Croc + Rocket Stacked
+  text: Both Multiballs are running simultaneously, so jackpots in each are worth
+    double their normal values.
+- title: Side-Ramp Super
+  text: A lit Signature Stage Super or E-ticket makes the difficult upper-flipper
+    side ramp especially valuable. Repeated loops increase the Super multiplier.
+skill_shots:
+- name: Selectable Skill Shot
+  how: 'Time the plunge to select one of five moving awards: 200K, +1 Bonus X, Spot
+    Star, +50 Rocket Fuel or Advance Croc Multiball.'
+  value: Spot Star is a strong early choice; Rocket Fuel becomes useful near an upgrade
+    threshold. Selection movement accelerates with repeated successes.
+- name: Super Skill Shot
+  how: Short-plunge to the upper flipper, then shoot Backstage or the side ramp.
+  value: Upgrades the selected skill-shot award; repeated Super Skill Shots increase
+    its perk multiplier.
+- name: Rocka-Box Skill Shot
+  how: Full-plunge to reset and light the center Rocka-Box drops, then hit any target.
+  value: Immediately collects the next album, bypassing increasingly difficult normal
+    album qualification.
+features:
+- type: ball-save
+  name: Honky Cat Kickback
+  text: Complete the Honky Cat hurry-up near the left eject to bank a left-outlane
+    kickback. Up to three can be stored; failed kickbacks receive compensating save
+    logic.
+- type: player-control
+  name: Action Button
+  text: Selects the Signature Stage era. During Final Tour, it can abort at entry
+    or cash the current region, preserving accumulated value before a drain.
+- type: other
+  name: Multiball Add-a-Ball
+  text: After the Multiball ball saver expires, the left standup lights add-a-ball.
+    A Super can relight it, and collection during the post-Multiball grace period
+    can revive Multiball.
+- type: extra-ball
+  name: Extra Ball
+  text: Can qualify through piano-ramp progress, Rocka-Box frenzy performance or five
+    unique combos. Availability and tournament treatment depend on adjustments.
+shots:
+- name: Backstage
+  value: Collects Wardrobe items to activate Double Song, accelerated note progress
+    and Victory Laps.
+  risk: Medium-High
+  diagram: 1
+- name: Side Ramp
+  value: Collects and multiplies Signature Stage Super Jackpots and starts qualified
+    wizard features.
+  risk: High
+  diagram: 2
+- name: Rocka-Box Drops
+  value: Collect albums and advance Encore Modes, both important prerequisites for
+    Champ Multiball.
+  risk: High
+  diagram: 3
+- name: Piano Ramp
+  value: Locks balls for Signature Stage Multiballs after completing ELTON JOHN.
+  risk: Medium-High
+  diagram: 4
+- name: Crocodile VUK
+  value: Collects Crocodile Rock locks and Supers, providing an accessible early Multiball
+    and Milestone progression.
+  risk: Medium-High
+  diagram: 5
+- name: Rocket VUK
+  value: Starts Rocket Man Multiball and collects its Super Jackpot after building
+    fuel-based upgrades.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Finish an accessible song and Wardrobe sequence, then take Crocodile Rock
+    Multiball. Use its protection to advance dangerous Rocka-Box albums. For Signature
+    Stage, favor 1970 or 1975 for their longer ball saves rather than the higher-risk
+    later eras.
+  behind: Build Rocket Fuel beyond its minimum and stack Rocket Man with Crocodile
+    Rock for doubled jackpots. Alternatively, choose a harder Signature Stage and
+    loop the side ramp for multiplied Supers. A developed Champ Multiball or Final
+    Tour offers a substantial comeback opportunity.
+  key_decision: Start a qualified Multiball immediately or risk additional setup?
+    More Rocket Fuel, Wardrobe progress and album completion can dramatically increase
+    the eventual payoff, but each preparation shot exposes the current ball.
+danger:
+- The side ramp is an exceptionally difficult upper-flipper shot; misses can abruptly
+  end controlled upper-playfield sequences.
+- Rocka-Box drops create dangerous central rebounds, making them better targets during
+  Multiball than during single-ball play.
+- Backstage requires precise upper-flipper timing, often following a right-ramp feed;
+  missing the opportunity can delay Wardrobe scoring.
+- The Rocket VUK launches rapidly around the backboard toward the left flipper, demanding
+  immediate recovery.
+- Fast ramp returns feed the flippers directly rather than settling through ordinary
+  inlanes, requiring constant control.
+commentary:
+- That Wardrobe item starts thirty seconds of double song scoring.
+- They're using Crocodile Rock as protection to work those center album drops.
+- Rocket Man is already lit, but they're still fueling it—the extra tanks make the
+  Multiball much stronger.
+- Croc and Rocket are stacked, so every Multiball jackpot is doubled.
+- That side ramp is the money shot—keep looping it and the Signature Stage Super multiplier
+  keeps climbing.
+- Four Milestones lights Final Tour, but every extra Milestone makes that wizard mode
+  dramatically richer.
+trivia:
+- Elton John was Steve Ritchie's first design for Jersey Jack Pinball.
+- The machine features 16 full-length studio-master Elton John tracks and custom speech
+  recorded by Elton himself.
+- Platinum and Collector's Editions share gameplay. The 1,000-unit Collector's Edition
+  adds a dual-screen SUPERSTAR topper with an interactive laser show.
+- Bally's Captain Fantastic and the Brown Dirt Cowboy featured Elton John in 1976,
+  47 years before this game.
+- The layout emphasizes Steve Ritchie's trademark fast, flowing shots rather than
+  the denser layouts associated with many earlier Jersey Jack machines.
+summary: Advance songs → collect Wardrobe → start Croc MB → stack Rocket for 2x jackpots
+  → complete Signature Stage → build Milestones / Champ

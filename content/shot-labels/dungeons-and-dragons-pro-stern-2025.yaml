@@ -1,0 +1,25 @@
+game_id: dungeons-and-dragons-pro-stern-2025
+image_width: 429
+image_height: 789
+image_sha256: 9d19a191151a26e4ce0580d001e4599c3e4ed43397cbe62b1497a90cfbe7285f
+shots_sha256: 09ba67fd60a7b9331590015970ccfefe028c8f3e4d9c3f236b5a2249d70e4267
+coordinates:
+- diagram: 1
+  x: 93
+  y: 363
+- diagram: 2
+  x: 56
+  y: 433
+- diagram: 3
+  x: 144
+  y: 329
+- diagram: 4
+  x: 254
+  y: 160
+- diagram: 5
+  x: 196
+  y: 142
+- diagram: 6
+  x: 363
+  y: 291
+skipped_diagrams: []

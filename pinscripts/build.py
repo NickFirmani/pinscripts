@@ -17,7 +17,7 @@ class BuildInputError(ValueError):
     pass
 
 
-def validate_all(paths):
+def validate_all(paths, validate_shot_labels=True):
     validator = schema_validator()
     valid = True
     for path in paths:
@@ -31,7 +31,7 @@ def validate_all(paths):
                         f"$.id: expected {path.stem!r} to match the filename, "
                         f"got {data.get('id')!r}"
                     )
-                else:
+                elif validate_shot_labels:
                     load_shot_labels(data)
             except ShotLabelError as error:
                 game_id = data.get("id", path.stem) if isinstance(data, dict) else path.stem
@@ -63,9 +63,12 @@ def validate_project():
     return 0
 
 
-def validate_game_contexts(content_path, game_id):
+def validate_game_contexts(content_path, game_id, allow_stale_shot_labels=False):
     """Validate layout for the catalog and every binder-specific rendering."""
-    if not validate_all([content_path]):
+    if not validate_all(
+        [content_path],
+        validate_shot_labels=not allow_stale_shot_labels,
+    ):
         return False
     try:
         binders = binders_containing(game_id)
@@ -76,7 +79,12 @@ def validate_game_contexts(content_path, game_id):
     try:
         with tempfile.TemporaryDirectory(prefix="validate-game-", dir=OUTPUT) as directory:
             temporary = Path(directory)
-            render_game(content_path, temporary / "catalog.pdf", venue_notes=())
+            render_game(
+                content_path,
+                temporary / "catalog.pdf",
+                venue_notes=(),
+                load_labels=not allow_stale_shot_labels,
+            )
             for binder in binders:
                 entry = binder.entry(game_id, include_removed=False)
                 render_game(
@@ -84,6 +92,7 @@ def validate_game_contexts(content_path, game_id):
                     temporary / f"{binder.binder_id}.pdf",
                     page_labels=entry.pages,
                     venue_notes=entry.venue_notes,
+                    load_labels=not allow_stale_shot_labels,
                 )
     except (OSError, ValueError) as error:
         print(f"ERROR: {game_id} failed a rendered binder context: {error}", file=sys.stderr)

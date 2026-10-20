@@ -1,0 +1,163 @@
+id: scooby-doo-ce-spooky-2023
+name: Scooby-Doo, Where Are You! (CE)
+metadata:
+  manufacturer: Spooky Pinball
+  year: 2023
+  designer: Luke Peters and Corwin (Bug) Emery
+  artist: Matt Frank
+  production: ''
+  era: Modern widebody LCD
+  multiball: Mystery Machine Multiball, Captain Cutler Multiball, and stackable Scooby
+    Snack Multiball
+rules_basis:
+  kind: code
+  version: v2026.09.30
+  release_date: '2026-09-30'
+hook: 'Work the left spinner for Mystery Machine Multiball, while collecting Scooby
+  Snacks to build bonus, refill Bravery and qualify the stackable Scooby Snack Multiball.
+  Start a Case before releasing the two apron locks: snacks keep Bravery alive and
+  can sustain 4x Case scoring. Fred offers an easier first Mystery Machine Multiball,
+  and current tournament code lets multiple players select him.'
+rules:
+  primary: 'Collect white investigation shots to qualify a Case at the Mystery Machine:
+    three for the first Case on Medium, increasing to six for later Cases. Bravery
+    is both the Case timer and scoring multiplier, ranging from red 1x to rainbow
+    4x. Scooby Snacks refill Bravery. Complete clues, use trap shots to multiply the
+    unmasking bonus, then cash out at the Mystery Machine.'
+  bullets:
+  - 'Mystery Machine MB: spinners qualify three locks. Character-orbit hits build
+    jackpots; keeping all five character shots at matching levels lights Super, Double
+    Super or Triple Super at the Mystery Machine.'
+  - 'Scooby Snack MB: collect four Snacks for the first lock, then meet increasing
+    thresholds to fill both apron locks. The resulting two-ball multiball stacks with
+    Cases, other multiballs and wizard modes.'
+  - During a Scooby Snack stack, snack shots remain lit after collection, continually
+    refilling Bravery. Apron-lock shots score Supers and relight all snacks.
+  - 'Apron locks are physically shared between players: a later player can consume
+    a ball someone else locked. Current tournament code permits multiple players to
+    select the same character.'
+  - Scooby Snacks also multiply end-of-ball bonus based on a fraction of that ball's
+    score. Character progression and Case progress persist during the game.
+watch:
+- title: Bravery Meter
+  text: Red is 1x, orange 1.25x, yellow 1.5x, green 1.75x, flashing green 2x and rainbow
+    4x. The meter also counts down the Case; Scooby Snacks replenish it.
+- title: White Arrows / Mystery Machine
+  text: Completed white investigation shots and a flashing Mystery Machine indicate
+    that a Case is qualified. The player may want to start it before activating multiball.
+- title: Two Apron Ball Locks
+  text: Balls visibly held in the apron are building Scooby Snack Multiball. These
+    are shared physical locks, so another player may use a previously locked ball.
+- title: Spinner / Mystery Machine Progress
+  text: Repeated left-spinner shots usually signal progress toward Mystery Machine's
+    three locks, a comparatively accessible multiball route.
+skill_shots:
+- name: Drop Target Skill Shot
+  how: Use the flippers to select Drop Targets, then hit the flashing target.
+  value: Awards four Scooby Snacks, immediately supporting Bravery, Scooby Snack Multiball
+    and end-of-ball bonus.
+- name: Dog Tag / Character Orbit
+  how: Select the Dog Tag target or a Character Orbit with the flippers, then make
+    the indicated shot.
+  value: Dog Tag raises the center Trap Door save; Character Orbit immediately advances
+    that character's benefit tier.
+- name: Secret Shatz Skill Shot
+  how: Select Drop Targets, then flip at the last instant to send the ball up the
+    opposite inlane into the bottom drop target.
+  value: A more demanding alternate Drop Target skill shot, contributing Scooby Snacks
+    to the main scoring strategy.
+features:
+- type: ball-save
+  name: Trap Door
+  text: Complete four Dog Tags to raise the physical center-drain blocker. On Medium,
+    multiple saves can be banked; harder settings restrict capacity.
+- type: ball-save
+  name: Ruh-Roh
+  text: Left-outlane drains progressively light two independently tracked saves. Flippers
+    move the lit lane; with both lit, a subsequent left-outlane drain is saved.
+- type: ball-save
+  name: Skull Save
+  text: Every third right-outlane drain is saved. The counter is shared across players,
+    so another player's drains can advance it.
+- type: mystery-award
+  name: Secret Passage Mystery
+  text: Scooby Snacks qualify Mystery at the Secret Passage. Rare Reverse Flippers
+    reverses controls through the next mode or multiball but awards 2x scoring.
+- type: extra-ball
+  name: Extra Ball
+  text: Can qualify through five villains visited, two unmaskings, the third or sixth
+    Mystery, or Mystery Machine Triple Super. Tournament Mode can disable Extra Balls.
+shots:
+- name: Left Spinner
+  value: Builds Mystery Machine lock progress, providing the principal route to a
+    protective multiball.
+  risk: Medium
+  diagram: 1
+- name: Drop Target Banks
+  value: Collect Scooby Snacks for Bravery, stackable Scooby Snack Multiball and end-of-ball
+    bonus.
+  risk: Medium-High
+  diagram: 2
+- name: Left VUK
+  value: Starts character modes and stages the left physical apron lock for Scooby
+    Snack Multiball.
+  risk: High
+  diagram: 3
+- name: Center Ramp
+  value: Provides upper-playfield access needed for Captain Cutler, Cases and upper
+    ball-lock progression.
+  risk: High
+  diagram: 4
+- name: Mystery Machine
+  value: Starts qualified Cases, collects unmasking awards, handles locks and scores
+    Mystery Machine Multiball Supers.
+  risk: Medium-High
+  diagram: 5
+- name: Upper Middle / Right Lane
+  value: Stages the right apron lock and advances Captain Cutler, completing Scooby
+    Snack Multiball setup.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Favor Fred's accessible Mystery Machine Multiball, accumulate Trap Door and
+    Ruh-Roh protection, and start Cases with sufficient Bravery. Avoid forcing dangerous
+    upper-playfield locks solely to create a perfect Scooby Snack stack when an ordinary
+    multiball can protect the lead.
+  behind: Qualify both Scooby Snack apron locks, start a Case, then activate Scooby
+    Snack Multiball. Repeated snack collections can hold Bravery at 2x–4x while the
+    extra ball protects Case shots. Mystery Machine Triple Super offers another significant
+    scoring swing.
+  key_decision: Start a ready multiball immediately for protection, or keep shooting
+    drops and upper-playfield locks to combine Scooby Snack Multiball with a high-Bravery
+    Case? The stack has much greater scoring potential but requires riskier setup.
+danger:
+- Weak or off-center center-ramp shots can reject directly toward the middle.
+- Upper-right lane attempts from the elevated flippers can miss and return the ball
+  into uncontrolled traffic.
+- Drop-target banks generate dangerous rebounds even though Scooby Snacks are essential.
+- Missed Mystery Machine shots can surrender control near the center of the playfield.
+- The Skull save only rescues every third right-outlane drain; the other two are ordinary
+  drains.
+commentary:
+- That Bravery meter is the Case multiplier—rainbow means four-times.
+- Those snacks aren't small points; they keep the Case alive and set up the stackable
+  multiball.
+- Both apron locks are occupied—Scooby Snack Multiball is ready, but another player
+  can steal those physical balls.
+- They're backhanding the Mystery Machine; that's the cleaner start shot on many copies.
+- This two-ball multiball stacks with basically everything, which is why they waited
+  to start it.
+- Triple Super at the Mystery Machine is not just points—it can also qualify an Extra
+  Ball under normal settings.
+trivia:
+- The game draws heavily on the original 1969 Scooby-Doo, Where Are You! series and
+  features villains including the Creeper, Space Kook, Black Knight and Miner 49er.
+- Voice talent includes Frank Welker, Matthew Lillard, Kate Micucci, Grey Griffin
+  and Scott Innes.
+- The widebody cabinet accommodates a large elevated upper playfield and four flippers.
+- Scooby Snack Multiball uses actual apron ball locks, an unusually visible mechanism
+  in modern pinball.
+- The September 2026 software update added Scooby-Doo and a Mummy Too! and expanded
+  the Mystery Monster system.
+summary: Collect Scooby Snacks → build Mystery Machine locks → qualify apron locks
+  → start Case → stack Scooby Snack MB → sustain 4x Bravery → cash unmasking

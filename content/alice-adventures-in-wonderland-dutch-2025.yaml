@@ -1,0 +1,150 @@
+id: alice-adventures-in-wonderland-dutch-2025
+name: Alice's Adventures in Wonderland
+metadata:
+  manufacturer: Dutch Pinball Exclusive (DPX)
+  year: 2025
+  designer: Melvin Brouwer-Williams
+  artist: Freek van Haagen / Zombie Yeti
+  production: 500 individually numbered machines
+  era: P3-ROC / LCD
+  multiball: Quick Croquet, Mad Hatter's Tea Party, and Jabberwocky Multiball
+rules_basis:
+  kind: code
+  version: v1.05
+  release_date: '2000-01-01'
+hook: Spell EATME and collect 2x, 3x or 4x playfield at the left orbit before starting
+  a valuable mode. Qualify story modes at the main ramp and start them at the scoop.
+  Five captive-ball hits start Quick Croquet Multiball; rapid ramp shots offer a ball-long
+  2x and WONDERS progress. The deep objective is Queen of Hearts.
+rules:
+  primary: Qualify main story modes at the ramp and start them at the scoop; pop bumpers
+    change the selected mode. EATME lights a 2x, 3x or 4x playfield multiplier at
+    the left orbit. Completing modes and other major objectives awards WONDERS letters.
+    Queen of Hearts requires all seven WONDERS, all six main modes started, Jabberwocky
+    Multiball played, and all four Suits collected.
+  bullets:
+  - Five main captive-ball hits start 2-ball Quick Croquet Multiball. Five jackpots
+    during the multiball earn a WONDERS letter.
+  - Fifteen ramp shots within 20 seconds award a WONDERS letter and 2x scoring for
+    the rest of the ball.
+  - Jabberwocky Multiball requires ramp-target progress and three locks through the
+    right orbit. Clear its jackpots for Super Jackpot; unfinished Super progress carries
+    into the next Jabberwocky Multiball.
+  - Outside modes, complete the left U-turn, left orbit, right ramp and right orbit
+    requirements to collect all four Suits and start a WONDERS-awarding hurry-up.
+  - Queen of Hearts begins with up to 21 guards. Guards defeated in Painting the Roses
+    Red or Sneak-In reduce the requirement, to a minimum of four.
+watch:
+- title: EATME / Left orbit flashing
+  text: A major playfield multiplier is available. Expect the player to collect it
+    before committing to a story mode or multiball.
+- title: WONDERS and Suits
+  text: These indicators reveal whether the player is building toward Queen of Hearts
+    rather than simply collecting immediate scoring opportunities.
+- title: Jabberwock locks
+  text: Physical balls in the Jabberwock lock show Multiball progress. Three locked
+    balls start Jabberwocky Multiball.
+- title: Outlane-save colors
+  text: Red, yellow and green indicate 5, 10 and 15 seconds of stored spinning-disc
+    protection. The player must activate the discs manually.
+skill_shots:
+- name: Down the Rabbit Hole
+  how: Soft plunge, lock in the displayed score, then complete the rabbit-hole path
+    without first hitting a pop bumper or rollover.
+  value: Collects the displayed skill-shot award; an intervening pop bumper or rollover
+    invalidates the attempt.
+- name: Super Skill Shot
+  how: Plunge directly into the VUK within five seconds to reach the mini playfield.
+  value: Awards 1M, five seconds on the mini playfield, and another 1M for each upper-playfield
+    target hit.
+features:
+- type: player-control
+  name: Swirling Wonderland
+  text: Player-controlled spinning discs save outlane drains. Two saves are available
+    initially, with 5-15 seconds of stored protection; activating both discs consumes
+    10 seconds. Save time can be recharged.
+- type: mystery-award
+  name: Cheshire Cat Mystery
+  text: Spell CAT and shoot the scoop. The left flipper accepts the offered award;
+    the right reveals a secret alternative, potentially better or worth nothing.
+- type: extra-ball
+  name: Knave of Hearts Extra Ball
+  text: A hidden Extra Ball can be collected from the mini-playfield captive ball
+    during Knave of Hearts.
+- type: other
+  name: Magna-Flips
+  text: The upper mini playfield uses two player-operated electromagnets instead of
+    conventional flippers.
+shots:
+- name: Left U-turn
+  value: Advances Painting the Roses Red and Suit progress. Defeating guards early
+    reduces the later Queen of Hearts requirement.
+  risk: Medium-High
+  diagram: 1
+- name: Left Orbit
+  value: Collects EATME playfield multipliers and advances Knave of Hearts and Suit
+    progress.
+  risk: Medium-High
+  diagram: 2
+- name: Main Ramp
+  value: Qualifies story modes. Fifteen rapid shots earn a WONDERS letter and ball-long
+    2x scoring.
+  risk: High
+  diagram: 3
+- name: Mode Scoop
+  value: Starts qualified story modes and collects Cheshire Cat Mystery, converting
+    setup into WONDERS progression.
+  risk: Medium-High
+  diagram: 4
+- name: Main Captive Ball
+  value: Five hits start Quick Croquet Multiball, an accessible two-ball route toward
+    another WONDERS letter.
+  risk: High
+  diagram: 5
+- name: Right Orbit
+  value: Locks balls for Jabberwocky Multiball, advances Suit progress, and contributes
+    to outlane-save recharge.
+  risk: High
+  diagram: 6
+strategy:
+  ahead: Collect an available EATME multiplier, then take Quick Croquet or a prepared
+    story mode. Use the spinning-disc saves proactively and avoid committing to the
+    lengthy Queen of Hearts route unless substantial progress already exists.
+  behind: Build the largest available EATME multiplier, pursue the 15-ramp ball-long
+    2x reward, and bring valuable scoring opportunities into a mode or multiball.
+    Midnight Madness offers another high-variance route through repeated ramp loops
+    and increasing scoring.
+  key_decision: Cash an available multiplier into a ready mode or multiball now, or
+    risk additional ramp and target work for larger scoring leverage or deeper Queen
+    of Hearts progress?
+danger:
+- Poorly struck main-ramp shots can reject rapidly toward the center drain.
+- The narrow right orbit can be difficult to hit consistently, with misses entering
+  uncontrolled upper-playfield traffic.
+- The tight mode scoop can reject close-range attempts quickly toward the flippers.
+- Captive-ball and standup hits produce dangerous central rebounds during Quick Croquet
+  and multiplier setup.
+- The outlane discs are manual protection, not automatic kickbacks; stored save time
+  does nothing unless the player activates them.
+commentary:
+- EATME is complete—left orbit now cashes the playfield multiplier.
+- That ramp isn't just mode qualification; fifteen quick shots earns a Wonder and
+  ball-long two-times.
+- Five captive-ball hits gets Quick Croquet—this is the more accessible multiball
+  route.
+- Those Jabberwock locks are physical; three balls in there starts the multiball.
+- Every guard defeated here is one less guard waiting in Queen of Hearts.
+- Those outlane discs are manual—she has to spend the save resource before the ball
+  is gone.
+trivia:
+- The design evolved from John Popadiuk's unfinished Zidware Alice concept into Melvin
+  Brouwer-Williams's released DPX game.
+- Production was limited to 500 individually numbered machines.
+- The upper playfield revives Magna-Flip technology using electromagnets instead of
+  physical flippers.
+- The Jabberwock character originates in Through the Looking-Glass rather than the
+  original Alice's Adventures in Wonderland.
+- Alice was Dutch Pinball Exclusive's sole released title before the brand wound down
+  in 2026.
+summary: Spell EATME → collect playfield X → start story modes → play Quick Croquet/Jabberwocky
+  → collect WONDERS and Suits → Queen of Hearts

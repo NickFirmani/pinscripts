@@ -1,0 +1,25 @@
+game_id: elton-john-jersey-jack-2023
+image_width: 2857
+image_height: 5252
+image_sha256: 5e496a33a5ca9817ed50b17093b3e985ceb98eb83d5e50d0f8ebf0fe34117f27
+shots_sha256: 32c2972735252b5ca79294af8de174c526a06b1e83e6fff95bd077739060df0b
+coordinates:
+- diagram: 1
+  x: 484
+  y: 917
+- diagram: 2
+  x: 570
+  y: 1486
+- diagram: 3
+  x: 1576
+  y: 1334
+- diagram: 4
+  x: 2046
+  y: 892
+- diagram: 5
+  x: 2373
+  y: 1027
+- diagram: 6
+  x: 2622
+  y: 2698
+skipped_diagrams: []

@@ -1,0 +1,23 @@
+game_id: fallout-prem-le-stern-2026
+image_width: 989
+image_height: 1818
+image_sha256: 2db6f8c3c57507f2fc8b32613260065cdf81ae35396895d05463b1d04a527cb0
+shots_sha256: 2603b94c48a3b11ec127c26f46e427dd77edba21d7a4503953b8adb915fe395e
+coordinates:
+- diagram: 1
+  x: 606
+  y: 438
+- diagram: 3
+  x: 500
+  y: 341
+- diagram: 4
+  x: 772
+  y: 652
+- diagram: 5
+  x: 864
+  y: 679
+- diagram: 6
+  x: 710
+  y: 492
+skipped_diagrams:
+- 2

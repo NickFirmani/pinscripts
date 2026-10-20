@@ -9,6 +9,29 @@ from pinscripts.binder import Binder, BinderEntry, BinderSource
 
 
 class BuildTests(unittest.TestCase):
+    def test_candidate_context_validation_can_ignore_stale_shot_labels(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            candidate = output / "alpha.yaml"
+            with (
+                patch.object(app, "OUTPUT", output),
+                patch.object(app, "validate_all", return_value=True) as validate,
+                patch.object(app, "binders_containing", return_value=[]),
+                patch.object(app, "render_game") as render,
+            ):
+                result = app.validate_game_contexts(
+                    candidate,
+                    "alpha",
+                    allow_stale_shot_labels=True,
+                )
+
+        self.assertTrue(result)
+        validate.assert_called_once_with(
+            [candidate],
+            validate_shot_labels=False,
+        )
+        self.assertFalse(render.call_args.kwargs["load_labels"])
+
     def test_catalog_build_discovers_content_without_a_manifest(self):
         paths = [Path("content/alpha.yaml"), Path("content/bravo.yaml")]
         output = Path("/project/output")

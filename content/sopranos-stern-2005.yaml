@@ -1,0 +1,165 @@
+id: sopranos-stern-2005
+name: The Sopranos
+metadata:
+  manufacturer: Stern Pinball
+  year: 2005
+  designer: George Gomez
+  artist: Kevin O'Connor
+  production: Approximately 3,500 machines
+  era: Stern Whitestar DMD
+  multiball: Stugots Multiball, Bing Multiball, Underboss Multiball, and Boss
+rules_basis:
+  kind: rom
+  version: CPU 5.00
+  release_date: null
+hook: Short-plunge to the flipper and lock two balls in Stugots for the fastest major
+  multiball. The boat drop target may leave the playfield unvalidated, allowing a
+  quick drain to return the ball. During Stugots, collect the Double and Super Jackpot,
+  then use multiball protection to attack the dangerous Safe, advance ranks and build
+  toward Underboss. Start an Episode before multiball if you want them stacked.
+rules:
+  primary: Stugots requires two physical boat locks. During multiball, hit the drop
+    target for Jackpot, then three more times to expose the boat for Double Jackpot
+    (apx2.15M); another boat shot awards Super Jackpot (apx3.225M). After the Super,
+    five major arrows become jackpots and the sequence can repeat. A Stugots Super
+    also advances Boss qualification.
+  bullets:
+  - 'Bing: three left-ramp shots start Party at the Bing, a 30-second switch-count
+    mode. Reach 75 switches to start three-ball Bing Multiball; incomplete progress
+    is saved. Major-shot jackpots begin at 125K and build to 250K.'
+  - 'Ranks: collect four envelope shots and shoot the inner loop, or complete the
+    Safe, to advance. Each rank awards feature-specific 2x scoring for the rest of
+    that ball. Reaching Underboss starts four-ball multiball.'
+  - 'Underboss: major arrows and the Safe spell UNDERBOSS. Completing it lights three
+    locks paying 1x, 3x and 5x values before the balls release and the cycle repeats.'
+  - An Episode must start before multiball to stack with it; Episodes cannot overlap
+    each other. Stugots and Bing can stack, and Underboss can join an active multiball
+    if the rank is reached.
+  - The Stugots drop-target short-plunge can leave the playfield unvalidated, returning
+    an immediate drain without using the normal ball save. CPU 5.00 adds tournament
+    settings.
+watch:
+- title: Stugots Drop Target / LOCK
+  text: A lowered boat target and lit LOCK indicate Stugots progress. Watch for repeated
+    short plunges that exploit playfield validation to build the two locks.
+- title: Stugots Super Jackpot
+  text: Once Double Jackpot has been collected, the next boat shot can award roughly
+    3.225M and satisfy a Boss requirement.
+- title: Rank / Underboss
+  text: Advancing ranks eventually triggers four-ball Underboss. If another multiball
+    is running, Underboss can stack on top, creating major scoring potential.
+- title: FISH Lit
+  text: During multiball, a lit Fish saucer often signals an Add-A-Ball opportunity
+    rather than an ordinary scoring award.
+skill_shots:
+- name: R-I-P Skill Shot
+  how: Use the flippers to position the flashing R-I-P top lane, then plunge through
+    it.
+  value: Awards 500K plus 250K per previous successful skill shot, buries a character
+    and advances the associated Bonus X.
+- name: Super Skill Shot
+  how: Hold the left flipper while plunging, then make a feature shot within approximately
+    five seconds.
+  value: Left ramp starts Bing; inner loop lights or starts an Episode; right ramp
+    awards three Meadowlands hits; right loop starts Truck Heist hurry-up.
+features:
+- type: player-control
+  name: Stugots Validation Setup
+  text: A short plunge to the flipper followed by the boat drop-target/lock shot can
+    leave the playfield unvalidated. An immediate drain may return the ball without
+    consuming the ordinary ball saver.
+- type: other
+  name: Fish / Add-A-Ball
+  text: Spell FISH through the inlanes and outlanes to light the left saucer. During
+    multiball, Add-A-Ball is a valuable contextual award, normally available once
+    per multiball.
+- type: ball-save
+  name: Start-of-Ball Ball Save
+  text: Factory protection is approximately eight seconds. The Stugots validation
+    setup can return an unvalidated ball before the normal saver begins.
+- type: video-mode
+  name: Executive Game
+  text: A poker-themed Episode in which players wager points. Unlike most pinball
+    video modes, a poor result can actually reduce the player's score.
+- type: mystery-award
+  name: Pork Store
+  text: Awards can advance rank, Meadowlands, Truck Heist, spinner value and other
+    features. CPU 5.00 includes tournament settings affecting game behavior.
+- type: extra-ball
+  name: Extra Ball
+  text: Reaching Acting Capo lights an Extra Ball at the inner loop. Tournament handling
+    depends on game adjustments.
+shots:
+- name: Fish Saucer
+  value: Collects contextual FISH awards, particularly Add-A-Ball during multiball,
+    and can spot other feature progress.
+  risk: Medium-High
+  diagram: 1
+- name: Left Ramp / Bing
+  value: Starts Party at the Bing, leading to Bing Multiball and another opportunity
+    to stack multiballs.
+  risk: Medium-High
+  diagram: 2
+- name: Inner Loop / Spinner
+  value: Starts or advances Episodes, converts envelope progress into rank advancement,
+    and collects qualified Extra Balls.
+  risk: Medium-High
+  diagram: 3
+- name: Safe
+  value: Advances rank and Boss requirements. Particularly useful during multiball
+    protection because direct rebounds are dangerous.
+  risk: High
+  diagram: 4
+- name: Right Ramp / Meadowlands
+  value: Advances Meadowlands, Episodes and envelopes, contributing to rank and Boss
+    progression.
+  risk: Medium-High
+  diagram: 5
+- name: Stugots / Boat
+  value: Locks two balls for Stugots Multiball, then collects its Jackpot, Double
+    Jackpot and Super Jackpot sequence.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Use the short-plunge Stugots setup to reach multiball quickly, then collect
+    its Double and Super Jackpot. Advance ranks through envelopes instead of repeatedly
+    attacking the exposed Safe. Avoid unnecessary Boss setup when already comfortably
+    ahead.
+  behind: Start an Episode before multiball, then stack Stugots with Bing. Attack
+    the Safe under multiball protection to advance ranks and trigger Underboss while
+    other multiballs remain active. Its repeating 1x, 3x and 5x lock awards provide
+    substantial comeback potential.
+  key_decision: Start Stugots immediately for efficient, relatively protected scoring,
+    or delay to prepare an Episode, Bing and rank progress? The longer setup risks
+    a drain but can create a much more valuable stacked multiball.
+danger:
+- 'The Safe is a major center-drain hazard: hard hits rebound sharply and its shallow
+  saucer can reject toward the middle.'
+- Stugots ramp shots can reject, while releases from the boat sometimes feed awkwardly
+  toward the center.
+- The right ramp doubles as the pop-bumper exit, creating collisions with returning
+  balls during multiball.
+- Inner-loop shots feed the pop bumpers, giving up controlled possession even when
+  the intended feature is collected.
+commentary:
+- That boat drop target doesn't validate the playfield—this is the famous Sopranos
+  short-plunge multiball setup.
+- Two balls in Stugots starts the boat multiball; now they're working toward the Double
+  and Super Jackpot.
+- They're using multiball as cover to hit the Safe—that shot is much nastier in single-ball
+  play.
+- Underboss just started on top of the existing multiball; the lock values can climb
+  to five-times.
+- The Fish is lit during multiball—that's usually an Add-A-Ball opportunity.
+- That Episode had to be started first; Sopranos won't let you add an Episode after
+  the multiball is already running.
+trivia:
+- The game includes recorded voices from James Gandolfini, Dominic Chianese and Steven
+  Van Zandt.
+- George Gomez and Lyman F. Sheats Jr. were fans of the television series, which helped
+  inspire the game's design.
+- The Safe physically splits open to reveal a saucer hidden behind it.
+- Stugots uses a genuine two-ball physical lock built around Tony Soprano's yacht.
+- The final CPU 5.00 ROM arrived in October 2005 and added tournament settings.
+summary: Short-plunge Stugots → lock two balls → collect Double/Super → stack Episode
+  + Bing → advance ranks → trigger Underboss → build Boss

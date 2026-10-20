@@ -225,6 +225,45 @@ class GameWorkflowTests(unittest.TestCase):
         ask.assert_not_called()
         labels.assert_not_called()
 
+    def test_asset_check_downloads_to_the_catalog_id(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            content = root / "content"
+            content.mkdir()
+            (content / "alice-adventures.yaml").write_text(
+                "id: alice-adventures\n",
+                encoding="utf-8",
+            )
+            expected_image = root / "images" / "alice-adventures.webp"
+
+            def download(_description, **kwargs):
+                expected_image.parent.mkdir()
+                expected_image.touch()
+                return 0
+
+            with (
+                patch.object(app, "CONTENT", content),
+                patch.object(app, "ROOT", root),
+                patch.object(app, "ask_yes_no", return_value=True),
+                patch.object(
+                    app,
+                    "interactive_game_image",
+                    side_effect=download,
+                ) as image_finder,
+            ):
+                ready = app._ensure_game_assets(
+                    "Alice's Adventures",
+                    "alice-adventures",
+                    False,
+                )
+
+        self.assertTrue(ready)
+        image_finder.assert_called_once_with(
+            "Alice's Adventures",
+            continue_batch=False,
+            destination_id="alice-adventures",
+        )
+
     def test_update_builds_a_packet_for_every_printed_binder(self):
         printed = Binder(
             2,

@@ -1,0 +1,154 @@
+id: looney-tunes-ce-spooky-2024
+name: Looney Tunes (CE)
+metadata:
+  manufacturer: Spooky Pinball
+  year: 2024
+  designer: Corwin (Bug) Emery and Luke Peters
+  artist: Brad Duke
+  production: 888 machines across all editions; Collector's Edition count unspecified
+  era: Modern LCD
+  multiball: Anvil Frenzy, Giant Rocket Multiball, Rocket Skates Multiball, and TNT
+    Add-A-Ball
+rules_basis:
+  kind: code
+  version: v2026.10.16
+  release_date: '2026-10-16'
+hook: Collect three white Film Reel arrows, then shoot the Crate or Vault to start
+  an Episode before starting multiball. Anvil Frenzy offers accessible protection;
+  Rocket Multiball alternates into high-value Rocket Skates. Build Blueprint Playfield
+  X up to 6x, complete Episodes for Encore awards, and collect clean Vault shots to
+  double those Encores.
+rules:
+  primary: Three white Film Reel arrows qualify an Episode at the ACME Crate or Vault.
+    Episodes generally continue until completed, and an Episode already running can
+    continue through multiball, but new Episodes cannot start during normal multiball.
+    Completing an Episode lights an Encore worth 10% of its score, doubled by a clean
+    Vault shot. Blueprint Playfield X reaches 6x for 30 seconds.
+  bullets:
+  - 'Anvil Frenzy: shoot the left ramp to light an Anvil hurry-up at the Crate. Two
+    collections bank virtual locks and start 2-ball multiball. Major-shot jackpots
+    lead to a Crate Super; a magnet collision can award a Mega Jackpot.'
+  - 'Rocket: v2026.10.16 requires one captive-ball hit for the first qualification,
+    five thereafter. Three right-orbit locks start Giant Rocket or, on the next cycle,
+    Rocket Skates.'
+  - 'Giant Rocket: collect five jackpots to light a declining captive-ball Super.
+    Rocket Skates: add up to three extra locked balls, then build 2x jackpots for
+    a Crate Super worth up to 36x. Collecting it immediately ends the multiball.'
+  - Normal multiballs cannot overlap, but TNT Add-A-Ball can coexist with Episodes
+    and other multiballs. A trapped ball can double its frenzy value.
+  - Completed Factory Mayhem requirements each add 10% scoring. Episode progression
+    advances Extra Ball, Special and Duck Amuck; Taz-Mania and Factory Mayhem are
+    mini-wizard modes.
+watch:
+- title: White Film Reel Arrows
+  text: Three collected arrows mean an Episode is ready at the Crate or Vault. Watch
+    for players starting the Episode before activating a prepared multiball.
+- title: Blueprint / Playfield X
+  text: A qualified multiplier can be activated through the lit return lane for 30
+    seconds of boosted scoring, up to 6x. Qualified multipliers persist between balls.
+- title: Rocket Counter / Locks
+  text: The captive-ball counter tracks qualification, and three physical locks start
+    Rocket Multiball. The first cycle is Giant Rocket; the next is Rocket Skates.
+- title: Taz Tornado Lightstrip
+  text: Red-arrow progress from Crate hits indicates advancement toward Taz-Mania.
+skill_shots:
+- name: Standard Skill Shot
+  how: Time the plunge to strike the strobing ACME Vault target.
+  value: Collects the opening skill-shot award and advances Vault-related play.
+- name: Super Skill Shot
+  how: Press the action button before plunging, then immediately shoot the Wile E.
+    Coyote upper or inner loop from the upper flipper.
+  value: Collects the more demanding Super Skill Shot award.
+features:
+- type: ball-save
+  name: Hare Restore
+  text: Five carrot-target hits light saves at both outlanes. Subsequent saves require
+    additional carrot hits.
+- type: other
+  name: TNT Add-A-Ball
+  text: Complete TNT, then shoot the hidden lane below the upper-right flipper. Can
+    coexist with Episodes and normal multiballs; holding a ball in the lane can double
+    frenzy value.
+- type: player-control
+  name: ACME Items
+  text: Crate awards include spotted shots, 3x ramp/orbit/spinner boosts, ball save,
+    Extra Ball qualification and Blueprint Playfield X. Use the action button to activate
+    an item and secondary flipper buttons to cycle inventory.
+- type: extra-ball
+  name: Extra Ball
+  text: Qualifies at the right orbit after three completed Episodes, reaching 200
+    MPH Roadrunner speed, or using the Giant Magnet item. Tournament treatment depends
+    on adjustments.
+shots:
+- name: Blueprint Lane
+  value: Builds Playfield X through repeated qualifications, reaching a 30-second
+    multiplier as high as 6x.
+  risk: High
+  diagram: 1
+- name: ACME Vault
+  value: Starts qualified Episodes and collects Encore awards. A clean shot without
+    clipping surrounding targets doubles the Encore.
+  risk: High
+  diagram: 2
+- name: Left Ramp
+  value: Lights Anvil hurry-ups at the Crate, leading to virtual locks and Anvil Frenzy
+    Multiball.
+  risk: Medium-High
+  diagram: 3
+- name: ACME Crate
+  value: Starts Episodes, awards ACME items, collects Anvil hurry-ups and major Multiball
+    Supers.
+  risk: High
+  diagram: 4
+- name: Rocket Captive Ball
+  value: Qualifies Rocket Multiball; the first cycle leads to Giant Rocket and the
+    second to Rocket Skates.
+  risk: High
+  diagram: 5
+- name: Right Orbit
+  value: Locks three balls for Rocket Multiball and collects qualified Extra Balls.
+  risk: Medium-High
+  diagram: 6
+strategy:
+  ahead: Start an Episode before Anvil Frenzy so the multiball protects mode progress.
+    Use Hare Restore defensively, complete the Episode and collect its Encore. Avoid
+    overextending for a difficult 6x multiplier or forcing the higher-risk Rocket
+    Skates route.
+  behind: Build Blueprint Playfield X, then activate it during an Episode and Rocket
+    Multiball for multiplied scoring. On the second Rocket cycle, preserve balls and
+    build 2x jackpots before collecting the Rocket Skates Super, potentially worth
+    36x. Factory Mayhem's permanent 10% boosts reward longer games.
+  key_decision: Start a qualified multiball immediately for protection, or first begin
+    an Episode and prepare Playfield X? The latter creates greater scoring potential,
+    but requires additional controlled shots before the safety of multiball.
+danger:
+- The right outlane is particularly punishing on some setups, even with a more forgiving
+  outlane-post position.
+- Off-center ramp hits can reject sharply or airball instead of completing the shot.
+- Crate and captive-ball bashes can send uncontrolled rebounds toward the center drain.
+- Missed Vault, Blueprint or upper-loop shots can surrender upper-flipper control
+  and return the ball into dangerous traffic.
+- Collecting the Rocket Skates Super immediately ends multiball, potentially sacrificing
+  remaining balls or a better multiplier opportunity.
+commentary:
+- Three film reels are in—Crate or Vault now starts the Episode.
+- They're deliberately starting the Episode first; once multiball starts, they can't
+  start a new one.
+- That Blueprint is the multiplier setup—this can go all the way to six-times.
+- A clean Vault shot doubles the Encore, so they really don't want to graze those
+  targets.
+- This is the second Rocket cycle, so it's Rocket Skates—the Super can get enormous.
+- 'Careful cashing that Super: once they take it, Rocket Skates is over.'
+trivia:
+- Looney Tunes and The Texas Chainsaw Massacre share the same physical playfield layout
+  but have very different rules and themes.
+- The game uses four full-size flippers and numerous shot paths, including unusual
+  behind-flipper lanes.
+- Eric Bauza, the modern voice of many Looney Tunes characters, recorded custom character
+  speech.
+- Collector's Edition adds an integrated topper, orange trim and other cosmetic features
+  without changing gameplay relative to the other editions.
+- Software updates continued into October 2026, adding classic cartoon clips, lighting
+  feedback and rules adjustments.
+summary: Collect Film Reels → start Episode → build Playfield X → start Anvil/Rocket
+  MB → finish Episode → collect doubled Encore → pursue Rocket Skates Super

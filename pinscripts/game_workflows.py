@@ -216,7 +216,11 @@ def _ensure_game_assets(
         if not ask_yes_no("Open the guided image finder now?"):
             print("Run this add command again after adding the image.")
             return False
-        if interactive_game_image(description, continue_batch=False):
+        if interactive_game_image(
+            description,
+            continue_batch=False,
+            destination_id=game_id,
+        ):
             return False
     if not image.is_file():
         print(f"ERROR: the image is still missing: {image}", file=sys.stderr)
@@ -505,7 +509,12 @@ def _update_description(game_id):
     )
 
 
-def _refresh_content_with_review(game_id, description):
+def _refresh_content_with_review(
+    game_id,
+    description,
+    candidate_transform=None,
+    allow_stale_shot_labels=False,
+):
     """Build updated YAML separately, show its diff, then replace atomically."""
     content_path = CONTENT / f"{game_id}.yaml"
     original = content_path.read_text(encoding="utf-8")
@@ -521,6 +530,8 @@ def _refresh_content_with_review(game_id, description):
         if not candidate.is_file():
             print("Content refresh was not completed; the original YAML is unchanged.")
             return False
+        if candidate_transform is not None:
+            candidate_transform(candidate)
         candidate_text = candidate.read_text(encoding="utf-8")
         diff = "".join(
             difflib.unified_diff(
@@ -532,7 +543,11 @@ def _refresh_content_with_review(game_id, description):
         )
         print("\nContent changes:\n")
         print(diff or "(No textual changes.)")
-        if not validate_game_contexts(candidate, game_id):
+        if not validate_game_contexts(
+            candidate,
+            game_id,
+            allow_stale_shot_labels=allow_stale_shot_labels,
+        ):
             print("Candidate discarded because one or more render contexts failed.")
             return False
         if not ask_yes_no("Replace the current content with this candidate?"):
@@ -541,6 +556,48 @@ def _refresh_content_with_review(game_id, description):
         candidate.replace(content_path)
     print(f"Updated {content_path.relative_to(ROOT)}")
     return True
+
+
+def _validate_and_offer_update_packets(game_id, description, offer_packets):
+    content_path = CONTENT / f"{game_id}.yaml"
+    if not validate_game_contexts(content_path, game_id):
+        return 1
+    try:
+        affected = binders_containing(game_id)
+    except BinderError as error:
+        print(f"ERROR: could not validate affected binders: {error}", file=sys.stderr)
+        return 1
+    printed = [binder for binder in affected if binder.status == "printed"]
+    print(
+        f"Validated the catalog game against {len(affected)} binder(s); "
+        f"{len(printed)} printed binder(s) need replacement packets."
+    )
+    if not offer_packets or not printed:
+        return 0
+    if not ask_yes_no(f"Build {len(printed)} four-page update packet(s)?"):
+        return 0
+    black_and_white = request_print_mode()
+    if black_and_white is None:
+        print("Update packet cancelled.")
+        return 0
+    if not _ensure_game_assets(
+        description,
+        game_id,
+        black_and_white,
+        rebuild_black_and_white=False,
+    ):
+        return 1
+    try:
+        packets = [
+            build_print_packet(game_id, "update", binder, black_and_white)
+            for binder in printed
+        ]
+    except (BuildInputError, OSError, ValueError) as error:
+        print(f"ERROR: could not build update packet: {error}", file=sys.stderr)
+        return 1
+    for packet in packets:
+        print(f"Print {packet.relative_to(ROOT)} double-sided, flipping on the long edge.")
+    return 0
 
 
 def interactive_update_game(game=""):
@@ -583,7 +640,11 @@ def interactive_update_game(game=""):
                 return 1
             image_replaced = recrop_result == "updated"
         elif image_action == "2":
-            if interactive_game_image(description, continue_batch=False):
+            if interactive_game_image(
+                description,
+                continue_batch=False,
+                destination_id=game_id,
+            ):
                 return 1
             image_replaced = True
         else:
@@ -602,42 +663,4 @@ def interactive_update_game(game=""):
         rebuild_black_and_white=True,
     ):
         return 1
-    content_path = CONTENT / f"{game_id}.yaml"
-    if not validate_game_contexts(content_path, game_id):
-        return 1
-    try:
-        affected = binders_containing(game_id)
-    except BinderError as error:
-        print(f"ERROR: could not validate affected binders: {error}", file=sys.stderr)
-        return 1
-    printed = [binder for binder in affected if binder.status == "printed"]
-    print(
-        f"Validated the catalog game against {len(affected)} binder(s); "
-        f"{len(printed)} printed binder(s) need replacement packets."
-    )
-    if "4" not in requested or not printed:
-        return 0
-    if not ask_yes_no(f"Build {len(printed)} four-page update packet(s)?"):
-        return 0
-    black_and_white = request_print_mode()
-    if black_and_white is None:
-        print("Update packet cancelled.")
-        return 0
-    if not _ensure_game_assets(
-        description,
-        game_id,
-        black_and_white,
-        rebuild_black_and_white=False,
-    ):
-        return 1
-    try:
-        packets = [
-            build_print_packet(game_id, "update", binder, black_and_white)
-            for binder in printed
-        ]
-    except (BuildInputError, OSError, ValueError) as error:
-        print(f"ERROR: could not build update packet: {error}", file=sys.stderr)
-        return 1
-    for packet in packets:
-        print(f"Print {packet.relative_to(ROOT)} double-sided, flipping on the long edge.")
-    return 0
+    return _validate_and_offer_update_packets(game_id, description, "4" in requested)
